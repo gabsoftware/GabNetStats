@@ -1,0 +1,1 @@
+C:\Windows\System32\ForceBindIP.exe {6C4DE79C-0C32-42FF-BECA-E7C84A089D72} C:\Users\homedir\AppData\Local\Chromium\Application\chrome.exe

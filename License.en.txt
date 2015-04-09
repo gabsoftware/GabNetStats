@@ -1,0 +1,19 @@
+------= GabSoftware license v1.0.1 =------
+
+Concerned product : [PRODUCTNAME]
+[PRODUCTNAME] homepage : [PRODUCTHOMEPAGE]
+
+By distributing, using or reusing any part of this product (binaries or source code), you agree with the following terms :
+
+- The [PRODUCTNAME] binaries can be freely distributed and used for personal use. For corporate use, see (1).
+- The [PRODUCTNAME] source code can be freely distributed, used and reused for personal use. For corporate use, see (2).
+- The name "[PRODUCTNAME]" must not be part of the name of any derived product.
+- You must include the present license unmodified (License.txt) with any distribution, part of source code or binaries of [PRODUCTNAME].
+
+(1) : GabSoftware allows companies of less than 10 people to use and distribute the [PRODUCTNAME] binaries for free and without any time limit, as long as the company remains to less than 10 people and that the company makes no money of it. Companies of more than 10 people who desire to use, distribute or include the [PRODUCTNAME] binaries in any suite of products must contact us at [CONTACTEMAIL] to negociate about pricing.
+(2) : If you want to use all or some parts of the [PRODUCTNAME] source code in your company products, please send us your request at [CONTACTEMAIL] to negociate about pricing.
+
+Thank you for using our products !
+
+GabSoftware
+http://www.gabsoftware.com
