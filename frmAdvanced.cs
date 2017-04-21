@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using GabNetStats.Properties;
 using System.Net.NetworkInformation;
 using System.Globalization;
 using System.Net;
-using Microsoft.VisualBasic;
 
 namespace GabNetStats
 {
