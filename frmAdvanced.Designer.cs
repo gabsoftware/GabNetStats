@@ -107,6 +107,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPageNetworkInterfaces = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txtMACaddress = new System.Windows.Forms.TextBox();
+            this.label144 = new System.Windows.Forms.Label();
             this.txtSupportsMulticast = new System.Windows.Forms.TextBox();
             this.label64 = new System.Windows.Forms.Label();
             this.txtSpeed = new System.Windows.Forms.TextBox();
@@ -381,8 +383,6 @@
             this.comboInterfaces = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtMACaddress = new System.Windows.Forms.TextBox();
-            this.label144 = new System.Windows.Forms.Label();
             this.tabStats.SuspendLayout();
             this.tabPageGlobal.SuspendLayout();
             this.groupBoxGlobalOutbound.SuspendLayout();
@@ -419,6 +419,7 @@
             // 
             // tabStats
             // 
+            resources.ApplyResources(this.tabStats, "tabStats");
             this.tabStats.Controls.Add(this.tabPageGlobal);
             this.tabStats.Controls.Add(this.tabPageNetworkInterfaces);
             this.tabStats.Controls.Add(this.tabPageTCP);
@@ -428,7 +429,6 @@
             this.tabStats.Controls.Add(this.tabPageUDPListeners);
             this.tabStats.Controls.Add(this.tabPageICMPv4);
             this.tabStats.Controls.Add(this.tabPageICMPv6);
-            resources.ApplyResources(this.tabStats, "tabStats");
             this.tabStats.Multiline = true;
             this.tabStats.Name = "tabStats";
             this.tabStats.SelectedIndex = 0;
@@ -436,16 +436,17 @@
             // 
             // tabPageGlobal
             // 
+            resources.ApplyResources(this.tabPageGlobal, "tabPageGlobal");
             this.tabPageGlobal.Controls.Add(this.groupBoxGlobalOutbound);
             this.tabPageGlobal.Controls.Add(this.groupBoxGlobalInbound);
             this.tabPageGlobal.Controls.Add(this.groupBoxGlobalFragmentation);
             this.tabPageGlobal.Controls.Add(this.groupBoxGlobalMisc);
-            resources.ApplyResources(this.tabPageGlobal, "tabPageGlobal");
             this.tabPageGlobal.Name = "tabPageGlobal";
             this.tabPageGlobal.UseVisualStyleBackColor = true;
             // 
             // groupBoxGlobalOutbound
             // 
+            resources.ApplyResources(this.groupBoxGlobalOutbound, "groupBoxGlobalOutbound");
             this.groupBoxGlobalOutbound.Controls.Add(this.txtOutputPacketsWithNoRoute);
             this.groupBoxGlobalOutbound.Controls.Add(this.label21);
             this.groupBoxGlobalOutbound.Controls.Add(this.label18);
@@ -454,14 +455,13 @@
             this.groupBoxGlobalOutbound.Controls.Add(this.label20);
             this.groupBoxGlobalOutbound.Controls.Add(this.label19);
             this.groupBoxGlobalOutbound.Controls.Add(this.txtOutputPacketRoutingDiscards);
-            resources.ApplyResources(this.groupBoxGlobalOutbound, "groupBoxGlobalOutbound");
             this.groupBoxGlobalOutbound.Name = "groupBoxGlobalOutbound";
             this.groupBoxGlobalOutbound.TabStop = false;
             // 
             // txtOutputPacketsWithNoRoute
             // 
-            this.txtOutputPacketsWithNoRoute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtOutputPacketsWithNoRoute, "txtOutputPacketsWithNoRoute");
+            this.txtOutputPacketsWithNoRoute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOutputPacketsWithNoRoute.Name = "txtOutputPacketsWithNoRoute";
             this.txtOutputPacketsWithNoRoute.ReadOnly = true;
             // 
@@ -477,15 +477,15 @@
             // 
             // txtOutputPacketRequests
             // 
-            this.txtOutputPacketRequests.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtOutputPacketRequests, "txtOutputPacketRequests");
+            this.txtOutputPacketRequests.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOutputPacketRequests.Name = "txtOutputPacketRequests";
             this.txtOutputPacketRequests.ReadOnly = true;
             // 
             // txtOutputPacketsDiscarded
             // 
-            this.txtOutputPacketsDiscarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtOutputPacketsDiscarded, "txtOutputPacketsDiscarded");
+            this.txtOutputPacketsDiscarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOutputPacketsDiscarded.Name = "txtOutputPacketsDiscarded";
             this.txtOutputPacketsDiscarded.ReadOnly = true;
             // 
@@ -501,13 +501,14 @@
             // 
             // txtOutputPacketRoutingDiscards
             // 
-            this.txtOutputPacketRoutingDiscards.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtOutputPacketRoutingDiscards, "txtOutputPacketRoutingDiscards");
+            this.txtOutputPacketRoutingDiscards.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOutputPacketRoutingDiscards.Name = "txtOutputPacketRoutingDiscards";
             this.txtOutputPacketRoutingDiscards.ReadOnly = true;
             // 
             // groupBoxGlobalInbound
             // 
+            resources.ApplyResources(this.groupBoxGlobalInbound, "groupBoxGlobalInbound");
             this.groupBoxGlobalInbound.Controls.Add(this.txtReceivedPacketsWithUnknownProtocol);
             this.groupBoxGlobalInbound.Controls.Add(this.label11);
             this.groupBoxGlobalInbound.Controls.Add(this.txtReceivedPacketsWithHeadersErrors);
@@ -522,14 +523,13 @@
             this.groupBoxGlobalInbound.Controls.Add(this.label16);
             this.groupBoxGlobalInbound.Controls.Add(this.txtReceivedPackets);
             this.groupBoxGlobalInbound.Controls.Add(this.label17);
-            resources.ApplyResources(this.groupBoxGlobalInbound, "groupBoxGlobalInbound");
             this.groupBoxGlobalInbound.Name = "groupBoxGlobalInbound";
             this.groupBoxGlobalInbound.TabStop = false;
             // 
             // txtReceivedPacketsWithUnknownProtocol
             // 
-            this.txtReceivedPacketsWithUnknownProtocol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtReceivedPacketsWithUnknownProtocol, "txtReceivedPacketsWithUnknownProtocol");
+            this.txtReceivedPacketsWithUnknownProtocol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReceivedPacketsWithUnknownProtocol.Name = "txtReceivedPacketsWithUnknownProtocol";
             this.txtReceivedPacketsWithUnknownProtocol.ReadOnly = true;
             // 
@@ -540,8 +540,8 @@
             // 
             // txtReceivedPacketsWithHeadersErrors
             // 
-            this.txtReceivedPacketsWithHeadersErrors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtReceivedPacketsWithHeadersErrors, "txtReceivedPacketsWithHeadersErrors");
+            this.txtReceivedPacketsWithHeadersErrors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReceivedPacketsWithHeadersErrors.Name = "txtReceivedPacketsWithHeadersErrors";
             this.txtReceivedPacketsWithHeadersErrors.ReadOnly = true;
             // 
@@ -552,8 +552,8 @@
             // 
             // txtReceivedPacketsWithAddressErrors
             // 
-            this.txtReceivedPacketsWithAddressErrors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtReceivedPacketsWithAddressErrors, "txtReceivedPacketsWithAddressErrors");
+            this.txtReceivedPacketsWithAddressErrors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReceivedPacketsWithAddressErrors.Name = "txtReceivedPacketsWithAddressErrors";
             this.txtReceivedPacketsWithAddressErrors.ReadOnly = true;
             // 
@@ -564,8 +564,8 @@
             // 
             // txtReceivedPacketsForwarded
             // 
-            this.txtReceivedPacketsForwarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtReceivedPacketsForwarded, "txtReceivedPacketsForwarded");
+            this.txtReceivedPacketsForwarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReceivedPacketsForwarded.Name = "txtReceivedPacketsForwarded";
             this.txtReceivedPacketsForwarded.ReadOnly = true;
             // 
@@ -576,8 +576,8 @@
             // 
             // txtReceivedPacketsDiscarded
             // 
-            this.txtReceivedPacketsDiscarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtReceivedPacketsDiscarded, "txtReceivedPacketsDiscarded");
+            this.txtReceivedPacketsDiscarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReceivedPacketsDiscarded.Name = "txtReceivedPacketsDiscarded";
             this.txtReceivedPacketsDiscarded.ReadOnly = true;
             // 
@@ -588,8 +588,8 @@
             // 
             // txtReceivedPacketsDelivered
             // 
-            this.txtReceivedPacketsDelivered.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtReceivedPacketsDelivered, "txtReceivedPacketsDelivered");
+            this.txtReceivedPacketsDelivered.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReceivedPacketsDelivered.Name = "txtReceivedPacketsDelivered";
             this.txtReceivedPacketsDelivered.ReadOnly = true;
             // 
@@ -600,8 +600,8 @@
             // 
             // txtReceivedPackets
             // 
-            this.txtReceivedPackets.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtReceivedPackets, "txtReceivedPackets");
+            this.txtReceivedPackets.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReceivedPackets.Name = "txtReceivedPackets";
             this.txtReceivedPackets.ReadOnly = true;
             // 
@@ -612,6 +612,7 @@
             // 
             // groupBoxGlobalFragmentation
             // 
+            resources.ApplyResources(this.groupBoxGlobalFragmentation, "groupBoxGlobalFragmentation");
             this.groupBoxGlobalFragmentation.Controls.Add(this.txtPacketsReassembled);
             this.groupBoxGlobalFragmentation.Controls.Add(this.label22);
             this.groupBoxGlobalFragmentation.Controls.Add(this.txtPacketsFragmented);
@@ -624,14 +625,13 @@
             this.groupBoxGlobalFragmentation.Controls.Add(this.label26);
             this.groupBoxGlobalFragmentation.Controls.Add(this.txtPacketFragmentFailures);
             this.groupBoxGlobalFragmentation.Controls.Add(this.label27);
-            resources.ApplyResources(this.groupBoxGlobalFragmentation, "groupBoxGlobalFragmentation");
             this.groupBoxGlobalFragmentation.Name = "groupBoxGlobalFragmentation";
             this.groupBoxGlobalFragmentation.TabStop = false;
             // 
             // txtPacketsReassembled
             // 
-            this.txtPacketsReassembled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtPacketsReassembled, "txtPacketsReassembled");
+            this.txtPacketsReassembled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPacketsReassembled.Name = "txtPacketsReassembled";
             this.txtPacketsReassembled.ReadOnly = true;
             // 
@@ -642,8 +642,8 @@
             // 
             // txtPacketsFragmented
             // 
-            this.txtPacketsFragmented.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtPacketsFragmented, "txtPacketsFragmented");
+            this.txtPacketsFragmented.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPacketsFragmented.Name = "txtPacketsFragmented";
             this.txtPacketsFragmented.ReadOnly = true;
             // 
@@ -654,8 +654,8 @@
             // 
             // txtPacketReassemblyTimeout
             // 
-            this.txtPacketReassemblyTimeout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtPacketReassemblyTimeout, "txtPacketReassemblyTimeout");
+            this.txtPacketReassemblyTimeout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPacketReassemblyTimeout.Name = "txtPacketReassemblyTimeout";
             this.txtPacketReassemblyTimeout.ReadOnly = true;
             // 
@@ -666,8 +666,8 @@
             // 
             // txtPacketReassemblyFailures
             // 
-            this.txtPacketReassemblyFailures.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtPacketReassemblyFailures, "txtPacketReassemblyFailures");
+            this.txtPacketReassemblyFailures.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPacketReassemblyFailures.Name = "txtPacketReassemblyFailures";
             this.txtPacketReassemblyFailures.ReadOnly = true;
             // 
@@ -678,8 +678,8 @@
             // 
             // txtPacketReassembliesRequired
             // 
-            this.txtPacketReassembliesRequired.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtPacketReassembliesRequired, "txtPacketReassembliesRequired");
+            this.txtPacketReassembliesRequired.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPacketReassembliesRequired.Name = "txtPacketReassembliesRequired";
             this.txtPacketReassembliesRequired.ReadOnly = true;
             // 
@@ -690,8 +690,8 @@
             // 
             // txtPacketFragmentFailures
             // 
-            this.txtPacketFragmentFailures.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtPacketFragmentFailures, "txtPacketFragmentFailures");
+            this.txtPacketFragmentFailures.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPacketFragmentFailures.Name = "txtPacketFragmentFailures";
             this.txtPacketFragmentFailures.ReadOnly = true;
             // 
@@ -702,6 +702,7 @@
             // 
             // groupBoxGlobalMisc
             // 
+            resources.ApplyResources(this.groupBoxGlobalMisc, "groupBoxGlobalMisc");
             this.groupBoxGlobalMisc.Controls.Add(this.txtNodeType);
             this.groupBoxGlobalMisc.Controls.Add(this.label10);
             this.groupBoxGlobalMisc.Controls.Add(this.txtIsWinsProxy);
@@ -722,14 +723,13 @@
             this.groupBoxGlobalMisc.Controls.Add(this.label2);
             this.groupBoxGlobalMisc.Controls.Add(this.txtDefaultTTL);
             this.groupBoxGlobalMisc.Controls.Add(this.label1);
-            resources.ApplyResources(this.groupBoxGlobalMisc, "groupBoxGlobalMisc");
             this.groupBoxGlobalMisc.Name = "groupBoxGlobalMisc";
             this.groupBoxGlobalMisc.TabStop = false;
             // 
             // txtNodeType
             // 
-            this.txtNodeType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtNodeType, "txtNodeType");
+            this.txtNodeType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNodeType.Name = "txtNodeType";
             this.txtNodeType.ReadOnly = true;
             // 
@@ -740,8 +740,8 @@
             // 
             // txtIsWinsProxy
             // 
-            this.txtIsWinsProxy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIsWinsProxy, "txtIsWinsProxy");
+            this.txtIsWinsProxy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsWinsProxy.Name = "txtIsWinsProxy";
             this.txtIsWinsProxy.ReadOnly = true;
             // 
@@ -752,8 +752,8 @@
             // 
             // txtHostName
             // 
-            this.txtHostName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtHostName, "txtHostName");
+            this.txtHostName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHostName.Name = "txtHostName";
             this.txtHostName.ReadOnly = true;
             // 
@@ -764,8 +764,8 @@
             // 
             // txtDomainName
             // 
-            this.txtDomainName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDomainName, "txtDomainName");
+            this.txtDomainName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDomainName.Name = "txtDomainName";
             this.txtDomainName.ReadOnly = true;
             // 
@@ -776,8 +776,8 @@
             // 
             // txtDhcpScopeName
             // 
-            this.txtDhcpScopeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDhcpScopeName, "txtDhcpScopeName");
+            this.txtDhcpScopeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDhcpScopeName.Name = "txtDhcpScopeName";
             this.txtDhcpScopeName.ReadOnly = true;
             // 
@@ -788,8 +788,8 @@
             // 
             // txtNumberOfRoutes
             // 
-            this.txtNumberOfRoutes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtNumberOfRoutes, "txtNumberOfRoutes");
+            this.txtNumberOfRoutes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumberOfRoutes.Name = "txtNumberOfRoutes";
             this.txtNumberOfRoutes.ReadOnly = true;
             // 
@@ -800,8 +800,8 @@
             // 
             // txtNumberOfIPAddresses
             // 
-            this.txtNumberOfIPAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtNumberOfIPAddresses, "txtNumberOfIPAddresses");
+            this.txtNumberOfIPAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumberOfIPAddresses.Name = "txtNumberOfIPAddresses";
             this.txtNumberOfIPAddresses.ReadOnly = true;
             // 
@@ -812,8 +812,8 @@
             // 
             // txtNumberOfInterfaces
             // 
-            this.txtNumberOfInterfaces.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtNumberOfInterfaces, "txtNumberOfInterfaces");
+            this.txtNumberOfInterfaces.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumberOfInterfaces.Name = "txtNumberOfInterfaces";
             this.txtNumberOfInterfaces.ReadOnly = true;
             // 
@@ -824,8 +824,8 @@
             // 
             // txtForwardingEnabled
             // 
-            this.txtForwardingEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtForwardingEnabled, "txtForwardingEnabled");
+            this.txtForwardingEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtForwardingEnabled.Name = "txtForwardingEnabled";
             this.txtForwardingEnabled.ReadOnly = true;
             // 
@@ -836,8 +836,8 @@
             // 
             // txtDefaultTTL
             // 
-            this.txtDefaultTTL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDefaultTTL, "txtDefaultTTL");
+            this.txtDefaultTTL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDefaultTTL.Name = "txtDefaultTTL";
             this.txtDefaultTTL.ReadOnly = true;
             // 
@@ -848,17 +848,18 @@
             // 
             // tabPageNetworkInterfaces
             // 
+            resources.ApplyResources(this.tabPageNetworkInterfaces, "tabPageNetworkInterfaces");
             this.tabPageNetworkInterfaces.Controls.Add(this.groupBox6);
             this.tabPageNetworkInterfaces.Controls.Add(this.groupBox5);
             this.tabPageNetworkInterfaces.Controls.Add(this.groupBox4);
             this.tabPageNetworkInterfaces.Controls.Add(this.groupBox3);
             this.tabPageNetworkInterfaces.Controls.Add(this.groupBox2);
-            resources.ApplyResources(this.tabPageNetworkInterfaces, "tabPageNetworkInterfaces");
             this.tabPageNetworkInterfaces.Name = "tabPageNetworkInterfaces";
             this.tabPageNetworkInterfaces.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
+            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Controls.Add(this.txtMACaddress);
             this.groupBox6.Controls.Add(this.label144);
             this.groupBox6.Controls.Add(this.txtSupportsMulticast);
@@ -879,14 +880,25 @@
             this.groupBox6.Controls.Add(this.label60);
             this.groupBox6.Controls.Add(this.txtDescription);
             this.groupBox6.Controls.Add(this.label63);
-            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
             // 
+            // txtMACaddress
+            // 
+            resources.ApplyResources(this.txtMACaddress, "txtMACaddress");
+            this.txtMACaddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMACaddress.Name = "txtMACaddress";
+            this.txtMACaddress.ReadOnly = true;
+            // 
+            // label144
+            // 
+            resources.ApplyResources(this.label144, "label144");
+            this.label144.Name = "label144";
+            // 
             // txtSupportsMulticast
             // 
-            this.txtSupportsMulticast.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtSupportsMulticast, "txtSupportsMulticast");
+            this.txtSupportsMulticast.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSupportsMulticast.Name = "txtSupportsMulticast";
             this.txtSupportsMulticast.ReadOnly = true;
             // 
@@ -897,8 +909,8 @@
             // 
             // txtSpeed
             // 
-            this.txtSpeed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtSpeed, "txtSpeed");
+            this.txtSpeed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSpeed.Name = "txtSpeed";
             this.txtSpeed.ReadOnly = true;
             // 
@@ -909,8 +921,8 @@
             // 
             // txtOperationalStatus
             // 
-            this.txtOperationalStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtOperationalStatus, "txtOperationalStatus");
+            this.txtOperationalStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOperationalStatus.Name = "txtOperationalStatus";
             this.txtOperationalStatus.ReadOnly = true;
             // 
@@ -921,8 +933,8 @@
             // 
             // txtIsReceiveOnly
             // 
-            this.txtIsReceiveOnly.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIsReceiveOnly, "txtIsReceiveOnly");
+            this.txtIsReceiveOnly.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsReceiveOnly.Name = "txtIsReceiveOnly";
             this.txtIsReceiveOnly.ReadOnly = true;
             // 
@@ -933,8 +945,8 @@
             // 
             // txtId
             // 
-            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtId, "txtId");
+            this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             // 
@@ -945,8 +957,8 @@
             // 
             // txtNetworkInterfaceType
             // 
-            this.txtNetworkInterfaceType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtNetworkInterfaceType, "txtNetworkInterfaceType");
+            this.txtNetworkInterfaceType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNetworkInterfaceType.Name = "txtNetworkInterfaceType";
             this.txtNetworkInterfaceType.ReadOnly = true;
             // 
@@ -957,8 +969,8 @@
             // 
             // txtName
             // 
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtName, "txtName");
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             // 
@@ -969,8 +981,8 @@
             // 
             // txtLoopbackInterfaceIndex
             // 
-            this.txtLoopbackInterfaceIndex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtLoopbackInterfaceIndex, "txtLoopbackInterfaceIndex");
+            this.txtLoopbackInterfaceIndex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLoopbackInterfaceIndex.Name = "txtLoopbackInterfaceIndex";
             this.txtLoopbackInterfaceIndex.ReadOnly = true;
             // 
@@ -981,8 +993,8 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDescription, "txtDescription");
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ReadOnly = true;
             // 
@@ -993,6 +1005,7 @@
             // 
             // groupBox5
             // 
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Controls.Add(this.txtWinsServersAddresses);
             this.groupBox5.Controls.Add(this.label57);
             this.groupBox5.Controls.Add(this.txtUnicastAddresses);
@@ -1013,14 +1026,13 @@
             this.groupBox5.Controls.Add(this.label53);
             this.groupBox5.Controls.Add(this.txtAnycastAddresses);
             this.groupBox5.Controls.Add(this.label54);
-            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
             // txtWinsServersAddresses
             // 
-            this.txtWinsServersAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtWinsServersAddresses, "txtWinsServersAddresses");
+            this.txtWinsServersAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtWinsServersAddresses.Name = "txtWinsServersAddresses";
             this.txtWinsServersAddresses.ReadOnly = true;
             // 
@@ -1031,8 +1043,8 @@
             // 
             // txtUnicastAddresses
             // 
-            this.txtUnicastAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtUnicastAddresses, "txtUnicastAddresses");
+            this.txtUnicastAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUnicastAddresses.Name = "txtUnicastAddresses";
             this.txtUnicastAddresses.ReadOnly = true;
             // 
@@ -1043,8 +1055,8 @@
             // 
             // txtMulticastAddresses
             // 
-            this.txtMulticastAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMulticastAddresses, "txtMulticastAddresses");
+            this.txtMulticastAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMulticastAddresses.Name = "txtMulticastAddresses";
             this.txtMulticastAddresses.ReadOnly = true;
             // 
@@ -1055,8 +1067,8 @@
             // 
             // txtIsDynamicDnsEnabled
             // 
-            this.txtIsDynamicDnsEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIsDynamicDnsEnabled, "txtIsDynamicDnsEnabled");
+            this.txtIsDynamicDnsEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsDynamicDnsEnabled.Name = "txtIsDynamicDnsEnabled";
             this.txtIsDynamicDnsEnabled.ReadOnly = true;
             // 
@@ -1067,8 +1079,8 @@
             // 
             // txtIsDnsEnabled
             // 
-            this.txtIsDnsEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIsDnsEnabled, "txtIsDnsEnabled");
+            this.txtIsDnsEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsDnsEnabled.Name = "txtIsDnsEnabled";
             this.txtIsDnsEnabled.ReadOnly = true;
             // 
@@ -1079,8 +1091,8 @@
             // 
             // txtGatewayAddresses
             // 
-            this.txtGatewayAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtGatewayAddresses, "txtGatewayAddresses");
+            this.txtGatewayAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtGatewayAddresses.Name = "txtGatewayAddresses";
             this.txtGatewayAddresses.ReadOnly = true;
             // 
@@ -1091,8 +1103,8 @@
             // 
             // txtDnsSuffix
             // 
-            this.txtDnsSuffix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDnsSuffix, "txtDnsSuffix");
+            this.txtDnsSuffix.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDnsSuffix.Name = "txtDnsSuffix";
             this.txtDnsSuffix.ReadOnly = true;
             // 
@@ -1103,8 +1115,8 @@
             // 
             // txtDnsAddresses
             // 
-            this.txtDnsAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDnsAddresses, "txtDnsAddresses");
+            this.txtDnsAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDnsAddresses.Name = "txtDnsAddresses";
             this.txtDnsAddresses.ReadOnly = true;
             // 
@@ -1115,8 +1127,8 @@
             // 
             // txtDhcpServerAddresses
             // 
-            this.txtDhcpServerAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDhcpServerAddresses, "txtDhcpServerAddresses");
+            this.txtDhcpServerAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDhcpServerAddresses.Name = "txtDhcpServerAddresses";
             this.txtDhcpServerAddresses.ReadOnly = true;
             // 
@@ -1127,8 +1139,8 @@
             // 
             // txtAnycastAddresses
             // 
-            this.txtAnycastAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtAnycastAddresses, "txtAnycastAddresses");
+            this.txtAnycastAddresses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAnycastAddresses.Name = "txtAnycastAddresses";
             this.txtAnycastAddresses.ReadOnly = true;
             // 
@@ -1139,6 +1151,7 @@
             // 
             // groupBox4
             // 
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.txtUsesWins);
             this.groupBox4.Controls.Add(this.label42);
             this.groupBox4.Controls.Add(this.txtMtu);
@@ -1153,14 +1166,13 @@
             this.groupBox4.Controls.Add(this.label37);
             this.groupBox4.Controls.Add(this.txtIndex);
             this.groupBox4.Controls.Add(this.label39);
-            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             // 
             // txtUsesWins
             // 
-            this.txtUsesWins.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtUsesWins, "txtUsesWins");
+            this.txtUsesWins.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsesWins.Name = "txtUsesWins";
             this.txtUsesWins.ReadOnly = true;
             // 
@@ -1171,8 +1183,8 @@
             // 
             // txtMtu
             // 
-            this.txtMtu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMtu, "txtMtu");
+            this.txtMtu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMtu.Name = "txtMtu";
             this.txtMtu.ReadOnly = true;
             // 
@@ -1183,8 +1195,8 @@
             // 
             // txtIsForwardingEnabled
             // 
-            this.txtIsForwardingEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIsForwardingEnabled, "txtIsForwardingEnabled");
+            this.txtIsForwardingEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsForwardingEnabled.Name = "txtIsForwardingEnabled";
             this.txtIsForwardingEnabled.ReadOnly = true;
             // 
@@ -1195,8 +1207,8 @@
             // 
             // txtIsDhcpEnabled
             // 
-            this.txtIsDhcpEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIsDhcpEnabled, "txtIsDhcpEnabled");
+            this.txtIsDhcpEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsDhcpEnabled.Name = "txtIsDhcpEnabled";
             this.txtIsDhcpEnabled.ReadOnly = true;
             // 
@@ -1207,8 +1219,8 @@
             // 
             // txtIsAutomaticPrivateAddressingEnabled
             // 
-            this.txtIsAutomaticPrivateAddressingEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIsAutomaticPrivateAddressingEnabled, "txtIsAutomaticPrivateAddressingEnabled");
+            this.txtIsAutomaticPrivateAddressingEnabled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsAutomaticPrivateAddressingEnabled.Name = "txtIsAutomaticPrivateAddressingEnabled";
             this.txtIsAutomaticPrivateAddressingEnabled.ReadOnly = true;
             // 
@@ -1219,8 +1231,8 @@
             // 
             // txtIsAutomaticPrivateAddressingActive
             // 
-            this.txtIsAutomaticPrivateAddressingActive.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIsAutomaticPrivateAddressingActive, "txtIsAutomaticPrivateAddressingActive");
+            this.txtIsAutomaticPrivateAddressingActive.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIsAutomaticPrivateAddressingActive.Name = "txtIsAutomaticPrivateAddressingActive";
             this.txtIsAutomaticPrivateAddressingActive.ReadOnly = true;
             // 
@@ -1231,8 +1243,8 @@
             // 
             // txtIndex
             // 
-            this.txtIndex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIndex, "txtIndex");
+            this.txtIndex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIndex.Name = "txtIndex";
             this.txtIndex.ReadOnly = true;
             // 
@@ -1243,6 +1255,7 @@
             // 
             // groupBox3
             // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.txtUnicastPacketsSent);
             this.groupBox3.Controls.Add(this.label41);
             this.groupBox3.Controls.Add(this.txtOutputQueueLength);
@@ -1255,14 +1268,13 @@
             this.groupBox3.Controls.Add(this.label46);
             this.groupBox3.Controls.Add(this.txtBytesSent);
             this.groupBox3.Controls.Add(this.label51);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
             // txtUnicastPacketsSent
             // 
-            this.txtUnicastPacketsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtUnicastPacketsSent, "txtUnicastPacketsSent");
+            this.txtUnicastPacketsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUnicastPacketsSent.Name = "txtUnicastPacketsSent";
             this.txtUnicastPacketsSent.ReadOnly = true;
             // 
@@ -1273,8 +1285,8 @@
             // 
             // txtOutputQueueLength
             // 
-            this.txtOutputQueueLength.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtOutputQueueLength, "txtOutputQueueLength");
+            this.txtOutputQueueLength.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOutputQueueLength.Name = "txtOutputQueueLength";
             this.txtOutputQueueLength.ReadOnly = true;
             // 
@@ -1285,8 +1297,8 @@
             // 
             // txtOutgoingPacketsWithErrors
             // 
-            this.txtOutgoingPacketsWithErrors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtOutgoingPacketsWithErrors, "txtOutgoingPacketsWithErrors");
+            this.txtOutgoingPacketsWithErrors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOutgoingPacketsWithErrors.Name = "txtOutgoingPacketsWithErrors";
             this.txtOutgoingPacketsWithErrors.ReadOnly = true;
             // 
@@ -1297,8 +1309,8 @@
             // 
             // txtOutgoingPacketsDiscarded
             // 
-            this.txtOutgoingPacketsDiscarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtOutgoingPacketsDiscarded, "txtOutgoingPacketsDiscarded");
+            this.txtOutgoingPacketsDiscarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOutgoingPacketsDiscarded.Name = "txtOutgoingPacketsDiscarded";
             this.txtOutgoingPacketsDiscarded.ReadOnly = true;
             // 
@@ -1309,8 +1321,8 @@
             // 
             // txtNonUnicastPacketsSent
             // 
-            this.txtNonUnicastPacketsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtNonUnicastPacketsSent, "txtNonUnicastPacketsSent");
+            this.txtNonUnicastPacketsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNonUnicastPacketsSent.Name = "txtNonUnicastPacketsSent";
             this.txtNonUnicastPacketsSent.ReadOnly = true;
             // 
@@ -1321,8 +1333,8 @@
             // 
             // txtBytesSent
             // 
-            this.txtBytesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtBytesSent, "txtBytesSent");
+            this.txtBytesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBytesSent.Name = "txtBytesSent";
             this.txtBytesSent.ReadOnly = true;
             // 
@@ -1333,6 +1345,7 @@
             // 
             // groupBox2
             // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.txtUnicastPacketsReceived);
             this.groupBox2.Controls.Add(this.label40);
             this.groupBox2.Controls.Add(this.txtNonUnicastPacketsReceived);
@@ -1345,14 +1358,13 @@
             this.groupBox2.Controls.Add(this.label36);
             this.groupBox2.Controls.Add(this.txtBytesReceived);
             this.groupBox2.Controls.Add(this.label38);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
             // txtUnicastPacketsReceived
             // 
-            this.txtUnicastPacketsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtUnicastPacketsReceived, "txtUnicastPacketsReceived");
+            this.txtUnicastPacketsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUnicastPacketsReceived.Name = "txtUnicastPacketsReceived";
             this.txtUnicastPacketsReceived.ReadOnly = true;
             // 
@@ -1363,8 +1375,8 @@
             // 
             // txtNonUnicastPacketsReceived
             // 
-            this.txtNonUnicastPacketsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtNonUnicastPacketsReceived, "txtNonUnicastPacketsReceived");
+            this.txtNonUnicastPacketsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNonUnicastPacketsReceived.Name = "txtNonUnicastPacketsReceived";
             this.txtNonUnicastPacketsReceived.ReadOnly = true;
             // 
@@ -1375,8 +1387,8 @@
             // 
             // txtIncomingUnknownProtocolPackets
             // 
-            this.txtIncomingUnknownProtocolPackets.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIncomingUnknownProtocolPackets, "txtIncomingUnknownProtocolPackets");
+            this.txtIncomingUnknownProtocolPackets.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIncomingUnknownProtocolPackets.Name = "txtIncomingUnknownProtocolPackets";
             this.txtIncomingUnknownProtocolPackets.ReadOnly = true;
             // 
@@ -1387,8 +1399,8 @@
             // 
             // txtIncomingPacketsWithErrors
             // 
-            this.txtIncomingPacketsWithErrors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIncomingPacketsWithErrors, "txtIncomingPacketsWithErrors");
+            this.txtIncomingPacketsWithErrors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIncomingPacketsWithErrors.Name = "txtIncomingPacketsWithErrors";
             this.txtIncomingPacketsWithErrors.ReadOnly = true;
             // 
@@ -1399,8 +1411,8 @@
             // 
             // txtIncomingPacketsDiscarded
             // 
-            this.txtIncomingPacketsDiscarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIncomingPacketsDiscarded, "txtIncomingPacketsDiscarded");
+            this.txtIncomingPacketsDiscarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIncomingPacketsDiscarded.Name = "txtIncomingPacketsDiscarded";
             this.txtIncomingPacketsDiscarded.ReadOnly = true;
             // 
@@ -1411,8 +1423,8 @@
             // 
             // txtBytesReceived
             // 
-            this.txtBytesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtBytesReceived, "txtBytesReceived");
+            this.txtBytesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBytesReceived.Name = "txtBytesReceived";
             this.txtBytesReceived.ReadOnly = true;
             // 
@@ -1423,25 +1435,25 @@
             // 
             // tabPageTCP
             // 
+            resources.ApplyResources(this.tabPageTCP, "tabPageTCP");
             this.tabPageTCP.Controls.Add(this.groupBox9);
             this.tabPageTCP.Controls.Add(this.groupBox8);
             this.tabPageTCP.Controls.Add(this.groupBox7);
-            resources.ApplyResources(this.tabPageTCP, "tabPageTCP");
             this.tabPageTCP.Name = "tabPageTCP";
             this.tabPageTCP.UseVisualStyleBackColor = true;
             // 
             // groupBox9
             // 
+            resources.ApplyResources(this.groupBox9, "groupBox9");
             this.groupBox9.Controls.Add(this.txtErrorsReceived);
             this.groupBox9.Controls.Add(this.label81);
-            resources.ApplyResources(this.groupBox9, "groupBox9");
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.TabStop = false;
             // 
             // txtErrorsReceived
             // 
-            this.txtErrorsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtErrorsReceived, "txtErrorsReceived");
+            this.txtErrorsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtErrorsReceived.Name = "txtErrorsReceived";
             this.txtErrorsReceived.ReadOnly = true;
             // 
@@ -1452,6 +1464,7 @@
             // 
             // groupBox8
             // 
+            resources.ApplyResources(this.groupBox8, "groupBox8");
             this.groupBox8.Controls.Add(this.txtSegmentsResent);
             this.groupBox8.Controls.Add(this.label82);
             this.groupBox8.Controls.Add(this.txtSegmentsReceived);
@@ -1464,14 +1477,13 @@
             this.groupBox8.Controls.Add(this.label86);
             this.groupBox8.Controls.Add(this.txtMaximumTransmissionTimeout);
             this.groupBox8.Controls.Add(this.label93);
-            resources.ApplyResources(this.groupBox8, "groupBox8");
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.TabStop = false;
             // 
             // txtSegmentsResent
             // 
-            this.txtSegmentsResent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtSegmentsResent, "txtSegmentsResent");
+            this.txtSegmentsResent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSegmentsResent.Name = "txtSegmentsResent";
             this.txtSegmentsResent.ReadOnly = true;
             // 
@@ -1482,8 +1494,8 @@
             // 
             // txtSegmentsReceived
             // 
-            this.txtSegmentsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtSegmentsReceived, "txtSegmentsReceived");
+            this.txtSegmentsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSegmentsReceived.Name = "txtSegmentsReceived";
             this.txtSegmentsReceived.ReadOnly = true;
             // 
@@ -1494,8 +1506,8 @@
             // 
             // txtResetsSent
             // 
-            this.txtResetsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtResetsSent, "txtResetsSent");
+            this.txtResetsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResetsSent.Name = "txtResetsSent";
             this.txtResetsSent.ReadOnly = true;
             // 
@@ -1506,8 +1518,8 @@
             // 
             // txtSegmentsSent
             // 
-            this.txtSegmentsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtSegmentsSent, "txtSegmentsSent");
+            this.txtSegmentsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSegmentsSent.Name = "txtSegmentsSent";
             this.txtSegmentsSent.ReadOnly = true;
             // 
@@ -1518,8 +1530,8 @@
             // 
             // txtMinimumTransmissionTimeout
             // 
-            this.txtMinimumTransmissionTimeout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMinimumTransmissionTimeout, "txtMinimumTransmissionTimeout");
+            this.txtMinimumTransmissionTimeout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMinimumTransmissionTimeout.Name = "txtMinimumTransmissionTimeout";
             this.txtMinimumTransmissionTimeout.ReadOnly = true;
             // 
@@ -1530,8 +1542,8 @@
             // 
             // txtMaximumTransmissionTimeout
             // 
-            this.txtMaximumTransmissionTimeout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMaximumTransmissionTimeout, "txtMaximumTransmissionTimeout");
+            this.txtMaximumTransmissionTimeout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaximumTransmissionTimeout.Name = "txtMaximumTransmissionTimeout";
             this.txtMaximumTransmissionTimeout.ReadOnly = true;
             // 
@@ -1542,6 +1554,7 @@
             // 
             // groupBox7
             // 
+            resources.ApplyResources(this.groupBox7, "groupBox7");
             this.groupBox7.Controls.Add(this.txtCumulativeConnections);
             this.groupBox7.Controls.Add(this.label68);
             this.groupBox7.Controls.Add(this.txtResetConnections);
@@ -1556,14 +1569,13 @@
             this.groupBox7.Controls.Add(this.label73);
             this.groupBox7.Controls.Add(this.txtConnectionsAccepted);
             this.groupBox7.Controls.Add(this.label75);
-            resources.ApplyResources(this.groupBox7, "groupBox7");
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.TabStop = false;
             // 
             // txtCumulativeConnections
             // 
-            this.txtCumulativeConnections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtCumulativeConnections, "txtCumulativeConnections");
+            this.txtCumulativeConnections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCumulativeConnections.Name = "txtCumulativeConnections";
             this.txtCumulativeConnections.ReadOnly = true;
             // 
@@ -1574,8 +1586,8 @@
             // 
             // txtResetConnections
             // 
-            this.txtResetConnections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtResetConnections, "txtResetConnections");
+            this.txtResetConnections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResetConnections.Name = "txtResetConnections";
             this.txtResetConnections.ReadOnly = true;
             // 
@@ -1586,8 +1598,8 @@
             // 
             // txtMaximumConnections
             // 
-            this.txtMaximumConnections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMaximumConnections, "txtMaximumConnections");
+            this.txtMaximumConnections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaximumConnections.Name = "txtMaximumConnections";
             this.txtMaximumConnections.ReadOnly = true;
             // 
@@ -1598,8 +1610,8 @@
             // 
             // txtFailedConnectionAttempts
             // 
-            this.txtFailedConnectionAttempts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtFailedConnectionAttempts, "txtFailedConnectionAttempts");
+            this.txtFailedConnectionAttempts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFailedConnectionAttempts.Name = "txtFailedConnectionAttempts";
             this.txtFailedConnectionAttempts.ReadOnly = true;
             // 
@@ -1610,8 +1622,8 @@
             // 
             // txtCurrentConnections
             // 
-            this.txtCurrentConnections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtCurrentConnections, "txtCurrentConnections");
+            this.txtCurrentConnections.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCurrentConnections.Name = "txtCurrentConnections";
             this.txtCurrentConnections.ReadOnly = true;
             // 
@@ -1622,8 +1634,8 @@
             // 
             // txtConnectionsInitiated
             // 
-            this.txtConnectionsInitiated.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtConnectionsInitiated, "txtConnectionsInitiated");
+            this.txtConnectionsInitiated.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConnectionsInitiated.Name = "txtConnectionsInitiated";
             this.txtConnectionsInitiated.ReadOnly = true;
             // 
@@ -1634,8 +1646,8 @@
             // 
             // txtConnectionsAccepted
             // 
-            this.txtConnectionsAccepted.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtConnectionsAccepted, "txtConnectionsAccepted");
+            this.txtConnectionsAccepted.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConnectionsAccepted.Name = "txtConnectionsAccepted";
             this.txtConnectionsAccepted.ReadOnly = true;
             // 
@@ -1646,10 +1658,10 @@
             // 
             // tabPageTCPConnections
             // 
+            resources.ApplyResources(this.tabPageTCPConnections, "tabPageTCPConnections");
             this.tabPageTCPConnections.Controls.Add(this.btnSelectAll);
             this.tabPageTCPConnections.Controls.Add(this.btnCopySelection);
             this.tabPageTCPConnections.Controls.Add(this.dataGridViewTCPConnections);
-            resources.ApplyResources(this.tabPageTCPConnections, "tabPageTCPConnections");
             this.tabPageTCPConnections.Name = "tabPageTCPConnections";
             this.tabPageTCPConnections.UseVisualStyleBackColor = true;
             // 
@@ -1669,6 +1681,7 @@
             // 
             // dataGridViewTCPConnections
             // 
+            resources.ApplyResources(this.dataGridViewTCPConnections, "dataGridViewTCPConnections");
             this.dataGridViewTCPConnections.AllowUserToAddRows = false;
             this.dataGridViewTCPConnections.AllowUserToDeleteRows = false;
             this.dataGridViewTCPConnections.AllowUserToResizeColumns = false;
@@ -1697,7 +1710,6 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTCPConnections.DefaultCellStyle = dataGridViewCellStyle7;
-            resources.ApplyResources(this.dataGridViewTCPConnections, "dataGridViewTCPConnections");
             this.dataGridViewTCPConnections.Name = "dataGridViewTCPConnections";
             this.dataGridViewTCPConnections.ReadOnly = true;
             this.dataGridViewTCPConnections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1766,10 +1778,10 @@
             // 
             // tabPageTCPListeners
             // 
+            resources.ApplyResources(this.tabPageTCPListeners, "tabPageTCPListeners");
             this.tabPageTCPListeners.Controls.Add(this.btnTCPLSelectAll);
             this.tabPageTCPListeners.Controls.Add(this.btnTCPLCopySelected);
             this.tabPageTCPListeners.Controls.Add(this.dataGridViewTCPListeners);
-            resources.ApplyResources(this.tabPageTCPListeners, "tabPageTCPListeners");
             this.tabPageTCPListeners.Name = "tabPageTCPListeners";
             this.tabPageTCPListeners.UseVisualStyleBackColor = true;
             // 
@@ -1789,6 +1801,7 @@
             // 
             // dataGridViewTCPListeners
             // 
+            resources.ApplyResources(this.dataGridViewTCPListeners, "dataGridViewTCPListeners");
             this.dataGridViewTCPListeners.AllowUserToAddRows = false;
             this.dataGridViewTCPListeners.AllowUserToDeleteRows = false;
             this.dataGridViewTCPListeners.AllowUserToResizeColumns = false;
@@ -1814,7 +1827,6 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewTCPListeners.DefaultCellStyle = dataGridViewCellStyle11;
-            resources.ApplyResources(this.dataGridViewTCPListeners, "dataGridViewTCPListeners");
             this.dataGridViewTCPListeners.Name = "dataGridViewTCPListeners";
             this.dataGridViewTCPListeners.ReadOnly = true;
             this.dataGridViewTCPListeners.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1845,13 +1857,14 @@
             // 
             // tabPageUDP
             // 
-            this.tabPageUDP.Controls.Add(this.groupBox10);
             resources.ApplyResources(this.tabPageUDP, "tabPageUDP");
+            this.tabPageUDP.Controls.Add(this.groupBox10);
             this.tabPageUDP.Name = "tabPageUDP";
             this.tabPageUDP.UseVisualStyleBackColor = true;
             // 
             // groupBox10
             // 
+            resources.ApplyResources(this.groupBox10, "groupBox10");
             this.groupBox10.Controls.Add(this.txtUdpListeners);
             this.groupBox10.Controls.Add(this.label74);
             this.groupBox10.Controls.Add(this.txtIncomingDatagramsDiscarded);
@@ -1862,14 +1875,13 @@
             this.groupBox10.Controls.Add(this.label79);
             this.groupBox10.Controls.Add(this.txtDatagramsReceived);
             this.groupBox10.Controls.Add(this.label80);
-            resources.ApplyResources(this.groupBox10, "groupBox10");
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.TabStop = false;
             // 
             // txtUdpListeners
             // 
-            this.txtUdpListeners.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtUdpListeners, "txtUdpListeners");
+            this.txtUdpListeners.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUdpListeners.Name = "txtUdpListeners";
             this.txtUdpListeners.ReadOnly = true;
             // 
@@ -1880,8 +1892,8 @@
             // 
             // txtIncomingDatagramsDiscarded
             // 
-            this.txtIncomingDatagramsDiscarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIncomingDatagramsDiscarded, "txtIncomingDatagramsDiscarded");
+            this.txtIncomingDatagramsDiscarded.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIncomingDatagramsDiscarded.Name = "txtIncomingDatagramsDiscarded";
             this.txtIncomingDatagramsDiscarded.ReadOnly = true;
             // 
@@ -1892,8 +1904,8 @@
             // 
             // txtIncomingDatagramsWithErrors
             // 
-            this.txtIncomingDatagramsWithErrors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtIncomingDatagramsWithErrors, "txtIncomingDatagramsWithErrors");
+            this.txtIncomingDatagramsWithErrors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIncomingDatagramsWithErrors.Name = "txtIncomingDatagramsWithErrors";
             this.txtIncomingDatagramsWithErrors.ReadOnly = true;
             // 
@@ -1904,8 +1916,8 @@
             // 
             // txtDatagramsSent
             // 
-            this.txtDatagramsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDatagramsSent, "txtDatagramsSent");
+            this.txtDatagramsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDatagramsSent.Name = "txtDatagramsSent";
             this.txtDatagramsSent.ReadOnly = true;
             // 
@@ -1916,8 +1928,8 @@
             // 
             // txtDatagramsReceived
             // 
-            this.txtDatagramsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDatagramsReceived, "txtDatagramsReceived");
+            this.txtDatagramsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDatagramsReceived.Name = "txtDatagramsReceived";
             this.txtDatagramsReceived.ReadOnly = true;
             // 
@@ -1928,10 +1940,10 @@
             // 
             // tabPageUDPListeners
             // 
+            resources.ApplyResources(this.tabPageUDPListeners, "tabPageUDPListeners");
             this.tabPageUDPListeners.Controls.Add(this.btnUDPLSelectAll);
             this.tabPageUDPListeners.Controls.Add(this.btnUDPLCopySelected);
             this.tabPageUDPListeners.Controls.Add(this.dataGridViewUDPListeners);
-            resources.ApplyResources(this.tabPageUDPListeners, "tabPageUDPListeners");
             this.tabPageUDPListeners.Name = "tabPageUDPListeners";
             this.tabPageUDPListeners.UseVisualStyleBackColor = true;
             // 
@@ -1951,6 +1963,7 @@
             // 
             // dataGridViewUDPListeners
             // 
+            resources.ApplyResources(this.dataGridViewUDPListeners, "dataGridViewUDPListeners");
             this.dataGridViewUDPListeners.AllowUserToAddRows = false;
             this.dataGridViewUDPListeners.AllowUserToDeleteRows = false;
             this.dataGridViewUDPListeners.AllowUserToResizeColumns = false;
@@ -1976,7 +1989,6 @@
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewUDPListeners.DefaultCellStyle = dataGridViewCellStyle15;
-            resources.ApplyResources(this.dataGridViewUDPListeners, "dataGridViewUDPListeners");
             this.dataGridViewUDPListeners.Name = "dataGridViewUDPListeners";
             this.dataGridViewUDPListeners.ReadOnly = true;
             this.dataGridViewUDPListeners.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -2007,14 +2019,15 @@
             // 
             // tabPageICMPv4
             // 
+            resources.ApplyResources(this.tabPageICMPv4, "tabPageICMPv4");
             this.tabPageICMPv4.Controls.Add(this.groupBox12);
             this.tabPageICMPv4.Controls.Add(this.groupBox11);
-            resources.ApplyResources(this.tabPageICMPv4, "tabPageICMPv4");
             this.tabPageICMPv4.Name = "tabPageICMPv4";
             this.tabPageICMPv4.UseVisualStyleBackColor = true;
             // 
             // groupBox12
             // 
+            resources.ApplyResources(this.groupBox12, "groupBox12");
             this.groupBox12.Controls.Add(this.txtTimestampRequestsSent);
             this.groupBox12.Controls.Add(this.label99);
             this.groupBox12.Controls.Add(this.txtTimestampRepliesSent);
@@ -2041,14 +2054,13 @@
             this.groupBox12.Controls.Add(this.label110);
             this.groupBox12.Controls.Add(this.txtAddressMaskRepliesSent);
             this.groupBox12.Controls.Add(this.label111);
-            resources.ApplyResources(this.groupBox12, "groupBox12");
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.TabStop = false;
             // 
             // txtTimestampRequestsSent
             // 
-            this.txtTimestampRequestsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtTimestampRequestsSent, "txtTimestampRequestsSent");
+            this.txtTimestampRequestsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTimestampRequestsSent.Name = "txtTimestampRequestsSent";
             this.txtTimestampRequestsSent.ReadOnly = true;
             // 
@@ -2059,8 +2071,8 @@
             // 
             // txtTimestampRepliesSent
             // 
-            this.txtTimestampRepliesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtTimestampRepliesSent, "txtTimestampRepliesSent");
+            this.txtTimestampRepliesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTimestampRepliesSent.Name = "txtTimestampRepliesSent";
             this.txtTimestampRepliesSent.ReadOnly = true;
             // 
@@ -2071,8 +2083,8 @@
             // 
             // txtTimeExceededMessagesSent
             // 
-            this.txtTimeExceededMessagesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtTimeExceededMessagesSent, "txtTimeExceededMessagesSent");
+            this.txtTimeExceededMessagesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTimeExceededMessagesSent.Name = "txtTimeExceededMessagesSent";
             this.txtTimeExceededMessagesSent.ReadOnly = true;
             // 
@@ -2083,8 +2095,8 @@
             // 
             // txtSourceQuenchesSent
             // 
-            this.txtSourceQuenchesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtSourceQuenchesSent, "txtSourceQuenchesSent");
+            this.txtSourceQuenchesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSourceQuenchesSent.Name = "txtSourceQuenchesSent";
             this.txtSourceQuenchesSent.ReadOnly = true;
             // 
@@ -2095,8 +2107,8 @@
             // 
             // txtRedirectsSent
             // 
-            this.txtRedirectsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtRedirectsSent, "txtRedirectsSent");
+            this.txtRedirectsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRedirectsSent.Name = "txtRedirectsSent";
             this.txtRedirectsSent.ReadOnly = true;
             // 
@@ -2107,8 +2119,8 @@
             // 
             // txtParameterProblemsSent
             // 
-            this.txtParameterProblemsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtParameterProblemsSent, "txtParameterProblemsSent");
+            this.txtParameterProblemsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtParameterProblemsSent.Name = "txtParameterProblemsSent";
             this.txtParameterProblemsSent.ReadOnly = true;
             // 
@@ -2119,8 +2131,8 @@
             // 
             // txtMessagesSent
             // 
-            this.txtMessagesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMessagesSent, "txtMessagesSent");
+            this.txtMessagesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMessagesSent.Name = "txtMessagesSent";
             this.txtMessagesSent.ReadOnly = true;
             // 
@@ -2131,8 +2143,8 @@
             // 
             // txtErrorsSent
             // 
-            this.txtErrorsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtErrorsSent, "txtErrorsSent");
+            this.txtErrorsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtErrorsSent.Name = "txtErrorsSent";
             this.txtErrorsSent.ReadOnly = true;
             // 
@@ -2143,8 +2155,8 @@
             // 
             // txtEchoRequestsSent
             // 
-            this.txtEchoRequestsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtEchoRequestsSent, "txtEchoRequestsSent");
+            this.txtEchoRequestsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEchoRequestsSent.Name = "txtEchoRequestsSent";
             this.txtEchoRequestsSent.ReadOnly = true;
             // 
@@ -2155,8 +2167,8 @@
             // 
             // txtEchoRepliesSent
             // 
-            this.txtEchoRepliesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtEchoRepliesSent, "txtEchoRepliesSent");
+            this.txtEchoRepliesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEchoRepliesSent.Name = "txtEchoRepliesSent";
             this.txtEchoRepliesSent.ReadOnly = true;
             // 
@@ -2167,8 +2179,8 @@
             // 
             // txtDestinationUnreachableMessagesSent
             // 
-            this.txtDestinationUnreachableMessagesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDestinationUnreachableMessagesSent, "txtDestinationUnreachableMessagesSent");
+            this.txtDestinationUnreachableMessagesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDestinationUnreachableMessagesSent.Name = "txtDestinationUnreachableMessagesSent";
             this.txtDestinationUnreachableMessagesSent.ReadOnly = true;
             // 
@@ -2179,8 +2191,8 @@
             // 
             // txtAddressMaskRequestsSent
             // 
-            this.txtAddressMaskRequestsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtAddressMaskRequestsSent, "txtAddressMaskRequestsSent");
+            this.txtAddressMaskRequestsSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddressMaskRequestsSent.Name = "txtAddressMaskRequestsSent";
             this.txtAddressMaskRequestsSent.ReadOnly = true;
             // 
@@ -2191,8 +2203,8 @@
             // 
             // txtAddressMaskRepliesSent
             // 
-            this.txtAddressMaskRepliesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtAddressMaskRepliesSent, "txtAddressMaskRepliesSent");
+            this.txtAddressMaskRepliesSent.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddressMaskRepliesSent.Name = "txtAddressMaskRepliesSent";
             this.txtAddressMaskRepliesSent.ReadOnly = true;
             // 
@@ -2203,6 +2215,7 @@
             // 
             // groupBox11
             // 
+            resources.ApplyResources(this.groupBox11, "groupBox11");
             this.groupBox11.Controls.Add(this.txtTimestampRequestsReceived);
             this.groupBox11.Controls.Add(this.label96);
             this.groupBox11.Controls.Add(this.txtTimestampRepliesReceived);
@@ -2229,14 +2242,13 @@
             this.groupBox11.Controls.Add(this.label94);
             this.groupBox11.Controls.Add(this.txtAddressMaskRepliesReceived);
             this.groupBox11.Controls.Add(this.label95);
-            resources.ApplyResources(this.groupBox11, "groupBox11");
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.TabStop = false;
             // 
             // txtTimestampRequestsReceived
             // 
-            this.txtTimestampRequestsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtTimestampRequestsReceived, "txtTimestampRequestsReceived");
+            this.txtTimestampRequestsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTimestampRequestsReceived.Name = "txtTimestampRequestsReceived";
             this.txtTimestampRequestsReceived.ReadOnly = true;
             // 
@@ -2247,8 +2259,8 @@
             // 
             // txtTimestampRepliesReceived
             // 
-            this.txtTimestampRepliesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtTimestampRepliesReceived, "txtTimestampRepliesReceived");
+            this.txtTimestampRepliesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTimestampRepliesReceived.Name = "txtTimestampRepliesReceived";
             this.txtTimestampRepliesReceived.ReadOnly = true;
             // 
@@ -2259,8 +2271,8 @@
             // 
             // txtTimeExceededMessagesReceived
             // 
-            this.txtTimeExceededMessagesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtTimeExceededMessagesReceived, "txtTimeExceededMessagesReceived");
+            this.txtTimeExceededMessagesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTimeExceededMessagesReceived.Name = "txtTimeExceededMessagesReceived";
             this.txtTimeExceededMessagesReceived.ReadOnly = true;
             // 
@@ -2271,8 +2283,8 @@
             // 
             // txtSourceQuenchesReceived
             // 
-            this.txtSourceQuenchesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtSourceQuenchesReceived, "txtSourceQuenchesReceived");
+            this.txtSourceQuenchesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSourceQuenchesReceived.Name = "txtSourceQuenchesReceived";
             this.txtSourceQuenchesReceived.ReadOnly = true;
             // 
@@ -2283,8 +2295,8 @@
             // 
             // txtRedirectsReceived
             // 
-            this.txtRedirectsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtRedirectsReceived, "txtRedirectsReceived");
+            this.txtRedirectsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRedirectsReceived.Name = "txtRedirectsReceived";
             this.txtRedirectsReceived.ReadOnly = true;
             // 
@@ -2295,8 +2307,8 @@
             // 
             // txtParameterProblemsReceived
             // 
-            this.txtParameterProblemsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtParameterProblemsReceived, "txtParameterProblemsReceived");
+            this.txtParameterProblemsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtParameterProblemsReceived.Name = "txtParameterProblemsReceived";
             this.txtParameterProblemsReceived.ReadOnly = true;
             // 
@@ -2307,8 +2319,8 @@
             // 
             // txtMessagesReceived
             // 
-            this.txtMessagesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMessagesReceived, "txtMessagesReceived");
+            this.txtMessagesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMessagesReceived.Name = "txtMessagesReceived";
             this.txtMessagesReceived.ReadOnly = true;
             // 
@@ -2319,8 +2331,8 @@
             // 
             // txtErrorsReceivedICMPv4
             // 
-            this.txtErrorsReceivedICMPv4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtErrorsReceivedICMPv4, "txtErrorsReceivedICMPv4");
+            this.txtErrorsReceivedICMPv4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtErrorsReceivedICMPv4.Name = "txtErrorsReceivedICMPv4";
             this.txtErrorsReceivedICMPv4.ReadOnly = true;
             // 
@@ -2331,8 +2343,8 @@
             // 
             // txtEchoRequestsReceived
             // 
-            this.txtEchoRequestsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtEchoRequestsReceived, "txtEchoRequestsReceived");
+            this.txtEchoRequestsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEchoRequestsReceived.Name = "txtEchoRequestsReceived";
             this.txtEchoRequestsReceived.ReadOnly = true;
             // 
@@ -2343,8 +2355,8 @@
             // 
             // txtEchoRepliesReceived
             // 
-            this.txtEchoRepliesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtEchoRepliesReceived, "txtEchoRepliesReceived");
+            this.txtEchoRepliesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEchoRepliesReceived.Name = "txtEchoRepliesReceived";
             this.txtEchoRepliesReceived.ReadOnly = true;
             // 
@@ -2355,8 +2367,8 @@
             // 
             // txtDestinationUnreachableMessagesReceived
             // 
-            this.txtDestinationUnreachableMessagesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDestinationUnreachableMessagesReceived, "txtDestinationUnreachableMessagesReceived");
+            this.txtDestinationUnreachableMessagesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDestinationUnreachableMessagesReceived.Name = "txtDestinationUnreachableMessagesReceived";
             this.txtDestinationUnreachableMessagesReceived.ReadOnly = true;
             // 
@@ -2367,8 +2379,8 @@
             // 
             // txtAddressMaskRequestsReceived
             // 
-            this.txtAddressMaskRequestsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtAddressMaskRequestsReceived, "txtAddressMaskRequestsReceived");
+            this.txtAddressMaskRequestsReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddressMaskRequestsReceived.Name = "txtAddressMaskRequestsReceived";
             this.txtAddressMaskRequestsReceived.ReadOnly = true;
             // 
@@ -2379,8 +2391,8 @@
             // 
             // txtAddressMaskRepliesReceived
             // 
-            this.txtAddressMaskRepliesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtAddressMaskRepliesReceived, "txtAddressMaskRepliesReceived");
+            this.txtAddressMaskRepliesReceived.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddressMaskRepliesReceived.Name = "txtAddressMaskRepliesReceived";
             this.txtAddressMaskRepliesReceived.ReadOnly = true;
             // 
@@ -2391,14 +2403,15 @@
             // 
             // tabPageICMPv6
             // 
+            resources.ApplyResources(this.tabPageICMPv6, "tabPageICMPv6");
             this.tabPageICMPv6.Controls.Add(this.groupBox13);
             this.tabPageICMPv6.Controls.Add(this.groupBox14);
-            resources.ApplyResources(this.tabPageICMPv6, "tabPageICMPv6");
             this.tabPageICMPv6.Name = "tabPageICMPv6";
             this.tabPageICMPv6.UseVisualStyleBackColor = true;
             // 
             // groupBox13
             // 
+            resources.ApplyResources(this.groupBox13, "groupBox13");
             this.groupBox13.Controls.Add(this.txtTimeExceededMessagesSentICMPv6);
             this.groupBox13.Controls.Add(this.label112);
             this.groupBox13.Controls.Add(this.txtRouterSolicitsSentICMPv6);
@@ -2431,14 +2444,13 @@
             this.groupBox13.Controls.Add(this.label142);
             this.groupBox13.Controls.Add(this.txtDestinationUnreachableMessagesSentICMPv6);
             this.groupBox13.Controls.Add(this.label143);
-            resources.ApplyResources(this.groupBox13, "groupBox13");
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.TabStop = false;
             // 
             // txtTimeExceededMessagesSentICMPv6
             // 
-            this.txtTimeExceededMessagesSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtTimeExceededMessagesSentICMPv6, "txtTimeExceededMessagesSentICMPv6");
+            this.txtTimeExceededMessagesSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTimeExceededMessagesSentICMPv6.Name = "txtTimeExceededMessagesSentICMPv6";
             this.txtTimeExceededMessagesSentICMPv6.ReadOnly = true;
             // 
@@ -2449,8 +2461,8 @@
             // 
             // txtRouterSolicitsSentICMPv6
             // 
-            this.txtRouterSolicitsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtRouterSolicitsSentICMPv6, "txtRouterSolicitsSentICMPv6");
+            this.txtRouterSolicitsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRouterSolicitsSentICMPv6.Name = "txtRouterSolicitsSentICMPv6";
             this.txtRouterSolicitsSentICMPv6.ReadOnly = true;
             // 
@@ -2461,8 +2473,8 @@
             // 
             // txtRouterAdvertisementsSentICMPv6
             // 
-            this.txtRouterAdvertisementsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtRouterAdvertisementsSentICMPv6, "txtRouterAdvertisementsSentICMPv6");
+            this.txtRouterAdvertisementsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRouterAdvertisementsSentICMPv6.Name = "txtRouterAdvertisementsSentICMPv6";
             this.txtRouterAdvertisementsSentICMPv6.ReadOnly = true;
             // 
@@ -2473,8 +2485,8 @@
             // 
             // txtRedirectsSentICMPv6
             // 
-            this.txtRedirectsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtRedirectsSentICMPv6, "txtRedirectsSentICMPv6");
+            this.txtRedirectsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRedirectsSentICMPv6.Name = "txtRedirectsSentICMPv6";
             this.txtRedirectsSentICMPv6.ReadOnly = true;
             // 
@@ -2485,8 +2497,8 @@
             // 
             // txtParameterProblemsSentICMPv6
             // 
-            this.txtParameterProblemsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtParameterProblemsSentICMPv6, "txtParameterProblemsSentICMPv6");
+            this.txtParameterProblemsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtParameterProblemsSentICMPv6.Name = "txtParameterProblemsSentICMPv6";
             this.txtParameterProblemsSentICMPv6.ReadOnly = true;
             // 
@@ -2497,8 +2509,8 @@
             // 
             // txtPacketTooBigMessagesSentICMPv6
             // 
-            this.txtPacketTooBigMessagesSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtPacketTooBigMessagesSentICMPv6, "txtPacketTooBigMessagesSentICMPv6");
+            this.txtPacketTooBigMessagesSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPacketTooBigMessagesSentICMPv6.Name = "txtPacketTooBigMessagesSentICMPv6";
             this.txtPacketTooBigMessagesSentICMPv6.ReadOnly = true;
             // 
@@ -2509,8 +2521,8 @@
             // 
             // txtNeighborSolicitsSentICMPv6
             // 
-            this.txtNeighborSolicitsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtNeighborSolicitsSentICMPv6, "txtNeighborSolicitsSentICMPv6");
+            this.txtNeighborSolicitsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNeighborSolicitsSentICMPv6.Name = "txtNeighborSolicitsSentICMPv6";
             this.txtNeighborSolicitsSentICMPv6.ReadOnly = true;
             // 
@@ -2521,8 +2533,8 @@
             // 
             // txtNeighborAdvertisementsSentICMPv6
             // 
-            this.txtNeighborAdvertisementsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtNeighborAdvertisementsSentICMPv6, "txtNeighborAdvertisementsSentICMPv6");
+            this.txtNeighborAdvertisementsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNeighborAdvertisementsSentICMPv6.Name = "txtNeighborAdvertisementsSentICMPv6";
             this.txtNeighborAdvertisementsSentICMPv6.ReadOnly = true;
             // 
@@ -2533,8 +2545,8 @@
             // 
             // txtMessagesSentICMPv6
             // 
-            this.txtMessagesSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMessagesSentICMPv6, "txtMessagesSentICMPv6");
+            this.txtMessagesSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMessagesSentICMPv6.Name = "txtMessagesSentICMPv6";
             this.txtMessagesSentICMPv6.ReadOnly = true;
             // 
@@ -2545,8 +2557,8 @@
             // 
             // txtMembershipReportsSentICMPv6
             // 
-            this.txtMembershipReportsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMembershipReportsSentICMPv6, "txtMembershipReportsSentICMPv6");
+            this.txtMembershipReportsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMembershipReportsSentICMPv6.Name = "txtMembershipReportsSentICMPv6";
             this.txtMembershipReportsSentICMPv6.ReadOnly = true;
             // 
@@ -2557,8 +2569,8 @@
             // 
             // txtMembershipReductionsSentICMPv6
             // 
-            this.txtMembershipReductionsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMembershipReductionsSentICMPv6, "txtMembershipReductionsSentICMPv6");
+            this.txtMembershipReductionsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMembershipReductionsSentICMPv6.Name = "txtMembershipReductionsSentICMPv6";
             this.txtMembershipReductionsSentICMPv6.ReadOnly = true;
             // 
@@ -2569,8 +2581,8 @@
             // 
             // txtMembershipQueriesSentICMPv6
             // 
-            this.txtMembershipQueriesSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMembershipQueriesSentICMPv6, "txtMembershipQueriesSentICMPv6");
+            this.txtMembershipQueriesSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMembershipQueriesSentICMPv6.Name = "txtMembershipQueriesSentICMPv6";
             this.txtMembershipQueriesSentICMPv6.ReadOnly = true;
             // 
@@ -2581,8 +2593,8 @@
             // 
             // txtErrorsSentICMPv6
             // 
-            this.txtErrorsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtErrorsSentICMPv6, "txtErrorsSentICMPv6");
+            this.txtErrorsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtErrorsSentICMPv6.Name = "txtErrorsSentICMPv6";
             this.txtErrorsSentICMPv6.ReadOnly = true;
             // 
@@ -2593,8 +2605,8 @@
             // 
             // txtEchoRequestsSentICMPv6
             // 
-            this.txtEchoRequestsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtEchoRequestsSentICMPv6, "txtEchoRequestsSentICMPv6");
+            this.txtEchoRequestsSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEchoRequestsSentICMPv6.Name = "txtEchoRequestsSentICMPv6";
             this.txtEchoRequestsSentICMPv6.ReadOnly = true;
             // 
@@ -2605,8 +2617,8 @@
             // 
             // txtEchoRepliesSentICMPv6
             // 
-            this.txtEchoRepliesSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtEchoRepliesSentICMPv6, "txtEchoRepliesSentICMPv6");
+            this.txtEchoRepliesSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEchoRepliesSentICMPv6.Name = "txtEchoRepliesSentICMPv6";
             this.txtEchoRepliesSentICMPv6.ReadOnly = true;
             // 
@@ -2617,8 +2629,8 @@
             // 
             // txtDestinationUnreachableMessagesSentICMPv6
             // 
-            this.txtDestinationUnreachableMessagesSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDestinationUnreachableMessagesSentICMPv6, "txtDestinationUnreachableMessagesSentICMPv6");
+            this.txtDestinationUnreachableMessagesSentICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDestinationUnreachableMessagesSentICMPv6.Name = "txtDestinationUnreachableMessagesSentICMPv6";
             this.txtDestinationUnreachableMessagesSentICMPv6.ReadOnly = true;
             // 
@@ -2629,6 +2641,7 @@
             // 
             // groupBox14
             // 
+            resources.ApplyResources(this.groupBox14, "groupBox14");
             this.groupBox14.Controls.Add(this.txtTimeExceededMessagesReceivedICMPv6);
             this.groupBox14.Controls.Add(this.label138);
             this.groupBox14.Controls.Add(this.txtRouterSolicitsReceivedICMPv6);
@@ -2661,14 +2674,13 @@
             this.groupBox14.Controls.Add(this.label136);
             this.groupBox14.Controls.Add(this.txtDestinationUnreachableMessagesReceivedICMPv6);
             this.groupBox14.Controls.Add(this.label137);
-            resources.ApplyResources(this.groupBox14, "groupBox14");
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.TabStop = false;
             // 
             // txtTimeExceededMessagesReceivedICMPv6
             // 
-            this.txtTimeExceededMessagesReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtTimeExceededMessagesReceivedICMPv6, "txtTimeExceededMessagesReceivedICMPv6");
+            this.txtTimeExceededMessagesReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTimeExceededMessagesReceivedICMPv6.Name = "txtTimeExceededMessagesReceivedICMPv6";
             this.txtTimeExceededMessagesReceivedICMPv6.ReadOnly = true;
             // 
@@ -2679,8 +2691,8 @@
             // 
             // txtRouterSolicitsReceivedICMPv6
             // 
-            this.txtRouterSolicitsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtRouterSolicitsReceivedICMPv6, "txtRouterSolicitsReceivedICMPv6");
+            this.txtRouterSolicitsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRouterSolicitsReceivedICMPv6.Name = "txtRouterSolicitsReceivedICMPv6";
             this.txtRouterSolicitsReceivedICMPv6.ReadOnly = true;
             // 
@@ -2691,8 +2703,8 @@
             // 
             // txtRouterAdvertisementsReceivedICMPv6
             // 
-            this.txtRouterAdvertisementsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtRouterAdvertisementsReceivedICMPv6, "txtRouterAdvertisementsReceivedICMPv6");
+            this.txtRouterAdvertisementsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRouterAdvertisementsReceivedICMPv6.Name = "txtRouterAdvertisementsReceivedICMPv6";
             this.txtRouterAdvertisementsReceivedICMPv6.ReadOnly = true;
             // 
@@ -2703,8 +2715,8 @@
             // 
             // txtRedirectsReceivedICMPv6
             // 
-            this.txtRedirectsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtRedirectsReceivedICMPv6, "txtRedirectsReceivedICMPv6");
+            this.txtRedirectsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRedirectsReceivedICMPv6.Name = "txtRedirectsReceivedICMPv6";
             this.txtRedirectsReceivedICMPv6.ReadOnly = true;
             // 
@@ -2715,8 +2727,8 @@
             // 
             // txtParameterProblemsReceivedICMPv6
             // 
-            this.txtParameterProblemsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtParameterProblemsReceivedICMPv6, "txtParameterProblemsReceivedICMPv6");
+            this.txtParameterProblemsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtParameterProblemsReceivedICMPv6.Name = "txtParameterProblemsReceivedICMPv6";
             this.txtParameterProblemsReceivedICMPv6.ReadOnly = true;
             // 
@@ -2727,8 +2739,8 @@
             // 
             // txtPacketTooBigMessagesReceivedICMPv6
             // 
-            this.txtPacketTooBigMessagesReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtPacketTooBigMessagesReceivedICMPv6, "txtPacketTooBigMessagesReceivedICMPv6");
+            this.txtPacketTooBigMessagesReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPacketTooBigMessagesReceivedICMPv6.Name = "txtPacketTooBigMessagesReceivedICMPv6";
             this.txtPacketTooBigMessagesReceivedICMPv6.ReadOnly = true;
             // 
@@ -2739,8 +2751,8 @@
             // 
             // txtNeighborSolicitsReceivedICMPv6
             // 
-            this.txtNeighborSolicitsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtNeighborSolicitsReceivedICMPv6, "txtNeighborSolicitsReceivedICMPv6");
+            this.txtNeighborSolicitsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNeighborSolicitsReceivedICMPv6.Name = "txtNeighborSolicitsReceivedICMPv6";
             this.txtNeighborSolicitsReceivedICMPv6.ReadOnly = true;
             // 
@@ -2751,8 +2763,8 @@
             // 
             // txtNeighborAdvertisementsReceivedICMPv6
             // 
-            this.txtNeighborAdvertisementsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtNeighborAdvertisementsReceivedICMPv6, "txtNeighborAdvertisementsReceivedICMPv6");
+            this.txtNeighborAdvertisementsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNeighborAdvertisementsReceivedICMPv6.Name = "txtNeighborAdvertisementsReceivedICMPv6";
             this.txtNeighborAdvertisementsReceivedICMPv6.ReadOnly = true;
             // 
@@ -2763,8 +2775,8 @@
             // 
             // txtMessagesReceivedICMPv6
             // 
-            this.txtMessagesReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMessagesReceivedICMPv6, "txtMessagesReceivedICMPv6");
+            this.txtMessagesReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMessagesReceivedICMPv6.Name = "txtMessagesReceivedICMPv6";
             this.txtMessagesReceivedICMPv6.ReadOnly = true;
             // 
@@ -2775,8 +2787,8 @@
             // 
             // txtMembershipReportsReceivedICMPv6
             // 
-            this.txtMembershipReportsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMembershipReportsReceivedICMPv6, "txtMembershipReportsReceivedICMPv6");
+            this.txtMembershipReportsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMembershipReportsReceivedICMPv6.Name = "txtMembershipReportsReceivedICMPv6";
             this.txtMembershipReportsReceivedICMPv6.ReadOnly = true;
             // 
@@ -2787,8 +2799,8 @@
             // 
             // txtMembershipReductionsReceivedICMPv6
             // 
-            this.txtMembershipReductionsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMembershipReductionsReceivedICMPv6, "txtMembershipReductionsReceivedICMPv6");
+            this.txtMembershipReductionsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMembershipReductionsReceivedICMPv6.Name = "txtMembershipReductionsReceivedICMPv6";
             this.txtMembershipReductionsReceivedICMPv6.ReadOnly = true;
             // 
@@ -2799,8 +2811,8 @@
             // 
             // txtMembershipQueriesReceivedICMPv6
             // 
-            this.txtMembershipQueriesReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtMembershipQueriesReceivedICMPv6, "txtMembershipQueriesReceivedICMPv6");
+            this.txtMembershipQueriesReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMembershipQueriesReceivedICMPv6.Name = "txtMembershipQueriesReceivedICMPv6";
             this.txtMembershipQueriesReceivedICMPv6.ReadOnly = true;
             // 
@@ -2811,8 +2823,8 @@
             // 
             // txtErrorsReceivedICMPv6
             // 
-            this.txtErrorsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtErrorsReceivedICMPv6, "txtErrorsReceivedICMPv6");
+            this.txtErrorsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtErrorsReceivedICMPv6.Name = "txtErrorsReceivedICMPv6";
             this.txtErrorsReceivedICMPv6.ReadOnly = true;
             // 
@@ -2823,8 +2835,8 @@
             // 
             // txtEchoRequestsReceivedICMPv6
             // 
-            this.txtEchoRequestsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtEchoRequestsReceivedICMPv6, "txtEchoRequestsReceivedICMPv6");
+            this.txtEchoRequestsReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEchoRequestsReceivedICMPv6.Name = "txtEchoRequestsReceivedICMPv6";
             this.txtEchoRequestsReceivedICMPv6.ReadOnly = true;
             // 
@@ -2835,8 +2847,8 @@
             // 
             // txtEchoRepliesReceivedICMPv6
             // 
-            this.txtEchoRepliesReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtEchoRepliesReceivedICMPv6, "txtEchoRepliesReceivedICMPv6");
+            this.txtEchoRepliesReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEchoRepliesReceivedICMPv6.Name = "txtEchoRepliesReceivedICMPv6";
             this.txtEchoRepliesReceivedICMPv6.ReadOnly = true;
             // 
@@ -2847,8 +2859,8 @@
             // 
             // txtDestinationUnreachableMessagesReceivedICMPv6
             // 
-            this.txtDestinationUnreachableMessagesReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.txtDestinationUnreachableMessagesReceivedICMPv6, "txtDestinationUnreachableMessagesReceivedICMPv6");
+            this.txtDestinationUnreachableMessagesReceivedICMPv6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDestinationUnreachableMessagesReceivedICMPv6.Name = "txtDestinationUnreachableMessagesReceivedICMPv6";
             this.txtDestinationUnreachableMessagesReceivedICMPv6.ReadOnly = true;
             // 
@@ -2873,9 +2885,9 @@
             // 
             // groupBoxGlobalVersion
             // 
+            resources.ApplyResources(this.groupBoxGlobalVersion, "groupBoxGlobalVersion");
             this.groupBoxGlobalVersion.Controls.Add(this.radioButtonIPv6);
             this.groupBoxGlobalVersion.Controls.Add(this.radioButtonIPv4);
-            resources.ApplyResources(this.groupBoxGlobalVersion, "groupBoxGlobalVersion");
             this.groupBoxGlobalVersion.Name = "groupBoxGlobalVersion";
             this.groupBoxGlobalVersion.TabStop = false;
             // 
@@ -2887,8 +2899,8 @@
             // 
             // comboInterfaces
             // 
-            this.comboInterfaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.comboInterfaces, "comboInterfaces");
+            this.comboInterfaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboInterfaces.FormattingEnabled = true;
             this.comboInterfaces.Name = "comboInterfaces";
             this.comboInterfaces.Sorted = true;
@@ -2900,23 +2912,11 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.label28);
             this.groupBox1.Controls.Add(this.comboInterfaces);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
-            // 
-            // txtMACaddress
-            // 
-            this.txtMACaddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.txtMACaddress, "txtMACaddress");
-            this.txtMACaddress.Name = "txtMACaddress";
-            this.txtMACaddress.ReadOnly = true;
-            // 
-            // label144
-            // 
-            resources.ApplyResources(this.label144, "label144");
-            this.label144.Name = "label144";
             // 
             // frmAdvanced
             // 

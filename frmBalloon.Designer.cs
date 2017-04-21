@@ -69,10 +69,10 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.btnAdvanced);
             this.panel1.Controls.Add(this.lblStatisticsTitle);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -127,6 +127,7 @@
             // 
             // gabTracker1
             // 
+            resources.ApplyResources(this.gabTracker1, "gabTracker1");
             this.gabTracker1.AutoMax = true;
             this.gabTracker1.AutoMaxPercentage = 110D;
             gabTrackerFeed1.Coefficient = 1D;
@@ -154,8 +155,7 @@
             this.gabTracker1.GridThickerThickness = 1F;
             this.gabTracker1.GridThickness = 1F;
             this.gabTracker1.LegendOpacity = ((byte)(75));
-            resources.ApplyResources(this.gabTracker1, "gabTracker1");
-            this.gabTracker1.MaxDataInMemory = 31;
+            this.gabTracker1.MaxDataInMemory = 32;
             this.gabTracker1.Maximum = 56;
             this.gabTracker1.Name = "gabTracker1";
             this.gabTracker1.RefreshRate = 500;
@@ -174,7 +174,7 @@
             this.Controls.Add(this.lblStatisticsData);
             this.DataBindings.Add(new System.Windows.Forms.Binding("Opacity", global::GabNetStats.Properties.Settings.Default, "BalloonOpacity", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmBalloon";
@@ -183,8 +183,8 @@
             this.ShowInTaskbar = false;
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBalloon_FormClosing);
-            this.Load += new System.EventHandler(this.frmBalloon_Load);
             this.VisibleChanged += new System.EventHandler(this.frmBalloon_VisibleChanged);
+            this.Resize += new System.EventHandler(this.frmBalloon_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbTrans)).EndInit();

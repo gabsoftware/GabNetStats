@@ -5,13 +5,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Threading;
-using System.Runtime.InteropServices;
 using System.Net.NetworkInformation;
 using System.Diagnostics;
 using System.Collections;
@@ -22,45 +18,45 @@ namespace GabNetStats
 {
     public partial class MainForm : Form
     {
-        private Thread hNetStatThread2 = null;
+        private Thread hNetStatThread2   = null;
         private Thread hNICRefreshThread = null;
 
-        private bool bSetIconContinue = true;
-        private bool bWorkContinue = true;
-        private bool customBandwidth = false;
+        private bool bSetIconContinue    = true;
+        private bool bWorkContinue       = true;
+        private bool customBandwidth     = false;
 
         internal enum eState
         {
             disconnected = 0,
-            limited = 1,
-            up = 2
+            limited      = 1,
+            up           = 2
         }
 
         internal enum eBandwithUnit : int
         {
-            bit = 8,
+            bit  = 8,
             Byte = 1
         }
         internal enum eBandwidthMultiplier : long
         {
-            un = 1,                // 2^0
-            K = 1024,            // 2^10
-            M = 1048576,         // 2^20
-            G = 1073741824,      // 2^30
-            T = 1099511627776    // 2^40
+            un = 1,               // 2^0
+            K  = 1024,            // 2^10
+            M  = 1048576,         // 2^20
+            G  = 1073741824,      // 2^30
+            T  = 1099511627776    // 2^40
         }
 
         internal static class SpeedUnitsByte
         {
             public static string Bytes = Res.str_Bytes;
-            public static string KiB = Res.str_KiB;
-            public static string MiB = Res.str_MiB;
-            public static string GiB = Res.str_GiB;
-            public static string TiB = Res.str_TiB;
+            public static string KiB   = Res.str_KiB;
+            public static string MiB   = Res.str_MiB;
+            public static string GiB   = Res.str_GiB;
+            public static string TiB   = Res.str_TiB;
         }
         internal static class SpeedUnitsBit
         {
-            public static string bit = Res.str_bit;
+            public static string bit  = Res.str_bit;
             public static string Kbit = Res.str_Kbit;
             public static string Mbit = Res.str_Mbit;
             public static string Gbit = Res.str_Gbit;
@@ -70,9 +66,9 @@ namespace GabNetStats
 
         static eState connectionStatus;
 
-        static int nDuration = 50;
+        static int nDuration   = 50;
         static int nNICRefresh = 10000; //time interval for refreshing the NIC list (10s by default)
-        static int nbNIC = 0;
+        static int nbNIC       = 0;
         static long bandwidthDownloadLvl1;
         static long bandwidthDownloadLvl2;
         static long bandwidthDownloadLvl3;
@@ -83,59 +79,59 @@ namespace GabNetStats
         static long bandwidthUploadLvl3;
         static long bandwidthUploadLvl4;
         static long bandwidthUploadLvl5;
-        private const int avgSpeedNbItems = 100;
+        private const int avgSpeedNbItems = 50;
 
 
         static Queue<long> queueReception = new Queue<long>(avgSpeedNbItems);
-        static Queue<long> queueEmission = new Queue<long>(avgSpeedNbItems);
+        static Queue<long> queueEmission  = new Queue<long>(avgSpeedNbItems);
 
-        static NetworkInterface[] interfaces = NetworkInterface.GetAllNetworkInterfaces();
-        static ArrayList selectedInterfaces = new ArrayList();
+        static NetworkInterface[] interfaces         = NetworkInterface.GetAllNetworkInterfaces();
+        static ArrayList          selectedInterfaces = new ArrayList();
         static IPGlobalProperties properties;
         static IPGlobalStatistics ipstat;
 
-        static Icon iconActive_blue_blue = Properties.Resources.active_blue_blue;
-        static Icon iconActive_blue_green = Properties.Resources.active_blue_green;
-        static Icon iconActive_blue_yellow = Properties.Resources.active_blue_yellow;
-        static Icon iconActive_blue_orange = Properties.Resources.active_blue_orange;
-        static Icon iconActive_blue_red = Properties.Resources.active_blue_red;
-        static Icon iconActive_green_blue = Properties.Resources.active_green_blue;
-        static Icon iconActive_green_green = Properties.Resources.active_green_green;
-        static Icon iconActive_green_yellow = Properties.Resources.active_green_yellow;
-        static Icon iconActive_green_orange = Properties.Resources.active_green_orange;
-        static Icon iconActive_green_red = Properties.Resources.active_green_red;
-        static Icon iconActive_yellow_blue = Properties.Resources.active_yellow_blue;
-        static Icon iconActive_yellow_green = Properties.Resources.active_yellow_green;
+        static Icon iconActive_blue_blue     = Properties.Resources.active_blue_blue;
+        static Icon iconActive_blue_green    = Properties.Resources.active_blue_green;
+        static Icon iconActive_blue_yellow   = Properties.Resources.active_blue_yellow;
+        static Icon iconActive_blue_orange   = Properties.Resources.active_blue_orange;
+        static Icon iconActive_blue_red      = Properties.Resources.active_blue_red;
+        static Icon iconActive_green_blue    = Properties.Resources.active_green_blue;
+        static Icon iconActive_green_green   = Properties.Resources.active_green_green;
+        static Icon iconActive_green_yellow  = Properties.Resources.active_green_yellow;
+        static Icon iconActive_green_orange  = Properties.Resources.active_green_orange;
+        static Icon iconActive_green_red     = Properties.Resources.active_green_red;
+        static Icon iconActive_yellow_blue   = Properties.Resources.active_yellow_blue;
+        static Icon iconActive_yellow_green  = Properties.Resources.active_yellow_green;
         static Icon iconActive_yellow_yellow = Properties.Resources.active_yellow_yellow;
         static Icon iconActive_yellow_orange = Properties.Resources.active_yellow_orange;
-        static Icon iconActive_yellow_red = Properties.Resources.active_yellow_red;
-        static Icon iconActive_orange_blue = Properties.Resources.active_orange_blue;
-        static Icon iconActive_orange_green = Properties.Resources.active_orange_green;
+        static Icon iconActive_yellow_red    = Properties.Resources.active_yellow_red;
+        static Icon iconActive_orange_blue   = Properties.Resources.active_orange_blue;
+        static Icon iconActive_orange_green  = Properties.Resources.active_orange_green;
         static Icon iconActive_orange_yellow = Properties.Resources.active_orange_yellow;
         static Icon iconActive_orange_orange = Properties.Resources.active_orange_orange;
-        static Icon iconActive_orange_red = Properties.Resources.active_orange_red;
-        static Icon iconActive_red_blue = Properties.Resources.active_red_blue;
-        static Icon iconActive_red_green = Properties.Resources.active_red_green;
-        static Icon iconActive_red_yellow = Properties.Resources.active_red_yellow;
-        static Icon iconActive_red_orange = Properties.Resources.active_red_orange;
-        static Icon iconActive_red_red = Properties.Resources.active_red_red;
+        static Icon iconActive_orange_red    = Properties.Resources.active_orange_red;
+        static Icon iconActive_red_blue      = Properties.Resources.active_red_blue;
+        static Icon iconActive_red_green     = Properties.Resources.active_red_green;
+        static Icon iconActive_red_yellow    = Properties.Resources.active_red_yellow;
+        static Icon iconActive_red_orange    = Properties.Resources.active_red_orange;
+        static Icon iconActive_red_red       = Properties.Resources.active_red_red;
 
-        static Icon iconInactive = Properties.Resources.inactive;
+        static Icon iconInactive             = Properties.Resources.inactive;
 
-        static Icon iconSend_blue = Properties.Resources.send_blue;
-        static Icon iconSend_green = Properties.Resources.send_green;
-        static Icon iconSend_yellow = Properties.Resources.send_yellow;
-        static Icon iconSend_orange = Properties.Resources.send_orange;
-        static Icon iconSend_red = Properties.Resources.send_red;
+        static Icon iconSend_blue            = Properties.Resources.send_blue;
+        static Icon iconSend_green           = Properties.Resources.send_green;
+        static Icon iconSend_yellow          = Properties.Resources.send_yellow;
+        static Icon iconSend_orange          = Properties.Resources.send_orange;
+        static Icon iconSend_red             = Properties.Resources.send_red;
 
-        static Icon iconReceive_blue = Properties.Resources.receive_blue;
-        static Icon iconReceive_green = Properties.Resources.receive_green;
-        static Icon iconReceive_yellow = Properties.Resources.receive_yellow;
-        static Icon iconReceive_orange = Properties.Resources.receive_orange;
-        static Icon iconReceive_red = Properties.Resources.receive_red;
+        static Icon iconReceive_blue         = Properties.Resources.receive_blue;
+        static Icon iconReceive_green        = Properties.Resources.receive_green;
+        static Icon iconReceive_yellow       = Properties.Resources.receive_yellow;
+        static Icon iconReceive_orange       = Properties.Resources.receive_orange;
+        static Icon iconReceive_red          = Properties.Resources.receive_red;
 
-        static Icon iconDisconnected = Properties.Resources.netshell_195;
-        static Icon iconLimited = Properties.Resources.netshell_IDI_CFI_TRAY_WIRED_WARNING;
+        static Icon iconDisconnected         = Properties.Resources.netshell_195;
+        static Icon iconLimited              = Properties.Resources.netshell_IDI_CFI_TRAY_WIRED_WARNING;
 
         static frmBalloon fBal;
 
@@ -161,11 +157,11 @@ namespace GabNetStats
 
         private void OnLoad(object sender, EventArgs e)
         {
+            // fill empty data
             while (queueReception.Count < avgSpeedNbItems)
             {
                 queueReception.Enqueue(0);
             }
-
             while (queueEmission.Count < avgSpeedNbItems)
             {
                 queueEmission.Enqueue(0);
@@ -181,37 +177,37 @@ namespace GabNetStats
             {
                 Settings.Default.BandwidthDownloadMultiplier = (long)eBandwidthMultiplier.un;
             }
-            if (Settings.Default.BandwidthUploadMultiplier == 0)
+            if (Settings.Default.BandwidthUploadMultiplier   == 0)
             {
-                Settings.Default.BandwidthUploadMultiplier = (long)eBandwidthMultiplier.un;
+                Settings.Default.BandwidthUploadMultiplier   = (long)eBandwidthMultiplier.un;
             }
 
             bandwidthDownloadLvl5 = Settings.Default.BandwidthDownload * Settings.Default.BandwidthDownloadMultiplier / Settings.Default.BandwidthUnit;
-            bandwidthUploadLvl5 = Settings.Default.BandwidthUpload * Settings.Default.BandwidthUploadMultiplier / Settings.Default.BandwidthUnit;
+            bandwidthUploadLvl5   = Settings.Default.BandwidthUpload   * Settings.Default.BandwidthUploadMultiplier   / Settings.Default.BandwidthUnit;
             bandwidthDownloadLvl4 = (bandwidthDownloadLvl5 * 4) / 5;
             bandwidthDownloadLvl3 = (bandwidthDownloadLvl5 * 3) / 5;
             bandwidthDownloadLvl2 = (bandwidthDownloadLvl5 * 2) / 5;
             bandwidthDownloadLvl1 = (bandwidthDownloadLvl5 * 1) / 5;
-            bandwidthUploadLvl4 = (bandwidthUploadLvl5 * 4) / 5;
-            bandwidthUploadLvl3 = (bandwidthUploadLvl5 * 3) / 5;
-            bandwidthUploadLvl2 = (bandwidthUploadLvl5 * 2) / 5;
-            bandwidthUploadLvl1 = (bandwidthUploadLvl5 * 1) / 5;
+            bandwidthUploadLvl4   = (bandwidthUploadLvl5   * 4) / 5;
+            bandwidthUploadLvl3   = (bandwidthUploadLvl5   * 3) / 5;
+            bandwidthUploadLvl2   = (bandwidthUploadLvl5   * 2) / 5;
+            bandwidthUploadLvl1   = (bandwidthUploadLvl5   * 1) / 5;
 
             customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
 
             //registers the networkchange event handlers
             NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(NetworkChange_NetworkAvailabilityChanged);
-            NetworkChange.NetworkAddressChanged += new NetworkAddressChangedEventHandler(NetworkChange_NetworkAddressChanged);
+            NetworkChange.NetworkAddressChanged      += new NetworkAddressChangedEventHandler     (NetworkChange_NetworkAddressChanged     );
 
-            hNetStatThread2 = new Thread(new ThreadStart(this.NetStatThread));
+            hNetStatThread2              = new Thread(new ThreadStart(this.NetStatThread));
             hNetStatThread2.IsBackground = true;
-            hNetStatThread2.Name = "hNetStatThread2";
+            hNetStatThread2.Name         = "hNetStatThread2";
             hNetStatThread2.Start();
 
             //used in case more than one interface is UP and this number is changing.
-            hNICRefreshThread = new Thread(new ThreadStart(this.NICRefreshThread));
+            hNICRefreshThread              = new Thread(new ThreadStart(this.NICRefreshThread));
             hNICRefreshThread.IsBackground = true;
-            hNICRefreshThread.Name = "hNICRefreshThread";
+            hNICRefreshThread.Name         = "hNICRefreshThread";
             hNICRefreshThread.Start();
 
             foreach (System.Diagnostics.ProcessThread t in System.Diagnostics.Process.GetCurrentProcess().Threads)
@@ -245,21 +241,21 @@ namespace GabNetStats
             {
                 Settings.Default.BandwidthDownloadMultiplier = (long)eBandwidthMultiplier.un;
             }
-            if (Settings.Default.BandwidthUploadMultiplier == 0)
+            if (Settings.Default.BandwidthUploadMultiplier   == 0)
             {
-                Settings.Default.BandwidthUploadMultiplier = (long)eBandwidthMultiplier.un;
+                Settings.Default.BandwidthUploadMultiplier   = (long)eBandwidthMultiplier.un;
             }
 
             bandwidthDownloadLvl5 = Settings.Default.BandwidthDownload * Settings.Default.BandwidthDownloadMultiplier / Settings.Default.BandwidthUnit;
-            bandwidthUploadLvl5 = Settings.Default.BandwidthUpload * Settings.Default.BandwidthUploadMultiplier / Settings.Default.BandwidthUnit;
+            bandwidthUploadLvl5   = Settings.Default.BandwidthUpload   * Settings.Default.BandwidthUploadMultiplier   / Settings.Default.BandwidthUnit;
             bandwidthDownloadLvl4 = (bandwidthDownloadLvl5 * 4) / 5;
             bandwidthDownloadLvl3 = (bandwidthDownloadLvl5 * 3) / 5;
             bandwidthDownloadLvl2 = (bandwidthDownloadLvl5 * 2) / 5;
             bandwidthDownloadLvl1 = (bandwidthDownloadLvl5 * 1) / 5;
-            bandwidthUploadLvl4 = (bandwidthUploadLvl5 * 4) / 5;
-            bandwidthUploadLvl3 = (bandwidthUploadLvl5 * 3) / 5;
-            bandwidthUploadLvl2 = (bandwidthUploadLvl5 * 2) / 5;
-            bandwidthUploadLvl1 = (bandwidthUploadLvl5 * 1) / 5;
+            bandwidthUploadLvl4   = (bandwidthUploadLvl5   * 4) / 5;
+            bandwidthUploadLvl3   = (bandwidthUploadLvl5   * 3) / 5;
+            bandwidthUploadLvl2   = (bandwidthUploadLvl5   * 2) / 5;
+            bandwidthUploadLvl1   = (bandwidthUploadLvl5   * 1) / 5;
 
             customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
         }
@@ -334,9 +330,9 @@ namespace GabNetStats
             {
                 if (!enable)
                 {
-                    tmp = tmp.Replace(";" + mac, ""); //mac is second to last value
-                    tmp = tmp.Replace(mac + ";", ""); //mac is first value
-                    tmp = tmp.Replace(mac, ""); //mac was the only value
+                    tmp      = tmp.Replace(";" + mac, ""); //mac is second to last value
+                    tmp      = tmp.Replace(mac + ";", ""); //mac is first value
+                    tmp      = tmp.Replace(mac      , ""); //mac was the only value
                     modified = true;
                 }
             }
@@ -344,7 +340,7 @@ namespace GabNetStats
             {
                 if (enable)
                 {
-                    tmp = tmp + (empty ? String.Empty : ";") + mac;
+                    tmp      = tmp + (empty ? String.Empty : ";") + mac;
                     modified = true;
                 }
             }
@@ -369,10 +365,18 @@ namespace GabNetStats
             NetworkInterface nic = (NetworkInterface)itm.Tag;
 
             //we open the adapter properties
-            Process.Start(
-                "explorer.exe",
-                "/N,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\::{21EC2020-3AEA-1069-A2DD-08002B30309D}\\::{7007ACC7-3202-11D1-AAD2-00805FC1270E}\\::" + nic.Id
+
+            try
+            {
+                Process.Start(
+                    "explorer.exe",
+                    "/N,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\::{21EC2020-3AEA-1069-A2DD-08002B30309D}\\::{7007ACC7-3202-11D1-AAD2-00805FC1270E}\\::" + nic.Id
                 );
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Res.str_ErrorCrash);
+            }
         }
 
         private void OnAdapterCheckStateChanged(object sender, EventArgs e)
@@ -390,61 +394,118 @@ namespace GabNetStats
         private void NetworkConnectionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //opens the Network Connections applet
-            Process.Start(
-                "explorer.exe",
-                "/N,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\::{21EC2020-3AEA-1069-A2DD-08002B30309D}\\::{7007ACC7-3202-11D1-AAD2-00805FC1270E}"
+            try
+            {
+                Process.Start(
+                    "explorer.exe",
+                    "/N,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\::{21EC2020-3AEA-1069-A2DD-08002B30309D}\\::{7007ACC7-3202-11D1-AAD2-00805FC1270E}"
                 );
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Res.str_ErrorCrash);
+            }
         }
 
         private void NetworkSharingCenterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //opens the Network Sharing Center applet
-            Process.Start(
-                "explorer.exe",
-                "/N,::{26EE0668-A00A-44D7-9371-BEB064C98683}\\0\\::{8E908FC9-BECC-40F6-915B-F4CA0E70D03D}"
+            try
+            {
+                Process.Start(
+                    "explorer.exe",
+                    "/N,::{26EE0668-A00A-44D7-9371-BEB064C98683}\\0\\::{8E908FC9-BECC-40F6-915B-F4CA0E70D03D}"
                 );
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Res.str_ErrorCrash);
+            }
         }
 
         private void FirewallSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //opens the Firewall Settings applet
-            Process.Start(
-                "explorer.exe",
-                "/N,::{26EE0668-A00A-44D7-9371-BEB064C98683}\\0\\::{4026492F-2F69-46B8-B9BF-5654FC07E423}"
+            try
+            {
+                Process.Start(
+                    "explorer.exe",
+                    "/N,::{26EE0668-A00A-44D7-9371-BEB064C98683}\\0\\::{4026492F-2F69-46B8-B9BF-5654FC07E423}"
                 );
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Res.str_ErrorCrash);
+            }
         }
 
         private void manageWirelessNetworksToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //opens the Manage wireless networks applet
-            Process.Start("Shell:::{1FA9085F-25A2-489B-85D4-86326EEDCD87}");
+            try
+            {
+                Process.Start("Shell:::{1FA9085F-25A2-489B-85D4-86326EEDCD87}");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Res.str_ErrorCrash);
+            }            
         }
 
         private void homeGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //opens the Home Group Settings applet
-            Process.Start(
-                "explorer.exe",
-                "/N,::{26EE0668-A00A-44D7-9371-BEB064C98683}\\0\\::{67CA7650-96E6-4FDD-BB43-A8E774F73A57}"
-                );            
+            try
+            {
+                Process.Start(
+                    "explorer.exe",
+                    "/N,::{26EE0668-A00A-44D7-9371-BEB064C98683}\\0\\::{67CA7650-96E6-4FDD-BB43-A8E774F73A57}"
+                );
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Res.str_ErrorCrash);
+            }
         }
 
         private void networkdomainworkgroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //opens the Domain/workgroup applet
-            Process.Start("Shell:::{208D2C60-3AEA-1069-A2D7-08002B30309D}");            
+            try
+            {
+                Process.Start("Shell:::{208D2C60-3AEA-1069-A2D7-08002B30309D}");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Res.str_ErrorCrash);
+            }
+            
         }
 
         private void networkToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //opens the network applet
-            Process.Start("Shell:::{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}");            
+            try
+            {
+                Process.Start("Shell:::{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Res.str_ErrorCrash);
+            }            
         }
 
         private void networkMapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //opens the Domain/workgroup applet
-            Process.Start("Shell:::{E7DE9B1A-7533-4556-9484-B26FB486475E}");     
+            try
+            {
+                Process.Start("Shell:::{E7DE9B1A-7533-4556-9484-B26FB486475E}");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(Res.str_NotAvailableWinver);
+            }
         }
 
         private void PopulateNICs(ToolStripMenuItem parent)
@@ -545,12 +606,12 @@ namespace GabNetStats
                     itm.Tag = netInterface;
 
                     //we generate its subitem
-                    itm2 = new ToolStripMenuItem(Res.str_IncludeInStatistics);
-                    itm2.Name = "itm_include_" + netInterface.Id;
-                    itm2.CheckOnClick = true;
-                    itm2.Checked = Settings.Default.EnabledInterfaceMACList.Contains(mac);
+                    itm2                    = new ToolStripMenuItem(Res.str_IncludeInStatistics);
+                    itm2.Name               = "itm_include_" + netInterface.Id;
+                    itm2.CheckOnClick       = true;
+                    itm2.Checked            = Settings.Default.EnabledInterfaceMACList.Contains(mac);
                     itm2.CheckStateChanged += new EventHandler(OnAdapterCheckStateChanged);
-                    itm2.Tag = netInterface;
+                    itm2.Tag                = netInterface;
                     
                     //we add the subitem to the item
                     itm.DropDownItems.Add(itm2);
@@ -617,8 +678,8 @@ namespace GabNetStats
                 {
                     //we get some quick statistics about the number of network interfaces...
                     properties = IPGlobalProperties.GetIPGlobalProperties();
-                    ipstat = properties.GetIPv4GlobalStatistics();
-                    nb = ipstat.NumberOfInterfaces;
+                    ipstat     = properties.GetIPv4GlobalStatistics();
+                    nb         = ipstat.NumberOfInterfaces;
 
                     //if number changed since last time AND we are not displaying the context menu then
                     if (nb != nbNIC && this.NetworkAdaptersToolStripMenuItem.Visible == false)
@@ -651,44 +712,41 @@ namespace GabNetStats
 
         private void NetStatThread()
         {
-            int nCounter = 0;
-            long bytesReceived = 0;
-            long bytesSent = 0;
-            long oldbytesReceived = 0;
-            long oldbytesSent = 0;
+            int nCounter            = 0;
+            long bytesReceived      = 0;
+            long bytesSent          = 0;
+            long oldbytesReceived   = 0;
+            long oldbytesSent       = 0;
             long lAvgSpeedReception = 0;
-            long lAvgSpeedEmission = 0;
-            long rawSpeedReception = 0;
-            long rawSpeedEmission = 0;
+            long lAvgSpeedEmission  = 0;
+            long rawSpeedReception  = 0;
+            long rawSpeedEmission   = 0;
             long[] tRawSpeed;
 
             IPv4InterfaceStatistics ipv4stats = null;
 
             try
             {
-
-
                 while (bWorkContinue)
                 {
-
                     if (bSetIconContinue)
                     {
                         bSetIconContinue = false;
-                        bytesReceived = 0;
-                        bytesSent = 0;
+                        bytesReceived    = 0;
+                        bytesSent        = 0;
 
                         if (connectionStatus == eState.disconnected)
                         {
                             this.notifyIconActivity.Icon = iconDisconnected;
-                            rawSpeedReception = 0;
-                            rawSpeedEmission = 0;
+                            rawSpeedReception            = 0;
+                            rawSpeedEmission             = 0;
                             goto skip;
                         }
                         if (connectionStatus == eState.limited)
                         {
                             this.notifyIconActivity.Icon = iconLimited;
-                            rawSpeedReception = 0;
-                            rawSpeedEmission = 0;
+                            rawSpeedReception            = 0;
+                            rawSpeedEmission             = 0;
                             goto skip;
                         }
 
@@ -698,9 +756,9 @@ namespace GabNetStats
                         {
                             if (Settings.Default.EnabledInterfaceMACList.Contains(netInterface.GetPhysicalAddress().ToString()))
                             {
-                                ipv4stats = netInterface.GetIPv4Statistics();
+                                ipv4stats      = netInterface.GetIPv4Statistics();
                                 bytesReceived += ipv4stats.BytesReceived;
-                                bytesSent += ipv4stats.BytesSent;
+                                bytesSent     += ipv4stats.BytesSent;
                             }
                         }
 
@@ -709,10 +767,10 @@ namespace GabNetStats
                         if (bytesReceived != oldbytesReceived && bytesSent != oldbytesSent)
                         {
                             rawSpeedReception = Math.Abs((1000 / nDuration) * (bytesReceived - oldbytesReceived));
-                            rawSpeedEmission = Math.Abs((1000 / nDuration) * (bytesSent - oldbytesSent));
-                            oldbytesReceived = bytesReceived;
-                            oldbytesSent = bytesSent;
-                            nCounter = 0;
+                            rawSpeedEmission  = Math.Abs((1000 / nDuration) * (bytesSent - oldbytesSent));
+                            oldbytesReceived  = bytesReceived;
+                            oldbytesSent      = bytesSent;
+                            nCounter          = 0;
 
                             if (customBandwidth)
                             {
@@ -831,9 +889,9 @@ namespace GabNetStats
                         {
 
                             rawSpeedReception = Math.Abs((1000 / nDuration) * (bytesReceived - oldbytesReceived));
-                            rawSpeedEmission = 0;
-                            oldbytesReceived = bytesReceived;
-                            nCounter = 0;
+                            rawSpeedEmission  = 0;
+                            oldbytesReceived  = bytesReceived;
+                            nCounter          = 0;
 
                             if (customBandwidth)
                             {
@@ -867,9 +925,9 @@ namespace GabNetStats
                         {
 
                             rawSpeedReception = 0;
-                            rawSpeedEmission = Math.Abs((1000 / nDuration) * (bytesSent - oldbytesSent));
-                            oldbytesSent = bytesSent;
-                            nCounter = 0;
+                            rawSpeedEmission  = Math.Abs((1000 / nDuration) * (bytesSent - oldbytesSent));
+                            oldbytesSent      = bytesSent;
+                            nCounter          = 0;
 
                             if (customBandwidth)
                             {
@@ -906,10 +964,10 @@ namespace GabNetStats
 
                         if (nCounter == 5)
                         {
-                            nCounter = 0;
+                            nCounter                     = 0;
                             this.notifyIconActivity.Icon = iconInactive;
-                            rawSpeedReception = 0;
-                            rawSpeedEmission = 0;
+                            rawSpeedReception            = 0;
+                            rawSpeedEmission             = 0;
                         }
 
                     skip:

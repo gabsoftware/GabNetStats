@@ -112,15 +112,15 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 13</value>
   </data>
@@ -132,12 +132,6 @@
   </data>
   <data name="radioCustomSpeed.Text" xml:space="preserve">
     <value>Spécifier les capacités de la bande passante (icône multicolore)</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Effets visuels pour la bande passante</value>
-  </data>
-  <data name="grpBandwidthPreferences.Text" xml:space="preserve">
-    <value>Préférences de la bande passante</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 13</value>
@@ -163,11 +157,17 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Envoi</value>
   </data>
+  <data name="grpBandwidthPreferences.Text" xml:space="preserve">
+    <value>Préférences de la bande passante</value>
+  </data>
   <data name="radioDefault.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 17</value>
   </data>
   <data name="radioDefault.Text" xml:space="preserve">
     <value>Defaut (icône bleue)</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Effets visuels pour la bande passante</value>
   </data>
   <data name="textBoxDuration.Location" type="System.Drawing.Point, System.Drawing">
     <value>143, 16</value>

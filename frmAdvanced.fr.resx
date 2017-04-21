@@ -112,42 +112,12 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="tabPageGlobal.Text" xml:space="preserve">
-    <value>Statistiques globales</value>
-  </data>
-  <data name="tabPageNetworkInterfaces.Text" xml:space="preserve">
-    <value>Statistiques des interfaces réseau</value>
-  </data>
-  <data name="tabPageTCP.Text" xml:space="preserve">
-    <value>Statistiques TCP</value>
-  </data>
-  <data name="tabPageTCPConnections.Text" xml:space="preserve">
-    <value>Connexions TCP</value>
-  </data>
-  <data name="tabPageTCPListeners.Text" xml:space="preserve">
-    <value>TCP en écoute</value>
-  </data>
-  <data name="tabPageUDP.Text" xml:space="preserve">
-    <value>Statistiques UDP</value>
-  </data>
-  <data name="tabPageUDPListeners.Text" xml:space="preserve">
-    <value>UDP en écoute</value>
-  </data>
-  <data name="tabPageICMPv4.Text" xml:space="preserve">
-    <value>Statistiques ICMPv4</value>
-  </data>
-  <data name="tabPageICMPv6.Text" xml:space="preserve">
-    <value>Statistiques ICMPv6</value>
-  </data>
-  <data name="groupBoxGlobalOutbound.Text" xml:space="preserve">
-    <value>Paquets sortants</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 13</value>
   </data>
@@ -172,8 +142,8 @@
   <data name="label19.Text" xml:space="preserve">
     <value>Rejets de paquets transmis</value>
   </data>
-  <data name="groupBoxGlobalInbound.Text" xml:space="preserve">
-    <value>Paquets entrants</value>
+  <data name="groupBoxGlobalOutbound.Text" xml:space="preserve">
+    <value>Paquets sortants</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 13</value>
@@ -217,8 +187,8 @@
   <data name="label17.Text" xml:space="preserve">
     <value>Paquets reçus</value>
   </data>
-  <data name="groupBoxGlobalFragmentation.Text" xml:space="preserve">
-    <value>Fragmentation des paquets</value>
+  <data name="groupBoxGlobalInbound.Text" xml:space="preserve">
+    <value>Paquets entrants</value>
   </data>
   <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 13</value>
@@ -253,8 +223,8 @@
   <data name="label27.Text" xml:space="preserve">
     <value>Fragmentation de paquets échoués</value>
   </data>
-  <data name="groupBoxGlobalMisc.Text" xml:space="preserve">
-    <value>Divers</value>
+  <data name="groupBoxGlobalFragmentation.Text" xml:space="preserve">
+    <value>Fragmentation des paquets</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>79, 13</value>
@@ -316,8 +286,11 @@
   <data name="label1.Text" xml:space="preserve">
     <value>TTL par défaut</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Propriétés (2)</value>
+  <data name="groupBoxGlobalMisc.Text" xml:space="preserve">
+    <value>Divers</value>
+  </data>
+  <data name="tabPageGlobal.Text" xml:space="preserve">
+    <value>Statistiques globales</value>
   </data>
   <data name="label64.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 13</value>
@@ -361,8 +334,8 @@
   <data name="label60.Text" xml:space="preserve">
     <value>Index de l'int. de loopback</value>
   </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Configuration IP</value>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Propriétés (2)</value>
   </data>
   <data name="label57.Size" type="System.Drawing.Size, System.Drawing">
     <value>145, 13</value>
@@ -424,8 +397,8 @@
   <data name="label54.Text" xml:space="preserve">
     <value>Adresses Anycast</value>
   </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Propriétés (1)</value>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Configuration IP</value>
   </data>
   <data name="label42.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
@@ -457,8 +430,8 @@
   <data name="label37.Text" xml:space="preserve">
     <value>A une adresse APIPA</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Envoi</value>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Propriétés (1)</value>
   </data>
   <data name="label41.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 13</value>
@@ -496,8 +469,8 @@
   <data name="label51.Text" xml:space="preserve">
     <value>Octets envoyés</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Réception</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Envoi</value>
   </data>
   <data name="label40.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 13</value>
@@ -535,8 +508,11 @@
   <data name="label38.Text" xml:space="preserve">
     <value>Octets reçus</value>
   </data>
-  <data name="groupBox9.Text" xml:space="preserve">
-    <value>Statistiques des erreurs TCP</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Réception</value>
+  </data>
+  <data name="tabPageNetworkInterfaces.Text" xml:space="preserve">
+    <value>Statistiques des interfaces réseau</value>
   </data>
   <data name="label81.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 13</value>
@@ -544,17 +520,8 @@
   <data name="label81.Text" xml:space="preserve">
     <value>Erreurs TCP reçues</value>
   </data>
-  <data name="groupBox8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 231</value>
-  </data>
-  <data name="groupBox8.Text" xml:space="preserve">
-    <value>Statistiques des segments TCP</value>
-  </data>
-  <data name="txtSegmentsResent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 133</value>
-  </data>
-  <data name="txtSegmentsResent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Statistiques des erreurs TCP</value>
   </data>
   <data name="label82.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 13</value>
@@ -562,23 +529,11 @@
   <data name="label82.Text" xml:space="preserve">
     <value>Segments TCP reçus</value>
   </data>
-  <data name="txtSegmentsReceived.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 107</value>
-  </data>
-  <data name="txtSegmentsReceived.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
-  </data>
   <data name="label83.Size" type="System.Drawing.Size, System.Drawing">
     <value>225, 13</value>
   </data>
   <data name="label83.Text" xml:space="preserve">
     <value>Réinitialisations TCP envoyées (drapeau RST)</value>
-  </data>
-  <data name="txtResetsSent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 81</value>
-  </data>
-  <data name="txtResetsSent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
   </data>
   <data name="label84.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 13</value>
@@ -586,23 +541,11 @@
   <data name="label84.Text" xml:space="preserve">
     <value>Segments TCP réenvoyés</value>
   </data>
-  <data name="txtSegmentsSent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 159</value>
-  </data>
-  <data name="txtSegmentsSent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
-  </data>
   <data name="label85.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 13</value>
   </data>
   <data name="label85.Text" xml:space="preserve">
     <value>Segments TCP envoyés</value>
-  </data>
-  <data name="txtMinimumTransmissionTimeout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 55</value>
-  </data>
-  <data name="txtMinimumTransmissionTimeout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
   </data>
   <data name="label86.Size" type="System.Drawing.Size, System.Drawing">
     <value>290, 13</value>
@@ -610,20 +553,14 @@
   <data name="label86.Text" xml:space="preserve">
     <value>Limite de temps minimum de transmission des segments TCP</value>
   </data>
-  <data name="txtMaximumTransmissionTimeout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 29</value>
-  </data>
-  <data name="txtMaximumTransmissionTimeout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
-  </data>
   <data name="label93.Size" type="System.Drawing.Size, System.Drawing">
     <value>293, 13</value>
   </data>
   <data name="label93.Text" xml:space="preserve">
     <value>Limite de temps maximum de transmission des segments TCP</value>
   </data>
-  <data name="groupBox7.Text" xml:space="preserve">
-    <value>Statistiques des connexions TCP</value>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Statistiques des segments TCP</value>
   </data>
   <data name="label68.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 13</value>
@@ -667,11 +604,14 @@
   <data name="label75.Text" xml:space="preserve">
     <value>Requêtes de connexion TCP acceptées</value>
   </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Statistiques des connexions TCP</value>
+  </data>
+  <data name="tabPageTCP.Text" xml:space="preserve">
+    <value>Statistiques TCP</value>
+  </data>
   <data name="btnSelectAll.Text" xml:space="preserve">
     <value>Sélectionner tout</value>
-  </data>
-  <data name="btnCopySelection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 54</value>
   </data>
   <data name="btnCopySelection.Text" xml:space="preserve">
     <value>Copier les cellules sélectionnées dans le presse-papiers</value>
@@ -691,11 +631,11 @@
   <data name="colState.HeaderText" xml:space="preserve">
     <value>Etat</value>
   </data>
+  <data name="tabPageTCPConnections.Text" xml:space="preserve">
+    <value>Connexions TCP</value>
+  </data>
   <data name="btnTCPLSelectAll.Text" xml:space="preserve">
     <value>Sélectionner tout</value>
-  </data>
-  <data name="btnTCPLCopySelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 51</value>
   </data>
   <data name="btnTCPLCopySelected.Text" xml:space="preserve">
     <value>Copier les cellules sélectionnées dans le presse-papiers</value>
@@ -703,8 +643,8 @@
   <data name="colEndPoint.HeaderText" xml:space="preserve">
     <value>Adresse</value>
   </data>
-  <data name="groupBox10.Text" xml:space="preserve">
-    <value>Statistiques des connexions UDP</value>
+  <data name="tabPageTCPListeners.Text" xml:space="preserve">
+    <value>TCP en écoute</value>
   </data>
   <data name="label74.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 13</value>
@@ -736,11 +676,14 @@
   <data name="label80.Text" xml:space="preserve">
     <value>Datagrammes reçus</value>
   </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Statistiques des connexions UDP</value>
+  </data>
+  <data name="tabPageUDP.Text" xml:space="preserve">
+    <value>Statistiques UDP</value>
+  </data>
   <data name="btnUDPLSelectAll.Text" xml:space="preserve">
     <value>Sélectionner tout</value>
-  </data>
-  <data name="btnUDPLCopySelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 50</value>
   </data>
   <data name="btnUDPLCopySelected.Text" xml:space="preserve">
     <value>Copier les cellules sélectionnées dans le presse-papiers</value>
@@ -748,11 +691,83 @@
   <data name="colUDPLEndPoint.HeaderText" xml:space="preserve">
     <value>Adresse</value>
   </data>
+  <data name="tabPageUDPListeners.Text" xml:space="preserve">
+    <value>UDP en écoute</value>
+  </data>
+  <data name="label99.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 13</value>
+  </data>
+  <data name="label99.Text" xml:space="preserve">
+    <value>Requêtes d'horodatage</value>
+  </data>
+  <data name="label100.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 13</value>
+  </data>
+  <data name="label100.Text" xml:space="preserve">
+    <value>Réponses d'horodatage</value>
+  </data>
+  <data name="label101.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="label101.Text" xml:space="preserve">
+    <value>Temps limite écoulé</value>
+  </data>
+  <data name="label102.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 13</value>
+  </data>
+  <data name="label102.Text" xml:space="preserve">
+    <value>Sources étouffées</value>
+  </data>
+  <data name="label103.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="label103.Text" xml:space="preserve">
+    <value>Redirections</value>
+  </data>
+  <data name="label104.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 13</value>
+  </data>
+  <data name="label104.Text" xml:space="preserve">
+    <value>Problèmes de paramètres</value>
+  </data>
+  <data name="label106.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="label106.Text" xml:space="preserve">
+    <value>Erreurs</value>
+  </data>
+  <data name="label107.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="label107.Text" xml:space="preserve">
+    <value>Requêtes Echo</value>
+  </data>
+  <data name="label108.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="label108.Text" xml:space="preserve">
+    <value>Réponses Echo</value>
+  </data>
+  <data name="label109.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 13</value>
+  </data>
+  <data name="label109.Text" xml:space="preserve">
+    <value>Destination inaccessible</value>
+  </data>
+  <data name="label110.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 13</value>
+  </data>
+  <data name="label110.Text" xml:space="preserve">
+    <value>Requêtes de masque d'adresse</value>
+  </data>
+  <data name="label111.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 13</value>
+  </data>
+  <data name="label111.Text" xml:space="preserve">
+    <value>Réponses de masques d'adresse</value>
+  </data>
   <data name="groupBox12.Text" xml:space="preserve">
     <value>Messages ICMPv4 envoyés</value>
-  </data>
-  <data name="groupBox11.Text" xml:space="preserve">
-    <value>Messages ICMPv4 reçus</value>
   </data>
   <data name="label96.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 13</value>
@@ -826,8 +841,11 @@
   <data name="label95.Text" xml:space="preserve">
     <value>Réponses de masques d'adresse</value>
   </data>
-  <data name="groupBox13.Text" xml:space="preserve">
-    <value>Messages ICMPv6 envoyés</value>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Messages ICMPv4 reçus</value>
+  </data>
+  <data name="tabPageICMPv4.Text" xml:space="preserve">
+    <value>Statistiques ICMPv4</value>
   </data>
   <data name="label112.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 13</value>
@@ -916,8 +934,8 @@
   <data name="label143.Text" xml:space="preserve">
     <value>Destination inaccessible</value>
   </data>
-  <data name="groupBox14.Text" xml:space="preserve">
-    <value>Messages ICMPv6 reçus</value>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>Messages ICMPv6 envoyés</value>
   </data>
   <data name="label138.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 13</value>
@@ -1006,6 +1024,12 @@
   <data name="label137.Text" xml:space="preserve">
     <value>Destination inaccessible</value>
   </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>Messages ICMPv6 reçus</value>
+  </data>
+  <data name="tabPageICMPv6.Text" xml:space="preserve">
+    <value>Statistiques ICMPv6</value>
+  </data>
   <data name="groupBoxGlobalVersion.Text" xml:space="preserve">
     <value>Version du protocole IP</value>
   </data>
@@ -1017,118 +1041,6 @@
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Interface réseau</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label111.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label111.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 13</value>
-  </data>
-  <data name="label111.Text" xml:space="preserve">
-    <value>Réponses de masques d'adresse</value>
-  </data>
-  <data name="label110.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label110.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 13</value>
-  </data>
-  <data name="label110.Text" xml:space="preserve">
-    <value>Requêtes de masque d'adresse</value>
-  </data>
-  <data name="label109.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label109.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 13</value>
-  </data>
-  <data name="label109.Text" xml:space="preserve">
-    <value>Destination inaccessible</value>
-  </data>
-  <data name="label108.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label108.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 13</value>
-  </data>
-  <data name="label108.Text" xml:space="preserve">
-    <value>Réponses Echo</value>
-  </data>
-  <data name="label107.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label107.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
-  </data>
-  <data name="label107.Text" xml:space="preserve">
-    <value>Requêtes Echo</value>
-  </data>
-  <data name="label106.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label106.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
-  </data>
-  <data name="label106.Text" xml:space="preserve">
-    <value>Erreurs</value>
-  </data>
-  <data name="label105.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label104.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label104.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 13</value>
-  </data>
-  <data name="label104.Text" xml:space="preserve">
-    <value>Problèmes de paramètres</value>
-  </data>
-  <data name="label103.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label103.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
-  </data>
-  <data name="label103.Text" xml:space="preserve">
-    <value>Redirections</value>
-  </data>
-  <data name="label102.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label102.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 13</value>
-  </data>
-  <data name="label102.Text" xml:space="preserve">
-    <value>Sources étouffées</value>
-  </data>
-  <data name="label101.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label101.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 13</value>
-  </data>
-  <data name="label101.Text" xml:space="preserve">
-    <value>Temps limite écoulé</value>
-  </data>
-  <data name="label100.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label100.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 13</value>
-  </data>
-  <data name="label100.Text" xml:space="preserve">
-    <value>Réponses d'horodatage</value>
-  </data>
-  <data name="label99.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label99.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 13</value>
-  </data>
-  <data name="label99.Text" xml:space="preserve">
-    <value>Requêtes d'horodatage</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

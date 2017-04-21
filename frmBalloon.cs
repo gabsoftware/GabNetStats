@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -74,13 +71,13 @@ namespace GabNetStats
             gabTracker1.Feeds[1].Value = Math.Round(lAvgSpeedEmission / 1024D, 2);
 
             fSpeedReception = MainForm.computeSpeed(rawSpeedReception, ref sSpeedReception, 1);
-            fSpeedEmission = MainForm.computeSpeed(rawSpeedEmission, ref sSpeedEmission, 1);
+            fSpeedEmission  = MainForm.computeSpeed(rawSpeedEmission , ref sSpeedEmission , 1);
 
             fAvgSpeedReception = MainForm.computeSpeed(lAvgSpeedReception, ref sAvgSpeedReception, 1);
-            fAvgSpeedEmission = MainForm.computeSpeed(lAvgSpeedEmission, ref sAvgSpeedEmission, 1);
+            fAvgSpeedEmission  = MainForm.computeSpeed(lAvgSpeedEmission , ref sAvgSpeedEmission , 1);
 
             fReceived = MainForm.computeSpeed(bytesReceived, ref sReceived, 1);
-            fSent = MainForm.computeSpeed(bytesSent, ref sSent, 1);
+            fSent     = MainForm.computeSpeed(bytesSent    , ref sSent    , 1);
 
             builder.Remove(0, builder.Length);
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawReceptionSpeed, fSpeedReception.ToString(Math.Floor(fSpeedReception) != fSpeedReception ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedReception);
@@ -185,9 +182,9 @@ namespace GabNetStats
             Settings.Default.Save();
         }
 
-        private void frmBalloon_Load(object sender, EventArgs e)
+        private void frmBalloon_Resize(object sender, EventArgs e)
         {
-
+            this.gabTracker1.MaxDataInMemory = this.Width / 10 + 1;
         }
     }
 }

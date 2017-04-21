@@ -92,15 +92,16 @@ namespace GabNetStats
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.grpBandwidthPreferences);
             this.groupBox1.Controls.Add(this.radioDefault);
             this.groupBox1.Controls.Add(this.radioCustomSpeed);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // grpBandwidthPreferences
             // 
+            resources.ApplyResources(this.grpBandwidthPreferences, "grpBandwidthPreferences");
             this.grpBandwidthPreferences.Controls.Add(this.cbUpload);
             this.grpBandwidthPreferences.Controls.Add(this.label4);
             this.grpBandwidthPreferences.Controls.Add(this.cbDownload);
@@ -112,15 +113,14 @@ namespace GabNetStats
             this.grpBandwidthPreferences.Controls.Add(this.txtDownload);
             this.grpBandwidthPreferences.Controls.Add(this.txtUpload);
             this.grpBandwidthPreferences.Controls.Add(this.label3);
-            resources.ApplyResources(this.grpBandwidthPreferences, "grpBandwidthPreferences");
             this.grpBandwidthPreferences.Name = "grpBandwidthPreferences";
             this.grpBandwidthPreferences.TabStop = false;
             // 
             // cbUpload
             // 
+            resources.ApplyResources(this.cbUpload, "cbUpload");
             this.cbUpload.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUpload.FormattingEnabled = true;
-            resources.ApplyResources(this.cbUpload, "cbUpload");
             this.cbUpload.Name = "cbUpload";
             this.cbUpload.SelectedIndexChanged += new System.EventHandler(this.cbUpload_SelectedIndexChanged);
             // 
@@ -131,9 +131,9 @@ namespace GabNetStats
             // 
             // cbDownload
             // 
+            resources.ApplyResources(this.cbDownload, "cbDownload");
             this.cbDownload.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDownload.FormattingEnabled = true;
-            resources.ApplyResources(this.cbDownload, "cbDownload");
             this.cbDownload.Name = "cbDownload";
             this.cbDownload.SelectedIndexChanged += new System.EventHandler(this.cbDownload_SelectedIndexChanged);
             // 
