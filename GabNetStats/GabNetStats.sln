@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GabNetStats", "GabNetStats\GabNetStats.csproj", "{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GabNetStats", "GabNetStats.csproj", "{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{902445D6-A2D4-4833-A5F0-3B808560D892} = {902445D6-A2D4-4833-A5F0-3B808560D892}
 	EndProjectSection

@@ -271,7 +271,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GabTracker\GabTracker\GabTracker.csproj">
+    <ProjectReference Include="..\..\GabTracker\GabTracker\GabTracker.csproj">
       <Project>{902445d6-a2d4-4833-a5f0-3b808560d892}</Project>
       <Name>GabTracker</Name>
     </ProjectReference>
