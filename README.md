@@ -7,3 +7,7 @@ Features :
 * Detailed statistics about network connections
 * Context menu for easy access to network configuration
 * Real-time network graph
+
+## Dependencies
+
+GabTracker : https://github.com/gabsoftware/GabTracker
