@@ -202,5 +202,17 @@ namespace GabNetStats.Properties {
                 this["KnownInterfaceMACList"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("xp")]
+        public string IconSet {
+            get {
+                return ((string)(this["IconSet"]));
+            }
+            set {
+                this["IconSet"] = value;
+            }
+        }
     }
 }

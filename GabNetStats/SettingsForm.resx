@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 39</value>
+  </data>
   <data name="rbBits.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 17</value>
   </data>
@@ -125,7 +128,10 @@
     <value>41, 13</value>
   </data>
   <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>320, 297</value>
+    <value>320, 360</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Settings</value>
@@ -134,11 +140,14 @@
   <data name="textBoxDuration.MaxLength" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;checkBoxStartup.Name" xml:space="preserve">
-    <value>checkBoxStartup</value>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="radioDefault.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 20</value>
+    <value>6, 80</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -156,14 +165,20 @@
   <data name="buttonCancel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;lblUpload.Name" xml:space="preserve">
-    <value>lblUpload</value>
+  <data name="txtIconSet.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
   <data name="cbDownload.Location" type="System.Drawing.Point, System.Drawing">
     <value>205, 68</value>
   </data>
-  <data name="rbBytes.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>(should be a folder in the "icons" subfolder)</value>
+  </data>
+  <data name="txtIconSet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 36</value>
   </data>
   <data name="cbUpload.Location" type="System.Drawing.Point, System.Drawing">
     <value>205, 93</value>
@@ -174,8 +189,8 @@
   <data name="buttonOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -186,8 +201,8 @@
   <data name="checkBoxStartup.Text" xml:space="preserve">
     <value>Load at Windows Startup</value>
   </data>
-  <data name="rbBits.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
+  <data name="&gt;&gt;lblUpload.Name" xml:space="preserve">
+    <value>lblUpload</value>
   </data>
   <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 26</value>
@@ -211,7 +226,7 @@
     <value>44, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>409, 335</value>
+    <value>409, 398</value>
   </data>
   <data name="checkBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 17</value>
@@ -233,6 +248,9 @@
   </data>
   <data name="&gt;&gt;rbBytes.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtIconSet.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="rbBytes.Location" type="System.Drawing.Point, System.Drawing">
     <value>231, 35</value>
@@ -264,8 +282,14 @@
   <data name="txtDownload.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 20</value>
   </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
   <data name="lblUpload.Text" xml:space="preserve">
     <value>/s</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;radioDefault.Name" xml:space="preserve">
     <value>radioDefault</value>
@@ -273,23 +297,26 @@
   <data name="&gt;&gt;txtUpload.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Upload</value>
+  <data name="&gt;&gt;rbBytes.Parent" xml:space="preserve">
+    <value>grpBandwidthPreferences</value>
   </data>
   <data name="&gt;&gt;textBoxDuration.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="txtUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 95</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Icon set</value>
   </data>
   <data name="&gt;&gt;txtUpload.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="radioCustomSpeed.Text" xml:space="preserve">
+    <value>Specify bandwidth (multicolor icon)</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="lblUpload.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -302,6 +329,9 @@
   </data>
   <data name="&gt;&gt;grpBandwidthPreferences.Parent" xml:space="preserve">
     <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;txtIconSet.Name" xml:space="preserve">
+    <value>txtIconSet</value>
   </data>
   <data name="&gt;&gt;rbBits.Name" xml:space="preserve">
     <value>rbBits</value>
@@ -336,11 +366,17 @@
   <data name="&gt;&gt;txtDownload.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
   <data name="buttonOK.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="&gt;&gt;rbBits.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 35</value>
@@ -390,8 +426,14 @@
   <data name="radioDefault.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="&gt;&gt;txtIconSet.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="txtUpload.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
+  </data>
+  <data name="rbBytes.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -401,9 +443,6 @@
   </data>
   <data name="buttonOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 26</value>
-  </data>
-  <data name="radioCustomSpeed.Text" xml:space="preserve">
-    <value>Specify bandwidth (multicolor icon)</value>
   </data>
   <data name="rbBytes.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -424,13 +463,19 @@
     <value>111, 17</value>
   </data>
   <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 297</value>
+    <value>230, 360</value>
   </data>
   <data name="&gt;&gt;grpBandwidthPreferences.Name" xml:space="preserve">
     <value>grpBandwidthPreferences</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 39</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="grpBandwidthPreferences.Size" type="System.Drawing.Size, System.Drawing">
     <value>341, 132</value>
@@ -450,6 +495,9 @@
   <data name="&gt;&gt;lblDownload.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;checkBoxStartup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 57</value>
   </data>
@@ -459,6 +507,9 @@
   <data name="textBoxDuration.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lblDownload.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 13</value>
   </data>
@@ -466,7 +517,7 @@
     <value>$this</value>
   </data>
   <data name="grpBandwidthPreferences.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 79</value>
+    <value>19, 139</value>
   </data>
   <data name="rbBits.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -496,25 +547,34 @@
     <value>NoControl</value>
   </data>
   <data name="&gt;&gt;radioCustomSpeed.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>5</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 98</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="&gt;&gt;cbUpload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonOK.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
   <data name="lblDownload.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="txtDownload.Text" xml:space="preserve">
     <value>12500000</value>
   </data>
   <data name="&gt;&gt;rbBits.Parent" xml:space="preserve">
     <value>grpBandwidthPreferences</value>
+  </data>
+  <data name="txtUpload.Text" xml:space="preserve">
+    <value>12500000</value>
   </data>
   <data name="&gt;&gt;lblDownload.Parent" xml:space="preserve">
     <value>grpBandwidthPreferences</value>
@@ -526,10 +586,10 @@
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;grpBandwidthPreferences.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;radioDefault.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -537,8 +597,8 @@
   <data name="&gt;&gt;lblUpload.Parent" xml:space="preserve">
     <value>grpBandwidthPreferences</value>
   </data>
-  <data name="&gt;&gt;cbUpload.Name" xml:space="preserve">
-    <value>cbUpload</value>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;buttonOK.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -552,6 +612,9 @@
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
   </data>
+  <data name="&gt;&gt;checkBoxStartup.Name" xml:space="preserve">
+    <value>checkBoxStartup</value>
+  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Download</value>
   </data>
@@ -563,6 +626,9 @@
   </data>
   <data name="&gt;&gt;buttonOK.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtIconSet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="rbBytes.Text" xml:space="preserve">
     <value>Bytes/s</value>
@@ -576,8 +642,8 @@
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
-  <data name="&gt;&gt;checkBoxStartup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 13</value>
@@ -594,6 +660,9 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Blink Duration (ms):</value>
   </data>
@@ -603,11 +672,14 @@
   <data name="rbBytes.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 17</value>
   </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 13</value>
+  </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="radioCustomSpeed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 44</value>
+    <value>6, 104</value>
   </data>
   <data name="radioCustomSpeed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -624,6 +696,9 @@
   <data name="checkBoxStartup.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="txtIconSet.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 20</value>
+  </data>
   <data name="lblDownload.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -631,16 +706,25 @@
     <value>NoControl</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>380, 230</value>
+    <value>380, 297</value>
   </data>
-  <data name="txtUpload.Text" xml:space="preserve">
-    <value>12500000</value>
+  <data name="rbBits.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="txtUpload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 95</value>
+  </data>
   <data name="cbDownload.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Upload</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>10</value>
@@ -649,7 +733,7 @@
     <value>txtDownload</value>
   </data>
   <data name="checkBoxStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 306</value>
+    <value>12, 369</value>
   </data>
   <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -666,9 +750,6 @@
   <data name="&gt;&gt;lblDownload.Name" xml:space="preserve">
     <value>lblDownload</value>
   </data>
-  <data name="&gt;&gt;cbUpload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 13</value>
   </data>
@@ -681,8 +762,8 @@
   <data name="&gt;&gt;radioCustomSpeed.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;rbBytes.Parent" xml:space="preserve">
-    <value>grpBandwidthPreferences</value>
+  <data name="&gt;&gt;cbUpload.Name" xml:space="preserve">
+    <value>cbUpload</value>
   </data>
   <data name="&gt;&gt;cbDownload.Parent" xml:space="preserve">
     <value>grpBandwidthPreferences</value>

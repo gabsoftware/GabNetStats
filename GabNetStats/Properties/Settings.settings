@@ -47,5 +47,8 @@
     <Setting Name="KnownInterfaceMACList" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="IconSet" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xp</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

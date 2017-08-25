@@ -280,6 +280,7 @@ namespace GabNetStats
                 hStartKey.Close();
             }
 
+            Settings.Default.IconSet = txtIconSet.Text;
 
             Settings.Default.BandwidthVisualsDefault = radioDefault.Checked;
             Settings.Default.BandwidthVisualsCustom = radioCustomSpeed.Checked;

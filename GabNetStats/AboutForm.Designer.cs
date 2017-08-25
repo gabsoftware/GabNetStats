@@ -41,65 +41,42 @@ namespace GabNetStats
             // 
             // label1
             // 
-            this.label1.AccessibleDescription = null;
-            this.label1.AccessibleName = null;
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
             // buttonOK
             // 
-            this.buttonOK.AccessibleDescription = null;
-            this.buttonOK.AccessibleName = null;
-            resources.ApplyResources(this.buttonOK, "buttonOK");
-            this.buttonOK.BackgroundImage = null;
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonOK.Font = null;
+            resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.AccessibleDescription = null;
-            this.pictureBox1.AccessibleName = null;
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.BackgroundImage = null;
-            this.pictureBox1.Font = null;
-            this.pictureBox1.ImageLocation = null;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
             // linkLabel1
             // 
-            this.linkLabel1.AccessibleDescription = null;
-            this.linkLabel1.AccessibleName = null;
             resources.ApplyResources(this.linkLabel1, "linkLabel1");
-            this.linkLabel1.Font = null;
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.TabStop = true;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnClick);
             // 
             // label2
             // 
-            this.label2.AccessibleDescription = null;
-            this.label2.AccessibleName = null;
             resources.ApplyResources(this.label2, "label2");
-            this.label2.Font = null;
             this.label2.Name = "label2";
             // 
             // label3
             // 
-            this.label3.AccessibleDescription = null;
-            this.label3.AccessibleName = null;
             resources.ApplyResources(this.label3, "label3");
-            this.label3.Font = null;
             this.label3.Name = "label3";
             // 
             // linkLabel2
             // 
-            this.linkLabel2.AccessibleDescription = null;
-            this.linkLabel2.AccessibleName = null;
             resources.ApplyResources(this.linkLabel2, "linkLabel2");
-            this.linkLabel2.Font = null;
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.TabStop = true;
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnClick);
@@ -107,11 +84,8 @@ namespace GabNetStats
             // AboutForm
             // 
             this.AcceptButton = this.buttonOK;
-            this.AccessibleDescription = null;
-            this.AccessibleName = null;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = null;
             this.CancelButton = this.buttonOK;
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.label3);
@@ -120,11 +94,10 @@ namespace GabNetStats
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Font = null;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";
-            this.Opacity = 0.9;
+            this.Opacity = 0.9D;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Load += new System.EventHandler(this.AboutForm_Load);

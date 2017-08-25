@@ -122,16 +122,28 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
+    <value>145, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Durée Clignotement (ms):</value>
+    <value>Raffraichissement icône (ms):</value>
   </data>
   <data name="radioCustomSpeed.Size" type="System.Drawing.Size, System.Drawing">
     <value>324, 17</value>
   </data>
   <data name="radioCustomSpeed.Text" xml:space="preserve">
     <value>Spécifier les capacités de la bande passante (icône multicolore)</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 13</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>(doit être un répertoire du répertoire "icons")</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Jeu d'icônes</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 13</value>
@@ -164,19 +176,23 @@
     <value>121, 17</value>
   </data>
   <data name="radioDefault.Text" xml:space="preserve">
-    <value>Defaut (icône bleue)</value>
+    <value>Défaut (icône bleue)</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Effets visuels pour la bande passante</value>
   </data>
   <data name="textBoxDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 16</value>
+    <value>163, 16</value>
   </data>
   <data name="checkBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 17</value>
   </data>
   <data name="checkBoxStartup.Text" xml:space="preserve">
     <value>Lancer au démarrage</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Options</value>

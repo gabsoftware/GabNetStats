@@ -36,6 +36,9 @@ namespace GabNetStats
             this.txtDownload = new System.Windows.Forms.TextBox();
             this.txtUpload = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtIconSet = new System.Windows.Forms.TextBox();
             this.grpBandwidthPreferences = new System.Windows.Forms.GroupBox();
             this.cbUpload = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -93,11 +96,31 @@ namespace GabNetStats
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.txtIconSet);
             this.groupBox1.Controls.Add(this.grpBandwidthPreferences);
             this.groupBox1.Controls.Add(this.radioDefault);
             this.groupBox1.Controls.Add(this.radioCustomSpeed);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // txtIconSet
+            // 
+            resources.ApplyResources(this.txtIconSet, "txtIconSet");
+            this.txtIconSet.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::GabNetStats.Properties.Settings.Default, "IconSet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.txtIconSet.Name = "txtIconSet";
+            this.txtIconSet.Text = global::GabNetStats.Properties.Settings.Default.IconSet;
             // 
             // grpBandwidthPreferences
             // 
@@ -246,5 +269,8 @@ namespace GabNetStats
         private System.Windows.Forms.RadioButton rbBytes;
         private System.Windows.Forms.RadioButton rbBits;
         private System.Windows.Forms.ComboBox cbUpload;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtIconSet;
+        private System.Windows.Forms.Label label6;
     }
 }
