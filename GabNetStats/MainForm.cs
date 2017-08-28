@@ -20,10 +20,12 @@ namespace GabNetStats
     {
         private Thread hNetStatThread2   = null;
         private Thread hNICRefreshThread = null;
+        private Thread hAutoPingThread   = null;
 
         private bool bSetIconContinue    = true;
         private bool bWorkContinue       = true;
         private bool customBandwidth     = false;
+        private bool bAutoPingContinue   = true;
 
         internal enum eState
         {
@@ -134,6 +136,11 @@ namespace GabNetStats
         static Icon iconDisconnected         = Properties.Resources.netshell_195;
         static Icon iconLimited              = Properties.Resources.netshell_IDI_CFI_TRAY_WIRED_WARNING;
 
+        static Icon iconCircle_green  = Properties.Resources.circle_green;
+        static Icon iconCircle_red    = Properties.Resources.circle_red;
+        static Icon iconCircle_grey   = Properties.Resources.circle_grey;
+        static Icon iconCircle_orange = Properties.Resources.circle_orange;
+
         static frmBalloon fBal;
 
         public MainForm()
@@ -184,6 +191,11 @@ namespace GabNetStats
             iconReceive_yellow = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\receive_yellow.ico");
             iconReceive_orange = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\receive_orange.ico");
             iconReceive_red = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\receive_red.ico");
+
+            iconCircle_green  = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\circle_green.ico" );
+            iconCircle_red    = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\circle_red.ico"   );
+            iconCircle_grey   = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\circle_grey.ico"  );
+            iconCircle_orange = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\circle_orange.ico");
         }
 
         //occurs when an adapter IP changed.
@@ -262,6 +274,19 @@ namespace GabNetStats
             hNICRefreshThread.Name         = "hNICRefreshThread";
             hNICRefreshThread.Start();
 
+            this.notifyIconPing.Visible = Settings.Default.AutoPingEnabled;
+            if( Settings.Default.AutoPingEnabled )
+            {
+                hAutoPingThread              = new Thread(new ThreadStart(this.AutoPingThread));
+                hAutoPingThread.IsBackground = true;
+                hAutoPingThread.Name         = "hAutoPingThread";
+                hAutoPingThread.Start();
+            }
+            else
+            {
+                bAutoPingContinue = false;
+            }
+            
             foreach (System.Diagnostics.ProcessThread t in System.Diagnostics.Process.GetCurrentProcess().Threads)
             {
                 t.PriorityLevel = ThreadPriorityLevel.Lowest; //we don't want our application to eat too much processor time !
@@ -269,7 +294,7 @@ namespace GabNetStats
             System.Diagnostics.Process.GetCurrentProcess().PriorityClass = System.Diagnostics.ProcessPriorityClass.Idle; //same here !
 
             this.Hide();
-
+            
             showBalloon(true);
         }
 
@@ -322,6 +347,28 @@ namespace GabNetStats
 
             customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
 
+            this.notifyIconPing.Visible = Settings.Default.AutoPingEnabled;
+            if ( ! Settings.Default.AutoPingEnabled)
+            {
+                if (hAutoPingThread != null && hAutoPingThread.IsAlive)
+                {
+                    bAutoPingContinue = false;
+                    hAutoPingThread.Abort();
+                }
+            }
+            else
+            {
+                if ( hAutoPingThread == null || ! hAutoPingThread.IsAlive )
+                {
+                    bAutoPingContinue = true;
+                    hAutoPingThread = new Thread(new ThreadStart(this.AutoPingThread));
+                    hAutoPingThread.IsBackground = true;
+                    hAutoPingThread.Name = "hAutoPingThread";
+                    hAutoPingThread.Priority = ThreadPriority.Lowest;
+                    hAutoPingThread.Start();
+                }
+            }
+
             this.applyIconSet();
         }
 
@@ -332,7 +379,9 @@ namespace GabNetStats
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            bWorkContinue = false;
+            bWorkContinue     = false;
+            bAutoPingContinue = false;
+
             Thread.Sleep(2 * nDuration);
 
             if (hNetStatThread2 != null)
@@ -348,6 +397,14 @@ namespace GabNetStats
                 if (hNICRefreshThread.IsAlive)
                 {
                     hNICRefreshThread.Abort();
+                }
+            }
+
+            if (hAutoPingThread != null)
+            {
+                if (hAutoPingThread.IsAlive)
+                {
+                    hAutoPingThread.Abort();
                 }
             }
         }
@@ -735,6 +792,86 @@ namespace GabNetStats
             else
             {
                 parent.DropDownItems.Add(itm);
+            }
+        }
+
+        /// <summary>
+        /// Thread for auto-pinging a server
+        /// </summary>
+        private void AutoPingThread()
+        {
+            byte[] buffer = new byte[1];
+            buffer[0] = 1;
+
+            PingReply reply = null;
+
+            Icon previous = null;
+
+            try
+            {
+                while ( bAutoPingContinue )
+                {
+                    //effectue un ping
+                    Ping ping = new Ping();
+
+                    try
+                    {
+                        reply = ping.Send(Settings.Default.AutoPingHost, 500, buffer);
+                    }
+                    catch( PingException pex )
+                    {
+                        reply = null; // because when PingException is thrown, reply is NOT assigned a new value
+                    }
+                    finally
+                    {
+                        previous = this.notifyIconPing.Icon;
+
+                        if ( reply == null || reply.Status != IPStatus.Success)
+                        {
+                            if (this.notifyIconPing.Icon.Equals(iconCircle_green))
+                            {
+                                this.notifyIconPing.Icon = iconCircle_orange;
+                                this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection issue?";
+                                this.notifyIconPing.BalloonTipText += "\nThe host \"" + Settings.Default.AutoPingHost + "\" seems to be unreachable.";
+                                this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Warning;
+                            }
+                            else if (this.notifyIconPing.Icon.Equals(iconCircle_orange))
+                            {
+                                this.notifyIconPing.Icon = iconCircle_red;
+                                this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection issue!";
+                                this.notifyIconPing.BalloonTipText += "\nThe host \"" + Settings.Default.AutoPingHost + "\" could not be reached.";
+                                this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Error;
+                            }
+                        }
+                        else
+                        {
+                            this.notifyIconPing.Icon = iconCircle_green;
+                            this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection OK";
+                            this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Info;
+                        }
+
+                        if( Settings.Default.AutoPingNotif && ! previous.Equals( this.notifyIconPing.Icon ) )
+                        {
+                            this.notifyIconPing.ShowBalloonTip(1000);
+                        }                        
+                    }
+
+                    Thread.Sleep((int)Settings.Default.AutoPingRate);
+                }
+            }
+            catch (Exception ex)
+            {
+                if ( ex.GetType() != typeof(ThreadAbortException))
+                {
+                    MessageBox.Show(
+                        Res.str_ErrorCrash +
+                        "\n\n" + "Thread : " +
+                        Thread.CurrentThread.Name +
+                        "\n\n" +
+                        ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    Application.Restart();
+                }
             }
         }
 
@@ -1266,5 +1403,12 @@ namespace GabNetStats
             frmBalloon.frmAdv.Show();
         }
 
+        private void notifyIconPing_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                showBalloon(false);
+            }
+        }
     }
 }

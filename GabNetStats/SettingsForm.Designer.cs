@@ -51,9 +51,18 @@ namespace GabNetStats
             this.label3 = new System.Windows.Forms.Label();
             this.radioDefault = new System.Windows.Forms.RadioButton();
             this.textBoxDuration = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chkSettingsAutoPingNotification = new System.Windows.Forms.CheckBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtSettingsAutoPingHost = new System.Windows.Forms.TextBox();
+            this.chkSettingsAutoPingEnabled = new System.Windows.Forms.CheckBox();
             this.checkBoxStartup = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.grpBandwidthPreferences.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonOK
@@ -95,13 +104,13 @@ namespace GabNetStats
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtIconSet);
             this.groupBox1.Controls.Add(this.grpBandwidthPreferences);
             this.groupBox1.Controls.Add(this.radioDefault);
             this.groupBox1.Controls.Add(this.radioCustomSpeed);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -117,14 +126,13 @@ namespace GabNetStats
             // 
             // txtIconSet
             // 
-            resources.ApplyResources(this.txtIconSet, "txtIconSet");
             this.txtIconSet.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::GabNetStats.Properties.Settings.Default, "IconSet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            resources.ApplyResources(this.txtIconSet, "txtIconSet");
             this.txtIconSet.Name = "txtIconSet";
             this.txtIconSet.Text = global::GabNetStats.Properties.Settings.Default.IconSet;
             // 
             // grpBandwidthPreferences
             // 
-            resources.ApplyResources(this.grpBandwidthPreferences, "grpBandwidthPreferences");
             this.grpBandwidthPreferences.Controls.Add(this.cbUpload);
             this.grpBandwidthPreferences.Controls.Add(this.label4);
             this.grpBandwidthPreferences.Controls.Add(this.cbDownload);
@@ -136,14 +144,15 @@ namespace GabNetStats
             this.grpBandwidthPreferences.Controls.Add(this.txtDownload);
             this.grpBandwidthPreferences.Controls.Add(this.txtUpload);
             this.grpBandwidthPreferences.Controls.Add(this.label3);
+            resources.ApplyResources(this.grpBandwidthPreferences, "grpBandwidthPreferences");
             this.grpBandwidthPreferences.Name = "grpBandwidthPreferences";
             this.grpBandwidthPreferences.TabStop = false;
             // 
             // cbUpload
             // 
-            resources.ApplyResources(this.cbUpload, "cbUpload");
             this.cbUpload.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUpload.FormattingEnabled = true;
+            resources.ApplyResources(this.cbUpload, "cbUpload");
             this.cbUpload.Name = "cbUpload";
             this.cbUpload.SelectedIndexChanged += new System.EventHandler(this.cbUpload_SelectedIndexChanged);
             // 
@@ -154,9 +163,9 @@ namespace GabNetStats
             // 
             // cbDownload
             // 
-            resources.ApplyResources(this.cbDownload, "cbDownload");
             this.cbDownload.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDownload.FormattingEnabled = true;
+            resources.ApplyResources(this.cbDownload, "cbDownload");
             this.cbDownload.Name = "cbDownload";
             this.cbDownload.SelectedIndexChanged += new System.EventHandler(this.cbDownload_SelectedIndexChanged);
             // 
@@ -209,6 +218,74 @@ namespace GabNetStats
             resources.ApplyResources(this.textBoxDuration, "textBoxDuration");
             this.textBoxDuration.Name = "textBoxDuration";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.chkSettingsAutoPingNotification);
+            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.txtSettingsAutoPingHost);
+            this.groupBox2.Controls.Add(this.chkSettingsAutoPingEnabled);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // chkSettingsAutoPingNotification
+            // 
+            resources.ApplyResources(this.chkSettingsAutoPingNotification, "chkSettingsAutoPingNotification");
+            this.chkSettingsAutoPingNotification.Checked = global::GabNetStats.Properties.Settings.Default.AutoPingNotif;
+            this.chkSettingsAutoPingNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkSettingsAutoPingNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::GabNetStats.Properties.Settings.Default, "AutoPingNotif", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.chkSettingsAutoPingNotification.Name = "chkSettingsAutoPingNotification";
+            this.chkSettingsAutoPingNotification.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::GabNetStats.Properties.Settings.Default, "AutoPingRate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            60000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Value = global::GabNetStats.Properties.Settings.Default.AutoPingRate;
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
+            // txtSettingsAutoPingHost
+            // 
+            this.txtSettingsAutoPingHost.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::GabNetStats.Properties.Settings.Default, "AutoPingHost", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            resources.ApplyResources(this.txtSettingsAutoPingHost, "txtSettingsAutoPingHost");
+            this.txtSettingsAutoPingHost.Name = "txtSettingsAutoPingHost";
+            this.txtSettingsAutoPingHost.Text = global::GabNetStats.Properties.Settings.Default.AutoPingHost;
+            // 
+            // chkSettingsAutoPingEnabled
+            // 
+            resources.ApplyResources(this.chkSettingsAutoPingEnabled, "chkSettingsAutoPingEnabled");
+            this.chkSettingsAutoPingEnabled.Checked = global::GabNetStats.Properties.Settings.Default.AutoPingEnabled;
+            this.chkSettingsAutoPingEnabled.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::GabNetStats.Properties.Settings.Default, "AutoPingEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.chkSettingsAutoPingEnabled.Name = "chkSettingsAutoPingEnabled";
+            this.chkSettingsAutoPingEnabled.UseVisualStyleBackColor = true;
+            // 
             // checkBoxStartup
             // 
             resources.ApplyResources(this.checkBoxStartup, "checkBoxStartup");
@@ -223,6 +300,7 @@ namespace GabNetStats
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.checkBoxStartup);
             this.Controls.Add(this.textBoxDuration);
@@ -242,6 +320,9 @@ namespace GabNetStats
             this.groupBox1.PerformLayout();
             this.grpBandwidthPreferences.ResumeLayout(false);
             this.grpBandwidthPreferences.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +353,12 @@ namespace GabNetStats
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtIconSet;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtSettingsAutoPingHost;
+        private System.Windows.Forms.CheckBox chkSettingsAutoPingEnabled;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.CheckBox chkSettingsAutoPingNotification;
     }
 }

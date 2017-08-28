@@ -50,5 +50,17 @@
     <Setting Name="IconSet" Type="System.String" Scope="User">
       <Value Profile="(Default)">xp</Value>
     </Setting>
+    <Setting Name="AutoPingEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="AutoPingHost" Type="System.String" Scope="User">
+      <Value Profile="(Default)">google.com</Value>
+    </Setting>
+    <Setting Name="AutoPingRate" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">5000</Value>
+    </Setting>
+    <Setting Name="AutoPingNotif" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

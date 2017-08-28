@@ -214,5 +214,53 @@ namespace GabNetStats.Properties {
                 this["IconSet"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoPingEnabled {
+            get {
+                return ((bool)(this["AutoPingEnabled"]));
+            }
+            set {
+                this["AutoPingEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("google.com")]
+        public string AutoPingHost {
+            get {
+                return ((string)(this["AutoPingHost"]));
+            }
+            set {
+                this["AutoPingHost"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5000")]
+        public decimal AutoPingRate {
+            get {
+                return ((decimal)(this["AutoPingRate"]));
+            }
+            set {
+                this["AutoPingRate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoPingNotif {
+            get {
+                return ((bool)(this["AutoPingNotif"]));
+            }
+            set {
+                this["AutoPingNotif"] = value;
+            }
+        }
     }
 }

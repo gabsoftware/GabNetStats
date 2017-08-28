@@ -117,76 +117,117 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="contextMenuTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>160, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>292, 273</value>
+  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
   </data>
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;About...</value>
   </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 6</value>
   </data>
-  <data name="networkdomainworkgroupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Network Connections</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="notifyIconActivity.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;networkToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NetworkSharingCenterToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;notifyIconActivity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;networkMapToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem.Name" xml:space="preserve">
-    <value>aboutToolStripMenuItem</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;settingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>settingsToolStripMenuItem</value>
-  </data>
-  <data name="homeGroupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
   </data>
   <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Settings...</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
-    <value>toolStripSeparator3</value>
+  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 6</value>
   </data>
-  <data name="&gt;&gt;networkdomainworkgroupToolStripMenuItem.Name" xml:space="preserve">
-    <value>networkdomainworkgroupToolStripMenuItem</value>
+  <data name="advancedStatisticsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
   </data>
-  <data name="&gt;&gt;manageWirelessNetworksToolStripMenuItem.Name" xml:space="preserve">
-    <value>manageWirelessNetworksToolStripMenuItem</value>
+  <data name="advancedStatisticsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ad&amp;vanced statistics</value>
   </data>
-  <data name="&gt;&gt;advancedStatisticsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 6</value>
+  </data>
+  <data name="manageWirelessNetworksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
   </data>
   <data name="manageWirelessNetworksToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Manage wireless networks</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
-    <value>toolStripSeparator4</value>
+  <data name="homeGroupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="homeGroupToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Home Group</value>
+  </data>
+  <data name="networkMapToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="networkMapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Network Ma&amp;p</value>
+  </data>
+  <data name="networkdomainworkgroupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="networkdomainworkgroupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Network &amp;domain/workgroup</value>
+  </data>
+  <data name="networkToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="networkToolStripMenuItem.Text" xml:space="preserve">
+    <value>Net&amp;work</value>
+  </data>
+  <data name="FirewallSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="FirewallSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Firewall Settings</value>
+  </data>
+  <data name="NetworkSharingCenterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="NetworkSharingCenterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Network Sharing &amp;Center</value>
+  </data>
+  <data name="NetworkConnectionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Network Connections</value>
+  </data>
+  <data name="NetworkAdaptersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="NetworkAdaptersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Net&amp;work Adapters</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>223, 6</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <data name="contextMenuTray.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 314</value>
+  </data>
+  <data name="&gt;&gt;contextMenuTray.Name" xml:space="preserve">
+    <value>contextMenuTray</value>
+  </data>
+  <data name="&gt;&gt;contextMenuTray.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="notifyIconActivity.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>19, 20</value>
+  </metadata>
+  <data name="notifyIconActivity.BalloonTipText" xml:space="preserve">
+    <value>:: Statistics ::</value>
+  </data>
+  <data name="notifyIconActivity.BalloonTipTitle" xml:space="preserve">
+    <value>GabNetStats</value>
   </data>
   <data name="notifyIconActivity.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -240,159 +281,61 @@
         BCMAAQICAAECAgABHB0AARUEAAECAgABAgIAASEi+AEPBPgBIyP4AQIC
 </value>
   </data>
-  <data name="networkToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
   <data name="notifyIconActivity.Text" xml:space="preserve">
     <value>Left-click : Statistics window
 Right-click : Context menu</value>
   </data>
-  <data name="NetworkSharingCenterToolStripMenuItem.Text" xml:space="preserve">
-    <value>Network Sharing &amp;Center</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="notifyIconActivity.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;networkdomainworkgroupToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <metadata name="notifyIconPing.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>307, 17</value>
+  </metadata>
+  <data name="notifyIconPing.BalloonTipText" xml:space="preserve">
+    <value>Undetermined</value>
   </data>
-  <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="notifyIconPing.BalloonTipTitle" xml:space="preserve">
+    <value>GabNetStats - Connectivity</value>
   </data>
-  <data name="&gt;&gt;homeGroupToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="notifyIconPing.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAA
+        AAB5fYIAeX2CAHl9ggB5fYIAeX2CRnl9go15fYLHeX2C8Hl9gvB5fYLHeX2CjXl9gkZ5fYIAeX2CAHl9
+        ggB5fYIAeX2CAHl9ggB5fYIgeX2CjJKVmeTBw8X54uLk//f3+P/39/j/4uLk/8HDxfmSlZnkeX2CjHl9
+        giB5fYIAeX2CAHl9ggB5fYIgeX2Co77AwvD5+fn//Pz8//Hx8f/l5OT/6unp//j4+P/+/v7/+fn5/77A
+        wvB5fYKjeX2CIHl9ggB5fYIAeX2CjL7AwvD+/v7+5+fn/87Ozv/V1NT/29ra/+Lg4P/p5+f/7+7u//r6
+        +v/////+vsDC8Hl9gox5fYIAeX2CRpKVmeT5+fn/6Ojo/83Nzf/Nzc3/09LS/9rY2P/g3t7/5uTk/+vq
+        6v/v7u7/+fj4//n5+f+SlZnkeX2CRnl9go3Bw8X5/fz8/9LR0f/Ozs7/zMzM/9DQ0P/X1tb/3dvb/+Lg
+        4P/m5eX/6ujo/+vq6v/+/v7/wcPF+Xl9go15fYLH4uLk//T09P/U09P/z8/P/83Nzf/Nzc3/09LS/9jX
+        1//d29v/4d/f/+Ph4f/k4+P/9vb2/+Li5P95fYLHeX2C8Pf3+P/t7Oz/3d3d/9LS0v/Ozs7/zMzM/87O
+        zv/T0tL/19bW/9rZ2f/d29v/3tzc/+bl5f/39/j/eX2C8Hl9gvD39/j/7+3t/+Tj4//f39//1dXV/87O
+        zv/MzMz/zs7O/9HR0f/U09P/1tXV/9fW1v/g4OD/9/f4/3l9gvB5fYLH4uLk//j4+P/n5ub/4+Li/+Df
+        3//d3Nz/2NfX/9TU1P/Q0ND/0tLS/9PT0//X19f/8/Pz/+Li5P95fYLHeX2CjcHDxfn+/f3/6efn/+bl
+        5f/i4eH/39/f/97d3f/d3Nz/3Nzc/9zc3P/c3Nz/3Nzc//39/f/Bw8X5eX2CjXl9gkaSlZnk+fn5//Tz
+        8//p5+f/5uXl/+Pi4v/g4OD/397e/97d3f/d3d3/3d3d/+7u7v/5+fn/kpWZ5Hl9gkZ5fYIAeX2CjL7A
+        wvD+/v7+9PPz/+jn5//o5ub/5eTk/+Pi4v/h4OD/4ODg//Dv7//+/v7+vsDC8Hl9gox5fYIAeX2CAHl9
+        giB5fYKjvsDC8Pn5+f/+/f3/+Pf3/+7t7f/u7Oz/9/f3//39/f/5+fn/vsDC8Hl9gqN5fYIgeX2CAHl9
+        ggB5fYIAeX2CIHl9goySlZnkwcPF+eLi5P/39/j/9/f4/+Li5P/Bw8X5kpWZ5Hl9gox5fYIgeX2CAHl9
+        ggB5fYIAeX2CAHl9ggB5fYIAeX2CRnl9go15fYLHeX2C8Hl9gvB5fYLHeX2CjXl9gkZ5fYIAeX2CAHl9
+        ggB5fYIA8A8AAMADAACAAQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAIAB
+        AADAAwAA8A8AAA==
+</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="notifyIconPing.Text" xml:space="preserve">
+    <value>GabNetStats - Connectivity</value>
   </data>
-  <data name="NetworkAdaptersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
+  <data name="notifyIconPing.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="NetworkSharingCenterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
-  <data name="notifyIconActivity.BalloonTipText" xml:space="preserve">
-    <value>:: Statistics ::</value>
-  </data>
-  <data name="&gt;&gt;NetworkConnectionsToolStripMenuItem.Name" xml:space="preserve">
-    <value>NetworkConnectionsToolStripMenuItem</value>
-  </data>
-  <data name="advancedStatisticsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="&gt;&gt;NetworkSharingCenterToolStripMenuItem.Name" xml:space="preserve">
-    <value>NetworkSharingCenterToolStripMenuItem</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 6</value>
-  </data>
-  <data name="&gt;&gt;networkMapToolStripMenuItem.Name" xml:space="preserve">
-    <value>networkMapToolStripMenuItem</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="manageWirelessNetworksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="&gt;&gt;contextMenuTray.Name" xml:space="preserve">
-    <value>contextMenuTray</value>
-  </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>E&amp;xit</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="NetworkAdaptersToolStripMenuItem.Text" xml:space="preserve">
-    <value>Net&amp;work Adapters</value>
-  </data>
-  <data name="&gt;&gt;homeGroupToolStripMenuItem.Name" xml:space="preserve">
-    <value>homeGroupToolStripMenuItem</value>
-  </data>
-  <data name="networkMapToolStripMenuItem.Text" xml:space="preserve">
-    <value>Network Ma&amp;p</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
-    <value>exitToolStripMenuItem</value>
-  </data>
-  <data name="NetworkConnectionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="&gt;&gt;networkToolStripMenuItem.Name" xml:space="preserve">
-    <value>networkToolStripMenuItem</value>
-  </data>
-  <data name="networkdomainworkgroupToolStripMenuItem.Text" xml:space="preserve">
-    <value>Network &amp;domain/workgroup</value>
-  </data>
-  <data name="&gt;&gt;manageWirelessNetworksToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NetworkConnectionsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="contextMenuTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 314</value>
-  </data>
-  <data name="FirewallSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Firewall Settings</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>GabNetStats</value>
-  </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="homeGroupToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Home Group</value>
-  </data>
-  <data name="networkMapToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 6</value>
-  </data>
-  <data name="&gt;&gt;notifyIconActivity.Name" xml:space="preserve">
-    <value>notifyIconActivity</value>
-  </data>
-  <data name="&gt;&gt;NetworkAdaptersToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;FirewallSettingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>FirewallSettingsToolStripMenuItem</value>
-  </data>
-  <data name="networkToolStripMenuItem.Text" xml:space="preserve">
-    <value>Net&amp;work</value>
-  </data>
-  <data name="FirewallSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="advancedStatisticsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ad&amp;vanced statistics</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="notifyIconActivity.BalloonTipTitle" xml:space="preserve">
-    <value>GabNetStats</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainForm</value>
-  </data>
-  <data name="&gt;&gt;FirewallSettingsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>292, 273</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1901,25 +1844,127 @@ Right-click : Context menu</value>
         AAD/jwAA
 </value>
   </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 6</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GabNetStats</value>
+  </data>
+  <data name="&gt;&gt;aboutToolStripMenuItem.Name" xml:space="preserve">
+    <value>aboutToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
+    <value>toolStripSeparator4</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;settingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>settingsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
+    <value>toolStripSeparator3</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;advancedStatisticsToolStripMenuItem.Name" xml:space="preserve">
     <value>advancedStatisticsToolStripMenuItem</value>
   </data>
+  <data name="&gt;&gt;advancedStatisticsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
+    <value>toolStripSeparator2</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;manageWirelessNetworksToolStripMenuItem.Name" xml:space="preserve">
+    <value>manageWirelessNetworksToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;manageWirelessNetworksToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;homeGroupToolStripMenuItem.Name" xml:space="preserve">
+    <value>homeGroupToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;homeGroupToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;networkMapToolStripMenuItem.Name" xml:space="preserve">
+    <value>networkMapToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;networkMapToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;networkdomainworkgroupToolStripMenuItem.Name" xml:space="preserve">
+    <value>networkdomainworkgroupToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;networkdomainworkgroupToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;networkToolStripMenuItem.Name" xml:space="preserve">
+    <value>networkToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;networkToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;FirewallSettingsToolStripMenuItem.Name" xml:space="preserve">
+    <value>FirewallSettingsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;FirewallSettingsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NetworkSharingCenterToolStripMenuItem.Name" xml:space="preserve">
+    <value>NetworkSharingCenterToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;NetworkSharingCenterToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NetworkConnectionsToolStripMenuItem.Name" xml:space="preserve">
+    <value>NetworkConnectionsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;NetworkConnectionsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;NetworkAdaptersToolStripMenuItem.Name" xml:space="preserve">
     <value>NetworkAdaptersToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;contextMenuTray.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;NetworkAdaptersToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="contextMenuTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>160, 17</value>
-  </metadata>
-  <metadata name="notifyIconActivity.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>19, 20</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
+    <value>exitToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;notifyIconActivity.Name" xml:space="preserve">
+    <value>notifyIconActivity</value>
+  </data>
+  <data name="&gt;&gt;notifyIconActivity.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;notifyIconPing.Name" xml:space="preserve">
+    <value>notifyIconPing</value>
+  </data>
+  <data name="&gt;&gt;notifyIconPing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

@@ -313,6 +313,46 @@ namespace GabNetStats.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
         /// </summary>
+        internal static System.Drawing.Icon circle_green {
+            get {
+                object obj = ResourceManager.GetObject("circle_green", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
+        internal static System.Drawing.Icon circle_grey {
+            get {
+                object obj = ResourceManager.GetObject("circle_grey", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
+        internal static System.Drawing.Icon circle_orange {
+            get {
+                object obj = ResourceManager.GetObject("circle_orange", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
+        internal static System.Drawing.Icon circle_red {
+            get {
+                object obj = ResourceManager.GetObject("circle_red", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
         internal static System.Drawing.Icon deskadp_16x16 {
             get {
                 object obj = ResourceManager.GetObject("deskadp_16x16", resourceCulture);

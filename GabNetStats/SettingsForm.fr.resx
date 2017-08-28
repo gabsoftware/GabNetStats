@@ -184,6 +184,36 @@
   <data name="textBoxDuration.Location" type="System.Drawing.Point, System.Drawing">
     <value>163, 16</value>
   </data>
+  <data name="chkSettingsAutoPingNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 17</value>
+  </data>
+  <data name="chkSettingsAutoPingNotification.Text" xml:space="preserve">
+    <value>Montrer notifications</value>
+  </data>
+  <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>183, 57</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>292, 59</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 13</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Envoyer ping tous les</value>
+  </data>
+  <data name="txtSettingsAutoPingHost.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 29</value>
+  </data>
+  <data name="txtSettingsAutoPingHost.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 20</value>
+  </data>
+  <data name="chkSettingsAutoPingEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 17</value>
+  </data>
+  <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
+    <value>Activer auto-ping de cet hôte :</value>
+  </data>
   <data name="checkBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 17</value>
   </data>

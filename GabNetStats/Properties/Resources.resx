@@ -271,6 +271,18 @@
   <data name="receive_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\receive_green.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="circle_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\circle_green.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="circle_grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\circle_grey.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="circle_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\circle_orange.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="circle_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\circle_red.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="network_pipe_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\network_pipe_16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

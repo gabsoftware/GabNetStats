@@ -270,6 +270,39 @@
     <value>Clic gauche : Statistiques
 Clic droit : Menu contextuel</value>
   </data>
+  <data name="notifyIconPing.BalloonTipText" xml:space="preserve">
+    <value>Indéterminée</value>
+  </data>
+  <data name="notifyIconPing.BalloonTipTitle" xml:space="preserve">
+    <value>GabNetStats - Connectivité</value>
+  </data>
+  <data name="notifyIconPing.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAA
+        AAB5fYIAeX2CAHl9ggB5fYIAeX2CRnl9go15fYLHeX2C8Hl9gvB5fYLHeX2CjXl9gkZ5fYIAeX2CAHl9
+        ggB5fYIAeX2CAHl9ggB5fYIgeX2CjJKVmeTBw8X54uLk//f3+P/39/j/4uLk/8HDxfmSlZnkeX2CjHl9
+        giB5fYIAeX2CAHl9ggB5fYIgeX2Co77AwvD5+fn//Pz8//Hx8f/l5OT/6unp//j4+P/+/v7/+fn5/77A
+        wvB5fYKjeX2CIHl9ggB5fYIAeX2CjL7AwvD+/v7+5+fn/87Ozv/V1NT/29ra/+Lg4P/p5+f/7+7u//r6
+        +v/////+vsDC8Hl9gox5fYIAeX2CRpKVmeT5+fn/6Ojo/83Nzf/Nzc3/09LS/9rY2P/g3t7/5uTk/+vq
+        6v/v7u7/+fj4//n5+f+SlZnkeX2CRnl9go3Bw8X5/fz8/9LR0f/Ozs7/zMzM/9DQ0P/X1tb/3dvb/+Lg
+        4P/m5eX/6ujo/+vq6v/+/v7/wcPF+Xl9go15fYLH4uLk//T09P/U09P/z8/P/83Nzf/Nzc3/09LS/9jX
+        1//d29v/4d/f/+Ph4f/k4+P/9vb2/+Li5P95fYLHeX2C8Pf3+P/t7Oz/3d3d/9LS0v/Ozs7/zMzM/87O
+        zv/T0tL/19bW/9rZ2f/d29v/3tzc/+bl5f/39/j/eX2C8Hl9gvD39/j/7+3t/+Tj4//f39//1dXV/87O
+        zv/MzMz/zs7O/9HR0f/U09P/1tXV/9fW1v/g4OD/9/f4/3l9gvB5fYLH4uLk//j4+P/n5ub/4+Li/+Df
+        3//d3Nz/2NfX/9TU1P/Q0ND/0tLS/9PT0//X19f/8/Pz/+Li5P95fYLHeX2CjcHDxfn+/f3/6efn/+bl
+        5f/i4eH/39/f/97d3f/d3Nz/3Nzc/9zc3P/c3Nz/3Nzc//39/f/Bw8X5eX2CjXl9gkaSlZnk+fn5//Tz
+        8//p5+f/5uXl/+Pi4v/g4OD/397e/97d3f/d3d3/3d3d/+7u7v/5+fn/kpWZ5Hl9gkZ5fYIAeX2CjL7A
+        wvD+/v7+9PPz/+jn5//o5ub/5eTk/+Pi4v/h4OD/4ODg//Dv7//+/v7+vsDC8Hl9gox5fYIAeX2CAHl9
+        giB5fYKjvsDC8Pn5+f/+/f3/+Pf3/+7t7f/u7Oz/9/f3//39/f/5+fn/vsDC8Hl9gqN5fYIgeX2CAHl9
+        ggB5fYIAeX2CIHl9goySlZnkwcPF+eLi5P/39/j/9/f4/+Li5P/Bw8X5kpWZ5Hl9gox5fYIgeX2CAHl9
+        ggB5fYIAeX2CAHl9ggB5fYIAeX2CRnl9go15fYLHeX2C8Hl9gvB5fYLHeX2CjXl9gkZ5fYIAeX2CAHl9
+        ggB5fYIA8A8AAMADAACAAQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAIAB
+        AADAAwAA8A8AAA==
+</value>
+  </data>
+  <data name="notifyIconPing.Text" xml:space="preserve">
+    <value>GabNetStats - Connectivité</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAcAMDAAAAEACACoDgAAdgAAACAgAAABAAgAqAgAAB4PAAAQEAAAAQAIAGgFAADGFwAAgIAAAAEA
