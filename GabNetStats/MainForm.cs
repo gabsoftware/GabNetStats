@@ -142,45 +142,47 @@ namespace GabNetStats
 
         private void applyIconSet()
         {
-            iconActive_blue_blue     = new Icon("icons/" + Settings.Default.IconSet + "/active_blue_blue.ico");
-            iconActive_blue_green    = new Icon("icons/" + Settings.Default.IconSet + "/active_blue_green.ico");
-            iconActive_blue_yellow   = new Icon("icons/" + Settings.Default.IconSet + "/active_blue_yellow.ico");
-            iconActive_blue_orange   = new Icon("icons/" + Settings.Default.IconSet + "/active_blue_orange.ico");
-            iconActive_blue_red      = new Icon("icons/" + Settings.Default.IconSet + "/active_blue_red.ico");
-            iconActive_green_blue    = new Icon("icons/" + Settings.Default.IconSet + "/active_green_blue.ico");
-            iconActive_green_green   = new Icon("icons/" + Settings.Default.IconSet + "/active_green_green.ico");
-            iconActive_green_yellow  = new Icon("icons/" + Settings.Default.IconSet + "/active_green_yellow.ico");
-            iconActive_green_orange  = new Icon("icons/" + Settings.Default.IconSet + "/active_green_orange.ico");
-            iconActive_green_red     = new Icon("icons/" + Settings.Default.IconSet + "/active_green_red.ico");
-            iconActive_yellow_blue   = new Icon("icons/" + Settings.Default.IconSet + "/active_yellow_blue.ico");
-            iconActive_yellow_green  = new Icon("icons/" + Settings.Default.IconSet + "/active_yellow_green.ico");
-            iconActive_yellow_yellow = new Icon("icons/" + Settings.Default.IconSet + "/active_yellow_yellow.ico");
-            iconActive_yellow_orange = new Icon("icons/" + Settings.Default.IconSet + "/active_yellow_orange.ico");
-            iconActive_yellow_red    = new Icon("icons/" + Settings.Default.IconSet + "/active_yellow_red.ico");
-            iconActive_orange_blue   = new Icon("icons/" + Settings.Default.IconSet + "/active_orange_blue.ico");
-            iconActive_orange_green  = new Icon("icons/" + Settings.Default.IconSet + "/active_orange_green.ico");
-            iconActive_orange_yellow = new Icon("icons/" + Settings.Default.IconSet + "/active_orange_yellow.ico");
-            iconActive_orange_orange = new Icon("icons/" + Settings.Default.IconSet + "/active_orange_orange.ico");
-            iconActive_orange_red    = new Icon("icons/" + Settings.Default.IconSet + "/active_orange_red.ico");
-            iconActive_red_blue      = new Icon("icons/" + Settings.Default.IconSet + "/active_red_blue.ico");
-            iconActive_red_green     = new Icon("icons/" + Settings.Default.IconSet + "/active_red_green.ico");
-            iconActive_red_yellow    = new Icon("icons/" + Settings.Default.IconSet + "/active_red_yellow.ico");
-            iconActive_red_orange    = new Icon("icons/" + Settings.Default.IconSet + "/active_red_orange.ico");
-            iconActive_red_red       = new Icon("icons/" + Settings.Default.IconSet + "/active_red_red.ico");
+            string path = Application.StartupPath + "\\";
 
-            iconInactive             = new Icon("icons/" + Settings.Default.IconSet + "/inactive.ico");
+            iconActive_blue_blue = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_blue_blue.ico");
+            iconActive_blue_green = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_blue_green.ico");
+            iconActive_blue_yellow = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_blue_yellow.ico");
+            iconActive_blue_orange = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_blue_orange.ico");
+            iconActive_blue_red = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_blue_red.ico");
+            iconActive_green_blue = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_green_blue.ico");
+            iconActive_green_green = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_green_green.ico");
+            iconActive_green_yellow = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_green_yellow.ico");
+            iconActive_green_orange = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_green_orange.ico");
+            iconActive_green_red = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_green_red.ico");
+            iconActive_yellow_blue = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_yellow_blue.ico");
+            iconActive_yellow_green = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_yellow_green.ico");
+            iconActive_yellow_yellow = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_yellow_yellow.ico");
+            iconActive_yellow_orange = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_yellow_orange.ico");
+            iconActive_yellow_red = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_yellow_red.ico");
+            iconActive_orange_blue = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_orange_blue.ico");
+            iconActive_orange_green = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_orange_green.ico");
+            iconActive_orange_yellow = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_orange_yellow.ico");
+            iconActive_orange_orange = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_orange_orange.ico");
+            iconActive_orange_red = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_orange_red.ico");
+            iconActive_red_blue = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_red_blue.ico");
+            iconActive_red_green = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_red_green.ico");
+            iconActive_red_yellow = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_red_yellow.ico");
+            iconActive_red_orange = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_red_orange.ico");
+            iconActive_red_red = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\active_red_red.ico");
 
-            iconSend_blue            = new Icon("icons/" + Settings.Default.IconSet + "/send_blue.ico");
-            iconSend_green           = new Icon("icons/" + Settings.Default.IconSet + "/send_green.ico");
-            iconSend_yellow          = new Icon("icons/" + Settings.Default.IconSet + "/send_yellow.ico");
-            iconSend_orange          = new Icon("icons/" + Settings.Default.IconSet + "/send_orange.ico");
-            iconSend_red             = new Icon("icons/" + Settings.Default.IconSet + "/send_red.ico");
+            iconInactive = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\inactive.ico");
 
-            iconReceive_blue         = new Icon("icons/" + Settings.Default.IconSet + "/receive_blue.ico");
-            iconReceive_green        = new Icon("icons/" + Settings.Default.IconSet + "/receive_green.ico");
-            iconReceive_yellow       = new Icon("icons/" + Settings.Default.IconSet + "/receive_yellow.ico");
-            iconReceive_orange       = new Icon("icons/" + Settings.Default.IconSet + "/receive_orange.ico");
-            iconReceive_red          = new Icon("icons/" + Settings.Default.IconSet + "/receive_red.ico");
+            iconSend_blue = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\send_blue.ico");
+            iconSend_green = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\send_green.ico");
+            iconSend_yellow = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\send_yellow.ico");
+            iconSend_orange = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\send_orange.ico");
+            iconSend_red = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\send_red.ico");
+
+            iconReceive_blue = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\receive_blue.ico");
+            iconReceive_green = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\receive_green.ico");
+            iconReceive_yellow = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\receive_yellow.ico");
+            iconReceive_orange = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\receive_orange.ico");
+            iconReceive_red = new Icon(path + "icons\\" + Settings.Default.IconSet + "\\receive_red.ico");
         }
 
         //occurs when an adapter IP changed.
