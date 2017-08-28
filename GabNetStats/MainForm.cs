@@ -291,7 +291,10 @@ namespace GabNetStats
             nDuration = Settings.Default.BlinkDuration;
 
             frmBalloon fb = (frmBalloon)Application.OpenForms["frmBalloon"];
-            fb.BallonTimer.Interval = nDuration;
+            if (fb != null)
+            {
+                fb.BallonTimer.Interval = nDuration;
+            }
 
             if (Settings.Default.BandwidthUnit == 0)
             {
