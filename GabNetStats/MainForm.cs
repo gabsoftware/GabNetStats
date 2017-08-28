@@ -66,7 +66,7 @@ namespace GabNetStats
 
         static eState connectionStatus;
 
-        static int nDuration   = 50;
+        static int nDuration   = 100;
         static int nNICRefresh = 10000; //time interval for refreshing the NIC list (10s by default)
         static int nbNIC       = 0;
         static long bandwidthDownloadLvl1;
@@ -88,7 +88,8 @@ namespace GabNetStats
         static NetworkInterface[] interfaces         = NetworkInterface.GetAllNetworkInterfaces();
         static ArrayList          selectedInterfaces = new ArrayList();
         static IPGlobalProperties properties;
-        static IPGlobalStatistics ipstat;
+        static IPGlobalStatistics ipv4stat;
+        static IPGlobalStatistics ipv6stat;
 
         static Icon iconActive_blue_blue     = Properties.Resources.active_blue_blue;
         static Icon iconActive_blue_green    = Properties.Resources.active_blue_green;
@@ -280,9 +281,17 @@ namespace GabNetStats
 
         private void OnSettings(object sender, EventArgs e)
         {
+            this.showSettings();
+        }
+
+        internal void showSettings()
+        {
             SettingsForm formSettings = new SettingsForm();
             formSettings.ShowDialog();
             nDuration = Settings.Default.BlinkDuration;
+
+            frmBalloon fb = (frmBalloon)Application.OpenForms["frmBalloon"];
+            fb.BallonTimer.Interval = nDuration;
 
             if (Settings.Default.BandwidthUnit == 0)
             {
@@ -292,21 +301,21 @@ namespace GabNetStats
             {
                 Settings.Default.BandwidthDownloadMultiplier = (long)eBandwidthMultiplier.un;
             }
-            if (Settings.Default.BandwidthUploadMultiplier   == 0)
+            if (Settings.Default.BandwidthUploadMultiplier == 0)
             {
-                Settings.Default.BandwidthUploadMultiplier   = (long)eBandwidthMultiplier.un;
+                Settings.Default.BandwidthUploadMultiplier = (long)eBandwidthMultiplier.un;
             }
 
             bandwidthDownloadLvl5 = Settings.Default.BandwidthDownload * Settings.Default.BandwidthDownloadMultiplier / Settings.Default.BandwidthUnit;
-            bandwidthUploadLvl5   = Settings.Default.BandwidthUpload   * Settings.Default.BandwidthUploadMultiplier   / Settings.Default.BandwidthUnit;
+            bandwidthUploadLvl5 = Settings.Default.BandwidthUpload * Settings.Default.BandwidthUploadMultiplier / Settings.Default.BandwidthUnit;
             bandwidthDownloadLvl4 = (bandwidthDownloadLvl5 * 4) / 5;
             bandwidthDownloadLvl3 = (bandwidthDownloadLvl5 * 3) / 5;
             bandwidthDownloadLvl2 = (bandwidthDownloadLvl5 * 2) / 5;
             bandwidthDownloadLvl1 = (bandwidthDownloadLvl5 * 1) / 5;
-            bandwidthUploadLvl4   = (bandwidthUploadLvl5   * 4) / 5;
-            bandwidthUploadLvl3   = (bandwidthUploadLvl5   * 3) / 5;
-            bandwidthUploadLvl2   = (bandwidthUploadLvl5   * 2) / 5;
-            bandwidthUploadLvl1   = (bandwidthUploadLvl5   * 1) / 5;
+            bandwidthUploadLvl4 = (bandwidthUploadLvl5 * 4) / 5;
+            bandwidthUploadLvl3 = (bandwidthUploadLvl5 * 3) / 5;
+            bandwidthUploadLvl2 = (bandwidthUploadLvl5 * 2) / 5;
+            bandwidthUploadLvl1 = (bandwidthUploadLvl5 * 1) / 5;
 
             customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
 
@@ -599,7 +608,8 @@ namespace GabNetStats
                     if (netInterface.GetIPProperties().UnicastAddresses.Count > 0)
                     {
                         if (netInterface.NetworkInterfaceType.ToString().ToLower(CultureInfo.InvariantCulture).Contains("ethernet") ||
-                            netInterface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
+                            netInterface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 ||
+                            netInterface.NetworkInterfaceType == NetworkInterfaceType.Tunnel )
                         {
                             nUp++;
                         }
@@ -622,6 +632,12 @@ namespace GabNetStats
                 {
                     valid = true;
                     icon = Properties.Resources.netshell_1612_16x16.ToBitmap();
+                }
+                // Only get tunnels
+                else if (netInterface.NetworkInterfaceType == NetworkInterfaceType.Tunnel)
+                {
+                    valid = true;
+                    icon = Properties.Resources.network_pipe_16x16.ToBitmap();
                 }
                 else
                 {
@@ -722,7 +738,7 @@ namespace GabNetStats
 
         private void NICRefreshThread()
         {
-            int nb;
+            int nbv4, nbv6;
 
             try
             {
@@ -731,13 +747,15 @@ namespace GabNetStats
                 {
                     //we get some quick statistics about the number of network interfaces...
                     properties = IPGlobalProperties.GetIPGlobalProperties();
-                    ipstat     = properties.GetIPv4GlobalStatistics();
-                    nb         = ipstat.NumberOfInterfaces;
+                    ipv4stat     = properties.GetIPv4GlobalStatistics();
+                    ipv6stat     = properties.GetIPv6GlobalStatistics();
+                    nbv4         = ipv4stat.NumberOfInterfaces;
+                    nbv6         = ipv6stat.NumberOfInterfaces;
 
                     //if number changed since last time AND we are not displaying the context menu then
-                    if (nb != nbNIC && this.NetworkAdaptersToolStripMenuItem.Visible == false)
+                    if (nbv4 + nbv6 != nbNIC && this.NetworkAdaptersToolStripMenuItem.Visible == false)
                     {
-                        nbNIC = nb;
+                        nbNIC = nbv4 + nbv6;
                         this.PopulateNICs(this.NetworkAdaptersToolStripMenuItem);
                     }
 
@@ -756,11 +774,10 @@ namespace GabNetStats
                         Thread.CurrentThread.Name +
                         "\n\n" +
                         ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                
-                Application.Restart();
-            }
 
+                    Application.Restart();
+                }
+            }
         }
 
         private void NetStatThread()
@@ -776,7 +793,14 @@ namespace GabNetStats
             long rawSpeedEmission   = 0;
             long[] tRawSpeed;
 
-            IPv4InterfaceStatistics ipv4stats = null;
+            long receptionMin = 0;
+            long receptionMax = 0;
+            long emissionMin = 0;
+            long emissionMax = 0;
+            bool ignoreMin = false;
+            bool ignoreMax = false;
+
+            IPInterfaceStatistics ipstats = null;
 
             try
             {
@@ -809,9 +833,9 @@ namespace GabNetStats
                         {
                             if (Settings.Default.EnabledInterfaceMACList.Contains(netInterface.GetPhysicalAddress().ToString()))
                             {
-                                ipv4stats      = netInterface.GetIPv4Statistics();
-                                bytesReceived += ipv4stats.BytesReceived;
-                                bytesSent     += ipv4stats.BytesSent;
+                                ipstats = netInterface.GetIPStatistics();
+                                bytesReceived += ipstats.BytesReceived;
+                                bytesSent     += ipstats.BytesSent;
                             }
                         }
 
@@ -1034,23 +1058,92 @@ namespace GabNetStats
                         queueReception.Dequeue();
                         queueEmission.Dequeue();
 
+                        //reception average ignoring the two most extreme values
                         tRawSpeed = queueReception.ToArray();
+                        for( int i = 0; i < queueReception.Count; i++ )
+                        {
+                            if (i == 0)
+                            {
+                                receptionMin = tRawSpeed[i];
+                                receptionMax = tRawSpeed[i];
+                            }
+                            else {
+                                if( tRawSpeed[i] < receptionMin )
+                                {
+                                    receptionMin = tRawSpeed[i];
+                                }
+                                if( tRawSpeed[i]>receptionMax )
+                                {
+                                    receptionMax = tRawSpeed[i];
+                                }
+                            }
+                        }
                         lAvgSpeedReception = 0;
+                        ignoreMin = false;
+                        ignoreMax = false;
                         for (int i = 0; i < queueReception.Count; i++)
                         {
-                            lAvgSpeedReception += tRawSpeed[i];
+                            if (tRawSpeed[i] == receptionMin && ignoreMin == false)
+                            {
+                                ignoreMin = true;
+                            }
+                            else if (tRawSpeed[i] == receptionMax && ignoreMax == false)
+                            {
+                                ignoreMax = true;
+                            }
+                            else
+                            {
+                                lAvgSpeedReception += tRawSpeed[i];
+                            }
                         }
                         Array.Clear(tRawSpeed, 0, tRawSpeed.Length);
-                        lAvgSpeedReception = lAvgSpeedReception / queueReception.Count;
+                        lAvgSpeedReception = lAvgSpeedReception / ((queueReception.Count > 2 ? queueReception.Count : 3) - 2);
 
+
+
+                        //emission average ignoring the two most extreme values
                         tRawSpeed = queueEmission.ToArray();
-                        lAvgSpeedEmission = 0;
                         for (int i = 0; i < queueEmission.Count; i++)
                         {
-                            lAvgSpeedEmission += tRawSpeed[i];
+                            if (i == 0)
+                            {
+                                emissionMin = tRawSpeed[i];
+                                emissionMax = tRawSpeed[i];
+                            }
+                            else
+                            {
+                                if (tRawSpeed[i] < emissionMin)
+                                {
+                                    emissionMin = tRawSpeed[i];
+                                }
+                                if (tRawSpeed[i] > emissionMax)
+                                {
+                                    emissionMax = tRawSpeed[i];
+                                }
+                            }
+                        }
+                        lAvgSpeedEmission = 0;
+                        ignoreMin = false;
+                        ignoreMax = false;
+                        for (int i = 0; i < queueEmission.Count; i++)
+                        {
+                            if (tRawSpeed[i] == emissionMin && ignoreMin == false)
+                            {
+                                ignoreMin = true;
+                            }
+                            else if (tRawSpeed[i] == emissionMax && ignoreMax == false)
+                            {
+                                ignoreMax = true;
+                            }
+                            else
+                            {
+                                lAvgSpeedEmission += tRawSpeed[i];
+                            }
                         }
                         Array.Clear(tRawSpeed, 0, tRawSpeed.Length);
-                        lAvgSpeedEmission = lAvgSpeedEmission / queueEmission.Count;
+                        lAvgSpeedEmission = lAvgSpeedEmission / ((queueEmission.Count > 2 ? queueEmission.Count : 3) - 2);
+                        
+
 
                         Monitor.Exit(queueReception);
                         Monitor.Exit(queueEmission);
@@ -1062,7 +1155,6 @@ namespace GabNetStats
 
                     Thread.Sleep(nDuration);
                 }
-
             }
             catch (Exception ex)
             {
@@ -1074,11 +1166,10 @@ namespace GabNetStats
                         Thread.CurrentThread.Name +
                         "\n\n" +
                         ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                
-                Application.Restart();
-            }
 
+                    Application.Restart();
+                }
+            }
         }
 
         internal static double computeSpeed(long rawSpeed, ref string speedUnit)

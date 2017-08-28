@@ -186,5 +186,16 @@ namespace GabNetStats
         {
             this.gabTracker1.MaxDataInMemory = this.Width / 10 + 1;
         }
+
+        private void frmBalloon_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_settings_Click(object sender, EventArgs e)
+        {
+            MainForm mf = (MainForm)Application.OpenForms["MainForm"];
+            mf.showSettings();
+        }
     }
 }

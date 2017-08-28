@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBalloon));
-            GabTracker.GabTrackerFeed gabTrackerFeed1 = new GabTracker.GabTrackerFeed();
-            GabTracker.GabTrackerFeed gabTrackerFeed2 = new GabTracker.GabTrackerFeed();
+            GabTracker.GabTrackerFeed gabTrackerFeed7 = new GabTracker.GabTrackerFeed();
+            GabTracker.GabTrackerFeed gabTrackerFeed8 = new GabTracker.GabTrackerFeed();
             this.BallonTimer = new System.Windows.Forms.Timer(this.components);
             this.lblStatisticsData = new System.Windows.Forms.Label();
             this.lblSeconds = new System.Windows.Forms.Label();
@@ -42,6 +42,7 @@
             this.nudAutoClose = new System.Windows.Forms.NumericUpDown();
             this.chkAutoClose = new System.Windows.Forms.CheckBox();
             this.gabTracker1 = new GabTracker.GabTracker();
+            this.btn_settings = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbTrans)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAutoClose)).BeginInit();
@@ -70,6 +71,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btn_settings);
             this.panel1.Controls.Add(this.btnAdvanced);
             this.panel1.Controls.Add(this.lblStatisticsTitle);
             resources.ApplyResources(this.panel1, "panel1");
@@ -130,26 +132,26 @@
             resources.ApplyResources(this.gabTracker1, "gabTracker1");
             this.gabTracker1.AutoMax = true;
             this.gabTracker1.AutoMaxPercentage = 110D;
-            gabTrackerFeed1.Coefficient = 1D;
-            gabTrackerFeed1.FillAlpha = ((byte)(100));
-            gabTrackerFeed1.FillThickness = 10F;
-            gabTrackerFeed1.FillUnder = true;
-            gabTrackerFeed1.Legend = "Download";
-            gabTrackerFeed1.LineColor = System.Drawing.Color.DodgerBlue;
-            gabTrackerFeed1.LineThickness = 2F;
-            gabTrackerFeed1.Unit = "KB/s";
-            gabTrackerFeed1.Value = 40D;
-            gabTrackerFeed2.Coefficient = 1D;
-            gabTrackerFeed2.FillAlpha = ((byte)(100));
-            gabTrackerFeed2.FillThickness = 10F;
-            gabTrackerFeed2.FillUnder = true;
-            gabTrackerFeed2.Legend = "Upload";
-            gabTrackerFeed2.LineColor = System.Drawing.Color.Red;
-            gabTrackerFeed2.LineThickness = 2F;
-            gabTrackerFeed2.Unit = "KB/s";
-            gabTrackerFeed2.Value = 50D;
-            this.gabTracker1.Feeds.Add(gabTrackerFeed1);
-            this.gabTracker1.Feeds.Add(gabTrackerFeed2);
+            gabTrackerFeed7.Coefficient = 1D;
+            gabTrackerFeed7.FillAlpha = ((byte)(100));
+            gabTrackerFeed7.FillThickness = 10F;
+            gabTrackerFeed7.FillUnder = true;
+            gabTrackerFeed7.Legend = "Download";
+            gabTrackerFeed7.LineColor = System.Drawing.Color.DodgerBlue;
+            gabTrackerFeed7.LineThickness = 2F;
+            gabTrackerFeed7.Unit = "KB/s";
+            gabTrackerFeed7.Value = 40D;
+            gabTrackerFeed8.Coefficient = 1D;
+            gabTrackerFeed8.FillAlpha = ((byte)(100));
+            gabTrackerFeed8.FillThickness = 10F;
+            gabTrackerFeed8.FillUnder = true;
+            gabTrackerFeed8.Legend = "Upload";
+            gabTrackerFeed8.LineColor = System.Drawing.Color.Red;
+            gabTrackerFeed8.LineThickness = 2F;
+            gabTrackerFeed8.Unit = "KB/s";
+            gabTrackerFeed8.Value = 50D;
+            this.gabTracker1.Feeds.Add(gabTrackerFeed7);
+            this.gabTracker1.Feeds.Add(gabTrackerFeed8);
             this.gabTracker1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.gabTracker1.GridThickerColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(75)))), ((int)(((byte)(0)))));
             this.gabTracker1.GridThickerThickness = 1F;
@@ -159,6 +161,14 @@
             this.gabTracker1.Maximum = 56;
             this.gabTracker1.Name = "gabTracker1";
             this.gabTracker1.RefreshRate = 500;
+            // 
+            // btn_settings
+            // 
+            resources.ApplyResources(this.btn_settings, "btn_settings");
+            this.btn_settings.Image = global::GabNetStats.Properties.Resources.settings_icon_16x16;
+            this.btn_settings.Name = "btn_settings";
+            this.btn_settings.UseVisualStyleBackColor = true;
+            this.btn_settings.Click += new System.EventHandler(this.btn_settings_Click);
             // 
             // frmBalloon
             // 
@@ -183,6 +193,7 @@
             this.ShowInTaskbar = false;
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBalloon_FormClosing);
+            this.Load += new System.EventHandler(this.frmBalloon_Load);
             this.VisibleChanged += new System.EventHandler(this.frmBalloon_VisibleChanged);
             this.Resize += new System.EventHandler(this.frmBalloon_Resize);
             this.panel1.ResumeLayout(false);
@@ -195,8 +206,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Timer BallonTimer;
         private System.Windows.Forms.Label lblStatisticsData;
         private System.Windows.Forms.CheckBox chkAutoClose;
         private System.Windows.Forms.NumericUpDown nudAutoClose;
@@ -206,5 +215,7 @@
         private System.Windows.Forms.TrackBar tbTrans;
         private System.Windows.Forms.Button btnAdvanced;
         private GabTracker.GabTracker gabTracker1;
+        private System.Windows.Forms.Button btn_settings;
+        internal System.Windows.Forms.Timer BallonTimer;
     }
 }

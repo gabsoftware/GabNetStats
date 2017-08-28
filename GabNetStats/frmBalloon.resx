@@ -130,13 +130,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblStatisticsData.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 69</value>
-  </data>
-  <data name="lblStatisticsData.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>12, 56</value>
   </data>
   <data name="lblStatisticsData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 16</value>
+    <value>107, 13</value>
   </data>
   <data name="lblStatisticsData.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -166,13 +163,10 @@
     <value>NoControl</value>
   </data>
   <data name="lblSeconds.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 407</value>
-  </data>
-  <data name="lblSeconds.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>251, 331</value>
   </data>
   <data name="lblSeconds.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 16</value>
+    <value>47, 13</value>
   </data>
   <data name="lblSeconds.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -205,10 +199,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblStatisticsTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 4</value>
-  </data>
-  <data name="lblStatisticsTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>31, 3</value>
   </data>
   <data name="lblStatisticsTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 26</value>
@@ -229,19 +220,64 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lblStatisticsTitle.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btn_settings.Name" xml:space="preserve">
+    <value>btn_settings</value>
+  </data>
+  <data name="&gt;&gt;btn_settings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_settings.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btn_settings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnAdvanced.Name" xml:space="preserve">
+    <value>btnAdvanced</value>
+  </data>
+  <data name="&gt;&gt;btnAdvanced.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAdvanced.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnAdvanced.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 35</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="btnAdvanced.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="btnAdvanced.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 7</value>
-  </data>
-  <data name="btnAdvanced.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>192, 6</value>
   </data>
   <data name="btnAdvanced.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>75, 23</value>
   </data>
   <data name="btnAdvanced.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -259,34 +295,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;btnAdvanced.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>401, 43</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="tbTrans.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -298,10 +307,7 @@
     <value>NoControl</value>
   </data>
   <data name="tbTrans.Location" type="System.Drawing.Point, System.Drawing">
-    <value>367, 59</value>
-  </data>
-  <data name="tbTrans.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>275, 48</value>
   </data>
   <data name="tbTrans.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Vertical</value>
@@ -313,7 +319,7 @@
     <value>True</value>
   </data>
   <data name="tbTrans.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 146</value>
+    <value>21, 119</value>
   </data>
   <data name="tbTrans.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -334,13 +340,10 @@
     <value>Bottom, Right</value>
   </data>
   <data name="nudAutoClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 405</value>
-  </data>
-  <data name="nudAutoClose.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>198, 329</value>
   </data>
   <data name="nudAutoClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 22</value>
+    <value>47, 20</value>
   </data>
   <data name="nudAutoClose.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -367,13 +370,10 @@
     <value>NoControl</value>
   </data>
   <data name="chkAutoClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 407</value>
-  </data>
-  <data name="chkAutoClose.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>75, 330</value>
   </data>
   <data name="chkAutoClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 20</value>
+    <value>103, 17</value>
   </data>
   <data name="chkAutoClose.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -397,13 +397,13 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="gabTracker1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 219</value>
+    <value>0, 178</value>
   </data>
   <data name="gabTracker1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="gabTracker1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>401, 172</value>
+    <value>301, 140</value>
   </data>
   <data name="gabTracker1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -420,20 +420,41 @@
   <data name="&gt;&gt;gabTracker1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btn_settings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btn_settings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>273, 6</value>
+  </data>
+  <data name="btn_settings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="btn_settings.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;btn_settings.Name" xml:space="preserve">
+    <value>btn_settings</value>
+  </data>
+  <data name="&gt;&gt;btn_settings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_settings.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btn_settings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>401, 442</value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>301, 359</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>351, 481</value>
+    <value>267, 398</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

@@ -413,6 +413,16 @@ namespace GabNetStats.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
         /// </summary>
+        internal static System.Drawing.Icon network_pipe_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("network_pipe_16x16", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
         internal static System.Drawing.Icon NetworkIndicator {
             get {
                 object obj = ResourceManager.GetObject("NetworkIndicator", resourceCulture);

@@ -407,6 +407,8 @@
     <Content Include="icons\xp\send_yellow.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\network_pipe_16x16.ico" />
+    <None Include="Resources\tunnel_16x16.ico" />
     <None Include="Resources\shell32_18.ico" />
     <None Include="Resources\networkmap_1.ico" />
     <None Include="Resources\wlanpref_101.ico" />
