@@ -887,8 +887,20 @@ namespace GabNetStats
                 {
                     //we get some quick statistics about the number of network interfaces...
                     properties = IPGlobalProperties.GetIPGlobalProperties();
-                    ipv4stat     = properties.GetIPv4GlobalStatistics();
-                    ipv6stat     = properties.GetIPv6GlobalStatistics();
+                    try
+                    {
+                        ipv4stat = properties.GetIPv4GlobalStatistics();
+                        ipv6stat = properties.GetIPv6GlobalStatistics();
+                    }
+                    catch (NetworkInformationException)
+                    {
+                        continue;
+                    }
+                    catch( PlatformNotSupportedException )
+                    {
+                        continue;
+                    }
+
                     nbv4         = ipv4stat.NumberOfInterfaces;
                     nbv6         = ipv6stat.NumberOfInterfaces;
 
