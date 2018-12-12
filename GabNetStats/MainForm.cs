@@ -87,7 +87,7 @@ namespace GabNetStats
         static Queue<long> queueReception = new Queue<long>(avgSpeedNbItems);
         static Queue<long> queueEmission  = new Queue<long>(avgSpeedNbItems);
 
-        static NetworkInterface[] interfaces         = NetworkInterface.GetAllNetworkInterfaces();
+        static NetworkInterface[] interfaces;
         static ArrayList          selectedInterfaces = new ArrayList();
         static IPGlobalProperties properties;
         static IPGlobalStatistics ipv4stat;
@@ -142,6 +142,18 @@ namespace GabNetStats
         static Icon iconCircle_orange = Properties.Resources.circle_orange;
 
         static frmBalloon fBal;
+
+        static MainForm()
+        {
+            try
+            {
+                interfaces = NetworkInterface.GetAllNetworkInterfaces();
+            }
+            catch (NetworkInformationException)
+            {
+
+            }
+        }
 
         public MainForm()
         {
@@ -264,23 +276,41 @@ namespace GabNetStats
             NetworkChange.NetworkAddressChanged      += new NetworkAddressChangedEventHandler     (NetworkChange_NetworkAddressChanged     );
 
             hNetStatThread2              = new Thread(new ThreadStart(this.NetStatThread));
-            hNetStatThread2.IsBackground = true;
-            hNetStatThread2.Name         = "hNetStatThread2";
-            hNetStatThread2.Start();
+            try
+            {
+                hNetStatThread2.IsBackground = true;
+                hNetStatThread2.Name = "hNetStatThread2";
+                hNetStatThread2.Start();
+            }
+            catch (ThreadStateException) { }
+            catch ( OutOfMemoryException) { }
+            catch (InvalidOperationException) { }
 
             //used in case more than one interface is UP and this number is changing.
             hNICRefreshThread              = new Thread(new ThreadStart(this.NICRefreshThread));
-            hNICRefreshThread.IsBackground = true;
-            hNICRefreshThread.Name         = "hNICRefreshThread";
-            hNICRefreshThread.Start();
+            try
+            {
+                hNICRefreshThread.IsBackground = true;
+                hNICRefreshThread.Name = "hNICRefreshThread";
+                hNICRefreshThread.Start();
+            }
+            catch (ThreadStateException) { }
+            catch (OutOfMemoryException) { }
+            catch (InvalidOperationException) { }
 
             this.notifyIconPing.Visible = Settings.Default.AutoPingEnabled;
             if( Settings.Default.AutoPingEnabled )
             {
                 hAutoPingThread              = new Thread(new ThreadStart(this.AutoPingThread));
-                hAutoPingThread.IsBackground = true;
-                hAutoPingThread.Name         = "hAutoPingThread";
-                hAutoPingThread.Start();
+                try
+                {
+                    hAutoPingThread.IsBackground = true;
+                    hAutoPingThread.Name = "hAutoPingThread";
+                    hAutoPingThread.Start();
+                }
+                catch (ThreadStateException) { }
+                catch (OutOfMemoryException) { }
+                catch (InvalidOperationException) { }
             }
             else
             {
@@ -362,10 +392,17 @@ namespace GabNetStats
                 {
                     bAutoPingContinue = true;
                     hAutoPingThread = new Thread(new ThreadStart(this.AutoPingThread));
-                    hAutoPingThread.IsBackground = true;
-                    hAutoPingThread.Name = "hAutoPingThread";
-                    hAutoPingThread.Priority = ThreadPriority.Lowest;
-                    hAutoPingThread.Start();
+                    try
+                    {
+                        hAutoPingThread.IsBackground = true;
+                        hAutoPingThread.Name = "hAutoPingThread";
+                        hAutoPingThread.Priority = ThreadPriority.Lowest;
+                        hAutoPingThread.Start();
+                    }
+                    catch (ThreadStateException) { }
+                    catch (OutOfMemoryException) { }
+                    catch (InvalidOperationException) { }
+                    catch (ArgumentException) { }
                 }
             }
 
@@ -374,7 +411,15 @@ namespace GabNetStats
 
         private void OnExit(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                this.Close();
+            }
+            finally
+            {
+                Application.Exit();
+            }
+            
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -382,13 +427,22 @@ namespace GabNetStats
             bWorkContinue     = false;
             bAutoPingContinue = false;
 
-            Thread.Sleep(2 * nDuration);
+            try
+            {
+                Thread.Sleep(2 * nDuration);
+            }
+            catch (ArgumentOutOfRangeException) { }
 
             if (hNetStatThread2 != null)
             {
                 if (hNetStatThread2.IsAlive)
                 {
-                    hNetStatThread2.Abort();
+                    try
+                    {
+                        hNetStatThread2.Abort();
+                    }
+                    catch (System.Security.SecurityException) { }
+                    catch ( ThreadStateException) { }
                 }
             }
 
@@ -396,7 +450,12 @@ namespace GabNetStats
             {
                 if (hNICRefreshThread.IsAlive)
                 {
-                    hNICRefreshThread.Abort();
+                    try
+                    {
+                        hNICRefreshThread.Abort();
+                    }
+                    catch (System.Security.SecurityException) { }
+                    catch (ThreadStateException) { }
                 }
             }
 
@@ -404,7 +463,12 @@ namespace GabNetStats
             {
                 if (hAutoPingThread.IsAlive)
                 {
-                    hAutoPingThread.Abort();
+                    try
+                    {
+                        hAutoPingThread.Abort();
+                    }
+                    catch (System.Security.SecurityException) { }
+                    catch (ThreadStateException) { }
                 }
             }
         }
@@ -649,9 +713,19 @@ namespace GabNetStats
             //We want to avoid to run the following lines often because it temporarily raises the CPU usage to 2%, which is unacceptable for a background app.
             //This is why the procedure PopulateNICs is not periodically launched in a thread but by events and testing if the nb of adapters changes.
 
-            Monitor.Enter(selectedInterfaces);
+            try
+            {
+                Monitor.Enter(selectedInterfaces);
+            }
+            catch (ArgumentNullException) { }
+            
 
-            interfaces = NetworkInterface.GetAllNetworkInterfaces();
+            try
+            {
+                interfaces = NetworkInterface.GetAllNetworkInterfaces();
+            }
+            catch (NetworkInformationException) { }
+
             selectedInterfaces.Clear();
 
             
@@ -752,7 +826,13 @@ namespace GabNetStats
             
             Array.Clear(interfaces, 0, interfaces.Length);
 
-            Monitor.Exit(selectedInterfaces);
+            try
+            {
+                Monitor.Exit(selectedInterfaces);
+            }
+            catch (ArgumentNullException) { }
+            catch ( SynchronizationLockException) { }
+
 
             if (nUp == 0)
             {
@@ -818,9 +898,13 @@ namespace GabNetStats
                     {
                         reply = ping.Send(Settings.Default.AutoPingHost, 500, buffer);
                     }
-                    catch( PingException pex )
+                    catch( PingException )
                     {
                         reply = null; // because when PingException is thrown, reply is NOT assigned a new value
+                    }
+                    catch( Exception )
+                    {
+                        reply = null;
                     }
                     finally
                     {
@@ -900,7 +984,7 @@ namespace GabNetStats
                     {
                         continue;
                     }
-
+                   
                     nbv4         = ipv4stat.NumberOfInterfaces;
                     nbv6         = ipv6stat.NumberOfInterfaces;
 
@@ -917,7 +1001,6 @@ namespace GabNetStats
             }
             catch (Exception ex)
             {
-
                 if (ex.GetType() != typeof(ThreadAbortException))
                 {
                     MessageBox.Show(
@@ -979,24 +1062,60 @@ namespace GabNetStats
                             goto skip;
                         }
 
-                        Monitor.Enter(selectedInterfaces);
+                        try
+                        {
+                            Monitor.Enter(selectedInterfaces);
+                        }
+                        catch (ArgumentNullException)
+                        {
+                            continue;
+                        }
+                        
                         
                         foreach (NetworkInterface netInterface in selectedInterfaces)
                         {
-                            if (Settings.Default.EnabledInterfaceMACList.Contains(netInterface.GetPhysicalAddress().ToString()))
+                            try
                             {
-                                ipstats = netInterface.GetIPStatistics();
-                                bytesReceived += ipstats.BytesReceived;
-                                bytesSent     += ipstats.BytesSent;
+                                if (Settings.Default.EnabledInterfaceMACList.Contains(netInterface.GetPhysicalAddress().ToString()))
+                                {
+                                    ipstats = netInterface.GetIPStatistics();
+                                    bytesReceived += ipstats.BytesReceived;
+                                    bytesSent += ipstats.BytesSent;
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                continue;
                             }
                         }
 
-                        Monitor.Exit(selectedInterfaces);
+                        try
+                        {
+                            Monitor.Exit(selectedInterfaces);
+                        }
+                        catch (ArgumentNullException)
+                        {
+                            continue;
+                        }
+                        catch( SynchronizationLockException )
+                        {
+                            continue;
+                        }
+                        
 
                         if (bytesReceived != oldbytesReceived && bytesSent != oldbytesSent)
                         {
-                            rawSpeedReception = Math.Abs((1000 / nDuration) * (bytesReceived - oldbytesReceived));
-                            rawSpeedEmission  = Math.Abs((1000 / nDuration) * (bytesSent - oldbytesSent));
+                            try
+                            {
+                                rawSpeedReception = Math.Abs((1000 / nDuration) * (bytesReceived - oldbytesReceived));
+                                rawSpeedEmission = Math.Abs((1000 / nDuration) * (bytesSent - oldbytesSent));
+                            }
+                            catch (Exception)
+                            {
+                                rawSpeedReception = 0;
+                                rawSpeedEmission = 0;
+                            }
+                            
                             oldbytesReceived  = bytesReceived;
                             oldbytesSent      = bytesSent;
                             nCounter          = 0;
@@ -1116,8 +1235,15 @@ namespace GabNetStats
                         }
                         else if (bytesReceived != oldbytesReceived && bytesSent == oldbytesSent)
                         {
-
-                            rawSpeedReception = Math.Abs((1000 / nDuration) * (bytesReceived - oldbytesReceived));
+                            try
+                            {
+                                rawSpeedReception = Math.Abs((1000 / nDuration) * (bytesReceived - oldbytesReceived));
+                            }
+                            catch (DivideByZeroException)
+                            {
+                                rawSpeedReception = 0;
+                            }
+                            
                             rawSpeedEmission  = 0;
                             oldbytesReceived  = bytesReceived;
                             nCounter          = 0;
@@ -1154,7 +1280,15 @@ namespace GabNetStats
                         {
 
                             rawSpeedReception = 0;
-                            rawSpeedEmission  = Math.Abs((1000 / nDuration) * (bytesSent - oldbytesSent));
+                            try
+                            {
+                                rawSpeedEmission = Math.Abs((1000 / nDuration) * (bytesSent - oldbytesSent));
+                            }
+                            catch (DivideByZeroException)
+                            {
+                                rawSpeedEmission = 0;
+                            }
+                            
                             oldbytesSent      = bytesSent;
                             nCounter          = 0;
 
@@ -1201,14 +1335,24 @@ namespace GabNetStats
 
                     skip:
 
-                        Monitor.Enter(queueReception);
-                        Monitor.Enter(queueEmission);
+                        try
+                        {
+                            Monitor.Enter(queueReception);
+                            Monitor.Enter(queueEmission);
+                        }
+                        catch (ArgumentNullException) { }
+
 
                         //computing speed units
                         queueReception.Enqueue(rawSpeedReception);
                         queueEmission.Enqueue(rawSpeedEmission);
-                        queueReception.Dequeue();
-                        queueEmission.Dequeue();
+                        try
+                        {
+                            queueReception.Dequeue();
+                            queueEmission.Dequeue();
+                        }
+                        catch (InvalidOperationException) { }
+
 
                         //reception average ignoring the two most extreme values
                         tRawSpeed = queueReception.ToArray();
@@ -1248,7 +1392,12 @@ namespace GabNetStats
                                 lAvgSpeedReception += tRawSpeed[i];
                             }
                         }
-                        Array.Clear(tRawSpeed, 0, tRawSpeed.Length);
+                        try
+                        {
+                            Array.Clear(tRawSpeed, 0, tRawSpeed.Length);
+                        }
+                        catch (IndexOutOfRangeException) { }
+
                         lAvgSpeedReception = lAvgSpeedReception / ((queueReception.Count > 2 ? queueReception.Count : 3) - 2);
 
 
@@ -1292,13 +1441,23 @@ namespace GabNetStats
                                 lAvgSpeedEmission += tRawSpeed[i];
                             }
                         }
-                        Array.Clear(tRawSpeed, 0, tRawSpeed.Length);
+                        try
+                        {
+                            Array.Clear(tRawSpeed, 0, tRawSpeed.Length);
+                        }
+                        catch (IndexOutOfRangeException) { }
+
                         lAvgSpeedEmission = lAvgSpeedEmission / ((queueEmission.Count > 2 ? queueEmission.Count : 3) - 2);
-                        
 
 
-                        Monitor.Exit(queueReception);
-                        Monitor.Exit(queueEmission);
+                        try
+                        {
+                            Monitor.Exit(queueReception);
+                            Monitor.Exit(queueEmission);
+                        }
+                        catch (ArgumentNullException) { }
+                        catch (SynchronizationLockException) { }
+
 
                         frmBalloon.UpdateInfos(rawSpeedReception, rawSpeedEmission, lAvgSpeedReception, lAvgSpeedEmission, bytesReceived, bytesSent);
 

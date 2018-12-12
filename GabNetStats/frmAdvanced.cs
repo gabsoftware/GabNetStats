@@ -170,7 +170,15 @@ namespace GabNetStats
             radioButtonIPv4.Checked = true;
             radioButtonIPv4_CheckedChanged(this, new EventArgs());
 
-            nics = NetworkInterface.GetAllNetworkInterfaces();
+            try
+            {
+                nics = NetworkInterface.GetAllNetworkInterfaces();
+            }
+            catch (NetworkInformationException)
+            {
+                
+            }
+            
             NetworkInterface selectedNic = null;
             foreach (NetworkInterface nic in nics)
             {
@@ -197,243 +205,296 @@ namespace GabNetStats
 
         private void UpdateICMPv6Stats()
         {
-            IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
-            IcmpV6Statistics stat = ipgp.GetIcmpV6Statistics();
+            try
+            {
+                IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
+                IcmpV6Statistics stat = ipgp.GetIcmpV6Statistics();
 
-            txtDestinationUnreachableMessagesReceivedICMPv6.Text = stat.DestinationUnreachableMessagesReceived.ToString("n", nfi);
-            txtEchoRepliesReceivedICMPv6.Text = stat.EchoRepliesReceived.ToString("n", nfi);
-            txtEchoRequestsReceivedICMPv6.Text = stat.EchoRequestsReceived.ToString("n", nfi);
-            txtErrorsReceivedICMPv6.Text = stat.ErrorsReceived.ToString("n", nfi);
-            txtMembershipQueriesReceivedICMPv6.Text = stat.MembershipQueriesReceived.ToString("n", nfi);
-            txtMembershipReductionsReceivedICMPv6.Text = stat.MembershipReductionsReceived.ToString("n", nfi);
-            txtMembershipReportsReceivedICMPv6.Text = stat.MembershipReportsReceived.ToString("n", nfi);
-            txtMessagesReceivedICMPv6.Text = stat.MessagesReceived.ToString("n", nfi);
-            txtNeighborAdvertisementsReceivedICMPv6.Text = stat.NeighborAdvertisementsReceived.ToString("n", nfi);
-            txtNeighborSolicitsReceivedICMPv6.Text = stat.NeighborSolicitsReceived.ToString("n", nfi);
-            txtPacketTooBigMessagesReceivedICMPv6.Text = stat.PacketTooBigMessagesReceived.ToString("n", nfi);
-            txtParameterProblemsReceivedICMPv6.Text = stat.ParameterProblemsReceived.ToString("n", nfi);
-            txtRedirectsReceivedICMPv6.Text = stat.RedirectsReceived.ToString("n", nfi);
-            txtRouterAdvertisementsReceivedICMPv6.Text = stat.RouterAdvertisementsReceived.ToString("n", nfi);
-            txtRouterSolicitsReceivedICMPv6.Text = stat.RouterSolicitsReceived.ToString("n", nfi);
-            txtTimeExceededMessagesReceivedICMPv6.Text = stat.TimeExceededMessagesReceived.ToString("n", nfi);
+                txtDestinationUnreachableMessagesReceivedICMPv6.Text = stat.DestinationUnreachableMessagesReceived.ToString("n", nfi);
+                txtEchoRepliesReceivedICMPv6.Text = stat.EchoRepliesReceived.ToString("n", nfi);
+                txtEchoRequestsReceivedICMPv6.Text = stat.EchoRequestsReceived.ToString("n", nfi);
+                txtErrorsReceivedICMPv6.Text = stat.ErrorsReceived.ToString("n", nfi);
+                txtMembershipQueriesReceivedICMPv6.Text = stat.MembershipQueriesReceived.ToString("n", nfi);
+                txtMembershipReductionsReceivedICMPv6.Text = stat.MembershipReductionsReceived.ToString("n", nfi);
+                txtMembershipReportsReceivedICMPv6.Text = stat.MembershipReportsReceived.ToString("n", nfi);
+                txtMessagesReceivedICMPv6.Text = stat.MessagesReceived.ToString("n", nfi);
+                txtNeighborAdvertisementsReceivedICMPv6.Text = stat.NeighborAdvertisementsReceived.ToString("n", nfi);
+                txtNeighborSolicitsReceivedICMPv6.Text = stat.NeighborSolicitsReceived.ToString("n", nfi);
+                txtPacketTooBigMessagesReceivedICMPv6.Text = stat.PacketTooBigMessagesReceived.ToString("n", nfi);
+                txtParameterProblemsReceivedICMPv6.Text = stat.ParameterProblemsReceived.ToString("n", nfi);
+                txtRedirectsReceivedICMPv6.Text = stat.RedirectsReceived.ToString("n", nfi);
+                txtRouterAdvertisementsReceivedICMPv6.Text = stat.RouterAdvertisementsReceived.ToString("n", nfi);
+                txtRouterSolicitsReceivedICMPv6.Text = stat.RouterSolicitsReceived.ToString("n", nfi);
+                txtTimeExceededMessagesReceivedICMPv6.Text = stat.TimeExceededMessagesReceived.ToString("n", nfi);
 
-            txtDestinationUnreachableMessagesSentICMPv6.Text = stat.DestinationUnreachableMessagesSent.ToString("n", nfi);
-            txtEchoRepliesSentICMPv6.Text = stat.EchoRepliesSent.ToString("n", nfi);
-            txtEchoRequestsSentICMPv6.Text = stat.EchoRequestsSent.ToString("n", nfi);
-            txtErrorsSentICMPv6.Text = stat.ErrorsSent.ToString("n", nfi);
-            txtMembershipQueriesSentICMPv6.Text = stat.MembershipQueriesSent.ToString("n", nfi);
-            txtMembershipReductionsSentICMPv6.Text = stat.MembershipReductionsSent.ToString("n", nfi);
-            txtMembershipReportsSentICMPv6.Text = stat.MembershipReportsSent.ToString("n", nfi);
-            txtMessagesSentICMPv6.Text = stat.MessagesSent.ToString("n", nfi);
-            txtNeighborAdvertisementsSentICMPv6.Text = stat.NeighborAdvertisementsSent.ToString("n", nfi);
-            txtNeighborSolicitsSentICMPv6.Text = stat.NeighborSolicitsSent.ToString("n", nfi);
-            txtPacketTooBigMessagesSentICMPv6.Text = stat.PacketTooBigMessagesSent.ToString("n", nfi);
-            txtParameterProblemsSentICMPv6.Text = stat.ParameterProblemsSent.ToString("n", nfi);
-            txtRedirectsSentICMPv6.Text = stat.RedirectsSent.ToString("n", nfi);
-            txtRouterAdvertisementsSentICMPv6.Text = stat.RouterAdvertisementsSent.ToString("n", nfi);
-            txtRouterSolicitsSentICMPv6.Text = stat.RouterSolicitsSent.ToString("n", nfi);
-            txtTimeExceededMessagesSentICMPv6.Text = stat.TimeExceededMessagesSent.ToString("n", nfi);
+                txtDestinationUnreachableMessagesSentICMPv6.Text = stat.DestinationUnreachableMessagesSent.ToString("n", nfi);
+                txtEchoRepliesSentICMPv6.Text = stat.EchoRepliesSent.ToString("n", nfi);
+                txtEchoRequestsSentICMPv6.Text = stat.EchoRequestsSent.ToString("n", nfi);
+                txtErrorsSentICMPv6.Text = stat.ErrorsSent.ToString("n", nfi);
+                txtMembershipQueriesSentICMPv6.Text = stat.MembershipQueriesSent.ToString("n", nfi);
+                txtMembershipReductionsSentICMPv6.Text = stat.MembershipReductionsSent.ToString("n", nfi);
+                txtMembershipReportsSentICMPv6.Text = stat.MembershipReportsSent.ToString("n", nfi);
+                txtMessagesSentICMPv6.Text = stat.MessagesSent.ToString("n", nfi);
+                txtNeighborAdvertisementsSentICMPv6.Text = stat.NeighborAdvertisementsSent.ToString("n", nfi);
+                txtNeighborSolicitsSentICMPv6.Text = stat.NeighborSolicitsSent.ToString("n", nfi);
+                txtPacketTooBigMessagesSentICMPv6.Text = stat.PacketTooBigMessagesSent.ToString("n", nfi);
+                txtParameterProblemsSentICMPv6.Text = stat.ParameterProblemsSent.ToString("n", nfi);
+                txtRedirectsSentICMPv6.Text = stat.RedirectsSent.ToString("n", nfi);
+                txtRouterAdvertisementsSentICMPv6.Text = stat.RouterAdvertisementsSent.ToString("n", nfi);
+                txtRouterSolicitsSentICMPv6.Text = stat.RouterSolicitsSent.ToString("n", nfi);
+                txtTimeExceededMessagesSentICMPv6.Text = stat.TimeExceededMessagesSent.ToString("n", nfi);
+            }
+            catch (NetworkInformationException)
+            {
+                
+            }
+            catch( PlatformNotSupportedException )
+            {
+
+            }
         }
 
         private void UpdateICMPv4Stats()
         {
-            IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
-            IcmpV4Statistics stat = ipgp.GetIcmpV4Statistics();
+            try
+            {
+                IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
+                IcmpV4Statistics stat = ipgp.GetIcmpV4Statistics();
 
-            txtAddressMaskRepliesReceived.Text = stat.AddressMaskRepliesReceived.ToString("n", nfi);
-            txtAddressMaskRequestsReceived.Text = stat.AddressMaskRequestsReceived.ToString("n", nfi);
-            txtDestinationUnreachableMessagesReceived.Text = stat.DestinationUnreachableMessagesReceived.ToString("n", nfi);
-            txtEchoRepliesReceived.Text = stat.EchoRepliesReceived.ToString("n", nfi);
-            txtEchoRequestsReceived.Text = stat.EchoRequestsReceived.ToString("n", nfi);
-            txtErrorsReceivedICMPv4.Text = stat.ErrorsReceived.ToString("n", nfi);
-            txtMessagesReceived.Text = stat.MessagesReceived.ToString("n", nfi);
-            txtParameterProblemsReceived.Text = stat.ParameterProblemsReceived.ToString("n", nfi);
-            txtRedirectsReceived.Text = stat.RedirectsReceived.ToString("n", nfi);
-            txtSourceQuenchesReceived.Text = stat.SourceQuenchesReceived.ToString("n", nfi);
-            txtTimeExceededMessagesReceived.Text = stat.TimeExceededMessagesReceived.ToString("n", nfi);
-            txtTimestampRepliesReceived.Text = stat.TimestampRepliesReceived.ToString("n", nfi);
-            txtTimestampRequestsReceived.Text = stat.TimestampRequestsReceived.ToString("n", nfi);
+                txtAddressMaskRepliesReceived.Text = stat.AddressMaskRepliesReceived.ToString("n", nfi);
+                txtAddressMaskRequestsReceived.Text = stat.AddressMaskRequestsReceived.ToString("n", nfi);
+                txtDestinationUnreachableMessagesReceived.Text = stat.DestinationUnreachableMessagesReceived.ToString("n", nfi);
+                txtEchoRepliesReceived.Text = stat.EchoRepliesReceived.ToString("n", nfi);
+                txtEchoRequestsReceived.Text = stat.EchoRequestsReceived.ToString("n", nfi);
+                txtErrorsReceivedICMPv4.Text = stat.ErrorsReceived.ToString("n", nfi);
+                txtMessagesReceived.Text = stat.MessagesReceived.ToString("n", nfi);
+                txtParameterProblemsReceived.Text = stat.ParameterProblemsReceived.ToString("n", nfi);
+                txtRedirectsReceived.Text = stat.RedirectsReceived.ToString("n", nfi);
+                txtSourceQuenchesReceived.Text = stat.SourceQuenchesReceived.ToString("n", nfi);
+                txtTimeExceededMessagesReceived.Text = stat.TimeExceededMessagesReceived.ToString("n", nfi);
+                txtTimestampRepliesReceived.Text = stat.TimestampRepliesReceived.ToString("n", nfi);
+                txtTimestampRequestsReceived.Text = stat.TimestampRequestsReceived.ToString("n", nfi);
 
-            txtAddressMaskRepliesSent.Text = stat.AddressMaskRepliesSent.ToString("n", nfi);
-            txtAddressMaskRequestsSent.Text = stat.AddressMaskRequestsSent.ToString("n", nfi);
-            txtDestinationUnreachableMessagesSent.Text = stat.DestinationUnreachableMessagesSent.ToString("n", nfi);
-            txtEchoRepliesSent.Text = stat.EchoRepliesSent.ToString("n", nfi);
-            txtEchoRequestsSent.Text = stat.EchoRequestsSent.ToString("n", nfi);
-            txtErrorsSent.Text = stat.ErrorsSent.ToString("n", nfi);
-            txtMessagesSent.Text = stat.MessagesSent.ToString("n", nfi);
-            txtParameterProblemsSent.Text = stat.ParameterProblemsSent.ToString("n", nfi);
-            txtRedirectsSent.Text = stat.RedirectsSent.ToString("n", nfi);
-            txtSourceQuenchesSent.Text = stat.SourceQuenchesSent.ToString("n", nfi);
-            txtTimeExceededMessagesSent.Text = stat.TimeExceededMessagesSent.ToString("n", nfi);
-            txtTimestampRepliesSent.Text = stat.TimestampRepliesSent.ToString("n", nfi);
-            txtTimestampRequestsSent.Text = stat.TimestampRequestsSent.ToString("n", nfi);
+                txtAddressMaskRepliesSent.Text = stat.AddressMaskRepliesSent.ToString("n", nfi);
+                txtAddressMaskRequestsSent.Text = stat.AddressMaskRequestsSent.ToString("n", nfi);
+                txtDestinationUnreachableMessagesSent.Text = stat.DestinationUnreachableMessagesSent.ToString("n", nfi);
+                txtEchoRepliesSent.Text = stat.EchoRepliesSent.ToString("n", nfi);
+                txtEchoRequestsSent.Text = stat.EchoRequestsSent.ToString("n", nfi);
+                txtErrorsSent.Text = stat.ErrorsSent.ToString("n", nfi);
+                txtMessagesSent.Text = stat.MessagesSent.ToString("n", nfi);
+                txtParameterProblemsSent.Text = stat.ParameterProblemsSent.ToString("n", nfi);
+                txtRedirectsSent.Text = stat.RedirectsSent.ToString("n", nfi);
+                txtSourceQuenchesSent.Text = stat.SourceQuenchesSent.ToString("n", nfi);
+                txtTimeExceededMessagesSent.Text = stat.TimeExceededMessagesSent.ToString("n", nfi);
+                txtTimestampRepliesSent.Text = stat.TimestampRepliesSent.ToString("n", nfi);
+                txtTimestampRequestsSent.Text = stat.TimestampRequestsSent.ToString("n", nfi);
+            }
+            catch (NetworkInformationException)
+            {
 
+            }
         }
 
         private void UpdateUDPListeners()
         {
-            IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
-            IPEndPoint[] endpoints = ipgp.GetActiveUdpListeners();
-            IPEndPoint ep;
-            DataGridViewRow dgvr;
-
-            if (endpoints.Length != dataGridViewUDPListeners.Rows.Count)
+            try
             {
-                dataGridViewUDPListeners.Rows.Clear();
+                IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
+                IPEndPoint[] endpoints = ipgp.GetActiveUdpListeners();
+                IPEndPoint ep;
+                DataGridViewRow dgvr;
 
-                foreach (IPEndPoint endpoint in endpoints)
+                if (endpoints.Length != dataGridViewUDPListeners.Rows.Count)
                 {
-                    dgvr = new DataGridViewRow();
-                    dgvr.CreateCells(dataGridViewUDPListeners,
-                        endpoint.Address.ToString(),
-                        endpoint.Port.ToString()
-                    );
+                    dataGridViewUDPListeners.Rows.Clear();
 
-                    dataGridViewUDPListeners.Rows.Add(dgvr);
+                    foreach (IPEndPoint endpoint in endpoints)
+                    {
+                        dgvr = new DataGridViewRow();
+                        dgvr.CreateCells(dataGridViewUDPListeners,
+                            endpoint.Address.ToString(),
+                            endpoint.Port.ToString()
+                        );
+
+                        dataGridViewUDPListeners.Rows.Add(dgvr);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < endpoints.Length; i++)
+                    {
+                        ep = endpoints[i];
+                        dgvr = dataGridViewUDPListeners.Rows[i];
+                        dgvr.SetValues(
+                            ep.Address.ToString(),
+                            ep.Port.ToString()
+                        );
+                    }
                 }
             }
-            else
-            {
-                for (int i = 0; i < endpoints.Length; i++)
-                {
-                    ep = endpoints[i];
-                    dgvr = dataGridViewUDPListeners.Rows[i];
-                    dgvr.SetValues(
-                        ep.Address.ToString(),
-                        ep.Port.ToString()
-                    );
-                }
-            }
+            catch (NetworkInformationException) { }
+            catch( InvalidOperationException ) { }
+            catch( System.Net.Sockets.SocketException) { }
+            catch (ArgumentNullException) { }
+            catch (ArgumentException) { }
         }
 
         private void UpdateUDPStats(NetworkInterfaceComponent version)
         {
-            IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
-            UdpStatistics udpstat;
-
-            if (version == NetworkInterfaceComponent.IPv4)
+            try
             {
-                udpstat = ipgp.GetUdpIPv4Statistics();
-            }
-            else
-            {
-                udpstat = ipgp.GetUdpIPv6Statistics();
-            }
+                IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
+                UdpStatistics udpstat;
 
-            txtDatagramsReceived.Text = udpstat.DatagramsReceived.ToString("n", nfi);
-            txtDatagramsSent.Text = udpstat.DatagramsSent.ToString("n", nfi);
-            txtIncomingDatagramsDiscarded.Text = udpstat.IncomingDatagramsDiscarded.ToString("n", nfi);
-            txtIncomingDatagramsWithErrors.Text = udpstat.IncomingDatagramsWithErrors.ToString("n", nfi);
-            txtUdpListeners.Text = udpstat.UdpListeners.ToString("n", nfi);            
+                if (version == NetworkInterfaceComponent.IPv4)
+                {
+                    udpstat = ipgp.GetUdpIPv4Statistics();
+                }
+                else
+                {
+                    udpstat = ipgp.GetUdpIPv6Statistics();
+                }
+
+                txtDatagramsReceived.Text = udpstat.DatagramsReceived.ToString("n", nfi);
+                txtDatagramsSent.Text = udpstat.DatagramsSent.ToString("n", nfi);
+                txtIncomingDatagramsDiscarded.Text = udpstat.IncomingDatagramsDiscarded.ToString("n", nfi);
+                txtIncomingDatagramsWithErrors.Text = udpstat.IncomingDatagramsWithErrors.ToString("n", nfi);
+                txtUdpListeners.Text = udpstat.UdpListeners.ToString("n", nfi);
+            }
+            catch (NetworkInformationException) { }
+            catch (PlatformNotSupportedException) { }
+            catch (FormatException) { }
         }
 
         private void UpdateTCPListeners()
         {
-            IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
-            IPEndPoint[] endpoints = ipgp.GetActiveTcpListeners();
-            IPEndPoint ep;
-            DataGridViewRow dgvr;
-
-            if (endpoints.Length != dataGridViewTCPListeners.Rows.Count)
+            try
             {
-                dataGridViewTCPListeners.Rows.Clear();
+                IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
+                IPEndPoint[] endpoints = ipgp.GetActiveTcpListeners();
+                IPEndPoint ep;
+                DataGridViewRow dgvr;
 
-                foreach (IPEndPoint endpoint in endpoints)
+                if (endpoints.Length != dataGridViewTCPListeners.Rows.Count)
                 {
-                    dgvr = new DataGridViewRow();
-                    dgvr.CreateCells(dataGridViewTCPListeners,
-                        endpoint.Address.ToString(),
-                        endpoint.Port.ToString()
-                    );
+                    dataGridViewTCPListeners.Rows.Clear();
 
-                    dataGridViewTCPListeners.Rows.Add(dgvr);
+                    foreach (IPEndPoint endpoint in endpoints)
+                    {
+                        dgvr = new DataGridViewRow();
+                        dgvr.CreateCells(dataGridViewTCPListeners,
+                            endpoint.Address.ToString(),
+                            endpoint.Port.ToString()
+                        );
+
+                        dataGridViewTCPListeners.Rows.Add(dgvr);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < endpoints.Length; i++)
+                    {
+                        ep = endpoints[i];
+                        dgvr = dataGridViewTCPListeners.Rows[i];
+                        dgvr.SetValues(
+                            ep.Address.ToString(),
+                            ep.Port.ToString()
+                        );
+                    }
                 }
             }
-            else
-            {
-                for (int i = 0; i < endpoints.Length; i++)
-                {
-                    ep = endpoints[i];
-                    dgvr = dataGridViewTCPListeners.Rows[i];
-                    dgvr.SetValues(
-                        ep.Address.ToString(),
-                        ep.Port.ToString()
-                    );
-                }
-            }
+            catch (NetworkInformationException) { }
+            catch (InvalidOperationException) { }
+            catch (System.Net.Sockets.SocketException) { }
+            catch (ArgumentNullException) { }
+            catch (ArgumentException) { }
         }
 
         private void UpdateTCPConnections()
         {
-            IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
-            TcpConnectionInformation[] connections = ipgp.GetActiveTcpConnections();
-            TcpConnectionInformation c;
-            DataGridViewRow dgvr;
-
-            if (connections.Length != dataGridViewTCPConnections.Rows.Count)
+            try
             {
-                dataGridViewTCPConnections.Rows.Clear();
+                IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
+                TcpConnectionInformation[] connections = ipgp.GetActiveTcpConnections();
+                TcpConnectionInformation c;
+                DataGridViewRow dgvr;
 
-                foreach (TcpConnectionInformation con in connections)
+                if (connections.Length != dataGridViewTCPConnections.Rows.Count)
                 {
-                    dgvr = new DataGridViewRow();
-                    dgvr.CreateCells(dataGridViewTCPConnections,
-                        con.LocalEndPoint.Address.ToString(),
-                        con.LocalEndPoint.Port.ToString(),
-                        con.RemoteEndPoint.Address.ToString(),
-                        con.RemoteEndPoint.Port.ToString(),
-                        con.State.ToString()
-                    );
-                    dataGridViewTCPConnections.Rows.Add(dgvr);
+                    dataGridViewTCPConnections.Rows.Clear();
+
+                    foreach (TcpConnectionInformation con in connections)
+                    {
+                        dgvr = new DataGridViewRow();
+                        dgvr.CreateCells(dataGridViewTCPConnections,
+                            con.LocalEndPoint.Address.ToString(),
+                            con.LocalEndPoint.Port.ToString(),
+                            con.RemoteEndPoint.Address.ToString(),
+                            con.RemoteEndPoint.Port.ToString(),
+                            con.State.ToString()
+                        );
+                        dataGridViewTCPConnections.Rows.Add(dgvr);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < connections.Length; i++)
+                    {
+                        c = connections[i];
+                        dgvr = dataGridViewTCPConnections.Rows[i];
+                        dgvr.SetValues(
+                            c.LocalEndPoint.Address.ToString(),
+                            c.LocalEndPoint.Port.ToString(),
+                            c.RemoteEndPoint.Address.ToString(),
+                            c.RemoteEndPoint.Port.ToString(),
+                            c.State.ToString()
+                        );
+                    }
                 }
             }
-            else
-            {
-                for (int i = 0; i < connections.Length; i++)
-                {
-                    c = connections[i];
-                    dgvr = dataGridViewTCPConnections.Rows[i];
-                    dgvr.SetValues(
-                        c.LocalEndPoint.Address.ToString(),
-                        c.LocalEndPoint.Port.ToString(),
-                        c.RemoteEndPoint.Address.ToString(),
-                        c.RemoteEndPoint.Port.ToString(),
-                        c.State.ToString()
-                    );
-                }
-            }
+            catch (NetworkInformationException) { }
+            catch (InvalidOperationException) { }
+            catch (System.Net.Sockets.SocketException) { }
+            catch (ArgumentNullException) { }
+            catch (ArgumentException) { }
         }
 
         private void UpdateTCPStats(NetworkInterfaceComponent version)
         {
-            IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
-            TcpStatistics tcpstat;
-
-            if (version == NetworkInterfaceComponent.IPv4)
+            try
             {
-                tcpstat = ipgp.GetTcpIPv4Statistics();
+                IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
+                TcpStatistics tcpstat;
+
+                if (version == NetworkInterfaceComponent.IPv4)
+                {
+                    tcpstat = ipgp.GetTcpIPv4Statistics();
+                }
+                else
+                {
+                    tcpstat = ipgp.GetTcpIPv6Statistics();
+                }
+
+                txtConnectionsAccepted.Text = tcpstat.ConnectionsAccepted.ToString("n", nfi);
+                txtConnectionsInitiated.Text = tcpstat.ConnectionsInitiated.ToString("n", nfi);
+                txtCumulativeConnections.Text = tcpstat.CumulativeConnections.ToString("n", nfi);
+                txtCurrentConnections.Text = tcpstat.CurrentConnections.ToString("n", nfi);
+                txtFailedConnectionAttempts.Text = tcpstat.FailedConnectionAttempts.ToString("n", nfi);
+                txtMaximumConnections.Text = tcpstat.MaximumConnections.ToString("n", nfi);
+                txtResetConnections.Text = tcpstat.ResetConnections.ToString("n", nfi);
+
+                txtErrorsReceived.Text = tcpstat.ErrorsReceived.ToString("n", nfi);
+
+                txtMaximumTransmissionTimeout.Text = String.Format("{0} ms", tcpstat.MaximumTransmissionTimeout.ToString("n", nfi));
+                txtMinimumTransmissionTimeout.Text = String.Format("{0} ms", tcpstat.MinimumTransmissionTimeout.ToString("n", nfi));
+                txtResetsSent.Text = tcpstat.ResetsSent.ToString("n", nfi);
+                txtSegmentsReceived.Text = tcpstat.SegmentsReceived.ToString("n", nfi);
+                txtSegmentsResent.Text = tcpstat.SegmentsResent.ToString("n", nfi);
+                txtSegmentsSent.Text = tcpstat.SegmentsSent.ToString("n", nfi);
             }
-            else
-            {
-                tcpstat = ipgp.GetTcpIPv6Statistics();
-            }
-
-            txtConnectionsAccepted.Text = tcpstat.ConnectionsAccepted.ToString("n", nfi);
-            txtConnectionsInitiated.Text = tcpstat.ConnectionsInitiated.ToString("n", nfi);
-            txtCumulativeConnections.Text = tcpstat.CumulativeConnections.ToString("n", nfi);
-            txtCurrentConnections.Text = tcpstat.CurrentConnections.ToString("n", nfi);
-            txtFailedConnectionAttempts.Text = tcpstat.FailedConnectionAttempts.ToString("n", nfi);
-            txtMaximumConnections.Text = tcpstat.MaximumConnections.ToString("n", nfi);
-            txtResetConnections.Text = tcpstat.ResetConnections.ToString("n", nfi);
-
-            txtErrorsReceived.Text = tcpstat.ErrorsReceived.ToString("n", nfi);
-
-            txtMaximumTransmissionTimeout.Text = String.Format("{0} ms", tcpstat.MaximumTransmissionTimeout.ToString("n", nfi));
-            txtMinimumTransmissionTimeout.Text = String.Format("{0} ms", tcpstat.MinimumTransmissionTimeout.ToString("n", nfi));
-            txtResetsSent.Text = tcpstat.ResetsSent.ToString("n", nfi);
-            txtSegmentsReceived.Text = tcpstat.SegmentsReceived.ToString("n", nfi);
-            txtSegmentsResent.Text = tcpstat.SegmentsResent.ToString("n", nfi);
-            txtSegmentsSent.Text = tcpstat.SegmentsSent.ToString("n", nfi);
+            catch (NetworkInformationException) { }
+            catch (PlatformNotSupportedException) { }
+            catch (FormatException) { }
         }
 
         private void UpdateNICStats(NetworkInterfaceComponent version)
@@ -697,12 +758,17 @@ namespace GabNetStats
         {
             IPGlobalProperties ipgp = IPGlobalProperties.GetIPGlobalProperties();
             IPGlobalStatistics ipgs;
-
-
-
             if (version == NetworkInterfaceComponent.IPv4)
             {
-                ipgs = ipgp.GetIPv4GlobalStatistics();
+                try
+                {
+                    ipgs = ipgp.GetIPv4GlobalStatistics();
+                }
+                catch (NetworkInformationException)
+                {
+                    ipgs = null;
+                }
+                
             }
             else
             {
@@ -722,32 +788,34 @@ namespace GabNetStats
             txtIsWinsProxy.Text = ipgp.IsWinsProxy ? Res.str_Yes : Res.str_No;
             txtNodeType.Text = ipgp.NodeType.ToString();
 
-            txtDefaultTTL.Text = String.Format("{0} hops", ipgs.DefaultTtl);
-            txtForwardingEnabled.Text = ipgs.ForwardingEnabled ? Res.str_Yes : Res.str_No;
-            txtNumberOfInterfaces.Text = ipgs.NumberOfInterfaces.ToString("n", nfi);
-            txtNumberOfIPAddresses.Text = ipgs.NumberOfIPAddresses.ToString("n", nfi);
-            txtNumberOfRoutes.Text = ipgs.NumberOfRoutes.ToString("n", nfi);
+            if (ipgs != null)
+            {
+                txtDefaultTTL.Text = String.Format("{0} hops", ipgs.DefaultTtl);
+                txtForwardingEnabled.Text = ipgs.ForwardingEnabled ? Res.str_Yes : Res.str_No;
+                txtNumberOfInterfaces.Text = ipgs.NumberOfInterfaces.ToString("n", nfi);
+                txtNumberOfIPAddresses.Text = ipgs.NumberOfIPAddresses.ToString("n", nfi);
+                txtNumberOfRoutes.Text = ipgs.NumberOfRoutes.ToString("n", nfi);
 
-            txtOutputPacketRequests.Text = ipgs.OutputPacketRequests.ToString("n", nfi);
-            txtOutputPacketRoutingDiscards.Text = ipgs.OutputPacketRoutingDiscards.ToString("n", nfi);
-            txtOutputPacketsDiscarded.Text = ipgs.OutputPacketsDiscarded.ToString("n", nfi);
-            txtOutputPacketsWithNoRoute.Text = ipgs.OutputPacketsWithNoRoute.ToString("n", nfi);
+                txtOutputPacketRequests.Text = ipgs.OutputPacketRequests.ToString("n", nfi);
+                txtOutputPacketRoutingDiscards.Text = ipgs.OutputPacketRoutingDiscards.ToString("n", nfi);
+                txtOutputPacketsDiscarded.Text = ipgs.OutputPacketsDiscarded.ToString("n", nfi);
+                txtOutputPacketsWithNoRoute.Text = ipgs.OutputPacketsWithNoRoute.ToString("n", nfi);
 
-            txtPacketFragmentFailures.Text = ipgs.PacketFragmentFailures.ToString("n", nfi);
-            txtPacketReassembliesRequired.Text = ipgs.PacketReassembliesRequired.ToString("n", nfi);
-            txtPacketReassemblyFailures.Text = ipgs.PacketReassemblyFailures.ToString("n", nfi);
-            txtPacketReassemblyTimeout.Text = String.Format("{0} ms", ipgs.PacketReassemblyTimeout.ToString("n", nfi));
-            txtPacketsFragmented.Text = ipgs.PacketsFragmented.ToString("n", nfi);
-            txtPacketsReassembled.Text = ipgs.PacketsReassembled.ToString("n", nfi);
+                txtPacketFragmentFailures.Text = ipgs.PacketFragmentFailures.ToString("n", nfi);
+                txtPacketReassembliesRequired.Text = ipgs.PacketReassembliesRequired.ToString("n", nfi);
+                txtPacketReassemblyFailures.Text = ipgs.PacketReassemblyFailures.ToString("n", nfi);
+                txtPacketReassemblyTimeout.Text = String.Format("{0} ms", ipgs.PacketReassemblyTimeout.ToString("n", nfi));
+                txtPacketsFragmented.Text = ipgs.PacketsFragmented.ToString("n", nfi);
+                txtPacketsReassembled.Text = ipgs.PacketsReassembled.ToString("n", nfi);
 
-            txtReceivedPackets.Text = ipgs.ReceivedPackets.ToString("n", nfi);
-            txtReceivedPacketsDelivered.Text = ipgs.ReceivedPacketsDelivered.ToString("n", nfi);
-            txtReceivedPacketsDiscarded.Text = ipgs.ReceivedPacketsDiscarded.ToString("n", nfi);
-            txtReceivedPacketsForwarded.Text = ipgs.ReceivedPacketsForwarded.ToString("n", nfi);
-            txtReceivedPacketsWithAddressErrors.Text = ipgs.ReceivedPacketsWithAddressErrors.ToString("n", nfi);
-            txtReceivedPacketsWithHeadersErrors.Text = ipgs.ReceivedPacketsWithHeadersErrors.ToString("n", nfi);
-            txtReceivedPacketsWithUnknownProtocol.Text = ipgs.ReceivedPacketsWithUnknownProtocol.ToString("n", nfi);
-    
+                txtReceivedPackets.Text = ipgs.ReceivedPackets.ToString("n", nfi);
+                txtReceivedPacketsDelivered.Text = ipgs.ReceivedPacketsDelivered.ToString("n", nfi);
+                txtReceivedPacketsDiscarded.Text = ipgs.ReceivedPacketsDiscarded.ToString("n", nfi);
+                txtReceivedPacketsForwarded.Text = ipgs.ReceivedPacketsForwarded.ToString("n", nfi);
+                txtReceivedPacketsWithAddressErrors.Text = ipgs.ReceivedPacketsWithAddressErrors.ToString("n", nfi);
+                txtReceivedPacketsWithHeadersErrors.Text = ipgs.ReceivedPacketsWithHeadersErrors.ToString("n", nfi);
+                txtReceivedPacketsWithUnknownProtocol.Text = ipgs.ReceivedPacketsWithUnknownProtocol.ToString("n", nfi);
+            }
         }
 
         /*private void ReEnableControlsInTabPage(TabPage tab, bool enable = true)
