@@ -55,6 +55,7 @@ namespace GabNetStats
             // 
             // contextMenuTray
             // 
+            resources.ApplyResources(this.contextMenuTray, "contextMenuTray");
             this.contextMenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
             this.toolStripSeparator4,
@@ -74,113 +75,112 @@ namespace GabNetStats
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.contextMenuTray.Name = "contextMenuTray";
-            resources.ApplyResources(this.contextMenuTray, "contextMenuTray");
             // 
             // aboutToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAbout);
             // 
             // toolStripSeparator4
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
             resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
             // 
             // settingsToolStripMenuItem
             // 
+            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.settings_icon_16x16;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.OnSettings);
             // 
             // toolStripSeparator3
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
             resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
             // 
             // advancedStatisticsToolStripMenuItem
             // 
-            this.advancedStatisticsToolStripMenuItem.Name = "advancedStatisticsToolStripMenuItem";
             resources.ApplyResources(this.advancedStatisticsToolStripMenuItem, "advancedStatisticsToolStripMenuItem");
+            this.advancedStatisticsToolStripMenuItem.Name = "advancedStatisticsToolStripMenuItem";
             this.advancedStatisticsToolStripMenuItem.Click += new System.EventHandler(this.advancedStatisticsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
             // 
             // manageWirelessNetworksToolStripMenuItem
             // 
+            resources.ApplyResources(this.manageWirelessNetworksToolStripMenuItem, "manageWirelessNetworksToolStripMenuItem");
             this.manageWirelessNetworksToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.wlanpref_101;
             this.manageWirelessNetworksToolStripMenuItem.Name = "manageWirelessNetworksToolStripMenuItem";
-            resources.ApplyResources(this.manageWirelessNetworksToolStripMenuItem, "manageWirelessNetworksToolStripMenuItem");
             this.manageWirelessNetworksToolStripMenuItem.Click += new System.EventHandler(this.manageWirelessNetworksToolStripMenuItem_Click);
             // 
             // homeGroupToolStripMenuItem
             // 
+            resources.ApplyResources(this.homeGroupToolStripMenuItem, "homeGroupToolStripMenuItem");
             this.homeGroupToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.imageres_1013;
             this.homeGroupToolStripMenuItem.Name = "homeGroupToolStripMenuItem";
-            resources.ApplyResources(this.homeGroupToolStripMenuItem, "homeGroupToolStripMenuItem");
             this.homeGroupToolStripMenuItem.Click += new System.EventHandler(this.homeGroupToolStripMenuItem_Click);
             // 
             // networkMapToolStripMenuItem
             // 
+            resources.ApplyResources(this.networkMapToolStripMenuItem, "networkMapToolStripMenuItem");
             this.networkMapToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.networkmap_1;
             this.networkMapToolStripMenuItem.Name = "networkMapToolStripMenuItem";
-            resources.ApplyResources(this.networkMapToolStripMenuItem, "networkMapToolStripMenuItem");
             this.networkMapToolStripMenuItem.Click += new System.EventHandler(this.networkMapToolStripMenuItem_Click);
             // 
             // networkdomainworkgroupToolStripMenuItem
             // 
+            resources.ApplyResources(this.networkdomainworkgroupToolStripMenuItem, "networkdomainworkgroupToolStripMenuItem");
             this.networkdomainworkgroupToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.shell32_18;
             this.networkdomainworkgroupToolStripMenuItem.Name = "networkdomainworkgroupToolStripMenuItem";
-            resources.ApplyResources(this.networkdomainworkgroupToolStripMenuItem, "networkdomainworkgroupToolStripMenuItem");
             this.networkdomainworkgroupToolStripMenuItem.Click += new System.EventHandler(this.networkdomainworkgroupToolStripMenuItem_Click);
             // 
             // networkToolStripMenuItem
             // 
+            resources.ApplyResources(this.networkToolStripMenuItem, "networkToolStripMenuItem");
             this.networkToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.shell32_18;
             this.networkToolStripMenuItem.Name = "networkToolStripMenuItem";
-            resources.ApplyResources(this.networkToolStripMenuItem, "networkToolStripMenuItem");
             this.networkToolStripMenuItem.Click += new System.EventHandler(this.networkToolStripMenuItem_Click);
             // 
             // FirewallSettingsToolStripMenuItem
             // 
+            resources.ApplyResources(this.FirewallSettingsToolStripMenuItem, "FirewallSettingsToolStripMenuItem");
             this.FirewallSettingsToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.FireWallControlPanel_16x16;
             this.FirewallSettingsToolStripMenuItem.Name = "FirewallSettingsToolStripMenuItem";
-            resources.ApplyResources(this.FirewallSettingsToolStripMenuItem, "FirewallSettingsToolStripMenuItem");
             this.FirewallSettingsToolStripMenuItem.Click += new System.EventHandler(this.FirewallSettingsToolStripMenuItem_Click);
             // 
             // NetworkSharingCenterToolStripMenuItem
             // 
+            resources.ApplyResources(this.NetworkSharingCenterToolStripMenuItem, "NetworkSharingCenterToolStripMenuItem");
             this.NetworkSharingCenterToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.netcenter_16x16;
             this.NetworkSharingCenterToolStripMenuItem.Name = "NetworkSharingCenterToolStripMenuItem";
-            resources.ApplyResources(this.NetworkSharingCenterToolStripMenuItem, "NetworkSharingCenterToolStripMenuItem");
             this.NetworkSharingCenterToolStripMenuItem.Click += new System.EventHandler(this.NetworkSharingCenterToolStripMenuItem_Click);
             // 
             // NetworkConnectionsToolStripMenuItem
             // 
+            resources.ApplyResources(this.NetworkConnectionsToolStripMenuItem, "NetworkConnectionsToolStripMenuItem");
             this.NetworkConnectionsToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.netshell_16x16;
             this.NetworkConnectionsToolStripMenuItem.Name = "NetworkConnectionsToolStripMenuItem";
-            resources.ApplyResources(this.NetworkConnectionsToolStripMenuItem, "NetworkConnectionsToolStripMenuItem");
             this.NetworkConnectionsToolStripMenuItem.Click += new System.EventHandler(this.NetworkConnectionsToolStripMenuItem_Click);
             // 
             // NetworkAdaptersToolStripMenuItem
             // 
+            resources.ApplyResources(this.NetworkAdaptersToolStripMenuItem, "NetworkAdaptersToolStripMenuItem");
             this.NetworkAdaptersToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.pnidui_2407_16x16;
             this.NetworkAdaptersToolStripMenuItem.Name = "NetworkAdaptersToolStripMenuItem";
-            resources.ApplyResources(this.NetworkAdaptersToolStripMenuItem, "NetworkAdaptersToolStripMenuItem");
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExit);
             // 
             // notifyIconActivity

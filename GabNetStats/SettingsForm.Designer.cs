@@ -104,13 +104,13 @@ namespace GabNetStats
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtIconSet);
             this.groupBox1.Controls.Add(this.grpBandwidthPreferences);
             this.groupBox1.Controls.Add(this.radioDefault);
             this.groupBox1.Controls.Add(this.radioCustomSpeed);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -126,13 +126,14 @@ namespace GabNetStats
             // 
             // txtIconSet
             // 
-            this.txtIconSet.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::GabNetStats.Properties.Settings.Default, "IconSet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             resources.ApplyResources(this.txtIconSet, "txtIconSet");
+            this.txtIconSet.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::GabNetStats.Properties.Settings.Default, "IconSet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtIconSet.Name = "txtIconSet";
             this.txtIconSet.Text = global::GabNetStats.Properties.Settings.Default.IconSet;
             // 
             // grpBandwidthPreferences
             // 
+            resources.ApplyResources(this.grpBandwidthPreferences, "grpBandwidthPreferences");
             this.grpBandwidthPreferences.Controls.Add(this.cbUpload);
             this.grpBandwidthPreferences.Controls.Add(this.label4);
             this.grpBandwidthPreferences.Controls.Add(this.cbDownload);
@@ -144,15 +145,14 @@ namespace GabNetStats
             this.grpBandwidthPreferences.Controls.Add(this.txtDownload);
             this.grpBandwidthPreferences.Controls.Add(this.txtUpload);
             this.grpBandwidthPreferences.Controls.Add(this.label3);
-            resources.ApplyResources(this.grpBandwidthPreferences, "grpBandwidthPreferences");
             this.grpBandwidthPreferences.Name = "grpBandwidthPreferences";
             this.grpBandwidthPreferences.TabStop = false;
             // 
             // cbUpload
             // 
+            resources.ApplyResources(this.cbUpload, "cbUpload");
             this.cbUpload.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUpload.FormattingEnabled = true;
-            resources.ApplyResources(this.cbUpload, "cbUpload");
             this.cbUpload.Name = "cbUpload";
             this.cbUpload.SelectedIndexChanged += new System.EventHandler(this.cbUpload_SelectedIndexChanged);
             // 
@@ -163,9 +163,9 @@ namespace GabNetStats
             // 
             // cbDownload
             // 
+            resources.ApplyResources(this.cbDownload, "cbDownload");
             this.cbDownload.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDownload.FormattingEnabled = true;
-            resources.ApplyResources(this.cbDownload, "cbDownload");
             this.cbDownload.Name = "cbDownload";
             this.cbDownload.SelectedIndexChanged += new System.EventHandler(this.cbDownload_SelectedIndexChanged);
             // 
@@ -220,13 +220,13 @@ namespace GabNetStats
             // 
             // groupBox2
             // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.chkSettingsAutoPingNotification);
             this.groupBox2.Controls.Add(this.numericUpDown1);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtSettingsAutoPingHost);
             this.groupBox2.Controls.Add(this.chkSettingsAutoPingEnabled);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -241,13 +241,13 @@ namespace GabNetStats
             // 
             // numericUpDown1
             // 
+            resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
             this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::GabNetStats.Properties.Settings.Default, "AutoPingRate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.numericUpDown1.Increment = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
             this.numericUpDown1.Maximum = new decimal(new int[] {
             60000,
             0,
@@ -273,8 +273,8 @@ namespace GabNetStats
             // 
             // txtSettingsAutoPingHost
             // 
-            this.txtSettingsAutoPingHost.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::GabNetStats.Properties.Settings.Default, "AutoPingHost", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             resources.ApplyResources(this.txtSettingsAutoPingHost, "txtSettingsAutoPingHost");
+            this.txtSettingsAutoPingHost.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::GabNetStats.Properties.Settings.Default, "AutoPingHost", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.txtSettingsAutoPingHost.Name = "txtSettingsAutoPingHost";
             this.txtSettingsAutoPingHost.Text = global::GabNetStats.Properties.Settings.Default.AutoPingHost;
             // 

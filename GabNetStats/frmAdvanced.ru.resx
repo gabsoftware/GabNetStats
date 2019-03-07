@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,320 +118,1148 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabPageGlobal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 511</value>
+  </data>
+  <data name="tabPageGlobal.Text" xml:space="preserve">
+    <value>Общая статистика</value>
+  </data>
+  <data name="tabPageNetworkInterfaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 511</value>
+  </data>
+  <data name="tabPageNetworkInterfaces.Text" xml:space="preserve">
+    <value>Статистика сетевого интерфейса</value>
+  </data>
+  <data name="tabPageTCP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 511</value>
+  </data>
+  <data name="tabPageTCP.Text" xml:space="preserve">
+    <value>Статистика TCP</value>
+  </data>
+  <data name="tabPageTCPConnections.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 511</value>
+  </data>
+  <data name="tabPageTCPConnections.Text" xml:space="preserve">
+    <value>Соединения TCP</value>
+  </data>
+  <data name="tabPageTCPListeners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 511</value>
+  </data>
+  <data name="tabPageTCPListeners.Text" xml:space="preserve">
+    <value>Прослушивание TCP</value>
+  </data>
+  <data name="tabPageUDP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 511</value>
+  </data>
+  <data name="tabPageUDP.Text" xml:space="preserve">
+    <value>Статистика UDP</value>
+  </data>
+  <data name="tabPageUDPListeners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 511</value>
+  </data>
+  <data name="tabPageUDPListeners.Text" xml:space="preserve">
+    <value>Прослушивание UDP</value>
+  </data>
+  <data name="tabPageICMPv4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 511</value>
+  </data>
+  <data name="tabPageICMPv4.Text" xml:space="preserve">
+    <value>Статистика ICMPv4</value>
+  </data>
+  <data name="tabPageICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1050, 511</value>
+  </data>
+  <data name="tabPageICMPv6.Text" xml:space="preserve">
+    <value>Статистика ICMPv6</value>
+  </data>
+  <data name="tabStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1058, 537</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Text" xml:space="preserve">
+    <value>Исходящие пакеты</value>
+  </data>
+  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 13</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Запросы исходящих пакетов</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 13</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Пакеты без маршрута</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 13</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Маршрутизация отбрасываний</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 13</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Отклонено переданных пакетов</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Text" xml:space="preserve">
+    <value>Входящие пакеты</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 13</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Пакеты с неизвестным протоколом</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 13</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Пакеты с ошибками заголовка</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 13</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Пакеты с ошибками адреса</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 13</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Переслано пакетов</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 13</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Отклонено пакетов</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Доставлено пакетов</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 13</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Получено пакетов</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Text" xml:space="preserve">
+    <value>Фрагментация пакета</value>
+  </data>
+  <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 13</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Пересобранные пакеты</value>
+  </data>
+  <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 13</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Фрагментировано пакетов</value>
+  </data>
+  <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 13</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Таймаут повторной сборки</value>
+  </data>
+  <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 13</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Сбой повторной сборки</value>
+  </data>
+  <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 13</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>Требуется повторная сборка</value>
+  </data>
+  <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 13</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Ошибки фрагментации пакетов</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Text" xml:space="preserve">
+    <value>Разное</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 13</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Тип узла</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 13</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Является WINS-прокси</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Имя хоста</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Доменное имя</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 13</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Имя области DHCP</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Количество маршрутов</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Количество IP-адресов</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Количество интерфейсов</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Переадресация включена</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>TTL по умолчанию</value>
+  </data>
+  <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>469, 293</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Свойства (2)</value>
+  </data>
+  <data name="txtMACaddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 133</value>
+  </data>
+  <data name="label144.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="label144.Text" xml:space="preserve">
+    <value>MAC-адрес</value>
+  </data>
+  <data name="txtSupportsMulticast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 263</value>
+  </data>
+  <data name="label64.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 13</value>
+  </data>
+  <data name="label64.Text" xml:space="preserve">
+    <value>Поддержка многоадресной рассылки</value>
+  </data>
+  <data name="txtSpeed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 81</value>
+  </data>
+  <data name="label65.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 13</value>
+  </data>
+  <data name="label65.Text" xml:space="preserve">
+    <value>Скорость</value>
+  </data>
+  <data name="txtOperationalStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 211</value>
+  </data>
+  <data name="label61.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
+  </data>
+  <data name="label61.Text" xml:space="preserve">
+    <value>Только прием</value>
+  </data>
+  <data name="txtIsReceiveOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 185</value>
+  </data>
+  <data name="txtId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 159</value>
+  </data>
+  <data name="label66.Text" xml:space="preserve">
+    <value>Статус операции</value>
+  </data>
+  <data name="txtNetworkInterfaceType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 107</value>
+  </data>
+  <data name="label58.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 13</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>Тип сетевого интерфейса</value>
+  </data>
+  <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 55</value>
+  </data>
+  <data name="label59.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 13</value>
+  </data>
+  <data name="label59.Text" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="txtLoopbackInterfaceIndex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 237</value>
+  </data>
+  <data name="label60.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 13</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>Индекс петлевого интерфейса</value>
+  </data>
+  <data name="txtDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>232, 29</value>
+  </data>
+  <data name="label63.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="label63.Text" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Конфигурация IP</value>
+  </data>
+  <data name="label57.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 13</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>Адреса WINS-сервера</value>
+  </data>
+  <data name="label55.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 13</value>
+  </data>
+  <data name="label55.Text" xml:space="preserve">
+    <value>Адреса одноадресной рассылки</value>
+  </data>
+  <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 13</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>Адреса многоадресной рассылки</value>
+  </data>
+  <data name="label47.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 13</value>
+  </data>
+  <data name="label47.Text" xml:space="preserve">
+    <value>Динамический DNS включен</value>
+  </data>
+  <data name="label48.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>DNS включен</value>
+  </data>
+  <data name="label49.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="label49.Text" xml:space="preserve">
+    <value>Адреса шлюза</value>
+  </data>
+  <data name="label50.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>DNS-суффикс</value>
+  </data>
+  <data name="label52.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 13</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>Адреса DNS</value>
+  </data>
+  <data name="label53.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 13</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>Адреса DHCP-сервера</value>
+  </data>
+  <data name="label54.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 13</value>
+  </data>
+  <data name="label54.Text" xml:space="preserve">
+    <value>Адреса произвольной рассылки</value>
+  </data>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>666, 6</value>
+  </data>
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>352, 200</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Свойства (1)</value>
+  </data>
+  <data name="txtUsesWins.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 172</value>
+  </data>
+  <data name="label42.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 13</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>Используется WINS</value>
+  </data>
+  <data name="txtMtu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 146</value>
+  </data>
+  <data name="txtIsForwardingEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 120</value>
+  </data>
+  <data name="label30.Size" type="System.Drawing.Size, System.Drawing">
+    <value>183, 13</value>
+  </data>
+  <data name="label30.Text" xml:space="preserve">
+    <value>Переадресация пакетов включена</value>
+  </data>
+  <data name="txtIsDhcpEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 94</value>
+  </data>
+  <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 13</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>DHCP включен</value>
+  </data>
+  <data name="txtIsAutomaticPrivateAddressingEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 68</value>
+  </data>
+  <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 13</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>Адрес APIPA включен</value>
+  </data>
+  <data name="txtIsAutomaticPrivateAddressingActive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 42</value>
+  </data>
+  <data name="label37.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>Имеется адрес APIPA</value>
+  </data>
+  <data name="txtIndex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 16</value>
+  </data>
+  <data name="label39.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="label39.Text" xml:space="preserve">
+    <value>Индекс</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>309, 200</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Отдано</value>
+  </data>
+  <data name="txtUnicastPacketsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 81</value>
+  </data>
+  <data name="label41.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 13</value>
+  </data>
+  <data name="label41.Text" xml:space="preserve">
+    <value>Отпр. одноадресных пакетов</value>
+  </data>
+  <data name="txtOutputQueueLength.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 159</value>
+  </data>
+  <data name="label43.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>Длина очереди вывода</value>
+  </data>
+  <data name="txtOutgoingPacketsWithErrors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 133</value>
+  </data>
+  <data name="label44.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 13</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>Исх. пакеты с ошибками</value>
+  </data>
+  <data name="txtOutgoingPacketsDiscarded.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 107</value>
+  </data>
+  <data name="label45.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 13</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>Отклонено исх. пакетов</value>
+  </data>
+  <data name="txtNonUnicastPacketsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 55</value>
+  </data>
+  <data name="label46.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 13</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>Отп. неодноадресных пакетов</value>
+  </data>
+  <data name="txtBytesSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 29</value>
+  </data>
+  <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 13</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>Отправлено байт</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Получено</value>
+  </data>
+  <data name="label40.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 13</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>Получено одноадресных пакетов</value>
+  </data>
+  <data name="label33.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 13</value>
+  </data>
+  <data name="label33.Text" xml:space="preserve">
+    <value>Получено не одноадресных пакетов</value>
+  </data>
+  <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 13</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>Вх. пакеты с неизвестным протоколом</value>
+  </data>
+  <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 13</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Входящие пакеты с ошибками</value>
+  </data>
+  <data name="label36.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 13</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>Отклонено входящих пакетов</value>
+  </data>
+  <data name="label38.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 13</value>
+  </data>
+  <data name="label38.Text" xml:space="preserve">
+    <value>Получено байт</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Статистика ошибок TCP</value>
+  </data>
+  <data name="txtErrorsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 22</value>
+  </data>
+  <data name="label81.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 13</value>
+  </data>
+  <data name="label81.Text" xml:space="preserve">
+    <value>Получено ошибок TCP</value>
+  </data>
+  <data name="groupBox8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>468, 231</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>татистика сегментов TCP</value>
+  </data>
+  <data name="txtSegmentsResent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 128</value>
+  </data>
+  <data name="label82.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 13</value>
+  </data>
+  <data name="label82.Text" xml:space="preserve">
+    <value>Получено сегментов TCP</value>
+  </data>
+  <data name="txtSegmentsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 102</value>
+  </data>
+  <data name="label83.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 13</value>
+  </data>
+  <data name="label83.Text" xml:space="preserve">
+    <value>Отправлено TCP сброс (RST флаг)</value>
+  </data>
+  <data name="txtResetsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 76</value>
+  </data>
+  <data name="label84.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 13</value>
+  </data>
+  <data name="label84.Text" xml:space="preserve">
+    <value>Повторно отправлено сегментов TCP</value>
+  </data>
+  <data name="txtSegmentsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 154</value>
+  </data>
+  <data name="label85.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 13</value>
+  </data>
+  <data name="label85.Text" xml:space="preserve">
+    <value>Отправлено сегментов TCP</value>
+  </data>
+  <data name="txtMinimumTransmissionTimeout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 50</value>
+  </data>
+  <data name="label86.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 13</value>
+  </data>
+  <data name="label86.Text" xml:space="preserve">
+    <value>Минимальный таймаут передачи сегментов TCP</value>
+  </data>
+  <data name="txtMaximumTransmissionTimeout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 24</value>
+  </data>
+  <data name="label93.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 13</value>
+  </data>
+  <data name="label93.Text" xml:space="preserve">
+    <value>Максимальный таймаут передачи сегментов TCP</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Статистика соединений TCP</value>
+  </data>
+  <data name="txtCumulativeConnections.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 81</value>
+  </data>
+  <data name="label68.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 13</value>
+  </data>
+  <data name="label68.Text" xml:space="preserve">
+    <value>Установлено TCP-соединений</value>
+  </data>
+  <data name="txtResetConnections.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 185</value>
+  </data>
+  <data name="label69.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 13</value>
+  </data>
+  <data name="label69.Text" xml:space="preserve">
+    <value>Макс. число поддерживаемых соединений TCP</value>
+  </data>
+  <data name="txtMaximumConnections.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 159</value>
+  </data>
+  <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 13</value>
+  </data>
+  <data name="label70.Text" xml:space="preserve">
+    <value>Неудачные попытки соединения TCP</value>
+  </data>
+  <data name="txtFailedConnectionAttempts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 133</value>
+  </data>
+  <data name="label71.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>Сброс соединений TCP</value>
+  </data>
+  <data name="txtCurrentConnections.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 107</value>
+  </data>
+  <data name="label72.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 13</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>Текущие соединения TCP</value>
+  </data>
+  <data name="txtConnectionsInitiated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 55</value>
+  </data>
+  <data name="label73.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 13</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>Инициировано запросов на TCP-соединения</value>
+  </data>
+  <data name="txtConnectionsAccepted.Location" type="System.Drawing.Point, System.Drawing">
+    <value>276, 29</value>
+  </data>
+  <data name="label75.Size" type="System.Drawing.Size, System.Drawing">
+    <value>203, 13</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>Принято запросов на соединение TCP</value>
+  </data>
+  <data name="btnSelectAll.Text" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="btnCopySelection.Text" xml:space="preserve">
+    <value>Копировать выбранные ячейки в буфер</value>
+  </data>
+  <data name="colLocalEndPoint.HeaderText" xml:space="preserve">
+    <value>Локальный адрес</value>
+  </data>
+  <data name="colLocalPort.HeaderText" xml:space="preserve">
+    <value>Локальный порт</value>
+  </data>
+  <data name="colRemoteEndPoint.HeaderText" xml:space="preserve">
+    <value>Удаленный адрес</value>
+  </data>
+  <data name="colRemotePort.HeaderText" xml:space="preserve">
+    <value>Удаленный порт</value>
+  </data>
+  <data name="colState.HeaderText" xml:space="preserve">
+    <value>Состояние</value>
+  </data>
+  <data name="btnTCPLSelectAll.Text" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="btnTCPLCopySelected.Text" xml:space="preserve">
+    <value>Копировать выбранные ячейки в буфер</value>
+  </data>
+  <data name="colEndPoint.HeaderText" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="colPort.HeaderText" xml:space="preserve">
+    <value>Порт</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Статистика соединений UDP</value>
+  </data>
+  <data name="label74.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 13</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>Прослушивание UDP</value>
+  </data>
+  <data name="label67.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 13</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>Отклонено входящих датаграмм</value>
+  </data>
+  <data name="label78.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 13</value>
+  </data>
+  <data name="label78.Text" xml:space="preserve">
+    <value>Входящие датаграммы с ошибками</value>
+  </data>
+  <data name="label79.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 13</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>Отправлено датаграмм</value>
+  </data>
+  <data name="label80.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 13</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>Получено датаграмм</value>
+  </data>
+  <data name="btnUDPLSelectAll.Text" xml:space="preserve">
+    <value>Выбрать все</value>
+  </data>
+  <data name="btnUDPLCopySelected.Text" xml:space="preserve">
+    <value>Копировать выбранные ячейки в буфер</value>
+  </data>
+  <data name="colUDPLEndPoint.HeaderText" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="colUDPLPort.HeaderText" xml:space="preserve">
+    <value>Порт</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>Отправленные сообщения ICMPv4</value>
+  </data>
+  <data name="label99.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 13</value>
+  </data>
+  <data name="label99.Text" xml:space="preserve">
+    <value>Запросы метки времени</value>
+  </data>
+  <data name="label100.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 13</value>
+  </data>
+  <data name="label100.Text" xml:space="preserve">
+    <value>Ответы метки времени</value>
+  </data>
+  <data name="label101.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 13</value>
+  </data>
+  <data name="label101.Text" xml:space="preserve">
+    <value>Превышение времени</value>
+  </data>
+  <data name="label103.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 13</value>
+  </data>
+  <data name="label103.Text" xml:space="preserve">
+    <value>Перенаправления</value>
+  </data>
+  <data name="label104.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="label104.Text" xml:space="preserve">
+    <value>Проблемы параметров</value>
+  </data>
+  <data name="label105.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="label105.Text" xml:space="preserve">
+    <value>Сообщения</value>
+  </data>
+  <data name="label106.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="label106.Text" xml:space="preserve">
+    <value>Ошибки</value>
+  </data>
+  <data name="label107.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="label107.Text" xml:space="preserve">
+    <value>Эхо-запросы</value>
+  </data>
+  <data name="label108.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="label108.Text" xml:space="preserve">
+    <value>Эхо-ответы</value>
+  </data>
+  <data name="label109.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 13</value>
+  </data>
+  <data name="label109.Text" xml:space="preserve">
+    <value>Адресат недоступен</value>
+  </data>
+  <data name="label110.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 13</value>
+  </data>
+  <data name="label110.Text" xml:space="preserve">
+    <value>Запросы маски адреса</value>
+  </data>
+  <data name="label111.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="label111.Text" xml:space="preserve">
+    <value>Ответы маски адреса</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Полученные сообщения ICMPv4</value>
+  </data>
+  <data name="label96.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 13</value>
+  </data>
+  <data name="label96.Text" xml:space="preserve">
+    <value>Запросы метки времени</value>
+  </data>
+  <data name="label97.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 13</value>
+  </data>
+  <data name="label97.Text" xml:space="preserve">
+    <value>Ответы метки времени</value>
+  </data>
+  <data name="label98.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 13</value>
+  </data>
+  <data name="label98.Text" xml:space="preserve">
+    <value>Превышение времени</value>
+  </data>
+  <data name="label76.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 13</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>Подавление источника</value>
+  </data>
+  <data name="label77.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 13</value>
+  </data>
+  <data name="label77.Text" xml:space="preserve">
+    <value>Перенаправления</value>
+  </data>
+  <data name="label87.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="label87.Text" xml:space="preserve">
+    <value>Проблемы параметров</value>
+  </data>
+  <data name="label88.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="label88.Text" xml:space="preserve">
+    <value>Сообщения</value>
+  </data>
+  <data name="label89.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="label89.Text" xml:space="preserve">
+    <value>Ошибки</value>
+  </data>
+  <data name="label90.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="label90.Text" xml:space="preserve">
+    <value>Эхо-запросы</value>
+  </data>
+  <data name="label91.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="label91.Text" xml:space="preserve">
+    <value>Эхо-ответы</value>
+  </data>
+  <data name="label92.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 13</value>
+  </data>
+  <data name="label92.Text" xml:space="preserve">
+    <value>Адресат недоступен</value>
+  </data>
+  <data name="label94.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 13</value>
+  </data>
+  <data name="label94.Text" xml:space="preserve">
+    <value>Запросы маски адреса</value>
+  </data>
+  <data name="label95.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="label95.Text" xml:space="preserve">
+    <value>Ответы маски адреса</value>
+  </data>
+  <data name="label112.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 13</value>
+  </data>
+  <data name="label112.Text" xml:space="preserve">
+    <value>Превышение времени</value>
+  </data>
+  <data name="label113.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 13</value>
+  </data>
+  <data name="label113.Text" xml:space="preserve">
+    <value>Запросы маршрутизатора</value>
+  </data>
+  <data name="label114.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="label114.Text" xml:space="preserve">
+    <value>Ответ маршрутизатора</value>
+  </data>
+  <data name="label115.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 13</value>
+  </data>
+  <data name="label115.Text" xml:space="preserve">
+    <value>Перенаправления</value>
+  </data>
+  <data name="label116.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="label116.Text" xml:space="preserve">
+    <value>Проблемы параметров</value>
+  </data>
+  <data name="label117.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 13</value>
+  </data>
+  <data name="label117.Text" xml:space="preserve">
+    <value>Слишком большой пакет</value>
+  </data>
+  <data name="label118.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 13</value>
+  </data>
+  <data name="label118.Text" xml:space="preserve">
+    <value>Запрос доступных соседей</value>
+  </data>
+  <data name="label119.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
+  </data>
+  <data name="label119.Text" xml:space="preserve">
+    <value>Ответ соседа</value>
+  </data>
+  <data name="label120.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="label120.Text" xml:space="preserve">
+    <value>Сообщения</value>
+  </data>
+  <data name="label121.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 13</value>
+  </data>
+  <data name="label121.Text" xml:space="preserve">
+    <value>Отчеты о членстве в IGMP</value>
+  </data>
+  <data name="label122.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
+  </data>
+  <data name="label122.Text" xml:space="preserve">
+    <value>Сокращение членства в IGMP</value>
+  </data>
+  <data name="label123.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 13</value>
+  </data>
+  <data name="label123.Text" xml:space="preserve">
+    <value>IGMP запросы на членство</value>
+  </data>
+  <data name="label124.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="label124.Text" xml:space="preserve">
+    <value>Ошибки</value>
+  </data>
+  <data name="label141.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="label141.Text" xml:space="preserve">
+    <value>Эхо-запросы</value>
+  </data>
+  <data name="label142.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="label142.Text" xml:space="preserve">
+    <value>Эхо-ответы</value>
+  </data>
+  <data name="label143.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 13</value>
+  </data>
+  <data name="label143.Text" xml:space="preserve">
+    <value>Адресат недоступен</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>Полученные сообщения ICMPv6</value>
+  </data>
+  <data name="label138.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 13</value>
+  </data>
+  <data name="label138.Text" xml:space="preserve">
+    <value>Превышение времени</value>
+  </data>
+  <data name="label139.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 13</value>
+  </data>
+  <data name="label139.Text" xml:space="preserve">
+    <value>Запросы маршрутизатора</value>
+  </data>
+  <data name="label140.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="label140.Text" xml:space="preserve">
+    <value>Ответ маршрутизатора</value>
+  </data>
+  <data name="label125.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 13</value>
+  </data>
+  <data name="label125.Text" xml:space="preserve">
+    <value>Перенаправления</value>
+  </data>
+  <data name="label126.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="label126.Text" xml:space="preserve">
+    <value>Проблемы параметров</value>
+  </data>
+  <data name="label127.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 13</value>
+  </data>
+  <data name="label127.Text" xml:space="preserve">
+    <value>Слишком большой пакет</value>
+  </data>
+  <data name="label128.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 13</value>
+  </data>
+  <data name="label128.Text" xml:space="preserve">
+    <value>Запрос доступных соседей</value>
+  </data>
+  <data name="label129.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 13</value>
+  </data>
+  <data name="label129.Text" xml:space="preserve">
+    <value>Ответ соседа</value>
+  </data>
+  <data name="label130.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 13</value>
+  </data>
+  <data name="label130.Text" xml:space="preserve">
+    <value>Сообщения</value>
+  </data>
+  <data name="label131.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 13</value>
+  </data>
+  <data name="label131.Text" xml:space="preserve">
+    <value>Отчеты о членстве в IGMP</value>
+  </data>
+  <data name="label132.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 13</value>
+  </data>
+  <data name="label132.Text" xml:space="preserve">
+    <value>Сокращение членства в IGMP</value>
+  </data>
+  <data name="label133.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 13</value>
+  </data>
+  <data name="label133.Text" xml:space="preserve">
+    <value>IGMP запросы на членство</value>
+  </data>
+  <data name="label134.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
+  </data>
+  <data name="label134.Text" xml:space="preserve">
+    <value>Ошибки</value>
+  </data>
+  <data name="label135.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="label135.Text" xml:space="preserve">
+    <value>Эхо-запросы</value>
+  </data>
+  <data name="label136.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="label136.Text" xml:space="preserve">
+    <value>Эхо-ответы</value>
+  </data>
+  <data name="label137.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 13</value>
+  </data>
+  <data name="label137.Text" xml:space="preserve">
+    <value>Адресат недоступен</value>
+  </data>
+  <data name="groupBoxGlobalVersion.Text" xml:space="preserve">
+    <value>Версия протокола</value>
+  </data>
+  <data name="comboInterfaces.Location" type="System.Drawing.Point, System.Drawing">
+    <value>164, 18</value>
+  </data>
+  <data name="comboInterfaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>556, 21</value>
+  </data>
+  <data name="label28.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 23</value>
+  </data>
+  <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 13</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Активный интерфейс:</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>246, 12</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>726, 50</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Сетевой интерфейс</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>292, 273</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;About...</value>
-  </data>
-  <data name="advancedStatisticsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ad&amp;vanced statistics</value>
-  </data>
-  <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 6</value>
-  </data>
-  <data name="networkdomainworkgroupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Network Connections</value>
-  </data>
-  <data name="notifyIconActivity.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAMAEBAQAAEABAAoAQAANgAAABAQAAABAAgAaAUAAF4BAAAQEAAAAQAgAGgEAADGBgAAKAAAABAA
-        AAAgAAAAAQAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAIAAAACAgACAAAAAgACAAICA
-        AACAgIAAwMDAAAAA/wAA/wAAAP//AP8AAAAAAAAA//8AAP///wDd3d3d3d3d3d0AAA3d3d3d14+IcN3d
-        3d3X+IiA3d3d3d14iHAAAN3d3dd3CI+HDd3Xd3d3eIgN3dcAAAB4hw3d1wAAAHdw3d3XAAAAd3d33dcA
-        AABwAAfd1wAAAHAAB93Xd3d3cAAH3d3d3XAAAAfd3d3dcAAAB93d3d13d3d33f//AADB/wAAgP8AAID/
-        AADADwAA4AcAAIAHAACABwAAgA8AAIADAACAAwAAgAMAAIADAAD8AwAA/AMAAPwDAAAoAAAAEAAAACAA
-        AAABAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP///wAAAAAAxmBgAMxtbQCcXFwAy3h4AF03
-        NwDMenoAzYSEANSJiQBxTU0AzJOTAL+KigDQl5cAzKCgAMCXlwDWsLAA4MDAAK6WlgDbwMAAxa2tANvH
-        xwDZxcUAzLm5AMu6ugDdzc0A29LSAN3Z2QDh4OAA397eAM+miQDGtpMA8/PzAPLy8gBwcHAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICAiMjIyMjAgICAgICAgICAgQEBAQEIyMC
-        AgICAgICAg4cHRsaFQQjAgICAgICAgIOISIeFA8EIyMjIyMCAgICAhASFw4IDQQEBAQjIwICAgITCgoK
-        AxYdHBoYBCMCAgIgBQUFBQUFBh4RDAQjAgICIAcHBwcHBwYXDgQEIwICAiAHBwcHBwcGCQkGCyMjAgIg
-        BwcHBwcHBgUFBQUGIwICIAcHBwcHBwYHBwcHBiMCAiAHBwcHBwcGBwcHBwYjAgIZGRkZHx8fBgcHBwcG
-        IwICAgICAgIgBwcHBwcHBiMCAgICAgICIAcHBwcHBwYjAgICAgICAhkZGRkfHx8GAgLg/wAAwH8AAIB/
-        AACABwAAwAMAAMADAACAAwAAgAMAAIABAACAAQAAgAEAAIABAACAAQAA/AEAAPwBAAD8AwAAKAAAABAA
-        AAAgAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsAAAA7AAAAdwAAAI8AAACPAAAAjwAA
-        AHsAAABDAAAADwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjwJeX/8CXl//Al5f/wJeX/8CX
-        l/8mGRnCAAAAfAAAAC0AAAAMAAAACgAAAAYAAAABAAAAAAAAAAAAAAAA0JeX/93Z2f/h4OD/29LS/93N
-        zf/Fra3/s4mJ+wAAAKAAAABkAAAARwAAAEQAAAA3AAAAHQAAAAcAAAAAAAAAANCXl//z8/P/8vLy/9/e
-        3v/bwMD/zKCg/8CSkv8xISHINCMjuzckJLQdFBSnAAAAjAAAAGAAAAAlAAAABQAAAAC3oKBKwJeX/+DA
-        wP/ZxcX/0JeX/8x6ev+/ior/wJeX/8CXl//Al5f/wJeX/3lZWeUAAACWAAAASgAAABAAAAAAAAAAI49u
-        brjUiYn/1ImJ/9SJif/GYGD/28fH/+Hg4P/d2dn/3c3N/8y5uf/AmZn/ZklJxQAAAEsAAAAQAAAAAMa2
-        k/+cXFz/nFxc/5xcXP+cXFz/nFxc/5xcXP/LeHj/397e/9awsP/Mk5P/wI+P/3hYWLIAAAArAAAABQAA
-        AADGtpP/XTc3/103N/9dNzf/XTc3/103N/9dNzf/y3h4/9nFxf/Ql5f/zG1t/4xZWeUAAAB2AAAANAAA
-        AAsAAAAAxraT/103N/9dNzf/XTc3/103N/9dNzf/XTc3/8t4eP/NhIT/zYSE/8t4eP9TKCjTAAAApAAA
-        AHAAAAAjAAAAAMa2k/9dNzf/XTc3/103N/9dNzf/XTc3/103N//LeHj/nFxc/5xcXP+cXFz/nFxc/8t4
-        eP8AAACPAAAALwAAAADGtpP/XTc3/103N/9dNzf/XTc3/103N/9dNzf/y3h4/103N/9dNzf/XTc3/103
-        N//LeHj/AAAAjwAAAC8AAAAAxraT/103N/9dNzf/XTc3/103N/9dNzf/XTc3/8t4eP9dNzf/XTc3/103
-        N/9dNzf/y3h4/wAAAI8AAAAvAAAAAMu6uv/Lurr/y7q6/8u6uv/Ppon/z6aJ/8+mif/LeHj/XTc3/103
-        N/9dNzf/XTc3/8t4eP8AAACPAAAALwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMa2k/9dNzf/XTc3/103
-        N/9dNzf/XTc3/103N//LeHj/AAAAjwAAAC8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADGtpP/XTc3/103
-        N/9dNzf/XTc3/103N/9dNzf/y3h4/wAAAGsAAAAjAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAy7q6/8u6
-        uv/Lurr/y7q6/8+mif/Ppon/z6aJ/8t4eP8AAAAjAAAACwAAAAAAfwIjAAcjIwADAgIAAQICAAEEBAAB
-        BCMAAQICAAECAgABHB0AARUEAAECAgABAgIAASEi+AEPBPgBIyP4AQIC
-</value>
-  </data>
-  <data name="networkdomainworkgroupToolStripMenuItem.Text" xml:space="preserve">
-    <value>Network &amp;domain/workgroup</value>
-  </data>
-  <data name="&gt;&gt;NetworkSharingCenterToolStripMenuItem.Name" xml:space="preserve">
-    <value>NetworkSharingCenterToolStripMenuItem</value>
-  </data>
-  <data name="NetworkAdaptersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="&gt;&gt;notifyIconActivity.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
-    <value>exitToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;networkMapToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem.Name" xml:space="preserve">
-    <value>aboutToolStripMenuItem</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;settingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>settingsToolStripMenuItem</value>
-  </data>
-  <data name="NetworkSharingCenterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="notifyIconPing.BalloonTipText" xml:space="preserve">
-    <value>Undetermined</value>
-  </data>
-  <data name="homeGroupToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Settings...</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator3.Name" xml:space="preserve">
-    <value>toolStripSeparator3</value>
-  </data>
-  <data name="&gt;&gt;manageWirelessNetworksToolStripMenuItem.Name" xml:space="preserve">
-    <value>manageWirelessNetworksToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;advancedStatisticsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;notifyIconPing.Name" xml:space="preserve">
-    <value>notifyIconPing</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Name" xml:space="preserve">
-    <value>toolStripSeparator4</value>
-  </data>
-  <data name="&gt;&gt;networkdomainworkgroupToolStripMenuItem.Name" xml:space="preserve">
-    <value>networkdomainworkgroupToolStripMenuItem</value>
-  </data>
-  <data name="networkToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="notifyIconActivity.Text" xml:space="preserve">
-    <value>Left-click : Statistics window
-Right-click : Context menu</value>
-  </data>
-  <data name="&gt;&gt;notifyIconPing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="homeGroupToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Home Group</value>
-  </data>
-  <data name="&gt;&gt;networkdomainworkgroupToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;settingsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;homeGroupToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;networkToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NetworkConnectionsToolStripMenuItem.Name" xml:space="preserve">
-    <value>NetworkConnectionsToolStripMenuItem</value>
-  </data>
-  <data name="notifyIconActivity.BalloonTipText" xml:space="preserve">
-    <value>:: Statistics ::</value>
-  </data>
-  <data name="notifyIconPing.Text" xml:space="preserve">
-    <value>GabNetStats - Connectivity</value>
-  </data>
-  <data name="advancedStatisticsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 6</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="notifyIconPing.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;networkMapToolStripMenuItem.Name" xml:space="preserve">
-    <value>networkMapToolStripMenuItem</value>
-  </data>
-  <data name="settingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainForm</value>
-  </data>
-  <data name="manageWirelessNetworksToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="&gt;&gt;contextMenuTray.Name" xml:space="preserve">
-    <value>contextMenuTray</value>
-  </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>E&amp;xit</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="NetworkAdaptersToolStripMenuItem.Text" xml:space="preserve">
-    <value>Net&amp;work Adapters</value>
-  </data>
-  <data name="&gt;&gt;homeGroupToolStripMenuItem.Name" xml:space="preserve">
-    <value>homeGroupToolStripMenuItem</value>
-  </data>
-  <data name="networkMapToolStripMenuItem.Text" xml:space="preserve">
-    <value>Network Ma&amp;p</value>
-  </data>
-  <data name="notifyIconPing.BalloonTipTitle" xml:space="preserve">
-    <value>GabNetStats - Connectivity</value>
-  </data>
-  <data name="NetworkConnectionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="&gt;&gt;networkToolStripMenuItem.Name" xml:space="preserve">
-    <value>networkToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;manageWirelessNetworksToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NetworkConnectionsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="contextMenuTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 314</value>
-  </data>
-  <data name="FirewallSettingsToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Firewall Settings</value>
-  </data>
-  <data name="notifyIconActivity.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>GabNetStats</value>
-  </data>
-  <data name="NetworkSharingCenterToolStripMenuItem.Text" xml:space="preserve">
-    <value>Network Sharing &amp;Center</value>
-  </data>
-  <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="manageWirelessNetworksToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Manage wireless networks</value>
-  </data>
-  <data name="networkMapToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 6</value>
-  </data>
-  <data name="&gt;&gt;notifyIconActivity.Name" xml:space="preserve">
-    <value>notifyIconActivity</value>
-  </data>
-  <data name="notifyIconPing.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAA
-        AAB5fYIAeX2CAHl9ggB5fYIAeX2CRnl9go15fYLHeX2C8Hl9gvB5fYLHeX2CjXl9gkZ5fYIAeX2CAHl9
-        ggB5fYIAeX2CAHl9ggB5fYIgeX2CjJKVmeTBw8X54uLk//f3+P/39/j/4uLk/8HDxfmSlZnkeX2CjHl9
-        giB5fYIAeX2CAHl9ggB5fYIgeX2Co77AwvD5+fn//Pz8//Hx8f/l5OT/6unp//j4+P/+/v7/+fn5/77A
-        wvB5fYKjeX2CIHl9ggB5fYIAeX2CjL7AwvD+/v7+5+fn/87Ozv/V1NT/29ra/+Lg4P/p5+f/7+7u//r6
-        +v/////+vsDC8Hl9gox5fYIAeX2CRpKVmeT5+fn/6Ojo/83Nzf/Nzc3/09LS/9rY2P/g3t7/5uTk/+vq
-        6v/v7u7/+fj4//n5+f+SlZnkeX2CRnl9go3Bw8X5/fz8/9LR0f/Ozs7/zMzM/9DQ0P/X1tb/3dvb/+Lg
-        4P/m5eX/6ujo/+vq6v/+/v7/wcPF+Xl9go15fYLH4uLk//T09P/U09P/z8/P/83Nzf/Nzc3/09LS/9jX
-        1//d29v/4d/f/+Ph4f/k4+P/9vb2/+Li5P95fYLHeX2C8Pf3+P/t7Oz/3d3d/9LS0v/Ozs7/zMzM/87O
-        zv/T0tL/19bW/9rZ2f/d29v/3tzc/+bl5f/39/j/eX2C8Hl9gvD39/j/7+3t/+Tj4//f39//1dXV/87O
-        zv/MzMz/zs7O/9HR0f/U09P/1tXV/9fW1v/g4OD/9/f4/3l9gvB5fYLH4uLk//j4+P/n5ub/4+Li/+Df
-        3//d3Nz/2NfX/9TU1P/Q0ND/0tLS/9PT0//X19f/8/Pz/+Li5P95fYLHeX2CjcHDxfn+/f3/6efn/+bl
-        5f/i4eH/39/f/97d3f/d3Nz/3Nzc/9zc3P/c3Nz/3Nzc//39/f/Bw8X5eX2CjXl9gkaSlZnk+fn5//Tz
-        8//p5+f/5uXl/+Pi4v/g4OD/397e/97d3f/d3d3/3d3d/+7u7v/5+fn/kpWZ5Hl9gkZ5fYIAeX2CjL7A
-        wvD+/v7+9PPz/+jn5//o5ub/5eTk/+Pi4v/h4OD/4ODg//Dv7//+/v7+vsDC8Hl9gox5fYIAeX2CAHl9
-        giB5fYKjvsDC8Pn5+f/+/f3/+Pf3/+7t7f/u7Oz/9/f3//39/f/5+fn/vsDC8Hl9gqN5fYIgeX2CAHl9
-        ggB5fYIAeX2CIHl9goySlZnkwcPF+eLi5P/39/j/9/f4/+Li5P/Bw8X5kpWZ5Hl9gox5fYIgeX2CAHl9
-        ggB5fYIAeX2CAHl9ggB5fYIAeX2CRnl9go15fYLHeX2C8Hl9gvB5fYLHeX2CjXl9gkZ5fYIAeX2CAHl9
-        ggB5fYIA8A8AAMADAACAAQAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAIAB
-        AADAAwAA8A8AAA==
-</value>
-  </data>
-  <data name="&gt;&gt;NetworkAdaptersToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
-  </data>
-  <data name="&gt;&gt;FirewallSettingsToolStripMenuItem.Name" xml:space="preserve">
-    <value>FirewallSettingsToolStripMenuItem</value>
-  </data>
-  <data name="networkToolStripMenuItem.Text" xml:space="preserve">
-    <value>Net&amp;work</value>
-  </data>
-  <data name="FirewallSettingsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
-    <value>toolStripSeparator2</value>
-  </data>
-  <data name="&gt;&gt;NetworkSharingCenterToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="aboutToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 22</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FirewallSettingsToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>1082, 622</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1940,31 +2768,7 @@ Right-click : Context menu</value>
         AAD/jwAA
 </value>
   </data>
-  <data name="toolStripSeparator4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 6</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GabNetStats - Расширенная статистика</value>
   </data>
-  <data name="notifyIconActivity.BalloonTipTitle" xml:space="preserve">
-    <value>GabNetStats</value>
-  </data>
-  <data name="&gt;&gt;advancedStatisticsToolStripMenuItem.Name" xml:space="preserve">
-    <value>advancedStatisticsToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;NetworkAdaptersToolStripMenuItem.Name" xml:space="preserve">
-    <value>NetworkAdaptersToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;contextMenuTray.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <metadata name="notifyIconActivity.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>19, 20</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="contextMenuTray.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>160, 17</value>
-  </metadata>
-  <metadata name="notifyIconPing.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>307, 17</value>
-  </metadata>
 </root>
