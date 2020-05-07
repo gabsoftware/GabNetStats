@@ -37,7 +37,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -576,6 +576,7 @@
     <Content Include="icons\xp\send_yellow.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\settings-icon_16x16.png" />
     <None Include="Resources\network_pipe_16x16.ico" />
     <None Include="Resources\tunnel_16x16.ico" />
     <None Include="Resources\shell32_18.ico" />
@@ -583,7 +584,6 @@
     <None Include="Resources\wlanpref_101.ico" />
     <None Include="Resources\imageres_1013.ico" />
     <None Include="app.config" />
-    <None Include="Resources\settings-icon_16x16.ico" />
     <None Include="Resources\netshell_1613_16x16.ico" />
     <None Include="Resources\netshell_1612_16x16.ico" />
     <None Include="Resources\deskadp_16x16.ico" />
@@ -631,12 +631,12 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>"$(ProjectDir)customtools\ssr.exe" 0 [PRODUCTNAME] GabNetstats "$(ProjectDir)License.en.txt" "$(TargetDir)tmp1.txt"
-"$(ProjectDir)customtools\ssr.exe" 0 [PRODUCTHOMEPAGE] http://www.gabsoftware.com/products/softwares/gabnetstats/ "$(TargetDir)tmp1.txt" "$(TargetDir)tmp2.txt"
+"$(ProjectDir)customtools\ssr.exe" 0 [PRODUCTHOMEPAGE] https://www.gabsoftware.com/products/applications/gabnetstats/ "$(TargetDir)tmp1.txt" "$(TargetDir)tmp2.txt"
 "$(ProjectDir)customtools\ssr.exe" 0 [CONTACTEMAIL] gabriel@gabsoftware.com "$(TargetDir)tmp2.txt" "$(TargetDir)License.en.txt"
 del "$(TargetDir)tmp*.txt"
 
 "$(ProjectDir)customtools\ssr.exe" 0 [PRODUCTNAME] GabNetstats "$(ProjectDir)License.fr.txt" "$(TargetDir)tmp1.txt"
-"$(ProjectDir)customtools\ssr.exe" 0 [PRODUCTHOMEPAGE] http://www.gabsoftware.com/products/softwares/gabnetstats/ "$(TargetDir)tmp1.txt" "$(TargetDir)tmp2.txt"
+"$(ProjectDir)customtools\ssr.exe" 0 [PRODUCTHOMEPAGE] https://www.gabsoftware.com/products/applications/gabnetstats/ "$(TargetDir)tmp1.txt" "$(TargetDir)tmp2.txt"
 "$(ProjectDir)customtools\ssr.exe" 0 [CONTACTEMAIL] gabriel@gabsoftware.com "$(TargetDir)tmp2.txt" "$(TargetDir)License.fr.txt"
 del "$(TargetDir)tmp*.txt"
 </PostBuildEvent>

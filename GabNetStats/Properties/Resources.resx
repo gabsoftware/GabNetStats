@@ -130,17 +130,17 @@
   <data name="active_green_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_green_blue.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings_icon_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings-icon_16x16.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FireWallControlPanel_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FireWallControlPanel_16x16.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="netshell_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\netshell_16x16.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="deskadp_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deskadp_16x16.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="send_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\send_yellow.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shell32_18" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shell32_18.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="active_blue_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\active_blue_yellow.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="active_blue_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_blue_green.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,32 +148,41 @@
   <data name="active_green_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_green_orange.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="receive_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\receive_orange.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="send_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\send_blue.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings_icon_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings-icon_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="active_red_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_red_green.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="netshell_1612_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\netshell_1612_16x16.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="receive_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\receive_blue.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="active_red_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\active_red_orange.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="inactive" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\inactive.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="active_yellow_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\active_yellow_blue.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="netcenter_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\netcenter_16x16.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="active_blue_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\active_blue_yellow.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="send_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\send_blue.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="active_yellow_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\active_yellow_green.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="active_red_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_red_yellow.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="circle_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\circle_green.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="active_red_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_red_red.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="netshell_195" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\netshell_195.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NetworkIndicator" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\GabNetStats.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,14 +196,17 @@
   <data name="active_blue_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_blue_blue.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="receive_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\receive_orange.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="send_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\send_green.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="active_orange_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_orange_red.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="active_yellow_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\active_yellow_green.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="circle_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\circle_red.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="active_yellow_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_yellow_red.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,32 +217,26 @@
   <data name="active_yellow_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_yellow_orange.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FireWallControlPanel_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FireWallControlPanel_16x16.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="deskadp_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\deskadp_16x16.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pnidui_2407_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pnidui_2407_16x16.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="circle_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\circle_orange.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="active_orange_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_orange_orange.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="imageres_1013" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\imageres_1013.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="network_pipe_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\network_pipe_16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="active_blue_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_blue_orange.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="networkmap_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\networkmap_1.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="netshell_195" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\netshell_195.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="receive_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\receive_red.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shell32_18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shell32_18.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="netshell_1613_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\netshell_1613_16x16.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="active_yellow_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\active_yellow_blue.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="send_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\send_red.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,49 +247,43 @@
   <data name="active_red_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_red_blue.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="netcenter_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\netcenter_16x16.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="wlanpref_101" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wlanpref_101.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="receive_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\receive_blue.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="netshell_1613_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\netshell_1613_16x16.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imageres_1013" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\imageres_1013.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="active_green_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\active_green_red.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="netshell_1612_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\netshell_1612_16x16.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="receive_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\receive_yellow.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="active_yellow_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\active_yellow_yellow.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="active_red_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\active_red_orange.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="active_green_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\active_green_yellow.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="receive_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\receive_green.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="circle_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\circle_green.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="networkmap_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\networkmap_1.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="circle_grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\xp\circle_grey.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="circle_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\circle_orange.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="receive_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\receive_red.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="circle_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\icons\xp\circle_red.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="receive_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\receive_yellow.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="network_pipe_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\network_pipe_16x16.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="netshell_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\netshell_16x16.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pnidui_2407_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pnidui_2407_16x16.ico;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="active_green_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\active_green_yellow.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="active_yellow_yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\active_yellow_yellow.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="receive_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\icons\xp\receive_green.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

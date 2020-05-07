@@ -136,6 +136,18 @@
   <data name="lblStatisticsTitle.Text" xml:space="preserve">
     <value>:: Statistiques ::</value>
   </data>
+  <data name="btn_settings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
+        TUUH5AUHBxU7l8ddSAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAERSURBVDhP
+        ldI9LwRRFIfxG6GjkKhoKLQS/W4l0aglWpUvQE2hEBXFbqFV7H4DL1FSiEKhEBqioKIhCvH2PBNHJsZs
+        Zv7Jr7jn3jlz595JNTOJD+xkoxoZxTUu8IVXnGINlTKLNxxhGPOw0T4qpR/nWMlGKQ3AhnPZ6E82YPcn
+        +DazAGv3WELnZ2zTQo7hpJoWiG9cxxasex7LmEGawi3asPMnosEdVnGGFkbQxSJ+40HEA3rGAS5zNdl4
+        GoVsIhY9YBymD7FlucuYK2QXLnK7+QziHc6NWShLWYMhRAN/pn/T6xO2EXN+wgQK2UMs0gsOcZWrqfQQ
+        vcYbeI1eUa9rrJQTRIOGhbqJX/kR8SuXJKVvxM5d9p7N6fQAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnAdvanced.Text" xml:space="preserve">
     <value>Avancé...</value>
   </data>

@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Threading;
 
@@ -42,8 +41,6 @@ namespace GabNetStats
                 }
                 Application.Restart();
             }
-
-
         }
     }
 }
