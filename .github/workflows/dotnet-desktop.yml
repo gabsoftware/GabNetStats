@@ -94,6 +94,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: GabNetStats
-        path: GabNetStats\GabNetStats\bin\$env:Configuration\net10.0-windows10.0.26100.0\
+        path: GabNetStats\GabNetStats\GabNetStats\bin\$env:Configuration\net10.0-windows10.0.26100.0\
       env:
         Configuration: ${{ matrix.configuration }}
