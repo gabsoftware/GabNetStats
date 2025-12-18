@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -125,130 +125,139 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 13</value>
+    <value>188, 20</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Частота обновления (мс):</value>
   </data>
   <data name="radioCustomSpeed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>326, 17</value>
+    <value>447, 24</value>
   </data>
   <data name="radioCustomSpeed.Text" xml:space="preserve">
     <value>Указание пропускной способности (многоцветный значок)</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Визуальные эффекты значка сети</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 20</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>(должна быть папка в подпапке "icons")</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
+    <value>112, 20</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Набор иконок:</value>
   </data>
   <data name="txtIconSet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 36</value>
+    <value>123, 55</value>
+  </data>
+  <data name="grpBandwidthPreferences.Text" xml:space="preserve">
+    <value>Настройки пропускной способности</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 13</value>
+    <value>136, 20</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Метод измерений</value>
   </data>
   <data name="lblUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 13</value>
+    <value>22, 20</value>
   </data>
   <data name="lblUpload.Text" xml:space="preserve">
     <value>/с</value>
   </data>
   <data name="lblDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 13</value>
+    <value>22, 20</value>
   </data>
   <data name="lblDownload.Text" xml:space="preserve">
     <value>/с</value>
   </data>
+  <data name="rbBytes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>273, 52</value>
+  </data>
   <data name="rbBytes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 17</value>
+    <value>75, 24</value>
   </data>
   <data name="rbBytes.Text" xml:space="preserve">
     <value>байт/с</value>
   </data>
   <data name="rbBits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 33</value>
+    <value>171, 54</value>
   </data>
   <data name="rbBits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 17</value>
+    <value>67, 24</value>
   </data>
   <data name="rbBits.Text" xml:space="preserve">
     <value>бит/с</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 13</value>
+    <value>69, 20</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Загрузка</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
-  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Отдача</value>
   </data>
-  <data name="grpBandwidthPreferences.Text" xml:space="preserve">
-    <value>Настройки пропускной способности</value>
-  </data>
   <data name="radioDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 17</value>
+    <value>244, 24</value>
   </data>
   <data name="radioDefault.Text" xml:space="preserve">
     <value>Синий значок (по умолчанию)</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Визуальные эффекты значка сети</value>
-  </data>
   <data name="textBoxDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 16</value>
+    <value>211, 22</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Автоматический пинг</value>
   </data>
   <data name="chkSettingsAutoPingNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 17</value>
+    <value>211, 24</value>
   </data>
   <data name="chkSettingsAutoPingNotification.Text" xml:space="preserve">
     <value>Показывать уведомления</value>
   </data>
   <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>191, 57</value>
+    <value>280, 89</value>
   </data>
   <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 20</value>
+    <value>77, 27</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>364, 91</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 13</value>
+    <value>27, 20</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>мс</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 13</value>
+    <value>101, 20</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Пинг каждые</value>
   </data>
   <data name="txtSettingsAutoPingHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>191, 29</value>
+    <value>280, 46</value>
   </data>
   <data name="txtSettingsAutoPingHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 20</value>
+    <value>180, 27</value>
   </data>
   <data name="chkSettingsAutoPingEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 17</value>
+    <value>248, 24</value>
   </data>
   <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
     <value>Включить авто-пинг по адресу:</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Автоматический пинг</value>
+  <data name="checkBoxStartup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 856</value>
   </data>
   <data name="checkBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 17</value>
+    <value>243, 24</value>
   </data>
   <data name="checkBoxStartup.Text" xml:space="preserve">
     <value>Запускать при старте Windows</value>

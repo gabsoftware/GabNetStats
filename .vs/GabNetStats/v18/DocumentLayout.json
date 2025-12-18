@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "E:\\dev\\gabsoftware\\GabNetStats\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|e:\\dev\\gabsoftware\\gabnetstats\\gabnetstats\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|e:\\dev\\gabsoftware\\gabnetstats\\gabnetstats\\settingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\settingsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|e:\\dev\\gabsoftware\\gabnetstats\\gabnetstats\\settingsform.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}",
+      "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\settingsform.resx||{81828910-B8B3-4D2B-99A3-067027C180C1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|E:\\dev\\gabsoftware\\GabNetStats\\gabnetstats\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
       "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|e:\\dev\\gabsoftware\\gabnetstats\\gabnetstats\\gabnetstats.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\gabnetstats.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|E:\\dev\\gabsoftware\\GabNetStats\\gabnetstats\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|e:\\dev\\gabsoftware\\gabnetstats\\gabnetstats\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|e:\\dev\\gabsoftware\\gabnetstats\\gabnetstats\\gabnetstats.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\gabnetstats.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{902445D6-A2D4-4833-A5F0-3B808560D892}|..\\GabTracker\\GabTracker\\GabTracker.csproj|e:\\dev\\gabsoftware\\gabtracker\\gabtracker\\gabtracker.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
@@ -34,48 +42,75 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "SettingsForm.resx",
+              "DocumentMoniker": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\SettingsForm.resx",
+              "RelativeDocumentMoniker": "GabNetStats\\SettingsForm.resx",
+              "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\SettingsForm.resx",
+              "RelativeToolTip": "GabNetStats\\SettingsForm.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-18T11:21:27.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SettingsForm.cs [Conception]",
+              "DocumentMoniker": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\SettingsForm.cs",
+              "RelativeDocumentMoniker": "GabNetStats\\SettingsForm.cs",
+              "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\SettingsForm.cs [Conception]",
+              "RelativeToolTip": "GabNetStats\\SettingsForm.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T10:46:11.438Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Settings.settings",
               "DocumentMoniker": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Properties\\Settings.settings",
               "RelativeDocumentMoniker": "GabNetStats\\Properties\\Settings.settings",
               "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Properties\\Settings.settings",
               "RelativeToolTip": "GabNetStats\\Properties\\Settings.settings",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
-              "WhenOpened": "2025-12-18T08:36:51.109Z"
+              "WhenOpened": "2025-12-18T08:36:51.109Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "MainForm.cs",
               "DocumentMoniker": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\MainForm.cs",
               "RelativeDocumentMoniker": "GabNetStats\\MainForm.cs",
               "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\MainForm.cs",
               "RelativeToolTip": "GabNetStats\\MainForm.cs",
-              "ViewState": "AgIAAGMCAAAAAAAAAAAlwG8CAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAFoCAAAAAAAAAAAlwGYCAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-18T01:09:15.895Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "GabNetStats",
               "DocumentMoniker": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\GabNetStats.csproj",
               "RelativeDocumentMoniker": "GabNetStats\\GabNetStats.csproj",
               "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\GabNetStats.csproj",
               "RelativeToolTip": "GabNetStats\\GabNetStats.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-18T01:01:17.952Z"
+              "WhenOpened": "2025-12-18T01:01:17.952Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "GabTracker",
               "DocumentMoniker": "E:\\dev\\gabsoftware\\GabTracker\\GabTracker\\GabTracker.csproj",
               "RelativeDocumentMoniker": "..\\GabTracker\\GabTracker\\GabTracker.csproj",
               "ToolTip": "E:\\dev\\gabsoftware\\GabTracker\\GabTracker\\GabTracker.csproj",
               "RelativeToolTip": "..\\GabTracker\\GabTracker\\GabTracker.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-18T00:54:48.7Z"
+              "WhenOpened": "2025-12-18T00:54:48.7Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -86,7 +121,8 @@
               "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\MainForm.cs [Conception]",
               "RelativeToolTip": "GabNetStats\\MainForm.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T01:08:59.589Z"
+              "WhenOpened": "2025-12-18T01:08:59.589Z",
+              "EditorCaption": " [Conception]"
             }
           ]
         }

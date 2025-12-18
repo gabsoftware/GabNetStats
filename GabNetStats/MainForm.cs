@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Net.NetworkInformation;
 using System.Diagnostics;
-using System.Collections;
 using GabNetStats.Properties;
 using System.Globalization;
 using System.IO;
@@ -94,8 +93,7 @@ namespace GabNetStats
         private static int emissionSampleIndex  = 0;
         private static HashSet<string> enabledInterfaceMacs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-        static NetworkInterface[] interfaces;
-        static ArrayList          selectedInterfaces = new ArrayList();
+        static List<NetworkInterface> selectedInterfaces = new List<NetworkInterface>();
         static IPGlobalProperties properties;
         static IPGlobalStatistics ipv4stat;
         static IPGlobalStatistics ipv6stat;
@@ -166,18 +164,6 @@ namespace GabNetStats
         private static string appliedIconSet = "xp";
 
         static frmBalloon fBal;
-
-        static MainForm()
-        {
-            try
-            {
-                interfaces = NetworkInterface.GetAllNetworkInterfaces();
-            }
-            catch (NetworkInformationException)
-            {
-
-            }
-        }
 
         public MainForm()
         {
@@ -1104,130 +1090,112 @@ namespace GabNetStats
             //We want to avoid to run the following lines often because it temporarily raises the CPU usage to 2%, which is unacceptable for a background app.
             //This is why the procedure PopulateNICs is not periodically launched in a thread but by events and testing if the nb of adapters changes.
 
+            NetworkInterface[] nicSnapshot;
             try
             {
-                Monitor.Enter(selectedInterfaces);
+                nicSnapshot = NetworkInterface.GetAllNetworkInterfaces();
             }
-            catch (ArgumentNullException) { }
-
-            try
+            catch (NetworkInformationException)
             {
-                interfaces = NetworkInterface.GetAllNetworkInterfaces();
+                nicSnapshot = Array.Empty<NetworkInterface>();
             }
-            catch (NetworkInformationException) { interfaces = Array.Empty<NetworkInterface>(); }
 
-            try
+            lock (selectedInterfaces)
             {
                 selectedInterfaces.Clear();
-            }
-            catch (NotSupportedException) { selectedInterfaces = new ArrayList(); }
-            
-            foreach (NetworkInterface netInterface in interfaces)
-            {
-                if (!ShouldDisplayInterface(netInterface))
-                {
-                    continue;
-                }
 
-                //test if the interface is active
-                if (netInterface.OperationalStatus != OperationalStatus.Up)
+                foreach (NetworkInterface netInterface in nicSnapshot)
                 {
-                    ip = Res.str_NotConnected;
-                }
-                else
-                {
-                    ipproperties = netInterface.GetIPProperties();
-                    if (ipproperties.UnicastAddresses.Count > 0)
+                    if (!ShouldDisplayInterface(netInterface))
                     {
-                        if (netInterface.NetworkInterfaceType.ToString().ToLower(CultureInfo.InvariantCulture).Contains("ethernet") ||
-                            netInterface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 ||
-                            netInterface.NetworkInterfaceType == NetworkInterfaceType.Tunnel )
-                        {
-                            nUp++;
-                        }
-                        try
-                        {
-                            ip = ipproperties.UnicastAddresses[ipproperties.UnicastAddresses.Count - 1].Address.ToString();
-                        }
-                        catch (IndexOutOfRangeException) { }
-                        catch (System.Net.Sockets.SocketException) { }
+                        continue;
+                    }
+
+                    //test if the interface is active
+                    if (netInterface.OperationalStatus != OperationalStatus.Up)
+                    {
+                        ip = Res.str_NotConnected;
                     }
                     else
                     {
-                        ip = Res.str_NoIpAvailable;
+                        ipproperties = netInterface.GetIPProperties();
+                        if (ipproperties.UnicastAddresses.Count > 0)
+                        {
+                            if (netInterface.NetworkInterfaceType.ToString().ToLower(CultureInfo.InvariantCulture).Contains("ethernet") ||
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 ||
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.Tunnel )
+                            {
+                                nUp++;
+                            }
+                            try
+                            {
+                                ip = ipproperties.UnicastAddresses[ipproperties.UnicastAddresses.Count - 1].Address.ToString();
+                            }
+                            catch (IndexOutOfRangeException) { }
+                            catch (System.Net.Sockets.SocketException) { }
+                        }
+                        else
+                        {
+                            ip = Res.str_NoIpAvailable;
+                        }
                     }
-                }
 
-                icon = GetInterfaceIcon(netInterface);
+                    icon = GetInterfaceIcon(netInterface);
 
-                //retrieve the mac address of the interface
-                mac = netInterface.GetPhysicalAddress().ToString();
-                
-                // if we never selected an interface before, enable it for statistics by default.
-                if (isFirstTime)
-                {
-                    if (EnableStatisticsForInterface(mac, true, false, false))
+                    //retrieve the mac address of the interface
+                    mac = netInterface.GetPhysicalAddress().ToString();
+                    
+                    // if we never selected an interface before, enable it for statistics by default.
+                    if (isFirstTime)
+                    {
+                        if (EnableStatisticsForInterface(mac, true, false, false))
+                        {
+                            shouldSaveSettings = true;
+                        }
+                    }
+
+                    // if this is the first time we encounter this interface, enable it for statistics by default.
+                    if (!AddToKnownInterface(mac, false))
                     {
                         shouldSaveSettings = true;
+                        if (EnableStatisticsForInterface(mac, true, false, false))
+                        {
+                            shouldSaveSettings = true;
+                        }
                     }
-                }
 
-                // if this is the first time we encounter this interface, enable it for statistics by default.
-                if (!AddToKnownInterface(mac, false))
-                {
-                    shouldSaveSettings = true;
-                    if (EnableStatisticsForInterface(mac, true, false, false))
+                    selectedInterfaces.Add(netInterface);
+                    speed = computeSpeed(netInterface.Speed, ref unit, 2);
+
+                    //we generate the item related to the network interface
+                    itm = new ToolStripMenuItem(netInterface.Name +
+                            " [" + netInterface.Description + "]" +
+                            " : " + speed + " " + unit + "/s" +
+                            ", " + ip
+                            , icon
+                            , OnAdapterClick
+                            , "itm_" + netInterface.Id);                    
+                    itm.Tag = netInterface;
+
+                    //we generate its subitem
+                    itm2                    = new ToolStripMenuItem(Res.str_IncludeInStatistics);
+                    itm2.Name               = "itm_include_" + netInterface.Id;
+                    itm2.CheckOnClick       = true;
+                    itm2.Checked            = mac != null ? IsInterfaceEnabled(mac) : false;
+                    itm2.CheckStateChanged += new EventHandler(OnAdapterCheckStateChanged);
+                    itm2.Tag                = netInterface;
+
+                    //we add the subitem to the item
+                    try
                     {
-                        shouldSaveSettings = true;
+                        itm.DropDownItems.Add(itm2);
                     }
+                    catch (ArgumentNullException) { }
+
+                    //add item in parent menu item
+                    AddItemThreadSafe(itm, parent);
                 }
-
-                selectedInterfaces.Add(netInterface);
-                speed = computeSpeed(netInterface.Speed, ref unit, 2);
-
-                //we generate the item related to the network interface
-                itm = new ToolStripMenuItem(netInterface.Name +
-                        " [" + netInterface.Description + "]" +
-                        " : " + speed + " " + unit + "/s" +
-                        ", " + ip
-                        , icon
-                        , OnAdapterClick
-                        , "itm_" + netInterface.Id);                    
-                itm.Tag = netInterface;
-
-                //we generate its subitem
-                itm2                    = new ToolStripMenuItem(Res.str_IncludeInStatistics);
-                itm2.Name               = "itm_include_" + netInterface.Id;
-                itm2.CheckOnClick       = true;
-                itm2.Checked            = mac != null ? IsInterfaceEnabled(mac) : false;
-                itm2.CheckStateChanged += new EventHandler(OnAdapterCheckStateChanged);
-                itm2.Tag                = netInterface;
-
-                //we add the subitem to the item
-                try
-                {
-                    itm.DropDownItems.Add(itm2);
-                }
-                catch (ArgumentNullException) { }
-
-                //add item in parent menu item
-                AddItemThreadSafe(itm, parent);
             }
-
-            try
-            {
-                Array.Clear(interfaces, 0, interfaces.Length);
-            }
-            catch (OverflowException) { }
-            catch (ArgumentNullException) { }
-            catch (IndexOutOfRangeException) { }
-
-            try
-            {
-                Monitor.Exit(selectedInterfaces);
-            }
-            catch (ArgumentNullException) { }
-            catch (SynchronizationLockException) { }
 
 
             if (nUp == 0)
@@ -1501,56 +1469,36 @@ namespace GabNetStats
                             goto skip;
                         }
 
-                        try
+                        lock (selectedInterfaces)
                         {
-                            Monitor.Enter(selectedInterfaces);
-                        }
-                        catch (ArgumentNullException)
-                        {
-                            continue;
-                        }
-                        
-                        
-                        foreach (NetworkInterface netInterface in selectedInterfaces)
-                        {
-                            string macAddress;
-                            try
+                            foreach (NetworkInterface netInterface in selectedInterfaces)
                             {
-                                macAddress = netInterface.GetPhysicalAddress().ToString();
-                            }
-                            catch (Exception)
-                            {
-                                continue;
-                            }
+                                string macAddress;
+                                try
+                                {
+                                    macAddress = netInterface.GetPhysicalAddress().ToString();
+                                }
+                                catch (Exception)
+                                {
+                                    continue;
+                                }
 
-                            if (!IsInterfaceEnabled(macAddress))
-                            {
-                                continue;
-                            }
+                                if (!IsInterfaceEnabled(macAddress))
+                                {
+                                    continue;
+                                }
 
-                            try
-                            {
-                                ipstats = netInterface.GetIPStatistics();
-                                bytesReceived += ipstats.BytesReceived;
-                                bytesSent += ipstats.BytesSent;
+                                try
+                                {
+                                    ipstats = netInterface.GetIPStatistics();
+                                    bytesReceived += ipstats.BytesReceived;
+                                    bytesSent += ipstats.BytesSent;
+                                }
+                                catch (Exception)
+                                {
+                                    continue;
+                                }
                             }
-                            catch (Exception)
-                            {
-                                continue;
-                            }
-                        }
-
-                        try
-                        {
-                            Monitor.Exit(selectedInterfaces);
-                        }
-                        catch (ArgumentNullException)
-                        {
-                            continue;
-                        }
-                        catch( SynchronizationLockException )
-                        {
-                            continue;
                         }
                         
 
