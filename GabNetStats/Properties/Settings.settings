@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="BlinkDuration" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">100</Value>
+      <Value Profile="(Default)">200</Value>
     </Setting>
     <Setting Name="LoadOnStartup" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

@@ -70,7 +70,8 @@ namespace GabNetStats
 
         static eState connectionStatus;
 
-        static int nDuration   = 100;
+        private const int BlinkDurationMinimum = 200;
+        static int nDuration   = BlinkDurationMinimum;
         static int nNICRefresh = 10000; //time interval for refreshing the NIC list (10s by default)
         static int nbNIC       = 0;
         static long bandwidthDownloadLvl1;
@@ -245,7 +246,7 @@ namespace GabNetStats
                 queueEmission.Enqueue(0);
             }
 
-            nDuration = Settings.Default.BlinkDuration;
+            this.RefreshBlinkDurationFromSettings();
 
             if (Settings.Default.BandwidthUnit != 1 && Settings.Default.BandwidthUnit != 8)
             {
@@ -332,6 +333,17 @@ namespace GabNetStats
             showBalloon(true);
         }
 
+        private void RefreshBlinkDurationFromSettings()
+        {
+            if (Settings.Default.BlinkDuration < BlinkDurationMinimum)
+            {
+                Settings.Default.BlinkDuration = BlinkDurationMinimum;
+                Settings.Default.Save();
+            }
+
+            nDuration = Settings.Default.BlinkDuration;
+        }
+
         private void OnAbout(object sender, EventArgs e)
         {
             AboutForm formAbout = new AboutForm();
@@ -356,7 +368,7 @@ namespace GabNetStats
             }
             catch (InvalidOperationException) { }
             
-            nDuration = Settings.Default.BlinkDuration;
+            this.RefreshBlinkDurationFromSettings();
 
             frmBalloon fb = (frmBalloon)Application.OpenForms["frmBalloon"];
             if (fb != null)

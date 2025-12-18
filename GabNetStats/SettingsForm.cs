@@ -13,7 +13,8 @@ namespace GabNetStats
 {
     public partial class SettingsForm : Form
     {
-        private int nDuration = 100;
+        private const int BlinkDurationMinimum = 200;
+        private int nDuration = BlinkDurationMinimum;
         private long nDownload = 12500000;
         private long nUpload = 12500000;
         private long nDefaultMultiplier = (long)MainForm.eBandwidthMultiplier.un;
@@ -115,15 +116,11 @@ namespace GabNetStats
 
         private void OnLoad(object sender, EventArgs e)
         {
-            if (Settings.Default.BlinkDuration > 10)
+            if (Settings.Default.BlinkDuration < BlinkDurationMinimum)
             {
-                textBoxDuration.Text = Settings.Default.BlinkDuration.ToString(CultureInfo.InvariantCulture);
+                Settings.Default.BlinkDuration = BlinkDurationMinimum;
             }
-            else
-            {
-                Settings.Default.BlinkDuration = nDuration;
-                textBoxDuration.Text = Settings.Default.BlinkDuration.ToString(CultureInfo.InvariantCulture);
-            }
+            textBoxDuration.Text = Settings.Default.BlinkDuration.ToString(CultureInfo.InvariantCulture);
 
             if (Settings.Default.BandwidthDownloadMultiplier != (long)MainForm.eBandwidthMultiplier.un
              && Settings.Default.BandwidthDownloadMultiplier != (long)MainForm.eBandwidthMultiplier.K
@@ -195,23 +192,21 @@ namespace GabNetStats
             {
                 try
                 {
-                    nDuration = Convert.ToInt32(strtmp, CultureInfo.InvariantCulture);
-                    if (nDuration < 10)
-                    {
-                        nDuration = 10;
-                    }
+                    int requestedDuration = Convert.ToInt32(strtmp, CultureInfo.InvariantCulture);
+                    bool durationClamped = requestedDuration < BlinkDurationMinimum;
 
+                    nDuration = durationClamped ? BlinkDurationMinimum : requestedDuration;
                     Settings.Default.BlinkDuration = nDuration;
+
+                    if (durationClamped)
+                    {
+                        MessageBox.Show(Res.str_WarningContent, Res.str_WarningTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 catch (Exception e1)
                 {
                     MessageBox.Show(e1.Message);
                 }
-            }
-
-            if (nDuration < 50)
-            {
-                MessageBox.Show(Res.str_WarningContent, Res.str_WarningTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             strtmp = txtDownload.Text.Trim();
