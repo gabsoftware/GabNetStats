@@ -13,8 +13,7 @@ namespace GabNetStats
 {
     public partial class SettingsForm : Form
     {
-        private const int BlinkDurationMinimum = 200;
-        private int nDuration = BlinkDurationMinimum;
+        private int nDuration = MainForm.BlinkDurationMinimum;
         private long nDownload = 12500000;
         private long nUpload = 12500000;
         private long nDefaultMultiplier = (long)MainForm.eBandwidthMultiplier.un;
@@ -33,6 +32,8 @@ namespace GabNetStats
             }
         }*/
 
+
+        private bool settingsInitialized;
 
         public SettingsForm()
         {
@@ -116,9 +117,10 @@ namespace GabNetStats
 
         private void OnLoad(object sender, EventArgs e)
         {
-            if (Settings.Default.BlinkDuration < BlinkDurationMinimum)
+            Settings.Default.Reload();
+            if (Settings.Default.BlinkDuration < MainForm.BlinkDurationMinimum)
             {
-                Settings.Default.BlinkDuration = BlinkDurationMinimum;
+                Settings.Default.BlinkDuration = MainForm.BlinkDurationMinimum;
             }
             textBoxDuration.Text = Settings.Default.BlinkDuration.ToString(CultureInfo.InvariantCulture);
 
@@ -180,6 +182,8 @@ namespace GabNetStats
             //txtUpload.Enabled = radioCustomSpeed.Checked;
 
             grpBandwidthPreferences.Enabled = radioCustomSpeed.Checked;
+            chkShowDisconnectedInterfaces.Checked = Settings.Default.ShowDisconnectedInterfaces;
+            settingsInitialized = true;
         }
 
         private void OnOK(object sender, EventArgs e)
@@ -193,9 +197,9 @@ namespace GabNetStats
                 try
                 {
                     int requestedDuration = Convert.ToInt32(strtmp, CultureInfo.InvariantCulture);
-                    bool durationClamped = requestedDuration < BlinkDurationMinimum;
+                    bool durationClamped = requestedDuration < MainForm.BlinkDurationMinimum;
 
-                    nDuration = durationClamped ? BlinkDurationMinimum : requestedDuration;
+                    nDuration = durationClamped ? MainForm.BlinkDurationMinimum : requestedDuration;
                     Settings.Default.BlinkDuration = nDuration;
 
                     if (durationClamped)
@@ -334,6 +338,11 @@ namespace GabNetStats
 
         private void chkShowDisconnectedInterfaces_CheckedChanged(object sender, EventArgs e)
         {
+            if (!settingsInitialized)
+            {
+                return;
+            }
+
             Settings.Default.ShowDisconnectedInterfaces = chkShowDisconnectedInterfaces.Checked;
             MainForm main = (MainForm)Application.OpenForms["MainForm"];
             if (main != null)

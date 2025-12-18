@@ -31,7 +31,6 @@ namespace GabNetStats
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
-            Settings settings2 = new Settings();
             buttonOK = new System.Windows.Forms.Button();
             buttonCancel = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
@@ -133,29 +132,7 @@ namespace GabNetStats
             // txtIconSet
             // 
             resources.ApplyResources(txtIconSet, "txtIconSet");
-            settings2.AutoCloseBalloon = true;
-            settings2.AutoCloseBalloonAfter = new decimal(new int[] { 5, 0, 0, 0 });
-            settings2.AutoPingEnabled = false;
-            settings2.AutoPingHost = "google.com";
-            settings2.AutoPingNotif = true;
-            settings2.AutoPingRate = new decimal(new int[] { 5000, 0, 0, 0 });
-            settings2.BalloonOpacity = 1D;
-            settings2.BalloonOpacitySlider = 100;
-            settings2.BandwidthDownload = 12500000L;
-            settings2.BandwidthDownloadMultiplier = 1L;
-            settings2.BandwidthUnit = 1;
-            settings2.BandwidthUpload = 12500000L;
-            settings2.BandwidthUploadMultiplier = 1L;
-            settings2.BandwidthVisualsCustom = false;
-            settings2.BandwidthVisualsDefault = true;
-            settings2.BlinkDuration = 200;
-            settings2.EnabledInterfaceMACList = "TOSET";
-            settings2.IconSet = "xp";
-            settings2.KnownInterfaceMACList = "";
-            settings2.LoadOnStartup = false;
-            settings2.SettingsKey = "";
-            settings2.ShowDisconnectedInterfaces = false;
-            txtIconSet.DataBindings.Add(new System.Windows.Forms.Binding("Text", settings2, "IconSet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            txtIconSet.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::GabNetStats.Properties.Settings.Default, "IconSet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             txtIconSet.Name = "txtIconSet";
             // 
             // grpBandwidthPreferences
@@ -260,19 +237,18 @@ namespace GabNetStats
             // chkSettingsAutoPingNotification
             // 
             resources.ApplyResources(chkSettingsAutoPingNotification, "chkSettingsAutoPingNotification");
-            chkSettingsAutoPingNotification.Checked = true;
-            chkSettingsAutoPingNotification.CheckState = System.Windows.Forms.CheckState.Checked;
+            chkSettingsAutoPingNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::GabNetStats.Properties.Settings.Default, "AutoPingNotif", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             chkSettingsAutoPingNotification.Name = "chkSettingsAutoPingNotification";
             chkSettingsAutoPingNotification.UseVisualStyleBackColor = true;
             // 
             // numericUpDown1
             // 
             resources.ApplyResources(numericUpDown1, "numericUpDown1");
+            numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::GabNetStats.Properties.Settings.Default, "AutoPingRate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             numericUpDown1.Increment = new decimal(new int[] { 500, 0, 0, 0 });
             numericUpDown1.Maximum = new decimal(new int[] { 60000, 0, 0, 0 });
             numericUpDown1.Minimum = new decimal(new int[] { 500, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Value = new decimal(new int[] { 5000, 0, 0, 0 });
             // 
             // label8
             // 
@@ -287,11 +263,13 @@ namespace GabNetStats
             // txtSettingsAutoPingHost
             // 
             resources.ApplyResources(txtSettingsAutoPingHost, "txtSettingsAutoPingHost");
+            txtSettingsAutoPingHost.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::GabNetStats.Properties.Settings.Default, "AutoPingHost", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             txtSettingsAutoPingHost.Name = "txtSettingsAutoPingHost";
             // 
             // chkSettingsAutoPingEnabled
             // 
             resources.ApplyResources(chkSettingsAutoPingEnabled, "chkSettingsAutoPingEnabled");
+            chkSettingsAutoPingEnabled.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::GabNetStats.Properties.Settings.Default, "AutoPingEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             chkSettingsAutoPingEnabled.Name = "chkSettingsAutoPingEnabled";
             chkSettingsAutoPingEnabled.UseVisualStyleBackColor = true;
             // 

@@ -69,7 +69,7 @@ namespace GabNetStats
 
         static eState connectionStatus;
 
-        private const int BlinkDurationMinimum = 200;
+        internal const int BlinkDurationMinimum = 50;
         static int nDuration   = BlinkDurationMinimum;
         static int nNICRefresh = 10000; //time interval for refreshing the NIC list (10s by default)
         static int nbNIC       = 0;
@@ -93,7 +93,19 @@ namespace GabNetStats
         private static int emissionSampleIndex  = 0;
         private static HashSet<string> enabledInterfaceMacs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-        static List<NetworkInterface> selectedInterfaces = new List<NetworkInterface>();
+        private sealed class TrackedInterface
+        {
+            public TrackedInterface(NetworkInterface networkInterface, string macAddress)
+            {
+                Interface = networkInterface;
+                MacAddress = macAddress;
+            }
+
+            public NetworkInterface Interface { get; }
+            public string MacAddress { get; }
+        }
+
+        static List<TrackedInterface> selectedInterfaces = new List<TrackedInterface>();
         static IPGlobalProperties properties;
         static IPGlobalStatistics ipv4stat;
         static IPGlobalStatistics ipv6stat;
@@ -707,6 +719,19 @@ namespace GabNetStats
             this.applyIconSet();
         }
 
+        internal NetworkInterface[] GetDisplayableInterfacesSnapshot()
+        {
+            lock (selectedInterfaces)
+            {
+                NetworkInterface[] snapshot = new NetworkInterface[selectedInterfaces.Count];
+                for (int i = 0; i < selectedInterfaces.Count; i++)
+                {
+                    snapshot[i] = selectedInterfaces[i].Interface;
+                }
+                return snapshot;
+            }
+        }
+
         private void OnExit(object sender, EventArgs e)
         {
             try
@@ -1118,12 +1143,29 @@ namespace GabNetStats
                     }
                     else
                     {
-                        ipproperties = netInterface.GetIPProperties();
+                        try
+                        {
+                            ipproperties = netInterface.GetIPProperties();
+                        }
+                        catch (NetworkInformationException)
+                        {
+                            ip = Res.str_NoIpAvailable;
+                            continue;
+                        }
+                        catch (PlatformNotSupportedException)
+                        {
+                            ip = Res.str_NoIpAvailable;
+                            continue;
+                        }
                         if (ipproperties.UnicastAddresses.Count > 0)
                         {
-                            if (netInterface.NetworkInterfaceType.ToString().ToLower(CultureInfo.InvariantCulture).Contains("ethernet") ||
+                            if (netInterface.NetworkInterfaceType == NetworkInterfaceType.Ethernet ||
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.Ethernet3Megabit ||
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.FastEthernetFx ||
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.FastEthernetT ||
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.GigabitEthernet ||
                                 netInterface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 ||
-                                netInterface.NetworkInterfaceType == NetworkInterfaceType.Tunnel )
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.Tunnel)
                             {
                                 nUp++;
                             }
@@ -1164,7 +1206,7 @@ namespace GabNetStats
                         }
                     }
 
-                    selectedInterfaces.Add(netInterface);
+                    selectedInterfaces.Add(new TrackedInterface(netInterface, mac));
                     speed = computeSpeed(netInterface.Speed, ref unit, 2);
 
                     //we generate the item related to the network interface
@@ -1471,26 +1513,16 @@ namespace GabNetStats
 
                         lock (selectedInterfaces)
                         {
-                            foreach (NetworkInterface netInterface in selectedInterfaces)
+                            foreach (TrackedInterface tracked in selectedInterfaces)
                             {
-                                string macAddress;
-                                try
-                                {
-                                    macAddress = netInterface.GetPhysicalAddress().ToString();
-                                }
-                                catch (Exception)
-                                {
-                                    continue;
-                                }
-
-                                if (!IsInterfaceEnabled(macAddress))
+                                if (!IsInterfaceEnabled(tracked.MacAddress))
                                 {
                                     continue;
                                 }
 
                                 try
                                 {
-                                    ipstats = netInterface.GetIPStatistics();
+                                    ipstats = tracked.Interface.GetIPStatistics();
                                     bytesReceived += ipstats.BytesReceived;
                                     bytesSent += ipstats.BytesSent;
                                 }

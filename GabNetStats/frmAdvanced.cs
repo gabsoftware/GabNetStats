@@ -170,33 +170,57 @@ namespace GabNetStats
             radioButtonIPv4.Checked = true;
             radioButtonIPv4_CheckedChanged(this, new EventArgs());
 
-            try
+            NetworkInterface[] availableInterfaces = Array.Empty<NetworkInterface>();
+            MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
+            if (mainForm != null)
             {
-                nics = NetworkInterface.GetAllNetworkInterfaces();
+                availableInterfaces = mainForm.GetDisplayableInterfacesSnapshot();
             }
-            catch (NetworkInformationException)
+
+            if (availableInterfaces == null || availableInterfaces.Length == 0)
             {
-                
+                try
+                {
+                    availableInterfaces = NetworkInterface.GetAllNetworkInterfaces();
+                }
+                catch (NetworkInformationException)
+                {
+                    availableInterfaces = Array.Empty<NetworkInterface>();
+                }
             }
-            
+
+            nics = availableInterfaces;
+
+            comboInterfaces.DisplayMember = "Description";
             NetworkInterface selectedNic = null;
             foreach (NetworkInterface nic in nics)
             {
                 comboInterfaces.Items.Add(nic);
-                comboInterfaces.DisplayMember = "Description";
-                if (nic.Description.ToLower().Contains("ethernet") || nic.Description.ToLower().Contains("gigabit") || nic.Description.ToLower().Contains("gbe"))
+                if (nic.Description != null)
                 {
-                    //we set a preference for the ethernet nic.
-                    selectedNic = nic;
+                    string descriptionLower = nic.Description.ToLowerInvariant();
+                    if (descriptionLower.Contains("ethernet") || descriptionLower.Contains("gigabit") || descriptionLower.Contains("gbe"))
+                    {
+                        //we set a preference for the ethernet nic.
+                        selectedNic = nic;
+                    }
                 }
             }
-            if (selectedNic == null)
+            if (comboInterfaces.Items.Count > 0)
             {
-                comboInterfaces.SelectedItem = nics[0];
+                comboInterfaces.Enabled = true;
+                if (selectedNic == null)
+                {
+                    comboInterfaces.SelectedIndex = 0;
+                }
+                else
+                {
+                    comboInterfaces.SelectedItem = selectedNic;
+                }
             }
             else
             {
-                comboInterfaces.SelectedItem = selectedNic;
+                comboInterfaces.Enabled = false;
             }
 
             timerAdvanced.Interval = Settings.Default.BlinkDuration;
