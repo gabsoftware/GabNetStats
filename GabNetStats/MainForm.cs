@@ -92,6 +92,7 @@ namespace GabNetStats
         private static int emissionSampleCount  = avgSpeedNbItems;
         private static int receptionSampleIndex = 0;
         private static int emissionSampleIndex  = 0;
+        private static HashSet<string> enabledInterfaceMacs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
         static NetworkInterface[] interfaces;
         static ArrayList          selectedInterfaces = new ArrayList();
@@ -368,6 +369,7 @@ namespace GabNetStats
             bandwidthUploadLvl1   = bandwidthUploadLvl5       / 5;
 
             customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
+            RefreshEnabledInterfacesCache();
 
             //registers the networkchange event handlers
             NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(NetworkChange_NetworkAvailabilityChanged);
@@ -504,6 +506,34 @@ namespace GabNetStats
             return total / divisor;
         }
 
+        private static void RefreshEnabledInterfacesCache()
+        {
+            HashSet<string> newSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            string enabledList = Settings.Default.EnabledInterfaceMACList;
+
+            if (!String.IsNullOrWhiteSpace(enabledList) && !String.Equals(enabledList, "TOSET", StringComparison.OrdinalIgnoreCase))
+            {
+                string[] entries = enabledList.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string entry in entries)
+                {
+                    newSet.Add(entry);
+                }
+            }
+
+            Volatile.Write(ref enabledInterfaceMacs, newSet);
+        }
+
+        private static bool IsInterfaceEnabled(string mac)
+        {
+            if (String.IsNullOrEmpty(mac))
+            {
+                return false;
+            }
+
+            HashSet<string> snapshot = Volatile.Read(ref enabledInterfaceMacs);
+            return snapshot.Contains(mac);
+        }
+
         private void OnAbout(object sender, EventArgs e)
         {
             AboutForm formAbout = new AboutForm();
@@ -561,6 +591,7 @@ namespace GabNetStats
             bandwidthUploadLvl1   = bandwidthUploadLvl5       / 5;
 
             customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
+            RefreshEnabledInterfacesCache();
 
             this.notifyIconPing.Visible = Settings.Default.AutoPingEnabled;
             if (!Settings.Default.AutoPingEnabled)
@@ -714,7 +745,7 @@ namespace GabNetStats
         /// </summary>
         /// <param name="mac">A MAC address</param>
         /// <param name="enable">If set to True (default value), the interface will be enabled for statistics</param>
-        private bool EnableStatisticsForInterface(string mac, bool enable = true, bool saveSettings = true)
+        private bool EnableStatisticsForInterface(string mac, bool enable = true, bool saveSettings = true, bool refreshCache = true)
         {
             string tmp = Settings.Default.EnabledInterfaceMACList;
             bool contains = false;
@@ -767,6 +798,10 @@ namespace GabNetStats
                 if (saveSettings)
                 {
                     Settings.Default.Save();
+                }
+                if (refreshCache)
+                {
+                    RefreshEnabledInterfacesCache();
                 }
 
                 if (tmp == String.Empty)
@@ -1035,7 +1070,7 @@ namespace GabNetStats
                     // if we never selected an interface before, enable it for statistics by default.
                     if (isFirstTime)
                     {
-                        if (EnableStatisticsForInterface(mac, true, false))
+                        if (EnableStatisticsForInterface(mac, true, false, false))
                         {
                             shouldSaveSettings = true;
                         }
@@ -1045,7 +1080,7 @@ namespace GabNetStats
                     if (!AddToKnownInterface(mac, false))
                     {
                         shouldSaveSettings = true;
-                        if (EnableStatisticsForInterface(mac, true, false))
+                        if (EnableStatisticsForInterface(mac, true, false, false))
                         {
                             shouldSaveSettings = true;
                         }
@@ -1068,7 +1103,7 @@ namespace GabNetStats
                     itm2                    = new ToolStripMenuItem(Res.str_IncludeInStatistics);
                     itm2.Name               = "itm_include_" + netInterface.Id;
                     itm2.CheckOnClick       = true;
-                    itm2.Checked            = mac != null ? Settings.Default.EnabledInterfaceMACList.Contains(mac) : false;
+                    itm2.Checked            = mac != null ? IsInterfaceEnabled(mac) : false;
                     itm2.CheckStateChanged += new EventHandler(OnAdapterCheckStateChanged);
                     itm2.Tag                = netInterface;
 
@@ -1112,6 +1147,7 @@ namespace GabNetStats
             if (shouldSaveSettings)
             {
                 Settings.Default.Save();
+                RefreshEnabledInterfacesCache();
             }
         }
 
@@ -1382,14 +1418,26 @@ namespace GabNetStats
                         
                         foreach (NetworkInterface netInterface in selectedInterfaces)
                         {
+                            string macAddress;
                             try
                             {
-                                if (Settings.Default.EnabledInterfaceMACList.Contains(netInterface.GetPhysicalAddress().ToString()))
-                                {
-                                    ipstats = netInterface.GetIPStatistics();
-                                    bytesReceived += ipstats.BytesReceived;
-                                    bytesSent += ipstats.BytesSent;
-                                }
+                                macAddress = netInterface.GetPhysicalAddress().ToString();
+                            }
+                            catch (Exception)
+                            {
+                                continue;
+                            }
+
+                            if (!IsInterfaceEnabled(macAddress))
+                            {
+                                continue;
+                            }
+
+                            try
+                            {
+                                ipstats = netInterface.GetIPStatistics();
+                                bytesReceived += ipstats.BytesReceived;
+                                bytesSent += ipstats.BytesSent;
                             }
                             catch (Exception)
                             {
