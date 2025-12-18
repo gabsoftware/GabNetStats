@@ -1137,12 +1137,11 @@ namespace GabNetStats
         private void AutoPingThread(object state)
         {
             CancellationToken cancellationToken = state is CancellationToken token ? token : CancellationToken.None;
-            byte[] buffer = new byte[1];
-            buffer[0] = 1;
-
+            byte[] buffer = { 1 };
             PingReply reply = null;
-
             Icon previous = null;
+            string pingHost = Settings.Default.AutoPingHost;
+            int pingTimeout = 500;
 
             try
             {
@@ -1150,53 +1149,28 @@ namespace GabNetStats
                 {
                     cancellationToken.ThrowIfCancellationRequested();
 
-                    //effectue un ping
-                    Ping ping = new Ping();
-
-                    try
+                    using (Ping ping = new Ping())
                     {
-                        reply = ping.Send(Settings.Default.AutoPingHost, 500, buffer);
-                    }
-                    catch( PingException )
-                    {
-                        reply = null; // because when PingException is thrown, reply is NOT assigned a new value
-                    }
-                    catch( Exception )
-                    {
-                        reply = null;
-                    }
-                    finally
-                    {
-                        previous = this.notifyIconPing.Icon;
-
-                        if ( reply == null || reply.Status != IPStatus.Success)
+                        try
                         {
-                            if (this.notifyIconPing.Icon.Equals(iconCircle_green))
-                            {
-                                this.notifyIconPing.Icon = iconCircle_orange;
-                                this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection issue?";
-                                this.notifyIconPing.BalloonTipText += "\nThe host \"" + Settings.Default.AutoPingHost + "\" seems to be unreachable.";
-                                this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Warning;
-                            }
-                            else if (this.notifyIconPing.Icon.Equals(iconCircle_orange))
-                            {
-                                this.notifyIconPing.Icon = iconCircle_red;
-                                this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection issue!";
-                                this.notifyIconPing.BalloonTipText += "\nThe host \"" + Settings.Default.AutoPingHost + "\" could not be reached.";
-                                this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Error;
-                            }
+                            reply = ping.Send(pingHost, pingTimeout, buffer);
                         }
-                        else
+                        catch (PingException)
                         {
-                            this.notifyIconPing.Icon = iconCircle_green;
-                            this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection OK";
-                            this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Info;
+                            reply = null; // PingException does not provide a reply object
                         }
-
-                        if( Settings.Default.AutoPingNotif && ! previous.Equals( this.notifyIconPing.Icon ) )
+                        catch (Exception)
                         {
-                            this.notifyIconPing.ShowBalloonTip(1000);
-                        }                        
+                            reply = null;
+                        }
+                    }
+
+                    previous = this.notifyIconPing.Icon;
+                    UpdateAutoPingIcon(reply);
+
+                    if (Settings.Default.AutoPingNotif && !previous.Equals(this.notifyIconPing.Icon))
+                    {
+                        this.notifyIconPing.ShowBalloonTip(1000);
                     }
 
                     try
@@ -1219,6 +1193,39 @@ namespace GabNetStats
                     ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 Application.Restart();
+            }
+        }
+
+        private void UpdateAutoPingIcon(PingReply reply)
+        {
+            if (reply == null || reply.Status != IPStatus.Success)
+            {
+                if (this.notifyIconPing.Icon.Equals(iconCircle_green))
+                {
+                    this.notifyIconPing.Icon = iconCircle_orange;
+                    this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection issue?";
+                    this.notifyIconPing.BalloonTipText += "\nThe host \"" + Settings.Default.AutoPingHost + "\" seems to be unreachable.";
+                    this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Warning;
+                }
+                else if (this.notifyIconPing.Icon.Equals(iconCircle_orange))
+                {
+                    this.notifyIconPing.Icon = iconCircle_red;
+                    this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection issue!";
+                    this.notifyIconPing.BalloonTipText += "\nThe host \"" + Settings.Default.AutoPingHost + "\" could not be reached.";
+                    this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Error;
+                }
+                else if (!this.notifyIconPing.Icon.Equals(iconCircle_red))
+                {
+                    this.notifyIconPing.Icon = iconCircle_orange;
+                    this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection issue?";
+                    this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Warning;
+                }
+            }
+            else
+            {
+                this.notifyIconPing.Icon = iconCircle_green;
+                this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection OK";
+                this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Info;
             }
         }
 
