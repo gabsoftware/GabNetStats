@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\dev\\gabsoftware\\GabNetStats\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|e:\\dev\\gabsoftware\\gabnetstats\\gabnetstats\\frmballoon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\frmballoon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|e:\\dev\\gabsoftware\\gabnetstats\\gabnetstats\\gabnetstats.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\gabnetstats.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
@@ -19,6 +23,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "frmBalloon.cs [Conception]",
+              "DocumentMoniker": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\frmBalloon.cs",
+              "RelativeDocumentMoniker": "GabNetStats\\frmBalloon.cs",
+              "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\frmBalloon.cs [Conception]",
+              "RelativeToolTip": "GabNetStats\\frmBalloon.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-18T19:21:06.206Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "GabNetStats",
               "DocumentMoniker": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\GabNetStats.csproj",
               "RelativeDocumentMoniker": "GabNetStats\\GabNetStats.csproj",

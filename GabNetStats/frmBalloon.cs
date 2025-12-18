@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -27,10 +28,25 @@ namespace GabNetStats
         private static string str_Bytes = Res.str_Bytes;
 
         private static NumberFormatInfo nfi = (NumberFormatInfo)CultureInfo.CurrentCulture.NumberFormat.Clone();
+        private const int MaxHistorySamples = 2048;
+        private static readonly object historyLock = new object();
+        private static readonly Queue<SpeedHistorySample> history = new Queue<SpeedHistorySample>(MaxHistorySamples);
 
         private static int counter = 0;
         internal static frmAdvanced frmAdv;
         private bool suppressLocationPersistence;
+
+        private readonly struct SpeedHistorySample
+        {
+            public SpeedHistorySample(double downloadKib, double uploadKib)
+            {
+                DownloadKib = downloadKib;
+                UploadKib = uploadKib;
+            }
+
+            public double DownloadKib { get; }
+            public double UploadKib { get; }
+        }
 
         static frmBalloon()
         {
@@ -47,6 +63,8 @@ namespace GabNetStats
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
+            UpdateTrackerCapacity();
+            ApplyHistoryToTracker();
         }
 
         private void BallonTimer_Tick(object sender, EventArgs e)
@@ -118,6 +136,7 @@ namespace GabNetStats
             lAvgSpeedEmission = plAvgSpeedEmission;
             bytesReceived = pbytesReceived;
             bytesSent = pbytesSent;
+            StoreHistorySample(plAvgSpeedReception, plAvgSpeedEmission);
         }
 
         internal void EnsurePreferredLocation()
@@ -244,7 +263,8 @@ namespace GabNetStats
 
         private void frmBalloon_Resize(object sender, EventArgs e)
         {
-            this.gabTracker1.MaxDataInMemory = this.Width / 10 + 1;
+            UpdateTrackerCapacity();
+            ApplyHistoryToTracker();
         }
 
         private void frmBalloon_Load(object sender, EventArgs e)
@@ -268,6 +288,85 @@ namespace GabNetStats
             Settings.Default.BalloonLocationX = this.Left;
             Settings.Default.BalloonLocationY = this.Top;
             Settings.Default.Save();
+        }
+
+        private void UpdateTrackerCapacity()
+        {
+            if (gabTracker1 == null)
+            {
+                return;
+            }
+
+            int desiredCapacity = Math.Max(1, this.Width / 10 + 1);
+            gabTracker1.MaxDataInMemory = desiredCapacity;
+        }
+
+        private static void StoreHistorySample(long avgDownloadBytesPerSecond, long avgUploadBytesPerSecond)
+        {
+            double downloadKib = Math.Max(0d, avgDownloadBytesPerSecond / 1024d);
+            double uploadKib = Math.Max(0d, avgUploadBytesPerSecond / 1024d);
+
+            lock (historyLock)
+            {
+                history.Enqueue(new SpeedHistorySample(downloadKib, uploadKib));
+                while (history.Count > MaxHistorySamples)
+                {
+                    history.Dequeue();
+                }
+            }
+        }
+
+        private static List<SpeedHistorySample> GetHistorySnapshot(int maxSamples)
+        {
+            lock (historyLock)
+            {
+                if (maxSamples <= 0 || history.Count == 0)
+                {
+                    return new List<SpeedHistorySample>(0);
+                }
+
+                int count = Math.Min(maxSamples, history.Count);
+                int skip = history.Count - count;
+                List<SpeedHistorySample> snapshot = new List<SpeedHistorySample>(count);
+                int index = 0;
+
+                foreach (SpeedHistorySample sample in history)
+                {
+                    if (index++ >= skip)
+                    {
+                        snapshot.Add(sample);
+                    }
+                }
+
+                return snapshot;
+            }
+        }
+
+        private void ApplyHistoryToTracker()
+        {
+            if (gabTracker1 == null || gabTracker1.Feeds.Count < 2)
+            {
+                return;
+            }
+
+            List<SpeedHistorySample> snapshot = GetHistorySnapshot(gabTracker1.MaxDataInMemory);
+            if (snapshot.Count == 0)
+            {
+                return;
+            }
+
+            Queue<double> downloadData = gabTracker1.Feeds[0].Data;
+            Queue<double> uploadData = gabTracker1.Feeds[1].Data;
+            downloadData.Clear();
+            uploadData.Clear();
+
+            foreach (SpeedHistorySample sample in snapshot)
+            {
+                downloadData.Enqueue(sample.DownloadKib);
+                uploadData.Enqueue(sample.UploadKib);
+            }
+
+            gabTracker1.Invalidate();
         }
     }
 }
