@@ -1,218 +1,22 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GabNetStats</RootNamespace>
-    <AssemblyName>GabNetStats</AssemblyName>
-    <ApplicationIcon>GabNetStats.ico</ApplicationIcon>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-  </PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
+    <DebugType>full</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>
     </DefineConstants>
     <ErrorReport>none</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <DebugSymbols>false</DebugSymbols>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <Prefer32Bit>false</Prefer32Bit>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
-  </PropertyGroup>
-  <PropertyGroup>
-    <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AboutForm.Designer.cs">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAdvanced.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAdvanced.Designer.cs">
-      <DependentUpon>frmAdvanced.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmBalloon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmBalloon.Designer.cs">
-      <DependentUpon>frmBalloon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AboutForm.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AboutForm.ru.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAdvanced.fr.resx">
-      <DependentUpon>frmAdvanced.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAdvanced.resx">
-      <DependentUpon>frmAdvanced.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAdvanced.ru.resx">
-      <DependentUpon>frmAdvanced.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBalloon.fr.resx">
-      <DependentUpon>frmBalloon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBalloon.resx">
-      <DependentUpon>frmBalloon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmBalloon.ru.resx">
-      <DependentUpon>frmBalloon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.ru.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="SettingsForm.ru.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="Res.ru.Designer.cs">
-      <DependentUpon>Res.ru.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Res.Designer.cs">
-      <DependentUpon>Res.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Res.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Res.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingsForm.Designer.cs">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="AboutForm.fr.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="icons\GabNetStats.ico" />
-    <EmbeddedResource Include="MainForm.fr.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Res.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Res.ru.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Res.fr.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Res.fr.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Res.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Res.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsForm.fr.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsForm.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="GabNetStats.ico" />
@@ -576,23 +380,6 @@
     <Content Include="icons\xp\send_yellow.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\settings-icon_16x16.png" />
-    <None Include="Resources\network_pipe_16x16.ico" />
-    <None Include="Resources\tunnel_16x16.ico" />
-    <None Include="Resources\shell32_18.ico" />
-    <None Include="Resources\networkmap_1.ico" />
-    <None Include="Resources\wlanpref_101.ico" />
-    <None Include="Resources\imageres_1013.ico" />
-    <None Include="app.config" />
-    <None Include="Resources\netshell_1613_16x16.ico" />
-    <None Include="Resources\netshell_1612_16x16.ico" />
-    <None Include="Resources\deskadp_16x16.ico" />
-    <None Include="Resources\pnidui_2407_16x16.ico" />
-    <None Include="Resources\netshell_16x16.ico" />
-    <None Include="Resources\netcenter_16x16.ico" />
-    <None Include="Resources\FireWallControlPanel_16x16.ico" />
-    <None Include="Resources\netshell_IDI_CFI_TRAY_WIRED_WARNING.ico" />
-    <None Include="Resources\netshell_195.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -622,33 +409,40 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\GabTracker\GabTracker\GabTracker.csproj">
-      <Project>{902445d6-a2d4-4833-a5f0-3b808560d892}</Project>
-      <Name>GabTracker</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\..\GabTracker\GabTracker\GabTracker.csproj" />
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"$(ProjectDir)customtools\ssr.exe" 0 [PRODUCTNAME] GabNetstats "$(ProjectDir)License.en.txt" "$(TargetDir)tmp1.txt"
-"$(ProjectDir)customtools\ssr.exe" 0 [PRODUCTHOMEPAGE] https://www.gabsoftware.com/products/applications/gabnetstats/ "$(TargetDir)tmp1.txt" "$(TargetDir)tmp2.txt"
-"$(ProjectDir)customtools\ssr.exe" 0 [CONTACTEMAIL] gabriel@gabsoftware.com "$(TargetDir)tmp2.txt" "$(TargetDir)License.en.txt"
-del "$(TargetDir)tmp*.txt"
-
-"$(ProjectDir)customtools\ssr.exe" 0 [PRODUCTNAME] GabNetstats "$(ProjectDir)License.fr.txt" "$(TargetDir)tmp1.txt"
-"$(ProjectDir)customtools\ssr.exe" 0 [PRODUCTHOMEPAGE] https://www.gabsoftware.com/products/applications/gabnetstats/ "$(TargetDir)tmp1.txt" "$(TargetDir)tmp2.txt"
-"$(ProjectDir)customtools\ssr.exe" 0 [CONTACTEMAIL] gabriel@gabsoftware.com "$(TargetDir)tmp2.txt" "$(TargetDir)License.fr.txt"
-del "$(TargetDir)tmp*.txt"
-</PostBuildEvent>
+    <TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <ApplicationIcon>GabNetStats.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <StartupObject />
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <AssemblyTitle>GabNetStats</AssemblyTitle>
+    <BaseOutputPath>bin\</BaseOutputPath>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
-  <PropertyGroup>
-    <PreBuildEvent>del /F "$(TargetDir)License.*.txt"</PreBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="echo Configuration: $(Configuration)&#xD;&#xA;echo DevEnvDir: $(DevEnvDir)&#xD;&#xA;echo OutDir: $(OutDir)&#xD;&#xA;echo ProjectDir: $(ProjectDir)&#xD;&#xA;echo VisualStudioVersion: $(VisualStudioVersion)&#xD;&#xA;echo AssemblySearchPaths: $(AssemblySearchPaths)&#xD;&#xA;echo AssemblyName: $(AssemblyName)&#xD;&#xA;echo BaseIntermediateOutputPath: $(BaseIntermediateOutputPath)&#xD;&#xA;echo CscToolPath: $(CscToolPath)&#xD;&#xA;echo MSBuildProjectDirectory: $(MSBuildProjectDirectory)&#xD;&#xA;del /F &quot;$(OutDir)\License.*.txt&quot;" />
   </Target>
-  <Target Name="AfterBuild">
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo &quot;$(MSBuildProjectDirectory)\customtools\ssr.exe&quot;&#xD;&#xA;&quot;$(MSBuildProjectDirectory)\customtools\ssr.exe&quot; 0 [PRODUCTNAME] GabNetstats &quot;$(MSBuildProjectDirectory)\License.en.txt&quot; &quot;$(OutDir)\tmp1.txt&quot;&#xD;&#xA;&quot;$(MSBuildProjectDirectory)\customtools\ssr.exe&quot; 0 [PRODUCTHOMEPAGE] https://www.gabsoftware.com/products/applications/gabnetstats/ &quot;$(OutDir)\tmp1.txt&quot; &quot;$(OutDir)\tmp2.txt&quot;&#xD;&#xA;&quot;$(MSBuildProjectDirectory)\customtools\ssr.exe&quot; 0 [CONTACTEMAIL] gabriel@gabsoftware.com &quot;$(OutDir)\tmp2.txt&quot; &quot;$(OutDir)\License.en.txt&quot;&#xD;&#xA;del &quot;$(OutDir)\tmp*.txt&quot;&#xD;&#xA;&#xD;&#xA;&quot;$(MSBuildProjectDirectory)\customtools\ssr.exe&quot; 0 [PRODUCTNAME] GabNetstats &quot;$(MSBuildProjectDirectory)\License.fr.txt&quot; &quot;$(OutDir)\tmp1.txt&quot;&#xD;&#xA;&quot;$(MSBuildProjectDirectory)\customtools\ssr.exe&quot; 0 [PRODUCTHOMEPAGE] https://www.gabsoftware.com/products/applications/gabnetstats/ &quot;$(OutDir)\tmp1.txt&quot; &quot;$(OutDir)\tmp2.txt&quot;&#xD;&#xA;&quot;$(MSBuildProjectDirectory)\customtools\ssr.exe&quot; 0 [CONTACTEMAIL] gabriel@gabsoftware.com &quot;$(OutDir)\tmp2.txt&quot; &quot;$(OutDir)\License.fr.txt&quot;&#xD;&#xA;del &quot;$(OutDir)\tmp*.txt&quot;&#xD;&#xA;" />
   </Target>
-  -->
 </Project>
