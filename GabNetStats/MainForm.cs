@@ -23,10 +23,11 @@ namespace GabNetStats
         private Thread hNICRefreshThread = null;
         private Thread hAutoPingThread   = null;
 
+        private readonly CancellationTokenSource workerCancellationTokenSource = new CancellationTokenSource();
+        private CancellationTokenSource autoPingCancellationTokenSource;
+
         private bool bSetIconContinue    = true;
-        private bool bWorkContinue       = true;
         private bool customBandwidth     = false;
-        private bool bAutoPingContinue   = true;
 
         internal enum eState
         {
@@ -278,10 +279,10 @@ namespace GabNetStats
 
             try
             {
-                hNetStatThread2 = new Thread(new ThreadStart(this.NetStatThread));
+                hNetStatThread2 = new Thread(new ParameterizedThreadStart(this.NetStatThread));
                 hNetStatThread2.IsBackground = true;
                 hNetStatThread2.Name = "hNetStatThread2";
-                hNetStatThread2.Start();
+                hNetStatThread2.Start(workerCancellationTokenSource.Token);
             }
             catch (ArgumentNullException) { }
             catch (ThreadStateException) { }
@@ -291,10 +292,10 @@ namespace GabNetStats
             try
             {
                 //used in case more than one interface is UP and this number is changing.
-                hNICRefreshThread = new Thread(new ThreadStart(this.NICRefreshThread));
+                hNICRefreshThread = new Thread(new ParameterizedThreadStart(this.NICRefreshThread));
                 hNICRefreshThread.IsBackground = true;
                 hNICRefreshThread.Name = "hNICRefreshThread";
-                hNICRefreshThread.Start();
+                hNICRefreshThread.Start(workerCancellationTokenSource.Token);
             }
             catch (ArgumentNullException) { }
             catch (ThreadStateException) { }
@@ -302,23 +303,13 @@ namespace GabNetStats
             catch (InvalidOperationException) { }
 
             this.notifyIconPing.Visible = Settings.Default.AutoPingEnabled;
-            if( Settings.Default.AutoPingEnabled )
+            if (Settings.Default.AutoPingEnabled)
             {
-                try
-                {
-                    hAutoPingThread = new Thread(new ThreadStart(this.AutoPingThread));
-                    hAutoPingThread.IsBackground = true;
-                    hAutoPingThread.Name = "hAutoPingThread";
-                    hAutoPingThread.Start();
-                }
-                catch (ArgumentNullException) { }
-                catch (ThreadStateException) { }
-                catch (OutOfMemoryException) { }
-                catch (InvalidOperationException) { }
+                this.StartAutoPingThread();
             }
             else
             {
-                bAutoPingContinue = false;
+                this.StopAutoPingThread();
             }
 
             try
@@ -400,38 +391,13 @@ namespace GabNetStats
             customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
 
             this.notifyIconPing.Visible = Settings.Default.AutoPingEnabled;
-            if ( ! Settings.Default.AutoPingEnabled)
+            if (!Settings.Default.AutoPingEnabled)
             {
-                if (hAutoPingThread != null && hAutoPingThread.IsAlive)
-                {
-                    bAutoPingContinue = false;
-                    try
-                    {
-                        hAutoPingThread.Abort();
-                    }
-                    catch (System.Security.SecurityException) { }
-                    catch (ThreadStateException) { }
-                }
+                this.StopAutoPingThread();
             }
             else
             {
-                if ( hAutoPingThread == null || ! hAutoPingThread.IsAlive )
-                {
-                    bAutoPingContinue = true;
-                    try
-                    {
-                        hAutoPingThread = new Thread(new ThreadStart(this.AutoPingThread));
-                        hAutoPingThread.IsBackground = true;
-                        hAutoPingThread.Name = "hAutoPingThread";
-                        hAutoPingThread.Priority = ThreadPriority.Lowest;
-                        hAutoPingThread.Start();
-                    }
-                    catch (ThreadStateException) { }
-                    catch (OutOfMemoryException) { }
-                    catch (InvalidOperationException) { }
-                    catch (ArgumentNullException) { }
-                    catch (ArgumentException) { }
-                }
+                this.StartAutoPingThread();
             }
 
             this.applyIconSet();
@@ -452,52 +418,98 @@ namespace GabNetStats
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            bWorkContinue     = false;
-            bAutoPingContinue = false;
+            try
+            {
+                workerCancellationTokenSource.Cancel();
+            }
+            catch (ObjectDisposedException) { }
+
+            this.StopAutoPingThread();
+
+            TryJoinThread(hNetStatThread2);
+            TryJoinThread(hNICRefreshThread);
+
+            workerCancellationTokenSource.Dispose();
+        }
+
+        private void StartAutoPingThread()
+        {
+            if (hAutoPingThread != null && hAutoPingThread.IsAlive)
+            {
+                return;
+            }
+
+            autoPingCancellationTokenSource?.Dispose();
+            autoPingCancellationTokenSource = new CancellationTokenSource();
 
             try
             {
-                Thread.Sleep(2 * nDuration);
+                hAutoPingThread = new Thread(new ParameterizedThreadStart(this.AutoPingThread));
+                hAutoPingThread.IsBackground = true;
+                hAutoPingThread.Name = "hAutoPingThread";
+                hAutoPingThread.Priority = ThreadPriority.Lowest;
+                hAutoPingThread.Start(autoPingCancellationTokenSource.Token);
             }
-            catch (ArgumentOutOfRangeException) { }
+            catch (ThreadStateException) { }
+            catch (OutOfMemoryException) { }
+            catch (InvalidOperationException) { }
+            catch (ArgumentNullException) { }
+            catch (ArgumentException) { }
+        }
 
-            if (hNetStatThread2 != null)
+        private void StopAutoPingThread()
+        {
+            if (autoPingCancellationTokenSource != null)
             {
-                if (hNetStatThread2.IsAlive)
+                try
                 {
-                    try
-                    {
-                        hNetStatThread2.Abort();
-                    }
-                    catch (System.Security.SecurityException) { }
-                    catch ( ThreadStateException) { }
+                    autoPingCancellationTokenSource.Cancel();
                 }
-            }
-
-            if (hNICRefreshThread != null)
-            {
-                if (hNICRefreshThread.IsAlive)
-                {
-                    try
-                    {
-                        hNICRefreshThread.Abort();
-                    }
-                    catch (System.Security.SecurityException) { }
-                    catch (ThreadStateException) { }
-                }
+                catch (ObjectDisposedException) { }
             }
 
-            if (hAutoPingThread != null)
+            TryJoinThread(hAutoPingThread);
+            hAutoPingThread = null;
+
+            if (autoPingCancellationTokenSource != null)
             {
-                if (hAutoPingThread.IsAlive)
-                {
-                    try
-                    {
-                        hAutoPingThread.Abort();
-                    }
-                    catch (System.Security.SecurityException) { }
-                    catch (ThreadStateException) { }
-                }
+                autoPingCancellationTokenSource.Dispose();
+                autoPingCancellationTokenSource = null;
+            }
+        }
+
+        private static void TryJoinThread(Thread thread)
+        {
+            if (thread == null)
+            {
+                return;
+            }
+
+            try
+            {
+                thread.Join(1000);
+            }
+            catch (ThreadStateException) { }
+            catch (ThreadInterruptedException) { }
+        }
+
+        private static void WaitWithCancellation(CancellationToken cancellationToken, int millisecondsTimeout)
+        {
+            if (millisecondsTimeout < Timeout.Infinite)
+            {
+                throw new ArgumentOutOfRangeException(nameof(millisecondsTimeout));
+            }
+
+            if (millisecondsTimeout == 0)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                return;
+            }
+
+            bool signaled = cancellationToken.WaitHandle.WaitOne(millisecondsTimeout);
+            if (signaled)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
             }
         }
 
@@ -953,8 +965,9 @@ namespace GabNetStats
         /// <summary>
         /// Thread for auto-pinging a server
         /// </summary>
-        private void AutoPingThread()
+        private void AutoPingThread(object state)
         {
+            CancellationToken cancellationToken = state is CancellationToken token ? token : CancellationToken.None;
             byte[] buffer = new byte[1];
             buffer[0] = 1;
 
@@ -964,8 +977,10 @@ namespace GabNetStats
 
             try
             {
-                while ( bAutoPingContinue )
+                while (true)
                 {
+                    cancellationToken.ThrowIfCancellationRequested();
+
                     //effectue un ping
                     Ping ping = new Ping();
 
@@ -1017,37 +1032,40 @@ namespace GabNetStats
 
                     try
                     {
-                        Thread.Sleep((int)Settings.Default.AutoPingRate);
+                        WaitWithCancellation(cancellationToken, (int)Settings.Default.AutoPingRate);
                     }
                     catch (ArgumentOutOfRangeException) { }
                 }
             }
+            catch (OperationCanceledException)
+            {
+            }
             catch (Exception ex)
             {
-                if ( ex.GetType() != typeof(ThreadAbortException))
-                {
-                    MessageBox.Show(
-                        Res.str_ErrorCrash +
-                        "\n\n" + "Thread : " +
-                        Thread.CurrentThread.Name +
-                        "\n\n" +
-                        ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Res.str_ErrorCrash +
+                    "\n\n" + "Thread : " +
+                    Thread.CurrentThread.Name +
+                    "\n\n" +
+                    ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    Application.Restart();
-                }
+                Application.Restart();
             }
         }
 
 
-        private void NICRefreshThread()
+        private void NICRefreshThread(object state)
         {
+            CancellationToken cancellationToken = state is CancellationToken token ? token : CancellationToken.None;
             int nbv4, nbv6;
 
             try
             {
 
-                while (bWorkContinue)
+                while (true)
                 {
+                    cancellationToken.ThrowIfCancellationRequested();
+
                     //we get some quick statistics about the number of network interfaces...
                     properties = IPGlobalProperties.GetIPGlobalProperties();
                     try
@@ -1076,30 +1094,31 @@ namespace GabNetStats
 
                     try
                     {
-                        Thread.Sleep(nNICRefresh);
+                        WaitWithCancellation(cancellationToken, nNICRefresh);
                     }
                     catch (ArgumentOutOfRangeException) { }
                 }
 
             }
+            catch (OperationCanceledException)
+            {
+            }
             catch (Exception ex)
             {
-                if (ex.GetType() != typeof(ThreadAbortException))
-                {
-                    MessageBox.Show(
-                        Res.str_ErrorCrash +
-                        "\n\n" + "Thread : " +
-                        Thread.CurrentThread.Name +
-                        "\n\n" +
-                        ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Res.str_ErrorCrash +
+                    "\n\n" + "Thread : " +
+                    Thread.CurrentThread.Name +
+                    "\n\n" +
+                    ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    Application.Restart();
-                }
+                Application.Restart();
             }
         }
 
-        private void NetStatThread()
+        private void NetStatThread(object state)
         {
+            CancellationToken cancellationToken = state is CancellationToken token ? token : CancellationToken.None;
             int nCounter            = 0;
             long bytesReceived      = 0;
             long bytesSent          = 0;
@@ -1122,8 +1141,10 @@ namespace GabNetStats
 
             try
             {
-                while (bWorkContinue)
+                while (true)
                 {
+                    cancellationToken.ThrowIfCancellationRequested();
+
                     if (bSetIconContinue)
                     {
                         bSetIconContinue = false;
@@ -1547,24 +1568,24 @@ namespace GabNetStats
 
                     try
                     {
-                        Thread.Sleep(nDuration);
+                        WaitWithCancellation(cancellationToken, nDuration);
                     }
                     catch (ArgumentOutOfRangeException) { }
                 }
             }
+            catch (OperationCanceledException)
+            {
+            }
             catch (Exception ex)
             {
-                if (ex.GetType() != typeof(ThreadAbortException))
-                {
-                    MessageBox.Show(
-                        Res.str_ErrorCrash +
-                        "\n\n" + "Thread : " +
-                        Thread.CurrentThread.Name +
-                        "\n\n" +
-                        ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    Res.str_ErrorCrash +
+                    "\n\n" + "Thread : " +
+                    Thread.CurrentThread.Name +
+                    "\n\n" +
+                    ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    Application.Restart();
-                }
+                Application.Restart();
             }
         }
 
