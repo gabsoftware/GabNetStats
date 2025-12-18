@@ -146,6 +146,7 @@ namespace GabNetStats
         static Icon iconCircle_red    = Properties.Resources.circle_red;
         static Icon iconCircle_grey   = Properties.Resources.circle_grey;
         static Icon iconCircle_orange = Properties.Resources.circle_orange;
+        private static string appliedIconSet = "xp";
 
         static frmBalloon fBal;
 
@@ -168,52 +169,148 @@ namespace GabNetStats
 
         private void applyIconSet()
         {
-            string path = Application.StartupPath + Path.DirectorySeparatorChar + "icons" + Path.DirectorySeparatorChar + Settings.Default.IconSet + Path.DirectorySeparatorChar;
+            string desiredSet = Settings.Default.IconSet;
+            if (String.IsNullOrEmpty(desiredSet))
+            {
+                desiredSet = "xp";
+            }
 
-            iconActive_blue_blue     = new Icon(path + "active_blue_blue.ico");
-            iconActive_blue_green    = new Icon(path + "active_blue_green.ico");
-            iconActive_blue_yellow   = new Icon(path + "active_blue_yellow.ico");
-            iconActive_blue_orange   = new Icon(path + "active_blue_orange.ico");
-            iconActive_blue_red      = new Icon(path + "active_blue_red.ico");
-            iconActive_green_blue    = new Icon(path + "active_green_blue.ico");
-            iconActive_green_green   = new Icon(path + "active_green_green.ico");
-            iconActive_green_yellow  = new Icon(path + "active_green_yellow.ico");
-            iconActive_green_orange  = new Icon(path + "active_green_orange.ico");
-            iconActive_green_red     = new Icon(path + "active_green_red.ico");
-            iconActive_yellow_blue   = new Icon(path + "active_yellow_blue.ico");
-            iconActive_yellow_green  = new Icon(path + "active_yellow_green.ico");
-            iconActive_yellow_yellow = new Icon(path + "active_yellow_yellow.ico");
-            iconActive_yellow_orange = new Icon(path + "active_yellow_orange.ico");
-            iconActive_yellow_red    = new Icon(path + "active_yellow_red.ico");
-            iconActive_orange_blue   = new Icon(path + "active_orange_blue.ico");
-            iconActive_orange_green  = new Icon(path + "active_orange_green.ico");
-            iconActive_orange_yellow = new Icon(path + "active_orange_yellow.ico");
-            iconActive_orange_orange = new Icon(path + "active_orange_orange.ico");
-            iconActive_orange_red    = new Icon(path + "active_orange_red.ico");
-            iconActive_red_blue      = new Icon(path + "active_red_blue.ico");
-            iconActive_red_green     = new Icon(path + "active_red_green.ico");
-            iconActive_red_yellow    = new Icon(path + "active_red_yellow.ico");
-            iconActive_red_orange    = new Icon(path + "active_red_orange.ico");
-            iconActive_red_red       = new Icon(path + "active_red_red.ico");
+            if (String.Compare(desiredSet, appliedIconSet, StringComparison.OrdinalIgnoreCase) == 0)
+            {
+                return;
+            }
 
-            iconInactive             = new Icon(path + "inactive.ico");
+            if (String.Compare(desiredSet, "xp", StringComparison.OrdinalIgnoreCase) == 0)
+            {
+                LoadDefaultIconSet();
+                appliedIconSet = "xp";
+                return;
+            }
 
-            iconSend_blue            = new Icon(path + "send_blue.ico");
-            iconSend_green           = new Icon(path + "send_green.ico");
-            iconSend_yellow          = new Icon(path + "send_yellow.ico");
-            iconSend_orange          = new Icon(path + "send_orange.ico");
-            iconSend_red             = new Icon(path + "send_red.ico");
+            string path = Path.Combine(Application.StartupPath, "icons", desiredSet);
+            if (!Directory.Exists(path))
+            {
+                return;
+            }
 
-            iconReceive_blue         = new Icon(path + "receive_blue.ico");
-            iconReceive_green        = new Icon(path + "receive_green.ico");
-            iconReceive_yellow       = new Icon(path + "receive_yellow.ico");
-            iconReceive_orange       = new Icon(path + "receive_orange.ico");
-            iconReceive_red          = new Icon(path + "receive_red.ico");
+            LoadIconSetFromDirectory(path);
+            appliedIconSet = desiredSet;
+        }
 
-            iconCircle_green         = new Icon(path + "circle_green.ico" );
-            iconCircle_red           = new Icon(path + "circle_red.ico"   );
-            iconCircle_grey          = new Icon(path + "circle_grey.ico"  );
-            iconCircle_orange        = new Icon(path + "circle_orange.ico");
+        private static Icon LoadIconFromFile(string filePath, Icon fallback)
+        {
+            try
+            {
+                return new Icon(filePath);
+            }
+            catch (IOException)
+            {
+                return fallback;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return fallback;
+            }
+            catch (ArgumentException)
+            {
+                return fallback;
+            }
+        }
+
+        private static void LoadDefaultIconSet()
+        {
+            iconActive_blue_blue     = Properties.Resources.active_blue_blue;
+            iconActive_blue_green    = Properties.Resources.active_blue_green;
+            iconActive_blue_yellow   = Properties.Resources.active_blue_yellow;
+            iconActive_blue_orange   = Properties.Resources.active_blue_orange;
+            iconActive_blue_red      = Properties.Resources.active_blue_red;
+            iconActive_green_blue    = Properties.Resources.active_green_blue;
+            iconActive_green_green   = Properties.Resources.active_green_green;
+            iconActive_green_yellow  = Properties.Resources.active_green_yellow;
+            iconActive_green_orange  = Properties.Resources.active_green_orange;
+            iconActive_green_red     = Properties.Resources.active_green_red;
+            iconActive_yellow_blue   = Properties.Resources.active_yellow_blue;
+            iconActive_yellow_green  = Properties.Resources.active_yellow_green;
+            iconActive_yellow_yellow = Properties.Resources.active_yellow_yellow;
+            iconActive_yellow_orange = Properties.Resources.active_yellow_orange;
+            iconActive_yellow_red    = Properties.Resources.active_yellow_red;
+            iconActive_orange_blue   = Properties.Resources.active_orange_blue;
+            iconActive_orange_green  = Properties.Resources.active_orange_green;
+            iconActive_orange_yellow = Properties.Resources.active_orange_yellow;
+            iconActive_orange_orange = Properties.Resources.active_orange_orange;
+            iconActive_orange_red    = Properties.Resources.active_orange_red;
+            iconActive_red_blue      = Properties.Resources.active_red_blue;
+            iconActive_red_green     = Properties.Resources.active_red_green;
+            iconActive_red_yellow    = Properties.Resources.active_red_yellow;
+            iconActive_red_orange    = Properties.Resources.active_red_orange;
+            iconActive_red_red       = Properties.Resources.active_red_red;
+
+            iconInactive             = Properties.Resources.inactive;
+
+            iconSend_blue            = Properties.Resources.send_blue;
+            iconSend_green           = Properties.Resources.send_green;
+            iconSend_yellow          = Properties.Resources.send_yellow;
+            iconSend_orange          = Properties.Resources.send_orange;
+            iconSend_red             = Properties.Resources.send_red;
+
+            iconReceive_blue         = Properties.Resources.receive_blue;
+            iconReceive_green        = Properties.Resources.receive_green;
+            iconReceive_yellow       = Properties.Resources.receive_yellow;
+            iconReceive_orange       = Properties.Resources.receive_orange;
+            iconReceive_red          = Properties.Resources.receive_red;
+
+            iconCircle_green         = Properties.Resources.circle_green;
+            iconCircle_red           = Properties.Resources.circle_red;
+            iconCircle_grey          = Properties.Resources.circle_grey;
+            iconCircle_orange        = Properties.Resources.circle_orange;
+        }
+
+        private static void LoadIconSetFromDirectory(string basePath)
+        {
+            iconActive_blue_blue     = LoadIconFromFile(Path.Combine(basePath, "active_blue_blue.ico"), iconActive_blue_blue);
+            iconActive_blue_green    = LoadIconFromFile(Path.Combine(basePath, "active_blue_green.ico"), iconActive_blue_green);
+            iconActive_blue_yellow   = LoadIconFromFile(Path.Combine(basePath, "active_blue_yellow.ico"), iconActive_blue_yellow);
+            iconActive_blue_orange   = LoadIconFromFile(Path.Combine(basePath, "active_blue_orange.ico"), iconActive_blue_orange);
+            iconActive_blue_red      = LoadIconFromFile(Path.Combine(basePath, "active_blue_red.ico"), iconActive_blue_red);
+            iconActive_green_blue    = LoadIconFromFile(Path.Combine(basePath, "active_green_blue.ico"), iconActive_green_blue);
+            iconActive_green_green   = LoadIconFromFile(Path.Combine(basePath, "active_green_green.ico"), iconActive_green_green);
+            iconActive_green_yellow  = LoadIconFromFile(Path.Combine(basePath, "active_green_yellow.ico"), iconActive_green_yellow);
+            iconActive_green_orange  = LoadIconFromFile(Path.Combine(basePath, "active_green_orange.ico"), iconActive_green_orange);
+            iconActive_green_red     = LoadIconFromFile(Path.Combine(basePath, "active_green_red.ico"), iconActive_green_red);
+            iconActive_yellow_blue   = LoadIconFromFile(Path.Combine(basePath, "active_yellow_blue.ico"), iconActive_yellow_blue);
+            iconActive_yellow_green  = LoadIconFromFile(Path.Combine(basePath, "active_yellow_green.ico"), iconActive_yellow_green);
+            iconActive_yellow_yellow = LoadIconFromFile(Path.Combine(basePath, "active_yellow_yellow.ico"), iconActive_yellow_yellow);
+            iconActive_yellow_orange = LoadIconFromFile(Path.Combine(basePath, "active_yellow_orange.ico"), iconActive_yellow_orange);
+            iconActive_yellow_red    = LoadIconFromFile(Path.Combine(basePath, "active_yellow_red.ico"), iconActive_yellow_red);
+            iconActive_orange_blue   = LoadIconFromFile(Path.Combine(basePath, "active_orange_blue.ico"), iconActive_orange_blue);
+            iconActive_orange_green  = LoadIconFromFile(Path.Combine(basePath, "active_orange_green.ico"), iconActive_orange_green);
+            iconActive_orange_yellow = LoadIconFromFile(Path.Combine(basePath, "active_orange_yellow.ico"), iconActive_orange_yellow);
+            iconActive_orange_orange = LoadIconFromFile(Path.Combine(basePath, "active_orange_orange.ico"), iconActive_orange_orange);
+            iconActive_orange_red    = LoadIconFromFile(Path.Combine(basePath, "active_orange_red.ico"), iconActive_orange_red);
+            iconActive_red_blue      = LoadIconFromFile(Path.Combine(basePath, "active_red_blue.ico"), iconActive_red_blue);
+            iconActive_red_green     = LoadIconFromFile(Path.Combine(basePath, "active_red_green.ico"), iconActive_red_green);
+            iconActive_red_yellow    = LoadIconFromFile(Path.Combine(basePath, "active_red_yellow.ico"), iconActive_red_yellow);
+            iconActive_red_orange    = LoadIconFromFile(Path.Combine(basePath, "active_red_orange.ico"), iconActive_red_orange);
+            iconActive_red_red       = LoadIconFromFile(Path.Combine(basePath, "active_red_red.ico"), iconActive_red_red);
+
+            iconInactive             = LoadIconFromFile(Path.Combine(basePath, "inactive.ico"), iconInactive);
+
+            iconSend_blue            = LoadIconFromFile(Path.Combine(basePath, "send_blue.ico"), iconSend_blue);
+            iconSend_green           = LoadIconFromFile(Path.Combine(basePath, "send_green.ico"), iconSend_green);
+            iconSend_yellow          = LoadIconFromFile(Path.Combine(basePath, "send_yellow.ico"), iconSend_yellow);
+            iconSend_orange          = LoadIconFromFile(Path.Combine(basePath, "send_orange.ico"), iconSend_orange);
+            iconSend_red             = LoadIconFromFile(Path.Combine(basePath, "send_red.ico"), iconSend_red);
+
+            iconReceive_blue         = LoadIconFromFile(Path.Combine(basePath, "receive_blue.ico"), iconReceive_blue);
+            iconReceive_green        = LoadIconFromFile(Path.Combine(basePath, "receive_green.ico"), iconReceive_green);
+            iconReceive_yellow       = LoadIconFromFile(Path.Combine(basePath, "receive_yellow.ico"), iconReceive_yellow);
+            iconReceive_orange       = LoadIconFromFile(Path.Combine(basePath, "receive_orange.ico"), iconReceive_orange);
+            iconReceive_red          = LoadIconFromFile(Path.Combine(basePath, "receive_red.ico"), iconReceive_red);
+
+            iconCircle_green         = LoadIconFromFile(Path.Combine(basePath, "circle_green.ico" ), iconCircle_green);
+            iconCircle_red           = LoadIconFromFile(Path.Combine(basePath, "circle_red.ico"   ), iconCircle_red);
+            iconCircle_grey          = LoadIconFromFile(Path.Combine(basePath, "circle_grey.ico"  ), iconCircle_grey);
+            iconCircle_orange        = LoadIconFromFile(Path.Combine(basePath, "circle_orange.ico"), iconCircle_orange);
         }
 
         //occurs when an adapter IP changed.
