@@ -56,19 +56,21 @@ jobs:
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
 
     env:
-      Solution_Name: GabNetStats                         # Replace with your solution name, i.e. MyWpfApp.sln.
+      GabNetStats_Solution_Name: GabNetStats
+      GabTracker_Solution_Name: GabTracker
 
     steps:
     - name: Checkout GabNetStats
       uses: actions/checkout@v6
       with:
+        path: $env:GabNetStats_Solution_Name
         fetch-depth: 0
 
     - name: Checkout GabTracker
       uses: actions/checkout@v6
       with:
         repository: gabsoftware/GabTracker
-        path: GabTracker
+        path: $env:GabTracker_Solution_Name
         ref: master
 
     # Install the .NET Core workload
@@ -83,7 +85,7 @@ jobs:
 
     # Builds the application with dotnet command
     - name: Build the application
-      run: dotnet build -c $env:Configuration .\$env:Solution_Name.sln
+      run: dotnet build -c $env:Configuration $env:GabNetStats_Solution_Name\$env:GabNetStats_Solution_Name.sln
       env:
         Configuration: ${{ matrix.configuration }}
         
