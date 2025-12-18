@@ -1,7 +1,17 @@
 {
   "ShowEmptyProjects": false,
-  "SelectedGroups": [],
-  "ExpandedProjects": [],
+  "SelectedGroups": [
+    "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\frmBalloon.resx",
+    "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\AboutForm.resx",
+    "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Res.resx",
+    "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\MainForm.resx",
+    "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\SettingsForm.resx",
+    "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Properties\\Resources.resx",
+    "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\frmAdvanced.resx"
+  ],
+  "ExpandedProjects": [
+    "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\GabNetStats.csproj"
+  ],
   "EnableSpellChecker": true,
   "ColumnOrder": [
     "name",
@@ -9,11 +19,14 @@
     "neutral-value",
     "neutral-comment",
     "fr",
-    "ru"
+    "ru",
+    "file-path",
+    "file-name"
   ],
   "VisibleColumnKeys": [
     "ru",
     "name",
+    "neutral-comment",
     "fr",
     "neutral-value"
   ]
