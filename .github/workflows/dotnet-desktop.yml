@@ -55,15 +55,11 @@ jobs:
     runs-on: windows-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
 
-    env:
-      GabNetStats_Solution_Name: GabNetStats
-      GabTracker_Solution_Name: GabTracker
-
     steps:
     - name: Checkout GabNetStats
       uses: actions/checkout@v6
       with:
-        path: GabNetStats
+        path: GabNetStatsRepo
         fetch-depth: 0
 
     - name: Checkout GabTracker
@@ -85,15 +81,21 @@ jobs:
 
     # Builds the application with dotnet command
     - name: Build the application
-      run: dotnet build -c $env:Configuration $env:GabNetStats_Solution_Name\$env:GabNetStats_Solution_Name.sln
+      run: dotnet build -c $env:Configuration GabNetStatsRepo\GabNetStats.sln
       env:
         Configuration: ${{ matrix.configuration }}
-        
+    
+    - name: Create dist directory
+      run: mkdir dist
+
+    - name: Copy to dist directory
+      run: Copy-item -Force -Recurse -Verbose GabNetStatsRepo\GabNetStats\bin\$env:Configuration\net10.0-windows10.0.26100.0\ -Destination dist
+      env:
+        Configuration: ${{ matrix.configuration }}
+    
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       with:
         name: GabNetStats
-        path: GabNetStats\GabNetStats\GabNetStats\bin\$env:Configuration\net10.0-windows10.0.26100.0\
-      env:
-        Configuration: ${{ matrix.configuration }}
+        path: dist
