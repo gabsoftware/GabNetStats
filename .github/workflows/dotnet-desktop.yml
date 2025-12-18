@@ -93,5 +93,7 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: MSIX Package
-        path: dist
+        name: GabNetStats
+        path: GabNetStats\GabNetStats\bin\$env:Configuration\net10.0-windows10.0.26100.0\
+      env:
+        Configuration: ${{ matrix.configuration }}
