@@ -126,6 +126,7 @@ namespace GabNetStats
         static Icon iconActive_red_red       = Properties.Resources.active_red_red;
 
         static Icon iconInactive             = Properties.Resources.inactive;
+        static Icon currentActivityIcon      = Properties.Resources.inactive;
 
         static Icon iconSend_blue            = Properties.Resources.send_blue;
         static Icon iconSend_green           = Properties.Resources.send_green;
@@ -184,6 +185,7 @@ namespace GabNetStats
             {
                 LoadDefaultIconSet();
                 appliedIconSet = "xp";
+                currentActivityIcon = this.notifyIconActivity.Icon;
                 return;
             }
 
@@ -195,6 +197,7 @@ namespace GabNetStats
 
             LoadIconSetFromDirectory(path);
             appliedIconSet = desiredSet;
+            currentActivityIcon = this.notifyIconActivity.Icon;
         }
 
         private static Icon LoadIconFromFile(string filePath, Icon fallback)
@@ -1248,6 +1251,20 @@ namespace GabNetStats
             }
         }
 
+        private void SetActivityIcon(Icon icon)
+        {
+            if (icon == null)
+            {
+                return;
+            }
+
+            if (!ReferenceEquals(currentActivityIcon, icon))
+            {
+                currentActivityIcon = icon;
+                this.notifyIconActivity.Icon = icon;
+            }
+        }
+
 
         private void NICRefreshThread(object state)
         {
@@ -1340,14 +1357,14 @@ namespace GabNetStats
 
                         if (connectionStatus == eState.disconnected)
                         {
-                            this.notifyIconActivity.Icon = iconDisconnected;
+                            this.SetActivityIcon(iconDisconnected);
                             rawSpeedReception            = 0;
                             rawSpeedEmission             = 0;
                             goto skip;
                         }
                         if (connectionStatus == eState.limited)
                         {
-                            this.notifyIconActivity.Icon = iconLimited;
+                            this.SetActivityIcon(iconLimited);
                             rawSpeedReception            = 0;
                             rawSpeedEmission             = 0;
                             goto skip;
@@ -1415,112 +1432,112 @@ namespace GabNetStats
                             {
                                 if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl4)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_red_red;
+                                    this.SetActivityIcon(iconActive_red_red);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl3)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_orange_red;
+                                    this.SetActivityIcon(iconActive_orange_red);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl2)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_yellow_red;
+                                    this.SetActivityIcon(iconActive_yellow_red);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_green_red;
+                                    this.SetActivityIcon(iconActive_green_red);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission < bandwidthUploadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_blue_red;
+                                    this.SetActivityIcon(iconActive_blue_red);
                                 }
 
                                 else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl4)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_red_orange;
+                                    this.SetActivityIcon(iconActive_red_orange);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl3)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_orange_orange;
+                                    this.SetActivityIcon(iconActive_orange_orange);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl2)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_yellow_orange;
+                                    this.SetActivityIcon(iconActive_yellow_orange);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_green_orange;
+                                    this.SetActivityIcon(iconActive_green_orange);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission < bandwidthUploadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_blue_orange;
+                                    this.SetActivityIcon(iconActive_blue_orange);
                                 }
 
                                 else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl4)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_red_yellow;
+                                    this.SetActivityIcon(iconActive_red_yellow);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl3)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_orange_yellow;
+                                    this.SetActivityIcon(iconActive_orange_yellow);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl2)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_yellow_yellow;
+                                    this.SetActivityIcon(iconActive_yellow_yellow);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_green_yellow;
+                                    this.SetActivityIcon(iconActive_green_yellow);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission < bandwidthUploadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_blue_yellow;
+                                    this.SetActivityIcon(iconActive_blue_yellow);
                                 }
 
                                 else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl4)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_red_green;
+                                    this.SetActivityIcon(iconActive_red_green);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl3)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_orange_green;
+                                    this.SetActivityIcon(iconActive_orange_green);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl2)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_yellow_green;
+                                    this.SetActivityIcon(iconActive_yellow_green);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_green_green;
+                                    this.SetActivityIcon(iconActive_green_green);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission < bandwidthUploadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_blue_green;
+                                    this.SetActivityIcon(iconActive_blue_green);
                                 }
 
                                 else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl4)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_red_blue;
+                                    this.SetActivityIcon(iconActive_red_blue);
                                 }
                                 else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl3)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_orange_blue;
+                                    this.SetActivityIcon(iconActive_orange_blue);
                                 }
                                 else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl2)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_yellow_blue;
+                                    this.SetActivityIcon(iconActive_yellow_blue);
                                 }
                                 else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_green_blue;
+                                    this.SetActivityIcon(iconActive_green_blue);
                                 }
                                 else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission < bandwidthUploadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconActive_blue_blue;
+                                    this.SetActivityIcon(iconActive_blue_blue);
                                 }
                             }
                             else
                             {
-                                this.notifyIconActivity.Icon = iconActive_blue_blue;
+                                this.SetActivityIcon(iconActive_blue_blue);
                             }
 
                         }
@@ -1543,28 +1560,28 @@ namespace GabNetStats
                             {
                                 if (rawSpeedReception >= bandwidthDownloadLvl4)
                                 {
-                                    this.notifyIconActivity.Icon = iconReceive_red;
+                                    this.SetActivityIcon(iconReceive_red);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl3)
                                 {
-                                    this.notifyIconActivity.Icon = iconReceive_orange;
+                                    this.SetActivityIcon(iconReceive_orange);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl2)
                                 {
-                                    this.notifyIconActivity.Icon = iconReceive_yellow;
+                                    this.SetActivityIcon(iconReceive_yellow);
                                 }
                                 else if (rawSpeedReception >= bandwidthDownloadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconReceive_green;
+                                    this.SetActivityIcon(iconReceive_green);
                                 }
                                 else if (rawSpeedReception < bandwidthDownloadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconReceive_blue;
+                                    this.SetActivityIcon(iconReceive_blue);
                                 }
                             }
                             else
                             {
-                                this.notifyIconActivity.Icon = iconReceive_blue;
+                                this.SetActivityIcon(iconReceive_blue);
                             }
                         }
                         else if (bytesReceived == oldbytesReceived && bytesSent != oldbytesSent)
@@ -1587,28 +1604,28 @@ namespace GabNetStats
                             {
                                 if (rawSpeedEmission >= bandwidthUploadLvl4)
                                 {
-                                    this.notifyIconActivity.Icon = iconSend_red;
+                                    this.SetActivityIcon(iconSend_red);
                                 }
                                 else if (rawSpeedEmission >= bandwidthUploadLvl3)
                                 {
-                                    this.notifyIconActivity.Icon = iconSend_orange;
+                                    this.SetActivityIcon(iconSend_orange);
                                 }
                                 else if (rawSpeedEmission >= bandwidthUploadLvl2)
                                 {
-                                    this.notifyIconActivity.Icon = iconSend_yellow;
+                                    this.SetActivityIcon(iconSend_yellow);
                                 }
                                 else if (rawSpeedEmission >= bandwidthUploadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconSend_green;
+                                    this.SetActivityIcon(iconSend_green);
                                 }
                                 else if (rawSpeedEmission < bandwidthUploadLvl1)
                                 {
-                                    this.notifyIconActivity.Icon = iconSend_blue;
+                                    this.SetActivityIcon(iconSend_blue);
                                 }
                             }
                             else
                             {
-                                this.notifyIconActivity.Icon = iconSend_blue;
+                                this.SetActivityIcon(iconSend_blue);
                             }
                         }
                         else
@@ -1619,7 +1636,7 @@ namespace GabNetStats
                         if (nCounter == 5)
                         {
                             nCounter                     = 0;
-                            this.notifyIconActivity.Icon = iconInactive;
+                            this.SetActivityIcon(iconInactive);
                             rawSpeedReception            = 0;
                             rawSpeedEmission             = 0;
                         }
