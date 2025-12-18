@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using GabNetStats.Properties;
@@ -12,7 +13,35 @@ namespace GabNetStats
     {
         private static NetworkInterfaceComponent ProtocolVersion { get; set; }
         private static NumberFormatInfo nfi = (NumberFormatInfo)CultureInfo.CurrentCulture.NumberFormat.Clone();
-        private static NetworkInterface[] nics;
+        private readonly CheckBox chkIncludeSelectedInterface;
+        private bool suppressIncludeInStatsEvent;
+        private bool suppressSelectionPersistence;
+
+        private sealed class InterfaceComboItem
+        {
+            public InterfaceComboItem(NetworkInterface networkInterface, string macAddress, bool isEnabled)
+            {
+                Interface = networkInterface;
+                MacAddress = macAddress ?? string.Empty;
+                IsEnabled = isEnabled;
+            }
+
+            public NetworkInterface Interface { get; }
+            public string MacAddress { get; }
+            public bool IsEnabled { get; }
+            public string DisplayText
+            {
+                get
+                {
+                    if (!string.IsNullOrEmpty(Interface?.Description))
+                    {
+                        return Interface.Description;
+                    }
+
+                    return Interface?.Name ?? string.Empty;
+                }
+            }
+        }
 
         static frmAdvanced()
         {
@@ -28,6 +57,26 @@ namespace GabNetStats
             //this.tabStats.DrawMode = TabDrawMode.OwnerDrawFixed;
             //this.tabStats.DrawItem += new DrawItemEventHandler(tabStats_DrawItem);  
 
+            comboInterfaces.Sorted = false;
+            comboInterfaces.DisplayMember = nameof(InterfaceComboItem.DisplayText);
+            comboInterfaces.SelectedIndexChanged += comboInterfaces_SelectedIndexChanged;
+
+            chkIncludeSelectedInterface = new CheckBox
+            {
+                AutoSize = true,
+                Name = "chkIncludeSelectedInterface",
+                Text = Res.str_IncludeInStatistics
+            };
+            chkIncludeSelectedInterface.Enabled = false;
+            chkIncludeSelectedInterface.CheckedChanged += chkIncludeSelectedInterface_CheckedChanged;
+            groupBox1.Controls.Add(chkIncludeSelectedInterface);
+            chkIncludeSelectedInterface.Location = new System.Drawing.Point(comboInterfaces.Left, comboInterfaces.Bottom + 6);
+
+            int requiredHeight = chkIncludeSelectedInterface.Bottom + 8;
+            if (groupBox1.Height < requiredHeight)
+            {
+                groupBox1.Height = requiredHeight;
+            }
         }
 
         /// <summary>
@@ -170,61 +219,219 @@ namespace GabNetStats
             radioButtonIPv4.Checked = true;
             radioButtonIPv4_CheckedChanged(this, new EventArgs());
 
-            NetworkInterface[] availableInterfaces = Array.Empty<NetworkInterface>();
+            PopulateInterfaceCombo();
+
+            timerAdvanced.Interval = Settings.Default.BlinkDuration;
+            timerAdvanced.Start();
+        }
+
+        private void PopulateInterfaceCombo()
+        {
             MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
-            if (mainForm != null)
-            {
-                availableInterfaces = mainForm.GetDisplayableInterfacesSnapshot();
-            }
+            IReadOnlyList<MainForm.TrackedInterface> trackedInterfaces = mainForm?.GetDisplayableInterfacesSnapshot();
+            List<InterfaceComboItem> items = new List<InterfaceComboItem>();
 
-            if (availableInterfaces == null || availableInterfaces.Length == 0)
+            if (trackedInterfaces != null && trackedInterfaces.Count > 0)
             {
-                try
+                foreach (MainForm.TrackedInterface tracked in trackedInterfaces)
                 {
-                    availableInterfaces = NetworkInterface.GetAllNetworkInterfaces();
-                }
-                catch (NetworkInformationException)
-                {
-                    availableInterfaces = Array.Empty<NetworkInterface>();
-                }
-            }
-
-            nics = availableInterfaces;
-
-            comboInterfaces.DisplayMember = "Description";
-            NetworkInterface selectedNic = null;
-            foreach (NetworkInterface nic in nics)
-            {
-                comboInterfaces.Items.Add(nic);
-                if (nic.Description != null)
-                {
-                    string descriptionLower = nic.Description.ToLowerInvariant();
-                    if (descriptionLower.Contains("ethernet") || descriptionLower.Contains("gigabit") || descriptionLower.Contains("gbe"))
-                    {
-                        //we set a preference for the ethernet nic.
-                        selectedNic = nic;
-                    }
-                }
-            }
-            if (comboInterfaces.Items.Count > 0)
-            {
-                comboInterfaces.Enabled = true;
-                if (selectedNic == null)
-                {
-                    comboInterfaces.SelectedIndex = 0;
-                }
-                else
-                {
-                    comboInterfaces.SelectedItem = selectedNic;
+                    items.Add(new InterfaceComboItem(tracked.Interface, tracked.MacAddress, tracked.IsEnabled));
                 }
             }
             else
             {
-                comboInterfaces.Enabled = false;
+                NetworkInterface[] fallback;
+                try
+                {
+                    fallback = NetworkInterface.GetAllNetworkInterfaces();
+                }
+                catch (NetworkInformationException)
+                {
+                    fallback = Array.Empty<NetworkInterface>();
+                }
+
+                foreach (NetworkInterface nic in fallback)
+                {
+                    string mac = nic?.GetPhysicalAddress().ToString() ?? string.Empty;
+                    bool enabled = MainForm.IsInterfaceEnabled(mac);
+                    items.Add(new InterfaceComboItem(nic, mac, enabled));
+                }
             }
 
-            timerAdvanced.Interval = Settings.Default.BlinkDuration;
-            timerAdvanced.Start();
+            string previouslySelectedMac = GetSelectedMacAddress();
+            if (string.IsNullOrEmpty(previouslySelectedMac))
+            {
+                previouslySelectedMac = Settings.Default.AdvancedSelectedInterfaceMac;
+            }
+
+            suppressSelectionPersistence = true;
+            comboInterfaces.BeginUpdate();
+            comboInterfaces.Items.Clear();
+            foreach (InterfaceComboItem item in items)
+            {
+                comboInterfaces.Items.Add(item);
+            }
+            comboInterfaces.EndUpdate();
+
+            InterfaceComboItem selection = FindSelection(items, previouslySelectedMac);
+            if (selection != null)
+            {
+                comboInterfaces.SelectedItem = selection;
+            }
+            else if (comboInterfaces.Items.Count > 0)
+            {
+                comboInterfaces.SelectedIndex = 0;
+            }
+
+            bool hasItems = comboInterfaces.Items.Count > 0;
+            comboInterfaces.Enabled = hasItems;
+            chkIncludeSelectedInterface.Enabled = hasItems;
+
+            suppressSelectionPersistence = false;
+
+            if (hasItems)
+            {
+                UpdateIncludeCheckboxFromSelection();
+            }
+            else
+            {
+                SetIncludeCheckbox(false);
+            }
+
+            PersistSelectedInterface();
+        }
+
+        private InterfaceComboItem GetSelectedInterfaceItem()
+        {
+            return comboInterfaces.SelectedItem as InterfaceComboItem;
+        }
+
+        private string GetSelectedMacAddress()
+        {
+            InterfaceComboItem selected = GetSelectedInterfaceItem();
+            return selected?.MacAddress ?? string.Empty;
+        }
+
+        private static bool IsPreferredInterface(NetworkInterface nic)
+        {
+            string description = nic?.Description;
+            if (string.IsNullOrEmpty(description))
+            {
+                return false;
+            }
+
+            string descriptionLower = description.ToLowerInvariant();
+            return descriptionLower.Contains("ethernet") ||
+                   descriptionLower.Contains("gigabit") ||
+                   descriptionLower.Contains("gbe");
+        }
+
+        private InterfaceComboItem FindSelection(List<InterfaceComboItem> items, string previousMac)
+        {
+            if (!string.IsNullOrEmpty(previousMac))
+            {
+                foreach (InterfaceComboItem item in items)
+                {
+                    if (string.Equals(item.MacAddress, previousMac, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return item;
+                    }
+                }
+            }
+
+            foreach (InterfaceComboItem item in items)
+            {
+                if (IsPreferredInterface(item.Interface))
+                {
+                    return item;
+                }
+            }
+
+            if (items.Count > 0)
+            {
+                return items[0];
+            }
+
+            return null;
+        }
+
+        private void UpdateIncludeCheckboxFromSelection()
+        {
+            InterfaceComboItem selected = GetSelectedInterfaceItem();
+            if (selected == null)
+            {
+                chkIncludeSelectedInterface.Enabled = false;
+                SetIncludeCheckbox(false);
+                return;
+            }
+
+            chkIncludeSelectedInterface.Enabled = true;
+            SetIncludeCheckbox(selected.IsEnabled);
+        }
+
+        private void SetIncludeCheckbox(bool value)
+        {
+            suppressIncludeInStatsEvent = true;
+            chkIncludeSelectedInterface.Checked = value;
+            suppressIncludeInStatsEvent = false;
+        }
+
+        private void comboInterfaces_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateIncludeCheckboxFromSelection();
+            PersistSelectedInterface();
+        }
+
+        private void chkIncludeSelectedInterface_CheckedChanged(object sender, EventArgs e)
+        {
+            if (suppressIncludeInStatsEvent)
+            {
+                return;
+            }
+
+            InterfaceComboItem selected = GetSelectedInterfaceItem();
+            if (selected == null)
+            {
+                return;
+            }
+
+            if (string.IsNullOrEmpty(selected.MacAddress))
+            {
+                UpdateIncludeCheckboxFromSelection();
+                return;
+            }
+
+            MainForm main = (MainForm)Application.OpenForms["MainForm"];
+            if (main == null)
+            {
+                return;
+            }
+
+            bool changed = main.SetInterfaceEnabledState(selected.MacAddress, chkIncludeSelectedInterface.Checked);
+            if (changed)
+            {
+                PopulateInterfaceCombo();
+            }
+            else
+            {
+                UpdateIncludeCheckboxFromSelection();
+            }
+        }
+
+        private void PersistSelectedInterface()
+        {
+            if (suppressSelectionPersistence)
+            {
+                return;
+            }
+
+            InterfaceComboItem selected = GetSelectedInterfaceItem();
+            string mac = selected?.MacAddress ?? string.Empty;
+            if (!string.Equals(Settings.Default.AdvancedSelectedInterfaceMac, mac, StringComparison.OrdinalIgnoreCase))
+            {
+                Settings.Default.AdvancedSelectedInterfaceMac = mac;
+                Settings.Default.Save();
+            }
         }
 
         private void UpdateICMPv6Stats()
@@ -523,7 +730,8 @@ namespace GabNetStats
 
         private void UpdateNICStats(NetworkInterfaceComponent version)
         {
-            NetworkInterface nic = (NetworkInterface)comboInterfaces.SelectedItem;
+            InterfaceComboItem selectedItem = GetSelectedInterfaceItem();
+            NetworkInterface nic = selectedItem?.Interface;
             IPInterfaceProperties ipip; // ipv4 & ipv6
             IPv4InterfaceStatistics ipv4is; // ipv4 only
             IPv4InterfaceProperties ipv4ip; // ipv4 only

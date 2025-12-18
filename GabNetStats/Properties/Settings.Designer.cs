@@ -274,5 +274,41 @@ namespace GabNetStats.Properties {
                 this["ShowDisconnectedInterfaces"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AdvancedSelectedInterfaceMac {
+            get {
+                return ((string)(this["AdvancedSelectedInterfaceMac"]));
+            }
+            set {
+                this["AdvancedSelectedInterfaceMac"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int BalloonLocationX {
+            get {
+                return ((int)(this["BalloonLocationX"]));
+            }
+            set {
+                this["BalloonLocationX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int BalloonLocationY {
+            get {
+                return ((int)(this["BalloonLocationY"]));
+            }
+            set {
+                this["BalloonLocationY"] = value;
+            }
+        }
     }
 }

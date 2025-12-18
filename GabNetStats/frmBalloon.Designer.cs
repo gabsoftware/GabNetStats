@@ -194,6 +194,7 @@
             this.ShowInTaskbar = false;
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBalloon_FormClosing);
+            this.LocationChanged += new System.EventHandler(this.frmBalloon_LocationChanged);
             this.Load += new System.EventHandler(this.frmBalloon_Load);
             this.VisibleChanged += new System.EventHandler(this.frmBalloon_VisibleChanged);
             this.Resize += new System.EventHandler(this.frmBalloon_Resize);

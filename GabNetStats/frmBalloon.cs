@@ -30,6 +30,7 @@ namespace GabNetStats
 
         private static int counter = 0;
         internal static frmAdvanced frmAdv;
+        private bool suppressLocationPersistence;
 
         static frmBalloon()
         {
@@ -45,6 +46,7 @@ namespace GabNetStats
         public frmBalloon()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
         }
 
         private void BallonTimer_Tick(object sender, EventArgs e)
@@ -116,6 +118,64 @@ namespace GabNetStats
             lAvgSpeedEmission = plAvgSpeedEmission;
             bytesReceived = pbytesReceived;
             bytesSent = pbytesSent;
+        }
+
+        internal void EnsurePreferredLocation()
+        {
+            Point preferred = LoadPreferredLocation(this.Size);
+            ApplyLocationWithoutPersistence(preferred);
+        }
+
+        private static Point LoadPreferredLocation(Size formSize)
+        {
+            int savedX = Settings.Default.BalloonLocationX;
+            int savedY = Settings.Default.BalloonLocationY;
+            if (savedX >= 0 && savedY >= 0)
+            {
+                Point saved = new Point(savedX, savedY);
+                if (IsLocationVisible(saved, formSize))
+                {
+                    return saved;
+                }
+            }
+
+            return GetDefaultLocation(formSize);
+        }
+
+        private static Point GetDefaultLocation(Size formSize)
+        {
+            Rectangle workingArea = Screen.PrimaryScreen.WorkingArea;
+            int x = workingArea.Right - formSize.Width - SystemInformation.FixedFrameBorderSize.Width;
+            int y = workingArea.Bottom - formSize.Height - SystemInformation.FixedFrameBorderSize.Height;
+            x = Math.Max(workingArea.Left, x);
+            y = Math.Max(workingArea.Top, y);
+            return new Point(x, y);
+        }
+
+        private static bool IsLocationVisible(Point location, Size formSize)
+        {
+            Rectangle windowBounds = new Rectangle(location, formSize);
+            foreach (Screen screen in Screen.AllScreens)
+            {
+                if (screen.WorkingArea.IntersectsWith(windowBounds))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void ApplyLocationWithoutPersistence(Point location)
+        {
+            suppressLocationPersistence = true;
+            try
+            {
+                this.Location = location;
+            }
+            finally
+            {
+                suppressLocationPersistence = false;
+            }
         }
 
         private void frmBalloon_FormClosing(object sender, FormClosingEventArgs e)
@@ -196,6 +256,18 @@ namespace GabNetStats
         {
             MainForm mf = (MainForm)Application.OpenForms["MainForm"];
             mf.showSettings();
+        }
+
+        private void frmBalloon_LocationChanged(object sender, EventArgs e)
+        {
+            if (suppressLocationPersistence)
+            {
+                return;
+            }
+
+            Settings.Default.BalloonLocationX = this.Left;
+            Settings.Default.BalloonLocationY = this.Top;
+            Settings.Default.Save();
         }
     }
 }

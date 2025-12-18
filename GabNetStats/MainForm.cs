@@ -93,7 +93,7 @@ namespace GabNetStats
         private static int emissionSampleIndex  = 0;
         private static HashSet<string> enabledInterfaceMacs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-        private sealed class TrackedInterface
+        internal sealed class TrackedInterface
         {
             public TrackedInterface(NetworkInterface networkInterface, string macAddress)
             {
@@ -103,6 +103,7 @@ namespace GabNetStats
 
             public NetworkInterface Interface { get; }
             public string MacAddress { get; }
+            public bool IsEnabled => IsInterfaceEnabled(MacAddress);
         }
 
         static List<TrackedInterface> selectedInterfaces = new List<TrackedInterface>();
@@ -536,7 +537,7 @@ namespace GabNetStats
             Volatile.Write(ref enabledInterfaceMacs, newSet);
         }
 
-        private static bool IsInterfaceEnabled(string mac)
+        internal static bool IsInterfaceEnabled(string mac)
         {
             if (String.IsNullOrEmpty(mac))
             {
@@ -719,15 +720,22 @@ namespace GabNetStats
             this.applyIconSet();
         }
 
-        internal NetworkInterface[] GetDisplayableInterfacesSnapshot()
+        internal IReadOnlyList<TrackedInterface> GetDisplayableInterfacesSnapshot()
         {
             lock (selectedInterfaces)
             {
-                NetworkInterface[] snapshot = new NetworkInterface[selectedInterfaces.Count];
+                if (selectedInterfaces.Count == 0)
+                {
+                    return Array.Empty<TrackedInterface>();
+                }
+
+                TrackedInterface[] snapshot = new TrackedInterface[selectedInterfaces.Count];
                 for (int i = 0; i < selectedInterfaces.Count; i++)
                 {
-                    snapshot[i] = selectedInterfaces[i].Interface;
+                    TrackedInterface tracked = selectedInterfaces[i];
+                    snapshot[i] = new TrackedInterface(tracked.Interface, tracked.MacAddress);
                 }
+
                 return snapshot;
             }
         }
@@ -1093,6 +1101,17 @@ namespace GabNetStats
             {
                 MessageBox.Show(Res.str_NotAvailableWinver + Environment.NewLine + ex.Message);
             }
+        }
+
+        internal bool SetInterfaceEnabledState(string mac, bool enable, bool refreshMenus = true)
+        {
+            bool changed = EnableStatisticsForInterface(mac, enable);
+            if (changed && refreshMenus)
+            {
+                this.PopulateNICs(this.NetworkAdaptersToolStripMenuItem);
+            }
+
+            return changed;
         }
 
         internal void PopulateNICs(ToolStripMenuItem parent)
@@ -1881,11 +1900,11 @@ namespace GabNetStats
             {
                 fBal = new frmBalloon();
             }
+            fBal.EnsurePreferredLocation();
             if (!preload)
             {
                fBal.Show();
             }
-            fBal.SetDesktopLocation(Screen.PrimaryScreen.WorkingArea.Width - fBal.Width - SystemInformation.FixedFrameBorderSize.Width, Screen.PrimaryScreen.WorkingArea.Height - fBal.Height - SystemInformation.FixedFrameBorderSize.Height);
         }
 
         private void advancedStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
