@@ -687,7 +687,7 @@ namespace GabNetStats
         /// </summary>
         /// <param name="mac">A MAC address</param>
         /// <returns>True if the MAC address was already known, false otherwise</returns>
-        private bool AddToKnownInterface(string mac)
+        private bool AddToKnownInterface(string mac, bool saveSettings = true)
         {
             bool contains = false;
             try
@@ -698,7 +698,10 @@ namespace GabNetStats
             if (!contains)
             {
                 Settings.Default.KnownInterfaceMACList += (Settings.Default.KnownInterfaceMACList == string.Empty ? String.Empty : ";") + mac;
-                Settings.Default.Save();
+                if (saveSettings)
+                {
+                    Settings.Default.Save();
+                }
             }
             return contains;
         }
@@ -708,7 +711,7 @@ namespace GabNetStats
         /// </summary>
         /// <param name="mac">A MAC address</param>
         /// <param name="enable">If set to True (default value), the interface will be enabled for statistics</param>
-        private void EnableStatisticsForInterface(string mac, bool enable = true)
+        private bool EnableStatisticsForInterface(string mac, bool enable = true, bool saveSettings = true)
         {
             string tmp = Settings.Default.EnabledInterfaceMACList;
             bool contains = false;
@@ -723,7 +726,7 @@ namespace GabNetStats
 
             if (mac == String.Empty)
             {
-                return;
+                return false;
             }
 
             if (tmp == "TOSET")
@@ -758,7 +761,10 @@ namespace GabNetStats
             if (modified)
             {
                 Settings.Default.EnabledInterfaceMACList = tmp;
-                Settings.Default.Save();
+                if (saveSettings)
+                {
+                    Settings.Default.Save();
+                }
 
                 if (tmp == String.Empty)
                 {
@@ -770,6 +776,7 @@ namespace GabNetStats
                     catch (InvalidOperationException) { }
                 }
             }
+            return modified;
         }
 
         private void OnAdapterClick(object sender, EventArgs e)
@@ -937,6 +944,7 @@ namespace GabNetStats
             ToolStripMenuItem itm;
             ToolStripMenuItem itm2;
             IPInterfaceProperties ipproperties;
+            bool shouldSaveSettings = false;
 
             //we do some little cleaning...
             ClearParentThreadSafe(parent);
@@ -1024,13 +1032,20 @@ namespace GabNetStats
                     // if we never selected an interface before, enable it for statistics by default.
                     if (isFirstTime)
                     {
-                        EnableStatisticsForInterface(mac, true);
+                        if (EnableStatisticsForInterface(mac, true, false))
+                        {
+                            shouldSaveSettings = true;
+                        }
                     }
 
                     // if this is the first time we encounter this interface, enable it for statistics by default.
-                    if (!AddToKnownInterface(mac))
+                    if (!AddToKnownInterface(mac, false))
                     {
-                        EnableStatisticsForInterface(mac, true);
+                        shouldSaveSettings = true;
+                        if (EnableStatisticsForInterface(mac, true, false))
+                        {
+                            shouldSaveSettings = true;
+                        }
                     }
 
                     selectedInterfaces.Add(netInterface);
@@ -1091,6 +1106,10 @@ namespace GabNetStats
                 MainForm.connectionStatus = eState.up;
             }
 
+            if (shouldSaveSettings)
+            {
+                Settings.Default.Save();
+            }
         }
 
         // clears the children toolstripmenuitems of parent, thread-safely
