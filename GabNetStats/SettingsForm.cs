@@ -331,5 +331,15 @@ namespace GabNetStats
         {
             Settings.Default.BandwidthUploadMultiplier = ((BandwidthItem)cbUpload.SelectedItem).multiplier;
         }
+
+        private void chkShowDisconnectedInterfaces_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.ShowDisconnectedInterfaces = chkShowDisconnectedInterfaces.Checked;
+            MainForm main = (MainForm)Application.OpenForms["MainForm"];
+            if (main != null)
+            {
+                main.PopulateNICs(main.NetworkAdaptersToolStripMenuItem);
+            }
+        }
     }
 }

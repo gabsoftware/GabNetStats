@@ -99,6 +99,21 @@ namespace GabNetStats
         static IPGlobalProperties properties;
         static IPGlobalStatistics ipv4stat;
         static IPGlobalStatistics ipv6stat;
+        private static readonly string[] hiddenInterfaceKeywords = new[]
+        {
+            "virtual",
+            "hyper-v",
+            "vmware",
+            "loopback",
+            "kernel debug",
+            "container",
+            "wi-fi direct",
+            "bluetooth device",
+            "qos",
+            "wfp",
+            "wan miniport",
+            "filter"
+        };
 
         static Icon iconActive_blue_blue     = Properties.Resources.active_blue_blue;
         static Icon iconActive_blue_green    = Properties.Resources.active_blue_green;
@@ -532,6 +547,106 @@ namespace GabNetStats
 
             HashSet<string> snapshot = Volatile.Read(ref enabledInterfaceMacs);
             return snapshot.Contains(mac);
+        }
+
+        private static bool ShouldDisplayInterface(NetworkInterface netInterface)
+        {
+            if (netInterface == null)
+            {
+                return false;
+            }
+
+            bool showDisconnected = Settings.Default.ShowDisconnectedInterfaces;
+            if (!showDisconnected && netInterface.OperationalStatus != OperationalStatus.Up)
+            {
+                return false;
+            }
+
+            if (!HasValidPhysicalAddress(netInterface))
+            {
+                return false;
+            }
+
+            switch (netInterface.NetworkInterfaceType)
+            {
+                case NetworkInterfaceType.Ethernet:
+                case NetworkInterfaceType.Ethernet3Megabit:
+                case NetworkInterfaceType.FastEthernetFx:
+                case NetworkInterfaceType.FastEthernetT:
+                case NetworkInterfaceType.GigabitEthernet:
+                case NetworkInterfaceType.Wireless80211:
+                case NetworkInterfaceType.Tunnel:
+                    break;
+                default:
+                    return false;
+            }
+
+            if (!showDisconnected && netInterface.OperationalStatus != OperationalStatus.Up)
+            {
+                return false;
+            }
+
+            string description = netInterface.Description ?? String.Empty;
+            string name = netInterface.Name ?? String.Empty;
+            foreach (string keyword in hiddenInterfaceKeywords)
+            {
+                if (description.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    name.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private static Bitmap GetInterfaceIcon(NetworkInterface netInterface)
+        {
+            string combined = ((netInterface.Description ?? String.Empty) + (netInterface.Name ?? String.Empty));
+            if (combined.IndexOf("bluetooth", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                return Properties.Resources.netshell_1613_16x16.ToBitmap();
+            }
+
+            if (netInterface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
+            {
+                return Properties.Resources.netshell_1612_16x16.ToBitmap();
+            }
+
+            if (netInterface.NetworkInterfaceType == NetworkInterfaceType.Tunnel)
+            {
+                return Properties.Resources.network_pipe_16x16.ToBitmap();
+            }
+
+            return Properties.Resources.deskadp_16x16.ToBitmap();
+        }
+
+        private static bool HasValidPhysicalAddress(NetworkInterface netInterface)
+        {
+            try
+            {
+                byte[] addressBytes = netInterface.GetPhysicalAddress().GetAddressBytes();
+                if (addressBytes == null || addressBytes.Length == 0)
+                {
+                    return false;
+                }
+
+                bool allZero = true;
+                foreach (byte b in addressBytes)
+                {
+                    if (b != 0)
+                    {
+                        allZero = false;
+                        break;
+                    }
+                }
+
+                return !allZero;
+            }
+            catch (NetworkInformationException)
+            {
+                return false;
+            }
         }
 
         private void OnAbout(object sender, EventArgs e)
@@ -969,14 +1084,13 @@ namespace GabNetStats
             }
         }
 
-        private void PopulateNICs(ToolStripMenuItem parent)
+        internal void PopulateNICs(ToolStripMenuItem parent)
         {
             int nUp = 0;
             string ip = "";
             string unit = string.Empty;
             double speed;
             Bitmap icon = Resources.netshell_1612_16x16.ToBitmap();
-            bool valid = false;
             bool isFirstTime = Settings.Default.EnabledInterfaceMACList == "TOSET";
             string mac = string.Empty;
             ToolStripMenuItem itm;
@@ -1010,6 +1124,11 @@ namespace GabNetStats
             
             foreach (NetworkInterface netInterface in interfaces)
             {
+                if (!ShouldDisplayInterface(netInterface))
+                {
+                    continue;
+                }
+
                 //test if the interface is active
                 if (netInterface.OperationalStatus != OperationalStatus.Up)
                 {
@@ -1039,84 +1158,60 @@ namespace GabNetStats
                     }
                 }
 
-                // Only get ethernet adapters
-                if (netInterface.NetworkInterfaceType.ToString().ToLower(CultureInfo.InvariantCulture).Contains("ethernet"))
-                {
-                    valid = true;
-                    icon = (netInterface.Description + netInterface.Name).ToLower(CultureInfo.InvariantCulture).Contains("bluetooth") ? Properties.Resources.netshell_1613_16x16.ToBitmap() : Properties.Resources.deskadp_16x16.ToBitmap();
-                }
-                // Only get 802.11 adapters
-                else if (netInterface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
-                {
-                    valid = true;
-                    icon = Properties.Resources.netshell_1612_16x16.ToBitmap();
-                }
-                // Only get tunnels
-                else if (netInterface.NetworkInterfaceType == NetworkInterfaceType.Tunnel)
-                {
-                    valid = true;
-                    icon = Properties.Resources.network_pipe_16x16.ToBitmap();
-                }
-                else
-                {
-                    valid = false;
-                }
+                icon = GetInterfaceIcon(netInterface);
 
-                if (valid) //we want to use this interface in our list
+                //retrieve the mac address of the interface
+                mac = netInterface.GetPhysicalAddress().ToString();
+                
+                // if we never selected an interface before, enable it for statistics by default.
+                if (isFirstTime)
                 {
-                    //retrieve the mac address of the interface
-                    mac = netInterface.GetPhysicalAddress().ToString();
-                    
-                    // if we never selected an interface before, enable it for statistics by default.
-                    if (isFirstTime)
-                    {
-                        if (EnableStatisticsForInterface(mac, true, false, false))
-                        {
-                            shouldSaveSettings = true;
-                        }
-                    }
-
-                    // if this is the first time we encounter this interface, enable it for statistics by default.
-                    if (!AddToKnownInterface(mac, false))
+                    if (EnableStatisticsForInterface(mac, true, false, false))
                     {
                         shouldSaveSettings = true;
-                        if (EnableStatisticsForInterface(mac, true, false, false))
-                        {
-                            shouldSaveSettings = true;
-                        }
                     }
-
-                    selectedInterfaces.Add(netInterface);
-                    speed = computeSpeed(netInterface.Speed, ref unit, 2);
-
-                    //we generate the item related to the network interface
-                    itm = new ToolStripMenuItem(netInterface.Name +
-                            " [" + netInterface.Description + "]" +
-                            " : " + speed + " " + unit + "/s" +
-                            ", " + ip
-                            , icon
-                            , OnAdapterClick
-                            , "itm_" + netInterface.Id);                    
-                    itm.Tag = netInterface;
-
-                    //we generate its subitem
-                    itm2                    = new ToolStripMenuItem(Res.str_IncludeInStatistics);
-                    itm2.Name               = "itm_include_" + netInterface.Id;
-                    itm2.CheckOnClick       = true;
-                    itm2.Checked            = mac != null ? IsInterfaceEnabled(mac) : false;
-                    itm2.CheckStateChanged += new EventHandler(OnAdapterCheckStateChanged);
-                    itm2.Tag                = netInterface;
-
-                    //we add the subitem to the item
-                    try
-                    {
-                        itm.DropDownItems.Add(itm2);
-                    }
-                    catch (ArgumentNullException) { }
-
-                    //add item in parent menu item
-                    AddItemThreadSafe(itm, parent);
                 }
+
+                // if this is the first time we encounter this interface, enable it for statistics by default.
+                if (!AddToKnownInterface(mac, false))
+                {
+                    shouldSaveSettings = true;
+                    if (EnableStatisticsForInterface(mac, true, false, false))
+                    {
+                        shouldSaveSettings = true;
+                    }
+                }
+
+                selectedInterfaces.Add(netInterface);
+                speed = computeSpeed(netInterface.Speed, ref unit, 2);
+
+                //we generate the item related to the network interface
+                itm = new ToolStripMenuItem(netInterface.Name +
+                        " [" + netInterface.Description + "]" +
+                        " : " + speed + " " + unit + "/s" +
+                        ", " + ip
+                        , icon
+                        , OnAdapterClick
+                        , "itm_" + netInterface.Id);                    
+                itm.Tag = netInterface;
+
+                //we generate its subitem
+                itm2                    = new ToolStripMenuItem(Res.str_IncludeInStatistics);
+                itm2.Name               = "itm_include_" + netInterface.Id;
+                itm2.CheckOnClick       = true;
+                itm2.Checked            = mac != null ? IsInterfaceEnabled(mac) : false;
+                itm2.CheckStateChanged += new EventHandler(OnAdapterCheckStateChanged);
+                itm2.Tag                = netInterface;
+
+                //we add the subitem to the item
+                try
+                {
+                    itm.DropDownItems.Add(itm2);
+                }
+                catch (ArgumentNullException) { }
+
+                //add item in parent menu item
+                AddItemThreadSafe(itm, parent);
             }
 
             try

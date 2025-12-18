@@ -224,7 +224,7 @@ namespace GabNetStats
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem NetworkAdaptersToolStripMenuItem;
+        internal System.Windows.Forms.ToolStripMenuItem NetworkAdaptersToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon notifyIconActivity;
         private System.Windows.Forms.ToolStripMenuItem NetworkSharingCenterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NetworkConnectionsToolStripMenuItem;

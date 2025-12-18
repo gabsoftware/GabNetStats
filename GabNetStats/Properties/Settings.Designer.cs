@@ -262,5 +262,17 @@ namespace GabNetStats.Properties {
                 this["AutoPingNotif"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowDisconnectedInterfaces {
+            get {
+                return ((bool)(this["ShowDisconnectedInterfaces"]));
+            }
+            set {
+                this["ShowDisconnectedInterfaces"] = value;
+            }
+        }
     }
 }
