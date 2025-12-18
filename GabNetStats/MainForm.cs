@@ -85,10 +85,13 @@ namespace GabNetStats
         static long bandwidthUploadLvl4;
         static long bandwidthUploadLvl5;
         private const int avgSpeedNbItems = 50;
-
-
-        static Queue<long> queueReception = new Queue<long>(avgSpeedNbItems);
-        static Queue<long> queueEmission  = new Queue<long>(avgSpeedNbItems);
+        private static readonly object speedSamplesLock = new object();
+        private static readonly long[] receptionSamples = new long[avgSpeedNbItems];
+        private static readonly long[] emissionSamples  = new long[avgSpeedNbItems];
+        private static int receptionSampleCount = avgSpeedNbItems;
+        private static int emissionSampleCount  = avgSpeedNbItems;
+        private static int receptionSampleIndex = 0;
+        private static int emissionSampleIndex  = 0;
 
         static NetworkInterface[] interfaces;
         static ArrayList          selectedInterfaces = new ArrayList();
@@ -236,15 +239,7 @@ namespace GabNetStats
                 this.applyIconSet();
             }
 
-            // fill empty data
-            while (queueReception.Count < avgSpeedNbItems)
-            {
-                queueReception.Enqueue(0);
-            }
-            while (queueEmission.Count < avgSpeedNbItems)
-            {
-                queueEmission.Enqueue(0);
-            }
+            this.InitializeSpeedSamples();
 
             this.RefreshBlinkDurationFromSettings();
 
@@ -342,6 +337,71 @@ namespace GabNetStats
             }
 
             nDuration = Settings.Default.BlinkDuration;
+        }
+
+        private void InitializeSpeedSamples()
+        {
+            lock (speedSamplesLock)
+            {
+                receptionSampleCount = avgSpeedNbItems;
+                emissionSampleCount  = avgSpeedNbItems;
+                receptionSampleIndex = 0;
+                emissionSampleIndex  = 0;
+
+                Array.Clear(receptionSamples, 0, receptionSamples.Length);
+                Array.Clear(emissionSamples, 0, emissionSamples.Length);
+            }
+        }
+
+        private static void StoreSample(long value, long[] buffer, ref int index, ref int count)
+        {
+            buffer[index] = value;
+            index++;
+            if (index >= buffer.Length)
+            {
+                index = 0;
+            }
+
+            if (count < buffer.Length)
+            {
+                count++;
+            }
+        }
+
+        private static long ComputeAverageWithoutExtremes(long[] buffer, int count)
+        {
+            if (count == 0)
+            {
+                return 0;
+            }
+
+            long min = long.MaxValue;
+            long max = long.MinValue;
+            long total = 0;
+
+            for (int i = 0; i < count; i++)
+            {
+                long value = buffer[i];
+                if (value < min)
+                {
+                    min = value;
+                }
+                if (value > max)
+                {
+                    max = value;
+                }
+                total += value;
+            }
+
+            int divisor = (count > 2 ? count : 3) - 2;
+            total -= min;
+
+            if (count >= 2)
+            {
+                total -= max;
+            }
+
+            return total / divisor;
         }
 
         private void OnAbout(object sender, EventArgs e)
@@ -1140,14 +1200,6 @@ namespace GabNetStats
             long lAvgSpeedEmission  = 0;
             long rawSpeedReception  = 0;
             long rawSpeedEmission   = 0;
-            long[] tRawSpeed;
-
-            long receptionMin = 0;
-            long receptionMax = 0;
-            long emissionMin = 0;
-            long emissionMax = 0;
-            bool ignoreMin = false;
-            bool ignoreMax = false;
 
             IPInterfaceStatistics ipstats = null;
 
@@ -1451,127 +1503,14 @@ namespace GabNetStats
 
                     skip:
 
-                        try
+                        lock (speedSamplesLock)
                         {
-                            Monitor.Enter(queueReception);
-                            Monitor.Enter(queueEmission);
-                        }
-                        catch (ArgumentNullException) { }
+                            StoreSample(rawSpeedReception, receptionSamples, ref receptionSampleIndex, ref receptionSampleCount);
+                            StoreSample(rawSpeedEmission, emissionSamples, ref emissionSampleIndex, ref emissionSampleCount);
 
-
-                        //computing speed units
-                        queueReception.Enqueue(rawSpeedReception);
-                        queueEmission.Enqueue(rawSpeedEmission);
-                        try
-                        {
-                            queueReception.Dequeue();
-                            queueEmission.Dequeue();
+                            lAvgSpeedReception = ComputeAverageWithoutExtremes(receptionSamples, receptionSampleCount);
+                            lAvgSpeedEmission  = ComputeAverageWithoutExtremes(emissionSamples, emissionSampleCount);
                         }
-                        catch (InvalidOperationException) { }
-
-
-                        //reception average ignoring the two most extreme values
-                        tRawSpeed = queueReception.ToArray();
-                        for( int i = 0; i < queueReception.Count; i++ )
-                        {
-                            if (i == 0)
-                            {
-                                receptionMin = tRawSpeed[i];
-                                receptionMax = tRawSpeed[i];
-                            }
-                            else {
-                                if( tRawSpeed[i] < receptionMin )
-                                {
-                                    receptionMin = tRawSpeed[i];
-                                }
-                                if( tRawSpeed[i]>receptionMax )
-                                {
-                                    receptionMax = tRawSpeed[i];
-                                }
-                            }
-                        }
-                        lAvgSpeedReception = 0;
-                        ignoreMin = false;
-                        ignoreMax = false;
-                        for (int i = 0; i < queueReception.Count; i++)
-                        {
-                            if (tRawSpeed[i] == receptionMin && ignoreMin == false)
-                            {
-                                ignoreMin = true;
-                            }
-                            else if (tRawSpeed[i] == receptionMax && ignoreMax == false)
-                            {
-                                ignoreMax = true;
-                            }
-                            else
-                            {
-                                lAvgSpeedReception += tRawSpeed[i];
-                            }
-                        }
-                        try
-                        {
-                            Array.Clear(tRawSpeed, 0, tRawSpeed.Length);
-                        }
-                        catch (ArgumentNullException) { }
-                        catch (IndexOutOfRangeException) { }
-
-                        lAvgSpeedReception = lAvgSpeedReception / ((queueReception.Count > 2 ? queueReception.Count : 3) - 2);
-
-                        //emission average ignoring the two most extreme values
-                        tRawSpeed = queueEmission.ToArray();
-                        for (int i = 0; i < queueEmission.Count; i++)
-                        {
-                            if (i == 0)
-                            {
-                                emissionMin = tRawSpeed[i];
-                                emissionMax = tRawSpeed[i];
-                            }
-                            else
-                            {
-                                if (tRawSpeed[i] < emissionMin)
-                                {
-                                    emissionMin = tRawSpeed[i];
-                                }
-                                if (tRawSpeed[i] > emissionMax)
-                                {
-                                    emissionMax = tRawSpeed[i];
-                                }
-                            }
-                        }
-                        lAvgSpeedEmission = 0;
-                        ignoreMin = false;
-                        ignoreMax = false;
-                        for (int i = 0; i < queueEmission.Count; i++)
-                        {
-                            if (tRawSpeed[i] == emissionMin && ignoreMin == false)
-                            {
-                                ignoreMin = true;
-                            }
-                            else if (tRawSpeed[i] == emissionMax && ignoreMax == false)
-                            {
-                                ignoreMax = true;
-                            }
-                            else
-                            {
-                                lAvgSpeedEmission += tRawSpeed[i];
-                            }
-                        }
-                        try
-                        {
-                            Array.Clear(tRawSpeed, 0, tRawSpeed.Length);
-                        }
-                        catch (ArgumentNullException) { }
-                        catch (IndexOutOfRangeException) { }
-
-                        lAvgSpeedEmission = lAvgSpeedEmission / ((queueEmission.Count > 2 ? queueEmission.Count : 3) - 2);
-
-                        try
-                        {
-                            Monitor.Exit(queueReception);
-                            Monitor.Exit(queueEmission);
-                        }
-                        catch (ArgumentNullException) { }
-                        catch (SynchronizationLockException) { }
 
                         frmBalloon.UpdateInfos(rawSpeedReception, rawSpeedEmission, lAvgSpeedReception, lAvgSpeedEmission, bytesReceived, bytesSent);
 
