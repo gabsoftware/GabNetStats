@@ -59,10 +59,19 @@ jobs:
       Solution_Name: GabNetStats                         # Replace with your solution name, i.e. MyWpfApp.sln.
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+    - name: Checkout GabNetStats
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
+
+    - name: Checkout GabTracker
+      uses: actions/checkout@v6
+      with:
+        repository: gabsoftware/GabTracker
+        ref: master
+
+    - name: Move GabTracker
+      run: move GabTracker GabNetStats\
 
     # Install the .NET Core workload
     - name: Install .NET Core
