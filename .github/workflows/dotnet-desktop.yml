@@ -63,13 +63,12 @@ jobs:
       uses: actions/checkout@v6
       with:
         fetch-depth: 0
-        path: GabNetStats
 
     - name: Checkout GabTracker
       uses: actions/checkout@v6
       with:
         repository: gabsoftware/GabTracker
-        path: GabNetStats/GabTracker
+        path: GabTracker
         ref: master
 
     # Install the .NET Core workload
