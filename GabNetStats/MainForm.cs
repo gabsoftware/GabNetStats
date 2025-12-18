@@ -1483,6 +1483,7 @@ namespace GabNetStats
             long rawSpeedEmission   = 0;
 
             IPInterfaceStatistics ipstats = null;
+            Stopwatch sampleStopwatch = Stopwatch.StartNew();
 
             try
             {
@@ -1493,6 +1494,12 @@ namespace GabNetStats
                     if (bSetIconContinue)
                     {
                         bSetIconContinue = false;
+                        double elapsedMs = sampleStopwatch.Elapsed.TotalMilliseconds;
+                        if (elapsedMs < 1)
+                        {
+                            elapsedMs = nDuration;
+                        }
+                        sampleStopwatch.Restart();
                         bytesReceived    = 0;
                         bytesSent        = 0;
 
@@ -1534,22 +1541,34 @@ namespace GabNetStats
                         }
                         
 
-                        if (bytesReceived != oldbytesReceived && bytesSent != oldbytesSent)
+                        long deltaReceived = bytesReceived - oldbytesReceived;
+                        long deltaSent = bytesSent - oldbytesSent;
+                        bool hasDownload = deltaReceived != 0;
+                        bool hasUpload = deltaSent != 0;
+
+                        if (hasDownload)
                         {
-                            try
-                            {
-                                rawSpeedReception = Math.Abs((1000 / nDuration) * (bytesReceived - oldbytesReceived));
-                                rawSpeedEmission = Math.Abs((1000 / nDuration) * (bytesSent - oldbytesSent));
-                            }
-                            catch (Exception)
-                            {
-                                rawSpeedReception = 0;
-                                rawSpeedEmission = 0;
-                            }
-                            
-                            oldbytesReceived  = bytesReceived;
-                            oldbytesSent      = bytesSent;
-                            nCounter          = 0;
+                            rawSpeedReception = (long)Math.Abs(deltaReceived * 1000.0 / elapsedMs);
+                            oldbytesReceived = bytesReceived;
+                        }
+                        else
+                        {
+                            rawSpeedReception = 0;
+                        }
+
+                        if (hasUpload)
+                        {
+                            rawSpeedEmission = (long)Math.Abs(deltaSent * 1000.0 / elapsedMs);
+                            oldbytesSent = bytesSent;
+                        }
+                        else
+                        {
+                            rawSpeedEmission = 0;
+                        }
+
+                        if (hasDownload && hasUpload)
+                        {
+                            nCounter = 0;
 
                             if (customBandwidth)
                             {
@@ -1664,20 +1683,9 @@ namespace GabNetStats
                             }
 
                         }
-                        else if (bytesReceived != oldbytesReceived && bytesSent == oldbytesSent)
+                        else if (hasDownload && !hasUpload)
                         {
-                            try
-                            {
-                                rawSpeedReception = Math.Abs((1000 / nDuration) * (bytesReceived - oldbytesReceived));
-                            }
-                            catch (Exception)
-                            {
-                                rawSpeedReception = 0;
-                            }
-                            
-                            rawSpeedEmission  = 0;
-                            oldbytesReceived  = bytesReceived;
-                            nCounter          = 0;
+                            nCounter = 0;
 
                             if (customBandwidth)
                             {
@@ -1707,21 +1715,9 @@ namespace GabNetStats
                                 this.SetActivityIcon(iconReceive_blue);
                             }
                         }
-                        else if (bytesReceived == oldbytesReceived && bytesSent != oldbytesSent)
+                        else if (!hasDownload && hasUpload)
                         {
-
-                            rawSpeedReception = 0;
-                            try
-                            {
-                                rawSpeedEmission = Math.Abs((1000 / nDuration) * (bytesSent - oldbytesSent));
-                            }
-                            catch (Exception)
-                            {
-                                rawSpeedEmission = 0;
-                            }
-                            
-                            oldbytesSent      = bytesSent;
-                            nCounter          = 0;
+                            nCounter = 0;
 
                             if (customBandwidth)
                             {
