@@ -19,9 +19,9 @@ This is the .NET control of the graph. It does not track you! It is poorly named
 * Clone the GabTracker repository at the same level, so that both cloned repositories are located in the same directory
   For example:
 
-    C:\mydir \
-      |- GabNetStats
-      |- GabTracker
+      C:\mydir\
+        |- GabNetStats
+        |- GabTracker
 
 ### Build from Visual Studio 2026
 * Open the GabNetStats solution in Visual Studio 2026
