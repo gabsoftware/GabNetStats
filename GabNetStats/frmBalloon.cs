@@ -63,6 +63,8 @@ namespace GabNetStats
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
+            chkAutoClose.Checked = Settings.Default.AutoCloseBalloon;
+            nudAutoClose.Value = Settings.Default.AutoCloseBalloonAfter;
             UpdateTrackerCapacity();
             ApplyHistoryToTracker();
         }
@@ -223,6 +225,7 @@ namespace GabNetStats
         private void nudAutoClose_ValueChanged(object sender, EventArgs e)
         {
             counter = 0;
+            Settings.Default.AutoCloseBalloonAfter = nudAutoClose.Value;
             Settings.Default.Save();
         }
 
@@ -258,6 +261,7 @@ namespace GabNetStats
         private void chkAutoClose_CheckStateChanged(object sender, EventArgs e)
         {
             counter = 0;
+            Settings.Default.AutoCloseBalloon = chkAutoClose.Checked;
             Settings.Default.Save();
         }
 
