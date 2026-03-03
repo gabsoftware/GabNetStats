@@ -205,7 +205,7 @@ namespace GabNetStats.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("xp")]
+        [global::System.Configuration.DefaultSettingValueAttribute("win10")]
         public string IconSet {
             get {
                 return ((string)(this["IconSet"]));

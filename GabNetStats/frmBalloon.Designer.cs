@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBalloon));
-            Properties.Settings settings1 = new Properties.Settings();
             GabTracker.GabTrackerFeed gabTrackerFeed1 = new GabTracker.GabTrackerFeed();
             GabTracker.GabTrackerFeed gabTrackerFeed2 = new GabTracker.GabTrackerFeed();
             BallonTimer = new System.Windows.Forms.Timer(components);
@@ -98,32 +97,7 @@
             // 
             resources.ApplyResources(tbTrans, "tbTrans");
             tbTrans.BackColor = System.Drawing.SystemColors.Info;
-            settings1.AdvancedSelectedInterfaceMac = "";
-            settings1.AutoCloseBalloon = true;
-            settings1.AutoCloseBalloonAfter = new decimal(new int[] { 5, 0, 0, 0 });
-            settings1.AutoPingEnabled = false;
-            settings1.AutoPingHost = "google.com";
-            settings1.AutoPingNotif = true;
-            settings1.AutoPingRate = new decimal(new int[] { 5000, 0, 0, 0 });
-            settings1.BalloonLocationX = -1;
-            settings1.BalloonLocationY = -1;
-            settings1.BalloonOpacity = 1D;
-            settings1.BalloonOpacitySlider = 100;
-            settings1.BandwidthDownload = 12500000L;
-            settings1.BandwidthDownloadMultiplier = 1L;
-            settings1.BandwidthUnit = 1;
-            settings1.BandwidthUpload = 12500000L;
-            settings1.BandwidthUploadMultiplier = 1L;
-            settings1.BandwidthVisualsCustom = false;
-            settings1.BandwidthVisualsDefault = true;
-            settings1.BlinkDuration = 200;
-            settings1.EnabledInterfaceMACList = "TOSET";
-            settings1.IconSet = "xp";
-            settings1.KnownInterfaceMACList = "";
-            settings1.LoadOnStartup = false;
-            settings1.SettingsKey = "";
-            settings1.ShowDisconnectedInterfaces = false;
-            tbTrans.DataBindings.Add(new System.Windows.Forms.Binding("Value", settings1, "BalloonOpacitySlider", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            tbTrans.DataBindings.Add(new System.Windows.Forms.Binding("Value", Properties.Settings.Default, "BalloonOpacitySlider", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             tbTrans.LargeChange = 10;
             tbTrans.Maximum = 100;
             tbTrans.Minimum = 10;
@@ -137,7 +111,7 @@
             // nudAutoClose
             // 
             resources.ApplyResources(nudAutoClose, "nudAutoClose");
-            nudAutoClose.DataBindings.Add(new System.Windows.Forms.Binding("Value", settings1, "AutoCloseBalloonAfter", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            nudAutoClose.DataBindings.Add(new System.Windows.Forms.Binding("Value", Properties.Settings.Default, "AutoCloseBalloonAfter", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             nudAutoClose.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
             nudAutoClose.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudAutoClose.Name = "nudAutoClose";
@@ -147,9 +121,9 @@
             // chkAutoClose
             // 
             resources.ApplyResources(chkAutoClose, "chkAutoClose");
-            chkAutoClose.Checked = true;
+            chkAutoClose.Checked = Properties.Settings.Default.AutoCloseBalloon;
             chkAutoClose.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkAutoClose.DataBindings.Add(new System.Windows.Forms.Binding("Checked", settings1, "AutoCloseBalloon", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            chkAutoClose.DataBindings.Add(new System.Windows.Forms.Binding("Checked", Properties.Settings.Default, "AutoCloseBalloon", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             chkAutoClose.Name = "chkAutoClose";
             chkAutoClose.UseVisualStyleBackColor = true;
             chkAutoClose.CheckStateChanged += chkAutoClose_CheckStateChanged;
@@ -199,7 +173,7 @@
             Controls.Add(nudAutoClose);
             Controls.Add(chkAutoClose);
             Controls.Add(lblStatisticsData);
-            DataBindings.Add(new System.Windows.Forms.Binding("Opacity", settings1, "BalloonOpacity", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            DataBindings.Add(new System.Windows.Forms.Binding("Opacity", Properties.Settings.Default, "BalloonOpacity", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             DoubleBuffered = true;
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             MaximizeBox = false;

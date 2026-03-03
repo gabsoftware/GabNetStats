@@ -48,7 +48,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="IconSet" Type="System.String" Scope="User">
-      <Value Profile="(Default)">xp</Value>
+      <Value Profile="(Default)">win10</Value>
     </Setting>
     <Setting Name="AutoPingEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
