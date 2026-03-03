@@ -183,6 +183,7 @@ namespace GabNetStats
 
             grpBandwidthPreferences.Enabled = radioCustomSpeed.Checked;
             chkShowDisconnectedInterfaces.Checked = Settings.Default.ShowDisconnectedInterfaces;
+            checkBoxStartup.Checked = Settings.Default.LoadOnStartup;
             settingsInitialized = true;
         }
 
