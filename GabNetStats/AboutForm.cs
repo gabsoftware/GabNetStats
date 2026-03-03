@@ -44,7 +44,7 @@ namespace GabNetStats
 
         private void AboutForm_Load(object sender, EventArgs e)
         {
-            label1.Text = "GabNetStats v" + Application.ProductVersion;
+            label1.Text = "GabNetStats v" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
     }
 }
