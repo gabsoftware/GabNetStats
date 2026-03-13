@@ -178,6 +178,8 @@ namespace GabNetStats
 
         static frmBalloon fBal;
 
+        private volatile bool _nicMenuOpen;
+
         public MainForm()
         {
             InitializeComponent();
@@ -405,6 +407,9 @@ namespace GabNetStats
             //registers the networkchange event handlers
             NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(NetworkChange_NetworkAvailabilityChanged);
             NetworkChange.NetworkAddressChanged      += new NetworkAddressChangedEventHandler     (NetworkChange_NetworkAddressChanged     );
+
+            contextMenuTray.Opening += (s, ev) => _nicMenuOpen = true;
+            contextMenuTray.Closing += (s, ev) => _nicMenuOpen = false;
 
             try
             {
@@ -1476,7 +1481,7 @@ namespace GabNetStats
                     nbv6         = ipv6stat.NumberOfInterfaces;
 
                     //if number changed since last time AND we are not displaying the context menu then
-                    if (nbv4 + nbv6 != nbNIC && this.NetworkAdaptersToolStripMenuItem.Visible == false)
+                    if (nbv4 + nbv6 != nbNIC && !_nicMenuOpen)
                     {
                         nbNIC = nbv4 + nbv6;
                         this.PopulateNICs(this.NetworkAdaptersToolStripMenuItem);

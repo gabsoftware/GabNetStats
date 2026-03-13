@@ -277,7 +277,7 @@ namespace GabNetStats
         private void btn_settings_Click(object sender, EventArgs e)
         {
             MainForm mf = (MainForm)Application.OpenForms["MainForm"];
-            mf.showSettings();
+            mf?.showSettings();
         }
 
         private void frmBalloon_LocationChanged(object sender, EventArgs e)
