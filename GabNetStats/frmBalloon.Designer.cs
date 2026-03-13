@@ -183,7 +183,6 @@
             ShowInTaskbar = false;
             TopMost = true;
             FormClosing += frmBalloon_FormClosing;
-            Load += frmBalloon_Load;
             LocationChanged += frmBalloon_LocationChanged;
             VisibleChanged += frmBalloon_VisibleChanged;
             Resize += frmBalloon_Resize;

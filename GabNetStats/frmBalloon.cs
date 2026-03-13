@@ -101,7 +101,6 @@ namespace GabNetStats
             fReceived = MainForm.computeSpeed(bytesReceived, ref sReceived, 1);
             fSent     = MainForm.computeSpeed(bytesSent    , ref sSent    , 1);
 
-            builder.Remove(0, builder.Length);
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawReceptionSpeed, fSpeedReception.ToString(Math.Floor(fSpeedReception) != fSpeedReception ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedReception);
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawEmissionSpeed, fSpeedEmission.ToString(Math.Floor(fSpeedEmission) != fSpeedEmission ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedEmission);
             builder.AppendLine();
@@ -273,11 +272,6 @@ namespace GabNetStats
         {
             UpdateTrackerCapacity();
             ApplyHistoryToTracker();
-        }
-
-        private void frmBalloon_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_settings_Click(object sender, EventArgs e)

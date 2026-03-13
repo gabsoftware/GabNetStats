@@ -597,11 +597,6 @@ namespace GabNetStats
                     return false;
             }
 
-            if (!showDisconnected && netInterface.OperationalStatus != OperationalStatus.Up)
-            {
-                return false;
-            }
-
             string description = netInterface.Description ?? String.Empty;
             string name = netInterface.Name ?? String.Empty;
             foreach (string keyword in hiddenInterfaceKeywords)
@@ -772,6 +767,9 @@ namespace GabNetStats
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            NetworkChange.NetworkAvailabilityChanged -= NetworkChange_NetworkAvailabilityChanged;
+            NetworkChange.NetworkAddressChanged      -= NetworkChange_NetworkAddressChanged;
+
             try
             {
                 workerCancellationTokenSource.Cancel();
@@ -1384,14 +1382,17 @@ namespace GabNetStats
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    Res.str_ErrorCrash +
-                    "\n\n" + "Thread : " +
-                    Thread.CurrentThread.Name +
-                    "\n\n" +
-                    ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!Program.IsWindowsShuttingDown)
+                {
+                    MessageBox.Show(
+                        Res.str_ErrorCrash +
+                        "\n\n" + "Thread : " +
+                        Thread.CurrentThread.Name +
+                        "\n\n" +
+                        ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                Application.Restart();
+                    Application.Restart();
+                }
             }
         }
 
@@ -1494,14 +1495,17 @@ namespace GabNetStats
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    Res.str_ErrorCrash +
-                    "\n\n" + "Thread : " +
-                    Thread.CurrentThread.Name +
-                    "\n\n" +
-                    ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!Program.IsWindowsShuttingDown)
+                {
+                    MessageBox.Show(
+                        Res.str_ErrorCrash +
+                        "\n\n" + "Thread : " +
+                        Thread.CurrentThread.Name +
+                        "\n\n" +
+                        ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                Application.Restart();
+                    Application.Restart();
+                }
             }
         }
 
@@ -1824,14 +1828,17 @@ namespace GabNetStats
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-                    Res.str_ErrorCrash +
-                    "\n\n" + "Thread : " +
-                    Thread.CurrentThread.Name +
-                    "\n\n" +
-                    ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!Program.IsWindowsShuttingDown)
+                {
+                    MessageBox.Show(
+                        Res.str_ErrorCrash +
+                        "\n\n" + "Thread : " +
+                        Thread.CurrentThread.Name +
+                        "\n\n" +
+                        ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                Application.Restart();
+                    Application.Restart();
+                }
             }
         }
 
@@ -1843,62 +1850,55 @@ namespace GabNetStats
         internal static double computeSpeed(long rawSpeed, ref string speedUnit, int typeunit)
         {
             double res = 0;
-            try
+            switch (typeunit)
             {
-                switch (typeunit)
-                {
-                    case 1:
-                        if (rawSpeed >= 1073741824) //1073741824 = 2 ^ 30
-                        {
-                            speedUnit = SpeedUnitsByte.GiB;
-                            res = Math.Round(rawSpeed / (double)1073741824, 2);
-                        }
-                        else if (rawSpeed >= 1048576) //1048576 = 2 ^ 20
-                        {
-                            speedUnit = SpeedUnitsByte.MiB;
-                            res = Math.Round(rawSpeed / (double)1048576, 2);
-                        }
-                        else if (rawSpeed >= 1024) //1024 = 2 ^ 10
-                        {
-                            speedUnit = SpeedUnitsByte.KiB;
-                            res = Math.Round(rawSpeed / (double)1024, 2);
-                        }
-                        else
-                        {
-                            speedUnit = SpeedUnitsByte.Bytes;
-                            res = rawSpeed;
-                        }
-                        break;
+                case 1:
+                    if (rawSpeed >= 1073741824) //1073741824 = 2 ^ 30
+                    {
+                        speedUnit = SpeedUnitsByte.GiB;
+                        res = Math.Round(rawSpeed / (double)1073741824, 2);
+                    }
+                    else if (rawSpeed >= 1048576) //1048576 = 2 ^ 20
+                    {
+                        speedUnit = SpeedUnitsByte.MiB;
+                        res = Math.Round(rawSpeed / (double)1048576, 2);
+                    }
+                    else if (rawSpeed >= 1024) //1024 = 2 ^ 10
+                    {
+                        speedUnit = SpeedUnitsByte.KiB;
+                        res = Math.Round(rawSpeed / (double)1024, 2);
+                    }
+                    else
+                    {
+                        speedUnit = SpeedUnitsByte.Bytes;
+                        res = rawSpeed;
+                    }
+                    break;
 
-                    case 2:
-                        if (rawSpeed >= 1000000000)
-                        {
-                            speedUnit = SpeedUnitsBit.Gbit;
-                            res = Math.Round(rawSpeed / (double)1000000000, 2);
-                        }
-                        else if (rawSpeed >= 1000000)
-                        {
-                            speedUnit = SpeedUnitsBit.Mbit;
-                            res = Math.Round(rawSpeed / (double)1000000, 2);
-                        }
-                        else if (rawSpeed >= 1000)
-                        {
-                            speedUnit = SpeedUnitsBit.Kbit;
-                            res = Math.Round(rawSpeed / (double)1000, 2);
-                        }
-                        else
-                        {
-                            speedUnit = SpeedUnitsBit.bit;
-                            res = rawSpeed;
-                        }
-                        break;
-                    default:
-                        goto case 1;
-                }
-            }
-            catch (Exception)
-            {
-                res = 0;
+                case 2:
+                    if (rawSpeed >= 1000000000)
+                    {
+                        speedUnit = SpeedUnitsBit.Gbit;
+                        res = Math.Round(rawSpeed / (double)1000000000, 2);
+                    }
+                    else if (rawSpeed >= 1000000)
+                    {
+                        speedUnit = SpeedUnitsBit.Mbit;
+                        res = Math.Round(rawSpeed / (double)1000000, 2);
+                    }
+                    else if (rawSpeed >= 1000)
+                    {
+                        speedUnit = SpeedUnitsBit.Kbit;
+                        res = Math.Round(rawSpeed / (double)1000, 2);
+                    }
+                    else
+                    {
+                        speedUnit = SpeedUnitsBit.bit;
+                        res = rawSpeed;
+                    }
+                    break;
+                default:
+                    goto case 1;
             }
             return res;
         }
