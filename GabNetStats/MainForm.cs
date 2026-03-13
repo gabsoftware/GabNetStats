@@ -25,7 +25,6 @@ namespace GabNetStats
         private readonly CancellationTokenSource workerCancellationTokenSource = new CancellationTokenSource();
         private CancellationTokenSource autoPingCancellationTokenSource;
 
-        private bool bSetIconContinue    = true;
         private bool customBandwidth     = false;
 
         internal enum eState
@@ -1536,290 +1535,284 @@ namespace GabNetStats
                 {
                     cancellationToken.ThrowIfCancellationRequested();
 
-                    if (bSetIconContinue)
+                    double elapsedMs = sampleStopwatch.Elapsed.TotalMilliseconds;
+                    if (elapsedMs < 1)
                     {
-                        bSetIconContinue = false;
-                        double elapsedMs = sampleStopwatch.Elapsed.TotalMilliseconds;
-                        if (elapsedMs < 1)
-                        {
-                            elapsedMs = nDuration;
-                        }
-                        sampleStopwatch.Restart();
-                        bytesReceived    = 0;
-                        bytesSent        = 0;
+                        elapsedMs = nDuration;
+                    }
+                    sampleStopwatch.Restart();
+                    bytesReceived    = 0;
+                    bytesSent        = 0;
 
-                        if (connectionStatus == eState.disconnected)
-                        {
-                            this.SetActivityIcon(iconDisconnected);
-                            rawSpeedReception            = 0;
-                            rawSpeedEmission             = 0;
-                            goto skip;
-                        }
-                        if (connectionStatus == eState.limited)
-                        {
-                            this.SetActivityIcon(iconLimited);
-                            rawSpeedReception            = 0;
-                            rawSpeedEmission             = 0;
-                            goto skip;
-                        }
+                    if (connectionStatus == eState.disconnected)
+                    {
+                        this.SetActivityIcon(iconDisconnected);
+                        rawSpeedReception            = 0;
+                        rawSpeedEmission             = 0;
+                        goto skip;
+                    }
+                    if (connectionStatus == eState.limited)
+                    {
+                        this.SetActivityIcon(iconLimited);
+                        rawSpeedReception            = 0;
+                        rawSpeedEmission             = 0;
+                        goto skip;
+                    }
 
-                        lock (selectedInterfaces)
+                    lock (selectedInterfaces)
+                    {
+                        foreach (TrackedInterface tracked in selectedInterfaces)
                         {
-                            foreach (TrackedInterface tracked in selectedInterfaces)
+                            if (!IsInterfaceEnabled(tracked.MacAddress))
                             {
-                                if (!IsInterfaceEnabled(tracked.MacAddress))
-                                {
-                                    continue;
-                                }
+                                continue;
+                            }
 
-                                try
-                                {
-                                    ipstats = tracked.Interface.GetIPStatistics();
-                                    bytesReceived += ipstats.BytesReceived;
-                                    bytesSent += ipstats.BytesSent;
-                                }
-                                catch (Exception)
-                                {
-                                    continue;
-                                }
+                            try
+                            {
+                                ipstats = tracked.Interface.GetIPStatistics();
+                                bytesReceived += ipstats.BytesReceived;
+                                bytesSent += ipstats.BytesSent;
+                            }
+                            catch (Exception)
+                            {
+                                continue;
                             }
                         }
-                        
+                    }
+                    
 
-                        long deltaReceived = bytesReceived - oldbytesReceived;
-                        long deltaSent = bytesSent - oldbytesSent;
-                        bool hasDownload = deltaReceived != 0;
-                        bool hasUpload = deltaSent != 0;
+                    long deltaReceived = bytesReceived - oldbytesReceived;
+                    long deltaSent = bytesSent - oldbytesSent;
+                    bool hasDownload = deltaReceived != 0;
+                    bool hasUpload = deltaSent != 0;
 
-                        if (hasDownload)
-                        {
-                            rawSpeedReception = (long)Math.Abs(deltaReceived * 1000.0 / elapsedMs);
-                            oldbytesReceived = bytesReceived;
-                        }
-                        else
-                        {
-                            rawSpeedReception = 0;
-                        }
+                    if (hasDownload)
+                    {
+                        rawSpeedReception = (long)Math.Abs(deltaReceived * 1000.0 / elapsedMs);
+                        oldbytesReceived = bytesReceived;
+                    }
+                    else
+                    {
+                        rawSpeedReception = 0;
+                    }
 
-                        if (hasUpload)
-                        {
-                            rawSpeedEmission = (long)Math.Abs(deltaSent * 1000.0 / elapsedMs);
-                            oldbytesSent = bytesSent;
-                        }
-                        else
-                        {
-                            rawSpeedEmission = 0;
-                        }
+                    if (hasUpload)
+                    {
+                        rawSpeedEmission = (long)Math.Abs(deltaSent * 1000.0 / elapsedMs);
+                        oldbytesSent = bytesSent;
+                    }
+                    else
+                    {
+                        rawSpeedEmission = 0;
+                    }
 
-                        if (hasDownload && hasUpload)
-                        {
-                            nCounter = 0;
+                    if (hasDownload && hasUpload)
+                    {
+                        nCounter = 0;
 
-                            if (customBandwidth)
+                        if (customBandwidth)
+                        {
+                            if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl4)
                             {
-                                if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl4)
-                                {
-                                    this.SetActivityIcon(iconActive_red_red);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl3)
-                                {
-                                    this.SetActivityIcon(iconActive_orange_red);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl2)
-                                {
-                                    this.SetActivityIcon(iconActive_yellow_red);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl1)
-                                {
-                                    this.SetActivityIcon(iconActive_green_red);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission < bandwidthUploadLvl1)
-                                {
-                                    this.SetActivityIcon(iconActive_blue_red);
-                                }
-
-                                else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl4)
-                                {
-                                    this.SetActivityIcon(iconActive_red_orange);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl3)
-                                {
-                                    this.SetActivityIcon(iconActive_orange_orange);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl2)
-                                {
-                                    this.SetActivityIcon(iconActive_yellow_orange);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl1)
-                                {
-                                    this.SetActivityIcon(iconActive_green_orange);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission < bandwidthUploadLvl1)
-                                {
-                                    this.SetActivityIcon(iconActive_blue_orange);
-                                }
-
-                                else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl4)
-                                {
-                                    this.SetActivityIcon(iconActive_red_yellow);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl3)
-                                {
-                                    this.SetActivityIcon(iconActive_orange_yellow);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl2)
-                                {
-                                    this.SetActivityIcon(iconActive_yellow_yellow);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl1)
-                                {
-                                    this.SetActivityIcon(iconActive_green_yellow);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission < bandwidthUploadLvl1)
-                                {
-                                    this.SetActivityIcon(iconActive_blue_yellow);
-                                }
-
-                                else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl4)
-                                {
-                                    this.SetActivityIcon(iconActive_red_green);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl3)
-                                {
-                                    this.SetActivityIcon(iconActive_orange_green);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl2)
-                                {
-                                    this.SetActivityIcon(iconActive_yellow_green);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl1)
-                                {
-                                    this.SetActivityIcon(iconActive_green_green);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission < bandwidthUploadLvl1)
-                                {
-                                    this.SetActivityIcon(iconActive_blue_green);
-                                }
-
-                                else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl4)
-                                {
-                                    this.SetActivityIcon(iconActive_red_blue);
-                                }
-                                else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl3)
-                                {
-                                    this.SetActivityIcon(iconActive_orange_blue);
-                                }
-                                else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl2)
-                                {
-                                    this.SetActivityIcon(iconActive_yellow_blue);
-                                }
-                                else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl1)
-                                {
-                                    this.SetActivityIcon(iconActive_green_blue);
-                                }
-                                else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission < bandwidthUploadLvl1)
-                                {
-                                    this.SetActivityIcon(iconActive_blue_blue);
-                                }
+                                this.SetActivityIcon(iconActive_red_red);
                             }
-                            else
+                            else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl3)
+                            {
+                                this.SetActivityIcon(iconActive_orange_red);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl2)
+                            {
+                                this.SetActivityIcon(iconActive_yellow_red);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl1)
+                            {
+                                this.SetActivityIcon(iconActive_green_red);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission < bandwidthUploadLvl1)
+                            {
+                                this.SetActivityIcon(iconActive_blue_red);
+                            }
+
+                            else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl4)
+                            {
+                                this.SetActivityIcon(iconActive_red_orange);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl3)
+                            {
+                                this.SetActivityIcon(iconActive_orange_orange);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl2)
+                            {
+                                this.SetActivityIcon(iconActive_yellow_orange);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl1)
+                            {
+                                this.SetActivityIcon(iconActive_green_orange);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission < bandwidthUploadLvl1)
+                            {
+                                this.SetActivityIcon(iconActive_blue_orange);
+                            }
+
+                            else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl4)
+                            {
+                                this.SetActivityIcon(iconActive_red_yellow);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl3)
+                            {
+                                this.SetActivityIcon(iconActive_orange_yellow);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl2)
+                            {
+                                this.SetActivityIcon(iconActive_yellow_yellow);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl1)
+                            {
+                                this.SetActivityIcon(iconActive_green_yellow);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission < bandwidthUploadLvl1)
+                            {
+                                this.SetActivityIcon(iconActive_blue_yellow);
+                            }
+
+                            else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl4)
+                            {
+                                this.SetActivityIcon(iconActive_red_green);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl3)
+                            {
+                                this.SetActivityIcon(iconActive_orange_green);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl2)
+                            {
+                                this.SetActivityIcon(iconActive_yellow_green);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl1)
+                            {
+                                this.SetActivityIcon(iconActive_green_green);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission < bandwidthUploadLvl1)
+                            {
+                                this.SetActivityIcon(iconActive_blue_green);
+                            }
+
+                            else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl4)
+                            {
+                                this.SetActivityIcon(iconActive_red_blue);
+                            }
+                            else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl3)
+                            {
+                                this.SetActivityIcon(iconActive_orange_blue);
+                            }
+                            else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl2)
+                            {
+                                this.SetActivityIcon(iconActive_yellow_blue);
+                            }
+                            else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl1)
+                            {
+                                this.SetActivityIcon(iconActive_green_blue);
+                            }
+                            else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission < bandwidthUploadLvl1)
                             {
                                 this.SetActivityIcon(iconActive_blue_blue);
                             }
-
                         }
-                        else if (hasDownload && !hasUpload)
+                        else
                         {
-                            nCounter = 0;
+                            this.SetActivityIcon(iconActive_blue_blue);
+                        }
 
-                            if (customBandwidth)
+                    }
+                    else if (hasDownload && !hasUpload)
+                    {
+                        nCounter = 0;
+
+                        if (customBandwidth)
+                        {
+                            if (rawSpeedReception >= bandwidthDownloadLvl4)
                             {
-                                if (rawSpeedReception >= bandwidthDownloadLvl4)
-                                {
-                                    this.SetActivityIcon(iconReceive_red);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl3)
-                                {
-                                    this.SetActivityIcon(iconReceive_orange);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl2)
-                                {
-                                    this.SetActivityIcon(iconReceive_yellow);
-                                }
-                                else if (rawSpeedReception >= bandwidthDownloadLvl1)
-                                {
-                                    this.SetActivityIcon(iconReceive_green);
-                                }
-                                else if (rawSpeedReception < bandwidthDownloadLvl1)
-                                {
-                                    this.SetActivityIcon(iconReceive_blue);
-                                }
+                                this.SetActivityIcon(iconReceive_red);
                             }
-                            else
+                            else if (rawSpeedReception >= bandwidthDownloadLvl3)
+                            {
+                                this.SetActivityIcon(iconReceive_orange);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl2)
+                            {
+                                this.SetActivityIcon(iconReceive_yellow);
+                            }
+                            else if (rawSpeedReception >= bandwidthDownloadLvl1)
+                            {
+                                this.SetActivityIcon(iconReceive_green);
+                            }
+                            else if (rawSpeedReception < bandwidthDownloadLvl1)
                             {
                                 this.SetActivityIcon(iconReceive_blue);
                             }
                         }
-                        else if (!hasDownload && hasUpload)
+                        else
                         {
-                            nCounter = 0;
+                            this.SetActivityIcon(iconReceive_blue);
+                        }
+                    }
+                    else if (!hasDownload && hasUpload)
+                    {
+                        nCounter = 0;
 
-                            if (customBandwidth)
+                        if (customBandwidth)
+                        {
+                            if (rawSpeedEmission >= bandwidthUploadLvl4)
                             {
-                                if (rawSpeedEmission >= bandwidthUploadLvl4)
-                                {
-                                    this.SetActivityIcon(iconSend_red);
-                                }
-                                else if (rawSpeedEmission >= bandwidthUploadLvl3)
-                                {
-                                    this.SetActivityIcon(iconSend_orange);
-                                }
-                                else if (rawSpeedEmission >= bandwidthUploadLvl2)
-                                {
-                                    this.SetActivityIcon(iconSend_yellow);
-                                }
-                                else if (rawSpeedEmission >= bandwidthUploadLvl1)
-                                {
-                                    this.SetActivityIcon(iconSend_green);
-                                }
-                                else if (rawSpeedEmission < bandwidthUploadLvl1)
-                                {
-                                    this.SetActivityIcon(iconSend_blue);
-                                }
+                                this.SetActivityIcon(iconSend_red);
                             }
-                            else
+                            else if (rawSpeedEmission >= bandwidthUploadLvl3)
+                            {
+                                this.SetActivityIcon(iconSend_orange);
+                            }
+                            else if (rawSpeedEmission >= bandwidthUploadLvl2)
+                            {
+                                this.SetActivityIcon(iconSend_yellow);
+                            }
+                            else if (rawSpeedEmission >= bandwidthUploadLvl1)
+                            {
+                                this.SetActivityIcon(iconSend_green);
+                            }
+                            else if (rawSpeedEmission < bandwidthUploadLvl1)
                             {
                                 this.SetActivityIcon(iconSend_blue);
                             }
                         }
                         else
                         {
-                            nCounter++; //the counter adds a small persistance effect
+                            this.SetActivityIcon(iconSend_blue);
                         }
+                    }
+                    else
+                    {
+                        nCounter++; //the counter adds a small persistance effect
+                    }
 
-                        if (nCounter == 5)
-                        {
-                            nCounter                     = 0;
-                            this.SetActivityIcon(iconInactive);
-                            rawSpeedReception            = 0;
-                            rawSpeedEmission             = 0;
-                        }
+                    if (nCounter == 5)
+                    {
+                        nCounter                     = 0;
+                        this.SetActivityIcon(iconInactive);
+                        rawSpeedReception            = 0;
+                        rawSpeedEmission             = 0;
+                    }
 
                     skip:
 
-                        lock (speedSamplesLock)
-                        {
-                            StoreSample(rawSpeedReception, receptionSamples, ref receptionSampleIndex, ref receptionSampleCount);
-                            StoreSample(rawSpeedEmission, emissionSamples, ref emissionSampleIndex, ref emissionSampleCount);
+                    lock (speedSamplesLock)
+                    {
+                        StoreSample(rawSpeedReception, receptionSamples, ref receptionSampleIndex, ref receptionSampleCount);
+                        StoreSample(rawSpeedEmission, emissionSamples, ref emissionSampleIndex, ref emissionSampleCount);
 
-                            lAvgSpeedReception = ComputeAverageWithoutExtremes(receptionSamples, receptionSampleCount);
-                            lAvgSpeedEmission  = ComputeAverageWithoutExtremes(emissionSamples, emissionSampleCount);
-                        }
-
-                        frmBalloon.UpdateInfos(rawSpeedReception, rawSpeedEmission, lAvgSpeedReception, lAvgSpeedEmission, bytesReceived, bytesSent);
-
-                        bSetIconContinue = true;
+                        lAvgSpeedReception = ComputeAverageWithoutExtremes(receptionSamples, receptionSampleCount);
+                        lAvgSpeedEmission  = ComputeAverageWithoutExtremes(emissionSamples, emissionSampleCount);
                     }
+
+                    frmBalloon.UpdateInfos(rawSpeedReception, rawSpeedEmission, lAvgSpeedReception, lAvgSpeedEmission, bytesReceived, bytesSent);
 
                     try
                     {
