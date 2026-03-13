@@ -183,6 +183,23 @@ namespace GabNetStats
             InitializeComponent();
         }
 
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_QUERYENDSESSION = 0x0011;
+            const int WM_ENDSESSION = 0x0016;
+
+            if (m.Msg == WM_QUERYENDSESSION || m.Msg == WM_ENDSESSION)
+            {
+                Program.IsWindowsShuttingDown = true;
+                // Signal threads to stop and save state cleanly
+                try { workerCancellationTokenSource.Cancel(); } catch { }
+                Settings.Default.Save();
+                m.Result = (IntPtr)1; // Tell Windows: OK to shut down
+                return;
+            }
+            base.WndProc(ref m);
+        }
+
         private void applyIconSet()
         {
             string desiredSet = Settings.Default.IconSet;

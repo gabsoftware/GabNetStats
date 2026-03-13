@@ -11,6 +11,9 @@ namespace GabNetStats
         /// </summary>
         private static Mutex m_Mutex;
 
+        /// <summary>Set to true when Windows initiates a shutdown, to suppress restart on crash.</summary>
+        public static bool IsWindowsShuttingDown { get; set; }
+
         [STAThread]
         static void Main()
         {
@@ -30,7 +33,7 @@ namespace GabNetStats
             }
             catch (Exception ex)
             {
-                if (ex.GetType() != typeof(ThreadAbortException))
+                if (!IsWindowsShuttingDown && ex.GetType() != typeof(ThreadAbortException))
                 {
                     MessageBox.Show(
                         Res.str_ErrorCrash +
@@ -38,8 +41,8 @@ namespace GabNetStats
                         Thread.CurrentThread.Name +
                         "\n\n" +
                         ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Application.Restart();
                 }
-                Application.Restart();
             }
         }
     }

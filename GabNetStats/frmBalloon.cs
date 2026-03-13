@@ -203,8 +203,12 @@ namespace GabNetStats
         {
             counter = 0;
             Settings.Default.Save();
-            e.Cancel = true;
-            this.Hide();
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                this.Hide();
+            }
+            // For WindowsShutDown, ApplicationExitCall, etc., let it close
         }
 
         private void frmBalloon_VisibleChanged(object sender, EventArgs e)
