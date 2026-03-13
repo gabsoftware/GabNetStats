@@ -125,46 +125,23 @@ namespace GabNetStats
             "filter"
         };
 
-        static Icon iconActive_blue_blue     = Properties.Resources.active_blue_blue;
-        static Icon iconActive_blue_green    = Properties.Resources.active_blue_green;
-        static Icon iconActive_blue_yellow   = Properties.Resources.active_blue_yellow;
-        static Icon iconActive_blue_orange   = Properties.Resources.active_blue_orange;
-        static Icon iconActive_blue_red      = Properties.Resources.active_blue_red;
-        static Icon iconActive_green_blue    = Properties.Resources.active_green_blue;
-        static Icon iconActive_green_green   = Properties.Resources.active_green_green;
-        static Icon iconActive_green_yellow  = Properties.Resources.active_green_yellow;
-        static Icon iconActive_green_orange  = Properties.Resources.active_green_orange;
-        static Icon iconActive_green_red     = Properties.Resources.active_green_red;
-        static Icon iconActive_yellow_blue   = Properties.Resources.active_yellow_blue;
-        static Icon iconActive_yellow_green  = Properties.Resources.active_yellow_green;
-        static Icon iconActive_yellow_yellow = Properties.Resources.active_yellow_yellow;
-        static Icon iconActive_yellow_orange = Properties.Resources.active_yellow_orange;
-        static Icon iconActive_yellow_red    = Properties.Resources.active_yellow_red;
-        static Icon iconActive_orange_blue   = Properties.Resources.active_orange_blue;
-        static Icon iconActive_orange_green  = Properties.Resources.active_orange_green;
-        static Icon iconActive_orange_yellow = Properties.Resources.active_orange_yellow;
-        static Icon iconActive_orange_orange = Properties.Resources.active_orange_orange;
-        static Icon iconActive_orange_red    = Properties.Resources.active_orange_red;
-        static Icon iconActive_red_blue      = Properties.Resources.active_red_blue;
-        static Icon iconActive_red_green     = Properties.Resources.active_red_green;
-        static Icon iconActive_red_yellow    = Properties.Resources.active_red_yellow;
-        static Icon iconActive_red_orange    = Properties.Resources.active_red_orange;
-        static Icon iconActive_red_red       = Properties.Resources.active_red_red;
+        // 0=blue, 1=green, 2=yellow, 3=orange, 4=red
+        private static readonly string[] colorNames = { "blue", "green", "yellow", "orange", "red" };
 
-        static Icon iconInactive             = Properties.Resources.inactive;
-        static Icon currentActivityIcon      = Properties.Resources.inactive;
+        // iconsActive[downloadLevel, uploadLevel]
+        static Icon[,] iconsActive = {
+            { Properties.Resources.active_blue_blue,   Properties.Resources.active_blue_green,   Properties.Resources.active_blue_yellow,   Properties.Resources.active_blue_orange,   Properties.Resources.active_blue_red   },
+            { Properties.Resources.active_green_blue,  Properties.Resources.active_green_green,  Properties.Resources.active_green_yellow,  Properties.Resources.active_green_orange,  Properties.Resources.active_green_red  },
+            { Properties.Resources.active_yellow_blue, Properties.Resources.active_yellow_green, Properties.Resources.active_yellow_yellow, Properties.Resources.active_yellow_orange, Properties.Resources.active_yellow_red },
+            { Properties.Resources.active_orange_blue, Properties.Resources.active_orange_green, Properties.Resources.active_orange_yellow, Properties.Resources.active_orange_orange, Properties.Resources.active_orange_red },
+            { Properties.Resources.active_red_blue,    Properties.Resources.active_red_green,    Properties.Resources.active_red_yellow,    Properties.Resources.active_red_orange,    Properties.Resources.active_red_red    },
+        };
 
-        static Icon iconSend_blue            = Properties.Resources.send_blue;
-        static Icon iconSend_green           = Properties.Resources.send_green;
-        static Icon iconSend_yellow          = Properties.Resources.send_yellow;
-        static Icon iconSend_orange          = Properties.Resources.send_orange;
-        static Icon iconSend_red             = Properties.Resources.send_red;
+        static Icon iconInactive        = Properties.Resources.inactive;
+        static Icon currentActivityIcon = Properties.Resources.inactive;
 
-        static Icon iconReceive_blue         = Properties.Resources.receive_blue;
-        static Icon iconReceive_green        = Properties.Resources.receive_green;
-        static Icon iconReceive_yellow       = Properties.Resources.receive_yellow;
-        static Icon iconReceive_orange       = Properties.Resources.receive_orange;
-        static Icon iconReceive_red          = Properties.Resources.receive_red;
+        static Icon[] iconsSend    = { Properties.Resources.send_blue,    Properties.Resources.send_green,    Properties.Resources.send_yellow,    Properties.Resources.send_orange,    Properties.Resources.send_red    };
+        static Icon[] iconsReceive = { Properties.Resources.receive_blue, Properties.Resources.receive_green, Properties.Resources.receive_yellow, Properties.Resources.receive_orange, Properties.Resources.receive_red };
 
         static Icon iconDisconnected         = Properties.Resources.netshell_195;
         static Icon iconLimited              = Properties.Resources.netshell_IDI_CFI_TRAY_WIRED_WARNING;
@@ -233,6 +210,15 @@ namespace GabNetStats
             currentActivityIcon = this.notifyIconActivity.Icon;
         }
 
+        private static int GetSpeedLevel(long speed, long lvl1, long lvl2, long lvl3, long lvl4)
+        {
+            if (speed >= lvl4) return 4;
+            if (speed >= lvl3) return 3;
+            if (speed >= lvl2) return 2;
+            if (speed >= lvl1) return 1;
+            return 0;
+        }
+
         private static Icon LoadIconFromFile(string filePath, Icon fallback)
         {
             try
@@ -255,98 +241,52 @@ namespace GabNetStats
 
         private static void LoadDefaultIconSet()
         {
-            iconActive_blue_blue     = Properties.Resources.active_blue_blue;
-            iconActive_blue_green    = Properties.Resources.active_blue_green;
-            iconActive_blue_yellow   = Properties.Resources.active_blue_yellow;
-            iconActive_blue_orange   = Properties.Resources.active_blue_orange;
-            iconActive_blue_red      = Properties.Resources.active_blue_red;
-            iconActive_green_blue    = Properties.Resources.active_green_blue;
-            iconActive_green_green   = Properties.Resources.active_green_green;
-            iconActive_green_yellow  = Properties.Resources.active_green_yellow;
-            iconActive_green_orange  = Properties.Resources.active_green_orange;
-            iconActive_green_red     = Properties.Resources.active_green_red;
-            iconActive_yellow_blue   = Properties.Resources.active_yellow_blue;
-            iconActive_yellow_green  = Properties.Resources.active_yellow_green;
-            iconActive_yellow_yellow = Properties.Resources.active_yellow_yellow;
-            iconActive_yellow_orange = Properties.Resources.active_yellow_orange;
-            iconActive_yellow_red    = Properties.Resources.active_yellow_red;
-            iconActive_orange_blue   = Properties.Resources.active_orange_blue;
-            iconActive_orange_green  = Properties.Resources.active_orange_green;
-            iconActive_orange_yellow = Properties.Resources.active_orange_yellow;
-            iconActive_orange_orange = Properties.Resources.active_orange_orange;
-            iconActive_orange_red    = Properties.Resources.active_orange_red;
-            iconActive_red_blue      = Properties.Resources.active_red_blue;
-            iconActive_red_green     = Properties.Resources.active_red_green;
-            iconActive_red_yellow    = Properties.Resources.active_red_yellow;
-            iconActive_red_orange    = Properties.Resources.active_red_orange;
-            iconActive_red_red       = Properties.Resources.active_red_red;
+            var r = Properties.Resources.ResourceManager;
+            for (int dl = 0; dl < 5; dl++)
+            {
+                for (int ul = 0; ul < 5; ul++)
+                {
+                    iconsActive[dl, ul] = (Icon)r.GetObject($"active_{colorNames[dl]}_{colorNames[ul]}");
+                }
+            }
 
-            iconInactive             = Properties.Resources.inactive;
+            for (int i = 0; i < 5; i++)
+            {
+                iconsSend[i]    = (Icon)r.GetObject($"send_{colorNames[i]}");
+                iconsReceive[i] = (Icon)r.GetObject($"receive_{colorNames[i]}");
+            }
 
-            iconSend_blue            = Properties.Resources.send_blue;
-            iconSend_green           = Properties.Resources.send_green;
-            iconSend_yellow          = Properties.Resources.send_yellow;
-            iconSend_orange          = Properties.Resources.send_orange;
-            iconSend_red             = Properties.Resources.send_red;
+            iconInactive     = Properties.Resources.inactive;
 
-            iconReceive_blue         = Properties.Resources.receive_blue;
-            iconReceive_green        = Properties.Resources.receive_green;
-            iconReceive_yellow       = Properties.Resources.receive_yellow;
-            iconReceive_orange       = Properties.Resources.receive_orange;
-            iconReceive_red          = Properties.Resources.receive_red;
-
-            iconCircle_green         = Properties.Resources.circle_green;
-            iconCircle_red           = Properties.Resources.circle_red;
-            iconCircle_grey          = Properties.Resources.circle_grey;
-            iconCircle_orange        = Properties.Resources.circle_orange;
+            iconCircle_green  = Properties.Resources.circle_green;
+            iconCircle_red    = Properties.Resources.circle_red;
+            iconCircle_grey   = Properties.Resources.circle_grey;
+            iconCircle_orange = Properties.Resources.circle_orange;
         }
 
         private static void LoadIconSetFromDirectory(string basePath)
         {
-            iconActive_blue_blue     = LoadIconFromFile(Path.Combine(basePath, "active_blue_blue.ico"), iconActive_blue_blue);
-            iconActive_blue_green    = LoadIconFromFile(Path.Combine(basePath, "active_blue_green.ico"), iconActive_blue_green);
-            iconActive_blue_yellow   = LoadIconFromFile(Path.Combine(basePath, "active_blue_yellow.ico"), iconActive_blue_yellow);
-            iconActive_blue_orange   = LoadIconFromFile(Path.Combine(basePath, "active_blue_orange.ico"), iconActive_blue_orange);
-            iconActive_blue_red      = LoadIconFromFile(Path.Combine(basePath, "active_blue_red.ico"), iconActive_blue_red);
-            iconActive_green_blue    = LoadIconFromFile(Path.Combine(basePath, "active_green_blue.ico"), iconActive_green_blue);
-            iconActive_green_green   = LoadIconFromFile(Path.Combine(basePath, "active_green_green.ico"), iconActive_green_green);
-            iconActive_green_yellow  = LoadIconFromFile(Path.Combine(basePath, "active_green_yellow.ico"), iconActive_green_yellow);
-            iconActive_green_orange  = LoadIconFromFile(Path.Combine(basePath, "active_green_orange.ico"), iconActive_green_orange);
-            iconActive_green_red     = LoadIconFromFile(Path.Combine(basePath, "active_green_red.ico"), iconActive_green_red);
-            iconActive_yellow_blue   = LoadIconFromFile(Path.Combine(basePath, "active_yellow_blue.ico"), iconActive_yellow_blue);
-            iconActive_yellow_green  = LoadIconFromFile(Path.Combine(basePath, "active_yellow_green.ico"), iconActive_yellow_green);
-            iconActive_yellow_yellow = LoadIconFromFile(Path.Combine(basePath, "active_yellow_yellow.ico"), iconActive_yellow_yellow);
-            iconActive_yellow_orange = LoadIconFromFile(Path.Combine(basePath, "active_yellow_orange.ico"), iconActive_yellow_orange);
-            iconActive_yellow_red    = LoadIconFromFile(Path.Combine(basePath, "active_yellow_red.ico"), iconActive_yellow_red);
-            iconActive_orange_blue   = LoadIconFromFile(Path.Combine(basePath, "active_orange_blue.ico"), iconActive_orange_blue);
-            iconActive_orange_green  = LoadIconFromFile(Path.Combine(basePath, "active_orange_green.ico"), iconActive_orange_green);
-            iconActive_orange_yellow = LoadIconFromFile(Path.Combine(basePath, "active_orange_yellow.ico"), iconActive_orange_yellow);
-            iconActive_orange_orange = LoadIconFromFile(Path.Combine(basePath, "active_orange_orange.ico"), iconActive_orange_orange);
-            iconActive_orange_red    = LoadIconFromFile(Path.Combine(basePath, "active_orange_red.ico"), iconActive_orange_red);
-            iconActive_red_blue      = LoadIconFromFile(Path.Combine(basePath, "active_red_blue.ico"), iconActive_red_blue);
-            iconActive_red_green     = LoadIconFromFile(Path.Combine(basePath, "active_red_green.ico"), iconActive_red_green);
-            iconActive_red_yellow    = LoadIconFromFile(Path.Combine(basePath, "active_red_yellow.ico"), iconActive_red_yellow);
-            iconActive_red_orange    = LoadIconFromFile(Path.Combine(basePath, "active_red_orange.ico"), iconActive_red_orange);
-            iconActive_red_red       = LoadIconFromFile(Path.Combine(basePath, "active_red_red.ico"), iconActive_red_red);
+            for (int dl = 0; dl < 5; dl++)
+            {
+                for (int ul = 0; ul < 5; ul++)
+                {
+                    string name = $"active_{colorNames[dl]}_{colorNames[ul]}.ico";
+                    iconsActive[dl, ul] = LoadIconFromFile(Path.Combine(basePath, name), iconsActive[dl, ul]);
+                }
+            }
 
-            iconInactive             = LoadIconFromFile(Path.Combine(basePath, "inactive.ico"), iconInactive);
+            for (int i = 0; i < 5; i++)
+            {
+                iconsSend[i]    = LoadIconFromFile(Path.Combine(basePath, $"send_{colorNames[i]}.ico"),    iconsSend[i]);
+                iconsReceive[i] = LoadIconFromFile(Path.Combine(basePath, $"receive_{colorNames[i]}.ico"), iconsReceive[i]);
+            }
 
-            iconSend_blue            = LoadIconFromFile(Path.Combine(basePath, "send_blue.ico"), iconSend_blue);
-            iconSend_green           = LoadIconFromFile(Path.Combine(basePath, "send_green.ico"), iconSend_green);
-            iconSend_yellow          = LoadIconFromFile(Path.Combine(basePath, "send_yellow.ico"), iconSend_yellow);
-            iconSend_orange          = LoadIconFromFile(Path.Combine(basePath, "send_orange.ico"), iconSend_orange);
-            iconSend_red             = LoadIconFromFile(Path.Combine(basePath, "send_red.ico"), iconSend_red);
+            iconInactive  = LoadIconFromFile(Path.Combine(basePath, "inactive.ico"), iconInactive);
 
-            iconReceive_blue         = LoadIconFromFile(Path.Combine(basePath, "receive_blue.ico"), iconReceive_blue);
-            iconReceive_green        = LoadIconFromFile(Path.Combine(basePath, "receive_green.ico"), iconReceive_green);
-            iconReceive_yellow       = LoadIconFromFile(Path.Combine(basePath, "receive_yellow.ico"), iconReceive_yellow);
-            iconReceive_orange       = LoadIconFromFile(Path.Combine(basePath, "receive_orange.ico"), iconReceive_orange);
-            iconReceive_red          = LoadIconFromFile(Path.Combine(basePath, "receive_red.ico"), iconReceive_red);
-
-            iconCircle_green         = LoadIconFromFile(Path.Combine(basePath, "circle_green.ico" ), iconCircle_green);
-            iconCircle_red           = LoadIconFromFile(Path.Combine(basePath, "circle_red.ico"   ), iconCircle_red);
-            iconCircle_grey          = LoadIconFromFile(Path.Combine(basePath, "circle_grey.ico"  ), iconCircle_grey);
-            iconCircle_orange        = LoadIconFromFile(Path.Combine(basePath, "circle_orange.ico"), iconCircle_orange);
+            iconCircle_green  = LoadIconFromFile(Path.Combine(basePath, "circle_green.ico" ), iconCircle_green);
+            iconCircle_red    = LoadIconFromFile(Path.Combine(basePath, "circle_red.ico"   ), iconCircle_red);
+            iconCircle_grey   = LoadIconFromFile(Path.Combine(basePath, "circle_grey.ico"  ), iconCircle_grey);
+            iconCircle_orange = LoadIconFromFile(Path.Combine(basePath, "circle_orange.ico"), iconCircle_orange);
         }
 
         //occurs when an adapter IP changed.
@@ -1610,183 +1550,28 @@ namespace GabNetStats
                     if (hasDownload && hasUpload)
                     {
                         nCounter = 0;
-
                         if (customBandwidth)
                         {
-                            if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl4)
-                            {
-                                this.SetActivityIcon(iconActive_red_red);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl3)
-                            {
-                                this.SetActivityIcon(iconActive_orange_red);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl2)
-                            {
-                                this.SetActivityIcon(iconActive_yellow_red);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission >= bandwidthUploadLvl1)
-                            {
-                                this.SetActivityIcon(iconActive_green_red);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl4 && rawSpeedEmission < bandwidthUploadLvl1)
-                            {
-                                this.SetActivityIcon(iconActive_blue_red);
-                            }
-
-                            else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl4)
-                            {
-                                this.SetActivityIcon(iconActive_red_orange);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl3)
-                            {
-                                this.SetActivityIcon(iconActive_orange_orange);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl2)
-                            {
-                                this.SetActivityIcon(iconActive_yellow_orange);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission >= bandwidthUploadLvl1)
-                            {
-                                this.SetActivityIcon(iconActive_green_orange);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl3 && rawSpeedEmission < bandwidthUploadLvl1)
-                            {
-                                this.SetActivityIcon(iconActive_blue_orange);
-                            }
-
-                            else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl4)
-                            {
-                                this.SetActivityIcon(iconActive_red_yellow);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl3)
-                            {
-                                this.SetActivityIcon(iconActive_orange_yellow);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl2)
-                            {
-                                this.SetActivityIcon(iconActive_yellow_yellow);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission >= bandwidthUploadLvl1)
-                            {
-                                this.SetActivityIcon(iconActive_green_yellow);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl2 && rawSpeedEmission < bandwidthUploadLvl1)
-                            {
-                                this.SetActivityIcon(iconActive_blue_yellow);
-                            }
-
-                            else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl4)
-                            {
-                                this.SetActivityIcon(iconActive_red_green);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl3)
-                            {
-                                this.SetActivityIcon(iconActive_orange_green);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl2)
-                            {
-                                this.SetActivityIcon(iconActive_yellow_green);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl1)
-                            {
-                                this.SetActivityIcon(iconActive_green_green);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl1 && rawSpeedEmission < bandwidthUploadLvl1)
-                            {
-                                this.SetActivityIcon(iconActive_blue_green);
-                            }
-
-                            else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl4)
-                            {
-                                this.SetActivityIcon(iconActive_red_blue);
-                            }
-                            else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl3)
-                            {
-                                this.SetActivityIcon(iconActive_orange_blue);
-                            }
-                            else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl2)
-                            {
-                                this.SetActivityIcon(iconActive_yellow_blue);
-                            }
-                            else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission >= bandwidthUploadLvl1)
-                            {
-                                this.SetActivityIcon(iconActive_green_blue);
-                            }
-                            else if (rawSpeedReception < bandwidthDownloadLvl1 && rawSpeedEmission < bandwidthUploadLvl1)
-                            {
-                                this.SetActivityIcon(iconActive_blue_blue);
-                            }
+                            int dl = GetSpeedLevel(rawSpeedReception, bandwidthDownloadLvl1, bandwidthDownloadLvl2, bandwidthDownloadLvl3, bandwidthDownloadLvl4);
+                            int ul = GetSpeedLevel(rawSpeedEmission,  bandwidthUploadLvl1,   bandwidthUploadLvl2,  bandwidthUploadLvl3,  bandwidthUploadLvl4);
+                            this.SetActivityIcon(iconsActive[dl, ul]);
                         }
                         else
                         {
-                            this.SetActivityIcon(iconActive_blue_blue);
+                            this.SetActivityIcon(iconsActive[0, 0]);
                         }
-
                     }
                     else if (hasDownload && !hasUpload)
                     {
                         nCounter = 0;
-
-                        if (customBandwidth)
-                        {
-                            if (rawSpeedReception >= bandwidthDownloadLvl4)
-                            {
-                                this.SetActivityIcon(iconReceive_red);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl3)
-                            {
-                                this.SetActivityIcon(iconReceive_orange);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl2)
-                            {
-                                this.SetActivityIcon(iconReceive_yellow);
-                            }
-                            else if (rawSpeedReception >= bandwidthDownloadLvl1)
-                            {
-                                this.SetActivityIcon(iconReceive_green);
-                            }
-                            else if (rawSpeedReception < bandwidthDownloadLvl1)
-                            {
-                                this.SetActivityIcon(iconReceive_blue);
-                            }
-                        }
-                        else
-                        {
-                            this.SetActivityIcon(iconReceive_blue);
-                        }
+                        int dl = customBandwidth ? GetSpeedLevel(rawSpeedReception, bandwidthDownloadLvl1, bandwidthDownloadLvl2, bandwidthDownloadLvl3, bandwidthDownloadLvl4) : 0;
+                        this.SetActivityIcon(iconsReceive[dl]);
                     }
                     else if (!hasDownload && hasUpload)
                     {
                         nCounter = 0;
-
-                        if (customBandwidth)
-                        {
-                            if (rawSpeedEmission >= bandwidthUploadLvl4)
-                            {
-                                this.SetActivityIcon(iconSend_red);
-                            }
-                            else if (rawSpeedEmission >= bandwidthUploadLvl3)
-                            {
-                                this.SetActivityIcon(iconSend_orange);
-                            }
-                            else if (rawSpeedEmission >= bandwidthUploadLvl2)
-                            {
-                                this.SetActivityIcon(iconSend_yellow);
-                            }
-                            else if (rawSpeedEmission >= bandwidthUploadLvl1)
-                            {
-                                this.SetActivityIcon(iconSend_green);
-                            }
-                            else if (rawSpeedEmission < bandwidthUploadLvl1)
-                            {
-                                this.SetActivityIcon(iconSend_blue);
-                            }
-                        }
-                        else
-                        {
-                            this.SetActivityIcon(iconSend_blue);
-                        }
+                        int ul = customBandwidth ? GetSpeedLevel(rawSpeedEmission, bandwidthUploadLvl1, bandwidthUploadLvl2, bandwidthUploadLvl3, bandwidthUploadLvl4) : 0;
+                        this.SetActivityIcon(iconsSend[ul]);
                     }
                     else
                     {
