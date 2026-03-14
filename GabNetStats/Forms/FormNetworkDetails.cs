@@ -970,7 +970,6 @@ namespace GabNetStats
 
         private void tabStats_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboInterfaces.Enabled = tabStats.SelectedTab == tabPageNetworkInterfaces;
             groupBoxGlobalVersion.Enabled =
                 tabStats.SelectedTab == tabPageGlobal ||
                 tabStats.SelectedTab == tabPageNetworkInterfaces ||
