@@ -12,6 +12,14 @@ namespace GabNetStats
     internal class NetworkStatsWorker
     {
         //
+        //  Constants
+        //
+        private const int THREAD_JOIN_TIMEOUT_MS      = 1000;
+        private const int PING_TIMEOUT_MS             = 500;
+        private const int BALLOON_TIP_DURATION_MS     = 1000;
+        private const int INACTIVITY_COUNTER_THRESHOLD = 5;
+
+        //
         //  Dependencies
         //
         private readonly TrayIconManager         _trayIconManager;
@@ -371,7 +379,7 @@ namespace GabNetStats
 
             try
             {
-                thread.Join(1000);
+                thread.Join(THREAD_JOIN_TIMEOUT_MS);
             }
             catch (ThreadStateException) { }
             catch (ThreadInterruptedException) { }
@@ -410,7 +418,7 @@ namespace GabNetStats
             PingReply reply = null;
             Icon previous = null;
             string pingHost = Settings.Default.AutoPingHost;
-            int pingTimeout = 500;
+            int pingTimeout = PING_TIMEOUT_MS;
 
             try
             {
@@ -439,7 +447,7 @@ namespace GabNetStats
 
                     if (Settings.Default.AutoPingNotif && !previous.Equals(_notifyIconPing.Icon))
                     {
-                        _notifyIconPing.ShowBalloonTip(1000);
+                        _notifyIconPing.ShowBalloonTip(BALLOON_TIP_DURATION_MS);
                     }
 
                     try
@@ -658,7 +666,7 @@ namespace GabNetStats
                         nCounter++; //the counter adds a small persistance effect
                     }
 
-                    if (nCounter == 5)
+                    if (nCounter == INACTIVITY_COUNTER_THRESHOLD)
                     {
                         nCounter                     = 0;
                         _trayIconManager.SetActivityIcon(_trayIconManager.iconInactive);

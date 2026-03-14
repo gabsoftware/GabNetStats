@@ -18,6 +18,24 @@ namespace GabNetStats
 {
     public partial class FormMain : Form
     {
+        //
+        //  Constants
+        //
+        private const int    WM_QUERYENDSESSION                  = 0x0011;
+        private const int    WM_ENDSESSION                       = 0x0016;
+        private const string EXPLORER_EXE                        = "explorer.exe";
+        private const string CLSID_MY_COMPUTER                   = "20D04FE0-3AEA-1069-A2D8-08002B30309D";
+        private const string CLSID_CONTROL_PANEL                 = "21EC2020-3AEA-1069-A2DD-08002B30309D";
+        private const string CLSID_NETWORK_CONNECTIONS           = "7007ACC7-3202-11D1-AAD2-00805FC1270E";
+        private const string CLSID_CONTROL_PANEL_ALL_ITEMS       = "26EE0668-A00A-44D7-9371-BEB064C98683";
+        private const string CLSID_NETWORK_AND_SHARING_CENTER    = "8E908FC9-BECC-40F6-915B-F4CA0E70D03D";
+        private const string CLSID_WINDOWS_FIREWALL              = "4026492F-2F69-46B8-B9BF-5654FC07E423";
+        private const string CLSID_HOMEGROUP                     = "67CA7650-96E6-4FDD-BB43-A8E774F73A57";
+        private const string CLSID_MANAGE_WIRELESS_NETWORKS      = "1FA9085F-25A2-489B-85D4-86326EEDCD87";
+        private const string CLSID_NETWORK_PLACES                = "208D2C60-3AEA-1069-A2D7-08002B30309D";
+        private const string CLSID_NETWORK                       = "F02C1A0D-BE21-4350-88B0-7367FC96EF3C";
+        private const string CLSID_NETWORK_MAP                   = "E7DE9B1A-7533-4556-9484-B26FB486475E";
+
         private TrayIconManager trayIconManager;
         internal NetworkInterfaceManager nicManager;
         private NetworkStatsWorker statsWorker;
@@ -33,9 +51,6 @@ namespace GabNetStats
 
         protected override void WndProc(ref Message m)
         {
-            const int WM_QUERYENDSESSION = 0x0011;
-            const int WM_ENDSESSION = 0x0016;
-
             if (m.Msg == WM_QUERYENDSESSION || m.Msg == WM_ENDSESSION)
             {
                 Program.IsWindowsShuttingDown = true;
@@ -182,8 +197,8 @@ namespace GabNetStats
             try
             {
                 Process.Start(
-                    "explorer.exe",
-                    "/N,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\::{21EC2020-3AEA-1069-A2DD-08002B30309D}\\::{7007ACC7-3202-11D1-AAD2-00805FC1270E}\\::" + nic.Id
+                    EXPLORER_EXE,
+                    "/N,::{"  + CLSID_MY_COMPUTER         + "}\\::{"  + CLSID_CONTROL_PANEL        + "}\\::{"  + CLSID_NETWORK_CONNECTIONS + "}\\::" + nic.Id
                 );
             }
             catch (Exception ex)
@@ -210,8 +225,8 @@ namespace GabNetStats
             try
             {
                 Process.Start(
-                    "explorer.exe",
-                    "/N,::{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\::{21EC2020-3AEA-1069-A2DD-08002B30309D}\\::{7007ACC7-3202-11D1-AAD2-00805FC1270E}"
+                    EXPLORER_EXE,
+                    "/N,::{"  + CLSID_MY_COMPUTER         + "}\\::{"  + CLSID_CONTROL_PANEL        + "}\\::{"  + CLSID_NETWORK_CONNECTIONS + "}"
                 );
             }
             catch (Exception ex)
@@ -226,8 +241,8 @@ namespace GabNetStats
             try
             {
                 Process.Start(
-                    "explorer.exe",
-                    "/N,::{26EE0668-A00A-44D7-9371-BEB064C98683}\\0\\::{8E908FC9-BECC-40F6-915B-F4CA0E70D03D}"
+                    EXPLORER_EXE,
+                    "/N,::{"  + CLSID_CONTROL_PANEL_ALL_ITEMS  + "}\\0\\::{" + CLSID_NETWORK_AND_SHARING_CENTER + "}"
                 );
             }
             catch (Exception ex)
@@ -242,8 +257,8 @@ namespace GabNetStats
             try
             {
                 Process.Start(
-                    "explorer.exe",
-                    "/N,::{26EE0668-A00A-44D7-9371-BEB064C98683}\\0\\::{4026492F-2F69-46B8-B9BF-5654FC07E423}"
+                    EXPLORER_EXE,
+                    "/N,::{"  + CLSID_CONTROL_PANEL_ALL_ITEMS  + "}\\0\\::{" + CLSID_WINDOWS_FIREWALL + "}"
                 );
             }
             catch (Exception ex)
@@ -257,7 +272,7 @@ namespace GabNetStats
             //opens the Manage wireless networks applet
             try
             {
-                Process.Start("Shell:::{1FA9085F-25A2-489B-85D4-86326EEDCD87}");
+                Process.Start("Shell:::{"  + CLSID_MANAGE_WIRELESS_NETWORKS  + "}");
             }
             catch (Exception ex)
             {
@@ -271,8 +286,8 @@ namespace GabNetStats
             try
             {
                 Process.Start(
-                    "explorer.exe",
-                    "/N,::{26EE0668-A00A-44D7-9371-BEB064C98683}\\0\\::{67CA7650-96E6-4FDD-BB43-A8E774F73A57}"
+                    EXPLORER_EXE,
+                    "/N,::{"  + CLSID_CONTROL_PANEL_ALL_ITEMS  + "}\\0\\::{" + CLSID_HOMEGROUP + "}"
                 );
             }
             catch (Exception ex)
@@ -286,7 +301,7 @@ namespace GabNetStats
             //opens the Domain/workgroup applet
             try
             {
-                Process.Start("Shell:::{208D2C60-3AEA-1069-A2D7-08002B30309D}");
+                Process.Start("Shell:::{"  + CLSID_NETWORK_PLACES  + "}");
             }
             catch (Exception ex)
             {
@@ -300,7 +315,7 @@ namespace GabNetStats
             //opens the network applet
             try
             {
-                Process.Start("Shell:::{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}");
+                Process.Start("Shell:::{"  + CLSID_NETWORK  + "}");
             }
             catch (Exception ex)
             {
@@ -313,7 +328,7 @@ namespace GabNetStats
             //opens the Domain/workgroup applet
             try
             {
-                Process.Start("Shell:::{E7DE9B1A-7533-4556-9484-B26FB486475E}");
+                Process.Start("Shell:::{"  + CLSID_NETWORK_MAP  + "}");
             }
             catch (Exception ex)
             {

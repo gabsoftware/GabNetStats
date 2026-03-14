@@ -10,6 +10,11 @@ namespace GabNetStats
 {
     public partial class FormStatsOverlay : Form
     {
+        //
+        //  Constants
+        //
+        private const double BYTES_PER_KIBIBYTE      = 1024D;
+        private const int    TRACKER_PIXELS_PER_SAMPLE = 10;
 
         private static string str_RawReceptionSpeed = Res.str_RawReceptionSpeed;
         private static string str_RawEmissionSpeed = Res.str_RawEmissionSpeed;
@@ -60,8 +65,8 @@ namespace GabNetStats
 
 
             //gabtracker4
-            gabTracker1.Feeds[0].Value = Math.Round(NetworkStatsWorker.lAvgSpeedReception / 1024D, 2);
-            gabTracker1.Feeds[1].Value = Math.Round(NetworkStatsWorker.lAvgSpeedEmission / 1024D, 2);
+            gabTracker1.Feeds[0].Value = Math.Round(NetworkStatsWorker.lAvgSpeedReception / BYTES_PER_KIBIBYTE, 2);
+            gabTracker1.Feeds[1].Value = Math.Round(NetworkStatsWorker.lAvgSpeedEmission / BYTES_PER_KIBIBYTE, 2);
 
             fSpeedReception = SpeedUtils.computeSpeed(NetworkStatsWorker.rawSpeedReception, ref sSpeedReception, 1);
             fSpeedEmission  = SpeedUtils.computeSpeed(NetworkStatsWorker.rawSpeedEmission , ref sSpeedEmission , 1);
@@ -253,7 +258,7 @@ namespace GabNetStats
                 return;
             }
 
-            int desiredCapacity = Math.Max(1, this.Width / 10 + 1);
+            int desiredCapacity = Math.Max(1, this.Width / TRACKER_PIXELS_PER_SAMPLE + 1);
             gabTracker1.MaxDataInMemory = desiredCapacity;
         }
 

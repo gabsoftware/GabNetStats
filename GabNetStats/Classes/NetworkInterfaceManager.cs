@@ -11,6 +11,13 @@ namespace GabNetStats
     internal class NetworkInterfaceManager
     {
         //
+        //  Constants
+        //
+        private const int    NIC_REFRESH_INTERVAL_MS  = 10000;
+        private const string INTERFACE_LIST_UNSET      = "TOSET";
+        private const string MAC_LIST_SEPARATOR        = ";";
+
+        //
         //  Static state (lock-free, shared across threads)
         //
         internal static TrayIconManager.eState connectionStatus;
@@ -41,7 +48,7 @@ namespace GabNetStats
         internal IPGlobalStatistics ipv4stat;
         internal IPGlobalStatistics ipv6stat;
         internal int nbNIC       = 0;
-        internal int nNICRefresh = 10000; //time interval for refreshing the NIC list (10s by default)
+        internal int nNICRefresh = NIC_REFRESH_INTERVAL_MS; //time interval for refreshing the NIC list (10s by default)
 
         //
         //  Nested type
@@ -67,9 +74,9 @@ namespace GabNetStats
             HashSet<string> newSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             string enabledList = Settings.Default.EnabledInterfaceMACList;
 
-            if (!String.IsNullOrWhiteSpace(enabledList) && !String.Equals(enabledList, "TOSET", StringComparison.OrdinalIgnoreCase))
+            if (!String.IsNullOrWhiteSpace(enabledList) && !String.Equals(enabledList, INTERFACE_LIST_UNSET, StringComparison.OrdinalIgnoreCase))
             {
-                string[] entries = enabledList.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] entries = enabledList.Split(new[] { MAC_LIST_SEPARATOR[0] }, StringSplitOptions.RemoveEmptyEntries);
                 foreach (string entry in entries)
                 {
                     newSet.Add(entry);
@@ -214,7 +221,7 @@ namespace GabNetStats
             catch (ArgumentNullException) { }
             if (!contains)
             {
-                Settings.Default.KnownInterfaceMACList += (Settings.Default.KnownInterfaceMACList == string.Empty ? String.Empty : ";") + mac;
+                Settings.Default.KnownInterfaceMACList += (Settings.Default.KnownInterfaceMACList == string.Empty ? String.Empty : MAC_LIST_SEPARATOR) + mac;
                 if (saveSettings)
                 {
                     Settings.Default.Save();
@@ -246,7 +253,7 @@ namespace GabNetStats
                 return false;
             }
 
-            if (tmp == "TOSET")
+            if (tmp == INTERFACE_LIST_UNSET)
             {
                 tmp = String.Empty;
             }
@@ -258,8 +265,8 @@ namespace GabNetStats
                 {
                     try
                     {
-                        tmp = tmp.Replace(";" + mac, ""); //mac is second to last value
-                        tmp = tmp.Replace(mac + ";", ""); //mac is first value
+                        tmp = tmp.Replace(MAC_LIST_SEPARATOR + mac, ""); //mac is second to last value
+                        tmp = tmp.Replace(mac + MAC_LIST_SEPARATOR, ""); //mac is first value
                         tmp = tmp.Replace(mac, ""); //mac was the only value
                         modified = true;
                     }
@@ -271,7 +278,7 @@ namespace GabNetStats
             {
                 if (enable)
                 {
-                    tmp      = tmp + (empty ? String.Empty : ";") + mac;
+                    tmp      = tmp + (empty ? String.Empty : MAC_LIST_SEPARATOR) + mac;
                     modified = true;
                 }
             }
@@ -327,7 +334,7 @@ namespace GabNetStats
         {
             int    nUp             = 0;
             string ip              = "";
-            bool   isFirstTime     = Settings.Default.EnabledInterfaceMACList == "TOSET";
+            bool   isFirstTime     = Settings.Default.EnabledInterfaceMACList == INTERFACE_LIST_UNSET;
             string mac             = string.Empty;
             bool   shouldSaveSettings = false;
             var    result          = new List<NicDisplayInfo>();

@@ -9,6 +9,12 @@ namespace GabNetStats
 {
     internal class TrayIconManager
     {
+        //
+        //  Constants
+        //
+        private const string DEFAULT_ICON_SET   = "xp";
+        private const string ICONS_SUBDIRECTORY = "icons";
+
         private readonly NotifyIcon _notifyIconActivity;
         private readonly NotifyIcon _notifyIconPing;
 
@@ -45,7 +51,7 @@ namespace GabNetStats
         internal Icon iconCircle_red    = Properties.Resources.circle_red;
         internal Icon iconCircle_grey   = Properties.Resources.circle_grey;
         internal Icon iconCircle_orange = Properties.Resources.circle_orange;
-        private string appliedIconSet = "xp";
+        private string appliedIconSet = DEFAULT_ICON_SET;
 
         internal long bandwidthDownloadLvl1;
         internal long bandwidthDownloadLvl2;
@@ -69,7 +75,7 @@ namespace GabNetStats
             string desiredSet = Settings.Default.IconSet;
             if (String.IsNullOrEmpty(desiredSet))
             {
-                desiredSet = "xp";
+                desiredSet = DEFAULT_ICON_SET;
             }
 
             if (String.Compare(desiredSet, appliedIconSet, StringComparison.OrdinalIgnoreCase) == 0)
@@ -77,15 +83,15 @@ namespace GabNetStats
                 return;
             }
 
-            if (String.Compare(desiredSet, "xp", StringComparison.OrdinalIgnoreCase) == 0)
+            if (String.Compare(desiredSet, DEFAULT_ICON_SET, StringComparison.OrdinalIgnoreCase) == 0)
             {
                 LoadDefaultIconSet();
-                appliedIconSet = "xp";
+                appliedIconSet = DEFAULT_ICON_SET;
                 currentActivityIcon = _notifyIconActivity.Icon;
                 return;
             }
 
-            string path = Path.Combine(Application.StartupPath, "icons", desiredSet);
+            string path = Path.Combine(Application.StartupPath, ICONS_SUBDIRECTORY, desiredSet);
             if (!Directory.Exists(path))
             {
                 return;

@@ -21,6 +21,11 @@ namespace GabNetStats
 {
     public partial class FormAbout : Form
     {
+        //
+        //  Constants
+        //
+        private const int ERROR_NO_DEFAULT_BROWSER = -2147467259;
+
         public FormAbout()
         {
             InitializeComponent();
@@ -34,7 +39,7 @@ namespace GabNetStats
             }
             catch (System.ComponentModel.Win32Exception noBrowser)
             {
-                if (noBrowser.ErrorCode == -2147467259) MessageBox.Show(noBrowser.Message);
+                if (noBrowser.ErrorCode == ERROR_NO_DEFAULT_BROWSER) MessageBox.Show(noBrowser.Message);
             }
             catch (System.Exception other)
             {

@@ -4,6 +4,13 @@ namespace GabNetStats
 {
     internal static class SpeedUtils
     {
+        //
+        //  Constants
+        //
+        private const long KBIT_THRESHOLD  = 1000L;
+        private const long MBIT_THRESHOLD  = 1000000L;
+        private const long GBIT_THRESHOLD  = 1000000000L;
+
         internal enum eBandwithUnit : int
         {
             bit  = 8,
@@ -47,20 +54,20 @@ namespace GabNetStats
             switch (typeunit)
             {
                 case 1:
-                    if (rawSpeed >= 1073741824) //1073741824 = 2 ^ 30
+                    if (rawSpeed >= (long)eBandwidthMultiplier.G) //1073741824 = 2 ^ 30
                     {
                         speedUnit = SpeedUnitsByte.GiB;
-                        res = System.Math.Round(rawSpeed / (double)1073741824, 2);
+                        res = System.Math.Round(rawSpeed / (double)eBandwidthMultiplier.G, 2);
                     }
-                    else if (rawSpeed >= 1048576) //1048576 = 2 ^ 20
+                    else if (rawSpeed >= (long)eBandwidthMultiplier.M) //1048576 = 2 ^ 20
                     {
                         speedUnit = SpeedUnitsByte.MiB;
-                        res = System.Math.Round(rawSpeed / (double)1048576, 2);
+                        res = System.Math.Round(rawSpeed / (double)eBandwidthMultiplier.M, 2);
                     }
-                    else if (rawSpeed >= 1024) //1024 = 2 ^ 10
+                    else if (rawSpeed >= (long)eBandwidthMultiplier.K) //1024 = 2 ^ 10
                     {
                         speedUnit = SpeedUnitsByte.KiB;
-                        res = System.Math.Round(rawSpeed / (double)1024, 2);
+                        res = System.Math.Round(rawSpeed / (double)eBandwidthMultiplier.K, 2);
                     }
                     else
                     {
@@ -70,20 +77,20 @@ namespace GabNetStats
                     break;
 
                 case 2:
-                    if (rawSpeed >= 1000000000)
+                    if (rawSpeed >= GBIT_THRESHOLD)
                     {
                         speedUnit = SpeedUnitsBit.Gbit;
-                        res = System.Math.Round(rawSpeed / (double)1000000000, 2);
+                        res = System.Math.Round(rawSpeed / (double)GBIT_THRESHOLD, 2);
                     }
-                    else if (rawSpeed >= 1000000)
+                    else if (rawSpeed >= MBIT_THRESHOLD)
                     {
                         speedUnit = SpeedUnitsBit.Mbit;
-                        res = System.Math.Round(rawSpeed / (double)1000000, 2);
+                        res = System.Math.Round(rawSpeed / (double)MBIT_THRESHOLD, 2);
                     }
-                    else if (rawSpeed >= 1000)
+                    else if (rawSpeed >= KBIT_THRESHOLD)
                     {
                         speedUnit = SpeedUnitsBit.Kbit;
-                        res = System.Math.Round(rawSpeed / (double)1000, 2);
+                        res = System.Math.Round(rawSpeed / (double)KBIT_THRESHOLD, 2);
                     }
                     else
                     {

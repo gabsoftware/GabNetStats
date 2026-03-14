@@ -13,8 +13,8 @@ namespace GabNetStats
     public partial class FormSettings : Form
     {
         private int nDuration = NetworkStatsWorker.BlinkDurationMinimum;
-        private long nDownload = 12500000;
-        private long nUpload = 12500000;
+        private long nDownload = SettingsManager.DEFAULT_BANDWIDTH_BPS;
+        private long nUpload = SettingsManager.DEFAULT_BANDWIDTH_BPS;
         
         /*private int _nStartUp = 0;
         protected int nStartup
@@ -176,7 +176,7 @@ namespace GabNetStats
                     nDownload = Convert.ToInt32(strtmp, CultureInfo.InvariantCulture);
                     if (nDownload <= 0)
                     {
-                        nDownload = 12500000;
+                        nDownload = SettingsManager.DEFAULT_BANDWIDTH_BPS;
                     }
 
                     Settings.Default.BandwidthDownload = nDownload;
@@ -195,7 +195,7 @@ namespace GabNetStats
                     nUpload = Convert.ToInt32(strtmp, CultureInfo.InvariantCulture);
                     if (nUpload <= 0)
                     {
-                        nUpload = 12500000;
+                        nUpload = SettingsManager.DEFAULT_BANDWIDTH_BPS;
                     }
 
                     Settings.Default.BandwidthUpload = nUpload;
