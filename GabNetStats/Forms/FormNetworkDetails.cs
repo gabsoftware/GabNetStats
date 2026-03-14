@@ -1098,9 +1098,9 @@ namespace GabNetStats
 
         private void CopyToClipboard(DataGridView dgv)
         {
-            if (dataGridViewTCPConnections.GetCellCount(DataGridViewElementStates.Selected) > 0)
+            if (dgv.GetCellCount(DataGridViewElementStates.Selected) > 0)
             {
-                Clipboard.SetDataObject(dataGridViewTCPConnections.GetClipboardContent());
+                Clipboard.SetDataObject(dgv.GetClipboardContent());
             }
         }
 
