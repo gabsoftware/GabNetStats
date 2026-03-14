@@ -75,79 +75,6 @@ namespace GabNetStats
             }
         }
 
-        #region Draw Tabs
-        /*
-
-        void tabStats_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            Color foreColor;
-            TabPage tab;
-
-            tab = tabStats.TabPages[e.Index];
-            foreColor = this.tabStats.TabPages[e.Index].Enabled ? SystemColors.ControlText : SystemColors.GrayText;
-            DrawTabText(this.tabStats, e, foreColor, tab.Text);
-        }
-
-
-        /// <summary>
-        /// Draw the specified caption into a tab.
-        /// </summary>
-        public static void DrawTabText(TabControl tabControl, DrawItemEventArgs e, string caption)
-        {
-            DrawTabText(tabControl, e, SystemColors.ControlText, caption);
-        }
-
-        /// <summary>
-        /// Using the specified text colour, draw the specified caption into a tab.
-        /// </summary>
-        public static void DrawTabText(TabControl tabControl, DrawItemEventArgs e, Color foreColor, string caption)
-        {
-            DrawTabText(tabControl, e, Color.Transparent, foreColor, caption);
-        }
-
-        /// <summary>
-        /// Using the specified text and background colours, draw the specified caption into a tab.
-        /// </summary>
-        public static void DrawTabText(TabControl tabControl, DrawItemEventArgs e, Color backColor, Color foreColor, string caption)
-        {
-
-            //e.DrawBackground();
-            //return;
-
-            #region setup
-            Font tabFont;
-            SolidBrush foreBrush = new SolidBrush(foreColor);
-            Rectangle r = e.Bounds;
-            SolidBrush backBrush = new SolidBrush(backColor);
-            string tabName = tabControl.TabPages[e.Index].Text;
-            StringFormat sf = new StringFormat { Alignment = StringAlignment.Near, HotkeyPrefix = System.Drawing.Text.HotkeyPrefix.Show, Trimming = StringTrimming.None };
-            bool selected = (tabControl.SelectedIndex == e.Index);
-            #endregion
-
-            // draw
-            e.Graphics.FillRectangle(backBrush, r);
-
-            r = new Rectangle(r.X + 2 + ((selected) ? 4 : 0), r.Y + 3, r.Width - 2 - ((selected) ? 4 : 0) + 4, r.Height - 3);
-            // 0 too high 4 too wide (it's a cheat for "Summary"
-
-            tabFont = new Font(e.Font, FontStyle.Regular);
-
-            e.Graphics.DrawString(caption, tabFont, foreBrush, r, sf);
-
-            // clean up
-            sf.Dispose();
-            if (selected)
-            {
-                tabFont.Dispose();
-                backBrush.Dispose();
-            }
-            else
-            {
-                backBrush.Dispose();
-                foreBrush.Dispose();
-            }
-        }*/
-        #endregion
 
 
 
@@ -1032,21 +959,6 @@ namespace GabNetStats
                 txtReceivedPacketsWithUnknownProtocol.Text = ipgs.ReceivedPacketsWithUnknownProtocol.ToString("n", nfi);
             }
         }
-
-        /*private void ReEnableControlsInTabPage(TabPage tab, bool enable = true)
-        {
-            foreach (Control ctrl in tab.Controls)
-            {
-                ctrl.Enabled = enable;
-                if (ctrl.GetType().Name == "GroupBox")
-                {
-                    foreach (Control child in ((GroupBox)ctrl).Controls)
-                    {
-                        child.Enabled = enable;
-                    }
-                }
-            }
-        }*/
 
         private void radioButtonIPv4_CheckedChanged(object sender, EventArgs e)
         {
