@@ -27,61 +27,14 @@ namespace GabNetStats
 
         private bool customBandwidth     = false;
 
-        internal enum eState
-        {
-            disconnected = 0,
-            limited      = 1,
-            up           = 2
-        }
+        static TrayIconManager.eState connectionStatus;
 
-        internal enum eBandwithUnit : int
-        {
-            bit  = 8,
-            Byte = 1
-        }
-        internal enum eBandwidthMultiplier : long
-        {
-            un = 1,               // 2^0
-            K  = 1024,            // 2^10
-            M  = 1048576,         // 2^20
-            G  = 1073741824,      // 2^30
-            T  = 1099511627776    // 2^40
-        }
-
-        internal static class SpeedUnitsByte
-        {
-            public static string Bytes = Res.str_Bytes;
-            public static string KiB   = Res.str_KiB;
-            public static string MiB   = Res.str_MiB;
-            public static string GiB   = Res.str_GiB;
-            public static string TiB   = Res.str_TiB;
-        }
-        internal static class SpeedUnitsBit
-        {
-            public static string bit  = Res.str_bit;
-            public static string Kbit = Res.str_Kbit;
-            public static string Mbit = Res.str_Mbit;
-            public static string Gbit = Res.str_Gbit;
-            public static string Tbit = Res.str_Tbit;
-        }
-
-
-        static eState connectionStatus;
+        private TrayIconManager trayIconManager;
 
         internal const int BlinkDurationMinimum = 50;
         static int nDuration   = BlinkDurationMinimum;
         static int nNICRefresh = 10000; //time interval for refreshing the NIC list (10s by default)
         static int nbNIC       = 0;
-        static long bandwidthDownloadLvl1;
-        static long bandwidthDownloadLvl2;
-        static long bandwidthDownloadLvl3;
-        static long bandwidthDownloadLvl4;
-        static long bandwidthDownloadLvl5;
-        static long bandwidthUploadLvl1;
-        static long bandwidthUploadLvl2;
-        static long bandwidthUploadLvl3;
-        static long bandwidthUploadLvl4;
-        static long bandwidthUploadLvl5;
         private const int avgSpeedNbItems = 50;
         private static readonly object speedSamplesLock = new object();
         private static readonly long[] receptionSamples = new long[avgSpeedNbItems];
@@ -125,33 +78,6 @@ namespace GabNetStats
             "filter"
         };
 
-        // 0=blue, 1=green, 2=yellow, 3=orange, 4=red
-        private static readonly string[] colorNames = { "blue", "green", "yellow", "orange", "red" };
-
-        // iconsActive[downloadLevel, uploadLevel]
-        static Icon[,] iconsActive = {
-            { Properties.Resources.active_blue_blue,   Properties.Resources.active_blue_green,   Properties.Resources.active_blue_yellow,   Properties.Resources.active_blue_orange,   Properties.Resources.active_blue_red   },
-            { Properties.Resources.active_green_blue,  Properties.Resources.active_green_green,  Properties.Resources.active_green_yellow,  Properties.Resources.active_green_orange,  Properties.Resources.active_green_red  },
-            { Properties.Resources.active_yellow_blue, Properties.Resources.active_yellow_green, Properties.Resources.active_yellow_yellow, Properties.Resources.active_yellow_orange, Properties.Resources.active_yellow_red },
-            { Properties.Resources.active_orange_blue, Properties.Resources.active_orange_green, Properties.Resources.active_orange_yellow, Properties.Resources.active_orange_orange, Properties.Resources.active_orange_red },
-            { Properties.Resources.active_red_blue,    Properties.Resources.active_red_green,    Properties.Resources.active_red_yellow,    Properties.Resources.active_red_orange,    Properties.Resources.active_red_red    },
-        };
-
-        static Icon iconInactive        = Properties.Resources.inactive;
-        static Icon currentActivityIcon = Properties.Resources.inactive;
-
-        static Icon[] iconsSend    = { Properties.Resources.send_blue,    Properties.Resources.send_green,    Properties.Resources.send_yellow,    Properties.Resources.send_orange,    Properties.Resources.send_red    };
-        static Icon[] iconsReceive = { Properties.Resources.receive_blue, Properties.Resources.receive_green, Properties.Resources.receive_yellow, Properties.Resources.receive_orange, Properties.Resources.receive_red };
-
-        static Icon iconDisconnected         = Properties.Resources.netshell_195;
-        static Icon iconLimited              = Properties.Resources.netshell_IDI_CFI_TRAY_WIRED_WARNING;
-
-        static Icon iconCircle_green  = Properties.Resources.circle_green;
-        static Icon iconCircle_red    = Properties.Resources.circle_red;
-        static Icon iconCircle_grey   = Properties.Resources.circle_grey;
-        static Icon iconCircle_orange = Properties.Resources.circle_orange;
-        private static string appliedIconSet = "xp";
-
         static frmBalloon fBal;
 
         private volatile bool _nicMenuOpen;
@@ -178,117 +104,6 @@ namespace GabNetStats
             base.WndProc(ref m);
         }
 
-        private void applyIconSet()
-        {
-            string desiredSet = Settings.Default.IconSet;
-            if (String.IsNullOrEmpty(desiredSet))
-            {
-                desiredSet = "xp";
-            }
-
-            if (String.Compare(desiredSet, appliedIconSet, StringComparison.OrdinalIgnoreCase) == 0)
-            {
-                return;
-            }
-
-            if (String.Compare(desiredSet, "xp", StringComparison.OrdinalIgnoreCase) == 0)
-            {
-                LoadDefaultIconSet();
-                appliedIconSet = "xp";
-                currentActivityIcon = this.notifyIconActivity.Icon;
-                return;
-            }
-
-            string path = Path.Combine(Application.StartupPath, "icons", desiredSet);
-            if (!Directory.Exists(path))
-            {
-                return;
-            }
-
-            LoadIconSetFromDirectory(path);
-            appliedIconSet = desiredSet;
-            currentActivityIcon = this.notifyIconActivity.Icon;
-        }
-
-        private static int GetSpeedLevel(long speed, long lvl1, long lvl2, long lvl3, long lvl4)
-        {
-            if (speed >= lvl4) return 4;
-            if (speed >= lvl3) return 3;
-            if (speed >= lvl2) return 2;
-            if (speed >= lvl1) return 1;
-            return 0;
-        }
-
-        private static Icon LoadIconFromFile(string filePath, Icon fallback)
-        {
-            try
-            {
-                return new Icon(filePath);
-            }
-            catch (IOException)
-            {
-                return fallback;
-            }
-            catch (UnauthorizedAccessException)
-            {
-                return fallback;
-            }
-            catch (ArgumentException)
-            {
-                return fallback;
-            }
-        }
-
-        private static void LoadDefaultIconSet()
-        {
-            var r = Properties.Resources.ResourceManager;
-            for (int dl = 0; dl < 5; dl++)
-            {
-                for (int ul = 0; ul < 5; ul++)
-                {
-                    iconsActive[dl, ul] = (Icon)r.GetObject($"active_{colorNames[dl]}_{colorNames[ul]}");
-                }
-            }
-
-            for (int i = 0; i < 5; i++)
-            {
-                iconsSend[i]    = (Icon)r.GetObject($"send_{colorNames[i]}");
-                iconsReceive[i] = (Icon)r.GetObject($"receive_{colorNames[i]}");
-            }
-
-            iconInactive     = Properties.Resources.inactive;
-
-            iconCircle_green  = Properties.Resources.circle_green;
-            iconCircle_red    = Properties.Resources.circle_red;
-            iconCircle_grey   = Properties.Resources.circle_grey;
-            iconCircle_orange = Properties.Resources.circle_orange;
-        }
-
-        private static void LoadIconSetFromDirectory(string basePath)
-        {
-            for (int dl = 0; dl < 5; dl++)
-            {
-                for (int ul = 0; ul < 5; ul++)
-                {
-                    string name = $"active_{colorNames[dl]}_{colorNames[ul]}.ico";
-                    iconsActive[dl, ul] = LoadIconFromFile(Path.Combine(basePath, name), iconsActive[dl, ul]);
-                }
-            }
-
-            for (int i = 0; i < 5; i++)
-            {
-                iconsSend[i]    = LoadIconFromFile(Path.Combine(basePath, $"send_{colorNames[i]}.ico"),    iconsSend[i]);
-                iconsReceive[i] = LoadIconFromFile(Path.Combine(basePath, $"receive_{colorNames[i]}.ico"), iconsReceive[i]);
-            }
-
-            iconInactive  = LoadIconFromFile(Path.Combine(basePath, "inactive.ico"), iconInactive);
-
-            iconCircle_green  = LoadIconFromFile(Path.Combine(basePath, "circle_green.ico" ), iconCircle_green);
-            iconCircle_red    = LoadIconFromFile(Path.Combine(basePath, "circle_red.ico"   ), iconCircle_red);
-            iconCircle_grey   = LoadIconFromFile(Path.Combine(basePath, "circle_grey.ico"  ), iconCircle_grey);
-            iconCircle_orange = LoadIconFromFile(Path.Combine(basePath, "circle_orange.ico"), iconCircle_orange);
-        }
-
         //occurs when an adapter IP changed.
         void NetworkChange_NetworkAddressChanged(object sender, EventArgs e)
         {
@@ -306,10 +121,12 @@ namespace GabNetStats
 
         private void OnLoad(object sender, EventArgs e)
         {
+            trayIconManager = new TrayIconManager(this.notifyIconActivity, this.notifyIconPing);
+
             // apply icon set if necessary
             if( Settings.Default.IconSet != "xp" )
             {
-                this.applyIconSet();
+                trayIconManager.applyIconSet();
             }
 
             this.InitializeSpeedSamples();
@@ -318,27 +135,27 @@ namespace GabNetStats
 
             if (Settings.Default.BandwidthUnit != 1 && Settings.Default.BandwidthUnit != 8)
             {
-                Settings.Default.BandwidthUnit = (int)eBandwithUnit.Byte;
+                Settings.Default.BandwidthUnit = (int)TrayIconManager.eBandwithUnit.Byte;
             }
             if (Settings.Default.BandwidthDownloadMultiplier == 0)
             {
-                Settings.Default.BandwidthDownloadMultiplier = (long)eBandwidthMultiplier.un;
+                Settings.Default.BandwidthDownloadMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
             }
             if (Settings.Default.BandwidthUploadMultiplier   == 0)
             {
-                Settings.Default.BandwidthUploadMultiplier   = (long)eBandwidthMultiplier.un;
+                Settings.Default.BandwidthUploadMultiplier   = (long)TrayIconManager.eBandwidthMultiplier.un;
             }
 
-            bandwidthDownloadLvl5 = Settings.Default.BandwidthDownload * Settings.Default.BandwidthDownloadMultiplier / Settings.Default.BandwidthUnit;
-            bandwidthUploadLvl5   = Settings.Default.BandwidthUpload   * Settings.Default.BandwidthUploadMultiplier   / Settings.Default.BandwidthUnit;
-            bandwidthDownloadLvl4 = bandwidthDownloadLvl5 * 4 / 5;
-            bandwidthDownloadLvl3 = bandwidthDownloadLvl5 * 3 / 5;
-            bandwidthDownloadLvl2 = bandwidthDownloadLvl5 * 2 / 5;
-            bandwidthDownloadLvl1 = bandwidthDownloadLvl5     / 5;
-            bandwidthUploadLvl4   = bandwidthUploadLvl5   * 4 / 5;
-            bandwidthUploadLvl3   = bandwidthUploadLvl5   * 3 / 5;
-            bandwidthUploadLvl2   = bandwidthUploadLvl5   * 2 / 5;
-            bandwidthUploadLvl1   = bandwidthUploadLvl5       / 5;
+            trayIconManager.bandwidthDownloadLvl5 = Settings.Default.BandwidthDownload * Settings.Default.BandwidthDownloadMultiplier / Settings.Default.BandwidthUnit;
+            trayIconManager.bandwidthUploadLvl5   = Settings.Default.BandwidthUpload   * Settings.Default.BandwidthUploadMultiplier   / Settings.Default.BandwidthUnit;
+            trayIconManager.bandwidthDownloadLvl4 = trayIconManager.bandwidthDownloadLvl5 * 4 / 5;
+            trayIconManager.bandwidthDownloadLvl3 = trayIconManager.bandwidthDownloadLvl5 * 3 / 5;
+            trayIconManager.bandwidthDownloadLvl2 = trayIconManager.bandwidthDownloadLvl5 * 2 / 5;
+            trayIconManager.bandwidthDownloadLvl1 = trayIconManager.bandwidthDownloadLvl5     / 5;
+            trayIconManager.bandwidthUploadLvl4   = trayIconManager.bandwidthUploadLvl5   * 4 / 5;
+            trayIconManager.bandwidthUploadLvl3   = trayIconManager.bandwidthUploadLvl5   * 3 / 5;
+            trayIconManager.bandwidthUploadLvl2   = trayIconManager.bandwidthUploadLvl5   * 2 / 5;
+            trayIconManager.bandwidthUploadLvl1   = trayIconManager.bandwidthUploadLvl5       / 5;
 
             customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
             RefreshEnabledInterfacesCache();
@@ -638,27 +455,27 @@ namespace GabNetStats
 
             if (Settings.Default.BandwidthUnit != 1 && Settings.Default.BandwidthUnit != 8)
             {
-                Settings.Default.BandwidthUnit = (int)eBandwithUnit.Byte;
+                Settings.Default.BandwidthUnit = (int)TrayIconManager.eBandwithUnit.Byte;
             }
             if (Settings.Default.BandwidthDownloadMultiplier == 0)
             {
-                Settings.Default.BandwidthDownloadMultiplier = (long)eBandwidthMultiplier.un;
+                Settings.Default.BandwidthDownloadMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
             }
             if (Settings.Default.BandwidthUploadMultiplier == 0)
             {
-                Settings.Default.BandwidthUploadMultiplier = (long)eBandwidthMultiplier.un;
+                Settings.Default.BandwidthUploadMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
             }
 
-            bandwidthDownloadLvl5 = Settings.Default.BandwidthDownload * Settings.Default.BandwidthDownloadMultiplier / Settings.Default.BandwidthUnit;
-            bandwidthUploadLvl5   = Settings.Default.BandwidthUpload   * Settings.Default.BandwidthUploadMultiplier   / Settings.Default.BandwidthUnit;
-            bandwidthDownloadLvl4 = bandwidthDownloadLvl5 * 4 / 5;
-            bandwidthDownloadLvl3 = bandwidthDownloadLvl5 * 3 / 5;
-            bandwidthDownloadLvl2 = bandwidthDownloadLvl5 * 2 / 5;
-            bandwidthDownloadLvl1 = bandwidthDownloadLvl5     / 5;
-            bandwidthUploadLvl4   = bandwidthUploadLvl5   * 4 / 5;
-            bandwidthUploadLvl3   = bandwidthUploadLvl5   * 3 / 5;
-            bandwidthUploadLvl2   = bandwidthUploadLvl5   * 2 / 5;
-            bandwidthUploadLvl1   = bandwidthUploadLvl5       / 5;
+            trayIconManager.bandwidthDownloadLvl5 = Settings.Default.BandwidthDownload * Settings.Default.BandwidthDownloadMultiplier / Settings.Default.BandwidthUnit;
+            trayIconManager.bandwidthUploadLvl5   = Settings.Default.BandwidthUpload   * Settings.Default.BandwidthUploadMultiplier   / Settings.Default.BandwidthUnit;
+            trayIconManager.bandwidthDownloadLvl4 = trayIconManager.bandwidthDownloadLvl5 * 4 / 5;
+            trayIconManager.bandwidthDownloadLvl3 = trayIconManager.bandwidthDownloadLvl5 * 3 / 5;
+            trayIconManager.bandwidthDownloadLvl2 = trayIconManager.bandwidthDownloadLvl5 * 2 / 5;
+            trayIconManager.bandwidthDownloadLvl1 = trayIconManager.bandwidthDownloadLvl5     / 5;
+            trayIconManager.bandwidthUploadLvl4   = trayIconManager.bandwidthUploadLvl5   * 4 / 5;
+            trayIconManager.bandwidthUploadLvl3   = trayIconManager.bandwidthUploadLvl5   * 3 / 5;
+            trayIconManager.bandwidthUploadLvl2   = trayIconManager.bandwidthUploadLvl5   * 2 / 5;
+            trayIconManager.bandwidthUploadLvl1   = trayIconManager.bandwidthUploadLvl5       / 5;
 
             customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
             RefreshEnabledInterfacesCache();
@@ -673,7 +490,7 @@ namespace GabNetStats
                 this.StartAutoPingThread();
             }
 
-            this.applyIconSet();
+            trayIconManager.applyIconSet();
         }
 
         internal IReadOnlyList<TrackedInterface> GetDisplayableInterfacesSnapshot()
@@ -1220,11 +1037,11 @@ namespace GabNetStats
 
             if (nUp == 0)
             {
-                MainForm.connectionStatus = eState.disconnected;
+                MainForm.connectionStatus = TrayIconManager.eState.disconnected;
             }
             else
             {
-                MainForm.connectionStatus = eState.up;
+                MainForm.connectionStatus = TrayIconManager.eState.up;
             }
 
             if (shouldSaveSettings)
@@ -1307,7 +1124,7 @@ namespace GabNetStats
                     }
 
                     previous = this.notifyIconPing.Icon;
-                    UpdateAutoPingIcon(reply);
+                    trayIconManager.UpdateAutoPingIcon(reply);
 
                     if (Settings.Default.AutoPingNotif && !previous.Equals(this.notifyIconPing.Icon))
                     {
@@ -1339,54 +1156,6 @@ namespace GabNetStats
                 }
             }
         }
-
-        private void UpdateAutoPingIcon(PingReply reply)
-        {
-            if (reply == null || reply.Status != IPStatus.Success)
-            {
-                if (this.notifyIconPing.Icon.Equals(iconCircle_green))
-                {
-                    this.notifyIconPing.Icon = iconCircle_orange;
-                    this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection issue?";
-                    this.notifyIconPing.BalloonTipText += "\nThe host \"" + Settings.Default.AutoPingHost + "\" seems to be unreachable.";
-                    this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Warning;
-                }
-                else if (this.notifyIconPing.Icon.Equals(iconCircle_orange))
-                {
-                    this.notifyIconPing.Icon = iconCircle_red;
-                    this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection issue!";
-                    this.notifyIconPing.BalloonTipText += "\nThe host \"" + Settings.Default.AutoPingHost + "\" could not be reached.";
-                    this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Error;
-                }
-                else if (!this.notifyIconPing.Icon.Equals(iconCircle_red))
-                {
-                    this.notifyIconPing.Icon = iconCircle_orange;
-                    this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection issue?";
-                    this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Warning;
-                }
-            }
-            else
-            {
-                this.notifyIconPing.Icon = iconCircle_green;
-                this.notifyIconPing.Text = this.notifyIconPing.BalloonTipText = "Connection OK";
-                this.notifyIconPing.BalloonTipIcon = ToolTipIcon.Info;
-            }
-        }
-
-        private void SetActivityIcon(Icon icon)
-        {
-            if (icon == null)
-            {
-                return;
-            }
-
-            if (!ReferenceEquals(currentActivityIcon, icon))
-            {
-                currentActivityIcon = icon;
-                this.notifyIconActivity.Icon = icon;
-            }
-        }
-
 
         private void NICRefreshThread(object state)
         {
@@ -1484,16 +1253,16 @@ namespace GabNetStats
                     bytesReceived    = 0;
                     bytesSent        = 0;
 
-                    if (connectionStatus == eState.disconnected)
+                    if (connectionStatus == TrayIconManager.eState.disconnected)
                     {
-                        this.SetActivityIcon(iconDisconnected);
+                        trayIconManager.SetActivityIcon(trayIconManager.iconDisconnected);
                         rawSpeedReception            = 0;
                         rawSpeedEmission             = 0;
                         goto skip;
                     }
-                    if (connectionStatus == eState.limited)
+                    if (connectionStatus == TrayIconManager.eState.limited)
                     {
-                        this.SetActivityIcon(iconLimited);
+                        trayIconManager.SetActivityIcon(trayIconManager.iconLimited);
                         rawSpeedReception            = 0;
                         rawSpeedEmission             = 0;
                         goto skip;
@@ -1552,26 +1321,26 @@ namespace GabNetStats
                         nCounter = 0;
                         if (customBandwidth)
                         {
-                            int dl = GetSpeedLevel(rawSpeedReception, bandwidthDownloadLvl1, bandwidthDownloadLvl2, bandwidthDownloadLvl3, bandwidthDownloadLvl4);
-                            int ul = GetSpeedLevel(rawSpeedEmission,  bandwidthUploadLvl1,   bandwidthUploadLvl2,  bandwidthUploadLvl3,  bandwidthUploadLvl4);
-                            this.SetActivityIcon(iconsActive[dl, ul]);
+                            int dl = TrayIconManager.GetSpeedLevel(rawSpeedReception, trayIconManager.bandwidthDownloadLvl1, trayIconManager.bandwidthDownloadLvl2, trayIconManager.bandwidthDownloadLvl3, trayIconManager.bandwidthDownloadLvl4);
+                            int ul = TrayIconManager.GetSpeedLevel(rawSpeedEmission,  trayIconManager.bandwidthUploadLvl1,   trayIconManager.bandwidthUploadLvl2,  trayIconManager.bandwidthUploadLvl3,  trayIconManager.bandwidthUploadLvl4);
+                            trayIconManager.SetActivityIcon(trayIconManager.iconsActive[dl, ul]);
                         }
                         else
                         {
-                            this.SetActivityIcon(iconsActive[0, 0]);
+                            trayIconManager.SetActivityIcon(trayIconManager.iconsActive[0, 0]);
                         }
                     }
                     else if (hasDownload && !hasUpload)
                     {
                         nCounter = 0;
-                        int dl = customBandwidth ? GetSpeedLevel(rawSpeedReception, bandwidthDownloadLvl1, bandwidthDownloadLvl2, bandwidthDownloadLvl3, bandwidthDownloadLvl4) : 0;
-                        this.SetActivityIcon(iconsReceive[dl]);
+                        int dl = customBandwidth ? TrayIconManager.GetSpeedLevel(rawSpeedReception, trayIconManager.bandwidthDownloadLvl1, trayIconManager.bandwidthDownloadLvl2, trayIconManager.bandwidthDownloadLvl3, trayIconManager.bandwidthDownloadLvl4) : 0;
+                        trayIconManager.SetActivityIcon(trayIconManager.iconsReceive[dl]);
                     }
                     else if (!hasDownload && hasUpload)
                     {
                         nCounter = 0;
-                        int ul = customBandwidth ? GetSpeedLevel(rawSpeedEmission, bandwidthUploadLvl1, bandwidthUploadLvl2, bandwidthUploadLvl3, bandwidthUploadLvl4) : 0;
-                        this.SetActivityIcon(iconsSend[ul]);
+                        int ul = customBandwidth ? TrayIconManager.GetSpeedLevel(rawSpeedEmission, trayIconManager.bandwidthUploadLvl1, trayIconManager.bandwidthUploadLvl2, trayIconManager.bandwidthUploadLvl3, trayIconManager.bandwidthUploadLvl4) : 0;
+                        trayIconManager.SetActivityIcon(trayIconManager.iconsSend[ul]);
                     }
                     else
                     {
@@ -1581,7 +1350,7 @@ namespace GabNetStats
                     if (nCounter == 5)
                     {
                         nCounter                     = 0;
-                        this.SetActivityIcon(iconInactive);
+                        trayIconManager.SetActivityIcon(trayIconManager.iconInactive);
                         rawSpeedReception            = 0;
                         rawSpeedEmission             = 0;
                     }
@@ -1638,22 +1407,22 @@ namespace GabNetStats
                 case 1:
                     if (rawSpeed >= 1073741824) //1073741824 = 2 ^ 30
                     {
-                        speedUnit = SpeedUnitsByte.GiB;
+                        speedUnit = TrayIconManager.SpeedUnitsByte.GiB;
                         res = Math.Round(rawSpeed / (double)1073741824, 2);
                     }
                     else if (rawSpeed >= 1048576) //1048576 = 2 ^ 20
                     {
-                        speedUnit = SpeedUnitsByte.MiB;
+                        speedUnit = TrayIconManager.SpeedUnitsByte.MiB;
                         res = Math.Round(rawSpeed / (double)1048576, 2);
                     }
                     else if (rawSpeed >= 1024) //1024 = 2 ^ 10
                     {
-                        speedUnit = SpeedUnitsByte.KiB;
+                        speedUnit = TrayIconManager.SpeedUnitsByte.KiB;
                         res = Math.Round(rawSpeed / (double)1024, 2);
                     }
                     else
                     {
-                        speedUnit = SpeedUnitsByte.Bytes;
+                        speedUnit = TrayIconManager.SpeedUnitsByte.Bytes;
                         res = rawSpeed;
                     }
                     break;
@@ -1661,22 +1430,22 @@ namespace GabNetStats
                 case 2:
                     if (rawSpeed >= 1000000000)
                     {
-                        speedUnit = SpeedUnitsBit.Gbit;
+                        speedUnit = TrayIconManager.SpeedUnitsBit.Gbit;
                         res = Math.Round(rawSpeed / (double)1000000000, 2);
                     }
                     else if (rawSpeed >= 1000000)
                     {
-                        speedUnit = SpeedUnitsBit.Mbit;
+                        speedUnit = TrayIconManager.SpeedUnitsBit.Mbit;
                         res = Math.Round(rawSpeed / (double)1000000, 2);
                     }
                     else if (rawSpeed >= 1000)
                     {
-                        speedUnit = SpeedUnitsBit.Kbit;
+                        speedUnit = TrayIconManager.SpeedUnitsBit.Kbit;
                         res = Math.Round(rawSpeed / (double)1000, 2);
                     }
                     else
                     {
-                        speedUnit = SpeedUnitsBit.bit;
+                        speedUnit = TrayIconManager.SpeedUnitsBit.bit;
                         res = rawSpeed;
                     }
                     break;

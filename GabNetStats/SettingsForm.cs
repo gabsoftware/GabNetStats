@@ -16,8 +16,8 @@ namespace GabNetStats
         private int nDuration = MainForm.BlinkDurationMinimum;
         private long nDownload = 12500000;
         private long nUpload = 12500000;
-        private long nDefaultMultiplier = (long)MainForm.eBandwidthMultiplier.un;
-        private int nDefaultUnit = (int)MainForm.eBandwithUnit.Byte;
+        private long nDefaultMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
+        private int nDefaultUnit = (int)TrayIconManager.eBandwithUnit.Byte;
         
         /*private int _nStartUp = 0;
         protected int nStartup
@@ -62,57 +62,57 @@ namespace GabNetStats
             {
                 cbDownload.Items.AddRange(new object[]
                 { 
-                    new BandwidthItem(Res.str_bit, (long)MainForm.eBandwidthMultiplier.un),
-                    new BandwidthItem(Res.str_Kbit, (long)MainForm.eBandwidthMultiplier.K),
-                    new BandwidthItem(Res.str_Mbit, (long)MainForm.eBandwidthMultiplier.M),
-                    new BandwidthItem(Res.str_Gbit, (long)MainForm.eBandwidthMultiplier.G),
-                    new BandwidthItem(Res.str_Tbit, (long)MainForm.eBandwidthMultiplier.T)
+                    new BandwidthItem(Res.str_bit, (long)TrayIconManager.eBandwidthMultiplier.un),
+                    new BandwidthItem(Res.str_Kbit, (long)TrayIconManager.eBandwidthMultiplier.K),
+                    new BandwidthItem(Res.str_Mbit, (long)TrayIconManager.eBandwidthMultiplier.M),
+                    new BandwidthItem(Res.str_Gbit, (long)TrayIconManager.eBandwidthMultiplier.G),
+                    new BandwidthItem(Res.str_Tbit, (long)TrayIconManager.eBandwidthMultiplier.T)
                 });
 
                 cbUpload.Items.AddRange(new object[]
                 { 
-                    new BandwidthItem(Res.str_bit, (long)MainForm.eBandwidthMultiplier.un),
-                    new BandwidthItem(Res.str_Kbit, (long)MainForm.eBandwidthMultiplier.K),
-                    new BandwidthItem(Res.str_Mbit, (long)MainForm.eBandwidthMultiplier.M),
-                    new BandwidthItem(Res.str_Gbit, (long)MainForm.eBandwidthMultiplier.G),
-                    new BandwidthItem(Res.str_Tbit, (long)MainForm.eBandwidthMultiplier.T)
+                    new BandwidthItem(Res.str_bit, (long)TrayIconManager.eBandwidthMultiplier.un),
+                    new BandwidthItem(Res.str_Kbit, (long)TrayIconManager.eBandwidthMultiplier.K),
+                    new BandwidthItem(Res.str_Mbit, (long)TrayIconManager.eBandwidthMultiplier.M),
+                    new BandwidthItem(Res.str_Gbit, (long)TrayIconManager.eBandwidthMultiplier.G),
+                    new BandwidthItem(Res.str_Tbit, (long)TrayIconManager.eBandwidthMultiplier.T)
                 });
             }
             else
             {
                 cbDownload.Items.AddRange(new object[]
                 { 
-                    new BandwidthItem(Res.str_Bytes, (long)MainForm.eBandwidthMultiplier.un),
-                    new BandwidthItem(Res.str_KiB, (long)MainForm.eBandwidthMultiplier.K),
-                    new BandwidthItem(Res.str_MiB, (long)MainForm.eBandwidthMultiplier.M),
-                    new BandwidthItem(Res.str_GiB, (long)MainForm.eBandwidthMultiplier.G),
-                    new BandwidthItem(Res.str_TiB, (long)MainForm.eBandwidthMultiplier.T)
+                    new BandwidthItem(Res.str_Bytes, (long)TrayIconManager.eBandwidthMultiplier.un),
+                    new BandwidthItem(Res.str_KiB, (long)TrayIconManager.eBandwidthMultiplier.K),
+                    new BandwidthItem(Res.str_MiB, (long)TrayIconManager.eBandwidthMultiplier.M),
+                    new BandwidthItem(Res.str_GiB, (long)TrayIconManager.eBandwidthMultiplier.G),
+                    new BandwidthItem(Res.str_TiB, (long)TrayIconManager.eBandwidthMultiplier.T)
                 });
 
                 cbUpload.Items.AddRange(new object[]
                 { 
-                    new BandwidthItem(Res.str_Bytes, (long)MainForm.eBandwidthMultiplier.un),
-                    new BandwidthItem(Res.str_KiB, (long)MainForm.eBandwidthMultiplier.K),
-                    new BandwidthItem(Res.str_MiB, (long)MainForm.eBandwidthMultiplier.M),
-                    new BandwidthItem(Res.str_GiB, (long)MainForm.eBandwidthMultiplier.G),
-                    new BandwidthItem(Res.str_TiB, (long)MainForm.eBandwidthMultiplier.T)
+                    new BandwidthItem(Res.str_Bytes, (long)TrayIconManager.eBandwidthMultiplier.un),
+                    new BandwidthItem(Res.str_KiB, (long)TrayIconManager.eBandwidthMultiplier.K),
+                    new BandwidthItem(Res.str_MiB, (long)TrayIconManager.eBandwidthMultiplier.M),
+                    new BandwidthItem(Res.str_GiB, (long)TrayIconManager.eBandwidthMultiplier.G),
+                    new BandwidthItem(Res.str_TiB, (long)TrayIconManager.eBandwidthMultiplier.T)
                 });
             }
             cbDownload.ValueMember = "multiplier";
             cbDownload.DisplayMember = "name";
-            cbDownload.SelectedIndex = (bdm==(long)MainForm.eBandwidthMultiplier.un ? 0 : 
-                                       (bdm==(long)MainForm.eBandwidthMultiplier.K ? 1 : 
-                                       (bdm==(long)MainForm.eBandwidthMultiplier.M ? 2 : 
-                                       (bdm==(long)MainForm.eBandwidthMultiplier.G ? 3 :
-                                       (bdm==(long)MainForm.eBandwidthMultiplier.T ? 4 : 0)))));
+            cbDownload.SelectedIndex = (bdm==(long)TrayIconManager.eBandwidthMultiplier.un ? 0 : 
+                                       (bdm==(long)TrayIconManager.eBandwidthMultiplier.K ? 1 : 
+                                       (bdm==(long)TrayIconManager.eBandwidthMultiplier.M ? 2 : 
+                                       (bdm==(long)TrayIconManager.eBandwidthMultiplier.G ? 3 :
+                                       (bdm==(long)TrayIconManager.eBandwidthMultiplier.T ? 4 : 0)))));
 
             cbUpload.ValueMember = "multiplier";
             cbUpload.DisplayMember = "name";
-            cbUpload.SelectedIndex =   (bum == (long)MainForm.eBandwidthMultiplier.un ? 0 :
-                                       (bum == (long)MainForm.eBandwidthMultiplier.K ? 1 :
-                                       (bum == (long)MainForm.eBandwidthMultiplier.M ? 2 :
-                                       (bum == (long)MainForm.eBandwidthMultiplier.G ? 3 :
-                                       (bum == (long)MainForm.eBandwidthMultiplier.T ? 4 : 0)))));
+            cbUpload.SelectedIndex =   (bum == (long)TrayIconManager.eBandwidthMultiplier.un ? 0 :
+                                       (bum == (long)TrayIconManager.eBandwidthMultiplier.K ? 1 :
+                                       (bum == (long)TrayIconManager.eBandwidthMultiplier.M ? 2 :
+                                       (bum == (long)TrayIconManager.eBandwidthMultiplier.G ? 3 :
+                                       (bum == (long)TrayIconManager.eBandwidthMultiplier.T ? 4 : 0)))));
         }
 
         private void OnLoad(object sender, EventArgs e)
@@ -124,25 +124,25 @@ namespace GabNetStats
             }
             textBoxDuration.Text = Settings.Default.BlinkDuration.ToString(CultureInfo.InvariantCulture);
 
-            if (Settings.Default.BandwidthDownloadMultiplier != (long)MainForm.eBandwidthMultiplier.un
-             && Settings.Default.BandwidthDownloadMultiplier != (long)MainForm.eBandwidthMultiplier.K
-             && Settings.Default.BandwidthDownloadMultiplier != (long)MainForm.eBandwidthMultiplier.M
-             && Settings.Default.BandwidthDownloadMultiplier != (long)MainForm.eBandwidthMultiplier.G
-             && Settings.Default.BandwidthDownloadMultiplier != (long)MainForm.eBandwidthMultiplier.T)
+            if (Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.un
+             && Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.K
+             && Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.M
+             && Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.G
+             && Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.T)
             {
                 Settings.Default.BandwidthDownloadMultiplier = nDefaultMultiplier;
             }
 
-            if (Settings.Default.BandwidthUploadMultiplier != (long)MainForm.eBandwidthMultiplier.un
-             && Settings.Default.BandwidthUploadMultiplier != (long)MainForm.eBandwidthMultiplier.K
-             && Settings.Default.BandwidthUploadMultiplier != (long)MainForm.eBandwidthMultiplier.M
-             && Settings.Default.BandwidthUploadMultiplier != (long)MainForm.eBandwidthMultiplier.G
-             && Settings.Default.BandwidthUploadMultiplier != (long)MainForm.eBandwidthMultiplier.T)
+            if (Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.un
+             && Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.K
+             && Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.M
+             && Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.G
+             && Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.T)
             {
                 Settings.Default.BandwidthUploadMultiplier = nDefaultMultiplier;
             }
 
-            if (Settings.Default.BandwidthUnit != (int)MainForm.eBandwithUnit.bit && Settings.Default.BandwidthUnit != (int)MainForm.eBandwithUnit.Byte)
+            if (Settings.Default.BandwidthUnit != (int)TrayIconManager.eBandwithUnit.bit && Settings.Default.BandwidthUnit != (int)TrayIconManager.eBandwithUnit.Byte)
             {
                 Settings.Default.BandwidthUnit = nDefaultUnit;
             }
@@ -167,7 +167,7 @@ namespace GabNetStats
                 txtUpload.Text = Settings.Default.BandwidthUpload.ToString(CultureInfo.InvariantCulture);
             }
 
-            rbBits.Checked = Settings.Default.BandwidthUnit == (int)MainForm.eBandwithUnit.bit;
+            rbBits.Checked = Settings.Default.BandwidthUnit == (int)TrayIconManager.eBandwithUnit.bit;
 
             updateCombos();
 
@@ -318,11 +318,11 @@ namespace GabNetStats
         {
             if (rbBits.Checked)
             {
-                Settings.Default.BandwidthUnit = (int)MainForm.eBandwithUnit.bit;
+                Settings.Default.BandwidthUnit = (int)TrayIconManager.eBandwithUnit.bit;
             }
             else
             {
-                Settings.Default.BandwidthUnit = (int)MainForm.eBandwithUnit.Byte;
+                Settings.Default.BandwidthUnit = (int)TrayIconManager.eBandwithUnit.Byte;
             }
             updateCombos();
         }
