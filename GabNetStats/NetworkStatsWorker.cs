@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Net.NetworkInformation;
@@ -238,6 +239,84 @@ namespace GabNetStats
 
                 Array.Clear(receptionSamples, 0, receptionSamples.Length);
                 Array.Clear(emissionSamples, 0, emissionSamples.Length);
+            }
+        }
+
+        //
+        //  Speed data store
+        //
+        internal readonly struct SpeedHistorySample
+        {
+            public SpeedHistorySample(double downloadKib, double uploadKib)
+            {
+                DownloadKib = downloadKib;
+                UploadKib = uploadKib;
+            }
+
+            public double DownloadKib { get; }
+            public double UploadKib { get; }
+        }
+
+        private const int MaxHistorySamples = 2048;
+        private static readonly object historyLock = new object();
+        private static readonly Queue<SpeedHistorySample> history = new Queue<SpeedHistorySample>(MaxHistorySamples);
+
+        internal static long rawSpeedReception  { get; private set; }
+        internal static long rawSpeedEmission   { get; private set; }
+        internal static long lAvgSpeedReception { get; private set; }
+        internal static long lAvgSpeedEmission  { get; private set; }
+        internal static long bytesReceived      { get; private set; }
+        internal static long bytesSent          { get; private set; }
+
+        private static void StoreSpeedData(long rawRx, long rawTx, long avgRx, long avgTx, long rx, long tx)
+        {
+            rawSpeedReception  = rawRx;
+            rawSpeedEmission   = rawTx;
+            lAvgSpeedReception = avgRx;
+            lAvgSpeedEmission  = avgTx;
+            bytesReceived      = rx;
+            bytesSent          = tx;
+            StoreHistorySample(avgRx, avgTx);
+        }
+
+        private static void StoreHistorySample(long avgDownloadBytesPerSecond, long avgUploadBytesPerSecond)
+        {
+            double downloadKib = Math.Max(0d, avgDownloadBytesPerSecond / 1024d);
+            double uploadKib = Math.Max(0d, avgUploadBytesPerSecond / 1024d);
+
+            lock (historyLock)
+            {
+                history.Enqueue(new SpeedHistorySample(downloadKib, uploadKib));
+                while (history.Count > MaxHistorySamples)
+                {
+                    history.Dequeue();
+                }
+            }
+        }
+
+        internal static List<SpeedHistorySample> GetHistorySnapshot(int maxSamples)
+        {
+            lock (historyLock)
+            {
+                if (maxSamples <= 0 || history.Count == 0)
+                {
+                    return new List<SpeedHistorySample>(0);
+                }
+
+                int count = Math.Min(maxSamples, history.Count);
+                int skip = history.Count - count;
+                List<SpeedHistorySample> snapshot = new List<SpeedHistorySample>(count);
+                int index = 0;
+
+                foreach (SpeedHistorySample sample in history)
+                {
+                    if (index++ >= skip)
+                    {
+                        snapshot.Add(sample);
+                    }
+                }
+
+                return snapshot;
             }
         }
 
@@ -671,7 +750,7 @@ namespace GabNetStats
                         lAvgSpeedEmission  = ComputeAverageWithoutExtremes(emissionSamples, emissionSampleCount);
                     }
 
-                    frmBalloon.UpdateInfos(rawSpeedReception, rawSpeedEmission, lAvgSpeedReception, lAvgSpeedEmission, bytesReceived, bytesSent);
+                    StoreSpeedData(rawSpeedReception, rawSpeedEmission, lAvgSpeedReception, lAvgSpeedEmission, bytesReceived, bytesSent);
 
                     try
                     {

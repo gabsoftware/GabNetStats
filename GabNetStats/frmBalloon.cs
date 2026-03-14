@@ -11,14 +11,6 @@ namespace GabNetStats
     public partial class frmBalloon : Form
     {
 
-        private static long rawSpeedReception {get; set;}
-        private static long rawSpeedEmission { get; set; }
-        private static long lAvgSpeedReception { get; set; }
-        private static long lAvgSpeedEmission { get; set; }
-        private static long bytesReceived { get; set; }
-        private static long bytesSent { get; set; }
-
-
         private static string str_RawReceptionSpeed = Res.str_RawReceptionSpeed;
         private static string str_RawEmissionSpeed = Res.str_RawEmissionSpeed;
         private static string str_AvgReceptionSpeed = Res.str_AvgReceptionSpeed;
@@ -28,34 +20,13 @@ namespace GabNetStats
         private static string str_Bytes = Res.str_Bytes;
 
         private static NumberFormatInfo nfi = (NumberFormatInfo)CultureInfo.CurrentCulture.NumberFormat.Clone();
-        private const int MaxHistorySamples = 2048;
-        private static readonly object historyLock = new object();
-        private static readonly Queue<SpeedHistorySample> history = new Queue<SpeedHistorySample>(MaxHistorySamples);
 
         private static int counter = 0;
         internal static frmAdvanced frmAdv;
         private bool suppressLocationPersistence;
 
-        private readonly struct SpeedHistorySample
-        {
-            public SpeedHistorySample(double downloadKib, double uploadKib)
-            {
-                DownloadKib = downloadKib;
-                UploadKib = uploadKib;
-            }
-
-            public double DownloadKib { get; }
-            public double UploadKib { get; }
-        }
-
         static frmBalloon()
         {
-            rawSpeedReception = 0;
-            rawSpeedEmission = 0;
-            lAvgSpeedReception = 0;
-            lAvgSpeedEmission = 0;
-            bytesReceived = 0;
-            bytesSent = 0;
             nfi.NumberDecimalDigits = 0; //we don't want decimals !
         }
 
@@ -89,17 +60,17 @@ namespace GabNetStats
 
 
             //gabtracker4
-            gabTracker1.Feeds[0].Value = Math.Round(lAvgSpeedReception / 1024D, 2);
-            gabTracker1.Feeds[1].Value = Math.Round(lAvgSpeedEmission / 1024D, 2);
+            gabTracker1.Feeds[0].Value = Math.Round(NetworkStatsWorker.lAvgSpeedReception / 1024D, 2);
+            gabTracker1.Feeds[1].Value = Math.Round(NetworkStatsWorker.lAvgSpeedEmission / 1024D, 2);
 
-            fSpeedReception = NetworkStatsWorker.computeSpeed(rawSpeedReception, ref sSpeedReception, 1);
-            fSpeedEmission  = NetworkStatsWorker.computeSpeed(rawSpeedEmission , ref sSpeedEmission , 1);
+            fSpeedReception = NetworkStatsWorker.computeSpeed(NetworkStatsWorker.rawSpeedReception, ref sSpeedReception, 1);
+            fSpeedEmission  = NetworkStatsWorker.computeSpeed(NetworkStatsWorker.rawSpeedEmission , ref sSpeedEmission , 1);
 
-            fAvgSpeedReception = NetworkStatsWorker.computeSpeed(lAvgSpeedReception, ref sAvgSpeedReception, 1);
-            fAvgSpeedEmission  = NetworkStatsWorker.computeSpeed(lAvgSpeedEmission , ref sAvgSpeedEmission , 1);
+            fAvgSpeedReception = NetworkStatsWorker.computeSpeed(NetworkStatsWorker.lAvgSpeedReception, ref sAvgSpeedReception, 1);
+            fAvgSpeedEmission  = NetworkStatsWorker.computeSpeed(NetworkStatsWorker.lAvgSpeedEmission , ref sAvgSpeedEmission , 1);
 
-            fReceived = NetworkStatsWorker.computeSpeed(bytesReceived, ref sReceived, 1);
-            fSent     = NetworkStatsWorker.computeSpeed(bytesSent    , ref sSent    , 1);
+            fReceived = NetworkStatsWorker.computeSpeed(NetworkStatsWorker.bytesReceived, ref sReceived, 1);
+            fSent     = NetworkStatsWorker.computeSpeed(NetworkStatsWorker.bytesSent    , ref sSent    , 1);
 
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawReceptionSpeed, fSpeedReception.ToString(Math.Floor(fSpeedReception) != fSpeedReception ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedReception);
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawEmissionSpeed, fSpeedEmission.ToString(Math.Floor(fSpeedEmission) != fSpeedEmission ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedEmission);
@@ -107,8 +78,8 @@ namespace GabNetStats
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_AvgReceptionSpeed, fAvgSpeedReception.ToString(Math.Floor(fAvgSpeedReception) != fAvgSpeedReception ? CultureInfo.CurrentCulture.NumberFormat : nfi), sAvgSpeedReception);
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_AvgEmissionSpeed, fAvgSpeedEmission.ToString(Math.Floor(fAvgSpeedEmission) != fAvgSpeedEmission ? CultureInfo.CurrentCulture.NumberFormat : nfi), sAvgSpeedEmission);
             builder.AppendLine();
-            builder.AppendFormat("{0} : \t{1} {2} ({3} {4})\n", new Object[] { str_Received, bytesReceived.ToString("n", nfi), str_Bytes, fReceived.ToString(Math.Floor(fReceived) != fReceived ? CultureInfo.CurrentCulture.NumberFormat : nfi), sReceived });
-            builder.AppendFormat("{0} : \t{1} {2} ({3} {4})\n", new Object[] { str_Sent, bytesSent.ToString("n", nfi), str_Bytes, fSent.ToString(Math.Floor(fSent) != fSent ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSent });
+            builder.AppendFormat("{0} : \t{1} {2} ({3} {4})\n", new Object[] { str_Received, NetworkStatsWorker.bytesReceived.ToString("n", nfi), str_Bytes, fReceived.ToString(Math.Floor(fReceived) != fReceived ? CultureInfo.CurrentCulture.NumberFormat : nfi), sReceived });
+            builder.AppendFormat("{0} : \t{1} {2} ({3} {4})\n", new Object[] { str_Sent, NetworkStatsWorker.bytesSent.ToString("n", nfi), str_Bytes, fSent.ToString(Math.Floor(fSent) != fSent ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSent });
 
             lblStatisticsData.Text = builder.ToString();
 
@@ -121,23 +92,6 @@ namespace GabNetStats
                     this.Hide();
                 }
             }
-        }
-
-        internal static void UpdateInfos(
-            long prawSpeedReception,
-            long prawSpeedEmission,
-            long plAvgSpeedReception,
-            long plAvgSpeedEmission,
-            long pbytesReceived,
-            long pbytesSent)
-        {
-            rawSpeedReception = prawSpeedReception;
-            rawSpeedEmission = prawSpeedEmission;
-            lAvgSpeedReception = plAvgSpeedReception;
-            lAvgSpeedEmission = plAvgSpeedEmission;
-            bytesReceived = pbytesReceived;
-            bytesSent = pbytesSent;
-            StoreHistorySample(plAvgSpeedReception, plAvgSpeedEmission);
         }
 
         internal void EnsurePreferredLocation()
@@ -303,47 +257,6 @@ namespace GabNetStats
             gabTracker1.MaxDataInMemory = desiredCapacity;
         }
 
-        private static void StoreHistorySample(long avgDownloadBytesPerSecond, long avgUploadBytesPerSecond)
-        {
-            double downloadKib = Math.Max(0d, avgDownloadBytesPerSecond / 1024d);
-            double uploadKib = Math.Max(0d, avgUploadBytesPerSecond / 1024d);
-
-            lock (historyLock)
-            {
-                history.Enqueue(new SpeedHistorySample(downloadKib, uploadKib));
-                while (history.Count > MaxHistorySamples)
-                {
-                    history.Dequeue();
-                }
-            }
-        }
-
-        private static List<SpeedHistorySample> GetHistorySnapshot(int maxSamples)
-        {
-            lock (historyLock)
-            {
-                if (maxSamples <= 0 || history.Count == 0)
-                {
-                    return new List<SpeedHistorySample>(0);
-                }
-
-                int count = Math.Min(maxSamples, history.Count);
-                int skip = history.Count - count;
-                List<SpeedHistorySample> snapshot = new List<SpeedHistorySample>(count);
-                int index = 0;
-
-                foreach (SpeedHistorySample sample in history)
-                {
-                    if (index++ >= skip)
-                    {
-                        snapshot.Add(sample);
-                    }
-                }
-
-                return snapshot;
-            }
-        }
-
         private void ApplyHistoryToTracker()
         {
             if (gabTracker1 == null || gabTracker1.Feeds.Count < 2)
@@ -351,7 +264,7 @@ namespace GabNetStats
                 return;
             }
 
-            List<SpeedHistorySample> snapshot = GetHistorySnapshot(gabTracker1.MaxDataInMemory);
+            List<NetworkStatsWorker.SpeedHistorySample> snapshot = NetworkStatsWorker.GetHistorySnapshot(gabTracker1.MaxDataInMemory);
             if (snapshot.Count == 0)
             {
                 return;
@@ -362,7 +275,7 @@ namespace GabNetStats
             downloadData.Clear();
             uploadData.Clear();
 
-            foreach (SpeedHistorySample sample in snapshot)
+            foreach (NetworkStatsWorker.SpeedHistorySample sample in snapshot)
             {
                 downloadData.Enqueue(sample.DownloadKib);
                 uploadData.Enqueue(sample.UploadKib);
