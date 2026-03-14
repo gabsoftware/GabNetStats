@@ -173,8 +173,8 @@ namespace GabNetStats
                 formSettings.ShowDialog();
             }
             catch (InvalidOperationException) { }
-            
-            statsWorker.RefreshBlinkDurationFromSettings();
+
+            statsWorker.ApplySettings();
 
             frmBalloon fb = (frmBalloon)Application.OpenForms["frmBalloon"];
             if (fb != null)
@@ -182,44 +182,7 @@ namespace GabNetStats
                 fb.BallonTimer.Interval = statsWorker.nDuration;
             }
 
-            if (Settings.Default.BandwidthUnit != 1 && Settings.Default.BandwidthUnit != 8)
-            {
-                Settings.Default.BandwidthUnit = (int)TrayIconManager.eBandwithUnit.Byte;
-            }
-            if (Settings.Default.BandwidthDownloadMultiplier == 0)
-            {
-                Settings.Default.BandwidthDownloadMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
-            }
-            if (Settings.Default.BandwidthUploadMultiplier == 0)
-            {
-                Settings.Default.BandwidthUploadMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
-            }
-
-            trayIconManager.bandwidthDownloadLvl5 = Settings.Default.BandwidthDownload * Settings.Default.BandwidthDownloadMultiplier / Settings.Default.BandwidthUnit;
-            trayIconManager.bandwidthUploadLvl5   = Settings.Default.BandwidthUpload   * Settings.Default.BandwidthUploadMultiplier   / Settings.Default.BandwidthUnit;
-            trayIconManager.bandwidthDownloadLvl4 = trayIconManager.bandwidthDownloadLvl5 * 4 / 5;
-            trayIconManager.bandwidthDownloadLvl3 = trayIconManager.bandwidthDownloadLvl5 * 3 / 5;
-            trayIconManager.bandwidthDownloadLvl2 = trayIconManager.bandwidthDownloadLvl5 * 2 / 5;
-            trayIconManager.bandwidthDownloadLvl1 = trayIconManager.bandwidthDownloadLvl5     / 5;
-            trayIconManager.bandwidthUploadLvl4   = trayIconManager.bandwidthUploadLvl5   * 4 / 5;
-            trayIconManager.bandwidthUploadLvl3   = trayIconManager.bandwidthUploadLvl5   * 3 / 5;
-            trayIconManager.bandwidthUploadLvl2   = trayIconManager.bandwidthUploadLvl5   * 2 / 5;
-            trayIconManager.bandwidthUploadLvl1   = trayIconManager.bandwidthUploadLvl5       / 5;
-
-            statsWorker.customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
-            NetworkInterfaceManager.RefreshEnabledInterfacesCache();
-
             this.notifyIconPing.Visible = Settings.Default.AutoPingEnabled;
-            if (!Settings.Default.AutoPingEnabled)
-            {
-                statsWorker.StopAutoPingThread();
-            }
-            else
-            {
-                statsWorker.StartAutoPingThread();
-            }
-
-            trayIconManager.applyIconSet();
         }
 
         internal IReadOnlyList<NetworkInterfaceManager.TrackedInterface> GetDisplayableInterfacesSnapshot()
@@ -413,162 +376,47 @@ namespace GabNetStats
 
         internal void PopulateNICs(ToolStripMenuItem parent)
         {
-            int nUp = 0;
-            string ip = "";
-            string unit = string.Empty;
-            double speed;
-            Bitmap icon = Resources.netshell_1612_16x16.ToBitmap();
-            bool isFirstTime = Settings.Default.EnabledInterfaceMACList == "TOSET";
-            string mac = string.Empty;
-            ToolStripMenuItem itm;
-            ToolStripMenuItem itm2;
-            IPInterfaceProperties ipproperties;
-            bool shouldSaveSettings = false;
+            //We want to avoid to run the following lines often because it temporarily raises the CPU usage to 2%, which is unacceptable for a background app.
+            //This is why the procedure PopulateNICs is not periodically launched in a thread but by events and testing if the nb of adapters changes.
 
             //we do some little cleaning...
             ClearParentThreadSafe(parent);
 
-            //We want to avoid to run the following lines often because it temporarily raises the CPU usage to 2%, which is unacceptable for a background app.
-            //This is why the procedure PopulateNICs is not periodically launched in a thread but by events and testing if the nb of adapters changes.
+            List<NetworkInterfaceManager.NicDisplayInfo> nics = nicManager.RefreshInterfaces();
 
-            NetworkInterface[] nicSnapshot;
-            try
+            foreach (NetworkInterfaceManager.NicDisplayInfo info in nics)
             {
-                nicSnapshot = NetworkInterface.GetAllNetworkInterfaces();
-            }
-            catch (NetworkInformationException)
-            {
-                nicSnapshot = Array.Empty<NetworkInterface>();
-            }
+                string unit  = string.Empty;
+                double speed = NetworkStatsWorker.computeSpeed(info.Interface.Speed, ref unit, 2);
 
-            lock (nicManager.selectedInterfaces)
-            {
-                nicManager.selectedInterfaces.Clear();
+                //we generate the item related to the network interface
+                ToolStripMenuItem itm = new ToolStripMenuItem(
+                        info.Interface.Name +
+                        " [" + info.Interface.Description + "]" +
+                        " : " + speed + " " + unit + "/s" +
+                        ", " + info.Ip
+                        , info.Icon
+                        , OnAdapterClick
+                        , "itm_" + info.Interface.Id);
+                itm.Tag = info.Interface;
 
-                foreach (NetworkInterface netInterface in nicSnapshot)
+                //we generate its subitem
+                ToolStripMenuItem itm2   = new ToolStripMenuItem(Res.str_IncludeInStatistics);
+                itm2.Name               = "itm_include_" + info.Interface.Id;
+                itm2.CheckOnClick       = true;
+                itm2.Checked            = info.Mac != null ? NetworkInterfaceManager.IsInterfaceEnabled(info.Mac) : false;
+                itm2.CheckStateChanged += new EventHandler(OnAdapterCheckStateChanged);
+                itm2.Tag                = info.Interface;
+
+                //we add the subitem to the item
+                try
                 {
-                    if (!NetworkInterfaceManager.ShouldDisplayInterface(netInterface))
-                    {
-                        continue;
-                    }
-
-                    //test if the interface is active
-                    if (netInterface.OperationalStatus != OperationalStatus.Up)
-                    {
-                        ip = Res.str_NotConnected;
-                    }
-                    else
-                    {
-                        try
-                        {
-                            ipproperties = netInterface.GetIPProperties();
-                        }
-                        catch (NetworkInformationException)
-                        {
-                            ip = Res.str_NoIpAvailable;
-                            continue;
-                        }
-                        catch (PlatformNotSupportedException)
-                        {
-                            ip = Res.str_NoIpAvailable;
-                            continue;
-                        }
-                        if (ipproperties.UnicastAddresses.Count > 0)
-                        {
-                            if (netInterface.NetworkInterfaceType == NetworkInterfaceType.Ethernet ||
-                                netInterface.NetworkInterfaceType == NetworkInterfaceType.Ethernet3Megabit ||
-                                netInterface.NetworkInterfaceType == NetworkInterfaceType.FastEthernetFx ||
-                                netInterface.NetworkInterfaceType == NetworkInterfaceType.FastEthernetT ||
-                                netInterface.NetworkInterfaceType == NetworkInterfaceType.GigabitEthernet ||
-                                netInterface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 ||
-                                netInterface.NetworkInterfaceType == NetworkInterfaceType.Tunnel)
-                            {
-                                nUp++;
-                            }
-                            try
-                            {
-                                ip = ipproperties.UnicastAddresses[ipproperties.UnicastAddresses.Count - 1].Address.ToString();
-                            }
-                            catch (IndexOutOfRangeException) { }
-                            catch (System.Net.Sockets.SocketException) { }
-                        }
-                        else
-                        {
-                            ip = Res.str_NoIpAvailable;
-                        }
-                    }
-
-                    icon = NetworkInterfaceManager.GetInterfaceIcon(netInterface);
-
-                    //retrieve the mac address of the interface
-                    mac = netInterface.GetPhysicalAddress().ToString();
-
-                    // if we never selected an interface before, enable it for statistics by default.
-                    if (isFirstTime)
-                    {
-                        if (NetworkInterfaceManager.EnableStatisticsForInterface(mac, true, false, false))
-                        {
-                            shouldSaveSettings = true;
-                        }
-                    }
-
-                    // if this is the first time we encounter this interface, enable it for statistics by default.
-                    if (!NetworkInterfaceManager.AddToKnownInterface(mac, false))
-                    {
-                        shouldSaveSettings = true;
-                        if (NetworkInterfaceManager.EnableStatisticsForInterface(mac, true, false, false))
-                        {
-                            shouldSaveSettings = true;
-                        }
-                    }
-
-                    nicManager.selectedInterfaces.Add(new NetworkInterfaceManager.TrackedInterface(netInterface, mac));
-                    speed = NetworkStatsWorker.computeSpeed(netInterface.Speed, ref unit, 2);
-
-                    //we generate the item related to the network interface
-                    itm = new ToolStripMenuItem(netInterface.Name +
-                            " [" + netInterface.Description + "]" +
-                            " : " + speed + " " + unit + "/s" +
-                            ", " + ip
-                            , icon
-                            , OnAdapterClick
-                            , "itm_" + netInterface.Id);
-                    itm.Tag = netInterface;
-
-                    //we generate its subitem
-                    itm2                    = new ToolStripMenuItem(Res.str_IncludeInStatistics);
-                    itm2.Name               = "itm_include_" + netInterface.Id;
-                    itm2.CheckOnClick       = true;
-                    itm2.Checked            = mac != null ? NetworkInterfaceManager.IsInterfaceEnabled(mac) : false;
-                    itm2.CheckStateChanged += new EventHandler(OnAdapterCheckStateChanged);
-                    itm2.Tag                = netInterface;
-
-                    //we add the subitem to the item
-                    try
-                    {
-                        itm.DropDownItems.Add(itm2);
-                    }
-                    catch (ArgumentNullException) { }
-
-                    //add item in parent menu item
-                    AddItemThreadSafe(itm, parent);
+                    itm.DropDownItems.Add(itm2);
                 }
-            }
+                catch (ArgumentNullException) { }
 
-
-            if (nUp == 0)
-            {
-                NetworkInterfaceManager.connectionStatus = TrayIconManager.eState.disconnected;
-            }
-            else
-            {
-                NetworkInterfaceManager.connectionStatus = TrayIconManager.eState.up;
-            }
-
-            if (shouldSaveSettings)
-            {
-                Settings.Default.Save();
-                NetworkInterfaceManager.RefreshEnabledInterfacesCache();
+                //add item in parent menu item
+                AddItemThreadSafe(itm, parent);
             }
         }
 

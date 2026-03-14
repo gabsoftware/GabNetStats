@@ -184,6 +184,49 @@ namespace GabNetStats
             nDuration = Settings.Default.BlinkDuration;
         }
 
+        internal void ApplySettings()
+        {
+            RefreshBlinkDurationFromSettings();
+
+            if (Settings.Default.BandwidthUnit != 1 && Settings.Default.BandwidthUnit != 8)
+            {
+                Settings.Default.BandwidthUnit = (int)TrayIconManager.eBandwithUnit.Byte;
+            }
+            if (Settings.Default.BandwidthDownloadMultiplier == 0)
+            {
+                Settings.Default.BandwidthDownloadMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
+            }
+            if (Settings.Default.BandwidthUploadMultiplier == 0)
+            {
+                Settings.Default.BandwidthUploadMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
+            }
+
+            _trayIconManager.bandwidthDownloadLvl5 = Settings.Default.BandwidthDownload * Settings.Default.BandwidthDownloadMultiplier / Settings.Default.BandwidthUnit;
+            _trayIconManager.bandwidthUploadLvl5   = Settings.Default.BandwidthUpload   * Settings.Default.BandwidthUploadMultiplier   / Settings.Default.BandwidthUnit;
+            _trayIconManager.bandwidthDownloadLvl4 = _trayIconManager.bandwidthDownloadLvl5 * 4 / 5;
+            _trayIconManager.bandwidthDownloadLvl3 = _trayIconManager.bandwidthDownloadLvl5 * 3 / 5;
+            _trayIconManager.bandwidthDownloadLvl2 = _trayIconManager.bandwidthDownloadLvl5 * 2 / 5;
+            _trayIconManager.bandwidthDownloadLvl1 = _trayIconManager.bandwidthDownloadLvl5     / 5;
+            _trayIconManager.bandwidthUploadLvl4   = _trayIconManager.bandwidthUploadLvl5   * 4 / 5;
+            _trayIconManager.bandwidthUploadLvl3   = _trayIconManager.bandwidthUploadLvl5   * 3 / 5;
+            _trayIconManager.bandwidthUploadLvl2   = _trayIconManager.bandwidthUploadLvl5   * 2 / 5;
+            _trayIconManager.bandwidthUploadLvl1   = _trayIconManager.bandwidthUploadLvl5       / 5;
+
+            customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
+            NetworkInterfaceManager.RefreshEnabledInterfacesCache();
+
+            if (!Settings.Default.AutoPingEnabled)
+            {
+                StopAutoPingThread();
+            }
+            else
+            {
+                StartAutoPingThread();
+            }
+
+            _trayIconManager.applyIconSet();
+        }
+
         internal void InitializeSpeedSamples()
         {
             lock (speedSamplesLock)

@@ -289,6 +289,148 @@ namespace GabNetStats
         //
         //  Instance methods
         //
+        internal sealed class NicDisplayInfo
+        {
+            public NicDisplayInfo(NetworkInterface netInterface, string mac, string ip, Bitmap icon)
+            {
+                Interface = netInterface;
+                Mac       = mac;
+                Ip        = ip;
+                Icon      = icon;
+            }
+
+            public NetworkInterface Interface { get; }
+            public string           Mac       { get; }
+            public string           Ip        { get; }
+            public Bitmap           Icon      { get; }
+        }
+
+        /// <summary>
+        /// Refreshes selectedInterfaces and connectionStatus from the current system state.
+        /// Returns one NicDisplayInfo per displayable interface for the caller to build UI from.
+        /// </summary>
+        internal List<NicDisplayInfo> RefreshInterfaces()
+        {
+            int    nUp             = 0;
+            string ip              = "";
+            bool   isFirstTime     = Settings.Default.EnabledInterfaceMACList == "TOSET";
+            string mac             = string.Empty;
+            bool   shouldSaveSettings = false;
+            var    result          = new List<NicDisplayInfo>();
+            IPInterfaceProperties ipproperties;
+
+            NetworkInterface[] nicSnapshot;
+            try
+            {
+                nicSnapshot = NetworkInterface.GetAllNetworkInterfaces();
+            }
+            catch (NetworkInformationException)
+            {
+                nicSnapshot = Array.Empty<NetworkInterface>();
+            }
+
+            lock (selectedInterfaces)
+            {
+                selectedInterfaces.Clear();
+
+                foreach (NetworkInterface netInterface in nicSnapshot)
+                {
+                    if (!ShouldDisplayInterface(netInterface))
+                    {
+                        continue;
+                    }
+
+                    //test if the interface is active
+                    if (netInterface.OperationalStatus != OperationalStatus.Up)
+                    {
+                        ip = Res.str_NotConnected;
+                    }
+                    else
+                    {
+                        try
+                        {
+                            ipproperties = netInterface.GetIPProperties();
+                        }
+                        catch (NetworkInformationException)
+                        {
+                            ip = Res.str_NoIpAvailable;
+                            continue;
+                        }
+                        catch (PlatformNotSupportedException)
+                        {
+                            ip = Res.str_NoIpAvailable;
+                            continue;
+                        }
+                        if (ipproperties.UnicastAddresses.Count > 0)
+                        {
+                            if (netInterface.NetworkInterfaceType == NetworkInterfaceType.Ethernet ||
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.Ethernet3Megabit ||
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.FastEthernetFx ||
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.FastEthernetT ||
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.GigabitEthernet ||
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211 ||
+                                netInterface.NetworkInterfaceType == NetworkInterfaceType.Tunnel)
+                            {
+                                nUp++;
+                            }
+                            try
+                            {
+                                ip = ipproperties.UnicastAddresses[ipproperties.UnicastAddresses.Count - 1].Address.ToString();
+                            }
+                            catch (IndexOutOfRangeException) { }
+                            catch (System.Net.Sockets.SocketException) { }
+                        }
+                        else
+                        {
+                            ip = Res.str_NoIpAvailable;
+                        }
+                    }
+
+                    //retrieve the mac address of the interface
+                    mac = netInterface.GetPhysicalAddress().ToString();
+
+                    // if we never selected an interface before, enable it for statistics by default.
+                    if (isFirstTime)
+                    {
+                        if (EnableStatisticsForInterface(mac, true, false, false))
+                        {
+                            shouldSaveSettings = true;
+                        }
+                    }
+
+                    // if this is the first time we encounter this interface, enable it for statistics by default.
+                    if (!AddToKnownInterface(mac, false))
+                    {
+                        shouldSaveSettings = true;
+                        if (EnableStatisticsForInterface(mac, true, false, false))
+                        {
+                            shouldSaveSettings = true;
+                        }
+                    }
+
+                    selectedInterfaces.Add(new TrackedInterface(netInterface, mac));
+                    result.Add(new NicDisplayInfo(netInterface, mac, ip, GetInterfaceIcon(netInterface)));
+                }
+            }
+
+            if (nUp == 0)
+            {
+                connectionStatus = TrayIconManager.eState.disconnected;
+            }
+            else
+            {
+                connectionStatus = TrayIconManager.eState.up;
+            }
+
+            if (shouldSaveSettings)
+            {
+                Settings.Default.Save();
+                RefreshEnabledInterfacesCache();
+            }
+
+            return result;
+        }
+
         internal IReadOnlyList<TrackedInterface> GetDisplayableInterfacesSnapshot()
         {
             lock (selectedInterfaces)
