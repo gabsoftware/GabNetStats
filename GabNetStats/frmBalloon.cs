@@ -92,14 +92,14 @@ namespace GabNetStats
             gabTracker1.Feeds[0].Value = Math.Round(lAvgSpeedReception / 1024D, 2);
             gabTracker1.Feeds[1].Value = Math.Round(lAvgSpeedEmission / 1024D, 2);
 
-            fSpeedReception = MainForm.computeSpeed(rawSpeedReception, ref sSpeedReception, 1);
-            fSpeedEmission  = MainForm.computeSpeed(rawSpeedEmission , ref sSpeedEmission , 1);
+            fSpeedReception = NetworkStatsWorker.computeSpeed(rawSpeedReception, ref sSpeedReception, 1);
+            fSpeedEmission  = NetworkStatsWorker.computeSpeed(rawSpeedEmission , ref sSpeedEmission , 1);
 
-            fAvgSpeedReception = MainForm.computeSpeed(lAvgSpeedReception, ref sAvgSpeedReception, 1);
-            fAvgSpeedEmission  = MainForm.computeSpeed(lAvgSpeedEmission , ref sAvgSpeedEmission , 1);
+            fAvgSpeedReception = NetworkStatsWorker.computeSpeed(lAvgSpeedReception, ref sAvgSpeedReception, 1);
+            fAvgSpeedEmission  = NetworkStatsWorker.computeSpeed(lAvgSpeedEmission , ref sAvgSpeedEmission , 1);
 
-            fReceived = MainForm.computeSpeed(bytesReceived, ref sReceived, 1);
-            fSent     = MainForm.computeSpeed(bytesSent    , ref sSent    , 1);
+            fReceived = NetworkStatsWorker.computeSpeed(bytesReceived, ref sReceived, 1);
+            fSent     = NetworkStatsWorker.computeSpeed(bytesSent    , ref sSent    , 1);
 
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawReceptionSpeed, fSpeedReception.ToString(Math.Floor(fSpeedReception) != fSpeedReception ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedReception);
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawEmissionSpeed, fSpeedEmission.ToString(Math.Floor(fSpeedEmission) != fSpeedEmission ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedEmission);

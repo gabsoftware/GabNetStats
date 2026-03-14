@@ -874,7 +874,7 @@ namespace GabNetStats
             {
                 txtDescription.Text = nic.Description;
                 txtName.Text = nic.Name;
-                txtSpeed.Text = String.Format("{0} {1}/s", MainForm.computeSpeed(nic.Speed, ref speedunit, 2).ToString("n", nfi), speedunit);
+                txtSpeed.Text = String.Format("{0} {1}/s", NetworkStatsWorker.computeSpeed(nic.Speed, ref speedunit, 2).ToString("n", nfi), speedunit);
                 txtNetworkInterfaceType.Text = nic.NetworkInterfaceType.ToString();
                 
                 mac = nic.GetPhysicalAddress().GetAddressBytes();
