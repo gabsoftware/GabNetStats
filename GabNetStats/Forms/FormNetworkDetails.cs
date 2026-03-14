@@ -13,7 +13,6 @@ namespace GabNetStats
     {
         private static NetworkInterfaceComponent ProtocolVersion { get; set; }
         private static NumberFormatInfo nfi = (NumberFormatInfo)CultureInfo.CurrentCulture.NumberFormat.Clone();
-        private readonly CheckBox chkIncludeSelectedInterface;
         private bool suppressIncludeInStatsEvent;
         private bool suppressSelectionPersistence;
 
@@ -61,22 +60,6 @@ namespace GabNetStats
             comboInterfaces.DisplayMember = nameof(InterfaceComboItem.DisplayText);
             comboInterfaces.SelectedIndexChanged += comboInterfaces_SelectedIndexChanged;
 
-            chkIncludeSelectedInterface = new CheckBox
-            {
-                AutoSize = true,
-                Name = "chkIncludeSelectedInterface",
-                Text = Res.str_IncludeInStatistics
-            };
-            chkIncludeSelectedInterface.Enabled = false;
-            chkIncludeSelectedInterface.CheckedChanged += chkIncludeSelectedInterface_CheckedChanged;
-            groupBox1.Controls.Add(chkIncludeSelectedInterface);
-            chkIncludeSelectedInterface.Location = new System.Drawing.Point(comboInterfaces.Left, comboInterfaces.Bottom + 6);
-
-            int requiredHeight = chkIncludeSelectedInterface.Bottom + 8;
-            if (groupBox1.Height < requiredHeight)
-            {
-                groupBox1.Height = requiredHeight;
-            }
         }
 
         /// <summary>
