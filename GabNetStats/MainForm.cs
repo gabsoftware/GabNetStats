@@ -32,9 +32,7 @@ namespace GabNetStats
         private TrayIconManager trayIconManager;
 
         internal const int BlinkDurationMinimum = 50;
-        static int nDuration   = BlinkDurationMinimum;
-        static int nNICRefresh = 10000; //time interval for refreshing the NIC list (10s by default)
-        static int nbNIC       = 0;
+        static int nDuration = BlinkDurationMinimum;
         private const int avgSpeedNbItems = 50;
         private static readonly object speedSamplesLock = new object();
         private static readonly long[] receptionSamples = new long[avgSpeedNbItems];
@@ -43,40 +41,7 @@ namespace GabNetStats
         private static int emissionSampleCount  = avgSpeedNbItems;
         private static int receptionSampleIndex = 0;
         private static int emissionSampleIndex  = 0;
-        private static HashSet<string> enabledInterfaceMacs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-
-        internal sealed class TrackedInterface
-        {
-            public TrackedInterface(NetworkInterface networkInterface, string macAddress)
-            {
-                Interface = networkInterface;
-                MacAddress = macAddress;
-            }
-
-            public NetworkInterface Interface { get; }
-            public string MacAddress { get; }
-            public bool IsEnabled => IsInterfaceEnabled(MacAddress);
-        }
-
-        static List<TrackedInterface> selectedInterfaces = new List<TrackedInterface>();
-        static IPGlobalProperties properties;
-        static IPGlobalStatistics ipv4stat;
-        static IPGlobalStatistics ipv6stat;
-        private static readonly string[] hiddenInterfaceKeywords = new[]
-        {
-            "virtual",
-            "hyper-v",
-            "vmware",
-            "loopback",
-            "kernel debug",
-            "container",
-            "wi-fi direct",
-            "bluetooth device",
-            "qos",
-            "wfp",
-            "wan miniport",
-            "filter"
-        };
+        internal NetworkInterfaceManager nicManager;
 
         static frmBalloon fBal;
 
@@ -122,6 +87,7 @@ namespace GabNetStats
         private void OnLoad(object sender, EventArgs e)
         {
             trayIconManager = new TrayIconManager(this.notifyIconActivity, this.notifyIconPing);
+            nicManager = new NetworkInterfaceManager();
 
             // apply icon set if necessary
             if( Settings.Default.IconSet != "xp" )
@@ -158,7 +124,7 @@ namespace GabNetStats
             trayIconManager.bandwidthUploadLvl1   = trayIconManager.bandwidthUploadLvl5       / 5;
 
             customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
-            RefreshEnabledInterfacesCache();
+            NetworkInterfaceManager.RefreshEnabledInterfacesCache();
 
             //registers the networkchange event handlers
             NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(NetworkChange_NetworkAvailabilityChanged);
@@ -298,129 +264,6 @@ namespace GabNetStats
             return total / divisor;
         }
 
-        private static void RefreshEnabledInterfacesCache()
-        {
-            HashSet<string> newSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            string enabledList = Settings.Default.EnabledInterfaceMACList;
-
-            if (!String.IsNullOrWhiteSpace(enabledList) && !String.Equals(enabledList, "TOSET", StringComparison.OrdinalIgnoreCase))
-            {
-                string[] entries = enabledList.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-                foreach (string entry in entries)
-                {
-                    newSet.Add(entry);
-                }
-            }
-
-            Volatile.Write(ref enabledInterfaceMacs, newSet);
-        }
-
-        internal static bool IsInterfaceEnabled(string mac)
-        {
-            if (String.IsNullOrEmpty(mac))
-            {
-                return false;
-            }
-
-            HashSet<string> snapshot = Volatile.Read(ref enabledInterfaceMacs);
-            return snapshot.Contains(mac);
-        }
-
-        private static bool ShouldDisplayInterface(NetworkInterface netInterface)
-        {
-            if (netInterface == null)
-            {
-                return false;
-            }
-
-            bool showDisconnected = Settings.Default.ShowDisconnectedInterfaces;
-            if (!showDisconnected && netInterface.OperationalStatus != OperationalStatus.Up)
-            {
-                return false;
-            }
-
-            if (!HasValidPhysicalAddress(netInterface))
-            {
-                return false;
-            }
-
-            switch (netInterface.NetworkInterfaceType)
-            {
-                case NetworkInterfaceType.Ethernet:
-                case NetworkInterfaceType.Ethernet3Megabit:
-                case NetworkInterfaceType.FastEthernetFx:
-                case NetworkInterfaceType.FastEthernetT:
-                case NetworkInterfaceType.GigabitEthernet:
-                case NetworkInterfaceType.Wireless80211:
-                case NetworkInterfaceType.Tunnel:
-                    break;
-                default:
-                    return false;
-            }
-
-            string description = netInterface.Description ?? String.Empty;
-            string name = netInterface.Name ?? String.Empty;
-            foreach (string keyword in hiddenInterfaceKeywords)
-            {
-                if (description.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    name.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        private static Bitmap GetInterfaceIcon(NetworkInterface netInterface)
-        {
-            string combined = ((netInterface.Description ?? String.Empty) + (netInterface.Name ?? String.Empty));
-            if (combined.IndexOf("bluetooth", StringComparison.OrdinalIgnoreCase) >= 0)
-            {
-                return Properties.Resources.netshell_1613_16x16.ToBitmap();
-            }
-
-            if (netInterface.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
-            {
-                return Properties.Resources.netshell_1612_16x16.ToBitmap();
-            }
-
-            if (netInterface.NetworkInterfaceType == NetworkInterfaceType.Tunnel)
-            {
-                return Properties.Resources.network_pipe_16x16.ToBitmap();
-            }
-
-            return Properties.Resources.deskadp_16x16.ToBitmap();
-        }
-
-        private static bool HasValidPhysicalAddress(NetworkInterface netInterface)
-        {
-            try
-            {
-                byte[] addressBytes = netInterface.GetPhysicalAddress().GetAddressBytes();
-                if (addressBytes == null || addressBytes.Length == 0)
-                {
-                    return false;
-                }
-
-                bool allZero = true;
-                foreach (byte b in addressBytes)
-                {
-                    if (b != 0)
-                    {
-                        allZero = false;
-                        break;
-                    }
-                }
-
-                return !allZero;
-            }
-            catch (NetworkInformationException)
-            {
-                return false;
-            }
-        }
-
         private void OnAbout(object sender, EventArgs e)
         {
             AboutForm formAbout = new AboutForm();
@@ -478,7 +321,7 @@ namespace GabNetStats
             trayIconManager.bandwidthUploadLvl1   = trayIconManager.bandwidthUploadLvl5       / 5;
 
             customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
-            RefreshEnabledInterfacesCache();
+            NetworkInterfaceManager.RefreshEnabledInterfacesCache();
 
             this.notifyIconPing.Visible = Settings.Default.AutoPingEnabled;
             if (!Settings.Default.AutoPingEnabled)
@@ -493,24 +336,9 @@ namespace GabNetStats
             trayIconManager.applyIconSet();
         }
 
-        internal IReadOnlyList<TrackedInterface> GetDisplayableInterfacesSnapshot()
+        internal IReadOnlyList<NetworkInterfaceManager.TrackedInterface> GetDisplayableInterfacesSnapshot()
         {
-            lock (selectedInterfaces)
-            {
-                if (selectedInterfaces.Count == 0)
-                {
-                    return Array.Empty<TrackedInterface>();
-                }
-
-                TrackedInterface[] snapshot = new TrackedInterface[selectedInterfaces.Count];
-                for (int i = 0; i < selectedInterfaces.Count; i++)
-                {
-                    TrackedInterface tracked = selectedInterfaces[i];
-                    snapshot[i] = new TrackedInterface(tracked.Interface, tracked.MacAddress);
-                }
-
-                return snapshot;
-            }
+            return nicManager.GetDisplayableInterfacesSnapshot();
         }
 
         private void OnExit(object sender, EventArgs e)
@@ -626,107 +454,6 @@ namespace GabNetStats
             }
         }
 
-        /// <summary>
-        /// Add the specified MAC address to the list of the known MAC addresses
-        /// </summary>
-        /// <param name="mac">A MAC address</param>
-        /// <returns>True if the MAC address was already known, false otherwise</returns>
-        private bool AddToKnownInterface(string mac, bool saveSettings = true)
-        {
-            bool contains = false;
-            try
-            {
-                contains = Settings.Default.KnownInterfaceMACList.Contains(mac);
-            }
-            catch (ArgumentNullException) { }
-            if (!contains)
-            {
-                Settings.Default.KnownInterfaceMACList += (Settings.Default.KnownInterfaceMACList == string.Empty ? String.Empty : ";") + mac;
-                if (saveSettings)
-                {
-                    Settings.Default.Save();
-                }
-            }
-            return contains;
-        }
-
-        /// <summary>
-        /// Enable the statistics for the interface designed by the specified MAC address
-        /// </summary>
-        /// <param name="mac">A MAC address</param>
-        /// <param name="enable">If set to True (default value), the interface will be enabled for statistics</param>
-        private bool EnableStatisticsForInterface(string mac, bool enable = true, bool saveSettings = true, bool refreshCache = true)
-        {
-            string tmp = Settings.Default.EnabledInterfaceMACList;
-            bool contains = false;
-            try
-            {
-                contains = tmp.Contains(mac);
-            }
-            catch (ArgumentNullException) { }
-            
-            bool modified = false;
-            bool empty = false;
-
-            if (mac == String.Empty)
-            {
-                return false;
-            }
-
-            if (tmp == "TOSET")
-            {
-                tmp = String.Empty;
-            }
-            empty = tmp == String.Empty;
-
-            if (contains)
-            {
-                if (!enable)
-                {
-                    try
-                    {
-                        tmp = tmp.Replace(";" + mac, ""); //mac is second to last value
-                        tmp = tmp.Replace(mac + ";", ""); //mac is first value
-                        tmp = tmp.Replace(mac, ""); //mac was the only value
-                        modified = true;
-                    }
-                    catch (ArgumentNullException) { }
-                    catch (ArgumentException) { }
-                }
-            }
-            else
-            {
-                if (enable)
-                {
-                    tmp      = tmp + (empty ? String.Empty : ";") + mac;
-                    modified = true;
-                }
-            }
-            if (modified)
-            {
-                Settings.Default.EnabledInterfaceMACList = tmp;
-                if (saveSettings)
-                {
-                    Settings.Default.Save();
-                }
-                if (refreshCache)
-                {
-                    RefreshEnabledInterfacesCache();
-                }
-
-                if (tmp == String.Empty)
-                {
-                    try
-                    {
-                        MessageBox.Show(Res.str_WarningNoInterfaceSelected, Res.str_WarningNoInterfaceSelectedCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    catch (System.ComponentModel.InvalidEnumArgumentException) { }
-                    catch (InvalidOperationException) { }
-                }
-            }
-            return modified;
-        }
-
         private void OnAdapterClick(object sender, EventArgs e)
         {
             //we get the adapter item that was clicked
@@ -758,8 +485,8 @@ namespace GabNetStats
             //we get the NetworkInterface object linked to it
             NetworkInterface nic = (NetworkInterface)itm.Tag;
 
-            //we enable or disable statistics for the NetworkInterface 
-            EnableStatisticsForInterface(nic.GetPhysicalAddress().ToString(), itm.Checked);
+            //we enable or disable statistics for the NetworkInterface
+            NetworkInterfaceManager.EnableStatisticsForInterface(nic.GetPhysicalAddress().ToString(), itm.Checked);
         }
 
         private void NetworkConnectionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -881,7 +608,7 @@ namespace GabNetStats
 
         internal bool SetInterfaceEnabledState(string mac, bool enable, bool refreshMenus = true)
         {
-            bool changed = EnableStatisticsForInterface(mac, enable);
+            bool changed = NetworkInterfaceManager.EnableStatisticsForInterface(mac, enable);
             if (changed && refreshMenus)
             {
                 this.PopulateNICs(this.NetworkAdaptersToolStripMenuItem);
@@ -920,13 +647,13 @@ namespace GabNetStats
                 nicSnapshot = Array.Empty<NetworkInterface>();
             }
 
-            lock (selectedInterfaces)
+            lock (nicManager.selectedInterfaces)
             {
-                selectedInterfaces.Clear();
+                nicManager.selectedInterfaces.Clear();
 
                 foreach (NetworkInterface netInterface in nicSnapshot)
                 {
-                    if (!ShouldDisplayInterface(netInterface))
+                    if (!NetworkInterfaceManager.ShouldDisplayInterface(netInterface))
                     {
                         continue;
                     }
@@ -977,31 +704,31 @@ namespace GabNetStats
                         }
                     }
 
-                    icon = GetInterfaceIcon(netInterface);
+                    icon = NetworkInterfaceManager.GetInterfaceIcon(netInterface);
 
                     //retrieve the mac address of the interface
                     mac = netInterface.GetPhysicalAddress().ToString();
-                    
+
                     // if we never selected an interface before, enable it for statistics by default.
                     if (isFirstTime)
                     {
-                        if (EnableStatisticsForInterface(mac, true, false, false))
+                        if (NetworkInterfaceManager.EnableStatisticsForInterface(mac, true, false, false))
                         {
                             shouldSaveSettings = true;
                         }
                     }
 
                     // if this is the first time we encounter this interface, enable it for statistics by default.
-                    if (!AddToKnownInterface(mac, false))
+                    if (!NetworkInterfaceManager.AddToKnownInterface(mac, false))
                     {
                         shouldSaveSettings = true;
-                        if (EnableStatisticsForInterface(mac, true, false, false))
+                        if (NetworkInterfaceManager.EnableStatisticsForInterface(mac, true, false, false))
                         {
                             shouldSaveSettings = true;
                         }
                     }
 
-                    selectedInterfaces.Add(new TrackedInterface(netInterface, mac));
+                    nicManager.selectedInterfaces.Add(new NetworkInterfaceManager.TrackedInterface(netInterface, mac));
                     speed = computeSpeed(netInterface.Speed, ref unit, 2);
 
                     //we generate the item related to the network interface
@@ -1011,14 +738,14 @@ namespace GabNetStats
                             ", " + ip
                             , icon
                             , OnAdapterClick
-                            , "itm_" + netInterface.Id);                    
+                            , "itm_" + netInterface.Id);
                     itm.Tag = netInterface;
 
                     //we generate its subitem
                     itm2                    = new ToolStripMenuItem(Res.str_IncludeInStatistics);
                     itm2.Name               = "itm_include_" + netInterface.Id;
                     itm2.CheckOnClick       = true;
-                    itm2.Checked            = mac != null ? IsInterfaceEnabled(mac) : false;
+                    itm2.Checked            = mac != null ? NetworkInterfaceManager.IsInterfaceEnabled(mac) : false;
                     itm2.CheckStateChanged += new EventHandler(OnAdapterCheckStateChanged);
                     itm2.Tag                = netInterface;
 
@@ -1047,7 +774,7 @@ namespace GabNetStats
             if (shouldSaveSettings)
             {
                 Settings.Default.Save();
-                RefreshEnabledInterfacesCache();
+                NetworkInterfaceManager.RefreshEnabledInterfacesCache();
             }
         }
 
@@ -1170,11 +897,11 @@ namespace GabNetStats
                     cancellationToken.ThrowIfCancellationRequested();
 
                     //we get some quick statistics about the number of network interfaces...
-                    properties = IPGlobalProperties.GetIPGlobalProperties();
+                    nicManager.properties = IPGlobalProperties.GetIPGlobalProperties();
                     try
                     {
-                        ipv4stat = properties.GetIPv4GlobalStatistics();
-                        ipv6stat = properties.GetIPv6GlobalStatistics();
+                        nicManager.ipv4stat = nicManager.properties.GetIPv4GlobalStatistics();
+                        nicManager.ipv6stat = nicManager.properties.GetIPv6GlobalStatistics();
                     }
                     catch (NetworkInformationException)
                     {
@@ -1184,20 +911,20 @@ namespace GabNetStats
                     {
                         continue;
                     }
-                   
-                    nbv4         = ipv4stat.NumberOfInterfaces;
-                    nbv6         = ipv6stat.NumberOfInterfaces;
+
+                    nbv4         = nicManager.ipv4stat.NumberOfInterfaces;
+                    nbv6         = nicManager.ipv6stat.NumberOfInterfaces;
 
                     //if number changed since last time AND we are not displaying the context menu then
-                    if (nbv4 + nbv6 != nbNIC && !_nicMenuOpen)
+                    if (nbv4 + nbv6 != nicManager.nbNIC && !_nicMenuOpen)
                     {
-                        nbNIC = nbv4 + nbv6;
+                        nicManager.nbNIC = nbv4 + nbv6;
                         this.PopulateNICs(this.NetworkAdaptersToolStripMenuItem);
                     }
 
                     try
                     {
-                        WaitWithCancellation(cancellationToken, nNICRefresh);
+                        WaitWithCancellation(cancellationToken, nicManager.nNICRefresh);
                     }
                     catch (ArgumentOutOfRangeException) { }
                 }
@@ -1268,11 +995,11 @@ namespace GabNetStats
                         goto skip;
                     }
 
-                    lock (selectedInterfaces)
+                    lock (nicManager.selectedInterfaces)
                     {
-                        foreach (TrackedInterface tracked in selectedInterfaces)
+                        foreach (NetworkInterfaceManager.TrackedInterface tracked in nicManager.selectedInterfaces)
                         {
-                            if (!IsInterfaceEnabled(tracked.MacAddress))
+                            if (!NetworkInterfaceManager.IsInterfaceEnabled(tracked.MacAddress))
                             {
                                 continue;
                             }

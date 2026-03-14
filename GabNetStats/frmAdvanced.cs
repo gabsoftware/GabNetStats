@@ -228,12 +228,12 @@ namespace GabNetStats
         private void PopulateInterfaceCombo()
         {
             MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
-            IReadOnlyList<MainForm.TrackedInterface> trackedInterfaces = mainForm?.GetDisplayableInterfacesSnapshot();
+            IReadOnlyList<NetworkInterfaceManager.TrackedInterface> trackedInterfaces = mainForm?.GetDisplayableInterfacesSnapshot();
             List<InterfaceComboItem> items = new List<InterfaceComboItem>();
 
             if (trackedInterfaces != null && trackedInterfaces.Count > 0)
             {
-                foreach (MainForm.TrackedInterface tracked in trackedInterfaces)
+                foreach (NetworkInterfaceManager.TrackedInterface tracked in trackedInterfaces)
                 {
                     items.Add(new InterfaceComboItem(tracked.Interface, tracked.MacAddress, tracked.IsEnabled));
                 }
@@ -253,7 +253,7 @@ namespace GabNetStats
                 foreach (NetworkInterface nic in fallback)
                 {
                     string mac = nic?.GetPhysicalAddress().ToString() ?? string.Empty;
-                    bool enabled = MainForm.IsInterfaceEnabled(mac);
+                    bool enabled = NetworkInterfaceManager.IsInterfaceEnabled(mac);
                     items.Add(new InterfaceComboItem(nic, mac, enabled));
                 }
             }
