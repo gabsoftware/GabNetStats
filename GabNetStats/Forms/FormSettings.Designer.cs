@@ -133,10 +133,13 @@ namespace GabNetStats
             //
             // cboIconSet
             //
+            cboIconSet.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             cboIconSet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboIconSet.FormattingEnabled = true;
+            cboIconSet.ItemHeight = 20;
             resources.ApplyResources(cboIconSet, "cboIconSet");
             cboIconSet.Name = "cboIconSet";
+            cboIconSet.DrawItem += cboIconSet_DrawItem;
             // 
             // grpBandwidthPreferences
             // 

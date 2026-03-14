@@ -4,6 +4,9 @@
 // Copyright (c) 2010
 
 using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using GabNetStats.Properties;
 using System.Globalization;
@@ -31,6 +34,8 @@ namespace GabNetStats
 
 
         private bool settingsInitialized;
+
+        private readonly Dictionary<string, Icon> _iconSetPreviews = new Dictionary<string, Icon>();
 
         public FormSettings()
         {
@@ -114,6 +119,13 @@ namespace GabNetStats
 
         private void OnLoad(object sender, EventArgs e)
         {
+            FormClosed += (s, a) =>
+            {
+                foreach (Icon icon in _iconSetPreviews.Values)
+                    icon?.Dispose();
+                _iconSetPreviews.Clear();
+            };
+
             Settings.Default.Reload();
             SettingsManager.ValidateSettings();
 
@@ -138,12 +150,65 @@ namespace GabNetStats
             grpBandwidthPreferences.Enabled = radioCustomSpeed.Checked;
             chkShowDisconnectedInterfaces.Checked = Settings.Default.ShowDisconnectedInterfaces;
             checkBoxStartup.Checked = Settings.Default.LoadOnStartup;
+            btnRefreshIconSets.Height = cboIconSet.Height + 2;
             PopulateIconSetsCombo();
             settingsInitialized = true;
         }
 
+        private Icon GetIconSetPreview(string setName)
+        {
+            if (_iconSetPreviews.TryGetValue(setName, out Icon cached))
+                return cached;
+
+            Icon icon;
+            if (string.Equals(setName, TrayIconManager.DEFAULT_ICON_SET, StringComparison.OrdinalIgnoreCase))
+            {
+                icon = Properties.Resources.send_blue;
+            }
+            else
+            {
+                string path = Path.Combine(Application.StartupPath, "icons", setName, "send_blue.ico");
+                icon = File.Exists(path) ? new Icon(path) : Properties.Resources.send_blue;
+            }
+
+            _iconSetPreviews[setName] = icon;
+            return icon;
+        }
+
+        private void cboIconSet_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            e.DrawBackground();
+
+            string setName = cboIconSet.Items[e.Index].ToString();
+            Icon preview = GetIconSetPreview(setName);
+
+            int iconSize = e.Bounds.Height - 4;
+            int iconX    = e.Bounds.Right - iconSize - 4;
+
+            TextRenderer.DrawText(
+                e.Graphics,
+                setName,
+                e.Font,
+                new Rectangle(e.Bounds.Left + 4, e.Bounds.Top, iconX - e.Bounds.Left - 8, e.Bounds.Height),
+                e.ForeColor,
+                TextFormatFlags.VerticalCenter | TextFormatFlags.Left);
+
+            if (preview != null)
+            {
+                e.Graphics.DrawIcon(preview, new Rectangle(iconX, e.Bounds.Top + 2, iconSize, iconSize));
+            }
+
+            e.DrawFocusRectangle();
+        }
+
         private void PopulateIconSetsCombo()
         {
+            foreach (Icon icon in _iconSetPreviews.Values)
+                icon?.Dispose();
+            _iconSetPreviews.Clear();
+
             string current = cboIconSet.SelectedItem?.ToString();
             if (string.IsNullOrEmpty(current))
             {
