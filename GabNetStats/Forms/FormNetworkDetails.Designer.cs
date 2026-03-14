@@ -1,6 +1,6 @@
 ﻿namespace GabNetStats
 {
-    partial class frmAdvanced
+    partial class FormNetworkDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdvanced));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNetworkDetails));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -2918,7 +2918,7 @@
             this.colState.Name = "colState";
             this.colState.ReadOnly = true;
             // 
-            // frmAdvanced
+            // FormNetworkDetails
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2926,7 +2926,7 @@
             this.Controls.Add(this.groupBoxGlobalVersion);
             this.Controls.Add(this.tabStats);
             this.DoubleBuffered = true;
-            this.Name = "frmAdvanced";
+            this.Name = "FormNetworkDetails";
             this.Load += new System.EventHandler(this.frmAdvanced_Load);
             this.tabStats.ResumeLayout(false);
             this.tabPageGlobal.ResumeLayout(false);

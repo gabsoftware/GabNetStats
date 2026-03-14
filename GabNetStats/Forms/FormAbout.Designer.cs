@@ -1,6 +1,6 @@
 namespace GabNetStats
 {
-    partial class AboutForm
+    partial class FormAbout
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@ namespace GabNetStats
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
             this.label1 = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -81,7 +81,7 @@ namespace GabNetStats
             this.linkLabel2.TabStop = true;
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.OnClick);
             // 
-            // AboutForm
+            // FormAbout
             // 
             this.AcceptButton = this.buttonOK;
             resources.ApplyResources(this, "$this");
@@ -96,7 +96,7 @@ namespace GabNetStats
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AboutForm";
+            this.Name = "FormAbout";
             this.Opacity = 0.9D;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

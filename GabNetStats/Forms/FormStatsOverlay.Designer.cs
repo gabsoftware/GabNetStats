@@ -1,6 +1,6 @@
 ﻿namespace GabNetStats
 {
-    partial class frmBalloon
+    partial class FormStatsOverlay
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBalloon));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStatsOverlay));
             GabTracker.GabTrackerFeed gabTrackerFeed1 = new GabTracker.GabTrackerFeed();
             GabTracker.GabTrackerFeed gabTrackerFeed2 = new GabTracker.GabTrackerFeed();
             BallonTimer = new System.Windows.Forms.Timer(components);
@@ -161,7 +161,7 @@
             gabTracker1.Name = "gabTracker1";
             gabTracker1.RefreshRate = 500;
             // 
-            // frmBalloon
+            // FormStatsOverlay
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,7 +178,7 @@
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "frmBalloon";
+            Name = "FormStatsOverlay";
             ShowIcon = false;
             ShowInTaskbar = false;
             TopMost = true;

@@ -28,7 +28,7 @@ namespace GabNetStats
 
                 if (m_Mutex.WaitOne(0, false))
                 {
-                    Application.Run(new MainForm());
+                    Application.Run(new FormMain());
                 }
             }
             catch (Exception ex)

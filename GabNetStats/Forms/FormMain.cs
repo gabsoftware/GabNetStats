@@ -16,17 +16,17 @@ using System.IO;
 
 namespace GabNetStats
 {
-    public partial class MainForm : Form
+    public partial class FormMain : Form
     {
         private TrayIconManager trayIconManager;
         internal NetworkInterfaceManager nicManager;
         private NetworkStatsWorker statsWorker;
 
-        static frmBalloon fBal;
+        static FormStatsOverlay fBal;
 
         private volatile bool _nicMenuOpen;
 
-        public MainForm()
+        public FormMain()
         {
             InitializeComponent();
         }
@@ -110,7 +110,7 @@ namespace GabNetStats
 
         private void OnAbout(object sender, EventArgs e)
         {
-            AboutForm formAbout = new AboutForm();
+            FormAbout formAbout = new FormAbout();
             try
             {
                 formAbout.ShowDialog();
@@ -125,7 +125,7 @@ namespace GabNetStats
 
         internal void showSettings()
         {
-            SettingsForm formSettings = new SettingsForm();
+            FormSettings formSettings = new FormSettings();
             try
             {
                 formSettings.ShowDialog();
@@ -134,7 +134,7 @@ namespace GabNetStats
 
             statsWorker.ApplySettings();
 
-            frmBalloon fb = (frmBalloon)Application.OpenForms["frmBalloon"];
+            FormStatsOverlay fb = (FormStatsOverlay)Application.OpenForms["FormStatsOverlay"];
             if (fb != null)
             {
                 fb.BallonTimer.Interval = statsWorker.nDuration;
@@ -428,7 +428,7 @@ namespace GabNetStats
         {
             if (fBal == null || !fBal.Created)
             {
-                fBal = new frmBalloon();
+                fBal = new FormStatsOverlay();
             }
             fBal.EnsurePreferredLocation();
             if (!preload)
@@ -439,11 +439,11 @@ namespace GabNetStats
 
         private void advancedStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (frmBalloon.frmAdv == null || !frmBalloon.frmAdv.Created)
+            if (FormStatsOverlay.frmAdv == null || !FormStatsOverlay.frmAdv.Created)
             {
-                frmBalloon.frmAdv = new frmAdvanced();
+                FormStatsOverlay.frmAdv = new FormNetworkDetails();
             }
-            frmBalloon.frmAdv.Show();
+            FormStatsOverlay.frmAdv.Show();
         }
 
         private void notifyIconPing_MouseClick(object sender, MouseEventArgs e)

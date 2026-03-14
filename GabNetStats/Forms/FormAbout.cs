@@ -19,9 +19,9 @@ using System.Windows.Forms;
 
 namespace GabNetStats
 {
-    public partial class AboutForm : Form
+    public partial class FormAbout : Form
     {
-        public AboutForm()
+        public FormAbout()
         {
             InitializeComponent();
         }

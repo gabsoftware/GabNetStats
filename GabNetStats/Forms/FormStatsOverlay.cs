@@ -8,7 +8,7 @@ using GabNetStats.Properties;
 
 namespace GabNetStats
 {
-    public partial class frmBalloon : Form
+    public partial class FormStatsOverlay : Form
     {
 
         private static string str_RawReceptionSpeed = Res.str_RawReceptionSpeed;
@@ -22,15 +22,15 @@ namespace GabNetStats
         private static NumberFormatInfo nfi = (NumberFormatInfo)CultureInfo.CurrentCulture.NumberFormat.Clone();
 
         private static int counter = 0;
-        internal static frmAdvanced frmAdv;
+        internal static FormNetworkDetails frmAdv;
         private bool suppressLocationPersistence;
 
-        static frmBalloon()
+        static FormStatsOverlay()
         {
             nfi.NumberDecimalDigits = 0; //we don't want decimals !
         }
 
-        public frmBalloon()
+        public FormStatsOverlay()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
@@ -210,7 +210,7 @@ namespace GabNetStats
         {
             if (frmAdv == null || !frmAdv.Created)
             {
-                frmAdv = new frmAdvanced();
+                frmAdv = new FormNetworkDetails();
             }
             frmAdv.Show();
         }
@@ -230,7 +230,7 @@ namespace GabNetStats
 
         private void btn_settings_Click(object sender, EventArgs e)
         {
-            MainForm mf = (MainForm)Application.OpenForms["MainForm"];
+            FormMain mf = (FormMain)Application.OpenForms["FormMain"];
             mf?.showSettings();
         }
 

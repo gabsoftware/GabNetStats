@@ -9,7 +9,7 @@ using System.Net;
 
 namespace GabNetStats
 {
-    public partial class frmAdvanced : Form
+    public partial class FormNetworkDetails : Form
     {
         private static NetworkInterfaceComponent ProtocolVersion { get; set; }
         private static NumberFormatInfo nfi = (NumberFormatInfo)CultureInfo.CurrentCulture.NumberFormat.Clone();
@@ -43,13 +43,13 @@ namespace GabNetStats
             }
         }
 
-        static frmAdvanced()
+        static FormNetworkDetails()
         {
             ProtocolVersion = NetworkInterfaceComponent.IPv4;
             nfi.NumberDecimalDigits = 0; //we don't want decimals !
         }
 
-        public frmAdvanced()
+        public FormNetworkDetails()
         {
             InitializeComponent();
 
@@ -227,7 +227,7 @@ namespace GabNetStats
 
         private void PopulateInterfaceCombo()
         {
-            MainForm mainForm = (MainForm)Application.OpenForms["MainForm"];
+            FormMain mainForm = (FormMain)Application.OpenForms["FormMain"];
             IReadOnlyList<NetworkInterfaceManager.TrackedInterface> trackedInterfaces = mainForm?.GetDisplayableInterfacesSnapshot();
             List<InterfaceComboItem> items = new List<InterfaceComboItem>();
 
@@ -401,7 +401,7 @@ namespace GabNetStats
                 return;
             }
 
-            MainForm main = (MainForm)Application.OpenForms["MainForm"];
+            FormMain main = (FormMain)Application.OpenForms["FormMain"];
             if (main == null)
             {
                 return;

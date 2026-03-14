@@ -10,7 +10,7 @@ using System.Globalization;
 
 namespace GabNetStats
 {
-    public partial class SettingsForm : Form
+    public partial class FormSettings : Form
     {
         private int nDuration = NetworkStatsWorker.BlinkDurationMinimum;
         private long nDownload = 12500000;
@@ -32,7 +32,7 @@ namespace GabNetStats
 
         private bool settingsInitialized;
 
-        public SettingsForm()
+        public FormSettings()
         {
             InitializeComponent();
         }
@@ -276,7 +276,7 @@ namespace GabNetStats
             }
 
             Settings.Default.ShowDisconnectedInterfaces = chkShowDisconnectedInterfaces.Checked;
-            MainForm main = (MainForm)Application.OpenForms["MainForm"];
+            FormMain main = (FormMain)Application.OpenForms["FormMain"];
             if (main != null)
             {
                 main.PopulateNICs(main.NetworkAdaptersToolStripMenuItem);

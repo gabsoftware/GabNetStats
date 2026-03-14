@@ -2,7 +2,7 @@ using GabNetStats.Properties;
 
 namespace GabNetStats
 {
-    partial class SettingsForm
+    partial class FormSettings
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace GabNetStats
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettings));
             buttonOK = new System.Windows.Forms.Button();
             buttonCancel = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
@@ -293,7 +293,7 @@ namespace GabNetStats
             chkShowDisconnectedInterfaces.UseVisualStyleBackColor = true;
             chkShowDisconnectedInterfaces.CheckedChanged += chkShowDisconnectedInterfaces_CheckedChanged;
             // 
-            // SettingsForm
+            // FormSettings
             // 
             AcceptButton = buttonOK;
             resources.ApplyResources(this, "$this");
@@ -311,7 +311,7 @@ namespace GabNetStats
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "SettingsForm";
+            Name = "FormSettings";
             ShowIcon = false;
             ShowInTaskbar = false;
             SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

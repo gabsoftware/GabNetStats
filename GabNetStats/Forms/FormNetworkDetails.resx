@@ -5299,7 +5299,7 @@
     <value>952, 511</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>frmAdvanced</value>
+    <value>FormNetworkDetails</value>
   </data>
   <data name="&gt;&gt;txtMtu.ZOrder" xml:space="preserve">
     <value>2</value>

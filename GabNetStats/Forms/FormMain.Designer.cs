@@ -1,6 +1,6 @@
 namespace GabNetStats
 {
-    partial class MainForm
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace GabNetStats
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.contextMenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -197,14 +197,14 @@ namespace GabNetStats
             this.notifyIconPing.ContextMenuStrip = this.contextMenuTray;
             this.notifyIconPing.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconPing_MouseClick);
             // 
-            // MainForm
+            // FormMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "MainForm";
+            this.Name = "FormMain";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Tag = "";
