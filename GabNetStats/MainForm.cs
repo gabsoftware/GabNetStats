@@ -74,42 +74,8 @@ namespace GabNetStats
                 () => this.PopulateNICs(this.NetworkAdaptersToolStripMenuItem),
                 () => _nicMenuOpen);
 
-            // apply icon set if necessary
-            if( Settings.Default.IconSet != "xp" )
-            {
-                trayIconManager.applyIconSet();
-            }
-
             statsWorker.InitializeSpeedSamples();
-
-            statsWorker.RefreshBlinkDurationFromSettings();
-
-            if (Settings.Default.BandwidthUnit != 1 && Settings.Default.BandwidthUnit != 8)
-            {
-                Settings.Default.BandwidthUnit = (int)TrayIconManager.eBandwithUnit.Byte;
-            }
-            if (Settings.Default.BandwidthDownloadMultiplier == 0)
-            {
-                Settings.Default.BandwidthDownloadMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
-            }
-            if (Settings.Default.BandwidthUploadMultiplier   == 0)
-            {
-                Settings.Default.BandwidthUploadMultiplier   = (long)TrayIconManager.eBandwidthMultiplier.un;
-            }
-
-            trayIconManager.bandwidthDownloadLvl5 = Settings.Default.BandwidthDownload * Settings.Default.BandwidthDownloadMultiplier / Settings.Default.BandwidthUnit;
-            trayIconManager.bandwidthUploadLvl5   = Settings.Default.BandwidthUpload   * Settings.Default.BandwidthUploadMultiplier   / Settings.Default.BandwidthUnit;
-            trayIconManager.bandwidthDownloadLvl4 = trayIconManager.bandwidthDownloadLvl5 * 4 / 5;
-            trayIconManager.bandwidthDownloadLvl3 = trayIconManager.bandwidthDownloadLvl5 * 3 / 5;
-            trayIconManager.bandwidthDownloadLvl2 = trayIconManager.bandwidthDownloadLvl5 * 2 / 5;
-            trayIconManager.bandwidthDownloadLvl1 = trayIconManager.bandwidthDownloadLvl5     / 5;
-            trayIconManager.bandwidthUploadLvl4   = trayIconManager.bandwidthUploadLvl5   * 4 / 5;
-            trayIconManager.bandwidthUploadLvl3   = trayIconManager.bandwidthUploadLvl5   * 3 / 5;
-            trayIconManager.bandwidthUploadLvl2   = trayIconManager.bandwidthUploadLvl5   * 2 / 5;
-            trayIconManager.bandwidthUploadLvl1   = trayIconManager.bandwidthUploadLvl5       / 5;
-
-            statsWorker.customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
-            NetworkInterfaceManager.RefreshEnabledInterfacesCache();
+            statsWorker.ApplySettings();
 
             //registers the networkchange event handlers
             NetworkChange.NetworkAvailabilityChanged += new NetworkAvailabilityChangedEventHandler(NetworkChange_NetworkAvailabilityChanged);
@@ -121,14 +87,6 @@ namespace GabNetStats
             statsWorker.Start();
 
             this.notifyIconPing.Visible = Settings.Default.AutoPingEnabled;
-            if (Settings.Default.AutoPingEnabled)
-            {
-                statsWorker.StartAutoPingThread();
-            }
-            else
-            {
-                statsWorker.StopAutoPingThread();
-            }
 
             try
             {
