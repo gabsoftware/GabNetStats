@@ -136,6 +136,20 @@ namespace GabNetStats
             return true;
         }
 
+        internal static bool IsPreferredInterface(NetworkInterface nic)
+        {
+            string description = nic?.Description;
+            if (string.IsNullOrEmpty(description))
+            {
+                return false;
+            }
+
+            string descriptionLower = description.ToLowerInvariant();
+            return descriptionLower.Contains("ethernet") ||
+                   descriptionLower.Contains("gigabit") ||
+                   descriptionLower.Contains("gbe");
+        }
+
         internal static Bitmap GetInterfaceIcon(NetworkInterface netInterface)
         {
             string combined = ((netInterface.Description ?? String.Empty) + (netInterface.Name ?? String.Empty));

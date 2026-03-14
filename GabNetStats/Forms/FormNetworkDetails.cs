@@ -222,19 +222,6 @@ namespace GabNetStats
             return selected?.MacAddress ?? string.Empty;
         }
 
-        private static bool IsPreferredInterface(NetworkInterface nic)
-        {
-            string description = nic?.Description;
-            if (string.IsNullOrEmpty(description))
-            {
-                return false;
-            }
-
-            string descriptionLower = description.ToLowerInvariant();
-            return descriptionLower.Contains("ethernet") ||
-                   descriptionLower.Contains("gigabit") ||
-                   descriptionLower.Contains("gbe");
-        }
 
         private InterfaceComboItem FindSelection(List<InterfaceComboItem> items, string previousMac)
         {
@@ -251,7 +238,7 @@ namespace GabNetStats
 
             foreach (InterfaceComboItem item in items)
             {
-                if (IsPreferredInterface(item.Interface))
+                if (NetworkInterfaceManager.IsPreferredInterface(item.Interface))
                 {
                     return item;
                 }
