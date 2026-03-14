@@ -63,14 +63,14 @@ namespace GabNetStats
             gabTracker1.Feeds[0].Value = Math.Round(NetworkStatsWorker.lAvgSpeedReception / 1024D, 2);
             gabTracker1.Feeds[1].Value = Math.Round(NetworkStatsWorker.lAvgSpeedEmission / 1024D, 2);
 
-            fSpeedReception = NetworkStatsWorker.computeSpeed(NetworkStatsWorker.rawSpeedReception, ref sSpeedReception, 1);
-            fSpeedEmission  = NetworkStatsWorker.computeSpeed(NetworkStatsWorker.rawSpeedEmission , ref sSpeedEmission , 1);
+            fSpeedReception = SpeedUtils.computeSpeed(NetworkStatsWorker.rawSpeedReception, ref sSpeedReception, 1);
+            fSpeedEmission  = SpeedUtils.computeSpeed(NetworkStatsWorker.rawSpeedEmission , ref sSpeedEmission , 1);
 
-            fAvgSpeedReception = NetworkStatsWorker.computeSpeed(NetworkStatsWorker.lAvgSpeedReception, ref sAvgSpeedReception, 1);
-            fAvgSpeedEmission  = NetworkStatsWorker.computeSpeed(NetworkStatsWorker.lAvgSpeedEmission , ref sAvgSpeedEmission , 1);
+            fAvgSpeedReception = SpeedUtils.computeSpeed(NetworkStatsWorker.lAvgSpeedReception, ref sAvgSpeedReception, 1);
+            fAvgSpeedEmission  = SpeedUtils.computeSpeed(NetworkStatsWorker.lAvgSpeedEmission , ref sAvgSpeedEmission , 1);
 
-            fReceived = NetworkStatsWorker.computeSpeed(NetworkStatsWorker.bytesReceived, ref sReceived, 1);
-            fSent     = NetworkStatsWorker.computeSpeed(NetworkStatsWorker.bytesSent    , ref sSent    , 1);
+            fReceived = SpeedUtils.computeSpeed(NetworkStatsWorker.bytesReceived, ref sReceived, 1);
+            fSent     = SpeedUtils.computeSpeed(NetworkStatsWorker.bytesSent    , ref sSent    , 1);
 
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawReceptionSpeed, fSpeedReception.ToString(Math.Floor(fSpeedReception) != fSpeedReception ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedReception);
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawEmissionSpeed, fSpeedEmission.ToString(Math.Floor(fSpeedEmission) != fSpeedEmission ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedEmission);

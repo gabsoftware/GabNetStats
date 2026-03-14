@@ -345,7 +345,7 @@ namespace GabNetStats
             foreach (NetworkInterfaceManager.NicDisplayInfo info in nics)
             {
                 string unit  = string.Empty;
-                double speed = NetworkStatsWorker.computeSpeed(info.Interface.Speed, ref unit, 2);
+                double speed = SpeedUtils.computeSpeed(info.Interface.Speed, ref unit, 2);
 
                 //we generate the item related to the network interface
                 ToolStripMenuItem itm = new ToolStripMenuItem(

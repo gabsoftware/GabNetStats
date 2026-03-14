@@ -5,7 +5,6 @@
 
 using System;
 using System.Windows.Forms;
-using Microsoft.Win32;
 using GabNetStats.Properties;
 using System.Globalization;
 
@@ -16,8 +15,6 @@ namespace GabNetStats
         private int nDuration = NetworkStatsWorker.BlinkDurationMinimum;
         private long nDownload = 12500000;
         private long nUpload = 12500000;
-        private long nDefaultMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
-        private int nDefaultUnit = (int)TrayIconManager.eBandwithUnit.Byte;
         
         /*private int _nStartUp = 0;
         protected int nStartup
@@ -118,54 +115,11 @@ namespace GabNetStats
         private void OnLoad(object sender, EventArgs e)
         {
             Settings.Default.Reload();
-            if (Settings.Default.BlinkDuration < NetworkStatsWorker.BlinkDurationMinimum)
-            {
-                Settings.Default.BlinkDuration = NetworkStatsWorker.BlinkDurationMinimum;
-            }
+            SettingsManager.ValidateSettings();
+
             textBoxDuration.Text = Settings.Default.BlinkDuration.ToString(CultureInfo.InvariantCulture);
-
-            if (Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.un
-             && Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.K
-             && Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.M
-             && Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.G
-             && Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.T)
-            {
-                Settings.Default.BandwidthDownloadMultiplier = nDefaultMultiplier;
-            }
-
-            if (Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.un
-             && Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.K
-             && Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.M
-             && Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.G
-             && Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.T)
-            {
-                Settings.Default.BandwidthUploadMultiplier = nDefaultMultiplier;
-            }
-
-            if (Settings.Default.BandwidthUnit != (int)TrayIconManager.eBandwithUnit.bit && Settings.Default.BandwidthUnit != (int)TrayIconManager.eBandwithUnit.Byte)
-            {
-                Settings.Default.BandwidthUnit = nDefaultUnit;
-            }
-
-            if (Settings.Default.BandwidthDownload > 0)
-            {
-                txtDownload.Text = Settings.Default.BandwidthDownload.ToString(CultureInfo.InvariantCulture);
-            }
-            else
-            {
-                Settings.Default.BandwidthDownload = nDownload;
-                txtDownload.Text = Settings.Default.BandwidthDownload.ToString(CultureInfo.InvariantCulture);
-            }
-
-            if (Settings.Default.BandwidthUpload > 0)
-            {
-                txtUpload.Text = Settings.Default.BandwidthUpload.ToString(CultureInfo.InvariantCulture);
-            }
-            else
-            {
-                Settings.Default.BandwidthUpload = nUpload;
-                txtUpload.Text = Settings.Default.BandwidthUpload.ToString(CultureInfo.InvariantCulture);
-            }
+            txtDownload.Text     = Settings.Default.BandwidthDownload.ToString(CultureInfo.InvariantCulture);
+            txtUpload.Text       = Settings.Default.BandwidthUpload.ToString(CultureInfo.InvariantCulture);
 
             rbBits.Checked = Settings.Default.BandwidthUnit == (int)TrayIconManager.eBandwithUnit.bit;
 
@@ -255,30 +209,7 @@ namespace GabNetStats
 
 
 
-            RegistryKey hStartKey = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
-            if (hStartKey != null)
-            {
-                try
-                {
-                    if (checkBoxStartup.Checked)
-                    {
-                        String strPath = Application.ExecutablePath;
-                        strPath = "\"" + strPath + "\"";
-
-                        hStartKey.SetValue("GabNetStats", strPath);
-                    }
-                    else
-                    {
-                        hStartKey.DeleteValue("GabNetStats");
-                    }
-                }
-                catch
-                {
-                    //Catching exceptions is for communists
-                }
-
-                hStartKey.Close();
-            }
+            StartupManager.SetStartup(checkBoxStartup.Checked);
 
             Settings.Default.IconSet = txtIconSet.Text;
 
