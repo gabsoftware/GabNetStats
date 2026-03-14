@@ -10,7 +10,10 @@ namespace GabNetStats
 {
     internal class NetworkInterfaceManager
     {
-        // ── Static state (lock-free, shared across threads) ──────────────────
+        //
+        //  Static state (lock-free, shared across threads)
+        //
+        internal static TrayIconManager.eState connectionStatus;
 
         private static HashSet<string> enabledInterfaceMacs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
@@ -30,8 +33,9 @@ namespace GabNetStats
             "filter"
         };
 
-        // ── Instance state ────────────────────────────────────────────────────
-
+        //
+        //  Instance state
+        //
         internal List<TrackedInterface> selectedInterfaces = new List<TrackedInterface>();
         internal IPGlobalProperties properties;
         internal IPGlobalStatistics ipv4stat;
@@ -39,8 +43,9 @@ namespace GabNetStats
         internal int nbNIC       = 0;
         internal int nNICRefresh = 10000; //time interval for refreshing the NIC list (10s by default)
 
-        // ── Nested type ───────────────────────────────────────────────────────
-
+        //
+        //  Nested type
+        //
         internal sealed class TrackedInterface
         {
             public TrackedInterface(NetworkInterface networkInterface, string macAddress)
@@ -54,8 +59,9 @@ namespace GabNetStats
             public bool IsEnabled => NetworkInterfaceManager.IsInterfaceEnabled(MacAddress);
         }
 
-        // ── Static methods ────────────────────────────────────────────────────
-
+        //
+        //  Static methods
+        //
         internal static void RefreshEnabledInterfacesCache()
         {
             HashSet<string> newSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
@@ -280,8 +286,9 @@ namespace GabNetStats
             return modified;
         }
 
-        // ── Instance methods ──────────────────────────────────────────────────
-
+        //
+        //  Instance methods
+        //
         internal IReadOnlyList<TrackedInterface> GetDisplayableInterfacesSnapshot()
         {
             lock (selectedInterfaces)

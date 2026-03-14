@@ -13,7 +13,7 @@ namespace GabNetStats
 {
     public partial class SettingsForm : Form
     {
-        private int nDuration = MainForm.BlinkDurationMinimum;
+        private int nDuration = NetworkStatsWorker.BlinkDurationMinimum;
         private long nDownload = 12500000;
         private long nUpload = 12500000;
         private long nDefaultMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
@@ -118,9 +118,9 @@ namespace GabNetStats
         private void OnLoad(object sender, EventArgs e)
         {
             Settings.Default.Reload();
-            if (Settings.Default.BlinkDuration < MainForm.BlinkDurationMinimum)
+            if (Settings.Default.BlinkDuration < NetworkStatsWorker.BlinkDurationMinimum)
             {
-                Settings.Default.BlinkDuration = MainForm.BlinkDurationMinimum;
+                Settings.Default.BlinkDuration = NetworkStatsWorker.BlinkDurationMinimum;
             }
             textBoxDuration.Text = Settings.Default.BlinkDuration.ToString(CultureInfo.InvariantCulture);
 
@@ -198,9 +198,9 @@ namespace GabNetStats
                 try
                 {
                     int requestedDuration = Convert.ToInt32(strtmp, CultureInfo.InvariantCulture);
-                    bool durationClamped = requestedDuration < MainForm.BlinkDurationMinimum;
+                    bool durationClamped = requestedDuration < NetworkStatsWorker.BlinkDurationMinimum;
 
-                    nDuration = durationClamped ? MainForm.BlinkDurationMinimum : requestedDuration;
+                    nDuration = durationClamped ? NetworkStatsWorker.BlinkDurationMinimum : requestedDuration;
                     Settings.Default.BlinkDuration = nDuration;
 
                     if (durationClamped)
