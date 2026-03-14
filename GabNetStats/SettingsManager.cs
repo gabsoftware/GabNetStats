@@ -11,28 +11,28 @@ namespace GabNetStats
                 Settings.Default.BlinkDuration = NetworkStatsWorker.BlinkDurationMinimum;
             }
 
-            if (Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.un
-             && Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.K
-             && Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.M
-             && Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.G
-             && Settings.Default.BandwidthDownloadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.T)
+            if (Settings.Default.BandwidthDownloadMultiplier != (long)SpeedUtils.eBandwidthMultiplier.un
+             && Settings.Default.BandwidthDownloadMultiplier != (long)SpeedUtils.eBandwidthMultiplier.K
+             && Settings.Default.BandwidthDownloadMultiplier != (long)SpeedUtils.eBandwidthMultiplier.M
+             && Settings.Default.BandwidthDownloadMultiplier != (long)SpeedUtils.eBandwidthMultiplier.G
+             && Settings.Default.BandwidthDownloadMultiplier != (long)SpeedUtils.eBandwidthMultiplier.T)
             {
-                Settings.Default.BandwidthDownloadMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
+                Settings.Default.BandwidthDownloadMultiplier = (long)SpeedUtils.eBandwidthMultiplier.un;
             }
 
-            if (Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.un
-             && Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.K
-             && Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.M
-             && Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.G
-             && Settings.Default.BandwidthUploadMultiplier != (long)TrayIconManager.eBandwidthMultiplier.T)
+            if (Settings.Default.BandwidthUploadMultiplier != (long)SpeedUtils.eBandwidthMultiplier.un
+             && Settings.Default.BandwidthUploadMultiplier != (long)SpeedUtils.eBandwidthMultiplier.K
+             && Settings.Default.BandwidthUploadMultiplier != (long)SpeedUtils.eBandwidthMultiplier.M
+             && Settings.Default.BandwidthUploadMultiplier != (long)SpeedUtils.eBandwidthMultiplier.G
+             && Settings.Default.BandwidthUploadMultiplier != (long)SpeedUtils.eBandwidthMultiplier.T)
             {
-                Settings.Default.BandwidthUploadMultiplier = (long)TrayIconManager.eBandwidthMultiplier.un;
+                Settings.Default.BandwidthUploadMultiplier = (long)SpeedUtils.eBandwidthMultiplier.un;
             }
 
-            if (Settings.Default.BandwidthUnit != (int)TrayIconManager.eBandwithUnit.bit
-             && Settings.Default.BandwidthUnit != (int)TrayIconManager.eBandwithUnit.Byte)
+            if (Settings.Default.BandwidthUnit != (int)SpeedUtils.eBandwithUnit.bit
+             && Settings.Default.BandwidthUnit != (int)SpeedUtils.eBandwithUnit.Byte)
             {
-                Settings.Default.BandwidthUnit = (int)TrayIconManager.eBandwithUnit.Byte;
+                Settings.Default.BandwidthUnit = (int)SpeedUtils.eBandwithUnit.Byte;
             }
 
             if (Settings.Default.BandwidthDownload <= 0)

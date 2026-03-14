@@ -19,36 +19,6 @@ namespace GabNetStats
             up           = 2
         }
 
-        internal enum eBandwithUnit : int
-        {
-            bit  = 8,
-            Byte = 1
-        }
-        internal enum eBandwidthMultiplier : long
-        {
-            un = 1,               // 2^0
-            K  = 1024,            // 2^10
-            M  = 1048576,         // 2^20
-            G  = 1073741824,      // 2^30
-            T  = 1099511627776    // 2^40
-        }
-
-        internal static class SpeedUnitsByte
-        {
-            public static string Bytes = Res.str_Bytes;
-            public static string KiB   = Res.str_KiB;
-            public static string MiB   = Res.str_MiB;
-            public static string GiB   = Res.str_GiB;
-            public static string TiB   = Res.str_TiB;
-        }
-        internal static class SpeedUnitsBit
-        {
-            public static string bit  = Res.str_bit;
-            public static string Kbit = Res.str_Kbit;
-            public static string Mbit = Res.str_Mbit;
-            public static string Gbit = Res.str_Gbit;
-            public static string Tbit = Res.str_Tbit;
-        }
 
         // 0=blue, 1=green, 2=yellow, 3=orange, 4=red
         private static readonly string[] colorNames = { "blue", "green", "yellow", "orange", "red" };
