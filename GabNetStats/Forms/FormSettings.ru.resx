@@ -151,7 +151,7 @@
   <data name="label5.Text" xml:space="preserve">
     <value>Набор иконок:</value>
   </data>
-  <data name="txtIconSet.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cboIconSet.Location" type="System.Drawing.Point, System.Drawing">
     <value>123, 55</value>
   </data>
   <data name="grpBandwidthPreferences.Text" xml:space="preserve">

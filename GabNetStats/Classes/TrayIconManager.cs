@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Net.NetworkInformation;
@@ -12,7 +13,7 @@ namespace GabNetStats
         //
         //  Constants
         //
-        private const string DEFAULT_ICON_SET   = "xp";
+        internal const string DEFAULT_ICON_SET   = "xp";
         private const string ICONS_SUBDIRECTORY = "icons";
 
         private readonly NotifyIcon _notifyIconActivity;
@@ -100,6 +101,46 @@ namespace GabNetStats
             LoadIconSetFromDirectory(path);
             appliedIconSet = desiredSet;
             currentActivityIcon = _notifyIconActivity.Icon;
+        }
+
+        internal static string[] GetAvailableIconSets()
+        {
+            var sets = new List<string> { DEFAULT_ICON_SET };
+            string iconsPath = Path.Combine(Application.StartupPath, ICONS_SUBDIRECTORY);
+            if (Directory.Exists(iconsPath))
+            {
+                foreach (string dir in Directory.GetDirectories(iconsPath))
+                {
+                    string name = Path.GetFileName(dir);
+                    if (!string.Equals(name, DEFAULT_ICON_SET, StringComparison.OrdinalIgnoreCase)
+                        && HasAllRequiredIcons(dir))
+                    {
+                        sets.Add(name);
+                    }
+                }
+            }
+            return sets.ToArray();
+        }
+
+        private static bool HasAllRequiredIcons(string basePath)
+        {
+            for (int dl = 0; dl < colorNames.Length; dl++)
+            {
+                for (int ul = 0; ul < colorNames.Length; ul++)
+                {
+                    if (!File.Exists(Path.Combine(basePath, $"active_{colorNames[dl]}_{colorNames[ul]}.ico")))
+                    {
+                        return false;
+                    }
+                }
+                if (!File.Exists(Path.Combine(basePath, $"send_{colorNames[dl]}.ico")))    return false;
+                if (!File.Exists(Path.Combine(basePath, $"receive_{colorNames[dl]}.ico"))) return false;
+            }
+            return File.Exists(Path.Combine(basePath, "inactive.ico"))
+                && File.Exists(Path.Combine(basePath, "circle_green.ico"))
+                && File.Exists(Path.Combine(basePath, "circle_red.ico"))
+                && File.Exists(Path.Combine(basePath, "circle_grey.ico"))
+                && File.Exists(Path.Combine(basePath, "circle_orange.ico"));
         }
 
         internal static int GetSpeedLevel(long speed, long lvl1, long lvl2, long lvl3, long lvl4)

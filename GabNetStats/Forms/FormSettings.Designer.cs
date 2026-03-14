@@ -40,7 +40,7 @@ namespace GabNetStats
             groupBox1 = new System.Windows.Forms.GroupBox();
             label6 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
-            txtIconSet = new System.Windows.Forms.TextBox();
+            cboIconSet = new System.Windows.Forms.ComboBox();
             grpBandwidthPreferences = new System.Windows.Forms.GroupBox();
             cbUpload = new System.Windows.Forms.ComboBox();
             label4 = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@ namespace GabNetStats
             checkBoxStartup = new System.Windows.Forms.CheckBox();
             groupBox3 = new System.Windows.Forms.GroupBox();
             chkShowDisconnectedInterfaces = new System.Windows.Forms.CheckBox();
+            btnRefreshIconSets = new System.Windows.Forms.Button();
             groupBox1.SuspendLayout();
             grpBandwidthPreferences.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -109,13 +110,14 @@ namespace GabNetStats
             // 
             // groupBox1
             // 
-            resources.ApplyResources(groupBox1, "groupBox1");
+            groupBox1.Controls.Add(btnRefreshIconSets);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(txtIconSet);
+            groupBox1.Controls.Add(cboIconSet);
             groupBox1.Controls.Add(grpBandwidthPreferences);
             groupBox1.Controls.Add(radioDefault);
             groupBox1.Controls.Add(radioCustomSpeed);
+            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
             // 
@@ -128,16 +130,16 @@ namespace GabNetStats
             // 
             resources.ApplyResources(label5, "label5");
             label5.Name = "label5";
-            // 
-            // txtIconSet
-            // 
-            resources.ApplyResources(txtIconSet, "txtIconSet");
-            txtIconSet.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::GabNetStats.Properties.Settings.Default, "IconSet", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            txtIconSet.Name = "txtIconSet";
+            //
+            // cboIconSet
+            //
+            cboIconSet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cboIconSet.FormattingEnabled = true;
+            resources.ApplyResources(cboIconSet, "cboIconSet");
+            cboIconSet.Name = "cboIconSet";
             // 
             // grpBandwidthPreferences
             // 
-            resources.ApplyResources(grpBandwidthPreferences, "grpBandwidthPreferences");
             grpBandwidthPreferences.Controls.Add(cbUpload);
             grpBandwidthPreferences.Controls.Add(label4);
             grpBandwidthPreferences.Controls.Add(cbDownload);
@@ -149,14 +151,15 @@ namespace GabNetStats
             grpBandwidthPreferences.Controls.Add(txtDownload);
             grpBandwidthPreferences.Controls.Add(txtUpload);
             grpBandwidthPreferences.Controls.Add(label3);
+            resources.ApplyResources(grpBandwidthPreferences, "grpBandwidthPreferences");
             grpBandwidthPreferences.Name = "grpBandwidthPreferences";
             grpBandwidthPreferences.TabStop = false;
             // 
             // cbUpload
             // 
-            resources.ApplyResources(cbUpload, "cbUpload");
             cbUpload.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbUpload.FormattingEnabled = true;
+            resources.ApplyResources(cbUpload, "cbUpload");
             cbUpload.Name = "cbUpload";
             cbUpload.SelectedIndexChanged += cbUpload_SelectedIndexChanged;
             // 
@@ -167,9 +170,9 @@ namespace GabNetStats
             // 
             // cbDownload
             // 
-            resources.ApplyResources(cbDownload, "cbDownload");
             cbDownload.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbDownload.FormattingEnabled = true;
+            resources.ApplyResources(cbDownload, "cbDownload");
             cbDownload.Name = "cbDownload";
             cbDownload.SelectedIndexChanged += cbDownload_SelectedIndexChanged;
             // 
@@ -224,31 +227,32 @@ namespace GabNetStats
             // 
             // groupBox2
             // 
-            resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Controls.Add(chkSettingsAutoPingNotification);
             groupBox2.Controls.Add(numericUpDown1);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(txtSettingsAutoPingHost);
             groupBox2.Controls.Add(chkSettingsAutoPingEnabled);
+            resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Name = "groupBox2";
             groupBox2.TabStop = false;
             // 
             // chkSettingsAutoPingNotification
             // 
             resources.ApplyResources(chkSettingsAutoPingNotification, "chkSettingsAutoPingNotification");
-            chkSettingsAutoPingNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::GabNetStats.Properties.Settings.Default, "AutoPingNotif", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            chkSettingsAutoPingNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", Settings.Default, "AutoPingNotif", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             chkSettingsAutoPingNotification.Name = "chkSettingsAutoPingNotification";
             chkSettingsAutoPingNotification.UseVisualStyleBackColor = true;
             // 
             // numericUpDown1
             // 
-            resources.ApplyResources(numericUpDown1, "numericUpDown1");
-            numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", global::GabNetStats.Properties.Settings.Default, "AutoPingRate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", Settings.Default, "AutoPingRate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             numericUpDown1.Increment = new decimal(new int[] { 500, 0, 0, 0 });
+            resources.ApplyResources(numericUpDown1, "numericUpDown1");
             numericUpDown1.Maximum = new decimal(new int[] { 60000, 0, 0, 0 });
             numericUpDown1.Minimum = new decimal(new int[] { 500, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Value = new decimal(new int[] { 500, 0, 0, 0 });
             // 
             // label8
             // 
@@ -262,14 +266,14 @@ namespace GabNetStats
             // 
             // txtSettingsAutoPingHost
             // 
+            txtSettingsAutoPingHost.DataBindings.Add(new System.Windows.Forms.Binding("Text", Settings.Default, "AutoPingHost", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             resources.ApplyResources(txtSettingsAutoPingHost, "txtSettingsAutoPingHost");
-            txtSettingsAutoPingHost.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::GabNetStats.Properties.Settings.Default, "AutoPingHost", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             txtSettingsAutoPingHost.Name = "txtSettingsAutoPingHost";
             // 
             // chkSettingsAutoPingEnabled
             // 
             resources.ApplyResources(chkSettingsAutoPingEnabled, "chkSettingsAutoPingEnabled");
-            chkSettingsAutoPingEnabled.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::GabNetStats.Properties.Settings.Default, "AutoPingEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            chkSettingsAutoPingEnabled.DataBindings.Add(new System.Windows.Forms.Binding("Checked", Settings.Default, "AutoPingEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             chkSettingsAutoPingEnabled.Name = "chkSettingsAutoPingEnabled";
             chkSettingsAutoPingEnabled.UseVisualStyleBackColor = true;
             // 
@@ -281,8 +285,8 @@ namespace GabNetStats
             // 
             // groupBox3
             // 
-            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Controls.Add(chkShowDisconnectedInterfaces);
+            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Name = "groupBox3";
             groupBox3.TabStop = false;
             // 
@@ -292,6 +296,13 @@ namespace GabNetStats
             chkShowDisconnectedInterfaces.Name = "chkShowDisconnectedInterfaces";
             chkShowDisconnectedInterfaces.UseVisualStyleBackColor = true;
             chkShowDisconnectedInterfaces.CheckedChanged += chkShowDisconnectedInterfaces_CheckedChanged;
+            // 
+            // btnRefreshIconSets
+            // 
+            resources.ApplyResources(btnRefreshIconSets, "btnRefreshIconSets");
+            btnRefreshIconSets.Name = "btnRefreshIconSets";
+            btnRefreshIconSets.UseVisualStyleBackColor = true;
+            btnRefreshIconSets.Click += btnRefreshIconSets_Click;
             // 
             // FormSettings
             // 
@@ -353,7 +364,7 @@ namespace GabNetStats
         private System.Windows.Forms.RadioButton rbBits;
         private System.Windows.Forms.ComboBox cbUpload;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtIconSet;
+        private System.Windows.Forms.ComboBox cboIconSet;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtSettingsAutoPingHost;
@@ -364,5 +375,6 @@ namespace GabNetStats
         private System.Windows.Forms.CheckBox chkSettingsAutoPingNotification;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox chkShowDisconnectedInterfaces;
+        private System.Windows.Forms.Button btnRefreshIconSets;
     }
 }

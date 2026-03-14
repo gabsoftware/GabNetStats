@@ -15,7 +15,7 @@ namespace GabNetStats
         private int nDuration = NetworkStatsWorker.BlinkDurationMinimum;
         private long nDownload = SettingsManager.DEFAULT_BANDWIDTH_BPS;
         private long nUpload = SettingsManager.DEFAULT_BANDWIDTH_BPS;
-        
+
         /*private int _nStartUp = 0;
         protected int nStartup
         {
@@ -58,7 +58,7 @@ namespace GabNetStats
             if (rbBits.Checked)
             {
                 cbDownload.Items.AddRange(new object[]
-                { 
+                {
                     new BandwidthItem(Res.str_bit, (long)SpeedUtils.eBandwidthMultiplier.un),
                     new BandwidthItem(Res.str_Kbit, (long)SpeedUtils.eBandwidthMultiplier.K),
                     new BandwidthItem(Res.str_Mbit, (long)SpeedUtils.eBandwidthMultiplier.M),
@@ -67,7 +67,7 @@ namespace GabNetStats
                 });
 
                 cbUpload.Items.AddRange(new object[]
-                { 
+                {
                     new BandwidthItem(Res.str_bit, (long)SpeedUtils.eBandwidthMultiplier.un),
                     new BandwidthItem(Res.str_Kbit, (long)SpeedUtils.eBandwidthMultiplier.K),
                     new BandwidthItem(Res.str_Mbit, (long)SpeedUtils.eBandwidthMultiplier.M),
@@ -78,7 +78,7 @@ namespace GabNetStats
             else
             {
                 cbDownload.Items.AddRange(new object[]
-                { 
+                {
                     new BandwidthItem(Res.str_Bytes, (long)SpeedUtils.eBandwidthMultiplier.un),
                     new BandwidthItem(Res.str_KiB, (long)SpeedUtils.eBandwidthMultiplier.K),
                     new BandwidthItem(Res.str_MiB, (long)SpeedUtils.eBandwidthMultiplier.M),
@@ -87,7 +87,7 @@ namespace GabNetStats
                 });
 
                 cbUpload.Items.AddRange(new object[]
-                { 
+                {
                     new BandwidthItem(Res.str_Bytes, (long)SpeedUtils.eBandwidthMultiplier.un),
                     new BandwidthItem(Res.str_KiB, (long)SpeedUtils.eBandwidthMultiplier.K),
                     new BandwidthItem(Res.str_MiB, (long)SpeedUtils.eBandwidthMultiplier.M),
@@ -97,15 +97,15 @@ namespace GabNetStats
             }
             cbDownload.ValueMember = "multiplier";
             cbDownload.DisplayMember = "name";
-            cbDownload.SelectedIndex = (bdm==(long)SpeedUtils.eBandwidthMultiplier.un ? 0 : 
-                                       (bdm==(long)SpeedUtils.eBandwidthMultiplier.K ? 1 : 
-                                       (bdm==(long)SpeedUtils.eBandwidthMultiplier.M ? 2 : 
-                                       (bdm==(long)SpeedUtils.eBandwidthMultiplier.G ? 3 :
-                                       (bdm==(long)SpeedUtils.eBandwidthMultiplier.T ? 4 : 0)))));
+            cbDownload.SelectedIndex = (bdm == (long)SpeedUtils.eBandwidthMultiplier.un ? 0 :
+                                       (bdm == (long)SpeedUtils.eBandwidthMultiplier.K ? 1 :
+                                       (bdm == (long)SpeedUtils.eBandwidthMultiplier.M ? 2 :
+                                       (bdm == (long)SpeedUtils.eBandwidthMultiplier.G ? 3 :
+                                       (bdm == (long)SpeedUtils.eBandwidthMultiplier.T ? 4 : 0)))));
 
             cbUpload.ValueMember = "multiplier";
             cbUpload.DisplayMember = "name";
-            cbUpload.SelectedIndex =   (bum == (long)SpeedUtils.eBandwidthMultiplier.un ? 0 :
+            cbUpload.SelectedIndex = (bum == (long)SpeedUtils.eBandwidthMultiplier.un ? 0 :
                                        (bum == (long)SpeedUtils.eBandwidthMultiplier.K ? 1 :
                                        (bum == (long)SpeedUtils.eBandwidthMultiplier.M ? 2 :
                                        (bum == (long)SpeedUtils.eBandwidthMultiplier.G ? 3 :
@@ -118,8 +118,8 @@ namespace GabNetStats
             SettingsManager.ValidateSettings();
 
             textBoxDuration.Text = Settings.Default.BlinkDuration.ToString(CultureInfo.InvariantCulture);
-            txtDownload.Text     = Settings.Default.BandwidthDownload.ToString(CultureInfo.InvariantCulture);
-            txtUpload.Text       = Settings.Default.BandwidthUpload.ToString(CultureInfo.InvariantCulture);
+            txtDownload.Text = Settings.Default.BandwidthDownload.ToString(CultureInfo.InvariantCulture);
+            txtUpload.Text = Settings.Default.BandwidthUpload.ToString(CultureInfo.InvariantCulture);
 
             rbBits.Checked = Settings.Default.BandwidthUnit == (int)SpeedUtils.eBandwithUnit.bit;
 
@@ -138,14 +138,44 @@ namespace GabNetStats
             grpBandwidthPreferences.Enabled = radioCustomSpeed.Checked;
             chkShowDisconnectedInterfaces.Checked = Settings.Default.ShowDisconnectedInterfaces;
             checkBoxStartup.Checked = Settings.Default.LoadOnStartup;
+            PopulateIconSetsCombo();
             settingsInitialized = true;
+        }
+
+        private void PopulateIconSetsCombo()
+        {
+            string current = cboIconSet.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(current))
+            {
+                current = Settings.Default.IconSet;
+            }
+            if (string.IsNullOrEmpty(current))
+            {
+                current = TrayIconManager.DEFAULT_ICON_SET;
+            }
+
+            cboIconSet.BeginUpdate();
+            cboIconSet.Items.Clear();
+            foreach (string set in TrayIconManager.GetAvailableIconSets())
+            {
+                cboIconSet.Items.Add(set);
+            }
+            // If the saved setting isn't in the validated list, add it anyway so it isn't silently lost.
+            if (!string.IsNullOrEmpty(current) && cboIconSet.FindStringExact(current) < 0)
+            {
+                cboIconSet.Items.Add(current);
+            }
+            cboIconSet.EndUpdate();
+
+            int idx = cboIconSet.FindStringExact(current);
+            cboIconSet.SelectedIndex = idx >= 0 ? idx : 0;
         }
 
         private void OnOK(object sender, EventArgs e)
         {
-           
+
             String strtmp;
-            
+
             strtmp = textBoxDuration.Text.Trim();
             if (!String.IsNullOrEmpty(strtmp))
             {
@@ -211,7 +241,7 @@ namespace GabNetStats
 
             StartupManager.SetStartup(checkBoxStartup.Checked);
 
-            Settings.Default.IconSet = txtIconSet.Text;
+            Settings.Default.IconSet = cboIconSet.SelectedItem?.ToString() ?? TrayIconManager.DEFAULT_ICON_SET;
 
             Settings.Default.BandwidthVisualsDefault = radioDefault.Checked;
             Settings.Default.BandwidthVisualsCustom = radioCustomSpeed.Checked;
@@ -281,6 +311,11 @@ namespace GabNetStats
             {
                 main.PopulateNICs(main.NetworkAdaptersToolStripMenuItem);
             }
+        }
+
+        private void btnRefreshIconSets_Click(object sender, EventArgs e)
+        {
+            PopulateIconSetsCombo();
         }
     }
 }
