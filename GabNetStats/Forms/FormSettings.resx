@@ -307,6 +307,9 @@
   <data name="&gt;&gt;txtUpload.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="btnRefreshIconSets.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 13.8pt</value>
+  </data>
   <data name="btnRefreshIconSets.Location" type="System.Drawing.Point, System.Drawing">
     <value>216, 54</value>
   </data>
@@ -317,7 +320,7 @@
     <value>19</value>
   </data>
   <data name="btnRefreshIconSets.Text" xml:space="preserve">
-    <value>🔃</value>
+    <value>↻</value>
   </data>
   <data name="&gt;&gt;btnRefreshIconSets.Name" xml:space="preserve">
     <value>btnRefreshIconSets</value>
@@ -397,6 +400,9 @@
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cboIconSet.ItemHeight" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
   <data name="cboIconSet.Location" type="System.Drawing.Point, System.Drawing">
     <value>104, 55</value>
   </data>
@@ -404,13 +410,10 @@
     <value>4, 5, 4, 5</value>
   </data>
   <data name="cboIconSet.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 27</value>
+    <value>107, 26</value>
   </data>
   <data name="cboIconSet.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
-  </data>
-  <data name="cboIconSet.Text" xml:space="preserve">
-    <value>xp</value>
   </data>
   <data name="&gt;&gt;cboIconSet.Name" xml:space="preserve">
     <value>cboIconSet</value>

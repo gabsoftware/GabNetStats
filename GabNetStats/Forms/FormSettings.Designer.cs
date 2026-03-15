@@ -38,6 +38,7 @@ namespace GabNetStats
             txtDownload = new System.Windows.Forms.TextBox();
             txtUpload = new System.Windows.Forms.TextBox();
             groupBox1 = new System.Windows.Forms.GroupBox();
+            btnRefreshIconSets = new System.Windows.Forms.Button();
             label6 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             cboIconSet = new System.Windows.Forms.ComboBox();
@@ -63,7 +64,6 @@ namespace GabNetStats
             checkBoxStartup = new System.Windows.Forms.CheckBox();
             groupBox3 = new System.Windows.Forms.GroupBox();
             chkShowDisconnectedInterfaces = new System.Windows.Forms.CheckBox();
-            btnRefreshIconSets = new System.Windows.Forms.Button();
             groupBox1.SuspendLayout();
             grpBandwidthPreferences.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -121,6 +121,14 @@ namespace GabNetStats
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
             // 
+            // btnRefreshIconSets
+            // 
+            resources.ApplyResources(btnRefreshIconSets, "btnRefreshIconSets");
+            btnRefreshIconSets.Name = "btnRefreshIconSets";
+            btnRefreshIconSets.UseCompatibleTextRendering = true;
+            btnRefreshIconSets.UseVisualStyleBackColor = true;
+            btnRefreshIconSets.Click += btnRefreshIconSets_Click;
+            // 
             // label6
             // 
             resources.ApplyResources(label6, "label6");
@@ -130,13 +138,12 @@ namespace GabNetStats
             // 
             resources.ApplyResources(label5, "label5");
             label5.Name = "label5";
-            //
+            // 
             // cboIconSet
-            //
+            // 
             cboIconSet.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             cboIconSet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboIconSet.FormattingEnabled = true;
-            cboIconSet.ItemHeight = 20;
             resources.ApplyResources(cboIconSet, "cboIconSet");
             cboIconSet.Name = "cboIconSet";
             cboIconSet.DrawItem += cboIconSet_DrawItem;
@@ -243,13 +250,11 @@ namespace GabNetStats
             // chkSettingsAutoPingNotification
             // 
             resources.ApplyResources(chkSettingsAutoPingNotification, "chkSettingsAutoPingNotification");
-            chkSettingsAutoPingNotification.DataBindings.Add(new System.Windows.Forms.Binding("Checked", Settings.Default, "AutoPingNotif", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             chkSettingsAutoPingNotification.Name = "chkSettingsAutoPingNotification";
             chkSettingsAutoPingNotification.UseVisualStyleBackColor = true;
             // 
             // numericUpDown1
             // 
-            numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", Settings.Default, "AutoPingRate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             numericUpDown1.Increment = new decimal(new int[] { 500, 0, 0, 0 });
             resources.ApplyResources(numericUpDown1, "numericUpDown1");
             numericUpDown1.Maximum = new decimal(new int[] { 60000, 0, 0, 0 });
@@ -269,14 +274,12 @@ namespace GabNetStats
             // 
             // txtSettingsAutoPingHost
             // 
-            txtSettingsAutoPingHost.DataBindings.Add(new System.Windows.Forms.Binding("Text", Settings.Default, "AutoPingHost", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             resources.ApplyResources(txtSettingsAutoPingHost, "txtSettingsAutoPingHost");
             txtSettingsAutoPingHost.Name = "txtSettingsAutoPingHost";
             // 
             // chkSettingsAutoPingEnabled
             // 
             resources.ApplyResources(chkSettingsAutoPingEnabled, "chkSettingsAutoPingEnabled");
-            chkSettingsAutoPingEnabled.DataBindings.Add(new System.Windows.Forms.Binding("Checked", Settings.Default, "AutoPingEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             chkSettingsAutoPingEnabled.Name = "chkSettingsAutoPingEnabled";
             chkSettingsAutoPingEnabled.UseVisualStyleBackColor = true;
             // 
@@ -299,13 +302,6 @@ namespace GabNetStats
             chkShowDisconnectedInterfaces.Name = "chkShowDisconnectedInterfaces";
             chkShowDisconnectedInterfaces.UseVisualStyleBackColor = true;
             chkShowDisconnectedInterfaces.CheckedChanged += chkShowDisconnectedInterfaces_CheckedChanged;
-            // 
-            // btnRefreshIconSets
-            // 
-            resources.ApplyResources(btnRefreshIconSets, "btnRefreshIconSets");
-            btnRefreshIconSets.Name = "btnRefreshIconSets";
-            btnRefreshIconSets.UseVisualStyleBackColor = true;
-            btnRefreshIconSets.Click += btnRefreshIconSets_Click;
             // 
             // FormSettings
             // 

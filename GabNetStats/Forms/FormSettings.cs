@@ -129,6 +129,11 @@ namespace GabNetStats
             Settings.Default.Reload();
             SettingsManager.ValidateSettings();
 
+            chkSettingsAutoPingNotification.DataBindings.Add(new Binding("Checked",  Settings.Default, "AutoPingNotif",   true, DataSourceUpdateMode.OnPropertyChanged));
+            numericUpDown1.DataBindings.Add              (new Binding("Value",   Settings.Default, "AutoPingRate",    true, DataSourceUpdateMode.OnPropertyChanged));
+            txtSettingsAutoPingHost.DataBindings.Add     (new Binding("Text",    Settings.Default, "AutoPingHost",    true, DataSourceUpdateMode.OnPropertyChanged));
+            chkSettingsAutoPingEnabled.DataBindings.Add  (new Binding("Checked", Settings.Default, "AutoPingEnabled", true, DataSourceUpdateMode.OnPropertyChanged));
+
             textBoxDuration.Text = Settings.Default.BlinkDuration.ToString(CultureInfo.InvariantCulture);
             txtDownload.Text = Settings.Default.BandwidthDownload.ToString(CultureInfo.InvariantCulture);
             txtUpload.Text = Settings.Default.BandwidthUpload.ToString(CultureInfo.InvariantCulture);
