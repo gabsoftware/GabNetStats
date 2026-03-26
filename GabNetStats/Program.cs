@@ -20,6 +20,9 @@ namespace GabNetStats
         /// <summary>Set to true when --show-statistics was passed on the command line.</summary>
         public static bool ShowStatisticsOnStart { get; private set; }
 
+        /// <summary>Set to true when --no-upgrade-message was passed on the command line.</summary>
+        public static bool NoUpgradeMessage { get; private set; }
+
         [STAThread]
         static void Main()
         {
@@ -31,6 +34,8 @@ namespace GabNetStats
                         ShowNetworkDetailsOnStart = true;
                     if (arg.Equals("--show-statistics", StringComparison.OrdinalIgnoreCase))
                         ShowStatisticsOnStart = true;
+                    if (arg.Equals("--no-upgrade-message", StringComparison.OrdinalIgnoreCase))
+                        NoUpgradeMessage = true;
                 }
 
                 Application.EnableVisualStyles();

@@ -105,6 +105,12 @@ namespace GabNetStats {
                 return ResourceManager.GetString("str_ErrorCrash", resourceCulture);
             }
         }
+
+        internal static string str_SettingsMigrated {
+            get {
+                return ResourceManager.GetString("str_SettingsMigrated", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Gbit.

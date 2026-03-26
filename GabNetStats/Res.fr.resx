@@ -133,6 +133,9 @@
     <value>Une erreur s'est produite dans GabNetStats. Nous sommes désolé pour ce problème et espérons pouvoir le corriger dès que possible.
 Vous pouvez envoyer au développeur la cause de l'erreur affichée ci-dessous au moyen d'une capture d'écran :</value>
   </data>
+  <data name="str_SettingsMigrated" xml:space="preserve">
+    <value>Vos paramètres ont été migrés avec succès depuis la version précédente.</value>
+  </data>
   <data name="str_Gbit" xml:space="preserve">
     <value>Gbit</value>
   </data>

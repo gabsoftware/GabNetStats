@@ -80,6 +80,17 @@ namespace GabNetStats
 
         private void OnLoad(object sender, EventArgs e)
         {
+            if (!Settings.Default.SettingsUpgraded)
+            {
+                Settings.Default.Upgrade();
+                Settings.Default.SettingsUpgraded = true;
+                Settings.Default.Save();
+                if (!Program.NoUpgradeMessage)
+                {
+                    MessageBox.Show(Res.str_SettingsMigrated, "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+
             trayIconManager = new TrayIconManager(this.notifyIconActivity, this.notifyIconPing);
             nicManager      = new NetworkInterfaceManager();
             statsWorker     = new NetworkStatsWorker(

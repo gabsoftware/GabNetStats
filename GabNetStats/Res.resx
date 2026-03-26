@@ -133,6 +133,9 @@
     <value>An error occurred in GabNetStats. We are sorry for this inconvenience and are looking to correct the problem as soon as possible.
 Below is displayed the cause of the error that you can send to the developer using a screenshot :</value>
   </data>
+  <data name="str_SettingsMigrated" xml:space="preserve">
+    <value>Your settings have been successfully migrated from the previous version.</value>
+  </data>
   <data name="str_Gbit" xml:space="preserve">
     <value>Gbit</value>
   </data>
