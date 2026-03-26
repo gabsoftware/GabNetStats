@@ -90,9 +90,9 @@
     <AssemblyTitle>GabNetStats</AssemblyTitle>
     <BaseOutputPath>bin\</BaseOutputPath>
     <Nullable>disable</Nullable>
-    <AssemblyVersion>1.1.2.1</AssemblyVersion>
-    <FileVersion>1.1.2.1</FileVersion>
-    <Version>1.1.2.1</Version>
+    <AssemblyVersion>1.1.2.2</AssemblyVersion>
+    <FileVersion>1.1.2.2</FileVersion>
+    <Version>1.1.2.2</Version>
   </PropertyGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="echo Configuration: $(Configuration)&#xD;&#xA;echo DevEnvDir: $(DevEnvDir)&#xD;&#xA;echo OutDir: $(OutDir)&#xD;&#xA;echo ProjectDir: $(ProjectDir)&#xD;&#xA;echo VisualStudioVersion: $(VisualStudioVersion)&#xD;&#xA;echo AssemblySearchPaths: $(AssemblySearchPaths)&#xD;&#xA;echo AssemblyName: $(AssemblyName)&#xD;&#xA;echo BaseIntermediateOutputPath: $(BaseIntermediateOutputPath)&#xD;&#xA;echo CscToolPath: $(CscToolPath)&#xD;&#xA;echo MSBuildProjectDirectory: $(MSBuildProjectDirectory)&#xD;&#xA;del /F &quot;$(OutDir)\License.*.txt&quot;" />
