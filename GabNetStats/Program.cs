@@ -17,6 +17,9 @@ namespace GabNetStats
         /// <summary>Set to true when --show-network-details was passed on the command line.</summary>
         public static bool ShowNetworkDetailsOnStart { get; private set; }
 
+        /// <summary>Set to true when --show-statistics was passed on the command line.</summary>
+        public static bool ShowStatisticsOnStart { get; private set; }
+
         [STAThread]
         static void Main()
         {
@@ -26,6 +29,8 @@ namespace GabNetStats
                 {
                     if (arg.Equals("--show-network-details", StringComparison.OrdinalIgnoreCase))
                         ShowNetworkDetailsOnStart = true;
+                    if (arg.Equals("--show-statistics", StringComparison.OrdinalIgnoreCase))
+                        ShowStatisticsOnStart = true;
                 }
 
                 Application.EnableVisualStyles();

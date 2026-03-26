@@ -220,6 +220,11 @@ namespace GabNetStats
             frmAdv.Show();
         }
 
+        internal void DisableAutoClose()
+        {
+            chkAutoClose.Checked = false;
+        }
+
         private void chkAutoClose_CheckStateChanged(object sender, EventArgs e)
         {
             counter = 0;

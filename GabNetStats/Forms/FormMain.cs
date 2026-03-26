@@ -126,7 +126,12 @@ namespace GabNetStats
                 FormStatsOverlay.frmAdv.Show();
             }
 
-            showBalloon(true);
+            showBalloon(preload: !Program.ShowStatisticsOnStart);
+
+            if (Program.ShowStatisticsOnStart)
+            {
+                fBal.DisableAutoClose();
+            }
         }
 
         private void OnAbout(object sender, EventArgs e)
@@ -441,7 +446,7 @@ namespace GabNetStats
         {
             if (e.Button == MouseButtons.Left)
             {
-                showBalloon(false);
+                showBalloon(preload: false);
             }
         }
 
@@ -471,7 +476,7 @@ namespace GabNetStats
         {
             if (e.Button == MouseButtons.Left)
             {
-                showBalloon(false);
+                showBalloon(preload: false);
             }
         }
     }
