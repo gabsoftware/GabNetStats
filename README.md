@@ -39,3 +39,4 @@ Alternatively, you can build GabNetStats from the command line:
 ## Many thanks to :
 - Igor Tolmachev (www.itsamples.com) for the original idea
 - Valerij Romanovskij (alias ext5 on GitHub) for the Russian translation
+- @erasmion for providing the erasmion icon set!
