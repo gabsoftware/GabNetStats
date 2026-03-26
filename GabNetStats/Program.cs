@@ -14,11 +14,20 @@ namespace GabNetStats
         /// <summary>Set to true when Windows initiates a shutdown, to suppress restart on crash.</summary>
         public static bool IsWindowsShuttingDown { get; set; }
 
+        /// <summary>Set to true when --show-network-details was passed on the command line.</summary>
+        public static bool ShowNetworkDetailsOnStart { get; private set; }
+
         [STAThread]
         static void Main()
         {
             try
             {
+                foreach (string arg in Environment.GetCommandLineArgs())
+                {
+                    if (arg.Equals("--show-network-details", StringComparison.OrdinalIgnoreCase))
+                        ShowNetworkDetailsOnStart = true;
+                }
+
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 

@@ -119,7 +119,13 @@ namespace GabNetStats
             catch (SystemException) { }
 
             this.Hide();
-            
+
+            if (Program.ShowNetworkDetailsOnStart)
+            {
+                FormStatsOverlay.frmAdv = new FormNetworkDetails();
+                FormStatsOverlay.frmAdv.Show();
+            }
+
             showBalloon(true);
         }
 
