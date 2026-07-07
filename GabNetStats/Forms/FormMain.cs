@@ -30,11 +30,8 @@ namespace GabNetStats
         private const string CLSID_CONTROL_PANEL_ALL_ITEMS       = "26EE0668-A00A-44D7-9371-BEB064C98683";
         private const string CLSID_NETWORK_AND_SHARING_CENTER    = "8E908FC9-BECC-40F6-915B-F4CA0E70D03D";
         private const string CLSID_WINDOWS_FIREWALL              = "4026492F-2F69-46B8-B9BF-5654FC07E423";
-        private const string CLSID_HOMEGROUP                     = "67CA7650-96E6-4FDD-BB43-A8E774F73A57";
-        private const string CLSID_MANAGE_WIRELESS_NETWORKS      = "1FA9085F-25A2-489B-85D4-86326EEDCD87";
         private const string CLSID_NETWORK_PLACES                = "208D2C60-3AEA-1069-A2D7-08002B30309D";
         private const string CLSID_NETWORK                       = "F02C1A0D-BE21-4350-88B0-7367FC96EF3C";
-        private const string CLSID_NETWORK_MAP                   = "E7DE9B1A-7533-4556-9484-B26FB486475E";
 
         private TrayIconManager trayIconManager;
         internal NetworkInterfaceManager nicManager;
@@ -217,10 +214,7 @@ namespace GabNetStats
 
             try
             {
-                Process.Start(
-                    EXPLORER_EXE,
-                    "/N,::{"  + CLSID_MY_COMPUTER         + "}\\::{"  + CLSID_CONTROL_PANEL        + "}\\::{"  + CLSID_NETWORK_CONNECTIONS + "}\\::" + nic.Id
-                );
+                ShellStart(EXPLORER_EXE, "/N,::{"  + CLSID_MY_COMPUTER + "}\\::{"  + CLSID_CONTROL_PANEL + "}\\::{"  + CLSID_NETWORK_CONNECTIONS + "}\\::" + nic.Id);
             }
             catch (Exception ex)
             {
@@ -245,10 +239,7 @@ namespace GabNetStats
             //opens the Network Connections applet
             try
             {
-                Process.Start(
-                    EXPLORER_EXE,
-                    "/N,::{"  + CLSID_MY_COMPUTER         + "}\\::{"  + CLSID_CONTROL_PANEL        + "}\\::{"  + CLSID_NETWORK_CONNECTIONS + "}"
-                );
+                ShellStart(EXPLORER_EXE, "/N,::{"  + CLSID_MY_COMPUTER + "}\\::{"  + CLSID_CONTROL_PANEL + "}\\::{"  + CLSID_NETWORK_CONNECTIONS + "}");
             }
             catch (Exception ex)
             {
@@ -261,10 +252,7 @@ namespace GabNetStats
             //opens the Network Sharing Center applet
             try
             {
-                Process.Start(
-                    EXPLORER_EXE,
-                    "/N,::{"  + CLSID_CONTROL_PANEL_ALL_ITEMS  + "}\\0\\::{" + CLSID_NETWORK_AND_SHARING_CENTER + "}"
-                );
+                ShellStart(EXPLORER_EXE, "/N,::{"  + CLSID_CONTROL_PANEL_ALL_ITEMS + "}\\0\\::{" + CLSID_NETWORK_AND_SHARING_CENTER + "}");
             }
             catch (Exception ex)
             {
@@ -277,10 +265,7 @@ namespace GabNetStats
             //opens the Firewall Settings applet
             try
             {
-                Process.Start(
-                    EXPLORER_EXE,
-                    "/N,::{"  + CLSID_CONTROL_PANEL_ALL_ITEMS  + "}\\0\\::{" + CLSID_WINDOWS_FIREWALL + "}"
-                );
+                ShellStart(EXPLORER_EXE, "/N,::{"  + CLSID_CONTROL_PANEL_ALL_ITEMS + "}\\0\\::{" + CLSID_WINDOWS_FIREWALL + "}");
             }
             catch (Exception ex)
             {
@@ -290,71 +275,56 @@ namespace GabNetStats
 
         private void manageWirelessNetworksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //opens the Manage wireless networks applet
             try
             {
-                Process.Start("Shell:::{"  + CLSID_MANAGE_WIRELESS_NETWORKS  + "}");
+                ShellStart("ms-settings:network-wifisettings");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(Res.str_ErrorCrash + Environment.NewLine + ex.Message);
-            }            
+            }
         }
 
         private void homeGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //opens the Home Group Settings applet
-            try
-            {
-                Process.Start(
-                    EXPLORER_EXE,
-                    "/N,::{"  + CLSID_CONTROL_PANEL_ALL_ITEMS  + "}\\0\\::{" + CLSID_HOMEGROUP + "}"
-                );
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(Res.str_ErrorCrash + Environment.NewLine + ex.Message);
-            }
         }
 
         private void networkdomainworkgroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //opens the Domain/workgroup applet
             try
             {
-                Process.Start("Shell:::{"  + CLSID_NETWORK_PLACES  + "}");
+                ShellStart(EXPLORER_EXE, "shell:::{" + CLSID_NETWORK_PLACES + "}");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(Res.str_ErrorCrash + Environment.NewLine + ex.Message);
             }
-            
         }
 
         private void networkToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //opens the network applet
             try
             {
-                Process.Start("Shell:::{"  + CLSID_NETWORK  + "}");
+                ShellStart(EXPLORER_EXE, "shell:::{" + CLSID_NETWORK + "}");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(Res.str_ErrorCrash + Environment.NewLine + ex.Message);
-            }            
+            }
         }
 
         private void networkMapToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //opens the Domain/workgroup applet
-            try
+        }
+
+        private static void ShellStart(string fileName, string arguments = null)
+        {
+            var psi = new System.Diagnostics.ProcessStartInfo(fileName)
             {
-                Process.Start("Shell:::{"  + CLSID_NETWORK_MAP  + "}");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(Res.str_NotAvailableWinver + Environment.NewLine + ex.Message);
-            }
+                UseShellExecute = true,
+            };
+            if (arguments != null) psi.Arguments = arguments;
+            Process.Start(psi);
         }
 
         internal bool SetInterfaceEnabledState(string mac, bool enable, bool refreshMenus = true)

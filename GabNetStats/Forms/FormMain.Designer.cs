@@ -123,13 +123,15 @@ namespace GabNetStats
             this.homeGroupToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.imageres_1013;
             this.homeGroupToolStripMenuItem.Name = "homeGroupToolStripMenuItem";
             this.homeGroupToolStripMenuItem.Click += new System.EventHandler(this.homeGroupToolStripMenuItem_Click);
-            // 
+            this.homeGroupToolStripMenuItem.Visible = false;
+            //
             // networkMapToolStripMenuItem
-            // 
+            //
             resources.ApplyResources(this.networkMapToolStripMenuItem, "networkMapToolStripMenuItem");
             this.networkMapToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.networkmap_1;
             this.networkMapToolStripMenuItem.Name = "networkMapToolStripMenuItem";
             this.networkMapToolStripMenuItem.Click += new System.EventHandler(this.networkMapToolStripMenuItem_Click);
+            this.networkMapToolStripMenuItem.Visible = false;
             // 
             // networkdomainworkgroupToolStripMenuItem
             // 
