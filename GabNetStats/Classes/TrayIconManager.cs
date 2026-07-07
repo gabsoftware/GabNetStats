@@ -224,35 +224,40 @@ namespace GabNetStats
 
         internal void UpdateAutoPingIcon(PingReply reply)
         {
-            if (reply == null || reply.Status != IPStatus.Success)
+            try
             {
-                if (_notifyIconPing.Icon.Equals(iconCircle_green))
+                if (reply == null || reply.Status != IPStatus.Success)
                 {
-                    _notifyIconPing.Icon = iconCircle_orange;
-                    _notifyIconPing.Text = _notifyIconPing.BalloonTipText = "Connection issue?";
-                    _notifyIconPing.BalloonTipText += "\nThe host \"" + Settings.Default.AutoPingHost + "\" seems to be unreachable.";
-                    _notifyIconPing.BalloonTipIcon = ToolTipIcon.Warning;
+                    if (_notifyIconPing.Icon.Equals(iconCircle_green))
+                    {
+                        _notifyIconPing.Icon = iconCircle_orange;
+                        _notifyIconPing.Text = _notifyIconPing.BalloonTipText = "Connection issue?";
+                        _notifyIconPing.BalloonTipText += "\nThe host \"" + Settings.Default.AutoPingHost + "\" seems to be unreachable.";
+                        _notifyIconPing.BalloonTipIcon = ToolTipIcon.Warning;
+                    }
+                    else if (_notifyIconPing.Icon.Equals(iconCircle_orange))
+                    {
+                        _notifyIconPing.Icon = iconCircle_red;
+                        _notifyIconPing.Text = _notifyIconPing.BalloonTipText = "Connection issue!";
+                        _notifyIconPing.BalloonTipText += "\nThe host \"" + Settings.Default.AutoPingHost + "\" could not be reached.";
+                        _notifyIconPing.BalloonTipIcon = ToolTipIcon.Error;
+                    }
+                    else if (!_notifyIconPing.Icon.Equals(iconCircle_red))
+                    {
+                        _notifyIconPing.Icon = iconCircle_orange;
+                        _notifyIconPing.Text = _notifyIconPing.BalloonTipText = "Connection issue?";
+                        _notifyIconPing.BalloonTipIcon = ToolTipIcon.Warning;
+                    }
                 }
-                else if (_notifyIconPing.Icon.Equals(iconCircle_orange))
+                else
                 {
-                    _notifyIconPing.Icon = iconCircle_red;
-                    _notifyIconPing.Text = _notifyIconPing.BalloonTipText = "Connection issue!";
-                    _notifyIconPing.BalloonTipText += "\nThe host \"" + Settings.Default.AutoPingHost + "\" could not be reached.";
-                    _notifyIconPing.BalloonTipIcon = ToolTipIcon.Error;
-                }
-                else if (!_notifyIconPing.Icon.Equals(iconCircle_red))
-                {
-                    _notifyIconPing.Icon = iconCircle_orange;
-                    _notifyIconPing.Text = _notifyIconPing.BalloonTipText = "Connection issue?";
-                    _notifyIconPing.BalloonTipIcon = ToolTipIcon.Warning;
+                    _notifyIconPing.Icon = iconCircle_green;
+                    _notifyIconPing.Text = _notifyIconPing.BalloonTipText = "Connection OK";
+                    _notifyIconPing.BalloonTipIcon = ToolTipIcon.Info;
                 }
             }
-            else
-            {
-                _notifyIconPing.Icon = iconCircle_green;
-                _notifyIconPing.Text = _notifyIconPing.BalloonTipText = "Connection OK";
-                _notifyIconPing.BalloonTipIcon = ToolTipIcon.Info;
-            }
+            catch (ObjectDisposedException) { }
+            catch (InvalidOperationException) { }
         }
 
         internal void SetActivityIcon(Icon icon)
@@ -265,7 +270,9 @@ namespace GabNetStats
             if (!ReferenceEquals(currentActivityIcon, icon))
             {
                 currentActivityIcon = icon;
-                _notifyIconActivity.Icon = icon;
+                try { _notifyIconActivity.Icon = icon; }
+                catch (ObjectDisposedException) { }
+                catch (InvalidOperationException) { }
             }
         }
     }

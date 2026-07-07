@@ -447,7 +447,9 @@ namespace GabNetStats
 
                     if (Settings.Default.AutoPingNotif && !previous.Equals(_notifyIconPing.Icon))
                     {
-                        _notifyIconPing.ShowBalloonTip(BALLOON_TIP_DURATION_MS);
+                        try { _notifyIconPing.ShowBalloonTip(BALLOON_TIP_DURATION_MS); }
+                        catch (ObjectDisposedException) { }
+                        catch (InvalidOperationException) { }
                     }
 
                     try
@@ -511,7 +513,9 @@ namespace GabNetStats
                     if (nbv4 + nbv6 != _nicManager.nbNIC && !_getNicMenuOpen())
                     {
                         _nicManager.nbNIC = nbv4 + nbv6;
-                        _populateNICsCallback();
+                        try { _populateNICsCallback(); }
+                        catch (ObjectDisposedException) { }
+                        catch (InvalidOperationException) { }
                     }
 
                     try

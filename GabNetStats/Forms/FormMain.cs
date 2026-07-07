@@ -54,9 +54,8 @@ namespace GabNetStats
             if (m.Msg == WM_QUERYENDSESSION || m.Msg == WM_ENDSESSION)
             {
                 Program.IsWindowsShuttingDown = true;
-                // Signal threads to stop and save state cleanly
-                statsWorker?.CancelWorkers();
                 Settings.Default.Save();
+                statsWorker?.Shutdown();
                 m.Result = (IntPtr)1; // Tell Windows: OK to shut down
                 return;
             }
