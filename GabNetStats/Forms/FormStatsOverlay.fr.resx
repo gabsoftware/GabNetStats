@@ -151,9 +151,6 @@
   <data name="btnAdvanced.Text" xml:space="preserve">
     <value>Avancé...</value>
   </data>
-  <data name="chkAutoClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 17</value>
-  </data>
   <data name="chkAutoClose.Text" xml:space="preserve">
     <value>Fermer après :</value>
   </data>

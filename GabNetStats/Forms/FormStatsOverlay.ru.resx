@@ -148,12 +148,6 @@
   <data name="btnAdvanced.Text" xml:space="preserve">
     <value>Расширенная...</value>
   </data>
-  <data name="chkAutoClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 323</value>
-  </data>
-  <data name="chkAutoClose.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 24</value>
-  </data>
   <data name="chkAutoClose.Text" xml:space="preserve">
     <value>Закрыть через:</value>
   </data>
