@@ -43,7 +43,9 @@ namespace GabNetStats
             this.networkdomainworkgroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.networkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FirewallSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FirewallAllowedAppsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NetworkSharingCenterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NetworkAndInternetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NetworkConnectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NetworkAdaptersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -69,7 +71,9 @@ namespace GabNetStats
             this.networkdomainworkgroupToolStripMenuItem,
             this.networkToolStripMenuItem,
             this.FirewallSettingsToolStripMenuItem,
+            this.FirewallAllowedAppsToolStripMenuItem,
             this.NetworkSharingCenterToolStripMenuItem,
+            this.NetworkAndInternetToolStripMenuItem,
             this.NetworkConnectionsToolStripMenuItem,
             this.NetworkAdaptersToolStripMenuItem,
             this.toolStripSeparator1,
@@ -153,14 +157,28 @@ namespace GabNetStats
             this.FirewallSettingsToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.FireWallControlPanel_16x16;
             this.FirewallSettingsToolStripMenuItem.Name = "FirewallSettingsToolStripMenuItem";
             this.FirewallSettingsToolStripMenuItem.Click += new System.EventHandler(this.FirewallSettingsToolStripMenuItem_Click);
-            // 
+            //
+            // FirewallAllowedAppsToolStripMenuItem
+            //
+            resources.ApplyResources(this.FirewallAllowedAppsToolStripMenuItem, "FirewallAllowedAppsToolStripMenuItem");
+            this.FirewallAllowedAppsToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.FireWallControlPanel_16x16;
+            this.FirewallAllowedAppsToolStripMenuItem.Name = "FirewallAllowedAppsToolStripMenuItem";
+            this.FirewallAllowedAppsToolStripMenuItem.Click += new System.EventHandler(this.FirewallAllowedAppsToolStripMenuItem_Click);
+            //
             // NetworkSharingCenterToolStripMenuItem
             // 
             resources.ApplyResources(this.NetworkSharingCenterToolStripMenuItem, "NetworkSharingCenterToolStripMenuItem");
             this.NetworkSharingCenterToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.netcenter_16x16;
             this.NetworkSharingCenterToolStripMenuItem.Name = "NetworkSharingCenterToolStripMenuItem";
             this.NetworkSharingCenterToolStripMenuItem.Click += new System.EventHandler(this.NetworkSharingCenterToolStripMenuItem_Click);
-            // 
+            //
+            // NetworkAndInternetToolStripMenuItem
+            //
+            resources.ApplyResources(this.NetworkAndInternetToolStripMenuItem, "NetworkAndInternetToolStripMenuItem");
+            this.NetworkAndInternetToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.shell32_18;
+            this.NetworkAndInternetToolStripMenuItem.Name = "NetworkAndInternetToolStripMenuItem";
+            this.NetworkAndInternetToolStripMenuItem.Click += new System.EventHandler(this.NetworkAndInternetToolStripMenuItem_Click);
+            //
             // NetworkConnectionsToolStripMenuItem
             // 
             resources.ApplyResources(this.NetworkConnectionsToolStripMenuItem, "NetworkConnectionsToolStripMenuItem");
@@ -229,8 +247,10 @@ namespace GabNetStats
         internal System.Windows.Forms.ToolStripMenuItem NetworkAdaptersToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon notifyIconActivity;
         private System.Windows.Forms.ToolStripMenuItem NetworkSharingCenterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NetworkAndInternetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NetworkConnectionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FirewallSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FirewallAllowedAppsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem advancedStatisticsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageWirelessNetworksToolStripMenuItem;

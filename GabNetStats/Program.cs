@@ -1,6 +1,7 @@
 using System;
 using System.Windows.Forms;
 using System.Threading;
+using GabNetStats.Properties;
 
 namespace GabNetStats
 {
@@ -37,6 +38,8 @@ namespace GabNetStats
                     if (arg.Equals("--no-upgrade-message", StringComparison.OrdinalIgnoreCase))
                         NoUpgradeMessage = true;
                 }
+
+                LanguageManager.ApplyLanguage(Settings.Default.Language);
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);

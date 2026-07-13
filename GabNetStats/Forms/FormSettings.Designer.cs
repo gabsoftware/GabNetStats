@@ -63,6 +63,8 @@ namespace GabNetStats
             chkSettingsAutoPingEnabled = new System.Windows.Forms.CheckBox();
             checkBoxStartup = new System.Windows.Forms.CheckBox();
             groupBox3 = new System.Windows.Forms.GroupBox();
+            lblLanguage = new System.Windows.Forms.Label();
+            cbLanguage = new System.Windows.Forms.ComboBox();
             chkShowDisconnectedInterfaces = new System.Windows.Forms.CheckBox();
             groupBox1.SuspendLayout();
             grpBandwidthPreferences.SuspendLayout();
@@ -291,10 +293,25 @@ namespace GabNetStats
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(lblLanguage);
+            groupBox3.Controls.Add(cbLanguage);
             groupBox3.Controls.Add(chkShowDisconnectedInterfaces);
             resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Name = "groupBox3";
             groupBox3.TabStop = false;
+            // 
+            // lblLanguage
+            // 
+            resources.ApplyResources(lblLanguage, "lblLanguage");
+            lblLanguage.Name = "lblLanguage";
+            // 
+            // cbLanguage
+            // 
+            cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbLanguage.FormattingEnabled = true;
+            resources.ApplyResources(cbLanguage, "cbLanguage");
+            cbLanguage.Name = "cbLanguage";
+            cbLanguage.SelectedIndexChanged += cbLanguage_SelectedIndexChanged;
             // 
             // chkShowDisconnectedInterfaces
             // 
@@ -375,5 +392,7 @@ namespace GabNetStats
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox chkShowDisconnectedInterfaces;
         private System.Windows.Forms.Button btnRefreshIconSets;
+        private System.Windows.Forms.ComboBox cbLanguage;
+        private System.Windows.Forms.Label lblLanguage;
     }
 }

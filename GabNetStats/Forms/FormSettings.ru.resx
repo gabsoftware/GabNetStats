@@ -139,6 +139,12 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Визуальные эффекты значка сети</value>
   </data>
+  <data name="btnRefreshIconSets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 54</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>286, 58</value>
+  </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 20</value>
   </data>
@@ -152,7 +158,7 @@
     <value>Набор иконок:</value>
   </data>
   <data name="cboIconSet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 55</value>
+    <value>127, 55</value>
   </data>
   <data name="grpBandwidthPreferences.Text" xml:space="preserve">
     <value>Настройки пропускной способности</value>
@@ -175,17 +181,11 @@
   <data name="lblDownload.Text" xml:space="preserve">
     <value>/с</value>
   </data>
-  <data name="rbBytes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 52</value>
-  </data>
   <data name="rbBytes.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 24</value>
   </data>
   <data name="rbBytes.Text" xml:space="preserve">
     <value>байт/с</value>
-  </data>
-  <data name="rbBits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 54</value>
   </data>
   <data name="rbBits.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 24</value>
@@ -209,7 +209,7 @@
     <value>Синий значок (по умолчанию)</value>
   </data>
   <data name="textBoxDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>211, 22</value>
+    <value>214, 26</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Автоматический пинг</value>
@@ -221,13 +221,13 @@
     <value>Показывать уведомления</value>
   </data>
   <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 89</value>
+    <value>270, 86</value>
   </data>
   <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 27</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>364, 91</value>
+    <value>410, 91</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 20</value>
@@ -242,7 +242,7 @@
     <value>Пинг каждые</value>
   </data>
   <data name="txtSettingsAutoPingHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 46</value>
+    <value>270, 46</value>
   </data>
   <data name="txtSettingsAutoPingHost.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 27</value>
@@ -252,9 +252,6 @@
   </data>
   <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
     <value>Включить авто-пинг по адресу:</value>
-  </data>
-  <data name="checkBoxStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 856</value>
   </data>
   <data name="checkBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 24</value>

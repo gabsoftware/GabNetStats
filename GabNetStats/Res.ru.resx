@@ -193,6 +193,15 @@
   <data name="str_WarningTitle" xml:space="preserve">
     <value>Предупреждение !</value>
   </data>
+  <data name="str_LanguageDefault" xml:space="preserve">
+    <value>Английский (по умолчанию)</value>
+  </data>
+  <data name="str_RestartRequiredTitle" xml:space="preserve">
+    <value>Требуется перезапуск</value>
+  </data>
+  <data name="str_RestartRequiredContent" xml:space="preserve">
+    <value>Изменение языка вступит в силу при следующем запуске GabNetStats. Перезапустить сейчас?</value>
+  </data>
   <data name="str_Yes" xml:space="preserve">
     <value>Да</value>
   </data>

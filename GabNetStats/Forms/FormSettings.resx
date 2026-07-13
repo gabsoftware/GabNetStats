@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>535, 847</value>
+    <value>535, 796</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonOK.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
@@ -161,7 +161,7 @@
     <value>NoControl</value>
   </data>
   <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>415, 847</value>
+    <value>415, 796</value>
   </data>
   <data name="buttonCancel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -254,7 +254,7 @@
     <value>6</value>
   </data>
   <data name="txtDownload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 106</value>
+    <value>117, 71</value>
   </data>
   <data name="txtDownload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -281,7 +281,7 @@
     <value>8</value>
   </data>
   <data name="txtUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 146</value>
+    <value>117, 111</value>
   </data>
   <data name="txtUpload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -428,7 +428,7 @@
     <value>3</value>
   </data>
   <data name="cbUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 143</value>
+    <value>273, 108</value>
   </data>
   <data name="cbUpload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -458,7 +458,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 54</value>
+    <value>25, 32</value>
   </data>
   <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -485,7 +485,7 @@
     <value>1</value>
   </data>
   <data name="cbDownload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 105</value>
+    <value>273, 70</value>
   </data>
   <data name="cbDownload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -515,7 +515,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblUpload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>401, 151</value>
+    <value>401, 116</value>
   </data>
   <data name="lblUpload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -548,7 +548,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblDownload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>401, 111</value>
+    <value>401, 76</value>
   </data>
   <data name="lblDownload.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -581,7 +581,7 @@
     <value>NoControl</value>
   </data>
   <data name="rbBytes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>308, 54</value>
+    <value>308, 32</value>
   </data>
   <data name="rbBytes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -614,7 +614,7 @@
     <value>NoControl</value>
   </data>
   <data name="rbBits.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 54</value>
+    <value>144, 32</value>
   </data>
   <data name="rbBits.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -647,7 +647,7 @@
     <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 111</value>
+    <value>25, 76</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -680,7 +680,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 151</value>
+    <value>25, 116</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -707,7 +707,7 @@
     <value>10</value>
   </data>
   <data name="grpBandwidthPreferences.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 214</value>
+    <value>25, 179</value>
   </data>
   <data name="grpBandwidthPreferences.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -716,7 +716,7 @@
     <value>4, 5, 4, 5</value>
   </data>
   <data name="grpBandwidthPreferences.Size" type="System.Drawing.Size, System.Drawing">
-    <value>455, 203</value>
+    <value>455, 157</value>
   </data>
   <data name="grpBandwidthPreferences.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -779,7 +779,7 @@
     <value>4, 5, 4, 5</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>615, 442</value>
+    <value>615, 361</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1010,7 +1010,7 @@
     <value>5</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 540</value>
+    <value>20, 459</value>
   </data>
   <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1019,7 +1019,7 @@
     <value>4, 5, 4, 5</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>615, 194</value>
+    <value>615, 183</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1049,7 +1049,7 @@
     <value>NoControl</value>
   </data>
   <data name="checkBoxStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 863</value>
+    <value>16, 812</value>
   </data>
   <data name="checkBoxStartup.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>
@@ -1074,6 +1074,54 @@
   </data>
   <data name="&gt;&gt;checkBoxStartup.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="lblLanguage.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 84</value>
+  </data>
+  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 20</value>
+  </data>
+  <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.Name" xml:space="preserve">
+    <value>lblLanguage</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>154, 81</value>
+  </data>
+  <data name="cbLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>339, 28</value>
+  </data>
+  <data name="cbLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.Name" xml:space="preserve">
+    <value>cbLanguage</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="chkShowDisconnectedInterfaces.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1100,13 +1148,13 @@
     <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;chkShowDisconnectedInterfaces.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 742</value>
+    <value>20, 650</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>615, 97</value>
+    <value>615, 138</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1133,7 +1181,7 @@
     <value>8, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>653, 905</value>
+    <value>653, 854</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 5, 4, 5</value>

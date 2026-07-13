@@ -181,11 +181,23 @@
   <data name="FirewallSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Брандмауэр Windows</value>
   </data>
+  <data name="FirewallAllowedAppsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 22</value>
+  </data>
+  <data name="FirewallAllowedAppsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Раз&amp;решённые приложения в брандмауэре</value>
+  </data>
   <data name="NetworkSharingCenterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>328, 22</value>
   </data>
   <data name="NetworkSharingCenterToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Центр управления сетями и общим доступом</value>
+  </data>
+  <data name="NetworkAndInternetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 22</value>
+  </data>
+  <data name="NetworkAndInternetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сеть и &amp;Интернет</value>
   </data>
   <data name="NetworkConnectionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>328, 22</value>

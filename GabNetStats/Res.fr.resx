@@ -193,6 +193,15 @@ Vous pouvez envoyer au développeur la cause de l'erreur affichée ci-dessous au
   <data name="str_WarningTitle" xml:space="preserve">
     <value>Attention !</value>
   </data>
+  <data name="str_LanguageDefault" xml:space="preserve">
+    <value>Anglais (par défaut)</value>
+  </data>
+  <data name="str_RestartRequiredTitle" xml:space="preserve">
+    <value>Redémarrage nécessaire</value>
+  </data>
+  <data name="str_RestartRequiredContent" xml:space="preserve">
+    <value>Le changement de langue prendra effet au prochain démarrage de GabNetStats. Redémarrer maintenant ?</value>
+  </data>
   <data name="str_Yes" xml:space="preserve">
     <value>Oui</value>
   </data>

@@ -32,6 +32,7 @@ namespace GabNetStats
         private const string CLSID_WINDOWS_FIREWALL              = "4026492F-2F69-46B8-B9BF-5654FC07E423";
         private const string CLSID_NETWORK_PLACES                = "208D2C60-3AEA-1069-A2D7-08002B30309D";
         private const string CLSID_NETWORK                       = "F02C1A0D-BE21-4350-88B0-7367FC96EF3C";
+        private const string CONTROL_PANEL_CATEGORY_NETWORK_AND_INTERNET = "3";
 
         private TrayIconManager trayIconManager;
         internal NetworkInterfaceManager nicManager;
@@ -260,12 +261,38 @@ namespace GabNetStats
             }
         }
 
+        private void NetworkAndInternetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //opens the Network and Internet Control Panel category
+            try
+            {
+                ShellStart(EXPLORER_EXE, "shell:::{" + CLSID_CONTROL_PANEL_ALL_ITEMS + "}\\" + CONTROL_PANEL_CATEGORY_NETWORK_AND_INTERNET);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Res.str_ErrorCrash + Environment.NewLine + ex.Message);
+            }
+        }
+
         private void FirewallSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //opens the Firewall Settings applet
             try
             {
                 ShellStart(EXPLORER_EXE, "/N,::{"  + CLSID_CONTROL_PANEL_ALL_ITEMS + "}\\0\\::{" + CLSID_WINDOWS_FIREWALL + "}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Res.str_ErrorCrash + Environment.NewLine + ex.Message);
+            }
+        }
+
+        private void FirewallAllowedAppsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //opens the Windows Defender Firewall - Allowed Apps applet
+            try
+            {
+                ShellStart(EXPLORER_EXE, "shell:::{" + CLSID_WINDOWS_FIREWALL + "}\\pageConfigureApps");
             }
             catch (Exception ex)
             {

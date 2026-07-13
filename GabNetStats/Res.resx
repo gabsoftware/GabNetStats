@@ -193,6 +193,15 @@ Below is displayed the cause of the error that you can send to the developer usi
   <data name="str_WarningTitle" xml:space="preserve">
     <value>Warning !</value>
   </data>
+  <data name="str_LanguageDefault" xml:space="preserve">
+    <value>English (default)</value>
+  </data>
+  <data name="str_RestartRequiredTitle" xml:space="preserve">
+    <value>Restart required</value>
+  </data>
+  <data name="str_RestartRequiredContent" xml:space="preserve">
+    <value>The language change will take effect the next time GabNetStats starts. Restart now ?</value>
+  </data>
   <data name="str_Yes" xml:space="preserve">
     <value>Yes</value>
   </data>

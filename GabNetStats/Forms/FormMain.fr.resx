@@ -181,11 +181,23 @@
   <data name="FirewallSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Pare-feu Windows</value>
   </data>
+  <data name="FirewallAllowedAppsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 22</value>
+  </data>
+  <data name="FirewallAllowedAppsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Applications autorisées par le pare-feu</value>
+  </data>
   <data name="NetworkSharingCenterToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
   </data>
   <data name="NetworkSharingCenterToolStripMenuItem.Text" xml:space="preserve">
     <value>Centre Réseau et Par&amp;tage</value>
+  </data>
+  <data name="NetworkAndInternetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 22</value>
+  </data>
+  <data name="NetworkAndInternetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Réseau et &amp;Internet</value>
   </data>
   <data name="NetworkConnectionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>

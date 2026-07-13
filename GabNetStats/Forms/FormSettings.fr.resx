@@ -182,7 +182,7 @@
     <value>Défaut (icône bleue)</value>
   </data>
   <data name="textBoxDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 26</value>
+    <value>228, 26</value>
   </data>
   <data name="chkSettingsAutoPingNotification.Size" type="System.Drawing.Size, System.Drawing">
     <value>170, 24</value>
@@ -191,10 +191,10 @@
     <value>Montrer notifications</value>
   </data>
   <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>247, 89</value>
+    <value>251, 86</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 91</value>
+    <value>391, 91</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 20</value>
@@ -203,7 +203,7 @@
     <value>Envoyer ping tous les</value>
   </data>
   <data name="txtSettingsAutoPingHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 46</value>
+    <value>250, 45</value>
   </data>
   <data name="txtSettingsAutoPingHost.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 27</value>
@@ -214,9 +214,6 @@
   <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
     <value>Activer auto-ping de cet hôte :</value>
   </data>
-  <data name="checkBoxStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 856</value>
-  </data>
   <data name="checkBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>171, 24</value>
   </data>
@@ -225,6 +222,12 @@
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Divers</value>
+  </data>
+  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 20</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Langue :</value>
   </data>
   <data name="chkShowDisconnectedInterfaces.Size" type="System.Drawing.Size, System.Drawing">
     <value>269, 24</value>

@@ -336,7 +336,34 @@ namespace GabNetStats {
                 return ResourceManager.GetString("str_WarningTitle", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à English (default).
+        /// </summary>
+        internal static string str_LanguageDefault {
+            get {
+                return ResourceManager.GetString("str_LanguageDefault", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Restart required.
+        /// </summary>
+        internal static string str_RestartRequiredTitle {
+            get {
+                return ResourceManager.GetString("str_RestartRequiredTitle", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à The language change will take effect the next time GabNetStats starts. Restart now ?.
+        /// </summary>
+        internal static string str_RestartRequiredContent {
+            get {
+                return ResourceManager.GetString("str_RestartRequiredContent", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Recherche une chaîne localisée semblable à Yes.
         /// </summary>

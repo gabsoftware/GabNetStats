@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\forms\\formsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|e:\\dev\\gabsoftware\\gabnetstats\\gabnetstats\\forms\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\forms\\formmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|e:\\dev\\gabsoftware\\gabnetstats\\gabnetstats\\forms\\formsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D90BF999-5E1C-4EF7-B91F-9EF9552A13F1}|GabNetStats\\GabNetStats.csproj|solutionrelative:gabnetstats\\forms\\formsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormSettings.cs",
-              "DocumentMoniker": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Forms\\FormSettings.cs",
-              "RelativeDocumentMoniker": "GabNetStats\\Forms\\FormSettings.cs",
-              "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Forms\\FormSettings.cs",
-              "RelativeToolTip": "GabNetStats\\Forms\\FormSettings.cs",
-              "ViewState": "AgIAAAsBAAAAAAAAAIAwwB8BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T23:00:30.884Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -42,8 +33,33 @@
               "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Forms\\FormSettings.cs [Conception]",
               "RelativeToolTip": "GabNetStats\\Forms\\FormSettings.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T22:52:59.358Z",
+              "WhenOpened": "2026-07-13T12:59:15.462Z",
               "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormMain.cs [Conception]",
+              "DocumentMoniker": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Forms\\FormMain.cs",
+              "RelativeDocumentMoniker": "GabNetStats\\Forms\\FormMain.cs",
+              "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Forms\\FormMain.cs [Conception]",
+              "RelativeToolTip": "GabNetStats\\Forms\\FormMain.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-13T12:48:12.523Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormSettings.cs",
+              "DocumentMoniker": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Forms\\FormSettings.cs",
+              "RelativeDocumentMoniker": "GabNetStats\\Forms\\FormSettings.cs",
+              "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Forms\\FormSettings.cs",
+              "RelativeToolTip": "GabNetStats\\Forms\\FormSettings.cs",
+              "ViewState": "AgIAAAsBAAAAAAAAAIAwwB8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T23:00:30.884Z",
+              "EditorCaption": ""
             }
           ]
         }

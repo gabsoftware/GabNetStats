@@ -341,10 +341,22 @@ Right-click : Context menu</value>
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="contextMenuTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 314</value>
+    <value>227, 358</value>
   </data>
   <data name="FirewallSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Firewall Settings</value>
+  </data>
+  <data name="FirewallAllowedAppsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Allowed &amp;Apps through Firewall</value>
+  </data>
+  <data name="FirewallAllowedAppsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="&gt;&gt;FirewallAllowedAppsToolStripMenuItem.Name" xml:space="preserve">
+    <value>FirewallAllowedAppsToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;FirewallAllowedAppsToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="notifyIconActivity.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -354,6 +366,18 @@ Right-click : Context menu</value>
   </data>
   <data name="NetworkSharingCenterToolStripMenuItem.Text" xml:space="preserve">
     <value>Network Sharing &amp;Center</value>
+  </data>
+  <data name="NetworkAndInternetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Network and &amp;Internet</value>
+  </data>
+  <data name="NetworkAndInternetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 22</value>
+  </data>
+  <data name="&gt;&gt;NetworkAndInternetToolStripMenuItem.Name" xml:space="preserve">
+    <value>NetworkAndInternetToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;NetworkAndInternetToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;aboutToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

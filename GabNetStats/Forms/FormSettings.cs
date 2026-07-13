@@ -53,6 +53,49 @@ namespace GabNetStats
             public long multiplier { get; set; }
         }
 
+        private class LanguageItem
+        {
+            public LanguageItem(string sname, string scultureName)
+            {
+                name = sname;
+                cultureName = scultureName;
+            }
+            public string name { get; set; }
+            public string cultureName { get; set; }
+        }
+
+        private void PopulateLanguageCombo()
+        {
+            cbLanguage.Items.Clear();
+
+            foreach (CultureInfo culture in LanguageManager.GetAvailableLanguages())
+            {
+                bool isDefault = string.Equals(culture.Name, LanguageManager.DEFAULT_LANGUAGE, StringComparison.OrdinalIgnoreCase);
+                string displayName = isDefault ? Res.str_LanguageDefault : culture.NativeName;
+                cbLanguage.Items.Add(new LanguageItem(displayName, culture.Name));
+            }
+
+            cbLanguage.ValueMember = "cultureName";
+            cbLanguage.DisplayMember = "name";
+
+            string current = Settings.Default.Language;
+            if (string.IsNullOrEmpty(current))
+            {
+                current = LanguageManager.GetDefaultLanguage();
+            }
+
+            int idx = -1;
+            for (int i = 0; i < cbLanguage.Items.Count; i++)
+            {
+                if (string.Equals(((LanguageItem)cbLanguage.Items[i]).cultureName, current, StringComparison.OrdinalIgnoreCase))
+                {
+                    idx = i;
+                    break;
+                }
+            }
+            cbLanguage.SelectedIndex = idx >= 0 ? idx : 0;
+        }
+
         private void updateCombos()
         {
             cbDownload.Items.Clear();
@@ -157,6 +200,7 @@ namespace GabNetStats
             checkBoxStartup.Checked = Settings.Default.LoadOnStartup;
             btnRefreshIconSets.Height = cboIconSet.Height + 2;
             PopulateIconSetsCombo();
+            PopulateLanguageCombo();
             settingsInitialized = true;
         }
 
@@ -386,6 +430,34 @@ namespace GabNetStats
         private void btnRefreshIconSets_Click(object sender, EventArgs e)
         {
             PopulateIconSetsCombo();
+        }
+
+        private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!settingsInitialized)
+            {
+                return;
+            }
+
+            string selectedCulture = ((LanguageItem)cbLanguage.SelectedItem).cultureName;
+            if (string.Equals(selectedCulture, Settings.Default.Language ?? LanguageManager.DEFAULT_LANGUAGE, StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+            Settings.Default.Language = selectedCulture;
+            Settings.Default.Save();
+
+            DialogResult result = MessageBox.Show(
+                Res.str_RestartRequiredContent,
+                Res.str_RestartRequiredTitle,
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
         }
     }
 }
