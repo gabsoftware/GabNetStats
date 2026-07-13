@@ -205,6 +205,9 @@
   <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Сетевые подключения</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сетевые подключения (&amp;альтернативный вид)</value>
+  </data>
   <data name="NetworkAdaptersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>328, 22</value>
   </data>
@@ -221,7 +224,7 @@
     <value>&amp;Выйти</value>
   </data>
   <data name="contextMenuTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>329, 314</value>
+    <value>329, 336</value>
   </data>
   <data name="notifyIconActivity.BalloonTipText" xml:space="preserve">
     <value>:: Статистика ::</value>

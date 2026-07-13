@@ -21,6 +21,9 @@
   <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
     <value>網路連線(&amp;N)</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>網路連線 - 替代檢視(&amp;A)</value>
+  </data>
   <data name="networkdomainworkgroupToolStripMenuItem.Text" xml:space="preserve">
     <value>網路域/工作組(&amp;D)</value>
   </data>

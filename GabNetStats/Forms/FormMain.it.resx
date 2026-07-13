@@ -148,6 +148,9 @@
   <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Co&amp;nnessioni di rete</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Connessioni di rete (&amp;vista alternativa)</value>
+  </data>
   <data name="NetworkAdaptersToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Schede di rete</value>
   </data>

@@ -21,6 +21,9 @@
   <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Síťová připojení(&amp;N)</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Síťová připojení - alternativní zobrazení(&amp;A)</value>
+  </data>
   <data name="networkdomainworkgroupToolStripMenuItem.Text" xml:space="preserve">
     <value>Síťová doména/skupina(&amp;D)</value>
   </data>

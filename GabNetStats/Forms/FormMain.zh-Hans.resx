@@ -21,6 +21,9 @@
   <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
     <value>网络连接(&amp;N)</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>网络连接 - 备用视图(&amp;A)</value>
+  </data>
   <data name="networkdomainworkgroupToolStripMenuItem.Text" xml:space="preserve">
     <value>网络域/工作组(&amp;D)</value>
   </data>

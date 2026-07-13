@@ -21,6 +21,9 @@
   <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Koneksi Jaringan(&amp;N)</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Koneksi Jaringan - tampilan alternatif(&amp;A)</value>
+  </data>
   <data name="networkdomainworkgroupToolStripMenuItem.Text" xml:space="preserve">
     <value>Domain/workgroup jaringan(&amp;D)</value>
   </data>

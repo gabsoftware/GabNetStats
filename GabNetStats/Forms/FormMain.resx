@@ -139,6 +139,9 @@
   <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Network Connections</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Network Connections (&amp;alternate view)</value>
+  </data>
   <data name="notifyIconActivity.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAMAEBAQAAEABAAoAQAANgAAABAQAAABAAgAaAUAAF4BAAAQEAAAAQAgAGgEAADGBgAAKAAAABAA
@@ -279,6 +282,9 @@ Right-click : Context menu</value>
   <data name="&gt;&gt;NetworkConnectionsToolStripMenuItem.Name" xml:space="preserve">
     <value>NetworkConnectionsToolStripMenuItem</value>
   </data>
+  <data name="&gt;&gt;NetworkConnectionsAlternateViewToolStripMenuItem.Name" xml:space="preserve">
+    <value>NetworkConnectionsAlternateViewToolStripMenuItem</value>
+  </data>
   <data name="notifyIconActivity.BalloonTipText" xml:space="preserve">
     <value>:: Statistics ::</value>
   </data>
@@ -331,6 +337,9 @@ Right-click : Context menu</value>
   <data name="NetworkConnectionsToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 22</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 22</value>
+  </data>
   <data name="&gt;&gt;networkToolStripMenuItem.Name" xml:space="preserve">
     <value>networkToolStripMenuItem</value>
   </data>
@@ -340,8 +349,11 @@ Right-click : Context menu</value>
   <data name="&gt;&gt;NetworkConnectionsToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;NetworkConnectionsAlternateViewToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="contextMenuTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>227, 358</value>
+    <value>271, 380</value>
   </data>
   <data name="FirewallSettingsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Firewall Settings</value>

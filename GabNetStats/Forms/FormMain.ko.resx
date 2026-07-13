@@ -21,6 +21,9 @@
   <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
     <value>네트워크 연결(&amp;N)</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>네트워크 연결 - 대체 보기(&amp;A)</value>
+  </data>
   <data name="networkdomainworkgroupToolStripMenuItem.Text" xml:space="preserve">
     <value>네트워크 도메인/작업 그룹(&amp;D)</value>
   </data>

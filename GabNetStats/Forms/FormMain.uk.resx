@@ -121,6 +121,9 @@
   <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Мережеві підключення</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Мережеві підключення (&amp;альтернативний вигляд)</value>
+  </data>
   <data name="manageWirelessNetworksToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Керування бездротовими мережами</value>
   </data>

@@ -205,6 +205,9 @@
   <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Connexions Réseau</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Connexions réseau (&amp;vue alternative)</value>
+  </data>
   <data name="NetworkAdaptersToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>217, 22</value>
   </data>
@@ -221,7 +224,7 @@
     <value>&amp;Quitter</value>
   </data>
   <data name="contextMenuTray.Size" type="System.Drawing.Size, System.Drawing">
-    <value>218, 314</value>
+    <value>271, 336</value>
   </data>
   <data name="notifyIconActivity.BalloonTipText" xml:space="preserve">
     <value>:: Statistiques ::</value>

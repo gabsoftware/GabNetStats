@@ -27,6 +27,7 @@ namespace GabNetStats
         private const string CLSID_MY_COMPUTER                   = "20D04FE0-3AEA-1069-A2D8-08002B30309D";
         private const string CLSID_CONTROL_PANEL                 = "21EC2020-3AEA-1069-A2DD-08002B30309D";
         private const string CLSID_NETWORK_CONNECTIONS           = "7007ACC7-3202-11D1-AAD2-00805FC1270E";
+        private const string CLSID_NETWORK_CONNECTIONS_ALT_VIEW  = "992CFFA0-F557-101A-88EC-00DD010CCC48";
         private const string CLSID_CONTROL_PANEL_ALL_ITEMS       = "26EE0668-A00A-44D7-9371-BEB064C98683";
         private const string CLSID_NETWORK_AND_SHARING_CENTER    = "8E908FC9-BECC-40F6-915B-F4CA0E70D03D";
         private const string CLSID_WINDOWS_FIREWALL              = "4026492F-2F69-46B8-B9BF-5654FC07E423";
@@ -241,6 +242,19 @@ namespace GabNetStats
             try
             {
                 ShellStart(EXPLORER_EXE, "/N,::{"  + CLSID_MY_COMPUTER + "}\\::{"  + CLSID_CONTROL_PANEL + "}\\::{"  + CLSID_NETWORK_CONNECTIONS + "}");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Res.str_ErrorCrash + Environment.NewLine + ex.Message);
+            }
+        }
+
+        private void NetworkConnectionsAlternateViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //opens the alternate Network Connections applet view
+            try
+            {
+                ShellStart(EXPLORER_EXE, "shell:::{" + CLSID_NETWORK_CONNECTIONS_ALT_VIEW + "}");
             }
             catch (Exception ex)
             {

@@ -147,6 +147,9 @@
   <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
     <value>Nätverksa&amp;nslutningar</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Nätverksanslutningar (&amp;alternativ vy)</value>
+  </data>
   <data name="NetworkAdaptersToolStripMenuItem.Text" xml:space="preserve">
     <value>Nätverksko&amp;rt</value>
   </data>

@@ -148,6 +148,9 @@
   <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
     <value>ネットワーク接続(&amp;N)</value>
   </data>
+  <data name="NetworkConnectionsAlternateViewToolStripMenuItem.Text" xml:space="preserve">
+    <value>ネットワーク接続 - 代替表示(&amp;A)</value>
+  </data>
   <data name="NetworkAdaptersToolStripMenuItem.Text" xml:space="preserve">
     <value>ネットワーク アダプター(&amp;W)</value>
   </data>

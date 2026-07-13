@@ -47,6 +47,7 @@ namespace GabNetStats
             this.NetworkSharingCenterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NetworkAndInternetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NetworkConnectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NetworkConnectionsAlternateViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NetworkAdaptersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +76,7 @@ namespace GabNetStats
             this.NetworkSharingCenterToolStripMenuItem,
             this.NetworkAndInternetToolStripMenuItem,
             this.NetworkConnectionsToolStripMenuItem,
+            this.NetworkConnectionsAlternateViewToolStripMenuItem,
             this.NetworkAdaptersToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
@@ -186,6 +188,13 @@ namespace GabNetStats
             this.NetworkConnectionsToolStripMenuItem.Name = "NetworkConnectionsToolStripMenuItem";
             this.NetworkConnectionsToolStripMenuItem.Click += new System.EventHandler(this.NetworkConnectionsToolStripMenuItem_Click);
             // 
+            // NetworkConnectionsAlternateViewToolStripMenuItem
+            // 
+            resources.ApplyResources(this.NetworkConnectionsAlternateViewToolStripMenuItem, "NetworkConnectionsAlternateViewToolStripMenuItem");
+            this.NetworkConnectionsAlternateViewToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.netshell_16x16;
+            this.NetworkConnectionsAlternateViewToolStripMenuItem.Name = "NetworkConnectionsAlternateViewToolStripMenuItem";
+            this.NetworkConnectionsAlternateViewToolStripMenuItem.Click += new System.EventHandler(this.NetworkConnectionsAlternateViewToolStripMenuItem_Click);
+            // 
             // NetworkAdaptersToolStripMenuItem
             // 
             resources.ApplyResources(this.NetworkAdaptersToolStripMenuItem, "NetworkAdaptersToolStripMenuItem");
@@ -249,6 +258,7 @@ namespace GabNetStats
         private System.Windows.Forms.ToolStripMenuItem NetworkSharingCenterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NetworkAndInternetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NetworkConnectionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem NetworkConnectionsAlternateViewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FirewallSettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FirewallAllowedAppsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
