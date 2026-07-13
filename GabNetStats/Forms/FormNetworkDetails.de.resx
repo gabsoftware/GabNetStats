@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+                        
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="tabPageGlobal.Text" xml:space="preserve">
+    <value>Globale Statistik</value>
+  </data>
+  <data name="tabPageNetworkInterfaces.Text" xml:space="preserve">
+    <value>Netzwerkschnittstellen-Statistik</value>
+  </data>
+  <data name="tabPageTCP.Text" xml:space="preserve">
+    <value>TCP-Statistik</value>
+  </data>
+  <data name="tabPageTCPConnections.Text" xml:space="preserve">
+    <value>TCP-Verbindungen</value>
+  </data>
+  <data name="tabPageTCPListeners.Text" xml:space="preserve">
+    <value>TCP-Listener</value>
+  </data>
+  <data name="tabPageUDP.Text" xml:space="preserve">
+    <value>UDP-Statistik</value>
+  </data>
+  <data name="tabPageUDPListeners.Text" xml:space="preserve">
+    <value>UDP-Listener</value>
+  </data>
+  <data name="tabPageICMPv4.Text" xml:space="preserve">
+    <value>ICMPv4-Statistik</value>
+  </data>
+  <data name="tabPageICMPv6.Text" xml:space="preserve">
+    <value>ICMPv6-Statistik</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Text" xml:space="preserve">
+    <value>Ausgehende Pakete</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Anfragen für ausgehende Pakete</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Pakete ohne Route</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Verworfene Routen</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Verworfene übertragene Pakete</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Text" xml:space="preserve">
+    <value>Eingehende Pakete</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Pakete mit unbekanntem Protokoll</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Pakete mit Header-Fehlern</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Pakete mit Adressfehlern</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Weitergeleitete Pakete</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Verworfene Pakete</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Zugestellte Pakete</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Empfangene Pakete</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Zusammengesetzte Pakete</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Fragmentierte Pakete</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Reassembly-Timeout</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Fehler bei Zusammensetzung</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>Reassembly nötig</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Fehler bei Paketfragmentierung</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Text" xml:space="preserve">
+    <value>Paketfragmentierung</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Knotentyp</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Ist ein WINS-Proxy</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Hostname</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Domänenname</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>DHCP-Bereichsname</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Anzahl der Routen</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Anzahl der IP-Adressen</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Anzahl der Schnittstellen</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Weiterleitung aktiviert</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Standard-TTL</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Text" xml:space="preserve">
+    <value>Sonstiges</value>
+  </data>
+  <data name="label144.Text" xml:space="preserve">
+    <value>MAC-Adresse</value>
+  </data>
+  <data name="label64.Text" xml:space="preserve">
+    <value>Unterstützt Multicast</value>
+  </data>
+  <data name="label65.Text" xml:space="preserve">
+    <value>Tempo</value>
+  </data>
+  <data name="label61.Text" xml:space="preserve">
+    <value>Nur Empfang</value>
+  </data>
+  <data name="label62.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="label66.Text" xml:space="preserve">
+    <value>Betriebsstatus</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>Netzwerkschnittstellentyp</value>
+  </data>
+  <data name="label59.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>Loopback-Schnittstellenindex</value>
+  </data>
+  <data name="label63.Text" xml:space="preserve">
+    <value>Beschreibung</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Eigenschaften (2)</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>WINS-Serveradressen</value>
+  </data>
+  <data name="label55.Text" xml:space="preserve">
+    <value>Unicast-Adressen</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>Multicast-Adressen</value>
+  </data>
+  <data name="label47.Text" xml:space="preserve">
+    <value>Dynamisches DNS aktiviert</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>DNS aktiviert</value>
+  </data>
+  <data name="label49.Text" xml:space="preserve">
+    <value>Gateway-Adressen</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>DNS-Suffix</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>DNS-Serveradressen</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>DHCP-Serveradressen</value>
+  </data>
+  <data name="label54.Text" xml:space="preserve">
+    <value>Anycast-Adressen</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>IP-Konfiguration</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>Verwendet WINS</value>
+  </data>
+  <data name="label30.Text" xml:space="preserve">
+    <value>Paketweiterleitung aktiviert</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>DHCP aktiviert</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>APIPA-Adresse aktiviert</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>Hat APIPA-Adresse</value>
+  </data>
+  <data name="label39.Text" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Eigenschaften (1)</value>
+  </data>
+  <data name="label41.Text" xml:space="preserve">
+    <value>Gesendete Unicast-Pakete</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>Ausgangsqueue</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>Ausgehende fehlerhafte Pakete</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>Ausgehende verworfene Pakete</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>Gesendete Nicht-Unicast-Pakete</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>Gesendete Bytes</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Übertragung</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>Empfangene Unicast-Pakete</value>
+  </data>
+  <data name="label33.Text" xml:space="preserve">
+    <value>Empfangene Nicht-Unicast-Pakete</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>Unbek. Protokoll</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Eingehende fehlerhafte Pakete</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>Eingehende verworfene Pakete</value>
+  </data>
+  <data name="label38.Text" xml:space="preserve">
+    <value>Empfangene Bytes</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Empfang</value>
+  </data>
+  <data name="label81.Text" xml:space="preserve">
+    <value>Empfangene TCP-Fehler</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>TCP-Fehlerstatistik</value>
+  </data>
+  <data name="label82.Text" xml:space="preserve">
+    <value>Empfangene TCP-Segmente</value>
+  </data>
+  <data name="label83.Text" xml:space="preserve">
+    <value>Gesendete TCP-Reset (RST-Flag)</value>
+  </data>
+  <data name="label84.Text" xml:space="preserve">
+    <value>TCP erneut gesendet</value>
+  </data>
+  <data name="label85.Text" xml:space="preserve">
+    <value>Gesendete TCP-Segmente</value>
+  </data>
+  <data name="label86.Text" xml:space="preserve">
+    <value>TCP-Min.-Timeout</value>
+  </data>
+  <data name="label93.Text" xml:space="preserve">
+    <value>TCP-Max.-Timeout</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>TCP-Segmentstatistik</value>
+  </data>
+  <data name="label68.Text" xml:space="preserve">
+    <value>Hergestellte TCP-Verbindungen</value>
+  </data>
+  <data name="label69.Text" xml:space="preserve">
+    <value>Maximal unterstützte TCP-Verbindungen</value>
+  </data>
+  <data name="label70.Text" xml:space="preserve">
+    <value>Fehlgeschl. TCP-Versuche</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>TCP-Resets</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>Aktuelle TCP-Verbindungen</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>Initiierte TCP-Verbindungsanfragen</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>Akzeptierte TCP-Verbindungsanfragen</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>TCP-Verbindungsstatistik</value>
+  </data>
+  <data name="btnSelectAll.Text" xml:space="preserve">
+    <value>Alle auswählen</value>
+  </data>
+  <data name="btnCopySelection.Text" xml:space="preserve">
+    <value>In Zwischenablage</value>
+  </data>
+  <data name="btnTCPLSelectAll.Text" xml:space="preserve">
+    <value>Alle auswählen</value>
+  </data>
+  <data name="btnTCPLCopySelected.Text" xml:space="preserve">
+    <value>In Zwischenablage</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>UDP-Listener</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>Verworfene eingehende Datagramme</value>
+  </data>
+  <data name="label78.Text" xml:space="preserve">
+    <value>Fehlerhafte eingehende Datagramme</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>Gesendete Datagramme</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>Empfangene Datagramme</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>UDP-Verbindungsstatistik</value>
+  </data>
+  <data name="btnUDPLSelectAll.Text" xml:space="preserve">
+    <value>Alle auswählen</value>
+  </data>
+  <data name="btnUDPLCopySelected.Text" xml:space="preserve">
+    <value>In Zwischenablage</value>
+  </data>
+  <data name="label99.Text" xml:space="preserve">
+    <value>Zeitstempelanfragen</value>
+  </data>
+  <data name="label100.Text" xml:space="preserve">
+    <value>Zeitstempelantworten</value>
+  </data>
+  <data name="label101.Text" xml:space="preserve">
+    <value>Zeitüberschreitung</value>
+  </data>
+  <data name="label102.Text" xml:space="preserve">
+    <value>Quellstauungen</value>
+  </data>
+  <data name="label103.Text" xml:space="preserve">
+    <value>Umleitungen</value>
+  </data>
+  <data name="label104.Text" xml:space="preserve">
+    <value>Parameterprobleme</value>
+  </data>
+  <data name="label105.Text" xml:space="preserve">
+    <value>Nachrichten</value>
+  </data>
+  <data name="label106.Text" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="label107.Text" xml:space="preserve">
+    <value>Echo-Anfragen</value>
+  </data>
+  <data name="label108.Text" xml:space="preserve">
+    <value>Echo-Antworten</value>
+  </data>
+  <data name="label109.Text" xml:space="preserve">
+    <value>Ziel nicht erreichbar</value>
+  </data>
+  <data name="label110.Text" xml:space="preserve">
+    <value>Adressmaskenanfragen</value>
+  </data>
+  <data name="label111.Text" xml:space="preserve">
+    <value>Adressmaskenantworten</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>Gesendete ICMPv4</value>
+  </data>
+  <data name="label96.Text" xml:space="preserve">
+    <value>Zeitstempelanfragen</value>
+  </data>
+  <data name="label97.Text" xml:space="preserve">
+    <value>Zeitstempelantworten</value>
+  </data>
+  <data name="label98.Text" xml:space="preserve">
+    <value>Zeitüberschreitung</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>Quellstauungen</value>
+  </data>
+  <data name="label77.Text" xml:space="preserve">
+    <value>Umleitungen</value>
+  </data>
+  <data name="label87.Text" xml:space="preserve">
+    <value>Parameterprobleme</value>
+  </data>
+  <data name="label88.Text" xml:space="preserve">
+    <value>Nachrichten</value>
+  </data>
+  <data name="label89.Text" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="label90.Text" xml:space="preserve">
+    <value>Echo-Anfragen</value>
+  </data>
+  <data name="label91.Text" xml:space="preserve">
+    <value>Echo-Antworten</value>
+  </data>
+  <data name="label92.Text" xml:space="preserve">
+    <value>Ziel nicht erreichbar</value>
+  </data>
+  <data name="label94.Text" xml:space="preserve">
+    <value>Adressmaskenanfragen</value>
+  </data>
+  <data name="label95.Text" xml:space="preserve">
+    <value>Adressmaskenantworten</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Empfangene ICMPv4-Nachrichten</value>
+  </data>
+  <data name="label112.Text" xml:space="preserve">
+    <value>Zeitüberschreitung</value>
+  </data>
+  <data name="label113.Text" xml:space="preserve">
+    <value>Router-Anfragen</value>
+  </data>
+  <data name="label114.Text" xml:space="preserve">
+    <value>Router-Ankündigungen</value>
+  </data>
+  <data name="label115.Text" xml:space="preserve">
+    <value>Umleitungen</value>
+  </data>
+  <data name="label116.Text" xml:space="preserve">
+    <value>Parameterprobleme</value>
+  </data>
+  <data name="label117.Text" xml:space="preserve">
+    <value>Paket zu groß</value>
+  </data>
+  <data name="label118.Text" xml:space="preserve">
+    <value>Nachbaranfragen</value>
+  </data>
+  <data name="label119.Text" xml:space="preserve">
+    <value>Nachbarankündigungen</value>
+  </data>
+  <data name="label120.Text" xml:space="preserve">
+    <value>Nachrichten</value>
+  </data>
+  <data name="label121.Text" xml:space="preserve">
+    <value>IGMP-Mitgliedschaftsberichte</value>
+  </data>
+  <data name="label122.Text" xml:space="preserve">
+    <value>IGMP-Mitgliedschaftsreduzierungen</value>
+  </data>
+  <data name="label123.Text" xml:space="preserve">
+    <value>IGMP-Mitgliedschaftsanfragen</value>
+  </data>
+  <data name="label124.Text" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="label141.Text" xml:space="preserve">
+    <value>Echo-Anfragen</value>
+  </data>
+  <data name="label142.Text" xml:space="preserve">
+    <value>Echo-Antworten</value>
+  </data>
+  <data name="label143.Text" xml:space="preserve">
+    <value>Ziel nicht erreichbar</value>
+  </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>Gesendete ICMPv6</value>
+  </data>
+  <data name="label138.Text" xml:space="preserve">
+    <value>Zeitüberschreitung</value>
+  </data>
+  <data name="label139.Text" xml:space="preserve">
+    <value>Router-Anfragen</value>
+  </data>
+  <data name="label140.Text" xml:space="preserve">
+    <value>Router-Ankündigungen</value>
+  </data>
+  <data name="label125.Text" xml:space="preserve">
+    <value>Umleitungen</value>
+  </data>
+  <data name="label126.Text" xml:space="preserve">
+    <value>Parameterprobleme</value>
+  </data>
+  <data name="label127.Text" xml:space="preserve">
+    <value>Paket zu groß</value>
+  </data>
+  <data name="label128.Text" xml:space="preserve">
+    <value>Nachbaranfragen</value>
+  </data>
+  <data name="label129.Text" xml:space="preserve">
+    <value>Nachbarankündigungen</value>
+  </data>
+  <data name="label130.Text" xml:space="preserve">
+    <value>Nachrichten</value>
+  </data>
+  <data name="label131.Text" xml:space="preserve">
+    <value>IGMP-Mitgliedschaftsberichte</value>
+  </data>
+  <data name="label132.Text" xml:space="preserve">
+    <value>IGMP-Mitgliedschaftsreduzierungen</value>
+  </data>
+  <data name="label133.Text" xml:space="preserve">
+    <value>IGMP-Mitgliedschaftsanfragen</value>
+  </data>
+  <data name="label134.Text" xml:space="preserve">
+    <value>Fehler</value>
+  </data>
+  <data name="label135.Text" xml:space="preserve">
+    <value>Echo-Anfragen</value>
+  </data>
+  <data name="label136.Text" xml:space="preserve">
+    <value>Echo-Antworten</value>
+  </data>
+  <data name="label137.Text" xml:space="preserve">
+    <value>Ziel nicht erreichbar</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>Empfangene ICMPv6-Nachrichten</value>
+  </data>
+  <data name="groupBoxGlobalVersion.Text" xml:space="preserve">
+    <value>Protokollversion</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Aktive Schnittstelle :</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Netzwerkschnittstelle</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GabNetStats - Erweiterte Statistik</value>
+  </data>
+  <data name="colLocalEndPoint.HeaderText" xml:space="preserve">
+    <value>Lokale Adresse</value>
+  </data>
+  <data name="colLocalPort.HeaderText" xml:space="preserve">
+    <value>Lokaler Port</value>
+  </data>
+  <data name="colRemoteEndPoint.HeaderText" xml:space="preserve">
+    <value>Remoteadresse</value>
+  </data>
+  <data name="colRemotePort.HeaderText" xml:space="preserve">
+    <value>Remoteport</value>
+  </data>
+  <data name="colState.HeaderText" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="colEndPoint.HeaderText" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="colPort.HeaderText" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="colUDPLEndPoint.HeaderText" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="colUDPLPort.HeaderText" xml:space="preserve">
+    <value>Port</value>
+  </data>
+</root>

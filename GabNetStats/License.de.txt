@@ -1,0 +1,19 @@
+------= GabSoftware-Lizenz v1.0.1 =------
+
+Betroffenes Produkt: [PRODUCTNAME]
+Homepage von [PRODUCTNAME]: [PRODUCTHOMEPAGE]
+
+Durch die Verbreitung, Nutzung oder Wiederverwendung eines Teils dieses Produkts (Binärdateien oder Quellcode) stimmen Sie den folgenden Bedingungen zu:
+
+- Die Binärdateien von [PRODUCTNAME] dürfen für den persönlichen Gebrauch frei verbreitet und genutzt werden. Für die gewerbliche Nutzung siehe (1).
+- Der Quellcode von [PRODUCTNAME] darf für den persönlichen Gebrauch frei verbreitet, genutzt und wiederverwendet werden. Für die gewerbliche Nutzung siehe (2).
+- Der Name "[PRODUCTNAME]" darf nicht Teil des Namens eines abgeleiteten Produkts sein.
+- Sie müssen diese Lizenz unverändert (License.txt) jeder Verbreitung, jedem Teil des Quellcodes oder den Binärdateien von [PRODUCTNAME] beilegen.
+
+(1): GabSoftware erlaubt Unternehmen mit weniger als 10 Personen, die Binärdateien von [PRODUCTNAME] kostenlos und zeitlich unbegrenzt zu nutzen und zu verbreiten, solange das Unternehmen weniger als 10 Personen beschäftigt und damit kein Geld verdient. Unternehmen mit mehr als 10 Personen, die die Binärdateien von [PRODUCTNAME] nutzen, verbreiten oder in eine Produktsuite aufnehmen möchten, müssen uns unter [CONTACTEMAIL] kontaktieren, um Preise zu verhandeln.
+(2): Wenn Sie den Quellcode von [PRODUCTNAME] ganz oder teilweise in Produkten Ihres Unternehmens verwenden möchten, senden Sie uns bitte Ihre Anfrage an [CONTACTEMAIL], um Preise zu verhandeln.
+
+Vielen Dank, dass Sie unsere Produkte verwenden!
+
+GabSoftware
+http://www.gabsoftware.com

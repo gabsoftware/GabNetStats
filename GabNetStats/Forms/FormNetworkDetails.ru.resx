@@ -2771,4 +2771,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>GabNetStats - Расширенная статистика</value>
   </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>Отправленные сообщения ICMPv6</value>
+  </data>
+  <data name="label102.Text" xml:space="preserve">
+    <value>Подавления источника</value>
+  </data>
+  <data name="label62.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
 </root>

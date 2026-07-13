@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -194,7 +194,7 @@ Vous pouvez envoyer au développeur la cause de l'erreur affichée ci-dessous au
     <value>Attention !</value>
   </data>
   <data name="str_LanguageDefault" xml:space="preserve">
-    <value>Anglais (par défaut)</value>
+    <value>English (default)</value>
   </data>
   <data name="str_RestartRequiredTitle" xml:space="preserve">
     <value>Redémarrage nécessaire</value>

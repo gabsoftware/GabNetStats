@@ -1,0 +1,181 @@
+label21.Text	Outbound packets requests
+label18.Text	Packets with no route
+label20.Text	Routing discards
+label19.Text	Transmited packets discards
+groupBoxGlobalOutbound.Text	Outbound packets
+label11.Text	Packets with unknown protocol
+label12.Text	Packets with header errors
+label13.Text	Packets with address errors
+label14.Text	Forwarded packets
+label15.Text	Discarded packets
+label16.Text	Delivered packets
+label17.Text	Received packets
+groupBoxGlobalInbound.Text	Inbound packets
+label22.Text	Reassembled packets
+label23.Text	Fragmented packets
+label24.Text	Reassembly timeout
+label25.Text	Reassembly failures
+label26.Text	Reassemblies required
+label27.Text	Packet fragmentation failures
+groupBoxGlobalFragmentation.Text	Packet fragmentation
+label10.Text	Node type
+label9.Text	Is a WINS proxy
+label8.Text	Host name
+label7.Text	Domain name
+label6.Text	DHCP scope name
+label5.Text	Number of routes
+label4.Text	Number of IP addresses
+label3.Text	Number of interfaces
+label2.Text	Forwarding enabled
+label1.Text	Default TTL
+groupBoxGlobalMisc.Text	Miscellaneous
+tabPageGlobal.Text	Global statistics
+label144.Text	MAC address
+label64.Text	Supports multicast
+label65.Text	Speed
+label61.Text	Reception only
+label62.Text	ID
+label66.Text	Operational status
+label58.Text	Network interface type
+label59.Text	Name
+label60.Text	Loopback interface index
+label63.Text	Description
+groupBox6.Text	Properties (2)
+label57.Text	WINS server addresses
+label55.Text	Unicast addresses
+label56.Text	Multicast addresses
+label47.Text	Dynamic DNS enabled
+label48.Text	DNS enabled
+label49.Text	Gateway addresses
+label50.Text	DNS suffix
+label52.Text	DNS addresses
+label53.Text	DHCP server addresses
+label54.Text	Anycast addresses
+groupBox5.Text	IP configuration
+label42.Text	Uses WINS
+label29.Text	MTU
+label30.Text	Packet forwarding enabled
+label31.Text	DHCP enabled
+label32.Text	APIPA address enabled
+label37.Text	Has APIPA address
+label39.Text	Index
+groupBox4.Text	Properties (1)
+label41.Text	Unicast packets sent
+label43.Text	Output queue length
+label44.Text	Outgoing packets with errors
+label45.Text	Outgoing packets discarded
+label46.Text	Non-unicast packets sent
+label51.Text	Bytes sent
+groupBox3.Text	Outgoing
+label40.Text	Unicast packets received
+label33.Text	Non-unicast packets received
+label34.Text	Incoming packets with unknown protocol
+label35.Text	Incoming packets with errors
+label36.Text	Incoming packets discarded
+label38.Text	Bytes received
+groupBox2.Text	Incoming
+tabPageNetworkInterfaces.Text	Network interface statistics
+label81.Text	TCP errors received
+groupBox9.Text	TCP errors statistics
+label82.Text	TCP segments received
+label83.Text	TCP reset sent (RST flag)
+label84.Text	TCP segments re-sent
+label85.Text	TCP segments sent
+label86.Text	TCP segments minimum transmission timeout
+label93.Text	TCP segments maximum transmission timeout
+groupBox8.Text	TCP segments statistics
+label68.Text	Established TCP connections
+label69.Text	Maximum supported TCP connections
+label70.Text	Failed TCP connection attempts
+label71.Text	Reset TCP connections
+label72.Text	Current TCP connections
+label73.Text	Initiated TCP connection requests
+label75.Text	Accepted TCP connection requests
+groupBox7.Text	TCP connections statistics
+tabPageTCP.Text	TCP statistics
+btnSelectAll.Text	Select all
+btnCopySelection.Text	Copy selected cells to Clipboard
+tabPageTCPConnections.Text	TCP connections
+btnTCPLSelectAll.Text	Select all
+btnTCPLCopySelected.Text	Copy selected cells to Clipboard
+tabPageTCPListeners.Text	TCP listeners
+label74.Text	UDP listeners
+label67.Text	Incoming datagrams discarded
+label78.Text	Incoming datagrams with errors
+label79.Text	Datagrams sent
+label80.Text	Datagrams received
+groupBox10.Text	UDP connections statistics
+tabPageUDP.Text	UDP statistics
+btnUDPLSelectAll.Text	Select all
+btnUDPLCopySelected.Text	Copy selected cells to Clipboard
+tabPageUDPListeners.Text	UDP listeners
+label99.Text	Timestamp requests
+label100.Text	Timestamp replies
+label101.Text	Time exceeded
+label102.Text	Source quenches
+label103.Text	Redirects
+label104.Text	Parameter problems
+label105.Text	Messages
+label106.Text	Errors
+label107.Text	Echo requests
+label108.Text	Echo replies
+label109.Text	Destination unreachable
+label110.Text	Address mask requests
+label111.Text	Address mask replies
+groupBox12.Text	ICMPv4 sent messages
+label96.Text	Timestamp requests
+label97.Text	Timestamp replies
+label98.Text	Time exceeded
+label76.Text	Source quenches
+label77.Text	Redirects
+label87.Text	Parameter problems
+label88.Text	Messages
+label89.Text	Errors
+label90.Text	Echo requests
+label91.Text	Echo replies
+label92.Text	Destination unreachable
+label94.Text	Address mask requests
+label95.Text	Address mask replies
+groupBox11.Text	ICMPv4 received messages
+tabPageICMPv4.Text	ICMPv4 statistics
+label112.Text	Time exceeded
+label113.Text	Router solicits
+label114.Text	Router advertisement
+label115.Text	Redirects
+label116.Text	Parameter problems
+label117.Text	Packet too big
+label118.Text	Neighbor solicitation
+label119.Text	Neighbor advertisement
+label120.Text	Messages
+label121.Text	IGMP membership reports
+label122.Text	IGMP membership reductions
+label123.Text	IGMP membership queries
+label124.Text	Errors
+label141.Text	Echo requests
+label142.Text	Echo replies
+label143.Text	Destination unreachable
+groupBox13.Text	ICMPv6 sent messages
+label138.Text	Time exceeded
+label139.Text	Router solicits
+label140.Text	Router advertisement
+label125.Text	Redirects
+label126.Text	Parameter problems
+label127.Text	Packet too big
+label128.Text	Neighbor solicitation
+label129.Text	Neighbor advertisement
+label130.Text	Messages
+label131.Text	IGMP membership reports
+label132.Text	IGMP membership reductions
+label133.Text	IGMP membership queries
+label134.Text	Errors
+label135.Text	Echo requests
+label136.Text	Echo replies
+label137.Text	Destination unreachable
+groupBox14.Text	ICMPv6 received messages
+tabPageICMPv6.Text	ICMPv6 statistics
+radioButtonIPv4.Text	IPv4
+radioButtonIPv6.Text	IPv6
+groupBoxGlobalVersion.Text	Protocol version
+label28.Text	Active interface :
+groupBox1.Text	Network interface
+$this.Text	GabNetStats - Advanced Statistics

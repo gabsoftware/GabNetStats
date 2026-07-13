@@ -30,8 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStatsOverlay));
-            GabTracker.GabTrackerFeed gabTrackerFeed1 = new GabTracker.GabTrackerFeed();
-            GabTracker.GabTrackerFeed gabTrackerFeed2 = new GabTracker.GabTrackerFeed();
+            Properties.Settings settings2 = new Properties.Settings();
+            GabTracker.GabTrackerFeed gabTrackerFeed3 = new GabTracker.GabTrackerFeed();
+            GabTracker.GabTrackerFeed gabTrackerFeed4 = new GabTracker.GabTrackerFeed();
             BallonTimer = new System.Windows.Forms.Timer(components);
             lblStatisticsData = new System.Windows.Forms.Label();
             lblSeconds = new System.Windows.Forms.Label();
@@ -70,11 +71,11 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = System.Drawing.Color.White;
             panel1.Controls.Add(btn_settings);
             panel1.Controls.Add(btnAdvanced);
             panel1.Controls.Add(lblStatisticsTitle);
-            resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
             panel1.Paint += panel1_Paint;
             // 
@@ -97,7 +98,34 @@
             // 
             resources.ApplyResources(tbTrans, "tbTrans");
             tbTrans.BackColor = System.Drawing.SystemColors.Info;
-            tbTrans.DataBindings.Add(new System.Windows.Forms.Binding("Value", Properties.Settings.Default, "BalloonOpacitySlider", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            settings2.AdvancedSelectedInterfaceMac = "";
+            settings2.AutoCloseBalloon = true;
+            settings2.AutoCloseBalloonAfter = new decimal(new int[] { 5, 0, 0, 0 });
+            settings2.AutoPingEnabled = false;
+            settings2.AutoPingHost = "google.com";
+            settings2.AutoPingNotif = true;
+            settings2.AutoPingRate = new decimal(new int[] { 5000, 0, 0, 0 });
+            settings2.BalloonLocationX = -1;
+            settings2.BalloonLocationY = -1;
+            settings2.BalloonOpacity = 1D;
+            settings2.BalloonOpacitySlider = 100;
+            settings2.BandwidthDownload = 12500000L;
+            settings2.BandwidthDownloadMultiplier = 1L;
+            settings2.BandwidthUnit = 1;
+            settings2.BandwidthUpload = 12500000L;
+            settings2.BandwidthUploadMultiplier = 1L;
+            settings2.BandwidthVisualsCustom = false;
+            settings2.BandwidthVisualsDefault = true;
+            settings2.BlinkDuration = 200;
+            settings2.EnabledInterfaceMACList = "TOSET";
+            settings2.IconSet = "win10";
+            settings2.KnownInterfaceMACList = "";
+            settings2.Language = "";
+            settings2.LoadOnStartup = false;
+            settings2.SettingsKey = "";
+            settings2.SettingsUpgraded = false;
+            settings2.ShowDisconnectedInterfaces = false;
+            tbTrans.DataBindings.Add(new System.Windows.Forms.Binding("Value", settings2, "BalloonOpacitySlider", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             tbTrans.LargeChange = 10;
             tbTrans.Maximum = 100;
             tbTrans.Minimum = 10;
@@ -111,7 +139,6 @@
             // nudAutoClose
             // 
             resources.ApplyResources(nudAutoClose, "nudAutoClose");
-            nudAutoClose.DataBindings.Add(new System.Windows.Forms.Binding("Value", Properties.Settings.Default, "AutoCloseBalloonAfter", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             nudAutoClose.Maximum = new decimal(new int[] { 999, 0, 0, 0 });
             nudAutoClose.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudAutoClose.Name = "nudAutoClose";
@@ -121,9 +148,8 @@
             // chkAutoClose
             // 
             resources.ApplyResources(chkAutoClose, "chkAutoClose");
-            chkAutoClose.Checked = Properties.Settings.Default.AutoCloseBalloon;
+            chkAutoClose.Checked = true;
             chkAutoClose.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkAutoClose.DataBindings.Add(new System.Windows.Forms.Binding("Checked", Properties.Settings.Default, "AutoCloseBalloon", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             chkAutoClose.Name = "chkAutoClose";
             chkAutoClose.UseVisualStyleBackColor = true;
             chkAutoClose.CheckStateChanged += chkAutoClose_CheckStateChanged;
@@ -133,26 +159,26 @@
             resources.ApplyResources(gabTracker1, "gabTracker1");
             gabTracker1.AutoMax = true;
             gabTracker1.AutoMaxPercentage = 110D;
-            gabTrackerFeed1.Coefficient = 1D;
-            gabTrackerFeed1.FillAlpha = 100;
-            gabTrackerFeed1.FillThickness = 10F;
-            gabTrackerFeed1.FillUnder = true;
-            gabTrackerFeed1.Legend = "Download";
-            gabTrackerFeed1.LineColor = System.Drawing.Color.DodgerBlue;
-            gabTrackerFeed1.LineThickness = 2F;
-            gabTrackerFeed1.Unit = "KB/s";
-            gabTrackerFeed1.Value = 40D;
-            gabTrackerFeed2.Coefficient = 1D;
-            gabTrackerFeed2.FillAlpha = 100;
-            gabTrackerFeed2.FillThickness = 10F;
-            gabTrackerFeed2.FillUnder = true;
-            gabTrackerFeed2.Legend = "Upload";
-            gabTrackerFeed2.LineColor = System.Drawing.Color.Red;
-            gabTrackerFeed2.LineThickness = 2F;
-            gabTrackerFeed2.Unit = "KB/s";
-            gabTrackerFeed2.Value = 50D;
-            gabTracker1.Feeds.Add(gabTrackerFeed1);
-            gabTracker1.Feeds.Add(gabTrackerFeed2);
+            gabTrackerFeed3.Coefficient = 1D;
+            gabTrackerFeed3.FillAlpha = 100;
+            gabTrackerFeed3.FillThickness = 10F;
+            gabTrackerFeed3.FillUnder = true;
+            gabTrackerFeed3.Legend = "Download";
+            gabTrackerFeed3.LineColor = System.Drawing.Color.DodgerBlue;
+            gabTrackerFeed3.LineThickness = 2F;
+            gabTrackerFeed3.Unit = "KB/s";
+            gabTrackerFeed3.Value = 40D;
+            gabTrackerFeed4.Coefficient = 1D;
+            gabTrackerFeed4.FillAlpha = 100;
+            gabTrackerFeed4.FillThickness = 10F;
+            gabTrackerFeed4.FillUnder = true;
+            gabTrackerFeed4.Legend = "Upload";
+            gabTrackerFeed4.LineColor = System.Drawing.Color.Red;
+            gabTrackerFeed4.LineThickness = 2F;
+            gabTrackerFeed4.Unit = "KB/s";
+            gabTrackerFeed4.Value = 50D;
+            gabTracker1.Feeds.Add(gabTrackerFeed3);
+            gabTracker1.Feeds.Add(gabTrackerFeed4);
             gabTracker1.GridThickerThickness = 1F;
             gabTracker1.GridThickness = 1F;
             gabTracker1.LegendOpacity = 75;
@@ -173,7 +199,6 @@
             Controls.Add(nudAutoClose);
             Controls.Add(chkAutoClose);
             Controls.Add(lblStatisticsData);
-            DataBindings.Add(new System.Windows.Forms.Binding("Opacity", Properties.Settings.Default, "BalloonOpacity", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             DoubleBuffered = true;
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             MaximizeBox = false;

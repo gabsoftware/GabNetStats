@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+                        
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label21.Text" xml:space="preserve">
+    <value>送信パケット要求</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>経路なしパケット</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>破棄ルート</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>送信破棄パケット</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Text" xml:space="preserve">
+    <value>送信パケット</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>不明プロトコル</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>ヘッダーエラー</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>アドレスエラー</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>転送パケット</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>破棄パケット</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>配送パケット</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>受信パケット</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Text" xml:space="preserve">
+    <value>受信パケット</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>再構成パケット</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>断片化パケット</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>再構成タイムアウト</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>再構成失敗</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>再構成要求</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>断片化失敗</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Text" xml:space="preserve">
+    <value>パケット断片化</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>ノード種別</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>WINSプロキシ</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>ホスト名</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>ドメイン名</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>DHCPスコープ</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>ルート数</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>IPアドレス数</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>インターフェイス数</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>転送有効</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>既定TTL</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Text" xml:space="preserve">
+    <value>その他</value>
+  </data>
+  <data name="tabPageGlobal.Text" xml:space="preserve">
+    <value>全体統計</value>
+  </data>
+  <data name="label64.Text" xml:space="preserve">
+    <value>マルチキャスト対応</value>
+  </data>
+  <data name="label65.Text" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="label61.Text" xml:space="preserve">
+    <value>受信専用</value>
+  </data>
+  <data name="label66.Text" xml:space="preserve">
+    <value>状態</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>インターフェイス種別</value>
+  </data>
+  <data name="label59.Text" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>ループバック番号</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>プロパティ (2)</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>WINSサーバー</value>
+  </data>
+  <data name="label55.Text" xml:space="preserve">
+    <value>Unicastアドレス</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>Multicastアドレス</value>
+  </data>
+  <data name="label47.Text" xml:space="preserve">
+    <value>動的DNS有効</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>DNS有効</value>
+  </data>
+  <data name="label49.Text" xml:space="preserve">
+    <value>ゲートウェイ</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>DNSサフィックス</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>DNSアドレス</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>DHCPサーバー</value>
+  </data>
+  <data name="label54.Text" xml:space="preserve">
+    <value>Anycastアドレス</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>IP設定</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>WINS使用</value>
+  </data>
+  <data name="label30.Text" xml:space="preserve">
+    <value>パケット転送有効</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>DHCP有効</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>APIPA有効</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>APIPAあり</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>プロパティ (1)</value>
+  </data>
+  <data name="label41.Text" xml:space="preserve">
+    <value>送信Unicast</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>送信キュー長</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>送信エラー</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>送信破棄</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>送信Non-unicast</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>送信バイト</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>送信</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>受信Unicast</value>
+  </data>
+  <data name="label33.Text" xml:space="preserve">
+    <value>受信Non-unicast</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>不明プロトコル</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>受信エラー</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>受信破棄</value>
+  </data>
+  <data name="label38.Text" xml:space="preserve">
+    <value>受信バイト</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>受信</value>
+  </data>
+  <data name="tabPageNetworkInterfaces.Text" xml:space="preserve">
+    <value>インターフェイス統計</value>
+  </data>
+  <data name="label81.Text" xml:space="preserve">
+    <value>受信TCPエラー</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>TCPエラー統計</value>
+  </data>
+  <data name="label82.Text" xml:space="preserve">
+    <value>受信TCPセグメント</value>
+  </data>
+  <data name="label83.Text" xml:space="preserve">
+    <value>送信TCPリセット (RST)</value>
+  </data>
+  <data name="label84.Text" xml:space="preserve">
+    <value>再送TCPセグメント</value>
+  </data>
+  <data name="label85.Text" xml:space="preserve">
+    <value>送信TCPセグメント</value>
+  </data>
+  <data name="label86.Text" xml:space="preserve">
+    <value>TCP最小タイムアウト</value>
+  </data>
+  <data name="label93.Text" xml:space="preserve">
+    <value>TCP最大タイムアウト</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>TCPセグメント統計</value>
+  </data>
+  <data name="label68.Text" xml:space="preserve">
+    <value>確立TCP接続</value>
+  </data>
+  <data name="label69.Text" xml:space="preserve">
+    <value>最大TCP接続数</value>
+  </data>
+  <data name="label70.Text" xml:space="preserve">
+    <value>失敗TCP接続</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>リセットTCP接続</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>現在のTCP接続</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>開始TCP接続要求</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>受理TCP接続要求</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>TCP接続統計</value>
+  </data>
+  <data name="tabPageTCP.Text" xml:space="preserve">
+    <value>TCP統計</value>
+  </data>
+  <data name="btnSelectAll.Text" xml:space="preserve">
+    <value>すべて</value>
+  </data>
+  <data name="btnCopySelection.Text" xml:space="preserve">
+    <value>選択をコピー</value>
+  </data>
+  <data name="colLocalEndPoint.HeaderText" xml:space="preserve">
+    <value>ローカルアドレス</value>
+  </data>
+  <data name="colLocalPort.HeaderText" xml:space="preserve">
+    <value>ローカルポート</value>
+  </data>
+  <data name="colRemoteEndPoint.HeaderText" xml:space="preserve">
+    <value>リモートアドレス</value>
+  </data>
+  <data name="colRemotePort.HeaderText" xml:space="preserve">
+    <value>リモートポート</value>
+  </data>
+  <data name="colState.HeaderText" xml:space="preserve">
+    <value>状態</value>
+  </data>
+  <data name="tabPageTCPConnections.Text" xml:space="preserve">
+    <value>TCP接続</value>
+  </data>
+  <data name="btnTCPLSelectAll.Text" xml:space="preserve">
+    <value>すべて</value>
+  </data>
+  <data name="btnTCPLCopySelected.Text" xml:space="preserve">
+    <value>選択をコピー</value>
+  </data>
+  <data name="colEndPoint.HeaderText" xml:space="preserve">
+    <value>アドレス</value>
+  </data>
+  <data name="tabPageTCPListeners.Text" xml:space="preserve">
+    <value>TCP待受</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>UDP待受</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>受信破棄データグラム</value>
+  </data>
+  <data name="label78.Text" xml:space="preserve">
+    <value>受信エラーデータグラム</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>送信データグラム</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>受信データグラム</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>UDP統計</value>
+  </data>
+  <data name="tabPageUDP.Text" xml:space="preserve">
+    <value>UDP統計</value>
+  </data>
+  <data name="btnUDPLSelectAll.Text" xml:space="preserve">
+    <value>すべて</value>
+  </data>
+  <data name="btnUDPLCopySelected.Text" xml:space="preserve">
+    <value>選択をコピー</value>
+  </data>
+  <data name="colUDPLEndPoint.HeaderText" xml:space="preserve">
+    <value>アドレス</value>
+  </data>
+  <data name="tabPageUDPListeners.Text" xml:space="preserve">
+    <value>UDP待受</value>
+  </data>
+  <data name="label99.Text" xml:space="preserve">
+    <value>時刻要求</value>
+  </data>
+  <data name="label100.Text" xml:space="preserve">
+    <value>時刻応答</value>
+  </data>
+  <data name="label101.Text" xml:space="preserve">
+    <value>時間超過</value>
+  </data>
+  <data name="label102.Text" xml:space="preserve">
+    <value>Source quench</value>
+  </data>
+  <data name="label103.Text" xml:space="preserve">
+    <value>リダイレクト</value>
+  </data>
+  <data name="label104.Text" xml:space="preserve">
+    <value>パラメーター問題</value>
+  </data>
+  <data name="label106.Text" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="label107.Text" xml:space="preserve">
+    <value>Echo要求</value>
+  </data>
+  <data name="label108.Text" xml:space="preserve">
+    <value>Echo応答</value>
+  </data>
+  <data name="label109.Text" xml:space="preserve">
+    <value>宛先到達不能</value>
+  </data>
+  <data name="label110.Text" xml:space="preserve">
+    <value>アドレスマスク要求</value>
+  </data>
+  <data name="label111.Text" xml:space="preserve">
+    <value>アドレスマスク応答</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>送信ICMPv4</value>
+  </data>
+  <data name="label96.Text" xml:space="preserve">
+    <value>時刻要求</value>
+  </data>
+  <data name="label97.Text" xml:space="preserve">
+    <value>時刻応答</value>
+  </data>
+  <data name="label98.Text" xml:space="preserve">
+    <value>時間超過</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>Source quench</value>
+  </data>
+  <data name="label77.Text" xml:space="preserve">
+    <value>リダイレクト</value>
+  </data>
+  <data name="label87.Text" xml:space="preserve">
+    <value>パラメーター問題</value>
+  </data>
+  <data name="label89.Text" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="label90.Text" xml:space="preserve">
+    <value>Echo要求</value>
+  </data>
+  <data name="label91.Text" xml:space="preserve">
+    <value>Echo応答</value>
+  </data>
+  <data name="label92.Text" xml:space="preserve">
+    <value>宛先到達不能</value>
+  </data>
+  <data name="label94.Text" xml:space="preserve">
+    <value>アドレスマスク要求</value>
+  </data>
+  <data name="label95.Text" xml:space="preserve">
+    <value>アドレスマスク応答</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>受信ICMPv4</value>
+  </data>
+  <data name="tabPageICMPv4.Text" xml:space="preserve">
+    <value>ICMPv4統計</value>
+  </data>
+  <data name="label112.Text" xml:space="preserve">
+    <value>時間超過</value>
+  </data>
+  <data name="label113.Text" xml:space="preserve">
+    <value>ルーター要請</value>
+  </data>
+  <data name="label114.Text" xml:space="preserve">
+    <value>ルーター広告</value>
+  </data>
+  <data name="label115.Text" xml:space="preserve">
+    <value>リダイレクト</value>
+  </data>
+  <data name="label116.Text" xml:space="preserve">
+    <value>パラメーター問題</value>
+  </data>
+  <data name="label117.Text" xml:space="preserve">
+    <value>パケット過大</value>
+  </data>
+  <data name="label118.Text" xml:space="preserve">
+    <value>近隣要請</value>
+  </data>
+  <data name="label119.Text" xml:space="preserve">
+    <value>近隣広告</value>
+  </data>
+  <data name="label121.Text" xml:space="preserve">
+    <value>IGMP参加報告</value>
+  </data>
+  <data name="label122.Text" xml:space="preserve">
+    <value>IGMP参加減少</value>
+  </data>
+  <data name="label123.Text" xml:space="preserve">
+    <value>IGMP参加照会</value>
+  </data>
+  <data name="label124.Text" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="label141.Text" xml:space="preserve">
+    <value>Echo要求</value>
+  </data>
+  <data name="label142.Text" xml:space="preserve">
+    <value>Echo応答</value>
+  </data>
+  <data name="label143.Text" xml:space="preserve">
+    <value>宛先到達不能</value>
+  </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>送信ICMPv6</value>
+  </data>
+  <data name="label138.Text" xml:space="preserve">
+    <value>時間超過</value>
+  </data>
+  <data name="label139.Text" xml:space="preserve">
+    <value>ルーター要請</value>
+  </data>
+  <data name="label140.Text" xml:space="preserve">
+    <value>ルーター広告</value>
+  </data>
+  <data name="label125.Text" xml:space="preserve">
+    <value>リダイレクト</value>
+  </data>
+  <data name="label126.Text" xml:space="preserve">
+    <value>パラメーター問題</value>
+  </data>
+  <data name="label127.Text" xml:space="preserve">
+    <value>パケット過大</value>
+  </data>
+  <data name="label128.Text" xml:space="preserve">
+    <value>近隣要請</value>
+  </data>
+  <data name="label129.Text" xml:space="preserve">
+    <value>近隣広告</value>
+  </data>
+  <data name="label131.Text" xml:space="preserve">
+    <value>IGMP参加報告</value>
+  </data>
+  <data name="label132.Text" xml:space="preserve">
+    <value>IGMP参加減少</value>
+  </data>
+  <data name="label133.Text" xml:space="preserve">
+    <value>IGMP参加照会</value>
+  </data>
+  <data name="label134.Text" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="label135.Text" xml:space="preserve">
+    <value>Echo要求</value>
+  </data>
+  <data name="label136.Text" xml:space="preserve">
+    <value>Echo応答</value>
+  </data>
+  <data name="label137.Text" xml:space="preserve">
+    <value>宛先到達不能</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>受信ICMPv6</value>
+  </data>
+  <data name="tabPageICMPv6.Text" xml:space="preserve">
+    <value>ICMPv6統計</value>
+  </data>
+  <data name="groupBoxGlobalVersion.Text" xml:space="preserve">
+    <value>IPバージョン</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>使用中:</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>ネットワークIF</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GabNetStats - 詳細統計</value>
+  </data>
+  <data name="label39.Text" xml:space="preserve">
+    <value>インデックス</value>
+  </data>
+  <data name="label62.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="label63.Text" xml:space="preserve">
+    <value>説明</value>
+  </data>
+  <data name="label88.Text" xml:space="preserve">
+    <value>メッセージ</value>
+  </data>
+  <data name="label105.Text" xml:space="preserve">
+    <value>メッセージ</value>
+  </data>
+  <data name="label120.Text" xml:space="preserve">
+    <value>メッセージ</value>
+  </data>
+  <data name="label130.Text" xml:space="preserve">
+    <value>メッセージ</value>
+  </data>
+  <data name="label144.Text" xml:space="preserve">
+    <value>MACアドレス</value>
+  </data>
+  <data name="colPort.HeaderText" xml:space="preserve">
+    <value>ポート</value>
+  </data>
+  <data name="colUDPLPort.HeaderText" xml:space="preserve">
+    <value>ポート</value>
+  </data>
+</root>

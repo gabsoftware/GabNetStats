@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -194,7 +194,7 @@
     <value>Предупреждение !</value>
   </data>
   <data name="str_LanguageDefault" xml:space="preserve">
-    <value>Английский (по умолчанию)</value>
+    <value>English (default)</value>
   </data>
   <data name="str_RestartRequiredTitle" xml:space="preserve">
     <value>Требуется перезапуск</value>
@@ -209,7 +209,7 @@
     <value>Включать в статистику</value>
   </data>
   <data name="str_None" xml:space="preserve">
-    <value>None</value>
+    <value>Нет</value>
   </data>
   <data name="str_Unsupported" xml:space="preserve">
     <value>Не поддерживается</value>

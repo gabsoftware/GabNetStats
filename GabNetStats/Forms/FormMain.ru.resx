@@ -1813,4 +1813,13 @@
         AAD/jwAA
 </value>
   </data>
+  <data name="notifyIconPing.BalloonTipText" xml:space="preserve">
+    <value>Не определено</value>
+  </data>
+  <data name="notifyIconPing.BalloonTipTitle" xml:space="preserve">
+    <value>GabNetStats - Соединение</value>
+  </data>
+  <data name="notifyIconPing.Text" xml:space="preserve">
+    <value>GabNetStats - Соединение</value>
+  </data>
 </root>

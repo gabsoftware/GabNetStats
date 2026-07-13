@@ -262,4 +262,13 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Настройки</value>
   </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Разное</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Язык:</value>
+  </data>
+  <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
+    <value>Показывать отключённые интерфейсы</value>
+  </data>
 </root>

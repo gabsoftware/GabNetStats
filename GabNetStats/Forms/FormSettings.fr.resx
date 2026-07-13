@@ -238,4 +238,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Options</value>
   </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Ping automatique</value>
+  </data>
 </root>
