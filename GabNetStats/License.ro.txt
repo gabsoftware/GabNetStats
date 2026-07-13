@@ -1,0 +1,19 @@
+------= Licență GabSoftware v1.0.1 =------
+
+Produs vizat: [PRODUCTNAME]
+Pagina [PRODUCTNAME]: [PRODUCTHOMEPAGE]
+
+Prin distribuirea, utilizarea sau reutilizarea oricărei părți a acestui produs (binare sau cod sursă), sunteți de acord cu următorii termeni:
+
+- Binarele [PRODUCTNAME] pot fi distribuite și utilizate gratuit pentru uz personal. Pentru uz corporativ, vezi (1).
+- Codul sursă [PRODUCTNAME] poate fi distribuit, utilizat și reutilizat gratuit pentru uz personal. Pentru uz corporativ, vezi (2).
+- Numele "[PRODUCTNAME]" nu trebuie să facă parte din numele niciunui produs derivat.
+- Trebuie să includeți prezenta licență nemodificată (License.txt) cu orice distribuție, parte de cod sursă sau binare ale [PRODUCTNAME].
+
+(1): GabSoftware permite companiilor cu mai puțin de 10 persoane să utilizeze și să distribuie binarele [PRODUCTNAME] gratuit și fără limită de timp, atât timp cât compania rămâne sub 10 persoane și nu câștigă bani din aceasta. Companiile cu peste 10 persoane care doresc să utilizeze, să distribuie sau să includă binarele [PRODUCTNAME] în orice suită de produse trebuie să ne contacteze la [CONTACTEMAIL] pentru a negocia prețul.
+(2): Dacă doriți să utilizați tot sau părți din codul sursă [PRODUCTNAME] în produsele companiei, trimiteți-ne cererea la [CONTACTEMAIL] pentru a negocia prețul.
+
+Vă mulțumim că folosiți produsele noastre!
+
+GabSoftware
+http://www.gabsoftware.com

@@ -1,0 +1,585 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label97.Text" xml:space="preserve">
+    <value>Zaman damgası yanıtları</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>Başlatılan TCP bağlantı istekleri</value>
+  </data>
+  <data name="label77.Text" xml:space="preserve">
+    <value>Yönlendirmeler</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>DNS etkin</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>Alınan datagramlar</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>TCP bağlantı istatistikleri</value>
+  </data>
+  <data name="label95.Text" xml:space="preserve">
+    <value>Adres maskesi yanıtları</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>Gönderilen datagramlar</value>
+  </data>
+  <data name="label109.Text" xml:space="preserve">
+    <value>Hedefe ulaşılamıyor</value>
+  </data>
+  <data name="label30.Text" xml:space="preserve">
+    <value>Paket iletme etkin</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Parçalanmış paketler</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>DNS son eki</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Text" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="label54.Text" xml:space="preserve">
+    <value>Anycast adresleri</value>
+  </data>
+  <data name="label62.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Adres hatalı paketler</value>
+  </data>
+  <data name="label70.Text" xml:space="preserve">
+    <value>Başarısız TCP bağlantı denemeleri</value>
+  </data>
+  <data name="label102.Text" xml:space="preserve">
+    <value>Kaynak bastırmaları</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>Çıkış kuyruğu uzunluğu</value>
+  </data>
+  <data name="label82.Text" xml:space="preserve">
+    <value>Alınan TCP segmentleri</value>
+  </data>
+  <data name="colEndPoint.HeaderText" xml:space="preserve">
+    <value>Uç nokta</value>
+  </data>
+  <data name="label111.Text" xml:space="preserve">
+    <value>Adres maskesi yanıtları</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>Multicast adresleri</value>
+  </data>
+  <data name="radioButtonIPv6.Text" xml:space="preserve">
+    <value>IPv6</value>
+  </data>
+  <data name="label132.Text" xml:space="preserve">
+    <value>IGMP üyelik azaltmaları</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Text" xml:space="preserve">
+    <value>Giden paketler</value>
+  </data>
+  <data name="label55.Text" xml:space="preserve">
+    <value>Unicast adresleri</value>
+  </data>
+  <data name="colState.HeaderText" xml:space="preserve">
+    <value>Durum</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>DHCP kapsam adı</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Aktarım atıkları</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Yönlendirme atıkları</value>
+  </data>
+  <data name="label139.Text" xml:space="preserve">
+    <value>Yönlendirici istemleri</value>
+  </data>
+  <data name="label131.Text" xml:space="preserve">
+    <value>IGMP üyelik raporları</value>
+  </data>
+  <data name="label84.Text" xml:space="preserve">
+    <value>Yeniden gönderilen TCP segmentleri</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Arabirim sayısı</value>
+  </data>
+  <data name="label68.Text" xml:space="preserve">
+    <value>Kurulu TCP bağlantıları</value>
+  </data>
+  <data name="label114.Text" xml:space="preserve">
+    <value>Yönlendirici duyurusu</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>İletilen paketler</value>
+  </data>
+  <data name="label112.Text" xml:space="preserve">
+    <value>Süre aşıldı</value>
+  </data>
+  <data name="label92.Text" xml:space="preserve">
+    <value>Hedefe ulaşılamıyor</value>
+  </data>
+  <data name="colPort.HeaderText" xml:space="preserve">
+    <value>Bağlantı noktası</value>
+  </data>
+  <data name="tabPageICMPv6.Text" xml:space="preserve">
+    <value>ICMPv6 i̇statistikler</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>Kaynak bastırmaları</value>
+  </data>
+  <data name="label90.Text" xml:space="preserve">
+    <value>Echo istekleri</value>
+  </data>
+  <data name="label121.Text" xml:space="preserve">
+    <value>IGMP üyelik raporları</value>
+  </data>
+  <data name="label107.Text" xml:space="preserve">
+    <value>Echo istekleri</value>
+  </data>
+  <data name="label106.Text" xml:space="preserve">
+    <value>Hatalar</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>Geçerli TCP bağlantıları</value>
+  </data>
+  <data name="label38.Text" xml:space="preserve">
+    <value>Alınan bayt</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>UDP dinleyicileri</value>
+  </data>
+  <data name="label66.Text" xml:space="preserve">
+    <value>Çalışma durumu</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Birleştirme aşımı</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Birleştirme hataları</value>
+  </data>
+  <data name="label86.Text" xml:space="preserve">
+    <value>TCP min. zaman aşımı</value>
+  </data>
+  <data name="label98.Text" xml:space="preserve">
+    <value>Süre aşıldı</value>
+  </data>
+  <data name="btnUDPLCopySelected.Text" xml:space="preserve">
+    <value>Seçimi kopyala</value>
+  </data>
+  <data name="label118.Text" xml:space="preserve">
+    <value>Komşu istemi</value>
+  </data>
+  <data name="tabPageNetworkInterfaces.Text" xml:space="preserve">
+    <value>Ağ arabirimi istatistikleri</value>
+  </data>
+  <data name="tabPageUDP.Text" xml:space="preserve">
+    <value>UDP istatistikleri</value>
+  </data>
+  <data name="tabPageICMPv4.Text" xml:space="preserve">
+    <value>ICMPv4 i̇statistikler</value>
+  </data>
+  <data name="btnTCPLSelectAll.Text" xml:space="preserve">
+    <value>Tümünü seç</value>
+  </data>
+  <data name="label134.Text" xml:space="preserve">
+    <value>Hatalar</value>
+  </data>
+  <data name="label133.Text" xml:space="preserve">
+    <value>IGMP üyelik sorguları</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>IP yapılandırması</value>
+  </data>
+  <data name="tabPageGlobal.Text" xml:space="preserve">
+    <value>Genel istatistikler</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>ICMPv4 gönderilen iletiler</value>
+  </data>
+  <data name="btnTCPLCopySelected.Text" xml:space="preserve">
+    <value>Seçimi kopyala</value>
+  </data>
+  <data name="label117.Text" xml:space="preserve">
+    <value>Paket çok büyük</value>
+  </data>
+  <data name="label88.Text" xml:space="preserve">
+    <value>İletiler</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>APIPA adresi etkin</value>
+  </data>
+  <data name="label137.Text" xml:space="preserve">
+    <value>Hedefe ulaşılamıyor</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Hatalı gelen paketler</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Atılan paketler</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>WINS sunucu adresleri</value>
+  </data>
+  <data name="tabPageTCPListeners.Text" xml:space="preserve">
+    <value>TCP dinleyicileri</value>
+  </data>
+  <data name="colRemotePort.HeaderText" xml:space="preserve">
+    <value>Uzak port</value>
+  </data>
+  <data name="label142.Text" xml:space="preserve">
+    <value>Echo yanıtları</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Özellikler (1)</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>Bilinmeyen protokol</value>
+  </data>
+  <data name="label140.Text" xml:space="preserve">
+    <value>Yönlendirici duyurusu</value>
+  </data>
+  <data name="label93.Text" xml:space="preserve">
+    <value>TCP maks. zaman aşımı</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>Loopback arabirim indeksi</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>Kabul edilen TCP bağlantı istekleri</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Rotasız paketler</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>Atılan gelen datagramlar</value>
+  </data>
+  <data name="label91.Text" xml:space="preserve">
+    <value>Echo yanıtları</value>
+  </data>
+  <data name="colUDPLEndPoint.HeaderText" xml:space="preserve">
+    <value>Uç nokta</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>UDP bağlantı istatistikleri</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>Atılan gelen paketler</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>Sıfırlanan TCP bağlantıları</value>
+  </data>
+  <data name="label123.Text" xml:space="preserve">
+    <value>IGMP üyelik sorguları</value>
+  </data>
+  <data name="label125.Text" xml:space="preserve">
+    <value>Yönlendirmeler</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Özellikler (2)</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Alınan paketler</value>
+  </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>ICMPv6 gönderilen iletiler</value>
+  </data>
+  <data name="label87.Text" xml:space="preserve">
+    <value>Parametre sorunları</value>
+  </data>
+  <data name="label94.Text" xml:space="preserve">
+    <value>Adres maskesi istekleri</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>DNS adresleri</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Ana bilgisayar adı</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>WINS proxy</value>
+  </data>
+  <data name="label110.Text" xml:space="preserve">
+    <value>Adres maskesi istekleri</value>
+  </data>
+  <data name="label69.Text" xml:space="preserve">
+    <value>Desteklenen azami TCP bağlantısı</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>İletme etkin</value>
+  </data>
+  <data name="label120.Text" xml:space="preserve">
+    <value>İletiler</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Ağ arabirimi</value>
+  </data>
+  <data name="label115.Text" xml:space="preserve">
+    <value>Yönlendirmeler</value>
+  </data>
+  <data name="label104.Text" xml:space="preserve">
+    <value>Parametre sorunları</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>TCP hata istatistikleri</value>
+  </data>
+  <data name="label141.Text" xml:space="preserve">
+    <value>Echo istekleri</value>
+  </data>
+  <data name="label101.Text" xml:space="preserve">
+    <value>Süre aşıldı</value>
+  </data>
+  <data name="btnSelectAll.Text" xml:space="preserve">
+    <value>Tümünü seç</value>
+  </data>
+  <data name="label124.Text" xml:space="preserve">
+    <value>Hatalar</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GabNetStats - Gelişmiş İstatistikler</value>
+  </data>
+  <data name="btnCopySelection.Text" xml:space="preserve">
+    <value>Seçimi kopyala</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Text" xml:space="preserve">
+    <value>Gelen paketler</value>
+  </data>
+  <data name="colRemoteEndPoint.HeaderText" xml:space="preserve">
+    <value>Uzak uç nokta</value>
+  </data>
+  <data name="label103.Text" xml:space="preserve">
+    <value>Yönlendirmeler</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>Atılan giden paketler</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>Gönderilen non-unicast paketler</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>DHCP sunucu adresleri</value>
+  </data>
+  <data name="btnUDPLSelectAll.Text" xml:space="preserve">
+    <value>Tümünü seç</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>Birleştirme gerekli</value>
+  </data>
+  <data name="tabPageTCPConnections.Text" xml:space="preserve">
+    <value>TCP bağlantıları</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Gelen</value>
+  </data>
+  <data name="label136.Text" xml:space="preserve">
+    <value>Echo yanıtları</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>IP adresi sayısı</value>
+  </data>
+  <data name="label105.Text" xml:space="preserve">
+    <value>İletiler</value>
+  </data>
+  <data name="label33.Text" xml:space="preserve">
+    <value>Alınan non-unicast paketler</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Teslim edilen paketler</value>
+  </data>
+  <data name="label119.Text" xml:space="preserve">
+    <value>Komşu duyurusu</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Rota sayısı</value>
+  </data>
+  <data name="colLocalEndPoint.HeaderText" xml:space="preserve">
+    <value>Yerel uç nokta</value>
+  </data>
+  <data name="label143.Text" xml:space="preserve">
+    <value>Hedefe ulaşılamıyor</value>
+  </data>
+  <data name="label78.Text" xml:space="preserve">
+    <value>Hatalı gelen datagramlar</value>
+  </data>
+  <data name="label89.Text" xml:space="preserve">
+    <value>Hatalar</value>
+  </data>
+  <data name="groupBoxGlobalVersion.Text" xml:space="preserve">
+    <value>Protokol sürümü</value>
+  </data>
+  <data name="label122.Text" xml:space="preserve">
+    <value>IGMP üyelik azaltmaları</value>
+  </data>
+  <data name="radioButtonIPv4.Text" xml:space="preserve">
+    <value>IPv4</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>APIPA adresi var</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>Hatalı giden paketler</value>
+  </data>
+  <data name="label61.Text" xml:space="preserve">
+    <value>Yalnız alım</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>Alınan unicast paketler</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Giden paket istekleri</value>
+  </data>
+  <data name="label129.Text" xml:space="preserve">
+    <value>Komşu duyurusu</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Etkin arabirim:</value>
+  </data>
+  <data name="label127.Text" xml:space="preserve">
+    <value>Paket çok büyük</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Başlık hatalı paketler</value>
+  </data>
+  <data name="label113.Text" xml:space="preserve">
+    <value>Yönlendirici istemleri</value>
+  </data>
+  <data name="label39.Text" xml:space="preserve">
+    <value>İndeks</value>
+  </data>
+  <data name="label41.Text" xml:space="preserve">
+    <value>Gönderilen unicast paketler</value>
+  </data>
+  <data name="label96.Text" xml:space="preserve">
+    <value>Zaman damgası istekleri</value>
+  </data>
+  <data name="label116.Text" xml:space="preserve">
+    <value>Parametre sorunları</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Etki alanı adı</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>DHCP etkin</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>ICMPv6 alınan iletiler</value>
+  </data>
+  <data name="label65.Text" xml:space="preserve">
+    <value>Hız</value>
+  </data>
+  <data name="label81.Text" xml:space="preserve">
+    <value>Alınan TCP hataları</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Text" xml:space="preserve">
+    <value>Paket parçalama</value>
+  </data>
+  <data name="label100.Text" xml:space="preserve">
+    <value>Zaman damgası yanıtları</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Düğüm türü</value>
+  </data>
+  <data name="label85.Text" xml:space="preserve">
+    <value>Gönderilen TCP segmentleri</value>
+  </data>
+  <data name="label144.Text" xml:space="preserve">
+    <value>MAC adresi</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Bilinmeyen protokollü paketler</value>
+  </data>
+  <data name="label49.Text" xml:space="preserve">
+    <value>Ağ geçidi adresleri</value>
+  </data>
+  <data name="label130.Text" xml:space="preserve">
+    <value>İletiler</value>
+  </data>
+  <data name="label83.Text" xml:space="preserve">
+    <value>TCP sıfırlama gönderildi (RST bayrağı)</value>
+  </data>
+  <data name="label47.Text" xml:space="preserve">
+    <value>Dinamik DNS etkin</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>Gönderilen bayt</value>
+  </data>
+  <data name="label128.Text" xml:space="preserve">
+    <value>Komşu istemi</value>
+  </data>
+  <data name="label126.Text" xml:space="preserve">
+    <value>Parametre sorunları</value>
+  </data>
+  <data name="label135.Text" xml:space="preserve">
+    <value>Echo istekleri</value>
+  </data>
+  <data name="colLocalPort.HeaderText" xml:space="preserve">
+    <value>Yerel port</value>
+  </data>
+  <data name="label99.Text" xml:space="preserve">
+    <value>Zaman damgası istekleri</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>TCP segment istatistikleri</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>MTU</value>
+  </data>
+  <data name="label59.Text" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="colUDPLPort.HeaderText" xml:space="preserve">
+    <value>Bağlantı noktası</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>Ağ arabirimi türü</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Birleştirilen paketler</value>
+  </data>
+  <data name="tabPageTCP.Text" xml:space="preserve">
+    <value>TCP istatistikleri</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Varsayılan TTL</value>
+  </data>
+  <data name="label63.Text" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Giden</value>
+  </data>
+  <data name="label108.Text" xml:space="preserve">
+    <value>Echo yanıtları</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>ICMPv4 alınan iletiler</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Paket parçalama hataları</value>
+  </data>
+  <data name="tabPageUDPListeners.Text" xml:space="preserve">
+    <value>UDP dinleyicileri</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>WINS kullanır</value>
+  </data>
+  <data name="label138.Text" xml:space="preserve">
+    <value>Süre aşıldı</value>
+  </data>
+  <data name="label64.Text" xml:space="preserve">
+    <value>Multicast destekler</value>
+  </data>
+</root>

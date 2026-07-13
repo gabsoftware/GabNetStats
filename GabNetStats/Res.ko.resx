@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="str_AvgEmissionSpeed" xml:space="preserve">
+    <value>평균 송신</value>
+  </data>
+  <data name="str_AvgReceptionSpeed" xml:space="preserve">
+    <value>평균 수신</value>
+  </data>
+  <data name="str_bit" xml:space="preserve">
+    <value>bit</value>
+  </data>
+  <data name="str_Bytes" xml:space="preserve">
+    <value>바이트</value>
+  </data>
+  <data name="str_ErrorCrash" xml:space="preserve">
+    <value>GabNetStats에서 오류가 발생했습니다. 불편을 드려 죄송하며 가능한 한 빨리 문제를 수정하겠습니다.
+아래에 표시된 오류 원인을 스크린샷으로 개발자에게 보낼 수 있습니다.</value>
+  </data>
+  <data name="str_SettingsMigrated" xml:space="preserve">
+    <value>이전 버전의 설정을 성공적으로 이전했습니다.</value>
+  </data>
+  <data name="str_Gbit" xml:space="preserve">
+    <value>Gbit</value>
+  </data>
+  <data name="str_GiB" xml:space="preserve">
+    <value>GiB</value>
+  </data>
+  <data name="str_Help" xml:space="preserve">
+    <value>도움말</value>
+  </data>
+  <data name="str_Kbit" xml:space="preserve">
+    <value>Kbit</value>
+  </data>
+  <data name="str_KiB" xml:space="preserve">
+    <value>KiB</value>
+  </data>
+  <data name="str_Mbit" xml:space="preserve">
+    <value>Mbit</value>
+  </data>
+  <data name="str_MiB" xml:space="preserve">
+    <value>MiB</value>
+  </data>
+  <data name="str_No" xml:space="preserve">
+    <value>아니요</value>
+  </data>
+  <data name="str_NoIpAvailable" xml:space="preserve">
+    <value>사용 가능한 IP 없음</value>
+  </data>
+  <data name="str_NotConnected" xml:space="preserve">
+    <value>연결 안 됨</value>
+  </data>
+  <data name="str_RawEmissionSpeed" xml:space="preserve">
+    <value>현재 송신</value>
+  </data>
+  <data name="str_RawReceptionSpeed" xml:space="preserve">
+    <value>현재 수신</value>
+  </data>
+  <data name="str_Received" xml:space="preserve">
+    <value>수신</value>
+  </data>
+  <data name="str_Sent" xml:space="preserve">
+    <value>송신</value>
+  </data>
+  <data name="str_Statistics" xml:space="preserve">
+    <value>통계</value>
+  </data>
+  <data name="str_Tbit" xml:space="preserve">
+    <value>Tbit</value>
+  </data>
+  <data name="str_TiB" xml:space="preserve">
+    <value>TiB</value>
+  </data>
+  <data name="str_WarningContent" xml:space="preserve">
+    <value>50ms 미만 값은 CPU를 과도하게 사용할 수 있습니다!</value>
+  </data>
+  <data name="str_WarningTitle" xml:space="preserve">
+    <value>경고!</value>
+  </data>
+  <data name="str_LanguageDefault" xml:space="preserve">
+    <value>English (default)</value>
+  </data>
+  <data name="str_RestartRequiredTitle" xml:space="preserve">
+    <value>다시 시작 필요</value>
+  </data>
+  <data name="str_RestartRequiredContent" xml:space="preserve">
+    <value>언어 변경은 다음 GabNetStats 시작 시 적용됩니다. 지금 다시 시작하시겠습니까?</value>
+  </data>
+  <data name="str_Yes" xml:space="preserve">
+    <value>예</value>
+  </data>
+  <data name="str_IncludeInStatistics" xml:space="preserve">
+    <value>통계에 포함</value>
+  </data>
+  <data name="str_None" xml:space="preserve">
+    <value>없음</value>
+  </data>
+  <data name="str_Unsupported" xml:space="preserve">
+    <value>지원 안 됨</value>
+  </data>
+  <data name="str_WarningNoInterfaceSelected" xml:space="preserve">
+    <value>현재 통계에 선택된 네트워크 인터페이스가 없습니다. 알림 영역 아이콘과 알림 창이 더 이상 업데이트되지 않습니다!</value>
+  </data>
+  <data name="str_WarningNoInterfaceSelectedCaption" xml:space="preserve">
+    <value>경고</value>
+  </data>
+  <data name="str_NotAvailableWinver" xml:space="preserve">
+    <value>이 기능은 이 Windows 버전에서 사용할 수 없습니다!</value>
+  </data>
+</root>

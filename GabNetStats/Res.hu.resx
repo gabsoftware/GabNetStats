@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="str_AvgEmissionSpeed" xml:space="preserve">
+    <value>Átl. küldés</value>
+  </data>
+  <data name="str_AvgReceptionSpeed" xml:space="preserve">
+    <value>Átl. fogadás</value>
+  </data>
+  <data name="str_bit" xml:space="preserve">
+    <value>bit</value>
+  </data>
+  <data name="str_Bytes" xml:space="preserve">
+    <value>Bájt</value>
+  </data>
+  <data name="str_ErrorCrash" xml:space="preserve">
+    <value>Hiba történt a GabNetStats alkalmazásban. Elnézést a kellemetlenségért, igyekszünk mielőbb javítani a problémát.
+Alább látható a hiba oka, amelyet képernyőképként elküldhet a fejlesztőnek:</value>
+  </data>
+  <data name="str_SettingsMigrated" xml:space="preserve">
+    <value>A beállítások sikeresen át lettek hozva az előző verzióból.</value>
+  </data>
+  <data name="str_Gbit" xml:space="preserve">
+    <value>Gbit</value>
+  </data>
+  <data name="str_GiB" xml:space="preserve">
+    <value>GiB</value>
+  </data>
+  <data name="str_Help" xml:space="preserve">
+    <value>Súgó</value>
+  </data>
+  <data name="str_Kbit" xml:space="preserve">
+    <value>Kbit</value>
+  </data>
+  <data name="str_KiB" xml:space="preserve">
+    <value>KiB</value>
+  </data>
+  <data name="str_Mbit" xml:space="preserve">
+    <value>Mbit</value>
+  </data>
+  <data name="str_MiB" xml:space="preserve">
+    <value>MiB</value>
+  </data>
+  <data name="str_No" xml:space="preserve">
+    <value>Nem</value>
+  </data>
+  <data name="str_NoIpAvailable" xml:space="preserve">
+    <value>Nincs elérhető IP</value>
+  </data>
+  <data name="str_NotConnected" xml:space="preserve">
+    <value>Nincs kapcsolat</value>
+  </data>
+  <data name="str_RawEmissionSpeed" xml:space="preserve">
+    <value>Pill. küldés</value>
+  </data>
+  <data name="str_RawReceptionSpeed" xml:space="preserve">
+    <value>Pill. fogadás</value>
+  </data>
+  <data name="str_Received" xml:space="preserve">
+    <value>Fogadott</value>
+  </data>
+  <data name="str_Sent" xml:space="preserve">
+    <value>Küldött</value>
+  </data>
+  <data name="str_Statistics" xml:space="preserve">
+    <value>Statisztika</value>
+  </data>
+  <data name="str_Tbit" xml:space="preserve">
+    <value>Tbit</value>
+  </data>
+  <data name="str_TiB" xml:space="preserve">
+    <value>TiB</value>
+  </data>
+  <data name="str_WarningContent" xml:space="preserve">
+    <value>Az 50 ms alatti érték túl sok CPU-t használhat!</value>
+  </data>
+  <data name="str_WarningTitle" xml:space="preserve">
+    <value>Figyelmeztetés!</value>
+  </data>
+  <data name="str_LanguageDefault" xml:space="preserve">
+    <value>English (default)</value>
+  </data>
+  <data name="str_RestartRequiredTitle" xml:space="preserve">
+    <value>Újraindítás szükséges</value>
+  </data>
+  <data name="str_RestartRequiredContent" xml:space="preserve">
+    <value>A nyelvváltás a GabNetStats következő indításakor lép életbe. Újraindítás most?</value>
+  </data>
+  <data name="str_Yes" xml:space="preserve">
+    <value>Igen</value>
+  </data>
+  <data name="str_IncludeInStatistics" xml:space="preserve">
+    <value>Statisztikába foglalás</value>
+  </data>
+  <data name="str_None" xml:space="preserve">
+    <value>Nincs</value>
+  </data>
+  <data name="str_Unsupported" xml:space="preserve">
+    <value>Nem támogatott</value>
+  </data>
+  <data name="str_WarningNoInterfaceSelected" xml:space="preserve">
+    <value>Jelenleg nincs hálózati interfész kiválasztva a statisztikákhoz: az értesítési terület ikonja és az értesítési ablak nem frissül tovább!</value>
+  </data>
+  <data name="str_WarningNoInterfaceSelectedCaption" xml:space="preserve">
+    <value>Figyelmeztetés</value>
+  </data>
+  <data name="str_NotAvailableWinver" xml:space="preserve">
+    <value>Ez a funkció nem érhető el ebben a Windows-verzióban!</value>
+  </data>
+</root>

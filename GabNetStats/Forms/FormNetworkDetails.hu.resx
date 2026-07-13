@@ -1,0 +1,585 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label97.Text" xml:space="preserve">
+    <value>Időbélyeg válaszok</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>Indított TCP-kapcsolati kérések</value>
+  </data>
+  <data name="label77.Text" xml:space="preserve">
+    <value>Átirányítások</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>DNS engedélyezve</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>Fogadott datagramok</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>TCP-kapcsolat statisztika</value>
+  </data>
+  <data name="label95.Text" xml:space="preserve">
+    <value>Címmaszk válaszok</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>Küldött datagramok</value>
+  </data>
+  <data name="label109.Text" xml:space="preserve">
+    <value>Cél nem érhető el</value>
+  </data>
+  <data name="label30.Text" xml:space="preserve">
+    <value>Csomagtovábbítás engedélyezve</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Darabolt csomagok</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>DNS-utótag</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Text" xml:space="preserve">
+    <value>Egyéb</value>
+  </data>
+  <data name="label54.Text" xml:space="preserve">
+    <value>Anycast címek</value>
+  </data>
+  <data name="label62.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Címhibás csomagok</value>
+  </data>
+  <data name="label70.Text" xml:space="preserve">
+    <value>Sikertelen TCP-kapcsolati kísérletek</value>
+  </data>
+  <data name="label102.Text" xml:space="preserve">
+    <value>Source quench</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>Kimeneti sor hossza</value>
+  </data>
+  <data name="label82.Text" xml:space="preserve">
+    <value>Fogadott TCP-szegmensek</value>
+  </data>
+  <data name="colEndPoint.HeaderText" xml:space="preserve">
+    <value>Végpont</value>
+  </data>
+  <data name="label111.Text" xml:space="preserve">
+    <value>Címmaszk válaszok</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>Multicast címek</value>
+  </data>
+  <data name="radioButtonIPv6.Text" xml:space="preserve">
+    <value>IPv6</value>
+  </data>
+  <data name="label132.Text" xml:space="preserve">
+    <value>IGMP tagsági csökkentések</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Text" xml:space="preserve">
+    <value>Kimenő csomagok</value>
+  </data>
+  <data name="label55.Text" xml:space="preserve">
+    <value>Unicast címek</value>
+  </data>
+  <data name="colState.HeaderText" xml:space="preserve">
+    <value>Állapot</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>DHCP-tartomány neve</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Eldobott továbbított csomagok</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Eldobott útvonalak</value>
+  </data>
+  <data name="label139.Text" xml:space="preserve">
+    <value>Routerkérések</value>
+  </data>
+  <data name="label131.Text" xml:space="preserve">
+    <value>IGMP tagsági jelentések</value>
+  </data>
+  <data name="label84.Text" xml:space="preserve">
+    <value>Újraküldött TCP-szegmensek</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Interfészek száma</value>
+  </data>
+  <data name="label68.Text" xml:space="preserve">
+    <value>Létesített TCP-kapcsolatok</value>
+  </data>
+  <data name="label114.Text" xml:space="preserve">
+    <value>Routerhirdetések</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Továbbított csomagok</value>
+  </data>
+  <data name="label112.Text" xml:space="preserve">
+    <value>Idő túllépve</value>
+  </data>
+  <data name="label92.Text" xml:space="preserve">
+    <value>Cél nem érhető el</value>
+  </data>
+  <data name="colPort.HeaderText" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="tabPageICMPv6.Text" xml:space="preserve">
+    <value>ICMPv6 statisztika</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>Source quench</value>
+  </data>
+  <data name="label90.Text" xml:space="preserve">
+    <value>Echo kérések</value>
+  </data>
+  <data name="label121.Text" xml:space="preserve">
+    <value>IGMP tagsági jelentések</value>
+  </data>
+  <data name="label107.Text" xml:space="preserve">
+    <value>Echo kérések</value>
+  </data>
+  <data name="label106.Text" xml:space="preserve">
+    <value>Hibák</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>Aktuális TCP-kapcsolatok</value>
+  </data>
+  <data name="label38.Text" xml:space="preserve">
+    <value>Fogadott bájtok</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>UDP figyelők</value>
+  </data>
+  <data name="label66.Text" xml:space="preserve">
+    <value>Működési állapot</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Összerakási időkorlát</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Összerakási hibák</value>
+  </data>
+  <data name="label86.Text" xml:space="preserve">
+    <value>TCP min. időkorlát</value>
+  </data>
+  <data name="label98.Text" xml:space="preserve">
+    <value>Idő túllépve</value>
+  </data>
+  <data name="btnUDPLCopySelected.Text" xml:space="preserve">
+    <value>Kijelölés másolása</value>
+  </data>
+  <data name="label118.Text" xml:space="preserve">
+    <value>Szomszédkérés</value>
+  </data>
+  <data name="tabPageNetworkInterfaces.Text" xml:space="preserve">
+    <value>Hálózati interfész statisztika</value>
+  </data>
+  <data name="tabPageUDP.Text" xml:space="preserve">
+    <value>UDP statisztika</value>
+  </data>
+  <data name="tabPageICMPv4.Text" xml:space="preserve">
+    <value>ICMPv4 statisztika</value>
+  </data>
+  <data name="btnTCPLSelectAll.Text" xml:space="preserve">
+    <value>Összes kijelölése</value>
+  </data>
+  <data name="label134.Text" xml:space="preserve">
+    <value>Hibák</value>
+  </data>
+  <data name="label133.Text" xml:space="preserve">
+    <value>IGMP tagsági lekérdezések</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>IP-konfiguráció</value>
+  </data>
+  <data name="tabPageGlobal.Text" xml:space="preserve">
+    <value>Globális statisztika</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>Küldött ICMPv4 üzenetek</value>
+  </data>
+  <data name="btnTCPLCopySelected.Text" xml:space="preserve">
+    <value>Kijelölés másolása</value>
+  </data>
+  <data name="label117.Text" xml:space="preserve">
+    <value>Túl nagy csomag</value>
+  </data>
+  <data name="label88.Text" xml:space="preserve">
+    <value>Üzenetek</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>APIPA-cím engedélyezve</value>
+  </data>
+  <data name="label137.Text" xml:space="preserve">
+    <value>Cél nem érhető el</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Hibás bejövő csomagok</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Eldobott csomagok</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>WINS-kiszolgáló címek</value>
+  </data>
+  <data name="tabPageTCPListeners.Text" xml:space="preserve">
+    <value>TCP figyelők</value>
+  </data>
+  <data name="colRemotePort.HeaderText" xml:space="preserve">
+    <value>Távoli port</value>
+  </data>
+  <data name="label142.Text" xml:space="preserve">
+    <value>Echo válaszok</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Tulajdonságok (1)</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>Ismeretlen protokoll</value>
+  </data>
+  <data name="label140.Text" xml:space="preserve">
+    <value>Routerhirdetések</value>
+  </data>
+  <data name="label93.Text" xml:space="preserve">
+    <value>TCP max. időkorlát</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>Loopback interfész index</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>Elfogadott TCP-kapcsolati kérések</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Útvonal nélküli csomagok</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>Eldobott bejövő datagramok</value>
+  </data>
+  <data name="label91.Text" xml:space="preserve">
+    <value>Echo válaszok</value>
+  </data>
+  <data name="colUDPLEndPoint.HeaderText" xml:space="preserve">
+    <value>Végpont</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>UDP-kapcsolat statisztika</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>Eldobott bejövő csomagok</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>Resetelt TCP-kapcsolatok</value>
+  </data>
+  <data name="label123.Text" xml:space="preserve">
+    <value>IGMP tagsági lekérdezések</value>
+  </data>
+  <data name="label125.Text" xml:space="preserve">
+    <value>Átirányítások</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Tulajdonságok (2)</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Fogadott csomagok</value>
+  </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>Küldött ICMPv6 üzenetek</value>
+  </data>
+  <data name="label87.Text" xml:space="preserve">
+    <value>Paraméterproblémák</value>
+  </data>
+  <data name="label94.Text" xml:space="preserve">
+    <value>Címmaszk kérések</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>DNS-címek</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Gazdagépnév</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>WINS proxy</value>
+  </data>
+  <data name="label110.Text" xml:space="preserve">
+    <value>Címmaszk kérések</value>
+  </data>
+  <data name="label69.Text" xml:space="preserve">
+    <value>Max. támogatott TCP-kapcsolatok</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Továbbítás engedélyezve</value>
+  </data>
+  <data name="label120.Text" xml:space="preserve">
+    <value>Üzenetek</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Hálózati interfész</value>
+  </data>
+  <data name="label115.Text" xml:space="preserve">
+    <value>Átirányítások</value>
+  </data>
+  <data name="label104.Text" xml:space="preserve">
+    <value>Paraméterproblémák</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>TCP-hiba statisztika</value>
+  </data>
+  <data name="label141.Text" xml:space="preserve">
+    <value>Echo kérések</value>
+  </data>
+  <data name="label101.Text" xml:space="preserve">
+    <value>Idő túllépve</value>
+  </data>
+  <data name="btnSelectAll.Text" xml:space="preserve">
+    <value>Összes kijelölése</value>
+  </data>
+  <data name="label124.Text" xml:space="preserve">
+    <value>Hibák</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GabNetStats - Speciális statisztika</value>
+  </data>
+  <data name="btnCopySelection.Text" xml:space="preserve">
+    <value>Kijelölés másolása</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Text" xml:space="preserve">
+    <value>Bejövő csomagok</value>
+  </data>
+  <data name="colRemoteEndPoint.HeaderText" xml:space="preserve">
+    <value>Távoli végpont</value>
+  </data>
+  <data name="label103.Text" xml:space="preserve">
+    <value>Átirányítások</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>Eldobott kimenő csomagok</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>Küldött non-unicast csomagok</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>DHCP-kiszolgáló címek</value>
+  </data>
+  <data name="btnUDPLSelectAll.Text" xml:space="preserve">
+    <value>Összes kijelölése</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>Összerakás szükséges</value>
+  </data>
+  <data name="tabPageTCPConnections.Text" xml:space="preserve">
+    <value>TCP-kapcsolatok</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Bejövő</value>
+  </data>
+  <data name="label136.Text" xml:space="preserve">
+    <value>Echo válaszok</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>IP-címek száma</value>
+  </data>
+  <data name="label105.Text" xml:space="preserve">
+    <value>Üzenetek</value>
+  </data>
+  <data name="label33.Text" xml:space="preserve">
+    <value>Fogadott non-unicast csomagok</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Kézbesített csomagok</value>
+  </data>
+  <data name="label119.Text" xml:space="preserve">
+    <value>Szomszédhirdetés</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Útvonalak száma</value>
+  </data>
+  <data name="colLocalEndPoint.HeaderText" xml:space="preserve">
+    <value>Helyi végpont</value>
+  </data>
+  <data name="label143.Text" xml:space="preserve">
+    <value>Cél nem érhető el</value>
+  </data>
+  <data name="label78.Text" xml:space="preserve">
+    <value>Hibás bejövő datagramok</value>
+  </data>
+  <data name="label89.Text" xml:space="preserve">
+    <value>Hibák</value>
+  </data>
+  <data name="groupBoxGlobalVersion.Text" xml:space="preserve">
+    <value>Protokollverzió</value>
+  </data>
+  <data name="label122.Text" xml:space="preserve">
+    <value>IGMP tagsági csökkentések</value>
+  </data>
+  <data name="radioButtonIPv4.Text" xml:space="preserve">
+    <value>IPv4</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>Van APIPA-cím</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>Hibás kimenő csomagok</value>
+  </data>
+  <data name="label61.Text" xml:space="preserve">
+    <value>Csak fogadás</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>Fogadott unicast csomagok</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Kimenő csomagkérések</value>
+  </data>
+  <data name="label129.Text" xml:space="preserve">
+    <value>Szomszédhirdetés</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Aktív interfész:</value>
+  </data>
+  <data name="label127.Text" xml:space="preserve">
+    <value>Túl nagy csomag</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Fejléc hibás csomagok</value>
+  </data>
+  <data name="label113.Text" xml:space="preserve">
+    <value>Routerkérések</value>
+  </data>
+  <data name="label39.Text" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="label41.Text" xml:space="preserve">
+    <value>Küldött unicast csomagok</value>
+  </data>
+  <data name="label96.Text" xml:space="preserve">
+    <value>Időbélyeg kérések</value>
+  </data>
+  <data name="label116.Text" xml:space="preserve">
+    <value>Paraméterproblémák</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Tartománynév</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>DHCP engedélyezve</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>Fogadott ICMPv6 üzenetek</value>
+  </data>
+  <data name="label65.Text" xml:space="preserve">
+    <value>Sebesség</value>
+  </data>
+  <data name="label81.Text" xml:space="preserve">
+    <value>Fogadott TCP-hibák</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Text" xml:space="preserve">
+    <value>Csomagdarabolás</value>
+  </data>
+  <data name="label100.Text" xml:space="preserve">
+    <value>Időbélyeg válaszok</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Csomópont típusa</value>
+  </data>
+  <data name="label85.Text" xml:space="preserve">
+    <value>Küldött TCP-szegmensek</value>
+  </data>
+  <data name="label144.Text" xml:space="preserve">
+    <value>MAC-cím</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Ismeretlen protokollú csomagok</value>
+  </data>
+  <data name="label49.Text" xml:space="preserve">
+    <value>Átjáró címek</value>
+  </data>
+  <data name="label130.Text" xml:space="preserve">
+    <value>Üzenetek</value>
+  </data>
+  <data name="label83.Text" xml:space="preserve">
+    <value>TCP reset elküldve (RST jelző)</value>
+  </data>
+  <data name="label47.Text" xml:space="preserve">
+    <value>Dinamikus DNS engedélyezve</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>Küldött bájtok</value>
+  </data>
+  <data name="label128.Text" xml:space="preserve">
+    <value>Szomszédkérés</value>
+  </data>
+  <data name="label126.Text" xml:space="preserve">
+    <value>Paraméterproblémák</value>
+  </data>
+  <data name="label135.Text" xml:space="preserve">
+    <value>Echo kérések</value>
+  </data>
+  <data name="colLocalPort.HeaderText" xml:space="preserve">
+    <value>Helyi port</value>
+  </data>
+  <data name="label99.Text" xml:space="preserve">
+    <value>Időbélyeg kérések</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>TCP-szegmens statisztika</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>MTU</value>
+  </data>
+  <data name="label59.Text" xml:space="preserve">
+    <value>Név</value>
+  </data>
+  <data name="colUDPLPort.HeaderText" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>Hálózati interfész típusa</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Összerakott csomagok</value>
+  </data>
+  <data name="tabPageTCP.Text" xml:space="preserve">
+    <value>TCP statisztika</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Alapértelmezett TTL</value>
+  </data>
+  <data name="label63.Text" xml:space="preserve">
+    <value>Leírás</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Kimenő</value>
+  </data>
+  <data name="label108.Text" xml:space="preserve">
+    <value>Echo válaszok</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Fogadott ICMPv4 üzenetek</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Csomagdarabolási hibák</value>
+  </data>
+  <data name="tabPageUDPListeners.Text" xml:space="preserve">
+    <value>UDP figyelők</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>WINS használata</value>
+  </data>
+  <data name="label138.Text" xml:space="preserve">
+    <value>Idő túllépve</value>
+  </data>
+  <data name="label64.Text" xml:space="preserve">
+    <value>Multicast támogatása</value>
+  </data>
+</root>

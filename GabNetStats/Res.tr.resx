@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="str_AvgEmissionSpeed" xml:space="preserve">
+    <value>Ort. gönderim</value>
+  </data>
+  <data name="str_AvgReceptionSpeed" xml:space="preserve">
+    <value>Ort. alım</value>
+  </data>
+  <data name="str_bit" xml:space="preserve">
+    <value>bit</value>
+  </data>
+  <data name="str_Bytes" xml:space="preserve">
+    <value>Bayt</value>
+  </data>
+  <data name="str_ErrorCrash" xml:space="preserve">
+    <value>GabNetStats içinde bir hata oluştu. Bu rahatsızlık için üzgünüz ve sorunu en kısa sürede düzeltmeye çalışıyoruz.
+Aşağıda, ekran görüntüsüyle geliştiriciye gönderebileceğiniz hata nedeni gösterilir:</value>
+  </data>
+  <data name="str_SettingsMigrated" xml:space="preserve">
+    <value>Ayarlarınız önceki sürümden başarıyla taşındı.</value>
+  </data>
+  <data name="str_Gbit" xml:space="preserve">
+    <value>Gbit</value>
+  </data>
+  <data name="str_GiB" xml:space="preserve">
+    <value>GiB</value>
+  </data>
+  <data name="str_Help" xml:space="preserve">
+    <value>Yardım</value>
+  </data>
+  <data name="str_Kbit" xml:space="preserve">
+    <value>Kbit</value>
+  </data>
+  <data name="str_KiB" xml:space="preserve">
+    <value>KiB</value>
+  </data>
+  <data name="str_Mbit" xml:space="preserve">
+    <value>Mbit</value>
+  </data>
+  <data name="str_MiB" xml:space="preserve">
+    <value>MiB</value>
+  </data>
+  <data name="str_No" xml:space="preserve">
+    <value>Hayır</value>
+  </data>
+  <data name="str_NoIpAvailable" xml:space="preserve">
+    <value>Kullanılabilir IP yok</value>
+  </data>
+  <data name="str_NotConnected" xml:space="preserve">
+    <value>Bağlı değil</value>
+  </data>
+  <data name="str_RawEmissionSpeed" xml:space="preserve">
+    <value>Anlık gönderim</value>
+  </data>
+  <data name="str_RawReceptionSpeed" xml:space="preserve">
+    <value>Anlık alım</value>
+  </data>
+  <data name="str_Received" xml:space="preserve">
+    <value>Alınan</value>
+  </data>
+  <data name="str_Sent" xml:space="preserve">
+    <value>Gönderilen</value>
+  </data>
+  <data name="str_Statistics" xml:space="preserve">
+    <value>İstatistikler</value>
+  </data>
+  <data name="str_Tbit" xml:space="preserve">
+    <value>Tbit</value>
+  </data>
+  <data name="str_TiB" xml:space="preserve">
+    <value>TiB</value>
+  </data>
+  <data name="str_WarningContent" xml:space="preserve">
+    <value>50 ms altındaki değer çok fazla CPU kullanabilir!</value>
+  </data>
+  <data name="str_WarningTitle" xml:space="preserve">
+    <value>Uyarı!</value>
+  </data>
+  <data name="str_LanguageDefault" xml:space="preserve">
+    <value>English (default)</value>
+  </data>
+  <data name="str_RestartRequiredTitle" xml:space="preserve">
+    <value>Yeniden başlatma gerekli</value>
+  </data>
+  <data name="str_RestartRequiredContent" xml:space="preserve">
+    <value>Dil değişikliği GabNetStats bir sonraki başlatıldığında geçerli olur. Şimdi yeniden başlatılsın mı?</value>
+  </data>
+  <data name="str_Yes" xml:space="preserve">
+    <value>Evet</value>
+  </data>
+  <data name="str_IncludeInStatistics" xml:space="preserve">
+    <value>İstatistiklere dahil et</value>
+  </data>
+  <data name="str_None" xml:space="preserve">
+    <value>Yok</value>
+  </data>
+  <data name="str_Unsupported" xml:space="preserve">
+    <value>Desteklenmiyor</value>
+  </data>
+  <data name="str_WarningNoInterfaceSelected" xml:space="preserve">
+    <value>İstatistikler için şu anda hiçbir ağ arabirimi seçili değil: bildirim alanı simgesi ve bildirim penceresi artık güncellenmeyecek!</value>
+  </data>
+  <data name="str_WarningNoInterfaceSelectedCaption" xml:space="preserve">
+    <value>Uyarı</value>
+  </data>
+  <data name="str_NotAvailableWinver" xml:space="preserve">
+    <value>Bu özellik bu Windows sürümünde kullanılamaz!</value>
+  </data>
+</root>

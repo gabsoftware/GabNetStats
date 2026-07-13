@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblSeconds.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GabNetStats - by GabSoftware</value>
+  </data>
+  <data name="chkAutoClose.Text" xml:space="preserve">
+    <value>自動關閉：</value>
+  </data>
+  <data name="lblStatisticsData.Text" xml:space="preserve">
+    <value>正在獲取統計...</value>
+  </data>
+  <data name="btnAdvanced.Text" xml:space="preserve">
+    <value>高級...</value>
+  </data>
+  <data name="lblStatisticsTitle.Text" xml:space="preserve">
+    <value>:: 統計 ::</value>
+  </data>
+</root>

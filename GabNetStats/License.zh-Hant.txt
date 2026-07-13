@@ -1,0 +1,19 @@
+------= GabSoftware 授權條款 v1.0.1 =------
+
+相關產品：[PRODUCTNAME]
+[PRODUCTNAME] 首頁：[PRODUCTHOMEPAGE]
+
+透過散布、使用或重用本產品的任何部分（二進位檔或原始碼），即表示您同意以下條款：
+
+- [PRODUCTNAME] 二進位檔可免費散布並用於個人用途。企業用途請參閱 (1)。
+- [PRODUCTNAME] 原始碼可免費散布、使用和重用於個人用途。企業用途請參閱 (2)。
+- 名稱 "[PRODUCTNAME]" 不得作為任何衍生產品名稱的一部分。
+- 散布 [PRODUCTNAME] 的任何原始碼或二進位檔時，必須隨附本未修改的授權條款 (License.txt)。
+
+(1)：GabSoftware 允許少於 10 人的公司免費且不限時使用和散布 [PRODUCTNAME] 二進位檔，前提是公司人數保持少於 10 人且不以此獲利。超過 10 人的公司如需使用、散布或將 [PRODUCTNAME] 二進位檔包含在任何產品套件中，必須透過 [CONTACTEMAIL] 聯絡我們協商價格。
+(2)：如果您希望在公司產品中使用全部或部分 [PRODUCTNAME] 原始碼，請透過 [CONTACTEMAIL] 向我們提出請求以協商價格。
+
+感謝使用我們的產品！
+
+GabSoftware
+http://www.gabsoftware.com

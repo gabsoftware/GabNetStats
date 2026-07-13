@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tentang(&amp;A)...</value>
+  </data>
+  <data name="advancedStatisticsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Statistik lanjutan(&amp;V)</value>
+  </data>
+  <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Koneksi Jaringan(&amp;N)</value>
+  </data>
+  <data name="networkdomainworkgroupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Domain/workgroup jaringan(&amp;D)</value>
+  </data>
+  <data name="notifyIconPing.BalloonTipText" xml:space="preserve">
+    <value>Belum ditentukan</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pengaturan(&amp;S)...</value>
+  </data>
+  <data name="notifyIconActivity.Text" xml:space="preserve">
+    <value>Klik kiri: jendela statistik
+Klik kanan: menu</value>
+  </data>
+  <data name="homeGroupToolStripMenuItem.Text" xml:space="preserve">
+    <value>Home Group(&amp;H)</value>
+  </data>
+  <data name="notifyIconActivity.BalloonTipText" xml:space="preserve">
+    <value>:: Statistik ::</value>
+  </data>
+  <data name="notifyIconPing.Text" xml:space="preserve">
+    <value>GabNetStats - Konektivitas</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Keluar(&amp;X)</value>
+  </data>
+  <data name="NetworkAdaptersToolStripMenuItem.Text" xml:space="preserve">
+    <value>Adapter Jaringan(&amp;W)</value>
+  </data>
+  <data name="networkMapToolStripMenuItem.Text" xml:space="preserve">
+    <value>Peta Jaringan(&amp;P)</value>
+  </data>
+  <data name="notifyIconPing.BalloonTipTitle" xml:space="preserve">
+    <value>GabNetStats - Konektivitas</value>
+  </data>
+  <data name="FirewallSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pengaturan Firewall(&amp;F)</value>
+  </data>
+  <data name="FirewallAllowedAppsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Aplikasi yang Diizinkan(&amp;A)</value>
+  </data>
+  <data name="NetworkSharingCenterToolStripMenuItem.Text" xml:space="preserve">
+    <value>Pusat Berbagi Jaringan(&amp;C)</value>
+  </data>
+  <data name="NetworkAndInternetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Jaringan dan Internet(&amp;I)</value>
+  </data>
+  <data name="manageWirelessNetworksToolStripMenuItem.Text" xml:space="preserve">
+    <value>Kelola jaringan nirkabel(&amp;M)</value>
+  </data>
+  <data name="networkToolStripMenuItem.Text" xml:space="preserve">
+    <value>Jaringan(&amp;W)</value>
+  </data>
+</root>

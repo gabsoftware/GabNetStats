@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Refresh (ms):</value>
+  </data>
+  <data name="radioCustomSpeed.Text" xml:space="preserve">
+    <value>Kecepatan khusus</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>(folder di "icons")</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Ikon:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Unit:</value>
+  </data>
+  <data name="rbBytes.Text" xml:space="preserve">
+    <value>Byte/dtk</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Unduh</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Unggah</value>
+  </data>
+  <data name="grpBandwidthPreferences.Text" xml:space="preserve">
+    <value>Preferensi bandwidth</value>
+  </data>
+  <data name="radioDefault.Text" xml:space="preserve">
+    <value>Default (ikon biru)</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Efek ikon jaringan</value>
+  </data>
+  <data name="chkSettingsAutoPingNotification.Text" xml:space="preserve">
+    <value>Tampilkan notifikasi</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Ping setiap</value>
+  </data>
+  <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
+    <value>Ping otomatis:</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Ping otomatis</value>
+  </data>
+  <data name="checkBoxStartup.Text" xml:space="preserve">
+    <value>Jalankan saat Windows mulai</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Bahasa:</value>
+  </data>
+  <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
+    <value>Tampilkan terputus</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Lain-lain</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Pengaturan</value>
+  </data>
+</root>

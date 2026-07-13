@@ -1,0 +1,19 @@
+------= Licence GabSoftware v1.0.1 =------
+
+Dotčený produkt: [PRODUCTNAME]
+Domovská stránka [PRODUCTNAME]: [PRODUCTHOMEPAGE]
+
+Distribucí, používáním nebo opětovným použitím jakékoli části tohoto produktu (binárních souborů nebo zdrojového kódu) souhlasíte s následujícími podmínkami:
+
+- Binární soubory [PRODUCTNAME] lze volně distribuovat a používat pro osobní použití. Firemní použití viz (1).
+- Zdrojový kód [PRODUCTNAME] lze volně distribuovat, používat a znovu používat pro osobní použití. Firemní použití viz (2).
+- Název "[PRODUCTNAME]" nesmí být součástí názvu žádného odvozeného produktu.
+- Ke každé distribuci zdrojového kódu nebo binárních souborů [PRODUCTNAME] musíte přiložit tuto nezměněnou licenci (License.txt).
+
+(1): GabSoftware umožňuje společnostem s méně než 10 lidmi používat a distribuovat binární soubory [PRODUCTNAME] zdarma a bez časového omezení, pokud má společnost méně než 10 lidí a nevydělává na tom peníze. Společnosti s více než 10 lidmi, které chtějí používat, distribuovat nebo zahrnout binární soubory [PRODUCTNAME] do jakékoli sady produktů, nás musí kontaktovat na [CONTACTEMAIL] kvůli jednání o ceně.
+(2): Pokud chcete použít celý zdrojový kód [PRODUCTNAME] nebo jeho části ve firemních produktech, pošlete nám požadavek na [CONTACTEMAIL] kvůli jednání o ceně.
+
+Děkujeme, že používáte naše produkty!
+
+GabSoftware
+http://www.gabsoftware.com

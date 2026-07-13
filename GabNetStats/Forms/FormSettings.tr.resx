@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Yenile (ms):</value>
+  </data>
+  <data name="radioCustomSpeed.Text" xml:space="preserve">
+    <value>Özel hız</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>("icons" klasöründe)</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Simgeler:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Birim:</value>
+  </data>
+  <data name="rbBytes.Text" xml:space="preserve">
+    <value>Bayt/sn</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>İndirme</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Yükleme</value>
+  </data>
+  <data name="grpBandwidthPreferences.Text" xml:space="preserve">
+    <value>Bant genişliği tercihleri</value>
+  </data>
+  <data name="radioDefault.Text" xml:space="preserve">
+    <value>Varsayılan (mavi simge)</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Ağ simgesi efektleri</value>
+  </data>
+  <data name="chkSettingsAutoPingNotification.Text" xml:space="preserve">
+    <value>Bildirimleri göster</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Ping aralığı</value>
+  </data>
+  <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
+    <value>Oto ping:</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Otomatik ping</value>
+  </data>
+  <data name="checkBoxStartup.Text" xml:space="preserve">
+    <value>Windows açılışında yükle</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Dil:</value>
+  </data>
+  <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
+    <value>Bağlantısızları göster</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+</root>

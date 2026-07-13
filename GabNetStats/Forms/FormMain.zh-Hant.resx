@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>關於(&amp;A)...</value>
+  </data>
+  <data name="advancedStatisticsToolStripMenuItem.Text" xml:space="preserve">
+    <value>高級統計(&amp;V)</value>
+  </data>
+  <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>網路連線(&amp;N)</value>
+  </data>
+  <data name="networkdomainworkgroupToolStripMenuItem.Text" xml:space="preserve">
+    <value>網路域/工作組(&amp;D)</value>
+  </data>
+  <data name="notifyIconPing.BalloonTipText" xml:space="preserve">
+    <value>未确定</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>設定(&amp;S)...</value>
+  </data>
+  <data name="notifyIconActivity.Text" xml:space="preserve">
+    <value>左鍵：統計窗口
+右鍵：上下文菜單</value>
+  </data>
+  <data name="homeGroupToolStripMenuItem.Text" xml:space="preserve">
+    <value>家庭組(&amp;H)</value>
+  </data>
+  <data name="notifyIconActivity.BalloonTipText" xml:space="preserve">
+    <value>:: 統計 ::</value>
+  </data>
+  <data name="notifyIconPing.Text" xml:space="preserve">
+    <value>GabNetStats - 連線</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>退出(&amp;X)</value>
+  </data>
+  <data name="NetworkAdaptersToolStripMenuItem.Text" xml:space="preserve">
+    <value>網路介面卡(&amp;W)</value>
+  </data>
+  <data name="networkMapToolStripMenuItem.Text" xml:space="preserve">
+    <value>網路映射(&amp;P)</value>
+  </data>
+  <data name="notifyIconPing.BalloonTipTitle" xml:space="preserve">
+    <value>GabNetStats - 連線</value>
+  </data>
+  <data name="FirewallSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>防火牆設定(&amp;F)</value>
+  </data>
+  <data name="FirewallAllowedAppsToolStripMenuItem.Text" xml:space="preserve">
+    <value>允許應用通過防火牆(&amp;A)</value>
+  </data>
+  <data name="NetworkSharingCenterToolStripMenuItem.Text" xml:space="preserve">
+    <value>網路和共享中心(&amp;C)</value>
+  </data>
+  <data name="NetworkAndInternetToolStripMenuItem.Text" xml:space="preserve">
+    <value>網路和 Internet(&amp;I)</value>
+  </data>
+  <data name="manageWirelessNetworksToolStripMenuItem.Text" xml:space="preserve">
+    <value>管理無線網路(&amp;M)</value>
+  </data>
+  <data name="networkToolStripMenuItem.Text" xml:space="preserve">
+    <value>網路(&amp;W)</value>
+  </data>
+</root>

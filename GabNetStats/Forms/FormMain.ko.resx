@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
+    <value>정보(&amp;A)...</value>
+  </data>
+  <data name="advancedStatisticsToolStripMenuItem.Text" xml:space="preserve">
+    <value>고급 통계(&amp;V)</value>
+  </data>
+  <data name="NetworkConnectionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>네트워크 연결(&amp;N)</value>
+  </data>
+  <data name="networkdomainworkgroupToolStripMenuItem.Text" xml:space="preserve">
+    <value>네트워크 도메인/작업 그룹(&amp;D)</value>
+  </data>
+  <data name="notifyIconPing.BalloonTipText" xml:space="preserve">
+    <value>확인 안 됨</value>
+  </data>
+  <data name="settingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>설정(&amp;S)...</value>
+  </data>
+  <data name="notifyIconActivity.Text" xml:space="preserve">
+    <value>왼쪽 클릭: 통계 창
+오른쪽 클릭: 메뉴</value>
+  </data>
+  <data name="homeGroupToolStripMenuItem.Text" xml:space="preserve">
+    <value>홈 그룹(&amp;H)</value>
+  </data>
+  <data name="notifyIconActivity.BalloonTipText" xml:space="preserve">
+    <value>:: 통계 ::</value>
+  </data>
+  <data name="notifyIconPing.Text" xml:space="preserve">
+    <value>GabNetStats - 연결 상태</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>끝내기(&amp;X)</value>
+  </data>
+  <data name="NetworkAdaptersToolStripMenuItem.Text" xml:space="preserve">
+    <value>네트워크 어댑터(&amp;W)</value>
+  </data>
+  <data name="networkMapToolStripMenuItem.Text" xml:space="preserve">
+    <value>네트워크 맵(&amp;P)</value>
+  </data>
+  <data name="notifyIconPing.BalloonTipTitle" xml:space="preserve">
+    <value>GabNetStats - 연결 상태</value>
+  </data>
+  <data name="FirewallSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>방화벽 설정(&amp;F)</value>
+  </data>
+  <data name="FirewallAllowedAppsToolStripMenuItem.Text" xml:space="preserve">
+    <value>방화벽 허용 앱(&amp;A)</value>
+  </data>
+  <data name="NetworkSharingCenterToolStripMenuItem.Text" xml:space="preserve">
+    <value>네트워크 및 공유 센터(&amp;C)</value>
+  </data>
+  <data name="NetworkAndInternetToolStripMenuItem.Text" xml:space="preserve">
+    <value>네트워크 및 인터넷(&amp;I)</value>
+  </data>
+  <data name="manageWirelessNetworksToolStripMenuItem.Text" xml:space="preserve">
+    <value>무선 네트워크 관리(&amp;M)</value>
+  </data>
+  <data name="networkToolStripMenuItem.Text" xml:space="preserve">
+    <value>네트워크(&amp;W)</value>
+  </data>
+</root>

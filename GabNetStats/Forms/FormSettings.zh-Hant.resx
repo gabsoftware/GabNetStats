@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>重新整理(ms)：</value>
+  </data>
+  <data name="radioCustomSpeed.Text" xml:space="preserve">
+    <value>自訂速度</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>("icons" 資料夾中)</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>圖示：</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>單位：</value>
+  </data>
+  <data name="rbBytes.Text" xml:space="preserve">
+    <value>位元組/秒</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>下載</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>上傳</value>
+  </data>
+  <data name="grpBandwidthPreferences.Text" xml:space="preserve">
+    <value>頻寬首選項</value>
+  </data>
+  <data name="radioDefault.Text" xml:space="preserve">
+    <value>默認(蓝色圖示)</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>網路圖示效果</value>
+  </data>
+  <data name="chkSettingsAutoPingNotification.Text" xml:space="preserve">
+    <value>顯示通知</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Ping 間隔</value>
+  </data>
+  <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
+    <value>自動 Ping：</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>自動 Ping</value>
+  </data>
+  <data name="checkBoxStartup.Text" xml:space="preserve">
+    <value>Windows 啟動時載入</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>語言：</value>
+  </data>
+  <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
+    <value>顯示斷線介面</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>設定</value>
+  </data>
+</root>

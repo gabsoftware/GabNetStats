@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Anulează</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Refresh (ms):</value>
+  </data>
+  <data name="radioCustomSpeed.Text" xml:space="preserve">
+    <value>Viteză proprie</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>(folder în "icons")</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Pictograme:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Unitate:</value>
+  </data>
+  <data name="rbBytes.Text" xml:space="preserve">
+    <value>Octeți/s</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Descărcare</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Încărcare</value>
+  </data>
+  <data name="grpBandwidthPreferences.Text" xml:space="preserve">
+    <value>Preferințe bandă</value>
+  </data>
+  <data name="radioDefault.Text" xml:space="preserve">
+    <value>Implicit (pictogramă albastră)</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Efecte pictogramă rețea</value>
+  </data>
+  <data name="chkSettingsAutoPingNotification.Text" xml:space="preserve">
+    <value>Afișează notificări</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Ping la</value>
+  </data>
+  <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
+    <value>Auto-ping:</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Ping automat</value>
+  </data>
+  <data name="checkBoxStartup.Text" xml:space="preserve">
+    <value>Pornește cu Windows</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Limbă:</value>
+  </data>
+  <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
+    <value>Arată deconectate</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Diverse</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Setări</value>
+  </data>
+</root>

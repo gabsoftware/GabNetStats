@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="str_AvgEmissionSpeed" xml:space="preserve">
+    <value>Prům. odesílání</value>
+  </data>
+  <data name="str_AvgReceptionSpeed" xml:space="preserve">
+    <value>Prům. příjem</value>
+  </data>
+  <data name="str_bit" xml:space="preserve">
+    <value>bit</value>
+  </data>
+  <data name="str_Bytes" xml:space="preserve">
+    <value>Bajty</value>
+  </data>
+  <data name="str_ErrorCrash" xml:space="preserve">
+    <value>V GabNetStats došlo k chybě. Omlouváme se za potíže a pokusíme se problém co nejdříve opravit.
+Níže je zobrazena příčina chyby, kterou můžete odeslat vývojáři jako snímek obrazovky:</value>
+  </data>
+  <data name="str_SettingsMigrated" xml:space="preserve">
+    <value>Vaše nastavení bylo úspěšně migrováno z předchozí verze.</value>
+  </data>
+  <data name="str_Gbit" xml:space="preserve">
+    <value>Gbit</value>
+  </data>
+  <data name="str_GiB" xml:space="preserve">
+    <value>GiB</value>
+  </data>
+  <data name="str_Help" xml:space="preserve">
+    <value>Nápověda</value>
+  </data>
+  <data name="str_Kbit" xml:space="preserve">
+    <value>Kbit</value>
+  </data>
+  <data name="str_KiB" xml:space="preserve">
+    <value>KiB</value>
+  </data>
+  <data name="str_Mbit" xml:space="preserve">
+    <value>Mbit</value>
+  </data>
+  <data name="str_MiB" xml:space="preserve">
+    <value>MiB</value>
+  </data>
+  <data name="str_No" xml:space="preserve">
+    <value>Ne</value>
+  </data>
+  <data name="str_NoIpAvailable" xml:space="preserve">
+    <value>IP není k dispozici</value>
+  </data>
+  <data name="str_NotConnected" xml:space="preserve">
+    <value>Nepřipojeno</value>
+  </data>
+  <data name="str_RawEmissionSpeed" xml:space="preserve">
+    <value>Okamžité odesílání</value>
+  </data>
+  <data name="str_RawReceptionSpeed" xml:space="preserve">
+    <value>Okamžitý příjem</value>
+  </data>
+  <data name="str_Received" xml:space="preserve">
+    <value>Přijato</value>
+  </data>
+  <data name="str_Sent" xml:space="preserve">
+    <value>Odesláno</value>
+  </data>
+  <data name="str_Statistics" xml:space="preserve">
+    <value>Statistiky</value>
+  </data>
+  <data name="str_Tbit" xml:space="preserve">
+    <value>Tbit</value>
+  </data>
+  <data name="str_TiB" xml:space="preserve">
+    <value>TiB</value>
+  </data>
+  <data name="str_WarningContent" xml:space="preserve">
+    <value>Hodnota pod 50 ms může příliš zatěžovat CPU!</value>
+  </data>
+  <data name="str_WarningTitle" xml:space="preserve">
+    <value>Varování!</value>
+  </data>
+  <data name="str_LanguageDefault" xml:space="preserve">
+    <value>English (default)</value>
+  </data>
+  <data name="str_RestartRequiredTitle" xml:space="preserve">
+    <value>Je vyžadován restart</value>
+  </data>
+  <data name="str_RestartRequiredContent" xml:space="preserve">
+    <value>Změna jazyka se projeví při příštím spuštění GabNetStats. Restartovat nyní?</value>
+  </data>
+  <data name="str_Yes" xml:space="preserve">
+    <value>Ano</value>
+  </data>
+  <data name="str_IncludeInStatistics" xml:space="preserve">
+    <value>Zahrnout do statistik</value>
+  </data>
+  <data name="str_None" xml:space="preserve">
+    <value>Žádné</value>
+  </data>
+  <data name="str_Unsupported" xml:space="preserve">
+    <value>Nepodporováno</value>
+  </data>
+  <data name="str_WarningNoInterfaceSelected" xml:space="preserve">
+    <value>Pro statistiky není aktuálně vybráno žádné síťové rozhraní: ikona v oznamovací oblasti a oznamovací okno se již nebudou aktualizovat!</value>
+  </data>
+  <data name="str_WarningNoInterfaceSelectedCaption" xml:space="preserve">
+    <value>Varování</value>
+  </data>
+  <data name="str_NotAvailableWinver" xml:space="preserve">
+    <value>Tato funkce není v této verzi Windows k dispozici!</value>
+  </data>
+</root>

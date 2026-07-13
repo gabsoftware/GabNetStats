@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="str_AvgEmissionSpeed" xml:space="preserve">
+    <value>Śr. wysyłanie</value>
+  </data>
+  <data name="str_AvgReceptionSpeed" xml:space="preserve">
+    <value>Śr. odbiór</value>
+  </data>
+  <data name="str_bit" xml:space="preserve">
+    <value>bit</value>
+  </data>
+  <data name="str_Bytes" xml:space="preserve">
+    <value>Bajty</value>
+  </data>
+  <data name="str_ErrorCrash" xml:space="preserve">
+    <value>Wystąpił błąd w GabNetStats. Przepraszamy za niedogodność i postaramy się jak najszybciej rozwiązać problem.
+Poniżej pokazano przyczynę błędu, którą możesz wysłać deweloperowi jako zrzut ekranu:</value>
+  </data>
+  <data name="str_SettingsMigrated" xml:space="preserve">
+    <value>Ustawienia zostały pomyślnie przeniesione z poprzedniej wersji.</value>
+  </data>
+  <data name="str_Gbit" xml:space="preserve">
+    <value>Gbit</value>
+  </data>
+  <data name="str_GiB" xml:space="preserve">
+    <value>GiB</value>
+  </data>
+  <data name="str_Help" xml:space="preserve">
+    <value>Pomoc</value>
+  </data>
+  <data name="str_Kbit" xml:space="preserve">
+    <value>Kbit</value>
+  </data>
+  <data name="str_KiB" xml:space="preserve">
+    <value>KiB</value>
+  </data>
+  <data name="str_Mbit" xml:space="preserve">
+    <value>Mbit</value>
+  </data>
+  <data name="str_MiB" xml:space="preserve">
+    <value>MiB</value>
+  </data>
+  <data name="str_No" xml:space="preserve">
+    <value>Nie</value>
+  </data>
+  <data name="str_NoIpAvailable" xml:space="preserve">
+    <value>Brak adresu IP</value>
+  </data>
+  <data name="str_NotConnected" xml:space="preserve">
+    <value>Nie połączono</value>
+  </data>
+  <data name="str_RawEmissionSpeed" xml:space="preserve">
+    <value>Bieżące wysyłanie</value>
+  </data>
+  <data name="str_RawReceptionSpeed" xml:space="preserve">
+    <value>Bieżący odbiór</value>
+  </data>
+  <data name="str_Received" xml:space="preserve">
+    <value>Odebrano</value>
+  </data>
+  <data name="str_Sent" xml:space="preserve">
+    <value>Wysłano</value>
+  </data>
+  <data name="str_Statistics" xml:space="preserve">
+    <value>Statystyki</value>
+  </data>
+  <data name="str_Tbit" xml:space="preserve">
+    <value>Tbit</value>
+  </data>
+  <data name="str_TiB" xml:space="preserve">
+    <value>TiB</value>
+  </data>
+  <data name="str_WarningContent" xml:space="preserve">
+    <value>Wartość poniżej 50 ms może zużywać zbyt dużo CPU!</value>
+  </data>
+  <data name="str_WarningTitle" xml:space="preserve">
+    <value>Ostrzeżenie!</value>
+  </data>
+  <data name="str_LanguageDefault" xml:space="preserve">
+    <value>English (default)</value>
+  </data>
+  <data name="str_RestartRequiredTitle" xml:space="preserve">
+    <value>Wymagany restart</value>
+  </data>
+  <data name="str_RestartRequiredContent" xml:space="preserve">
+    <value>Zmiana języka zacznie obowiązywać przy następnym uruchomieniu GabNetStats. Uruchomić ponownie teraz?</value>
+  </data>
+  <data name="str_Yes" xml:space="preserve">
+    <value>Tak</value>
+  </data>
+  <data name="str_IncludeInStatistics" xml:space="preserve">
+    <value>Uwzględnij w statystykach</value>
+  </data>
+  <data name="str_None" xml:space="preserve">
+    <value>Brak</value>
+  </data>
+  <data name="str_Unsupported" xml:space="preserve">
+    <value>Nieobsługiwane</value>
+  </data>
+  <data name="str_WarningNoInterfaceSelected" xml:space="preserve">
+    <value>Nie wybrano żadnego interfejsu sieciowego do statystyk: ikona obszaru powiadomień i okno powiadomień nie będą aktualizowane!</value>
+  </data>
+  <data name="str_WarningNoInterfaceSelectedCaption" xml:space="preserve">
+    <value>Ostrzeżenie</value>
+  </data>
+  <data name="str_NotAvailableWinver" xml:space="preserve">
+    <value>Ta funkcja nie jest dostępna w tej wersji Windows!</value>
+  </data>
+</root>

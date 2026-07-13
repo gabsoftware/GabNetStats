@@ -1,0 +1,585 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label97.Text" xml:space="preserve">
+    <value>時間戳回覆</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>發起的 TCP 連線請求</value>
+  </data>
+  <data name="label77.Text" xml:space="preserve">
+    <value>重定向</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>DNS 已啟用</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>已接收資料報</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>TCP 連線統計</value>
+  </data>
+  <data name="label95.Text" xml:space="preserve">
+    <value>地址掩码回覆</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>已傳送資料報</value>
+  </data>
+  <data name="label109.Text" xml:space="preserve">
+    <value>目標不可達</value>
+  </data>
+  <data name="label30.Text" xml:space="preserve">
+    <value>封包轉發已啟用</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>分片封包</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>DNS 后綴</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Text" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="label54.Text" xml:space="preserve">
+    <value>任播地址</value>
+  </data>
+  <data name="label62.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>地址錯誤封包</value>
+  </data>
+  <data name="label70.Text" xml:space="preserve">
+    <value>失敗的 TCP 連線嘗試</value>
+  </data>
+  <data name="label102.Text" xml:space="preserve">
+    <value>源抑製</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>輸出隊列長度</value>
+  </data>
+  <data name="label82.Text" xml:space="preserve">
+    <value>已接收 TCP 段</value>
+  </data>
+  <data name="colEndPoint.HeaderText" xml:space="preserve">
+    <value>端点</value>
+  </data>
+  <data name="label111.Text" xml:space="preserve">
+    <value>地址掩码回覆</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>多播地址</value>
+  </data>
+  <data name="radioButtonIPv6.Text" xml:space="preserve">
+    <value>IPv6</value>
+  </data>
+  <data name="label132.Text" xml:space="preserve">
+    <value>IGMP 成員減少</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Text" xml:space="preserve">
+    <value>出站封包</value>
+  </data>
+  <data name="label55.Text" xml:space="preserve">
+    <value>單播地址</value>
+  </data>
+  <data name="colState.HeaderText" xml:space="preserve">
+    <value>状態</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>DHCP 范围名</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>傳輸丟棄封包</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>路由丟棄</value>
+  </data>
+  <data name="label139.Text" xml:space="preserve">
+    <value>路由器請求</value>
+  </data>
+  <data name="label131.Text" xml:space="preserve">
+    <value>IGMP 成員報告</value>
+  </data>
+  <data name="label84.Text" xml:space="preserve">
+    <value>已重發 TCP 段</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>介面數</value>
+  </data>
+  <data name="label68.Text" xml:space="preserve">
+    <value>已建立 TCP 連線</value>
+  </data>
+  <data name="label114.Text" xml:space="preserve">
+    <value>路由器通告</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>已轉發封包</value>
+  </data>
+  <data name="label112.Text" xml:space="preserve">
+    <value>逾時</value>
+  </data>
+  <data name="label92.Text" xml:space="preserve">
+    <value>目標不可達</value>
+  </data>
+  <data name="colPort.HeaderText" xml:space="preserve">
+    <value>端口</value>
+  </data>
+  <data name="tabPageICMPv6.Text" xml:space="preserve">
+    <value>ICMPv6 統計</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>源抑製</value>
+  </data>
+  <data name="label90.Text" xml:space="preserve">
+    <value>Echo 請求</value>
+  </data>
+  <data name="label121.Text" xml:space="preserve">
+    <value>IGMP 成員報告</value>
+  </data>
+  <data name="label107.Text" xml:space="preserve">
+    <value>Echo 請求</value>
+  </data>
+  <data name="label106.Text" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>當前 TCP 連線</value>
+  </data>
+  <data name="label38.Text" xml:space="preserve">
+    <value>已接收位元組</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>UDP 偵聽器</value>
+  </data>
+  <data name="label66.Text" xml:space="preserve">
+    <value>運行状態</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>重組逾時</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>重組失敗</value>
+  </data>
+  <data name="label86.Text" xml:space="preserve">
+    <value>TCP 最小逾時</value>
+  </data>
+  <data name="label98.Text" xml:space="preserve">
+    <value>逾時</value>
+  </data>
+  <data name="btnUDPLCopySelected.Text" xml:space="preserve">
+    <value>複製所選</value>
+  </data>
+  <data name="label118.Text" xml:space="preserve">
+    <value>鄰居請求</value>
+  </data>
+  <data name="tabPageNetworkInterfaces.Text" xml:space="preserve">
+    <value>網路介面統計</value>
+  </data>
+  <data name="tabPageUDP.Text" xml:space="preserve">
+    <value>UDP 統計</value>
+  </data>
+  <data name="tabPageICMPv4.Text" xml:space="preserve">
+    <value>ICMPv4 統計</value>
+  </data>
+  <data name="btnTCPLSelectAll.Text" xml:space="preserve">
+    <value>全選</value>
+  </data>
+  <data name="label134.Text" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="label133.Text" xml:space="preserve">
+    <value>IGMP 成員查詢</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>IP 配置</value>
+  </data>
+  <data name="tabPageGlobal.Text" xml:space="preserve">
+    <value>全局統計</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>已傳送 ICMPv4 訊息</value>
+  </data>
+  <data name="btnTCPLCopySelected.Text" xml:space="preserve">
+    <value>複製所選</value>
+  </data>
+  <data name="label117.Text" xml:space="preserve">
+    <value>封包過大</value>
+  </data>
+  <data name="label88.Text" xml:space="preserve">
+    <value>訊息</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>APIPA 地址已啟用</value>
+  </data>
+  <data name="label137.Text" xml:space="preserve">
+    <value>目標不可達</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>入站錯誤封包</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>已丟棄封包</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>WINS 服務器地址</value>
+  </data>
+  <data name="tabPageTCPListeners.Text" xml:space="preserve">
+    <value>TCP 偵聽器</value>
+  </data>
+  <data name="colRemotePort.HeaderText" xml:space="preserve">
+    <value>遠程端口</value>
+  </data>
+  <data name="label142.Text" xml:space="preserve">
+    <value>Echo 回覆</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>屬性(1)</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>未知通訊協定</value>
+  </data>
+  <data name="label140.Text" xml:space="preserve">
+    <value>路由器通告</value>
+  </data>
+  <data name="label93.Text" xml:space="preserve">
+    <value>TCP 最大逾時</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>環回介面索引</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>已接受 TCP 連線請求</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>无路由封包</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>已丟棄入站資料報</value>
+  </data>
+  <data name="label91.Text" xml:space="preserve">
+    <value>Echo 回覆</value>
+  </data>
+  <data name="colUDPLEndPoint.HeaderText" xml:space="preserve">
+    <value>端点</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>UDP 連線統計</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>已丟棄入站封封包</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>已重置 TCP 連線</value>
+  </data>
+  <data name="label123.Text" xml:space="preserve">
+    <value>IGMP 成員查詢</value>
+  </data>
+  <data name="label125.Text" xml:space="preserve">
+    <value>重定向</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>屬性(2)</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>已接收封封包</value>
+  </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>已傳送 ICMPv6 訊息</value>
+  </data>
+  <data name="label87.Text" xml:space="preserve">
+    <value>参數問题</value>
+  </data>
+  <data name="label94.Text" xml:space="preserve">
+    <value>地址掩码請求</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>DNS 地址</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>主机名</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>是 WINS 代理</value>
+  </data>
+  <data name="label110.Text" xml:space="preserve">
+    <value>地址掩码請求</value>
+  </data>
+  <data name="label69.Text" xml:space="preserve">
+    <value>最大支援 TCP 連線</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>轉發已啟用</value>
+  </data>
+  <data name="label120.Text" xml:space="preserve">
+    <value>訊息</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>網路介面</value>
+  </data>
+  <data name="label115.Text" xml:space="preserve">
+    <value>重定向</value>
+  </data>
+  <data name="label104.Text" xml:space="preserve">
+    <value>参數問题</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>TCP 錯誤統計</value>
+  </data>
+  <data name="label141.Text" xml:space="preserve">
+    <value>Echo 請求</value>
+  </data>
+  <data name="label101.Text" xml:space="preserve">
+    <value>逾時</value>
+  </data>
+  <data name="btnSelectAll.Text" xml:space="preserve">
+    <value>全選</value>
+  </data>
+  <data name="label124.Text" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GabNetStats - 高級統計</value>
+  </data>
+  <data name="btnCopySelection.Text" xml:space="preserve">
+    <value>複製所選</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Text" xml:space="preserve">
+    <value>入站封封包</value>
+  </data>
+  <data name="colRemoteEndPoint.HeaderText" xml:space="preserve">
+    <value>遠程端点</value>
+  </data>
+  <data name="label103.Text" xml:space="preserve">
+    <value>重定向</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>已丟棄出站封包</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>已傳送非單播封包</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>DHCP 服務器地址</value>
+  </data>
+  <data name="btnUDPLSelectAll.Text" xml:space="preserve">
+    <value>全選</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>需要重組</value>
+  </data>
+  <data name="tabPageTCPConnections.Text" xml:space="preserve">
+    <value>TCP 連線</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>接收</value>
+  </data>
+  <data name="label136.Text" xml:space="preserve">
+    <value>Echo 回覆</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>IP 地址數</value>
+  </data>
+  <data name="label105.Text" xml:space="preserve">
+    <value>訊息</value>
+  </data>
+  <data name="label33.Text" xml:space="preserve">
+    <value>已接收非單播封包</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>已送達封包</value>
+  </data>
+  <data name="label119.Text" xml:space="preserve">
+    <value>鄰居通告</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>路由數</value>
+  </data>
+  <data name="colLocalEndPoint.HeaderText" xml:space="preserve">
+    <value>本地端点</value>
+  </data>
+  <data name="label143.Text" xml:space="preserve">
+    <value>目標不可達</value>
+  </data>
+  <data name="label78.Text" xml:space="preserve">
+    <value>入站資料報錯誤</value>
+  </data>
+  <data name="label89.Text" xml:space="preserve">
+    <value>錯誤</value>
+  </data>
+  <data name="groupBoxGlobalVersion.Text" xml:space="preserve">
+    <value>通訊協定版本</value>
+  </data>
+  <data name="label122.Text" xml:space="preserve">
+    <value>IGMP 成員減少</value>
+  </data>
+  <data name="radioButtonIPv4.Text" xml:space="preserve">
+    <value>IPv4</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>有 APIPA 地址</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>出站錯誤封包</value>
+  </data>
+  <data name="label61.Text" xml:space="preserve">
+    <value>僅接收</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>已接收單播封包</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>出站封包請求</value>
+  </data>
+  <data name="label129.Text" xml:space="preserve">
+    <value>鄰居通告</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>活動介面：</value>
+  </data>
+  <data name="label127.Text" xml:space="preserve">
+    <value>封包過大</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>封包头錯誤</value>
+  </data>
+  <data name="label113.Text" xml:space="preserve">
+    <value>路由器請求</value>
+  </data>
+  <data name="label39.Text" xml:space="preserve">
+    <value>索引</value>
+  </data>
+  <data name="label41.Text" xml:space="preserve">
+    <value>已傳送單播封包</value>
+  </data>
+  <data name="label96.Text" xml:space="preserve">
+    <value>時間戳請求</value>
+  </data>
+  <data name="label116.Text" xml:space="preserve">
+    <value>参數問题</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>域名</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>DHCP 已啟用</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>已接收 ICMPv6 訊息</value>
+  </data>
+  <data name="label65.Text" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="label81.Text" xml:space="preserve">
+    <value>已接收 TCP 錯誤</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Text" xml:space="preserve">
+    <value>封包分片</value>
+  </data>
+  <data name="label100.Text" xml:space="preserve">
+    <value>時間戳回覆</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>節点類型</value>
+  </data>
+  <data name="label85.Text" xml:space="preserve">
+    <value>已傳送 TCP 段</value>
+  </data>
+  <data name="label144.Text" xml:space="preserve">
+    <value>MAC 地址</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>未知通訊協定封包</value>
+  </data>
+  <data name="label49.Text" xml:space="preserve">
+    <value>網關地址</value>
+  </data>
+  <data name="label130.Text" xml:space="preserve">
+    <value>訊息</value>
+  </data>
+  <data name="label83.Text" xml:space="preserve">
+    <value>已傳送 TCP 重置(RST)</value>
+  </data>
+  <data name="label47.Text" xml:space="preserve">
+    <value>動態 DNS 已啟用</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>已傳送位元組</value>
+  </data>
+  <data name="label128.Text" xml:space="preserve">
+    <value>鄰居請求</value>
+  </data>
+  <data name="label126.Text" xml:space="preserve">
+    <value>参數問题</value>
+  </data>
+  <data name="label135.Text" xml:space="preserve">
+    <value>Echo 請求</value>
+  </data>
+  <data name="colLocalPort.HeaderText" xml:space="preserve">
+    <value>本地端口</value>
+  </data>
+  <data name="label99.Text" xml:space="preserve">
+    <value>時間戳請求</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>TCP 段統計</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>MTU</value>
+  </data>
+  <data name="label59.Text" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="colUDPLPort.HeaderText" xml:space="preserve">
+    <value>端口</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>網路介面類型</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>已重組封包</value>
+  </data>
+  <data name="tabPageTCP.Text" xml:space="preserve">
+    <value>TCP 統計</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>默認 TTL</value>
+  </data>
+  <data name="label63.Text" xml:space="preserve">
+    <value>說明</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>傳送</value>
+  </data>
+  <data name="label108.Text" xml:space="preserve">
+    <value>Echo 回覆</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>已接收 ICMPv4 訊息</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>分片失敗</value>
+  </data>
+  <data name="tabPageUDPListeners.Text" xml:space="preserve">
+    <value>UDP 偵聽器</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>使用 WINS</value>
+  </data>
+  <data name="label138.Text" xml:space="preserve">
+    <value>逾時</value>
+  </data>
+  <data name="label64.Text" xml:space="preserve">
+    <value>支援多播</value>
+  </data>
+</root>

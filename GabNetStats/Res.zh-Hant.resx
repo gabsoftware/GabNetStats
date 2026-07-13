@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="str_AvgEmissionSpeed" xml:space="preserve">
+    <value>平均傳送</value>
+  </data>
+  <data name="str_AvgReceptionSpeed" xml:space="preserve">
+    <value>平均接收</value>
+  </data>
+  <data name="str_bit" xml:space="preserve">
+    <value>bit</value>
+  </data>
+  <data name="str_Bytes" xml:space="preserve">
+    <value>位元組</value>
+  </data>
+  <data name="str_ErrorCrash" xml:space="preserve">
+    <value>GabNetStats 發生錯誤。很抱歉造成不便，我們會盡快修復。
+下面顯示了錯誤原因，您可以截圖傳送給開發者：</value>
+  </data>
+  <data name="str_SettingsMigrated" xml:space="preserve">
+    <value>您的設定已從上一版本成功移轉。</value>
+  </data>
+  <data name="str_Gbit" xml:space="preserve">
+    <value>Gbit</value>
+  </data>
+  <data name="str_GiB" xml:space="preserve">
+    <value>GiB</value>
+  </data>
+  <data name="str_Help" xml:space="preserve">
+    <value>帮助</value>
+  </data>
+  <data name="str_Kbit" xml:space="preserve">
+    <value>Kbit</value>
+  </data>
+  <data name="str_KiB" xml:space="preserve">
+    <value>KiB</value>
+  </data>
+  <data name="str_Mbit" xml:space="preserve">
+    <value>Mbit</value>
+  </data>
+  <data name="str_MiB" xml:space="preserve">
+    <value>MiB</value>
+  </data>
+  <data name="str_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="str_NoIpAvailable" xml:space="preserve">
+    <value>无可用 IP</value>
+  </data>
+  <data name="str_NotConnected" xml:space="preserve">
+    <value>未連線</value>
+  </data>
+  <data name="str_RawEmissionSpeed" xml:space="preserve">
+    <value>即時傳送</value>
+  </data>
+  <data name="str_RawReceptionSpeed" xml:space="preserve">
+    <value>即時接收</value>
+  </data>
+  <data name="str_Received" xml:space="preserve">
+    <value>已接收</value>
+  </data>
+  <data name="str_Sent" xml:space="preserve">
+    <value>已傳送</value>
+  </data>
+  <data name="str_Statistics" xml:space="preserve">
+    <value>統計</value>
+  </data>
+  <data name="str_Tbit" xml:space="preserve">
+    <value>Tbit</value>
+  </data>
+  <data name="str_TiB" xml:space="preserve">
+    <value>TiB</value>
+  </data>
+  <data name="str_WarningContent" xml:space="preserve">
+    <value>低於 50ms 的值可能會占用過多 CPU！</value>
+  </data>
+  <data name="str_WarningTitle" xml:space="preserve">
+    <value>警告！</value>
+  </data>
+  <data name="str_LanguageDefault" xml:space="preserve">
+    <value>English (default)</value>
+  </data>
+  <data name="str_RestartRequiredTitle" xml:space="preserve">
+    <value>需要重啟</value>
+  </data>
+  <data name="str_RestartRequiredContent" xml:space="preserve">
+    <value>語言變更將在 GabNetStats 下次啟動時生效。現在重新啟動？</value>
+  </data>
+  <data name="str_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="str_IncludeInStatistics" xml:space="preserve">
+    <value>封包含在統計中</value>
+  </data>
+  <data name="str_None" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="str_Unsupported" xml:space="preserve">
+    <value>不支援</value>
+  </data>
+  <data name="str_WarningNoInterfaceSelected" xml:space="preserve">
+    <value>目前沒有為統計選取任何網路介面：通知區域圖示和通知視窗將不再更新！</value>
+  </data>
+  <data name="str_WarningNoInterfaceSelectedCaption" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="str_NotAvailableWinver" xml:space="preserve">
+    <value>此功能在此 Windows 版本中不可用！</value>
+  </data>
+</root>

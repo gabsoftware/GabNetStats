@@ -1,0 +1,19 @@
+------= GabSoftware lisansı v1.0.1 =------
+
+İlgili ürün: [PRODUCTNAME]
+[PRODUCTNAME] ana sayfası: [PRODUCTHOMEPAGE]
+
+Bu ürünün herhangi bir bölümünü (ikili dosyalar veya kaynak kodu) dağıtarak, kullanarak veya yeniden kullanarak aşağıdaki şartları kabul etmiş olursunuz:
+
+- [PRODUCTNAME] ikili dosyaları kişisel kullanım için serbestçe dağıtılabilir ve kullanılabilir. Kurumsal kullanım için bkz. (1).
+- [PRODUCTNAME] kaynak kodu kişisel kullanım için serbestçe dağıtılabilir, kullanılabilir ve yeniden kullanılabilir. Kurumsal kullanım için bkz. (2).
+- "[PRODUCTNAME]" adı türetilmiş hiçbir ürün adının parçası olamaz.
+- [PRODUCTNAME] kaynak kodunun veya ikili dosyalarının herhangi bir dağıtımında bu değiştirilmemiş lisansı (License.txt) eklemelisiniz.
+
+(1): GabSoftware, 10 kişiden az şirketlerin [PRODUCTNAME] ikili dosyalarını, şirket 10 kişiden az kaldığı ve bundan para kazanmadığı sürece ücretsiz ve süre sınırı olmadan kullanmasına ve dağıtmasına izin verir. [PRODUCTNAME] ikili dosyalarını kullanmak, dağıtmak veya herhangi bir ürün paketine dahil etmek isteyen 10 kişiden büyük şirketler fiyatlandırma görüşmesi için [CONTACTEMAIL] adresinden bizimle iletişime geçmelidir.
+(2): [PRODUCTNAME] kaynak kodunun tamamını veya bir kısmını şirket ürünlerinizde kullanmak istiyorsanız, fiyatlandırma görüşmesi için isteğinizi [CONTACTEMAIL] adresine gönderin.
+
+Ürünlerimizi kullandığınız için teşekkür ederiz!
+
+GabSoftware
+http://www.gabsoftware.com

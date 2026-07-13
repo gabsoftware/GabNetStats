@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Odśw. (ms):</value>
+  </data>
+  <data name="radioCustomSpeed.Text" xml:space="preserve">
+    <value>Własna prędkość</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>(folder w "icons")</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Ikony:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Jednostka:</value>
+  </data>
+  <data name="rbBytes.Text" xml:space="preserve">
+    <value>Bajty/s</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Pobieranie</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Wysyłanie</value>
+  </data>
+  <data name="grpBandwidthPreferences.Text" xml:space="preserve">
+    <value>Preferencje pasma</value>
+  </data>
+  <data name="radioDefault.Text" xml:space="preserve">
+    <value>Domyślne (niebieska ikona)</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Efekty ikony sieci</value>
+  </data>
+  <data name="chkSettingsAutoPingNotification.Text" xml:space="preserve">
+    <value>Pokaż powiadomienia</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Ping co</value>
+  </data>
+  <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
+    <value>Auto-ping:</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Automatyczny ping</value>
+  </data>
+  <data name="checkBoxStartup.Text" xml:space="preserve">
+    <value>Uruchom z Windows</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Język:</value>
+  </data>
+  <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
+    <value>Pokaż rozłączone</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Różne</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
+</root>

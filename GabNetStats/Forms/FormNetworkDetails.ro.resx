@@ -1,0 +1,585 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label97.Text" xml:space="preserve">
+    <value>Răspunsuri timestamp</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>Cereri conexiune TCP inițiate</value>
+  </data>
+  <data name="label77.Text" xml:space="preserve">
+    <value>Redirecționări</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>DNS activat</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>Datagrame primite</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Statistici conexiuni TCP</value>
+  </data>
+  <data name="label95.Text" xml:space="preserve">
+    <value>Răspunsuri mască adresă</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>Datagrame trimise</value>
+  </data>
+  <data name="label109.Text" xml:space="preserve">
+    <value>Destinație inaccesibilă</value>
+  </data>
+  <data name="label30.Text" xml:space="preserve">
+    <value>Redirecționare pachete activată</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Pachete fragmentate</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>Sufix DNS</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Text" xml:space="preserve">
+    <value>Diverse</value>
+  </data>
+  <data name="label54.Text" xml:space="preserve">
+    <value>Adrese anycast</value>
+  </data>
+  <data name="label62.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Pachete cu erori de adresă</value>
+  </data>
+  <data name="label70.Text" xml:space="preserve">
+    <value>Încercări conexiune TCP eșuate</value>
+  </data>
+  <data name="label102.Text" xml:space="preserve">
+    <value>Source quench</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>Lungime coadă ieșire</value>
+  </data>
+  <data name="label82.Text" xml:space="preserve">
+    <value>Segmente TCP primite</value>
+  </data>
+  <data name="colEndPoint.HeaderText" xml:space="preserve">
+    <value>Punct final</value>
+  </data>
+  <data name="label111.Text" xml:space="preserve">
+    <value>Răspunsuri mască adresă</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>Adrese multicast</value>
+  </data>
+  <data name="radioButtonIPv6.Text" xml:space="preserve">
+    <value>IPv6</value>
+  </data>
+  <data name="label132.Text" xml:space="preserve">
+    <value>Reduceri membri IGMP</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Text" xml:space="preserve">
+    <value>Pachete trimise</value>
+  </data>
+  <data name="label55.Text" xml:space="preserve">
+    <value>Adrese unicast</value>
+  </data>
+  <data name="colState.HeaderText" xml:space="preserve">
+    <value>Stare</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Nume domeniu DHCP</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Pachete transmise eliminate</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Rute eliminate</value>
+  </data>
+  <data name="label139.Text" xml:space="preserve">
+    <value>Solicitări router</value>
+  </data>
+  <data name="label131.Text" xml:space="preserve">
+    <value>Rapoarte membri IGMP</value>
+  </data>
+  <data name="label84.Text" xml:space="preserve">
+    <value>Segmente TCP retrimise</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Număr de interfețe</value>
+  </data>
+  <data name="label68.Text" xml:space="preserve">
+    <value>Conexiuni TCP stabilite</value>
+  </data>
+  <data name="label114.Text" xml:space="preserve">
+    <value>Anunțuri router</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Pachete redirecționate</value>
+  </data>
+  <data name="label112.Text" xml:space="preserve">
+    <value>Timp depășit</value>
+  </data>
+  <data name="label92.Text" xml:space="preserve">
+    <value>Destinație inaccesibilă</value>
+  </data>
+  <data name="colPort.HeaderText" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="tabPageICMPv6.Text" xml:space="preserve">
+    <value>Statistici ICMPv6</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>Source quench</value>
+  </data>
+  <data name="label90.Text" xml:space="preserve">
+    <value>Cereri echo</value>
+  </data>
+  <data name="label121.Text" xml:space="preserve">
+    <value>Rapoarte membri IGMP</value>
+  </data>
+  <data name="label107.Text" xml:space="preserve">
+    <value>Cereri echo</value>
+  </data>
+  <data name="label106.Text" xml:space="preserve">
+    <value>Erori</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>Conexiuni TCP curente</value>
+  </data>
+  <data name="label38.Text" xml:space="preserve">
+    <value>Octeți primiți</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>Ascultători UDP</value>
+  </data>
+  <data name="label66.Text" xml:space="preserve">
+    <value>Stare operațională</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Timp reasamblare</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Eșecuri reasamblare</value>
+  </data>
+  <data name="label86.Text" xml:space="preserve">
+    <value>TCP timp minim</value>
+  </data>
+  <data name="label98.Text" xml:space="preserve">
+    <value>Timp depășit</value>
+  </data>
+  <data name="btnUDPLCopySelected.Text" xml:space="preserve">
+    <value>Copiază selecția</value>
+  </data>
+  <data name="label118.Text" xml:space="preserve">
+    <value>Solicitări vecin</value>
+  </data>
+  <data name="tabPageNetworkInterfaces.Text" xml:space="preserve">
+    <value>Statistici interfață rețea</value>
+  </data>
+  <data name="tabPageUDP.Text" xml:space="preserve">
+    <value>Statistici UDP</value>
+  </data>
+  <data name="tabPageICMPv4.Text" xml:space="preserve">
+    <value>Statistici ICMPv4</value>
+  </data>
+  <data name="btnTCPLSelectAll.Text" xml:space="preserve">
+    <value>Selectează tot</value>
+  </data>
+  <data name="label134.Text" xml:space="preserve">
+    <value>Erori</value>
+  </data>
+  <data name="label133.Text" xml:space="preserve">
+    <value>Interogări membri IGMP</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Configurare IP</value>
+  </data>
+  <data name="tabPageGlobal.Text" xml:space="preserve">
+    <value>Statistici globale</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>Mesaje ICMPv4 trimise</value>
+  </data>
+  <data name="btnTCPLCopySelected.Text" xml:space="preserve">
+    <value>Copiază selecția</value>
+  </data>
+  <data name="label117.Text" xml:space="preserve">
+    <value>Pachet prea mare</value>
+  </data>
+  <data name="label88.Text" xml:space="preserve">
+    <value>Mesaje</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>Adresă APIPA activată</value>
+  </data>
+  <data name="label137.Text" xml:space="preserve">
+    <value>Destinație inaccesibilă</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Pachete primite cu erori</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Pachete eliminate</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>Adrese server WINS</value>
+  </data>
+  <data name="tabPageTCPListeners.Text" xml:space="preserve">
+    <value>Ascultători TCP</value>
+  </data>
+  <data name="colRemotePort.HeaderText" xml:space="preserve">
+    <value>Port la distanță</value>
+  </data>
+  <data name="label142.Text" xml:space="preserve">
+    <value>Răspunsuri echo</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Proprietăți (1)</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>Protocol necunoscut</value>
+  </data>
+  <data name="label140.Text" xml:space="preserve">
+    <value>Anunțuri router</value>
+  </data>
+  <data name="label93.Text" xml:space="preserve">
+    <value>TCP timp maxim</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>Index interfață loopback</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>Cereri conexiune TCP acceptate</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Pachete fără rută</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>Datagrame primite eliminate</value>
+  </data>
+  <data name="label91.Text" xml:space="preserve">
+    <value>Răspunsuri echo</value>
+  </data>
+  <data name="colUDPLEndPoint.HeaderText" xml:space="preserve">
+    <value>Punct final</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>Statistici conexiuni UDP</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>Pachete primite eliminate</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>Conexiuni TCP resetate</value>
+  </data>
+  <data name="label123.Text" xml:space="preserve">
+    <value>Interogări membri IGMP</value>
+  </data>
+  <data name="label125.Text" xml:space="preserve">
+    <value>Redirecționări</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Proprietăți (2)</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Pachete primite</value>
+  </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>Mesaje ICMPv6 trimise</value>
+  </data>
+  <data name="label87.Text" xml:space="preserve">
+    <value>Probleme parametri</value>
+  </data>
+  <data name="label94.Text" xml:space="preserve">
+    <value>Cereri mască adresă</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>Adrese DNS</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Nume gazdă</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Proxy WINS</value>
+  </data>
+  <data name="label110.Text" xml:space="preserve">
+    <value>Cereri mască adresă</value>
+  </data>
+  <data name="label69.Text" xml:space="preserve">
+    <value>Max. conexiuni TCP acceptate</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Redirecționare activată</value>
+  </data>
+  <data name="label120.Text" xml:space="preserve">
+    <value>Mesaje</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Interfață de rețea</value>
+  </data>
+  <data name="label115.Text" xml:space="preserve">
+    <value>Redirecționări</value>
+  </data>
+  <data name="label104.Text" xml:space="preserve">
+    <value>Probleme parametri</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Statistici erori TCP</value>
+  </data>
+  <data name="label141.Text" xml:space="preserve">
+    <value>Cereri echo</value>
+  </data>
+  <data name="label101.Text" xml:space="preserve">
+    <value>Timp depășit</value>
+  </data>
+  <data name="btnSelectAll.Text" xml:space="preserve">
+    <value>Selectează tot</value>
+  </data>
+  <data name="label124.Text" xml:space="preserve">
+    <value>Erori</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GabNetStats - Statistici avansate</value>
+  </data>
+  <data name="btnCopySelection.Text" xml:space="preserve">
+    <value>Copiază selecția</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Text" xml:space="preserve">
+    <value>Pachete primite</value>
+  </data>
+  <data name="colRemoteEndPoint.HeaderText" xml:space="preserve">
+    <value>Punct final la distanță</value>
+  </data>
+  <data name="label103.Text" xml:space="preserve">
+    <value>Redirecționări</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>Pachete ieșire eliminate</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>Pachete non-unicast trimise</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>Adrese server DHCP</value>
+  </data>
+  <data name="btnUDPLSelectAll.Text" xml:space="preserve">
+    <value>Selectează tot</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>Reasamblare necesară</value>
+  </data>
+  <data name="tabPageTCPConnections.Text" xml:space="preserve">
+    <value>Conexiuni TCP</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Intrare</value>
+  </data>
+  <data name="label136.Text" xml:space="preserve">
+    <value>Răspunsuri echo</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Număr de adrese IP</value>
+  </data>
+  <data name="label105.Text" xml:space="preserve">
+    <value>Mesaje</value>
+  </data>
+  <data name="label33.Text" xml:space="preserve">
+    <value>Pachete non-unicast primite</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Pachete livrate</value>
+  </data>
+  <data name="label119.Text" xml:space="preserve">
+    <value>Anunțuri vecin</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Număr de rute</value>
+  </data>
+  <data name="colLocalEndPoint.HeaderText" xml:space="preserve">
+    <value>Punct final local</value>
+  </data>
+  <data name="label143.Text" xml:space="preserve">
+    <value>Destinație inaccesibilă</value>
+  </data>
+  <data name="label78.Text" xml:space="preserve">
+    <value>Datagrame primite cu erori</value>
+  </data>
+  <data name="label89.Text" xml:space="preserve">
+    <value>Erori</value>
+  </data>
+  <data name="groupBoxGlobalVersion.Text" xml:space="preserve">
+    <value>Versiune protocol</value>
+  </data>
+  <data name="label122.Text" xml:space="preserve">
+    <value>Reduceri membri IGMP</value>
+  </data>
+  <data name="radioButtonIPv4.Text" xml:space="preserve">
+    <value>IPv4</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>Are adresă APIPA</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>Pachete ieșire cu erori</value>
+  </data>
+  <data name="label61.Text" xml:space="preserve">
+    <value>Doar recepție</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>Pachete unicast primite</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Cereri pachete ieșire</value>
+  </data>
+  <data name="label129.Text" xml:space="preserve">
+    <value>Anunțuri vecin</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Interfață activă:</value>
+  </data>
+  <data name="label127.Text" xml:space="preserve">
+    <value>Pachet prea mare</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Pachete cu erori de antet</value>
+  </data>
+  <data name="label113.Text" xml:space="preserve">
+    <value>Solicitări router</value>
+  </data>
+  <data name="label39.Text" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="label41.Text" xml:space="preserve">
+    <value>Pachete unicast trimise</value>
+  </data>
+  <data name="label96.Text" xml:space="preserve">
+    <value>Cereri timestamp</value>
+  </data>
+  <data name="label116.Text" xml:space="preserve">
+    <value>Probleme parametri</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Nume domeniu</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>DHCP activat</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>Mesaje ICMPv6 primite</value>
+  </data>
+  <data name="label65.Text" xml:space="preserve">
+    <value>Viteză</value>
+  </data>
+  <data name="label81.Text" xml:space="preserve">
+    <value>Erori TCP primite</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Text" xml:space="preserve">
+    <value>Fragmentare pachete</value>
+  </data>
+  <data name="label100.Text" xml:space="preserve">
+    <value>Răspunsuri timestamp</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Tip nod</value>
+  </data>
+  <data name="label85.Text" xml:space="preserve">
+    <value>Segmente TCP trimise</value>
+  </data>
+  <data name="label144.Text" xml:space="preserve">
+    <value>Adresă MAC</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Pachete cu protocol necunoscut</value>
+  </data>
+  <data name="label49.Text" xml:space="preserve">
+    <value>Adrese gateway</value>
+  </data>
+  <data name="label130.Text" xml:space="preserve">
+    <value>Mesaje</value>
+  </data>
+  <data name="label83.Text" xml:space="preserve">
+    <value>Reset TCP trimis (marcaj RST)</value>
+  </data>
+  <data name="label47.Text" xml:space="preserve">
+    <value>DNS dinamic activat</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>Octeți trimiși</value>
+  </data>
+  <data name="label128.Text" xml:space="preserve">
+    <value>Solicitări vecin</value>
+  </data>
+  <data name="label126.Text" xml:space="preserve">
+    <value>Probleme parametri</value>
+  </data>
+  <data name="label135.Text" xml:space="preserve">
+    <value>Cereri echo</value>
+  </data>
+  <data name="colLocalPort.HeaderText" xml:space="preserve">
+    <value>Port local</value>
+  </data>
+  <data name="label99.Text" xml:space="preserve">
+    <value>Cereri timestamp</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Statistici segmente TCP</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>MTU</value>
+  </data>
+  <data name="label59.Text" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="colUDPLPort.HeaderText" xml:space="preserve">
+    <value>Port</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>Tip interfață rețea</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Pachete reasamblate</value>
+  </data>
+  <data name="tabPageTCP.Text" xml:space="preserve">
+    <value>Statistici TCP</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>TTL implicit</value>
+  </data>
+  <data name="label63.Text" xml:space="preserve">
+    <value>Descriere</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Ieșire</value>
+  </data>
+  <data name="label108.Text" xml:space="preserve">
+    <value>Răspunsuri echo</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>Mesaje ICMPv4 primite</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Eșecuri fragmentare pachete</value>
+  </data>
+  <data name="tabPageUDPListeners.Text" xml:space="preserve">
+    <value>Ascultători UDP</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>Folosește WINS</value>
+  </data>
+  <data name="label138.Text" xml:space="preserve">
+    <value>Timp depășit</value>
+  </data>
+  <data name="label64.Text" xml:space="preserve">
+    <value>Acceptă multicast</value>
+  </data>
+</root>

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="buttonCancel.Text" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Làm mới (ms):</value>
+  </data>
+  <data name="radioCustomSpeed.Text" xml:space="preserve">
+    <value>Tốc độ riêng</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>(trong thư mục "icons")</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Biểu tượng:</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Đơn vị:</value>
+  </data>
+  <data name="rbBytes.Text" xml:space="preserve">
+    <value>Byte/s</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Tải xuống</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Tải lên</value>
+  </data>
+  <data name="grpBandwidthPreferences.Text" xml:space="preserve">
+    <value>Tùy chọn băng thông</value>
+  </data>
+  <data name="radioDefault.Text" xml:space="preserve">
+    <value>Mặc định (biểu tượng xanh)</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Hiệu ứng biểu tượng mạng</value>
+  </data>
+  <data name="chkSettingsAutoPingNotification.Text" xml:space="preserve">
+    <value>Hiện thông báo</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Ping mỗi</value>
+  </data>
+  <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
+    <value>Tự ping:</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Tự ping</value>
+  </data>
+  <data name="checkBoxStartup.Text" xml:space="preserve">
+    <value>Chạy cùng Windows</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>Ngôn ngữ:</value>
+  </data>
+  <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
+    <value>Hiện giao diện ngắt</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Cài đặt</value>
+  </data>
+</root>

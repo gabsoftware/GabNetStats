@@ -1,0 +1,19 @@
+------= GabSoftware 许可证 v1.0.1 =------
+
+相关产品：[PRODUCTNAME]
+[PRODUCTNAME] 主页：[PRODUCTHOMEPAGE]
+
+通过分发、使用或复用本产品的任何部分（二进制文件或源代码），即表示您同意以下条款：
+
+- [PRODUCTNAME] 二进制文件可免费分发并用于个人用途。企业用途见 (1)。
+- [PRODUCTNAME] 源代码可免费分发、使用和复用于个人用途。企业用途见 (2)。
+- 名称 "[PRODUCTNAME]" 不得作为任何衍生产品名称的一部分。
+- 分发 [PRODUCTNAME] 的任何源代码或二进制文件时，必须随附本未修改的许可证 (License.txt)。
+
+(1)：GabSoftware 允许少于 10 人的公司免费且不限时使用和分发 [PRODUCTNAME] 二进制文件，前提是公司人数保持少于 10 人且不通过它获利。超过 10 人的公司如需使用、分发或将 [PRODUCTNAME] 二进制文件包含在任何产品套件中，必须通过 [CONTACTEMAIL] 联系我们协商价格。
+(2)：如果您希望在公司产品中使用全部或部分 [PRODUCTNAME] 源代码，请通过 [CONTACTEMAIL] 向我们发送请求以协商价格。
+
+感谢使用我们的产品！
+
+GabSoftware
+http://www.gabsoftware.com

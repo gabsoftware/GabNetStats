@@ -1,0 +1,585 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label97.Text" xml:space="preserve">
+    <value>Phản hồi dấu thời gian</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>Yêu cầu TCP đã khởi tạo</value>
+  </data>
+  <data name="label77.Text" xml:space="preserve">
+    <value>Chuyển hướng</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>DNS đã bật</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>Datagram đã nhận</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>TCP thống kê kết nối</value>
+  </data>
+  <data name="label95.Text" xml:space="preserve">
+    <value>Phản hồi mặt nạ địa chỉ</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>Datagram đã gửi</value>
+  </data>
+  <data name="label109.Text" xml:space="preserve">
+    <value>Không tới được đích</value>
+  </data>
+  <data name="label30.Text" xml:space="preserve">
+    <value>Chuyển tiếp gói đã bật</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Gói bị phân mảnh</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>Hậu tố DNS</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Text" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="label54.Text" xml:space="preserve">
+    <value>Địa chỉ anycast</value>
+  </data>
+  <data name="label62.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Gói lỗi địa chỉ</value>
+  </data>
+  <data name="label70.Text" xml:space="preserve">
+    <value>Lần thử TCP thất bại</value>
+  </data>
+  <data name="label102.Text" xml:space="preserve">
+    <value>Giảm nguồn</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>Độ dài hàng đợi ra</value>
+  </data>
+  <data name="label82.Text" xml:space="preserve">
+    <value>Phân đoạn TCP đã nhận</value>
+  </data>
+  <data name="colEndPoint.HeaderText" xml:space="preserve">
+    <value>Điểm cuối</value>
+  </data>
+  <data name="label111.Text" xml:space="preserve">
+    <value>Phản hồi mặt nạ địa chỉ</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>Địa chỉ multicast</value>
+  </data>
+  <data name="radioButtonIPv6.Text" xml:space="preserve">
+    <value>IPv6</value>
+  </data>
+  <data name="label132.Text" xml:space="preserve">
+    <value>Giảm thành viên IGMP</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Text" xml:space="preserve">
+    <value>Gói đi</value>
+  </data>
+  <data name="label55.Text" xml:space="preserve">
+    <value>Địa chỉ unicast</value>
+  </data>
+  <data name="colState.HeaderText" xml:space="preserve">
+    <value>Trạng thái</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Tên phạm vi DHCP</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Bỏ khi truyền</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Bỏ do định tuyến</value>
+  </data>
+  <data name="label139.Text" xml:space="preserve">
+    <value>Yêu cầu bộ định tuyến</value>
+  </data>
+  <data name="label131.Text" xml:space="preserve">
+    <value>Báo cáo thành viên IGMP</value>
+  </data>
+  <data name="label84.Text" xml:space="preserve">
+    <value>Phân đoạn TCP gửi lại</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Số giao diện</value>
+  </data>
+  <data name="label68.Text" xml:space="preserve">
+    <value>Kết nối TCP đã lập</value>
+  </data>
+  <data name="label114.Text" xml:space="preserve">
+    <value>Quảng bá bộ định tuyến</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Gói chuyển tiếp</value>
+  </data>
+  <data name="label112.Text" xml:space="preserve">
+    <value>Quá thời gian</value>
+  </data>
+  <data name="label92.Text" xml:space="preserve">
+    <value>Không tới được đích</value>
+  </data>
+  <data name="colPort.HeaderText" xml:space="preserve">
+    <value>Cổng</value>
+  </data>
+  <data name="tabPageICMPv6.Text" xml:space="preserve">
+    <value>ICMPv6 thống kê</value>
+  </data>
+  <data name="label76.Text" xml:space="preserve">
+    <value>Giảm nguồn</value>
+  </data>
+  <data name="label90.Text" xml:space="preserve">
+    <value>Yêu cầu echo</value>
+  </data>
+  <data name="label121.Text" xml:space="preserve">
+    <value>Báo cáo thành viên IGMP</value>
+  </data>
+  <data name="label107.Text" xml:space="preserve">
+    <value>Yêu cầu echo</value>
+  </data>
+  <data name="label106.Text" xml:space="preserve">
+    <value>Lỗi</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>Kết nối TCP hiện tại</value>
+  </data>
+  <data name="label38.Text" xml:space="preserve">
+    <value>Byte đã nhận</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>UDP bộ nghe</value>
+  </data>
+  <data name="label66.Text" xml:space="preserve">
+    <value>Trạng thái hoạt động</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Hết hạn ghép</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Lỗi ghép lại</value>
+  </data>
+  <data name="label86.Text" xml:space="preserve">
+    <value>TCP hết hạn tối thiểu</value>
+  </data>
+  <data name="label98.Text" xml:space="preserve">
+    <value>Quá thời gian</value>
+  </data>
+  <data name="btnUDPLCopySelected.Text" xml:space="preserve">
+    <value>Chép lựa chọn</value>
+  </data>
+  <data name="label118.Text" xml:space="preserve">
+    <value>Yêu cầu lân cận</value>
+  </data>
+  <data name="tabPageNetworkInterfaces.Text" xml:space="preserve">
+    <value>Thống kê giao diện mạng</value>
+  </data>
+  <data name="tabPageUDP.Text" xml:space="preserve">
+    <value>Thống kê UDP</value>
+  </data>
+  <data name="tabPageICMPv4.Text" xml:space="preserve">
+    <value>ICMPv4 thống kê</value>
+  </data>
+  <data name="btnTCPLSelectAll.Text" xml:space="preserve">
+    <value>Chọn tất cả</value>
+  </data>
+  <data name="label134.Text" xml:space="preserve">
+    <value>Lỗi</value>
+  </data>
+  <data name="label133.Text" xml:space="preserve">
+    <value>Truy vấn thành viên IGMP</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Cấu hình IP</value>
+  </data>
+  <data name="tabPageGlobal.Text" xml:space="preserve">
+    <value>Thống kê chung</value>
+  </data>
+  <data name="groupBox12.Text" xml:space="preserve">
+    <value>ICMPv4 thông điệp đã gửi</value>
+  </data>
+  <data name="btnTCPLCopySelected.Text" xml:space="preserve">
+    <value>Chép lựa chọn</value>
+  </data>
+  <data name="label117.Text" xml:space="preserve">
+    <value>Gói quá lớn</value>
+  </data>
+  <data name="label88.Text" xml:space="preserve">
+    <value>Thông điệp</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>Địa chỉ APIPA đã bật</value>
+  </data>
+  <data name="label137.Text" xml:space="preserve">
+    <value>Không tới được đích</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Gói đến có lỗi</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Gói bị bỏ</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>Địa chỉ máy chủ WINS</value>
+  </data>
+  <data name="tabPageTCPListeners.Text" xml:space="preserve">
+    <value>TCP bộ nghe</value>
+  </data>
+  <data name="colRemotePort.HeaderText" xml:space="preserve">
+    <value>Cổng từ xa</value>
+  </data>
+  <data name="label142.Text" xml:space="preserve">
+    <value>Phản hồi echo</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Thuộc tính (1)</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>Giao thức không rõ</value>
+  </data>
+  <data name="label140.Text" xml:space="preserve">
+    <value>Quảng bá bộ định tuyến</value>
+  </data>
+  <data name="label93.Text" xml:space="preserve">
+    <value>TCP hết hạn tối đa</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>Chỉ mục giao diện loopback</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>Yêu cầu TCP đã chấp nhận</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Gói không có tuyến</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>Datagram đến bị bỏ</value>
+  </data>
+  <data name="label91.Text" xml:space="preserve">
+    <value>Phản hồi echo</value>
+  </data>
+  <data name="colUDPLEndPoint.HeaderText" xml:space="preserve">
+    <value>Điểm cuối</value>
+  </data>
+  <data name="groupBox10.Text" xml:space="preserve">
+    <value>UDP thống kê kết nối</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>Gói đến bị bỏ</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>Kết nối TCP đã đặt lại</value>
+  </data>
+  <data name="label123.Text" xml:space="preserve">
+    <value>Truy vấn thành viên IGMP</value>
+  </data>
+  <data name="label125.Text" xml:space="preserve">
+    <value>Chuyển hướng</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Thuộc tính (2)</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Gói đã nhận</value>
+  </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>ICMPv6 thông điệp đã gửi</value>
+  </data>
+  <data name="label87.Text" xml:space="preserve">
+    <value>Vấn đề tham số</value>
+  </data>
+  <data name="label94.Text" xml:space="preserve">
+    <value>Yêu cầu mặt nạ địa chỉ</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>Địa chỉ DNS</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Tên máy chủ</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Là proxy WINS</value>
+  </data>
+  <data name="label110.Text" xml:space="preserve">
+    <value>Yêu cầu mặt nạ địa chỉ</value>
+  </data>
+  <data name="label69.Text" xml:space="preserve">
+    <value>Kết nối TCP tối đa hỗ trợ</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Đã bật chuyển tiếp</value>
+  </data>
+  <data name="label120.Text" xml:space="preserve">
+    <value>Thông điệp</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Giao diện mạng</value>
+  </data>
+  <data name="label115.Text" xml:space="preserve">
+    <value>Chuyển hướng</value>
+  </data>
+  <data name="label104.Text" xml:space="preserve">
+    <value>Vấn đề tham số</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>TCP thống kê lỗi</value>
+  </data>
+  <data name="label141.Text" xml:space="preserve">
+    <value>Yêu cầu echo</value>
+  </data>
+  <data name="label101.Text" xml:space="preserve">
+    <value>Quá thời gian</value>
+  </data>
+  <data name="btnSelectAll.Text" xml:space="preserve">
+    <value>Chọn tất cả</value>
+  </data>
+  <data name="label124.Text" xml:space="preserve">
+    <value>Lỗi</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GabNetStats - Thống kê nâng cao</value>
+  </data>
+  <data name="btnCopySelection.Text" xml:space="preserve">
+    <value>Chép lựa chọn</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Text" xml:space="preserve">
+    <value>Gói đến</value>
+  </data>
+  <data name="colRemoteEndPoint.HeaderText" xml:space="preserve">
+    <value>Điểm cuối từ xa</value>
+  </data>
+  <data name="label103.Text" xml:space="preserve">
+    <value>Chuyển hướng</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>Gói đi bị bỏ</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>Gói non-unicast đã gửi</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>Địa chỉ máy chủ DHCP</value>
+  </data>
+  <data name="btnUDPLSelectAll.Text" xml:space="preserve">
+    <value>Chọn tất cả</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>Cần ghép lại</value>
+  </data>
+  <data name="tabPageTCPConnections.Text" xml:space="preserve">
+    <value>TCP kết nối</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Đến</value>
+  </data>
+  <data name="label136.Text" xml:space="preserve">
+    <value>Phản hồi echo</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Số địa chỉ IP</value>
+  </data>
+  <data name="label105.Text" xml:space="preserve">
+    <value>Thông điệp</value>
+  </data>
+  <data name="label33.Text" xml:space="preserve">
+    <value>Gói non-unicast đã nhận</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Gói đã chuyển</value>
+  </data>
+  <data name="label119.Text" xml:space="preserve">
+    <value>Quảng bá lân cận</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Số tuyến</value>
+  </data>
+  <data name="colLocalEndPoint.HeaderText" xml:space="preserve">
+    <value>Điểm cuối cục bộ</value>
+  </data>
+  <data name="label143.Text" xml:space="preserve">
+    <value>Không tới được đích</value>
+  </data>
+  <data name="label78.Text" xml:space="preserve">
+    <value>Datagram đến có lỗi</value>
+  </data>
+  <data name="label89.Text" xml:space="preserve">
+    <value>Lỗi</value>
+  </data>
+  <data name="groupBoxGlobalVersion.Text" xml:space="preserve">
+    <value>Phiên bản giao thức</value>
+  </data>
+  <data name="label122.Text" xml:space="preserve">
+    <value>Giảm thành viên IGMP</value>
+  </data>
+  <data name="radioButtonIPv4.Text" xml:space="preserve">
+    <value>IPv4</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>Có địa chỉ APIPA</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>Gói đi có lỗi</value>
+  </data>
+  <data name="label61.Text" xml:space="preserve">
+    <value>Chỉ nhận</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>Gói unicast đã nhận</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Yêu cầu gói đi</value>
+  </data>
+  <data name="label129.Text" xml:space="preserve">
+    <value>Quảng bá lân cận</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Giao diện hoạt động:</value>
+  </data>
+  <data name="label127.Text" xml:space="preserve">
+    <value>Gói quá lớn</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Gói lỗi tiêu đề</value>
+  </data>
+  <data name="label113.Text" xml:space="preserve">
+    <value>Yêu cầu bộ định tuyến</value>
+  </data>
+  <data name="label39.Text" xml:space="preserve">
+    <value>Chỉ mục</value>
+  </data>
+  <data name="label41.Text" xml:space="preserve">
+    <value>Gói unicast đã gửi</value>
+  </data>
+  <data name="label96.Text" xml:space="preserve">
+    <value>Yêu cầu dấu thời gian</value>
+  </data>
+  <data name="label116.Text" xml:space="preserve">
+    <value>Vấn đề tham số</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Tên miền</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>DHCP đã bật</value>
+  </data>
+  <data name="groupBox14.Text" xml:space="preserve">
+    <value>ICMPv6 thông điệp đã nhận</value>
+  </data>
+  <data name="label65.Text" xml:space="preserve">
+    <value>Tốc độ</value>
+  </data>
+  <data name="label81.Text" xml:space="preserve">
+    <value>Lỗi TCP đã nhận</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Text" xml:space="preserve">
+    <value>Phân mảnh gói</value>
+  </data>
+  <data name="label100.Text" xml:space="preserve">
+    <value>Phản hồi dấu thời gian</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Loại nút</value>
+  </data>
+  <data name="label85.Text" xml:space="preserve">
+    <value>Phân đoạn TCP đã gửi</value>
+  </data>
+  <data name="label144.Text" xml:space="preserve">
+    <value>Địa chỉ MAC</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Gói giao thức không rõ</value>
+  </data>
+  <data name="label49.Text" xml:space="preserve">
+    <value>Địa chỉ cổng</value>
+  </data>
+  <data name="label130.Text" xml:space="preserve">
+    <value>Thông điệp</value>
+  </data>
+  <data name="label83.Text" xml:space="preserve">
+    <value>Đã gửi đặt lại TCP (cờ RST)</value>
+  </data>
+  <data name="label47.Text" xml:space="preserve">
+    <value>DNS động đã bật</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>Byte đã gửi</value>
+  </data>
+  <data name="label128.Text" xml:space="preserve">
+    <value>Yêu cầu lân cận</value>
+  </data>
+  <data name="label126.Text" xml:space="preserve">
+    <value>Vấn đề tham số</value>
+  </data>
+  <data name="label135.Text" xml:space="preserve">
+    <value>Yêu cầu echo</value>
+  </data>
+  <data name="colLocalPort.HeaderText" xml:space="preserve">
+    <value>Cổng cục bộ</value>
+  </data>
+  <data name="label99.Text" xml:space="preserve">
+    <value>Yêu cầu dấu thời gian</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>TCP thống kê phân đoạn</value>
+  </data>
+  <data name="label29.Text" xml:space="preserve">
+    <value>MTU</value>
+  </data>
+  <data name="label59.Text" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="colUDPLPort.HeaderText" xml:space="preserve">
+    <value>Cổng</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>Loại giao diện mạng</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Gói đã ghép lại</value>
+  </data>
+  <data name="tabPageTCP.Text" xml:space="preserve">
+    <value>Thống kê TCP</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>TTL mặc định</value>
+  </data>
+  <data name="label63.Text" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Đi</value>
+  </data>
+  <data name="label108.Text" xml:space="preserve">
+    <value>Phản hồi echo</value>
+  </data>
+  <data name="groupBox11.Text" xml:space="preserve">
+    <value>ICMPv4 thông điệp đã nhận</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Lỗi phân mảnh gói</value>
+  </data>
+  <data name="tabPageUDPListeners.Text" xml:space="preserve">
+    <value>UDP bộ nghe</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>Dùng WINS</value>
+  </data>
+  <data name="label138.Text" xml:space="preserve">
+    <value>Quá thời gian</value>
+  </data>
+  <data name="label64.Text" xml:space="preserve">
+    <value>Hỗ trợ multicast</value>
+  </data>
+</root>
