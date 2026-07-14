@@ -224,7 +224,7 @@ namespace GabNetStats
         }
 
 
-        private InterfaceComboItem FindSelection(List<InterfaceComboItem> items, string previousMac)
+        private static InterfaceComboItem FindSelection(List<InterfaceComboItem> items, string previousMac)
         {
             if (!string.IsNullOrEmpty(previousMac))
             {
@@ -447,7 +447,7 @@ namespace GabNetStats
                         dgvr = new DataGridViewRow();
                         dgvr.CreateCells(dataGridViewUDPListeners,
                             endpoint.Address.ToString(),
-                            endpoint.Port.ToString()
+                            endpoint.Port.ToString(CultureInfo.InvariantCulture)
                         );
 
                         dataGridViewUDPListeners.Rows.Add(dgvr);
@@ -461,7 +461,7 @@ namespace GabNetStats
                         dgvr = dataGridViewUDPListeners.Rows[i];
                         dgvr.SetValues(
                             ep.Address.ToString(),
-                            ep.Port.ToString()
+                            ep.Port.ToString(CultureInfo.InvariantCulture)
                         );
                     }
                 }
@@ -518,7 +518,7 @@ namespace GabNetStats
                         dgvr = new DataGridViewRow();
                         dgvr.CreateCells(dataGridViewTCPListeners,
                             endpoint.Address.ToString(),
-                            endpoint.Port.ToString()
+                            endpoint.Port.ToString(CultureInfo.InvariantCulture)
                         );
 
                         dataGridViewTCPListeners.Rows.Add(dgvr);
@@ -532,7 +532,7 @@ namespace GabNetStats
                         dgvr = dataGridViewTCPListeners.Rows[i];
                         dgvr.SetValues(
                             ep.Address.ToString(),
-                            ep.Port.ToString()
+                            ep.Port.ToString(CultureInfo.InvariantCulture)
                         );
                     }
                 }
@@ -562,9 +562,9 @@ namespace GabNetStats
                         dgvr = new DataGridViewRow();
                         dgvr.CreateCells(dataGridViewTCPConnections,
                             con.LocalEndPoint.Address.ToString(),
-                            con.LocalEndPoint.Port.ToString(),
+                            con.LocalEndPoint.Port.ToString(CultureInfo.InvariantCulture),
                             con.RemoteEndPoint.Address.ToString(),
-                            con.RemoteEndPoint.Port.ToString(),
+                            con.RemoteEndPoint.Port.ToString(CultureInfo.InvariantCulture),
                             con.State.ToString()
                         );
                         dataGridViewTCPConnections.Rows.Add(dgvr);
@@ -578,9 +578,9 @@ namespace GabNetStats
                         dgvr = dataGridViewTCPConnections.Rows[i];
                         dgvr.SetValues(
                             c.LocalEndPoint.Address.ToString(),
-                            c.LocalEndPoint.Port.ToString(),
+                            c.LocalEndPoint.Port.ToString(CultureInfo.InvariantCulture),
                             c.RemoteEndPoint.Address.ToString(),
-                            c.RemoteEndPoint.Port.ToString(),
+                            c.RemoteEndPoint.Port.ToString(CultureInfo.InvariantCulture),
                             c.State.ToString()
                         );
                     }
@@ -619,8 +619,8 @@ namespace GabNetStats
 
                 txtErrorsReceived.Text = tcpstat.ErrorsReceived.ToString("n", nfi);
 
-                txtMaximumTransmissionTimeout.Text = String.Format("{0} ms", tcpstat.MaximumTransmissionTimeout.ToString("n", nfi));
-                txtMinimumTransmissionTimeout.Text = String.Format("{0} ms", tcpstat.MinimumTransmissionTimeout.ToString("n", nfi));
+                txtMaximumTransmissionTimeout.Text = String.Format(CultureInfo.CurrentCulture, "{0} ms", tcpstat.MaximumTransmissionTimeout.ToString("n", nfi));
+                txtMinimumTransmissionTimeout.Text = String.Format(CultureInfo.CurrentCulture, "{0} ms", tcpstat.MinimumTransmissionTimeout.ToString("n", nfi));
                 txtResetsSent.Text = tcpstat.ResetsSent.ToString("n", nfi);
                 txtSegmentsReceived.Text = tcpstat.SegmentsReceived.ToString("n", nfi);
                 txtSegmentsResent.Text = tcpstat.SegmentsResent.ToString("n", nfi);
@@ -777,17 +777,17 @@ namespace GabNetStats
             {
                 txtDescription.Text = nic.Description;
                 txtName.Text = nic.Name;
-                txtSpeed.Text = String.Format("{0} {1}/s", SpeedUtils.ComputeSpeed(nic.Speed, ref speedunit, 2).ToString("n", nfi), speedunit);
+                txtSpeed.Text = String.Format(CultureInfo.CurrentCulture, "{0} {1}/s", SpeedUtils.ComputeSpeed(nic.Speed, ref speedunit, 2).ToString("n", nfi), speedunit);
                 txtNetworkInterfaceType.Text = nic.NetworkInterfaceType.ToString();
                 
                 mac = nic.GetPhysicalAddress().GetAddressBytes();
                 if (mac.Length == 6) // MAC-48
                 {
-                    txtMACaddress.Text = String.Format("{0:X2}-{1:X2}-{2:X2}-{3:X2}-{4:X2}-{5:X2}", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+                    txtMACaddress.Text = String.Format(CultureInfo.InvariantCulture, "{0:X2}-{1:X2}-{2:X2}-{3:X2}-{4:X2}-{5:X2}", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
                 }
                 else if (mac.Length == 8) // EUI-64 (MAC-48 + 0xFFFE)
                 {
-                    txtMACaddress.Text = String.Format("{0:X2}-{1:X2}-{2:X2}-{3:X2}-{4:X2}-{5:X2}-{6:X2}-{7:X2}", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5], mac[6], mac[7]);
+                    txtMACaddress.Text = String.Format(CultureInfo.InvariantCulture, "{0:X2}-{1:X2}-{2:X2}-{3:X2}-{4:X2}-{5:X2}-{6:X2}-{7:X2}", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5], mac[6], mac[7]);
                 }
                 else if (mac.Length == 0) // Loopback interface for example
                 {
@@ -822,21 +822,21 @@ namespace GabNetStats
                 builder.Remove(0, builder.Length);
                 foreach (IPAddressInformation ip in ipip.AnycastAddresses)
                 {
-                    builder.Append(String.Format("{0} ; ", ip.Address.ToString()));
+                    builder.Append(ip.Address).Append(" ; ");
                 }
                 txtAnycastAddresses.Text = builder.ToString();
 
                 builder.Remove(0, builder.Length);
                 foreach (IPAddress ip in ipip.DhcpServerAddresses)
                 {
-                    builder.Append(String.Format("{0} ; ", ip.ToString()));
+                    builder.Append(ip).Append(" ; ");
                 }
                 txtDhcpServerAddresses.Text = builder.ToString();
 
                 builder.Remove(0, builder.Length);
                 foreach (IPAddress ip in ipip.DnsAddresses)
                 {
-                    builder.Append(String.Format("{0} ; ", ip.ToString()));
+                    builder.Append(ip).Append(" ; ");
                 }
                 txtDnsAddresses.Text = builder.ToString();
 
@@ -845,7 +845,7 @@ namespace GabNetStats
                 builder.Remove(0, builder.Length);
                 foreach (GatewayIPAddressInformation ip in ipip.GatewayAddresses)
                 {
-                    builder.Append(String.Format("{0} ; ", ip.Address.ToString()));
+                    builder.Append(ip.Address).Append(" ; ");
                 }
                 txtGatewayAddresses.Text = builder.ToString();
 
@@ -855,21 +855,21 @@ namespace GabNetStats
                 builder.Remove(0, builder.Length);
                 foreach (MulticastIPAddressInformation ip in ipip.MulticastAddresses)
                 {
-                    builder.Append(String.Format("{0} ; ", ip.Address.ToString()));
+                    builder.Append(ip.Address).Append(" ; ");
                 }
                 txtMulticastAddresses.Text = builder.ToString();
 
                 builder.Remove(0, builder.Length);
                 foreach (UnicastIPAddressInformation ip in ipip.UnicastAddresses)
                 {
-                    builder.Append(String.Format("{0} ; ", ip.Address.ToString()));
+                    builder.Append(ip.Address).Append(" ; ");
                 }
                 txtUnicastAddresses.Text = builder.ToString();
 
                 builder.Remove(0, builder.Length);
                 foreach (IPAddress ip in ipip.WinsServersAddresses)
                 {
-                    builder.Append(String.Format("{0} ; ", ip.ToString()));
+                    builder.Append(ip).Append(" ; ");
                 }
                 txtWinsServersAddresses.Text = builder.ToString();
             }
@@ -925,7 +925,7 @@ namespace GabNetStats
 
             if (ipgs != null)
             {
-                txtDefaultTTL.Text = String.Format("{0} hops", ipgs.DefaultTtl);
+                txtDefaultTTL.Text = String.Format(CultureInfo.CurrentCulture, "{0} hops", ipgs.DefaultTtl);
                 txtForwardingEnabled.Text = ipgs.ForwardingEnabled ? Res.str_Yes : Res.str_No;
                 txtNumberOfInterfaces.Text = ipgs.NumberOfInterfaces.ToString("n", nfi);
                 txtNumberOfIPAddresses.Text = ipgs.NumberOfIPAddresses.ToString("n", nfi);
@@ -939,7 +939,7 @@ namespace GabNetStats
                 txtPacketFragmentFailures.Text = ipgs.PacketFragmentFailures.ToString("n", nfi);
                 txtPacketReassembliesRequired.Text = ipgs.PacketReassembliesRequired.ToString("n", nfi);
                 txtPacketReassemblyFailures.Text = ipgs.PacketReassemblyFailures.ToString("n", nfi);
-                txtPacketReassemblyTimeout.Text = String.Format("{0} ms", ipgs.PacketReassemblyTimeout.ToString("n", nfi));
+                txtPacketReassemblyTimeout.Text = String.Format(CultureInfo.CurrentCulture, "{0} ms", ipgs.PacketReassemblyTimeout.ToString("n", nfi));
                 txtPacketsFragmented.Text = ipgs.PacketsFragmented.ToString("n", nfi);
                 txtPacketsReassembled.Text = ipgs.PacketsReassembled.ToString("n", nfi);
 
@@ -983,7 +983,7 @@ namespace GabNetStats
                 tabStats.SelectedTab == tabPageUDP;
         }
 
-        private void CopyToClipboard(DataGridView dgv)
+        private static void CopyToClipboard(DataGridView dgv)
         {
             if (dgv.GetCellCount(DataGridViewElementStates.Selected) > 0)
             {

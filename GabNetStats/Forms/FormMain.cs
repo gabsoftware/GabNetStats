@@ -54,7 +54,7 @@ namespace GabNetStats
             {
                 Program.IsWindowsShuttingDown = true;
                 Settings.Default.Save();
-                statsWorker?.Shutdown();
+                statsWorker?.Dispose();
                 m.Result = (IntPtr)1; // Tell Windows: OK to shut down
                 return;
             }
@@ -199,7 +199,7 @@ namespace GabNetStats
             NetworkChange.NetworkAvailabilityChanged -= NetworkChange_NetworkAvailabilityChanged;
             NetworkChange.NetworkAddressChanged      -= NetworkChange_NetworkAddressChanged;
 
-            statsWorker.Shutdown();
+            statsWorker?.Dispose();
         }
 
         private void OnAdapterClick(object sender, EventArgs e)

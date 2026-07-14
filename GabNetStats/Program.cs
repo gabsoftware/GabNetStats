@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using System.Threading;
@@ -88,7 +89,7 @@ namespace GabNetStats
                 return;
             }
 
-            string threadName = Thread.CurrentThread.Name ?? Thread.CurrentThread.ManagedThreadId.ToString();
+            string threadName = Thread.CurrentThread.Name ?? Environment.CurrentManagedThreadId.ToString(CultureInfo.InvariantCulture);
             string message =
                 Res.str_ErrorCrash +
                 "\n\n" + "Thread : " +

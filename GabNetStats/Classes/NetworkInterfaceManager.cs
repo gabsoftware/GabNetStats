@@ -46,7 +46,7 @@ namespace GabNetStats
         internal IPGlobalProperties properties;
         internal IPGlobalStatistics ipv4stat;
         internal IPGlobalStatistics ipv6stat;
-        internal int nbNIC       = 0;
+        internal int nbNIC;
         internal int nNICRefresh = NIC_REFRESH_INTERVAL_MS; //time interval for refreshing the NIC list (10s by default)
 
         //
@@ -157,8 +157,8 @@ namespace GabNetStats
                 string name = netInterface.Name ?? String.Empty;
                 foreach (string keyword in hiddenInterfaceKeywords)
                 {
-                    if (description.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                        name.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                    if (description.Contains(keyword, StringComparison.OrdinalIgnoreCase) ||
+                        name.Contains(keyword, StringComparison.OrdinalIgnoreCase))
                     {
                         return false;
                     }
@@ -185,7 +185,7 @@ namespace GabNetStats
         internal static Bitmap GetInterfaceIcon(NetworkInterface netInterface)
         {
             string combined = ((netInterface.Description ?? String.Empty) + (netInterface.Name ?? String.Empty));
-            if (combined.IndexOf("bluetooth", StringComparison.OrdinalIgnoreCase) >= 0)
+            if (combined.Contains("bluetooth", StringComparison.OrdinalIgnoreCase))
             {
                 return Properties.Resources.netshell_1613_16x16.ToBitmap();
             }

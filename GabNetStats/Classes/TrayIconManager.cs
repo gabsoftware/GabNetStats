@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Net.NetworkInformation;
 using System.Windows.Forms;
@@ -82,12 +83,12 @@ namespace GabNetStats
                 desiredSet = DEFAULT_ICON_SET;
             }
 
-            if (String.Compare(desiredSet, appliedIconSet, StringComparison.OrdinalIgnoreCase) == 0)
+            if (String.Equals(desiredSet, appliedIconSet, StringComparison.OrdinalIgnoreCase))
             {
                 return;
             }
 
-            if (String.Compare(desiredSet, DEFAULT_ICON_SET, StringComparison.OrdinalIgnoreCase) == 0)
+            if (String.Equals(desiredSet, DEFAULT_ICON_SET, StringComparison.OrdinalIgnoreCase))
             {
                 LoadDefaultIconSet();
                 appliedIconSet = DEFAULT_ICON_SET;
@@ -182,14 +183,14 @@ namespace GabNetStats
             {
                 for (int ul = 0; ul < 5; ul++)
                 {
-                    iconsActive[dl, ul] = (Icon)r.GetObject($"active_{colorNames[dl]}_{colorNames[ul]}");
+                    iconsActive[dl, ul] = (Icon)r.GetObject($"active_{colorNames[dl]}_{colorNames[ul]}", CultureInfo.CurrentCulture);
                 }
             }
 
             for (int i = 0; i < 5; i++)
             {
-                iconsSend[i]    = (Icon)r.GetObject($"send_{colorNames[i]}");
-                iconsReceive[i] = (Icon)r.GetObject($"receive_{colorNames[i]}");
+                iconsSend[i]    = (Icon)r.GetObject($"send_{colorNames[i]}", CultureInfo.CurrentCulture);
+                iconsReceive[i] = (Icon)r.GetObject($"receive_{colorNames[i]}", CultureInfo.CurrentCulture);
             }
 
             iconInactive     = Properties.Resources.inactive;

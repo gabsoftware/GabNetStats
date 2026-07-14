@@ -7,7 +7,7 @@ using GabNetStats.Properties;
 
 namespace GabNetStats
 {
-    internal class NetworkStatsWorker
+    internal class NetworkStatsWorker : IDisposable
     {
         //
         //  Constants
@@ -27,9 +27,9 @@ namespace GabNetStats
         //
         //  Thread handles
         //
-        private Thread netStatThread   = null;
-        private Thread hNICRefreshThread = null;
-        private Thread hAutoPingThread   = null;
+        private Thread netStatThread;
+        private Thread hNICRefreshThread;
+        private Thread hAutoPingThread;
 
         //
         //  Cancellation
@@ -40,10 +40,11 @@ namespace GabNetStats
         //
         //  Settings
         //
-        internal bool customBandwidth     = false;
+        internal bool customBandwidth;
 
         internal const int BlinkDurationMinimum = 50;
         internal int nDuration = BlinkDurationMinimum;
+        private bool disposed;
 
         //
         //  Speed samples
@@ -54,8 +55,8 @@ namespace GabNetStats
         private readonly long[] emissionSamples  = new long[avgSpeedNbItems];
         private int receptionSampleCount = avgSpeedNbItems;
         private int emissionSampleCount  = avgSpeedNbItems;
-        private int receptionSampleIndex = 0;
-        private int emissionSampleIndex  = 0;
+        private int receptionSampleIndex;
+        private int emissionSampleIndex;
 
         //
         //  Constructor
@@ -110,6 +111,11 @@ namespace GabNetStats
 
         internal void Shutdown()
         {
+            if (disposed)
+            {
+                return;
+            }
+
             try
             {
                 workerCancellationTokenSource.Cancel();
@@ -122,6 +128,13 @@ namespace GabNetStats
             TryJoinThread(hNICRefreshThread);
 
             workerCancellationTokenSource.Dispose();
+            disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Shutdown();
+            GC.SuppressFinalize(this);
         }
 
         //
@@ -379,12 +392,9 @@ namespace GabNetStats
             catch (ThreadInterruptedException) { }
         }
 
-        private static void WaitWithCancellation(CancellationToken cancellationToken, int millisecondsTimeout)
+        private static void WaitWithCancellation(int millisecondsTimeout, CancellationToken cancellationToken)
         {
-            if (millisecondsTimeout < Timeout.Infinite)
-            {
-                throw new ArgumentOutOfRangeException(nameof(millisecondsTimeout));
-            }
+            ArgumentOutOfRangeException.ThrowIfLessThan(millisecondsTimeout, Timeout.Infinite);
 
             if (millisecondsTimeout == 0)
             {
@@ -441,7 +451,7 @@ namespace GabNetStats
 
                     try
                     {
-                        WaitWithCancellation(cancellationToken, pingRate);
+                        WaitWithCancellation(pingRate, cancellationToken);
                     }
                     catch (ArgumentOutOfRangeException) { }
                 }
@@ -500,7 +510,7 @@ namespace GabNetStats
 
                     try
                     {
-                        WaitWithCancellation(cancellationToken, _nicManager.nNICRefresh);
+                        WaitWithCancellation(_nicManager.nNICRefresh, cancellationToken);
                     }
                     catch (ArgumentOutOfRangeException) { }
                 }
@@ -704,7 +714,7 @@ namespace GabNetStats
 
                     try
                     {
-                        WaitWithCancellation(cancellationToken, nDuration);
+                        WaitWithCancellation(nDuration, cancellationToken);
                     }
                     catch (ArgumentOutOfRangeException) { }
                 }

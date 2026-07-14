@@ -26,7 +26,7 @@ namespace GabNetStats
 
         private static NumberFormatInfo nfi = (NumberFormatInfo)CultureInfo.CurrentCulture.NumberFormat.Clone();
 
-        private int counter = 0;
+        private int counter;
         private bool suppressLocationPersistence;
         private bool suppressSettingsPersistence;
 
@@ -85,14 +85,14 @@ namespace GabNetStats
             fReceived = SpeedUtils.ComputeSpeed(NetworkStatsWorker.bytesReceived, ref sReceived, 1);
             fSent     = SpeedUtils.ComputeSpeed(NetworkStatsWorker.bytesSent    , ref sSent    , 1);
 
-            builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawReceptionSpeed, fSpeedReception.ToString(Math.Floor(fSpeedReception) != fSpeedReception ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedReception);
-            builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawEmissionSpeed, fSpeedEmission.ToString(Math.Floor(fSpeedEmission) != fSpeedEmission ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedEmission);
+            builder.AppendFormat(CultureInfo.CurrentCulture, "{0} : \t{1} {2}/s\n", str_RawReceptionSpeed, fSpeedReception.ToString(Math.Floor(fSpeedReception) != fSpeedReception ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedReception);
+            builder.AppendFormat(CultureInfo.CurrentCulture, "{0} : \t{1} {2}/s\n", str_RawEmissionSpeed, fSpeedEmission.ToString(Math.Floor(fSpeedEmission) != fSpeedEmission ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedEmission);
             builder.AppendLine();
-            builder.AppendFormat("{0} : \t{1} {2}/s\n", str_AvgReceptionSpeed, fAvgSpeedReception.ToString(Math.Floor(fAvgSpeedReception) != fAvgSpeedReception ? CultureInfo.CurrentCulture.NumberFormat : nfi), sAvgSpeedReception);
-            builder.AppendFormat("{0} : \t{1} {2}/s\n", str_AvgEmissionSpeed, fAvgSpeedEmission.ToString(Math.Floor(fAvgSpeedEmission) != fAvgSpeedEmission ? CultureInfo.CurrentCulture.NumberFormat : nfi), sAvgSpeedEmission);
+            builder.AppendFormat(CultureInfo.CurrentCulture, "{0} : \t{1} {2}/s\n", str_AvgReceptionSpeed, fAvgSpeedReception.ToString(Math.Floor(fAvgSpeedReception) != fAvgSpeedReception ? CultureInfo.CurrentCulture.NumberFormat : nfi), sAvgSpeedReception);
+            builder.AppendFormat(CultureInfo.CurrentCulture, "{0} : \t{1} {2}/s\n", str_AvgEmissionSpeed, fAvgSpeedEmission.ToString(Math.Floor(fAvgSpeedEmission) != fAvgSpeedEmission ? CultureInfo.CurrentCulture.NumberFormat : nfi), sAvgSpeedEmission);
             builder.AppendLine();
-            builder.AppendFormat("{0} : \t{1} {2} ({3} {4})\n", new Object[] { str_Received, NetworkStatsWorker.bytesReceived.ToString("n", nfi), str_Bytes, fReceived.ToString(Math.Floor(fReceived) != fReceived ? CultureInfo.CurrentCulture.NumberFormat : nfi), sReceived });
-            builder.AppendFormat("{0} : \t{1} {2} ({3} {4})\n", new Object[] { str_Sent, NetworkStatsWorker.bytesSent.ToString("n", nfi), str_Bytes, fSent.ToString(Math.Floor(fSent) != fSent ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSent });
+            builder.AppendFormat(CultureInfo.CurrentCulture, "{0} : \t{1} {2} ({3} {4})\n", new Object[] { str_Received, NetworkStatsWorker.bytesReceived.ToString("n", nfi), str_Bytes, fReceived.ToString(Math.Floor(fReceived) != fReceived ? CultureInfo.CurrentCulture.NumberFormat : nfi), sReceived });
+            builder.AppendFormat(CultureInfo.CurrentCulture, "{0} : \t{1} {2} ({3} {4})\n", new Object[] { str_Sent, NetworkStatsWorker.bytesSent.ToString("n", nfi), str_Bytes, fSent.ToString(Math.Floor(fSent) != fSent ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSent });
 
             lblStatisticsData.Text = builder.ToString();
 

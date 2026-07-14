@@ -44,6 +44,9 @@
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
       <_Parameter1>GabNetStats.Tests</_Parameter1>
     </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Resources.NeutralResourcesLanguageAttribute">
+      <_Parameter1>en</_Parameter1>
+    </AssemblyAttribute>
   </ItemGroup>
   <PropertyGroup>
     <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
