@@ -43,10 +43,16 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+  release:
+    types: [published]
+
+permissions:
+  contents: read
 
 jobs:
 
   build:
+    if: github.event_name != 'release'
 
     strategy:
       matrix:
@@ -97,8 +103,82 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@v6
       with:
-        name: GabNetStats-${{ env.Configuration }}
+        name: GabNetStats-${{ matrix.configuration }}
         path: dist
         overwrite: true
       env:
         Configuration: ${{ matrix.configuration }}
+
+  release:
+    if: github.event_name == 'release'
+    runs-on: windows-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout GabNetStats
+      uses: actions/checkout@v6
+      with:
+        path: GabNetStatsRepo
+        ref: ${{ github.event.release.tag_name }}
+        fetch-depth: 0
+
+    - name: Checkout GabTracker
+      uses: actions/checkout@v6
+      with:
+        repository: gabsoftware/GabTracker
+        path: GabTracker
+        ref: master
+
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 10.0.x
+
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Verify release tag matches project version
+      shell: pwsh
+      run: |
+        [xml]$project = Get-Content GabNetStatsRepo\GabNetStats\GabNetStats.csproj
+        $version = $project.Project.PropertyGroup.Version | Where-Object { $_ } | Select-Object -Last 1
+        $expectedTag = "v$version"
+
+        if ("${{ github.event.release.tag_name }}" -ne $expectedTag) {
+          throw "Release tag '${{ github.event.release.tag_name }}' does not match project version '$version' ($expectedTag)."
+        }
+
+    - name: Build the release
+      run: dotnet build -c Release GabNetStatsRepo\GabNetStats.sln
+
+    - name: Test the release
+      run: dotnet test -c Release GabNetStatsRepo\GabNetStats.sln --no-build
+
+    - name: Package release asset
+      shell: pwsh
+      run: |
+        $tag = "${{ github.event.release.tag_name }}"
+        $source = "GabNetStatsRepo\GabNetStats\bin\Release\net10.0-windows10.0.26100.0"
+        $zip = "GabNetStats-$tag.zip"
+
+        New-Item -ItemType Directory -Force artifacts | Out-Null
+        Compress-Archive -Path "$source\*" -DestinationPath "artifacts\$zip" -Force
+
+        Get-FileHash "artifacts\$zip" -Algorithm SHA256 |
+          ForEach-Object { "$($_.Hash)  $zip" } |
+          Set-Content "artifacts\$zip.sha256"
+
+        @(
+          "GabNetStats release build provenance"
+          "Tag: $tag"
+          "GabNetStats commit: $(git -C GabNetStatsRepo rev-parse HEAD)"
+          "GabTracker commit: $(git -C GabTracker rev-parse HEAD)"
+          "Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+        ) | Set-Content "artifacts\GabNetStats-$tag.provenance.txt"
+
+    - name: Upload assets to GitHub Release
+      shell: pwsh
+      run: gh release upload "${{ github.event.release.tag_name }}" artifacts\* --clobber
+      env:
+        GH_TOKEN: ${{ github.token }}
