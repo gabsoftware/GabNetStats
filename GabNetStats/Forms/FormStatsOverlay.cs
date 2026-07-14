@@ -51,6 +51,7 @@ namespace GabNetStats
             {
                 suppressSettingsPersistence = false;
             }
+            gabTracker1.CurrentValuesNeeded += gabTracker1_CurrentValuesNeeded;
             UpdateTrackerCapacity();
             ApplyHistoryToTracker();
         }
@@ -72,11 +73,6 @@ namespace GabNetStats
             double fSent = 0;
 
             StringBuilder builder = new StringBuilder();
-
-
-            //gabtracker4
-            gabTracker1.Feeds[0].Value = Math.Round(NetworkStatsWorker.lAvgSpeedReception / BYTES_PER_KIBIBYTE, 2);
-            gabTracker1.Feeds[1].Value = Math.Round(NetworkStatsWorker.lAvgSpeedEmission / BYTES_PER_KIBIBYTE, 2);
 
             fSpeedReception = SpeedUtils.ComputeSpeed(NetworkStatsWorker.rawSpeedReception, ref sSpeedReception, 1);
             fSpeedEmission  = SpeedUtils.ComputeSpeed(NetworkStatsWorker.rawSpeedEmission , ref sSpeedEmission , 1);
@@ -107,6 +103,18 @@ namespace GabNetStats
                     this.Hide();
                 }
             }
+        }
+
+        private void gabTracker1_CurrentValuesNeeded(object sender, EventArgs e)
+        {
+            if (gabTracker1 == null || gabTracker1.Feeds.Count < 2)
+            {
+                return;
+            }
+
+            NetworkStatsWorker.SpeedHistorySample sample = NetworkStatsWorker.ConsumePendingGraphAverage();
+            gabTracker1.Feeds[0].Value = Math.Round(sample.DownloadKib, 2);
+            gabTracker1.Feeds[1].Value = Math.Round(sample.UploadKib, 2);
         }
 
         internal void EnsurePreferredLocation()

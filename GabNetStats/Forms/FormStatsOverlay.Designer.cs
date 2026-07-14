@@ -157,6 +157,7 @@
             gabTracker1.Maximum = 56;
             gabTracker1.Name = "gabTracker1";
             gabTracker1.RefreshRate = 500;
+            gabTracker1.ScaleMode = GabTracker.GabTracker.ValueScaleMode.Logarithmic;
             // 
             // FormStatsOverlay
             // 

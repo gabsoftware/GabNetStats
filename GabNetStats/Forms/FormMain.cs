@@ -97,7 +97,7 @@ namespace GabNetStats
                 () => this.PopulateNICs(this.NetworkAdaptersToolStripMenuItem),
                 () => _nicMenuOpen);
 
-            statsWorker.InitializeSpeedSamples();
+            NetworkStatsWorker.InitializeSpeedSamples();
             statsWorker.ApplySettings();
 
             //registers the networkchange event handlers

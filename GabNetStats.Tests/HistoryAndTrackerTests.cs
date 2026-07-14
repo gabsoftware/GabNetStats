@@ -28,6 +28,28 @@ public sealed class HistoryAndTrackerTests
     }
 
     [TestMethod]
+    public void PendingGraphAverageConsumesUndisplayedWorkerSamples()
+    {
+        ClearSpeedHistory();
+        NetworkStatsWorker.InitializeSpeedSamples();
+
+        MethodInfo storeSpeedData = typeof(NetworkStatsWorker).GetMethod(
+            "StoreSpeedData",
+            BindingFlags.NonPublic | BindingFlags.Static)!;
+
+        storeSpeedData.Invoke(null, new object[] { 0L, 0L, 1024L, 2048L, 0L, 0L });
+        storeSpeedData.Invoke(null, new object[] { 0L, 0L, 3072L, 4096L, 0L, 0L });
+
+        NetworkStatsWorker.SpeedHistorySample sample = NetworkStatsWorker.ConsumePendingGraphAverage();
+        NetworkStatsWorker.SpeedHistorySample fallback = NetworkStatsWorker.ConsumePendingGraphAverage();
+
+        Assert.AreEqual(2d, sample.DownloadKib);
+        Assert.AreEqual(3d, sample.UploadKib);
+        Assert.AreEqual(3d, fallback.DownloadKib);
+        Assert.AreEqual(4d, fallback.UploadKib);
+    }
+
+    [TestMethod]
     public void GabTrackerFeedKeepsNewestValuesUpToCapacity()
     {
         using var tracker = new GabTracker.GabTracker
@@ -39,14 +61,10 @@ public sealed class HistoryAndTrackerTests
         var feed = new GabTracker.GabTrackerFeed();
         tracker.Feeds.Add(feed);
 
-        MethodInfo tick = typeof(GabTracker.GabTracker).GetMethod(
-            "internalTimer_Tick",
-            BindingFlags.NonPublic | BindingFlags.Instance)!;
-
         for (int i = 1; i <= 5; i++)
         {
             feed.Value = i;
-            tick.Invoke(tracker, new object?[] { tracker, EventArgs.Empty });
+            tracker.AddCurrentValues();
         }
 
         CollectionAssert.AreEqual(new[] { 3d, 4d, 5d }, feed.Data.ToArray());
@@ -66,6 +84,28 @@ public sealed class HistoryAndTrackerTests
 
         Assert.IsFalse(tracker.AutoStart);
         Assert.IsFalse(timer.Enabled);
+    }
+
+    [TestMethod]
+    public void AdaptiveAverageSmoothsSmallChanges()
+    {
+        long average = NetworkStatsWorker.ComputeAdaptiveAverage(1_000, 1_050);
+
+        Assert.IsTrue(average > 1_000);
+        Assert.IsTrue(average < 1_050);
+    }
+
+    [TestMethod]
+    public void AdaptiveAverageFollowsLargeChangesQuickly()
+    {
+        long risingAverage = NetworkStatsWorker.ComputeAdaptiveAverage(1_000, 10_000);
+        long fallingAverage = NetworkStatsWorker.ComputeAdaptiveAverage(10_000, 0);
+
+        Assert.IsTrue(risingAverage > 2_000);
+        Assert.IsTrue(risingAverage < 3_500);
+        Assert.IsTrue(fallingAverage > 6_000);
+        Assert.IsTrue(fallingAverage < 8_000);
+        Assert.IsTrue(10_000 - fallingAverage > risingAverage - 1_000);
     }
 
     private static void ClearSpeedHistory()

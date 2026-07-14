@@ -56,14 +56,9 @@ namespace GabNetStats
         //
         //  Speed samples
         //
-        private const int avgSpeedNbItems = 50;
-        private readonly object speedSamplesLock = new object();
-        private readonly long[] receptionSamples = new long[avgSpeedNbItems];
-        private readonly long[] emissionSamples  = new long[avgSpeedNbItems];
-        private int receptionSampleCount = avgSpeedNbItems;
-        private int emissionSampleCount  = avgSpeedNbItems;
-        private int receptionSampleIndex;
-        private int emissionSampleIndex;
+        private const double AverageBaseWeight     = 0.04d;
+        private const double AverageMaxRiseWeight  = 0.18d;
+        private const double AverageMaxFallWeight  = 0.30d;
 
         //
         //  Constructor
@@ -228,17 +223,18 @@ namespace GabNetStats
             _trayIconManager.ApplyIconSet();
         }
 
-        internal void InitializeSpeedSamples()
+        internal static void InitializeSpeedSamples()
         {
-            lock (speedSamplesLock)
-            {
-                receptionSampleCount = avgSpeedNbItems;
-                emissionSampleCount  = avgSpeedNbItems;
-                receptionSampleIndex = 0;
-                emissionSampleIndex  = 0;
+            rawSpeedReception  = 0;
+            rawSpeedEmission   = 0;
+            lAvgSpeedReception = 0;
+            lAvgSpeedEmission  = 0;
 
-                Array.Clear(receptionSamples, 0, receptionSamples.Length);
-                Array.Clear(emissionSamples, 0, emissionSamples.Length);
+            lock (pendingGraphSamplesLock)
+            {
+                pendingGraphDownloadTotal = 0;
+                pendingGraphUploadTotal = 0;
+                pendingGraphSampleCount = 0;
             }
         }
 
@@ -260,6 +256,10 @@ namespace GabNetStats
         private const int MaxHistorySamples = 2048;
         private static readonly object historyLock = new object();
         private static readonly Queue<SpeedHistorySample> history = new Queue<SpeedHistorySample>(MaxHistorySamples);
+        private static readonly object pendingGraphSamplesLock = new object();
+        private static long pendingGraphDownloadTotal;
+        private static long pendingGraphUploadTotal;
+        private static int pendingGraphSampleCount;
 
         internal static long rawSpeedReception  { get; private set; }
         internal static long rawSpeedEmission   { get; private set; }
@@ -277,6 +277,7 @@ namespace GabNetStats
             bytesReceived      = rx;
             bytesSent          = tx;
             StoreHistorySample(avgRx, avgTx);
+            StorePendingGraphSample(avgRx, avgTx);
         }
 
         private static void StoreHistorySample(long avgDownloadBytesPerSecond, long avgUploadBytesPerSecond)
@@ -323,55 +324,57 @@ namespace GabNetStats
         //
         //  Static helpers
         //
-        private static void StoreSample(long value, long[] buffer, ref int index, ref int count)
+        internal static long ComputeAdaptiveAverage(long currentAverage, long sample)
         {
-            buffer[index] = value;
-            index++;
-            if (index >= buffer.Length)
+            if (currentAverage <= 0)
             {
-                index = 0;
+                return Math.Max(0, sample);
             }
 
-            if (count < buffer.Length)
+            if (sample < 0)
             {
-                count++;
+                sample = 0;
+            }
+
+            long scale = Math.Max(Math.Max(currentAverage, sample), 1);
+            double distance = Math.Abs(sample - currentAverage) / (double)scale;
+            double adaptiveDistance = distance * distance;
+            double maxWeight = sample > currentAverage ? AverageMaxRiseWeight : AverageMaxFallWeight;
+            double weight = AverageBaseWeight + ((maxWeight - AverageBaseWeight) * adaptiveDistance);
+
+            return (long)Math.Round((currentAverage * (1d - weight)) + (sample * weight));
+        }
+
+        private static void StorePendingGraphSample(long avgDownloadBytesPerSecond, long avgUploadBytesPerSecond)
+        {
+            lock (pendingGraphSamplesLock)
+            {
+                pendingGraphDownloadTotal += Math.Max(0, avgDownloadBytesPerSecond);
+                pendingGraphUploadTotal += Math.Max(0, avgUploadBytesPerSecond);
+                pendingGraphSampleCount++;
             }
         }
 
-        private static long ComputeAverageWithoutExtremes(long[] buffer, int count)
+        internal static SpeedHistorySample ConsumePendingGraphAverage()
         {
-            if (count == 0)
+            lock (pendingGraphSamplesLock)
             {
-                return 0;
-            }
-
-            long min = long.MaxValue;
-            long max = long.MinValue;
-            long total = 0;
-
-            for (int i = 0; i < count; i++)
-            {
-                long value = buffer[i];
-                if (value < min)
+                if (pendingGraphSampleCount == 0)
                 {
-                    min = value;
+                    return new SpeedHistorySample(
+                        Math.Max(0d, lAvgSpeedReception / 1024d),
+                        Math.Max(0d, lAvgSpeedEmission / 1024d));
                 }
-                if (value > max)
-                {
-                    max = value;
-                }
-                total += value;
+
+                double downloadKib = pendingGraphDownloadTotal / (double)pendingGraphSampleCount / 1024d;
+                double uploadKib = pendingGraphUploadTotal / (double)pendingGraphSampleCount / 1024d;
+
+                pendingGraphDownloadTotal = 0;
+                pendingGraphUploadTotal = 0;
+                pendingGraphSampleCount = 0;
+
+                return new SpeedHistorySample(downloadKib, uploadKib);
             }
-
-            int divisor = (count > 2 ? count : 3) - 2;
-            total -= min;
-
-            if (count >= 2)
-            {
-                total -= max;
-            }
-
-            return total / divisor;
         }
 
         internal static long ComputeAutoBandwidthBytesPerSecond(IEnumerable<long> linkSpeedsBitsPerSecond)
@@ -793,14 +796,8 @@ namespace GabNetStats
 
                     skip:
 
-                    lock (speedSamplesLock)
-                    {
-                        StoreSample(rawSpeedReception, receptionSamples, ref receptionSampleIndex, ref receptionSampleCount);
-                        StoreSample(rawSpeedEmission, emissionSamples, ref emissionSampleIndex, ref emissionSampleCount);
-
-                        lAvgSpeedReception = ComputeAverageWithoutExtremes(receptionSamples, receptionSampleCount);
-                        lAvgSpeedEmission  = ComputeAverageWithoutExtremes(emissionSamples, emissionSampleCount);
-                    }
+                    lAvgSpeedReception = ComputeAdaptiveAverage(lAvgSpeedReception, rawSpeedReception);
+                    lAvgSpeedEmission  = ComputeAdaptiveAverage(lAvgSpeedEmission, rawSpeedEmission);
 
                     StoreSpeedData(rawSpeedReception, rawSpeedEmission, lAvgSpeedReception, lAvgSpeedEmission, bytesReceived, bytesSent);
 
