@@ -9,13 +9,20 @@ namespace GabNetStats
         private const string RegistryKeyPath = @"Software\Microsoft\Windows\CurrentVersion\Run";
         private const string AppName         = "GabNetStats";
 
-        internal static void SetStartup(bool enable)
+        internal static bool TrySetStartup(bool enable, out string errorMessage)
         {
-            RegistryKey hStartKey = Registry.CurrentUser.OpenSubKey(RegistryKeyPath, true);
-            if (hStartKey != null)
+            errorMessage = null;
+
+            try
             {
-                try
+                using (RegistryKey hStartKey = Registry.CurrentUser.OpenSubKey(RegistryKeyPath, true))
                 {
+                    if (hStartKey == null)
+                    {
+                        errorMessage = "Unable to open the Windows startup registry key.";
+                        return false;
+                    }
+
                     if (enable)
                     {
                         String strPath = Application.ExecutablePath;
@@ -25,15 +32,16 @@ namespace GabNetStats
                     }
                     else
                     {
-                        hStartKey.DeleteValue(AppName);
+                        hStartKey.DeleteValue(AppName, false);
                     }
                 }
-                catch
-                {
-                    //Catching exceptions is for communists
-                }
 
-                hStartKey.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.Message;
+                return false;
             }
         }
     }

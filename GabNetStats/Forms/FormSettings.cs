@@ -349,11 +349,13 @@ namespace GabNetStats
                     MessageBox.Show(e1.Message);
                 }
             }
-
-
-
-
-            StartupManager.SetStartup(checkBoxStartup.Checked);
+            bool startupChanged = checkBoxStartup.Checked != Settings.Default.LoadOnStartup;
+            if (startupChanged && !StartupManager.TrySetStartup(checkBoxStartup.Checked, out string startupErrorMessage))
+            {
+                checkBoxStartup.Checked = Settings.Default.LoadOnStartup;
+                MessageBox.Show("Unable to update startup setting." + Environment.NewLine + startupErrorMessage, "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             Settings.Default.IconSet = cboIconSet.SelectedItem?.ToString() ?? TrayIconManager.DEFAULT_ICON_SET;
 
