@@ -78,4 +78,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>设置</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>自动带宽（多色图标）</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>使用最快的已启用网络接口来估算多色托盘图标的带宽级别。</value>
+  </data>
 </root>

@@ -78,4 +78,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>設定</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>自動頻寬（多色圖示）</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>使用最快的已啟用網路介面來估算多色通知區圖示的頻寬級別。</value>
+  </data>
 </root>

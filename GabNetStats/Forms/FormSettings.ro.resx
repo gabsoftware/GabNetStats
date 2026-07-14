@@ -78,4 +78,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Setări</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Lățime de bandă automată (pictograme multicolore)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Folosește cea mai rapidă interfață de rețea activată pentru a estima nivelurile de lățime de bandă ale pictogramelor multicolore din zona de notificare.</value>
+  </data>
 </root>

@@ -78,4 +78,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Nastavení</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Automatická šířka pásma (vícebarevné ikony)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Použije nejrychlejší povolené síťové rozhraní k odhadu úrovní šířky pásma pro vícebarevné ikony v oznamovací oblasti.</value>
+  </data>
 </root>

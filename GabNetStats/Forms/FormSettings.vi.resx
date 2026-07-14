@@ -78,4 +78,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Cài đặt</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Băng thông tự động (biểu tượng nhiều màu)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Dùng giao diện mạng đã bật nhanh nhất để ước tính mức băng thông cho biểu tượng khay nhiều màu.</value>
+  </data>
 </root>

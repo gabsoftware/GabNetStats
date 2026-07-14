@@ -78,4 +78,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Beállítások</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Automatikus sávszélesség (többszínű ikonok)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>A leggyorsabb engedélyezett hálózati csatoló alapján becsüli meg a többszínű tálcaikonok sávszélességszintjeit.</value>
+  </data>
 </root>

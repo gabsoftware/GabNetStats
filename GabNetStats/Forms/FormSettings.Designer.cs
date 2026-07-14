@@ -31,6 +31,8 @@ namespace GabNetStats
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettings));
+            components = new System.ComponentModel.Container();
+            toolTipSettings = new System.Windows.Forms.ToolTip(components);
             buttonOK = new System.Windows.Forms.Button();
             buttonCancel = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
@@ -38,6 +40,7 @@ namespace GabNetStats
             txtDownload = new System.Windows.Forms.TextBox();
             txtUpload = new System.Windows.Forms.TextBox();
             groupBox1 = new System.Windows.Forms.GroupBox();
+            radioAutoBandwidth = new System.Windows.Forms.RadioButton();
             btnRefreshIconSets = new System.Windows.Forms.Button();
             label6 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
@@ -114,6 +117,7 @@ namespace GabNetStats
             // groupBox1
             // 
             resources.ApplyResources(groupBox1, "groupBox1");
+            groupBox1.Controls.Add(radioAutoBandwidth);
             groupBox1.Controls.Add(btnRefreshIconSets);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
@@ -123,6 +127,14 @@ namespace GabNetStats
             groupBox1.Controls.Add(radioCustomSpeed);
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
+            // 
+            // radioAutoBandwidth
+            // 
+            resources.ApplyResources(radioAutoBandwidth, "radioAutoBandwidth");
+            radioAutoBandwidth.Name = "radioAutoBandwidth";
+            toolTipSettings.SetToolTip(radioAutoBandwidth, resources.GetString("radioAutoBandwidth.ToolTipText"));
+            radioAutoBandwidth.UseVisualStyleBackColor = true;
+            radioAutoBandwidth.CheckedChanged += radioAutoBandwidth_CheckedChanged;
             // 
             // btnRefreshIconSets
             // 
@@ -404,5 +416,7 @@ namespace GabNetStats
         private System.Windows.Forms.ComboBox cbLanguage;
         private System.Windows.Forms.Label lblLanguage;
         private System.Windows.Forms.CheckBox chkShowHiddenInterfaces;
+        private System.Windows.Forms.RadioButton radioAutoBandwidth;
+        private System.Windows.Forms.ToolTip toolTipSettings;
     }
 }

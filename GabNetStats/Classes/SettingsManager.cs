@@ -76,6 +76,32 @@ namespace GabNetStats
             {
                 Settings.Default.BandwidthUpload = DEFAULT_BANDWIDTH_BPS;
             }
+
+            NormalizeBandwidthVisualMode();
+        }
+
+        private static void NormalizeBandwidthVisualMode()
+        {
+            bool custom = Settings.Default.BandwidthVisualsCustom;
+            bool auto = Settings.Default.BandwidthVisualsAuto;
+
+            if (custom)
+            {
+                Settings.Default.BandwidthVisualsDefault = false;
+                Settings.Default.BandwidthVisualsAuto = false;
+                return;
+            }
+
+            if (auto)
+            {
+                Settings.Default.BandwidthVisualsDefault = false;
+                Settings.Default.BandwidthVisualsCustom = false;
+                return;
+            }
+
+            Settings.Default.BandwidthVisualsDefault = true;
+            Settings.Default.BandwidthVisualsCustom = false;
+            Settings.Default.BandwidthVisualsAuto = false;
         }
     }
 }

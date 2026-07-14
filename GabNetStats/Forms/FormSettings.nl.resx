@@ -181,4 +181,10 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Auto-ping</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Automatische bandbreedte (meerkleurige pictogrammen)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Gebruikt de snelste ingeschakelde netwerkinterface om bandbreedteniveaus voor meerkleurige systeemvakpictogrammen te schatten.</value>
+  </data>
 </root>

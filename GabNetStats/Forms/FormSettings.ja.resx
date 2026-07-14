@@ -186,4 +186,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>設定</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>自動帯域幅 (マルチカラー アイコン)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>有効なネットワーク インターフェイスのうち最速のものを使って、マルチカラーのトレイ アイコンの帯域幅レベルを推定します。</value>
+  </data>
 </root>

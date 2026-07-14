@@ -78,4 +78,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Ustawienia</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Automatyczna przepustowość (wielokolorowe ikony)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Używa najszybszego włączonego interfejsu sieciowego do oszacowania poziomów przepustowości dla wielokolorowych ikon zasobnika.</value>
+  </data>
 </root>

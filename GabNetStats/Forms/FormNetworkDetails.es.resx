@@ -689,9 +689,6 @@
   <data name="txtDhcpScopeName.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 23</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 186</value>
-  </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 15</value>
   </data>

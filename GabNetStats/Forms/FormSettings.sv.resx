@@ -175,4 +175,10 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Auto-ping</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Automatisk bandbredd (flerfärgade ikoner)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Använder det snabbaste aktiverade nätverksgränssnittet för att uppskatta bandbreddsnivåer för flerfärgade meddelandefältsikoner.</value>
+  </data>
 </root>

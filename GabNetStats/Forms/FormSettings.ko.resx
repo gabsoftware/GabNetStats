@@ -78,4 +78,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>설정</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>자동 대역폭 (다중 색상 아이콘)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>활성화된 가장 빠른 네트워크 인터페이스를 사용하여 다중 색상 트레이 아이콘의 대역폭 수준을 추정합니다.</value>
+  </data>
 </root>

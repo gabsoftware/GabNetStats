@@ -78,4 +78,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Ayarlar</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Otomatik bant genişliği (çok renkli simgeler)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Çok renkli tepsi simgelerinin bant genişliği düzeylerini tahmin etmek için en hızlı etkin ağ arabirimini kullanır.</value>
+  </data>
 </root>

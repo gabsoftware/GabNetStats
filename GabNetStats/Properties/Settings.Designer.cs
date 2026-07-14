@@ -70,6 +70,18 @@ namespace GabNetStats.Properties {
                 this["BandwidthVisualsCustom"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool BandwidthVisualsAuto {
+            get {
+                return ((bool)(this["BandwidthVisualsAuto"]));
+            }
+            set {
+                this["BandwidthVisualsAuto"] = value;
+            }
+        }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

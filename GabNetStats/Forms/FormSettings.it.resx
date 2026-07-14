@@ -178,4 +178,10 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Ping automatico</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Banda automatica (icone multicolore)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Usa l’interfaccia di rete abilitata più veloce per stimare i livelli di banda delle icone multicolore nell’area di notifica.</value>
+  </data>
 </root>

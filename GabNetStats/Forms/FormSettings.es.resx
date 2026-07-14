@@ -17,7 +17,16 @@
     <resheader name="version">2.0</resheader>
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-        
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
     There are any number of "resheader" rows that contain simple
     name/value pairs.
 
@@ -111,73 +120,113 @@
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 15</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Intervalo (ms):</value>
+  </data>
+  <data name="radioCustomSpeed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 19</value>
   </data>
   <data name="radioCustomSpeed.Text" xml:space="preserve">
     <value>Ancho de banda manual</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Efectos visuales del icono de red</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 15</value>
+  </data>
   <data name="label6.Text" xml:space="preserve">
     <value>(debe ser una carpeta dentro de la subcarpeta "icons")</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 15</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Iconos:</value>
   </data>
+  <data name="grpBandwidthPreferences.Text" xml:space="preserve">
+    <value>Ancho de banda</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 15</value>
+  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Unidad preferida</value>
   </data>
-  <data name="rbBytes.Text" xml:space="preserve">
-    <value>Bytes/s</value>
-  </data>
-  <data name="rbBits.Text" xml:space="preserve">
-    <value>bits/s</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 15</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Descarga</value>
   </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 15</value>
+  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Subida</value>
   </data>
-  <data name="grpBandwidthPreferences.Text" xml:space="preserve">
-    <value>Ancho de banda</value>
+  <data name="radioDefault.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 19</value>
   </data>
   <data name="radioDefault.Text" xml:space="preserve">
     <value>Predet. (azul)</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Efectos visuales del icono de red</value>
+  <data name="chkSettingsAutoPingNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 19</value>
   </data>
   <data name="chkSettingsAutoPingNotification.Text" xml:space="preserve">
     <value>Mostrar notificaciones</value>
   </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>ms</value>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 15</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Enviar un ping cada</value>
   </data>
+  <data name="chkSettingsAutoPingEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 19</value>
+  </data>
   <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
     <value>Activar auto-ping a este host:</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Auto-ping</value>
+  <data name="checkBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 19</value>
   </data>
   <data name="checkBoxStartup.Text" xml:space="preserve">
     <value>Iniciar con Windows</value>
   </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Varios</value>
+  </data>
+  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 15</value>
+  </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Idioma:</value>
   </data>
-  <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
-    <value>Mostrar interfaces desconectadas</value>
+  <data name="chkShowHiddenInterfaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 19</value>
   </data>
   <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
     <value>Mostrar interfaces ocultas/virtuales</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Varios</value>
+  <data name="chkShowDisconnectedInterfaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 19</value>
+  </data>
+  <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
+    <value>Mostrar interfaces desconectadas</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Configuración</value>
+  </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Ancho de banda automático (iconos multicolor)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Usa la interfaz de red habilitada más rápida para estimar los niveles de ancho de banda de los iconos multicolor de la bandeja.</value>
   </data>
 </root>

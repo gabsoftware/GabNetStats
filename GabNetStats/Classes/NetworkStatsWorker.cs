@@ -40,7 +40,14 @@ namespace GabNetStats
         //
         //  Settings
         //
-        internal bool customBandwidth;
+        internal BandwidthVisualMode bandwidthVisualMode;
+
+        internal enum BandwidthVisualMode
+        {
+            Default,
+            Custom,
+            Auto
+        }
 
         internal const int BlinkDurationMinimum = 50;
         internal int nDuration = BlinkDurationMinimum;
@@ -205,18 +212,8 @@ namespace GabNetStats
             SettingsManager.ValidateSettings();
             RefreshBlinkDurationFromSettings();
 
-            _trayIconManager.bandwidthDownloadLvl5 = Settings.Default.BandwidthDownload * Settings.Default.BandwidthDownloadMultiplier / Settings.Default.BandwidthUnit;
-            _trayIconManager.bandwidthUploadLvl5   = Settings.Default.BandwidthUpload   * Settings.Default.BandwidthUploadMultiplier   / Settings.Default.BandwidthUnit;
-            _trayIconManager.bandwidthDownloadLvl4 = _trayIconManager.bandwidthDownloadLvl5 * 4 / 5;
-            _trayIconManager.bandwidthDownloadLvl3 = _trayIconManager.bandwidthDownloadLvl5 * 3 / 5;
-            _trayIconManager.bandwidthDownloadLvl2 = _trayIconManager.bandwidthDownloadLvl5 * 2 / 5;
-            _trayIconManager.bandwidthDownloadLvl1 = _trayIconManager.bandwidthDownloadLvl5     / 5;
-            _trayIconManager.bandwidthUploadLvl4   = _trayIconManager.bandwidthUploadLvl5   * 4 / 5;
-            _trayIconManager.bandwidthUploadLvl3   = _trayIconManager.bandwidthUploadLvl5   * 3 / 5;
-            _trayIconManager.bandwidthUploadLvl2   = _trayIconManager.bandwidthUploadLvl5   * 2 / 5;
-            _trayIconManager.bandwidthUploadLvl1   = _trayIconManager.bandwidthUploadLvl5       / 5;
-
-            customBandwidth = Settings.Default.BandwidthVisualsCustom == true;
+            ApplyCustomBandwidthThresholds();
+            bandwidthVisualMode = GetBandwidthVisualModeFromSettings();
             NetworkInterfaceManager.RefreshEnabledInterfacesCache();
 
             if (!Settings.Default.AutoPingEnabled)
@@ -375,6 +372,76 @@ namespace GabNetStats
             }
 
             return total / divisor;
+        }
+
+        internal static long ComputeAutoBandwidthBytesPerSecond(IEnumerable<long> linkSpeedsBitsPerSecond)
+        {
+            long fastestBitsPerSecond = 0;
+
+            if (linkSpeedsBitsPerSecond != null)
+            {
+                foreach (long linkSpeedBitsPerSecond in linkSpeedsBitsPerSecond)
+                {
+                    if (linkSpeedBitsPerSecond > fastestBitsPerSecond)
+                    {
+                        fastestBitsPerSecond = linkSpeedBitsPerSecond;
+                    }
+                }
+            }
+
+            return ComputeAutoBandwidthBytesPerSecond(fastestBitsPerSecond);
+        }
+
+        internal static long ComputeAutoBandwidthBytesPerSecond(long fastestBitsPerSecond)
+        {
+            if (fastestBitsPerSecond <= 0)
+            {
+                return SettingsManager.DEFAULT_BANDWIDTH_BPS;
+            }
+
+            long fastestBytesPerSecond = fastestBitsPerSecond / 8;
+            return fastestBytesPerSecond > 0 ? fastestBytesPerSecond : SettingsManager.DEFAULT_BANDWIDTH_BPS;
+        }
+
+        private static BandwidthVisualMode GetBandwidthVisualModeFromSettings()
+        {
+            if (Settings.Default.BandwidthVisualsCustom)
+            {
+                return BandwidthVisualMode.Custom;
+            }
+
+            if (Settings.Default.BandwidthVisualsAuto)
+            {
+                return BandwidthVisualMode.Auto;
+            }
+
+            return BandwidthVisualMode.Default;
+        }
+
+        private void ApplyCustomBandwidthThresholds()
+        {
+            SetBandwidthThresholds(
+                Settings.Default.BandwidthDownload * Settings.Default.BandwidthDownloadMultiplier / Settings.Default.BandwidthUnit,
+                Settings.Default.BandwidthUpload   * Settings.Default.BandwidthUploadMultiplier   / Settings.Default.BandwidthUnit);
+        }
+
+        private void ApplyAutoBandwidthThresholds(long maxBandwidthBytesPerSecond)
+        {
+            SetBandwidthThresholds(maxBandwidthBytesPerSecond, maxBandwidthBytesPerSecond);
+        }
+
+        private void SetBandwidthThresholds(long downloadMaxBytesPerSecond, long uploadMaxBytesPerSecond)
+        {
+            _trayIconManager.bandwidthDownloadLvl5 = downloadMaxBytesPerSecond;
+            _trayIconManager.bandwidthUploadLvl5   = uploadMaxBytesPerSecond;
+            _trayIconManager.bandwidthDownloadLvl4 = _trayIconManager.bandwidthDownloadLvl5 * 4 / 5;
+            _trayIconManager.bandwidthDownloadLvl3 = _trayIconManager.bandwidthDownloadLvl5 * 3 / 5;
+            _trayIconManager.bandwidthDownloadLvl2 = _trayIconManager.bandwidthDownloadLvl5 * 2 / 5;
+            _trayIconManager.bandwidthDownloadLvl1 = _trayIconManager.bandwidthDownloadLvl5     / 5;
+            _trayIconManager.bandwidthUploadLvl4   = _trayIconManager.bandwidthUploadLvl5   * 4 / 5;
+            _trayIconManager.bandwidthUploadLvl3   = _trayIconManager.bandwidthUploadLvl5   * 3 / 5;
+            _trayIconManager.bandwidthUploadLvl2   = _trayIconManager.bandwidthUploadLvl5   * 2 / 5;
+            _trayIconManager.bandwidthUploadLvl1   = _trayIconManager.bandwidthUploadLvl5       / 5;
         }
 
         private static void TryJoinThread(Thread thread)
@@ -544,6 +611,7 @@ namespace GabNetStats
             int enabledInterfaceHash = 0;
             int previousEnabledInterfaceCount = -1;
             int previousEnabledInterfaceHash = 0;
+            long fastestEnabledLinkSpeedBitsPerSecond = 0;
 
             IPInterfaceStatistics ipstats = null;
             Stopwatch sampleStopwatch = Stopwatch.StartNew();
@@ -581,6 +649,7 @@ namespace GabNetStats
                     lock (_nicManager.selectedInterfaces)
                     {
                         enabledInterfaceCount = 0;
+                        fastestEnabledLinkSpeedBitsPerSecond = 0;
                         // Seed and multiplier are conventional small primes for a simple rolling hash.
                         enabledInterfaceHash = 17;
 
@@ -594,6 +663,18 @@ namespace GabNetStats
                             enabledInterfaceCount++;
                             // Fold each enabled MAC into an order-sensitive fingerprint for baseline reset detection.
                             enabledInterfaceHash = enabledInterfaceHash * 31 + StringComparer.OrdinalIgnoreCase.GetHashCode(tracked.MacAddress ?? String.Empty);
+
+                            try
+                            {
+                                long linkSpeedBitsPerSecond = tracked.Interface.Speed;
+                                if (linkSpeedBitsPerSecond > fastestEnabledLinkSpeedBitsPerSecond)
+                                {
+                                    fastestEnabledLinkSpeedBitsPerSecond = linkSpeedBitsPerSecond;
+                                }
+                            }
+                            catch (Exception)
+                            {
+                            }
 
                             try
                             {
@@ -618,6 +699,11 @@ namespace GabNetStats
                         previousEnabledInterfaceHash = enabledInterfaceHash;
                         oldbytesReceived = bytesReceived;
                         oldbytesSent = bytesSent;
+                    }
+
+                    if (bandwidthVisualMode == BandwidthVisualMode.Auto)
+                    {
+                        ApplyAutoBandwidthThresholds(ComputeAutoBandwidthBytesPerSecond(fastestEnabledLinkSpeedBitsPerSecond));
                     }
 
                     long deltaReceived = bytesReceived - oldbytesReceived;
@@ -663,7 +749,7 @@ namespace GabNetStats
                     if (hasDownload && hasUpload)
                     {
                         nCounter = 0;
-                        if (customBandwidth)
+                        if (bandwidthVisualMode != BandwidthVisualMode.Default)
                         {
                             int dl = TrayIconManager.GetSpeedLevel(rawSpeedReception, _trayIconManager.bandwidthDownloadLvl1, _trayIconManager.bandwidthDownloadLvl2, _trayIconManager.bandwidthDownloadLvl3, _trayIconManager.bandwidthDownloadLvl4);
                             int ul = TrayIconManager.GetSpeedLevel(rawSpeedEmission,  _trayIconManager.bandwidthUploadLvl1,   _trayIconManager.bandwidthUploadLvl2,  _trayIconManager.bandwidthUploadLvl3,  _trayIconManager.bandwidthUploadLvl4);
@@ -677,13 +763,13 @@ namespace GabNetStats
                     else if (hasDownload && !hasUpload)
                     {
                         nCounter = 0;
-                        int dl = customBandwidth ? TrayIconManager.GetSpeedLevel(rawSpeedReception, _trayIconManager.bandwidthDownloadLvl1, _trayIconManager.bandwidthDownloadLvl2, _trayIconManager.bandwidthDownloadLvl3, _trayIconManager.bandwidthDownloadLvl4) : 0;
+                        int dl = bandwidthVisualMode != BandwidthVisualMode.Default ? TrayIconManager.GetSpeedLevel(rawSpeedReception, _trayIconManager.bandwidthDownloadLvl1, _trayIconManager.bandwidthDownloadLvl2, _trayIconManager.bandwidthDownloadLvl3, _trayIconManager.bandwidthDownloadLvl4) : 0;
                         _trayIconManager.SetActivityIcon(_trayIconManager.iconsReceive[dl]);
                     }
                     else if (!hasDownload && hasUpload)
                     {
                         nCounter = 0;
-                        int ul = customBandwidth ? TrayIconManager.GetSpeedLevel(rawSpeedEmission, _trayIconManager.bandwidthUploadLvl1, _trayIconManager.bandwidthUploadLvl2, _trayIconManager.bandwidthUploadLvl3, _trayIconManager.bandwidthUploadLvl4) : 0;
+                        int ul = bandwidthVisualMode != BandwidthVisualMode.Default ? TrayIconManager.GetSpeedLevel(rawSpeedEmission, _trayIconManager.bandwidthUploadLvl1, _trayIconManager.bandwidthUploadLvl2, _trayIconManager.bandwidthUploadLvl3, _trayIconManager.bandwidthUploadLvl4) : 0;
                         _trayIconManager.SetActivityIcon(_trayIconManager.iconsSend[ul]);
                     }
                     else

@@ -14,6 +14,9 @@
     <Setting Name="BandwidthVisualsCustom" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="BandwidthVisualsAuto" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
     <Setting Name="BandwidthDownload" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">12500000</Value>
     </Setting>

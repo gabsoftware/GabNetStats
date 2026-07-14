@@ -175,4 +175,10 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Auto-Ping</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Automatische Bandbreite (mehrfarbige Symbole)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Verwendet die schnellste aktivierte Netzwerkschnittstelle, um Bandbreitenstufen für mehrfarbige Taskleistensymbole zu schätzen.</value>
+  </data>
 </root>

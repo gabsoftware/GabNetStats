@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
     Microsoft ResX Schema
@@ -140,10 +140,10 @@
     <value>Визуальные эффекты значка сети</value>
   </data>
   <data name="btnRefreshIconSets.Location" type="System.Drawing.Point, System.Drawing">
-    <value>239, 54</value>
+    <value>228, 40</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>286, 58</value>
+    <value>279, 44</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 15</value>
@@ -158,7 +158,7 @@
     <value>Набор иконок:</value>
   </data>
   <data name="cboIconSet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>127, 55</value>
+    <value>127, 41</value>
   </data>
   <data name="grpBandwidthPreferences.Text" xml:space="preserve">
     <value>Настройки пропускной способности</value>
@@ -256,6 +256,9 @@
   <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
     <value>Включить авто-пинг по адресу:</value>
   </data>
+  <data name="checkBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 19</value>
+  </data>
   <data name="checkBoxStartup.Text" xml:space="preserve">
     <value>Запускать при старте Windows</value>
   </data>
@@ -268,16 +271,25 @@
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Язык:</value>
   </data>
+  <data name="chkShowHiddenInterfaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 19</value>
+  </data>
+  <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
+    <value>Показывать скрытые/виртуальные интерфейсы</value>
+  </data>
   <data name="chkShowDisconnectedInterfaces.Size" type="System.Drawing.Size, System.Drawing">
     <value>243, 19</value>
   </data>
   <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
     <value>Показывать отключённые интерфейсы</value>
   </data>
-  <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
-    <value>Показывать скрытые/виртуальные интерфейсы</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Настройки</value>
+  </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Автоматическая пропускная способность (многоцветные значки)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Использует самый быстрый включенный сетевой интерфейс для оценки уровней пропускной способности многоцветных значков в области уведомлений.</value>
   </data>
 </root>

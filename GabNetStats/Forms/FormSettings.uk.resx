@@ -187,4 +187,10 @@
   <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
     <value>Показувати приховані/віртуальні інтерфейси</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Автоматична пропускна здатність (багатоколірні піктограми)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Використовує найшвидший увімкнений мережевий інтерфейс, щоб оцінити рівні пропускної здатності для багатоколірних піктограм у ділянці сповіщень.</value>
+  </data>
 </root>

@@ -187,6 +187,7 @@ namespace GabNetStats
 
             radioDefault.Checked = Settings.Default.BandwidthVisualsDefault;
             radioCustomSpeed.Checked = Settings.Default.BandwidthVisualsCustom;
+            radioAutoBandwidth.Checked = Settings.Default.BandwidthVisualsAuto;
 
             //label2.Enabled = radioCustomSpeed.Checked;
             //label3.Enabled = radioCustomSpeed.Checked;
@@ -362,6 +363,7 @@ namespace GabNetStats
 
             Settings.Default.BandwidthVisualsDefault = radioDefault.Checked;
             Settings.Default.BandwidthVisualsCustom = radioCustomSpeed.Checked;
+            Settings.Default.BandwidthVisualsAuto = radioAutoBandwidth.Checked;
             Settings.Default.LoadOnStartup = checkBoxStartup.Checked;
 
             Settings.Default.Save();
@@ -382,6 +384,12 @@ namespace GabNetStats
             Settings.Default.BandwidthVisualsCustom = radioCustomSpeed.Checked;
         }
 
+        private void radioAutoBandwidth_CheckedChanged(object sender, EventArgs e)
+        {
+            grpBandwidthPreferences.Enabled = radioCustomSpeed.Checked;
+            Settings.Default.BandwidthVisualsAuto = radioAutoBandwidth.Checked;
+        }
+
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Settings.Default.Reload();
@@ -390,6 +398,7 @@ namespace GabNetStats
         private void radioDefault_CheckedChanged(object sender, EventArgs e)
         {
             Settings.Default.BandwidthVisualsDefault = radioDefault.Checked;
+            grpBandwidthPreferences.Enabled = radioCustomSpeed.Checked;
         }
 
         private void rbBits_CheckedChanged(object sender, EventArgs e)

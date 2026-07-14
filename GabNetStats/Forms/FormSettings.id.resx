@@ -78,4 +78,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Pengaturan</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Bandwidth otomatis (ikon multicolor)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Menggunakan antarmuka jaringan aktif tercepat untuk memperkirakan level bandwidth ikon baki multicolor.</value>
+  </data>
 </root>

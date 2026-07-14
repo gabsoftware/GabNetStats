@@ -178,4 +178,10 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Auto-ping</value>
   </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Largura de banda automática (ícones multicolor)</value>
+  </data>
+  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
+    <value>Usa a interface de rede ativada mais rápida para estimar os níveis de largura de banda dos ícones multicolor da bandeja.</value>
+  </data>
 </root>
