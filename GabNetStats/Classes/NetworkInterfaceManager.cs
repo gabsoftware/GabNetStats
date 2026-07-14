@@ -69,21 +69,37 @@ namespace GabNetStats
         //
         //  Static methods
         //
-        internal static void RefreshEnabledInterfacesCache()
+        private static HashSet<string> ParseMacList(string macList)
         {
-            HashSet<string> newSet = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            string enabledList = Settings.Default.EnabledInterfaceMACList;
+            HashSet<string> result = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
-            if (!String.IsNullOrWhiteSpace(enabledList) && !String.Equals(enabledList, INTERFACE_LIST_UNSET, StringComparison.OrdinalIgnoreCase))
+            if (String.IsNullOrWhiteSpace(macList) ||
+                String.Equals(macList, INTERFACE_LIST_UNSET, StringComparison.OrdinalIgnoreCase))
             {
-                string[] entries = enabledList.Split(new[] { MAC_LIST_SEPARATOR[0] }, StringSplitOptions.RemoveEmptyEntries);
-                foreach (string entry in entries)
+                return result;
+            }
+
+            string[] entries = macList.Split(new[] { MAC_LIST_SEPARATOR[0] }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string entry in entries)
+            {
+                string mac = entry.Trim();
+                if (mac.Length > 0)
                 {
-                    newSet.Add(entry);
+                    result.Add(mac);
                 }
             }
 
-            Volatile.Write(ref enabledInterfaceMacs, newSet);
+            return result;
+        }
+
+        private static string SerializeMacList(HashSet<string> macList)
+        {
+            return String.Join(MAC_LIST_SEPARATOR, macList);
+        }
+
+        internal static void RefreshEnabledInterfacesCache()
+        {
+            Volatile.Write(ref enabledInterfaceMacs, ParseMacList(Settings.Default.EnabledInterfaceMACList));
         }
 
         internal static bool IsInterfaceEnabled(string mac)
@@ -213,15 +229,17 @@ namespace GabNetStats
         /// <returns>True if the MAC address was already known, false otherwise</returns>
         internal static bool AddToKnownInterface(string mac, bool saveSettings = true)
         {
-            bool contains = false;
-            try
+            if (String.IsNullOrWhiteSpace(mac))
             {
-                contains = Settings.Default.KnownInterfaceMACList.Contains(mac);
+                return false;
             }
-            catch (ArgumentNullException) { }
+
+            HashSet<string> knownMacs = ParseMacList(Settings.Default.KnownInterfaceMACList);
+            bool contains = knownMacs.Contains(mac);
             if (!contains)
             {
-                Settings.Default.KnownInterfaceMACList += (Settings.Default.KnownInterfaceMACList == string.Empty ? String.Empty : MAC_LIST_SEPARATOR) + mac;
+                knownMacs.Add(mac);
+                Settings.Default.KnownInterfaceMACList = SerializeMacList(knownMacs);
                 if (saveSettings)
                 {
                     Settings.Default.Save();
@@ -237,53 +255,34 @@ namespace GabNetStats
         /// <param name="enable">If set to True (default value), the interface will be enabled for statistics</param>
         internal static bool EnableStatisticsForInterface(string mac, bool enable = true, bool saveSettings = true, bool refreshCache = true)
         {
-            string tmp = Settings.Default.EnabledInterfaceMACList;
-            bool contains = false;
-            try
-            {
-                contains = tmp.Contains(mac);
-            }
-            catch (ArgumentNullException) { }
-
-            bool modified = false;
-            bool empty = false;
-
-            if (mac == String.Empty)
+            if (String.IsNullOrWhiteSpace(mac))
             {
                 return false;
             }
 
-            if (tmp == INTERFACE_LIST_UNSET)
-            {
-                tmp = String.Empty;
-            }
-            empty = tmp == String.Empty;
+            HashSet<string> enabledMacs = ParseMacList(Settings.Default.EnabledInterfaceMACList);
+            bool contains = enabledMacs.Contains(mac);
+            bool modified = false;
 
             if (contains)
             {
                 if (!enable)
                 {
-                    try
-                    {
-                        tmp = tmp.Replace(MAC_LIST_SEPARATOR + mac, ""); //mac is second to last value
-                        tmp = tmp.Replace(mac + MAC_LIST_SEPARATOR, ""); //mac is first value
-                        tmp = tmp.Replace(mac, ""); //mac was the only value
-                        modified = true;
-                    }
-                    catch (ArgumentNullException) { }
-                    catch (ArgumentException) { }
+                    enabledMacs.Remove(mac);
+                    modified = true;
                 }
             }
             else
             {
                 if (enable)
                 {
-                    tmp      = tmp + (empty ? String.Empty : MAC_LIST_SEPARATOR) + mac;
+                    enabledMacs.Add(mac);
                     modified = true;
                 }
             }
             if (modified)
             {
+                string tmp = SerializeMacList(enabledMacs);
                 Settings.Default.EnabledInterfaceMACList = tmp;
                 if (saveSettings)
                 {
