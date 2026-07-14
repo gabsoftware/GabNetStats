@@ -453,10 +453,39 @@ namespace GabNetStats
             {
                 try
                 {
+                    DisposeDropDownItems(parent.DropDownItems);
                     parent.DropDownItems.Clear();
                 }
                 catch (NotSupportedException) { }
             }
+        }
+
+        private static void DisposeDropDownItems(ToolStripItemCollection items)
+        {
+            List<ToolStripItem> oldItems = new List<ToolStripItem>();
+            foreach (ToolStripItem item in items)
+            {
+                oldItems.Add(item);
+            }
+
+            foreach (ToolStripItem item in oldItems)
+            {
+                DisposeToolStripItem(item);
+            }
+        }
+
+        private static void DisposeToolStripItem(ToolStripItem item)
+        {
+            if (item is ToolStripDropDownItem dropDownItem)
+            {
+                DisposeDropDownItems(dropDownItem.DropDownItems);
+                dropDownItem.DropDownItems.Clear();
+            }
+
+            Image image = item.Image;
+            item.Image = null;
+            image?.Dispose();
+            item.Dispose();
         }
 
         // adds a child toolstripmenuitem to parent, thread-safely
