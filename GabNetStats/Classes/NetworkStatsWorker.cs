@@ -615,6 +615,7 @@ namespace GabNetStats
 
             IPInterfaceStatistics ipstats = null;
             Stopwatch sampleStopwatch = Stopwatch.StartNew();
+            double previousSampleElapsedMs = 0;
 
             try
             {
@@ -622,12 +623,7 @@ namespace GabNetStats
                 {
                     cancellationToken.ThrowIfCancellationRequested();
 
-                    double elapsedMs = sampleStopwatch.Elapsed.TotalMilliseconds;
-                    if (elapsedMs < 1)
-                    {
-                        elapsedMs = nDuration;
-                    }
-                    sampleStopwatch.Restart();
+                    double elapsedMs = nDuration;
                     bytesReceived    = 0;
                     bytesSent        = 0;
 
@@ -636,6 +632,7 @@ namespace GabNetStats
                         _trayIconManager.SetActivityIcon(_trayIconManager.iconDisconnected);
                         rawSpeedReception            = 0;
                         rawSpeedEmission             = 0;
+                        previousSampleElapsedMs      = sampleStopwatch.Elapsed.TotalMilliseconds;
                         goto skip;
                     }
                     if (NetworkInterfaceManager.connectionStatus == TrayIconManager.eState.limited)
@@ -643,6 +640,7 @@ namespace GabNetStats
                         _trayIconManager.SetActivityIcon(_trayIconManager.iconLimited);
                         rawSpeedReception            = 0;
                         rawSpeedEmission             = 0;
+                        previousSampleElapsedMs      = sampleStopwatch.Elapsed.TotalMilliseconds;
                         goto skip;
                     }
 
@@ -688,6 +686,14 @@ namespace GabNetStats
                             }
                         }
                     }
+
+                    double currentSampleElapsedMs = sampleStopwatch.Elapsed.TotalMilliseconds;
+                    elapsedMs = currentSampleElapsedMs - previousSampleElapsedMs;
+                    if (elapsedMs < 1)
+                    {
+                        elapsedMs = nDuration;
+                    }
+                    previousSampleElapsedMs = currentSampleElapsedMs;
 
                     bool enabledInterfacesChanged =
                         enabledInterfaceCount != previousEnabledInterfaceCount ||

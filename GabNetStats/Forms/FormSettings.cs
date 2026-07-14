@@ -319,7 +319,7 @@ namespace GabNetStats
             {
                 try
                 {
-                    nDownload = Convert.ToInt32(strtmp, CultureInfo.InvariantCulture);
+                    nDownload = Convert.ToInt64(strtmp, CultureInfo.InvariantCulture);
                     if (nDownload <= 0)
                     {
                         nDownload = SettingsManager.DEFAULT_BANDWIDTH_BPS;
@@ -338,7 +338,7 @@ namespace GabNetStats
             {
                 try
                 {
-                    nUpload = Convert.ToInt32(strtmp, CultureInfo.InvariantCulture);
+                    nUpload = Convert.ToInt64(strtmp, CultureInfo.InvariantCulture);
                     if (nUpload <= 0)
                     {
                         nUpload = SettingsManager.DEFAULT_BANDWIDTH_BPS;
