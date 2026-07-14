@@ -30,9 +30,11 @@ public sealed class HistoryAndTrackerTests
     [TestMethod]
     public void GabTrackerFeedKeepsNewestValuesUpToCapacity()
     {
-        using var tracker = new GabTracker.GabTracker();
-        tracker.Stop();
-        tracker.MaxDataInMemory = 3;
+        using var tracker = new GabTracker.GabTracker
+        {
+            AutoStart       = false,
+            MaxDataInMemory = 3
+        };
 
         var feed = new GabTracker.GabTrackerFeed();
         tracker.Feeds.Add(feed);
@@ -48,6 +50,22 @@ public sealed class HistoryAndTrackerTests
         }
 
         CollectionAssert.AreEqual(new[] { 3d, 4d, 5d }, feed.Data.ToArray());
+    }
+
+    [TestMethod]
+    public void GabTrackerAutoStartCanBeDisabled()
+    {
+        using var tracker = new GabTracker.GabTracker();
+
+        tracker.AutoStart = false;
+
+        FieldInfo timerField = typeof(GabTracker.GabTracker).GetField(
+            "internalTimer",
+            BindingFlags.NonPublic | BindingFlags.Instance)!;
+        var timer = (System.Windows.Forms.Timer)timerField.GetValue(tracker)!;
+
+        Assert.IsFalse(tracker.AutoStart);
+        Assert.IsFalse(timer.Enabled);
     }
 
     private static void ClearSpeedHistory()
