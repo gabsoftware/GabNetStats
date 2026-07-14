@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Windows.Forms;
 using System.Threading;
 using GabNetStats.Properties;
@@ -43,6 +44,9 @@ namespace GabNetStats
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+                Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+                Application.ThreadException += Application_ThreadException;
+                AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
                 m_Mutex = new Mutex(true, "GabNetStatsMutex");
 
@@ -57,15 +61,75 @@ namespace GabNetStats
             {
                 if (!IsWindowsShuttingDown && ex.GetType() != typeof(ThreadAbortException))
                 {
-                    MessageBox.Show(
-                        Res.str_ErrorCrash +
-                        "\n\n" + "Thread : " +
-                        Thread.CurrentThread.Name +
-                        "\n\n" +
-                        ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Application.Restart();
+                    ReportFatalException(ex, true);
                 }
             }
+        }
+
+        private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
+        {
+            ReportFatalException(e.Exception, true);
+        }
+
+        private static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            ReportFatalException(e.ExceptionObject as Exception, false);
+        }
+
+        internal static void ReportWorkerException(Exception ex)
+        {
+            ReportFatalException(ex, false);
+        }
+
+        private static void ReportFatalException(Exception ex, bool showMessage)
+        {
+            if (IsWindowsShuttingDown || ex == null || ex.GetType() == typeof(ThreadAbortException))
+            {
+                return;
+            }
+
+            string threadName = Thread.CurrentThread.Name ?? Thread.CurrentThread.ManagedThreadId.ToString();
+            string message =
+                Res.str_ErrorCrash +
+                "\n\n" + "Thread : " +
+                threadName +
+                "\n\n" +
+                ex.ToString();
+
+            LogException(message);
+
+            if (!showMessage)
+            {
+                return;
+            }
+
+            try
+            {
+                MessageBox.Show(message, "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (InvalidOperationException) { }
+        }
+
+        private static void LogException(string message)
+        {
+            try
+            {
+                string directory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "GabNetStats");
+                Directory.CreateDirectory(directory);
+
+                string logPath = Path.Combine(directory, "GabNetStats.log");
+                File.AppendAllText(
+                    logPath,
+                    DateTime.Now.ToString("u") +
+                    Environment.NewLine +
+                    message +
+                    Environment.NewLine +
+                    Environment.NewLine);
+            }
+            catch (IOException) { }
+            catch (UnauthorizedAccessException) { }
+            catch (System.Security.SecurityException) { }
+            catch (NotSupportedException) { }
         }
     }
 }

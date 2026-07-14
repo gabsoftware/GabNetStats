@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Threading;
-using System.Windows.Forms;
 using GabNetStats.Properties;
 
 namespace GabNetStats
@@ -452,14 +451,7 @@ namespace GabNetStats
             {
                 if (!Program.IsWindowsShuttingDown)
                 {
-                    MessageBox.Show(
-                        Res.str_ErrorCrash +
-                        "\n\n" + "Thread : " +
-                        Thread.CurrentThread.Name +
-                        "\n\n" +
-                        ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    Application.Restart();
+                    Program.ReportWorkerException(ex);
                 }
             }
         }
@@ -519,14 +511,7 @@ namespace GabNetStats
             {
                 if (!Program.IsWindowsShuttingDown)
                 {
-                    MessageBox.Show(
-                        Res.str_ErrorCrash +
-                        "\n\n" + "Thread : " +
-                        Thread.CurrentThread.Name +
-                        "\n\n" +
-                        ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    Application.Restart();
+                    Program.ReportWorkerException(ex);
                 }
             }
         }
@@ -691,14 +676,7 @@ namespace GabNetStats
             {
                 if (!Program.IsWindowsShuttingDown)
                 {
-                    MessageBox.Show(
-                        Res.str_ErrorCrash +
-                        "\n\n" + "Thread : " +
-                        Thread.CurrentThread.Name +
-                        "\n\n" +
-                        ex.ToString(), "GabNetStats", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                    Application.Restart();
+                    Program.ReportWorkerException(ex);
                 }
             }
         }
