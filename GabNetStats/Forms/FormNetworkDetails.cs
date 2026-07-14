@@ -59,6 +59,7 @@ namespace GabNetStats
             comboInterfaces.Sorted = false;
             comboInterfaces.DisplayMember = nameof(InterfaceComboItem.DisplayText);
             comboInterfaces.SelectedIndexChanged += comboInterfaces_SelectedIndexChanged;
+            this.FormClosing += frmAdvanced_FormClosing;
 
         }
 
@@ -279,6 +280,11 @@ namespace GabNetStats
             PersistSelectedInterface();
         }
 
+        private void frmAdvanced_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SettingsManager.FlushPendingSave();
+        }
+
         private void chkIncludeSelectedInterface_CheckedChanged(object sender, EventArgs e)
         {
             if (suppressIncludeInStatsEvent)
@@ -327,7 +333,7 @@ namespace GabNetStats
             if (!string.Equals(Settings.Default.AdvancedSelectedInterfaceMac, mac, StringComparison.OrdinalIgnoreCase))
             {
                 Settings.Default.AdvancedSelectedInterfaceMac = mac;
-                Settings.Default.Save();
+                SettingsManager.ScheduleSave();
             }
         }
 

@@ -1,4 +1,6 @@
 using GabNetStats.Properties;
+using System;
+using System.Windows.Forms;
 
 namespace GabNetStats
 {
@@ -8,6 +10,31 @@ namespace GabNetStats
         //  Constants
         //
         internal const long DEFAULT_BANDWIDTH_BPS = 12500000;
+        private const int SAVE_DEBOUNCE_MS = 750;
+
+        private static readonly Timer saveTimer = new Timer { Interval = SAVE_DEBOUNCE_MS };
+
+        static SettingsManager()
+        {
+            saveTimer.Tick += saveTimer_Tick;
+        }
+
+        internal static void ScheduleSave()
+        {
+            saveTimer.Stop();
+            saveTimer.Start();
+        }
+
+        internal static void FlushPendingSave()
+        {
+            saveTimer.Stop();
+            Settings.Default.Save();
+        }
+
+        private static void saveTimer_Tick(object sender, EventArgs e)
+        {
+            FlushPendingSave();
+        }
 
         internal static void ValidateSettings()
         {

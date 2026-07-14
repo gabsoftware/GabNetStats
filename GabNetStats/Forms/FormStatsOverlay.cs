@@ -29,6 +29,7 @@ namespace GabNetStats
         private static int counter = 0;
         internal static FormNetworkDetails frmAdv;
         private bool suppressLocationPersistence;
+        private bool suppressSettingsPersistence;
 
         static FormStatsOverlay()
         {
@@ -39,8 +40,16 @@ namespace GabNetStats
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.Manual;
-            chkAutoClose.Checked = Settings.Default.AutoCloseBalloon;
-            nudAutoClose.Value = Settings.Default.AutoCloseBalloonAfter;
+            try
+            {
+                suppressSettingsPersistence = true;
+                chkAutoClose.Checked = Settings.Default.AutoCloseBalloon;
+                nudAutoClose.Value = Settings.Default.AutoCloseBalloonAfter;
+            }
+            finally
+            {
+                suppressSettingsPersistence = false;
+            }
             UpdateTrackerCapacity();
             ApplyHistoryToTracker();
         }
@@ -160,7 +169,7 @@ namespace GabNetStats
         private void frmBalloon_FormClosing(object sender, FormClosingEventArgs e)
         {
             counter = 0;
-            Settings.Default.Save();
+            SettingsManager.FlushPendingSave();
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;
@@ -188,7 +197,10 @@ namespace GabNetStats
         {
             counter = 0;
             Settings.Default.AutoCloseBalloonAfter = nudAutoClose.Value;
-            Settings.Default.Save();
+            if (!suppressSettingsPersistence)
+            {
+                SettingsManager.ScheduleSave();
+            }
         }
 
         private void tbTrans_Scroll(object sender, EventArgs e)
@@ -199,7 +211,10 @@ namespace GabNetStats
 
         private void tbTrans_ValueChanged(object sender, EventArgs e)
         {
-            Settings.Default.Save();
+            if (!suppressSettingsPersistence)
+            {
+                SettingsManager.ScheduleSave();
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -229,7 +244,10 @@ namespace GabNetStats
         {
             counter = 0;
             Settings.Default.AutoCloseBalloon = chkAutoClose.Checked;
-            Settings.Default.Save();
+            if (!suppressSettingsPersistence)
+            {
+                SettingsManager.ScheduleSave();
+            }
         }
 
         private void frmBalloon_Resize(object sender, EventArgs e)
@@ -253,7 +271,7 @@ namespace GabNetStats
 
             Settings.Default.BalloonLocationX = this.Left;
             Settings.Default.BalloonLocationY = this.Top;
-            Settings.Default.Save();
+            SettingsManager.ScheduleSave();
         }
 
         private void UpdateTrackerCapacity()
