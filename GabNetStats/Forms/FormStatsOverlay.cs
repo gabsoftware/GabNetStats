@@ -44,6 +44,8 @@ namespace GabNetStats
                 suppressSettingsPersistence = true;
                 chkAutoClose.Checked = Settings.Default.AutoCloseBalloon;
                 nudAutoClose.Value = Settings.Default.AutoCloseBalloonAfter;
+                tbTrans.Value = LoadOpacitySliderValue();
+                ApplyOpacityFromSlider();
             }
             finally
             {
@@ -204,16 +206,44 @@ namespace GabNetStats
 
         private void tbTrans_Scroll(object sender, EventArgs e)
         {
-            Settings.Default.BalloonOpacitySlider = tbTrans.Value;
-            Settings.Default.BalloonOpacity = (double)tbTrans.Value / 100;
+            UpdateOpacityFromSlider();
         }
 
         private void tbTrans_ValueChanged(object sender, EventArgs e)
         {
+            UpdateOpacityFromSlider();
             if (!suppressSettingsPersistence)
             {
                 SettingsManager.ScheduleSave();
             }
+        }
+
+        private void UpdateOpacityFromSlider()
+        {
+            Settings.Default.BalloonOpacitySlider = tbTrans.Value;
+            Settings.Default.BalloonOpacity = (double)tbTrans.Value / 100;
+            ApplyOpacityFromSlider();
+        }
+
+        private void ApplyOpacityFromSlider()
+        {
+            this.Opacity = (double)tbTrans.Value / 100;
+        }
+
+        private int ClampOpacitySliderValue(int value)
+        {
+            return Math.Max(tbTrans.Minimum, Math.Min(tbTrans.Maximum, value));
+        }
+
+        private int LoadOpacitySliderValue()
+        {
+            if (Settings.Default.BalloonOpacitySlider == tbTrans.Maximum
+             && Settings.Default.BalloonOpacity < 1)
+            {
+                return ClampOpacitySliderValue((int)Math.Round(Settings.Default.BalloonOpacity * 100));
+            }
+
+            return ClampOpacitySliderValue(Settings.Default.BalloonOpacitySlider);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

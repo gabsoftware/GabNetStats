@@ -199,6 +199,7 @@ namespace GabNetStats
             NetworkChange.NetworkAvailabilityChanged -= NetworkChange_NetworkAvailabilityChanged;
             NetworkChange.NetworkAddressChanged      -= NetworkChange_NetworkAddressChanged;
 
+            SettingsManager.FlushPendingSave();
             statsWorker?.Dispose();
         }
 

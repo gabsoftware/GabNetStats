@@ -30,7 +30,6 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStatsOverlay));
-            Properties.Settings settings2 = new Properties.Settings();
             GabTracker.GabTrackerFeed gabTrackerFeed3 = new GabTracker.GabTrackerFeed();
             GabTracker.GabTrackerFeed gabTrackerFeed4 = new GabTracker.GabTrackerFeed();
             BalloonTimer = new System.Windows.Forms.Timer(components);
@@ -98,34 +97,6 @@
             // 
             resources.ApplyResources(tbTrans, "tbTrans");
             tbTrans.BackColor = System.Drawing.SystemColors.Info;
-            settings2.AdvancedSelectedInterfaceMac = "";
-            settings2.AutoCloseBalloon = true;
-            settings2.AutoCloseBalloonAfter = new decimal(new int[] { 5, 0, 0, 0 });
-            settings2.AutoPingEnabled = false;
-            settings2.AutoPingHost = "google.com";
-            settings2.AutoPingNotif = true;
-            settings2.AutoPingRate = new decimal(new int[] { 5000, 0, 0, 0 });
-            settings2.BalloonLocationX = -1;
-            settings2.BalloonLocationY = -1;
-            settings2.BalloonOpacity = 1D;
-            settings2.BalloonOpacitySlider = 100;
-            settings2.BandwidthDownload = 12500000L;
-            settings2.BandwidthDownloadMultiplier = 1L;
-            settings2.BandwidthUnit = 1;
-            settings2.BandwidthUpload = 12500000L;
-            settings2.BandwidthUploadMultiplier = 1L;
-            settings2.BandwidthVisualsCustom = false;
-            settings2.BandwidthVisualsDefault = true;
-            settings2.BlinkDuration = 200;
-            settings2.EnabledInterfaceMACList = "TOSET";
-            settings2.IconSet = "win10";
-            settings2.KnownInterfaceMACList = "";
-            settings2.Language = "";
-            settings2.LoadOnStartup = false;
-            settings2.SettingsKey = "";
-            settings2.SettingsUpgraded = false;
-            settings2.ShowDisconnectedInterfaces = false;
-            tbTrans.DataBindings.Add(new System.Windows.Forms.Binding("Value", settings2, "BalloonOpacitySlider", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             tbTrans.LargeChange = 10;
             tbTrans.Maximum = 100;
             tbTrans.Minimum = 10;

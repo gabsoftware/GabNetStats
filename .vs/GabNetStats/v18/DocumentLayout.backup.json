@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormSettings.cs [Design]",
+              "Title": "FormSettings.cs [Conception]",
               "DocumentMoniker": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Forms\\FormSettings.cs",
               "RelativeDocumentMoniker": "GabNetStats\\Forms\\FormSettings.cs",
-              "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Forms\\FormSettings.cs [Design]",
-              "RelativeToolTip": "GabNetStats\\Forms\\FormSettings.cs [Design]",
+              "ToolTip": "E:\\dev\\gabsoftware\\GabNetStats\\GabNetStats\\Forms\\FormSettings.cs [Conception]",
+              "RelativeToolTip": "GabNetStats\\Forms\\FormSettings.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-14T16:56:32.922Z",
-              "EditorCaption": " [Design]"
+              "EditorCaption": " [Conception]"
             }
           ]
         }
