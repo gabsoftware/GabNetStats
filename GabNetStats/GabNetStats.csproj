@@ -68,6 +68,9 @@
     <RunPostBuildEvent>Always</RunPostBuildEvent>
     <AssemblyTitle>GabNetStats</AssemblyTitle>
     <BaseOutputPath>bin\</BaseOutputPath>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisMode>Recommended</AnalysisMode>
+    <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
     <Nullable>disable</Nullable>
     <AssemblyVersion>1.1.2.10</AssemblyVersion>
     <FileVersion>1.1.2.10</FileVersion>
