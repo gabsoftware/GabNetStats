@@ -6,14 +6,14 @@ Use a short, mechanical workflow. Avoid copying whole designer `.resx` files.
 
 1. Pick the culture code, usually neutral: `de`, `es`, `ja`, etc.
 2. Create these files by copying the matching French file, then replace values:
-   - `Res.<culture>.resx`
+   - `strings/Res.<culture>.resx`
    - `Forms/FormAbout.<culture>.resx`
    - `Forms/FormStatsOverlay.<culture>.resx`
    - `Forms/FormSettings.<culture>.resx`
    - `Forms/FormMain.<culture>.resx`
    - `Forms/FormNetworkDetails.<culture>.resx`
 3. Starting from `*.fr.resx` saves tokens and preserves the right skeleton/key set. After copying, keep only needed text entries:
-   - `str_*` in `Res.resx`
+   - `str_*` in `strings/Res.resx`
    - `*.Text`
    - `*.HeaderText`
    - `*.BalloonTipText`
@@ -47,8 +47,8 @@ Check these manually in every new locale. Prefer short labels immediately:
   - `label1.Text` (`Refresh rate (ms):`): shorten or move `textBoxDuration.Location` right.
 - `Forms/FormStatsOverlay.*.resx`
   - `chkAutoClose.Text` (`Auto close after:`): use a short phrase.
-  - Dynamic overlay labels come from `Res.*.resx`, not this form.
-- `Res.*.resx`
+  - Dynamic overlay labels come from `strings/Res.*.resx`, not this form.
+- `strings/Res.*.resx`
   - `str_RawReceptionSpeed`, `str_RawEmissionSpeed`, `str_AvgReceptionSpeed`, `str_AvgEmissionSpeed`: keep compact.
 - `Forms/FormNetworkDetails.*.resx`
   - `label34.Text` (`Incoming packets with unknown protocol`): use `Unknown protocol` or equivalent.
@@ -58,7 +58,7 @@ Check these manually in every new locale. Prefer short labels immediately:
 
 ## License file
 
-1. Add `License.<culture>.txt`.
+1. Add `licenses/License.<culture>.txt`.
 2. Translate the license text, but keep these tokens verbatim:
    - `[PRODUCTNAME]`
    - `[PRODUCTHOMEPAGE]`
@@ -77,7 +77,7 @@ dotnet build -c Release .\GabNetStats.sln
 Then confirm:
 
 1. `bin\Release\...\<culture>\GabNetStats.resources.dll` exists.
-2. `bin\Release\...\License.<culture>.txt` exists.
+2. `bin\Release\...\licenses\License.<culture>.txt` exists.
 3. No license placeholders remain in the generated file.
 4. Resource XML parses.
 5. Key diff only shows intentional fallbacks.
