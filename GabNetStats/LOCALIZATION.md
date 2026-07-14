@@ -72,6 +72,7 @@ Run from the `GabNetStats` solution folder:
 
 ```powershell
 dotnet build -c Release .\GabNetStats.sln
+.\scripts\ValidateLocalization.ps1
 ```
 
 Then confirm:
@@ -82,3 +83,5 @@ Then confirm:
 4. Resource XML parses.
 5. Key diff only shows intentional fallbacks.
 6. Long-label scan finds no large expansions compared to English.
+
+The validation script checks items 3-6 mechanically. By default, key drift is reported as warnings because some fallback omissions are intentional. Use `.\scripts\ValidateLocalization.ps1 -StrictKeyDrift` when adding a new language and you expect a complete key set.
