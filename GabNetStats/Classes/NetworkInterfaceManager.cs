@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Net.NetworkInformation;
 using System.Threading;
-using System.Windows.Forms;
 using GabNetStats.Properties;
 
 namespace GabNetStats
@@ -64,6 +63,13 @@ namespace GabNetStats
             public NetworkInterface Interface { get; }
             public string MacAddress { get; }
             public bool IsEnabled => NetworkInterfaceManager.IsInterfaceEnabled(MacAddress);
+        }
+
+        internal enum InterfaceStatisticsChangeResult
+        {
+            NoChange,
+            Changed,
+            NoInterfacesSelected
         }
 
         //
@@ -253,11 +259,11 @@ namespace GabNetStats
         /// </summary>
         /// <param name="mac">A MAC address</param>
         /// <param name="enable">If set to True (default value), the interface will be enabled for statistics</param>
-        internal static bool EnableStatisticsForInterface(string mac, bool enable = true, bool saveSettings = true, bool refreshCache = true)
+        internal static InterfaceStatisticsChangeResult EnableStatisticsForInterface(string mac, bool enable = true, bool saveSettings = true, bool refreshCache = true)
         {
             if (String.IsNullOrWhiteSpace(mac))
             {
-                return false;
+                return InterfaceStatisticsChangeResult.NoChange;
             }
 
             HashSet<string> enabledMacs = ParseMacList(Settings.Default.EnabledInterfaceMACList);
@@ -295,15 +301,13 @@ namespace GabNetStats
 
                 if (tmp == String.Empty)
                 {
-                    try
-                    {
-                        MessageBox.Show(Res.str_WarningNoInterfaceSelected, Res.str_WarningNoInterfaceSelectedCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    catch (System.ComponentModel.InvalidEnumArgumentException) { }
-                    catch (InvalidOperationException) { }
+                    return InterfaceStatisticsChangeResult.NoInterfacesSelected;
                 }
+
+                return InterfaceStatisticsChangeResult.Changed;
             }
-            return modified;
+
+            return InterfaceStatisticsChangeResult.NoChange;
         }
 
         //
@@ -412,7 +416,7 @@ namespace GabNetStats
                     // if we never selected an interface before, enable it for statistics by default.
                     if (isFirstTime)
                     {
-                        if (EnableStatisticsForInterface(mac, true, false, false))
+                        if (EnableStatisticsForInterface(mac, true, false, false) != InterfaceStatisticsChangeResult.NoChange)
                         {
                             shouldSaveSettings = true;
                         }
@@ -422,7 +426,7 @@ namespace GabNetStats
                     if (!AddToKnownInterface(mac, false))
                     {
                         shouldSaveSettings = true;
-                        if (EnableStatisticsForInterface(mac, true, false, false))
+                        if (EnableStatisticsForInterface(mac, true, false, false) != InterfaceStatisticsChangeResult.NoChange)
                         {
                             shouldSaveSettings = true;
                         }

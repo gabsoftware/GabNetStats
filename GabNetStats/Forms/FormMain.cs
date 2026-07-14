@@ -233,7 +233,7 @@ namespace GabNetStats
             NetworkInterface nic = (NetworkInterface)itm.Tag;
 
             //we enable or disable statistics for the NetworkInterface
-            NetworkInterfaceManager.EnableStatisticsForInterface(nic.GetPhysicalAddress().ToString(), itm.Checked);
+            SetInterfaceEnabledState(nic.GetPhysicalAddress().ToString(), itm.Checked, false);
         }
 
         private void NetworkConnectionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -370,13 +370,30 @@ namespace GabNetStats
 
         internal bool SetInterfaceEnabledState(string mac, bool enable, bool refreshMenus = true)
         {
-            bool changed = NetworkInterfaceManager.EnableStatisticsForInterface(mac, enable);
+            NetworkInterfaceManager.InterfaceStatisticsChangeResult result = NetworkInterfaceManager.EnableStatisticsForInterface(mac, enable);
+            bool changed = result != NetworkInterfaceManager.InterfaceStatisticsChangeResult.NoChange;
+
+            if (result == NetworkInterfaceManager.InterfaceStatisticsChangeResult.NoInterfacesSelected)
+            {
+                ShowNoInterfaceSelectedWarning();
+            }
+
             if (changed && refreshMenus)
             {
                 this.PopulateNICs(this.NetworkAdaptersToolStripMenuItem);
             }
 
             return changed;
+        }
+
+        private static void ShowNoInterfaceSelectedWarning()
+        {
+            try
+            {
+                MessageBox.Show(Res.str_WarningNoInterfaceSelected, Res.str_WarningNoInterfaceSelectedCaption, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (System.ComponentModel.InvalidEnumArgumentException) { }
+            catch (InvalidOperationException) { }
         }
 
         internal void PopulateNICs(ToolStripMenuItem parent)
