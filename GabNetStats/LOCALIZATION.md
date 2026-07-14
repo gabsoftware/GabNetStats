@@ -58,13 +58,13 @@ Check these manually in every new locale. Prefer short labels immediately:
 
 ## License file
 
-1. Add `licenses/License.<culture>.txt`.
+1. Add `licenses/License.<culture>.txt` encoded as UTF-8.
 2. Translate the license text, but keep these tokens verbatim:
    - `[PRODUCTNAME]`
    - `[PRODUCTHOMEPAGE]`
    - `[CONTACTEMAIL]`
    - `License.txt`
-3. Update `GabNetStats.csproj` `PostBuild` target with a block matching the existing `ssr.exe` blocks for the new license file.
+3. No project-file edit is needed for the license file; the build picks up `licenses/License.*.txt` automatically.
 
 ## Checks
 

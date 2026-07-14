@@ -1,17 +1,17 @@
 ------= GabSoftware license v1.0.1 =------
 
-Produit concerné : [PRODUCTNAME]
+Produit concernÃ© : [PRODUCTNAME]
 Page d'accueil de [PRODUCTNAME] : [PRODUCTHOMEPAGE]
 
-Par la distribution, l'utilisation ou la réutilisation de tout ou partie de ce produit (exécutables ou code source), vous acceptez les conditions suivantes :
+Par la distribution, l'utilisation ou la rÃ©utilisation de tout ou partie de ce produit (exÃ©cutables ou code source), vous acceptez les conditions suivantes :
 
-- Les binaires de [PRODUCTNAME] peuvent être distribuées et utilisées librement pour usage personnel. Pour les entreprises, voir (1).
-- Le code source de [PRODUCTNAME] peut être distribué, utilisé et réutilisé librement pour usage personnel. Pour les entreprises, voir (2).
-- Le nom de "[PRODUCTNAME]" ne doit pas faire partie du nom d'un quelconque produit dérivé.
-- Vous devez inclure la présente licence non modifiée (License.fr.txt) conjointement à toute distribution, partie du code source ou exécutables de [PRODUCTNAME].
+- Les binaires de [PRODUCTNAME] peuvent Ãªtre distribuÃ©es et utilisÃ©es librement pour usage personnel. Pour les entreprises, voir (1).
+- Le code source de [PRODUCTNAME] peut Ãªtre distribuÃ©, utilisÃ© et rÃ©utilisÃ© librement pour usage personnel. Pour les entreprises, voir (2).
+- Le nom de "[PRODUCTNAME]" ne doit pas faire partie du nom d'un quelconque produit dÃ©rivÃ©.
+- Vous devez inclure la prÃ©sente licence non modifiÃ©e (License.fr.txt) conjointement Ã  toute distribution, partie du code source ou exÃ©cutables de [PRODUCTNAME].
 
-(1) : GabSoftware autorise les entreprises de moins de 10 personnes à utiliser et distribuer les binaires de [PRODUCTNAME] gratuitement et sans limitation de durée tant que lesdites entreprises ont moins de 10 personnes et ne gagnent pas d'argent grâce au produit. Les entreprises de plus de 10 personnes désireuses d'utiliser, de distribuer ou d'inclure les binaires de [PRODUCTNAME] dans une quelconque suite de produits doivent nous contacter à [CONTACTEMAIL] afin de décider des modalités.
-(2) : Si vous souhaitez utiliser tout ou partie du code source de [PRODUCTNAME] dans les produits de votre entreprise, envoyez-nous votre requête à [CONTACTEMAIL] afin de décider des modalités.
+(1) : GabSoftware autorise les entreprises de moins de 10 personnes Ã  utiliser et distribuer les binaires de [PRODUCTNAME] gratuitement et sans limitation de durÃ©e tant que lesdites entreprises ont moins de 10 personnes et ne gagnent pas d'argent grÃ¢ce au produit. Les entreprises de plus de 10 personnes dÃ©sireuses d'utiliser, de distribuer ou d'inclure les binaires de [PRODUCTNAME] dans une quelconque suite de produits doivent nous contacter Ã  [CONTACTEMAIL] afin de dÃ©cider des modalitÃ©s.
+(2) : Si vous souhaitez utiliser tout ou partie du code source de [PRODUCTNAME] dans les produits de votre entreprise, envoyez-nous votre requÃªte Ã  [CONTACTEMAIL] afin de dÃ©cider des modalitÃ©s.
 
 Merci d'utiliser nos produits !
 
