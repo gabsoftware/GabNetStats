@@ -38,8 +38,8 @@ namespace GabNetStats
         private TrayIconManager trayIconManager;
         internal NetworkInterfaceManager nicManager;
         private NetworkStatsWorker statsWorker;
-
-        static FormStatsOverlay fBal;
+        private FormStatsOverlay statsOverlay;
+        private FormNetworkDetails networkDetails;
 
         private volatile bool _nicMenuOpen;
 
@@ -130,15 +130,14 @@ namespace GabNetStats
 
             if (Program.ShowNetworkDetailsOnStart)
             {
-                FormStatsOverlay.frmAdv = new FormNetworkDetails();
-                FormStatsOverlay.frmAdv.Show();
+                ShowNetworkDetails();
             }
 
             showBalloon(preload: !Program.ShowStatisticsOnStart);
 
             if (Program.ShowStatisticsOnStart)
             {
-                fBal.DisableAutoClose();
+                statsOverlay.DisableAutoClose();
             }
         }
 
@@ -489,24 +488,29 @@ namespace GabNetStats
 
         private void showBalloon(bool preload = false)
         {
-            if (fBal == null || !fBal.Created)
+            if (statsOverlay == null || statsOverlay.IsDisposed || !statsOverlay.Created)
             {
-                fBal = new FormStatsOverlay();
+                statsOverlay = new FormStatsOverlay();
             }
-            fBal.EnsurePreferredLocation();
+            statsOverlay.EnsurePreferredLocation();
             if (!preload)
             {
-               fBal.Show();
+               statsOverlay.Show();
             }
         }
 
         private void advancedStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FormStatsOverlay.frmAdv == null || !FormStatsOverlay.frmAdv.Created)
+            ShowNetworkDetails();
+        }
+
+        internal void ShowNetworkDetails()
+        {
+            if (networkDetails == null || networkDetails.IsDisposed || !networkDetails.Created)
             {
-                FormStatsOverlay.frmAdv = new FormNetworkDetails();
+                networkDetails = new FormNetworkDetails();
             }
-            FormStatsOverlay.frmAdv.Show();
+            networkDetails.Show();
         }
 
         private void notifyIconPing_MouseClick(object sender, MouseEventArgs e)

@@ -26,8 +26,7 @@ namespace GabNetStats
 
         private static NumberFormatInfo nfi = (NumberFormatInfo)CultureInfo.CurrentCulture.NumberFormat.Clone();
 
-        private static int counter = 0;
-        internal static FormNetworkDetails frmAdv;
+        private int counter = 0;
         private bool suppressLocationPersistence;
         private bool suppressSettingsPersistence;
 
@@ -228,11 +227,8 @@ namespace GabNetStats
 
         private void btnAdvanced_Click(object sender, EventArgs e)
         {
-            if (frmAdv == null || !frmAdv.Created)
-            {
-                frmAdv = new FormNetworkDetails();
-            }
-            frmAdv.Show();
+            FormMain mf = (FormMain)Application.OpenForms["FormMain"];
+            mf?.ShowNetworkDetails();
         }
 
         internal void DisableAutoClose()
