@@ -14,6 +14,8 @@ This is the .NET control of the graph. It does not track you! It is poorly named
 
 ## Building
 
+GabNetStats targets `net10.0-windows10.0.26100.0` so builds require the .NET 10 SDK with the Windows desktop workload and Windows SDK 10.0.26100 or newer. The project metadata keeps the supported Windows API baseline at Windows 7 (`6.1`) for both GabNetStats and GabTracker; the Windows 10 target platform version is the SDK/API reference version, not the declared minimum OS baseline.
+
 ### Clone the projects
 * Clone this repository in one directory
 * Clone the GabTracker repository at the same level, so that both cloned repositories are located in the same directory.
