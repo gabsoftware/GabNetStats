@@ -10,7 +10,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GabNetStats", "GabNetStats\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GabTracker", "..\GabTracker\GabTracker\GabTracker.csproj", "{902445D6-A2D4-4833-A5F0-3B808560D892}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E-9EF9552A13F1}") = "GabNetStats.Tests", "GabNetStats.Tests\GabNetStats.Tests.csproj", "{9E29E083-203D-4CE9-99BF-64946E8D1EC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GabNetStats.Tests", "GabNetStats.Tests\GabNetStats.Tests.csproj", "{9E29E083-203D-4CE9-99BF-64946E8D1EC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
