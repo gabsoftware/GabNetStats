@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
 using System.Net.NetworkInformation;
 using System.Threading;
 using System.Windows.Forms;
@@ -16,7 +15,6 @@ namespace GabNetStats
         //
         private const int THREAD_JOIN_TIMEOUT_MS      = 1000;
         private const int PING_TIMEOUT_MS             = 500;
-        private const int BALLOON_TIP_DURATION_MS     = 1000;
         private const int INACTIVITY_COUNTER_THRESHOLD = 5;
 
         //
@@ -24,7 +22,6 @@ namespace GabNetStats
         //
         private readonly TrayIconManager         _trayIconManager;
         private readonly NetworkInterfaceManager _nicManager;
-        private readonly NotifyIcon              _notifyIconPing;
         private readonly Action                  _populateNICsCallback;
         private readonly Func<bool>              _getNicMenuOpen;
 
@@ -67,13 +64,11 @@ namespace GabNetStats
         internal NetworkStatsWorker(
             TrayIconManager         trayIconManager,
             NetworkInterfaceManager nicManager,
-            NotifyIcon              notifyIconPing,
             Action                  populateNICsCallback,
             Func<bool>              getNicMenuOpen)
         {
             _trayIconManager      = trayIconManager;
             _nicManager           = nicManager;
-            _notifyIconPing       = notifyIconPing;
             _populateNICsCallback = populateNICsCallback;
             _getNicMenuOpen       = getNicMenuOpen;
         }
@@ -416,7 +411,6 @@ namespace GabNetStats
             CancellationToken cancellationToken = state is CancellationToken token ? token : CancellationToken.None;
             byte[] buffer = { 1 };
             PingReply reply = null;
-            Icon previous = null;
             string pingHost = Settings.Default.AutoPingHost;
             int pingTimeout = PING_TIMEOUT_MS;
 
@@ -442,15 +436,7 @@ namespace GabNetStats
                         }
                     }
 
-                    previous = _notifyIconPing.Icon;
                     _trayIconManager.UpdateAutoPingIcon(reply);
-
-                    if (Settings.Default.AutoPingNotif && !previous.Equals(_notifyIconPing.Icon))
-                    {
-                        try { _notifyIconPing.ShowBalloonTip(BALLOON_TIP_DURATION_MS); }
-                        catch (ObjectDisposedException) { }
-                        catch (InvalidOperationException) { }
-                    }
 
                     try
                     {

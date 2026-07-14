@@ -15,9 +15,11 @@ namespace GabNetStats
         //
         internal const string DEFAULT_ICON_SET   = "xp";
         private const string ICONS_SUBDIRECTORY = "icons";
+        private const int    BALLOON_TIP_DURATION_MS = 1000;
 
         private readonly NotifyIcon _notifyIconActivity;
         private readonly NotifyIcon _notifyIconPing;
+        private readonly Control    _uiThreadControl;
 
         internal enum eState
         {
@@ -65,10 +67,11 @@ namespace GabNetStats
         internal long bandwidthUploadLvl4;
         internal long bandwidthUploadLvl5;
 
-        internal TrayIconManager(NotifyIcon notifyIconActivity, NotifyIcon notifyIconPing)
+        internal TrayIconManager(NotifyIcon notifyIconActivity, NotifyIcon notifyIconPing, Control uiThreadControl)
         {
             _notifyIconActivity = notifyIconActivity;
             _notifyIconPing     = notifyIconPing;
+            _uiThreadControl    = uiThreadControl;
         }
 
         internal void applyIconSet()
@@ -224,8 +227,15 @@ namespace GabNetStats
 
         internal void UpdateAutoPingIcon(PingReply reply)
         {
+            if (TryBeginOnUiThread(() => UpdateAutoPingIcon(reply)))
+            {
+                return;
+            }
+
             try
             {
+                Icon previous = _notifyIconPing.Icon;
+
                 if (reply == null || reply.Status != IPStatus.Success)
                 {
                     if (_notifyIconPing.Icon.Equals(iconCircle_green))
@@ -255,6 +265,15 @@ namespace GabNetStats
                     _notifyIconPing.Text = _notifyIconPing.BalloonTipText = "Connection OK";
                     _notifyIconPing.BalloonTipIcon = ToolTipIcon.Info;
                 }
+
+                bool iconChanged = previous == null
+                    ? _notifyIconPing.Icon != null
+                    : !previous.Equals(_notifyIconPing.Icon);
+
+                if (Settings.Default.AutoPingNotif && iconChanged)
+                {
+                    _notifyIconPing.ShowBalloonTip(BALLOON_TIP_DURATION_MS);
+                }
             }
             catch (ObjectDisposedException) { }
             catch (InvalidOperationException) { }
@@ -262,6 +281,11 @@ namespace GabNetStats
 
         internal void SetActivityIcon(Icon icon)
         {
+            if (TryBeginOnUiThread(() => SetActivityIcon(icon)))
+            {
+                return;
+            }
+
             if (icon == null)
             {
                 return;
@@ -274,6 +298,28 @@ namespace GabNetStats
                 catch (ObjectDisposedException) { }
                 catch (InvalidOperationException) { }
             }
+        }
+
+        private bool TryBeginOnUiThread(Action action)
+        {
+            if (_uiThreadControl == null || _uiThreadControl.IsDisposed || _uiThreadControl.Disposing)
+            {
+                return true;
+            }
+
+            if (!_uiThreadControl.InvokeRequired)
+            {
+                return false;
+            }
+
+            try
+            {
+                _uiThreadControl.BeginInvoke(action);
+            }
+            catch (ObjectDisposedException) { }
+            catch (InvalidOperationException) { }
+
+            return true;
         }
     }
 }

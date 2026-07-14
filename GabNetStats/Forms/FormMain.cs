@@ -89,12 +89,11 @@ namespace GabNetStats
                 }
             }
 
-            trayIconManager = new TrayIconManager(this.notifyIconActivity, this.notifyIconPing);
+            trayIconManager = new TrayIconManager(this.notifyIconActivity, this.notifyIconPing, this);
             nicManager      = new NetworkInterfaceManager();
             statsWorker     = new NetworkStatsWorker(
                 trayIconManager,
                 nicManager,
-                this.notifyIconPing,
                 () => this.PopulateNICs(this.NetworkAdaptersToolStripMenuItem),
                 () => _nicMenuOpen);
 
