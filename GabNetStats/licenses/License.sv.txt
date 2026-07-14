@@ -8,7 +8,7 @@ Genom att distribuera, använda eller återanvända någon del av denna produkt 
 - Binärerna för [PRODUCTNAME] får distribueras och användas fritt för personligt bruk. För företagsanvändning, se (1).
 - Källkoden för [PRODUCTNAME] får distribueras, användas och återanvändas fritt för personligt bruk. För företagsanvändning, se (2).
 - Namnet "[PRODUCTNAME]" får inte ingå i namnet på någon härledd produkt.
-- Du måste inkludera denna licens oförändrad (License.txt) med all distribution, del av källkod eller binärer för [PRODUCTNAME].
+- Du måste inkludera denna licens oförändrad (License.sv.txt) med all distribution, del av källkod eller binärer för [PRODUCTNAME].
 
 (1): GabSoftware tillåter företag med färre än 10 personer att använda och distribuera binärerna för [PRODUCTNAME] gratis och utan tidsgräns, så länge företaget fortsätter att ha färre än 10 personer och inte tjänar pengar på det. Företag med fler än 10 personer som vill använda, distribuera eller inkludera binärerna för [PRODUCTNAME] i en produktsvit måste kontakta oss på [CONTACTEMAIL] för att förhandla om priset.
 (2): Om du vill använda hela eller delar av källkoden för [PRODUCTNAME] i ditt företags produkter, skicka din förfrågan till [CONTACTEMAIL] för att förhandla om priset.

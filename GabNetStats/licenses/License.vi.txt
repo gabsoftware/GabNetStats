@@ -8,7 +8,7 @@ Bằng việc phân phối, sử dụng hoặc tái sử dụng bất kỳ phầ
 - Các tệp nhị phân [PRODUCTNAME] có thể được phân phối và sử dụng miễn phí cho mục đích cá nhân. Đối với mục đích công ty, xem (1).
 - Mã nguồn [PRODUCTNAME] có thể được phân phối, sử dụng và tái sử dụng miễn phí cho mục đích cá nhân. Đối với mục đích công ty, xem (2).
 - Tên "[PRODUCTNAME]" không được là một phần trong tên của bất kỳ sản phẩm phái sinh nào.
-- Bạn phải kèm theo giấy phép hiện tại không sửa đổi (License.txt) trong mọi bản phân phối, phần mã nguồn hoặc tệp nhị phân của [PRODUCTNAME].
+- Bạn phải kèm theo giấy phép hiện tại không sửa đổi (License.vi.txt) trong mọi bản phân phối, phần mã nguồn hoặc tệp nhị phân của [PRODUCTNAME].
 
 (1): GabSoftware cho phép các công ty dưới 10 người sử dụng và phân phối tệp nhị phân [PRODUCTNAME] miễn phí và không giới hạn thời gian, miễn là công ty vẫn dưới 10 người và không kiếm tiền từ đó. Các công ty trên 10 người muốn sử dụng, phân phối hoặc đưa tệp nhị phân [PRODUCTNAME] vào bất kỳ bộ sản phẩm nào phải liên hệ với chúng tôi tại [CONTACTEMAIL] để thương lượng giá.
 (2): Nếu bạn muốn dùng toàn bộ hoặc một phần mã nguồn [PRODUCTNAME] trong sản phẩm của công ty, vui lòng gửi yêu cầu đến [CONTACTEMAIL] để thương lượng giá.

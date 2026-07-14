@@ -8,7 +8,7 @@ Dengan mendistribusikan, menggunakan, atau menggunakan kembali bagian mana pun d
 - Biner [PRODUCTNAME] dapat didistribusikan dan digunakan secara gratis untuk penggunaan pribadi. Untuk penggunaan perusahaan, lihat (1).
 - Kode sumber [PRODUCTNAME] dapat didistribusikan, digunakan, dan digunakan kembali secara gratis untuk penggunaan pribadi. Untuk penggunaan perusahaan, lihat (2).
 - Nama "[PRODUCTNAME]" tidak boleh menjadi bagian dari nama produk turunan apa pun.
-- Anda harus menyertakan lisensi ini tanpa perubahan (License.txt) dengan distribusi apa pun, bagian kode sumber, atau biner [PRODUCTNAME].
+- Anda harus menyertakan lisensi ini tanpa perubahan (License.id.txt) dengan distribusi apa pun, bagian kode sumber, atau biner [PRODUCTNAME].
 
 (1): GabSoftware mengizinkan perusahaan dengan kurang dari 10 orang untuk menggunakan dan mendistribusikan biner [PRODUCTNAME] secara gratis dan tanpa batas waktu, selama perusahaan tetap kurang dari 10 orang dan tidak menghasilkan uang darinya. Perusahaan dengan lebih dari 10 orang yang ingin menggunakan, mendistribusikan, atau menyertakan biner [PRODUCTNAME] dalam paket produk apa pun harus menghubungi kami di [CONTACTEMAIL] untuk menegosiasikan harga.
 (2): Jika Anda ingin menggunakan semua atau sebagian kode sumber [PRODUCTNAME] dalam produk perusahaan Anda, kirimkan permintaan ke [CONTACTEMAIL] untuk menegosiasikan harga.

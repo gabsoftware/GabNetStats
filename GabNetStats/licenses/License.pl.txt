@@ -8,7 +8,7 @@ Dystrybuując, używając lub ponownie wykorzystując dowolną część tego pro
 - Pliki binarne [PRODUCTNAME] mogą być swobodnie dystrybuowane i używane do celów osobistych. Użycie firmowe opisano w (1).
 - Kod źródłowy [PRODUCTNAME] może być swobodnie dystrybuowany, używany i ponownie wykorzystywany do celów osobistych. Użycie firmowe opisano w (2).
 - Nazwa "[PRODUCTNAME]" nie może być częścią nazwy żadnego produktu pochodnego.
-- Do każdej dystrybucji kodu źródłowego lub plików binarnych [PRODUCTNAME], w całości lub w części, należy dołączyć niniejszą niezmienioną licencję (License.txt).
+- Do każdej dystrybucji kodu źródłowego lub plików binarnych [PRODUCTNAME], w całości lub w części, należy dołączyć niniejszą niezmienioną licencję (License.pl.txt).
 
 (1): GabSoftware zezwala firmom zatrudniającym mniej niż 10 osób na bezpłatne i bezterminowe używanie oraz dystrybuowanie plików binarnych [PRODUCTNAME], o ile firma pozostaje mniejsza niż 10 osób i nie czerpie z tego zysku. Firmy zatrudniające więcej niż 10 osób, które chcą używać, dystrybuować lub dołączać pliki binarne [PRODUCTNAME] do pakietu produktów, muszą skontaktować się z nami pod adresem [CONTACTEMAIL] w celu negocjacji ceny.
 (2): Jeśli chcesz użyć całości lub części kodu źródłowego [PRODUCTNAME] w produktach swojej firmy, wyślij prośbę na adres [CONTACTEMAIL], aby negocjować cenę.

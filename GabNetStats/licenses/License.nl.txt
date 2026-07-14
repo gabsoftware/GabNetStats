@@ -8,7 +8,7 @@ Door enig deel van dit product (binaire bestanden of broncode) te verspreiden, t
 - De binaire bestanden van [PRODUCTNAME] mogen vrij worden verspreid en gebruikt voor persoonlijk gebruik. Voor zakelijk gebruik, zie (1).
 - De broncode van [PRODUCTNAME] mag vrij worden verspreid, gebruikt en hergebruikt voor persoonlijk gebruik. Voor zakelijk gebruik, zie (2).
 - De naam "[PRODUCTNAME]" mag geen deel uitmaken van de naam van een afgeleid product.
-- U moet deze licentie ongewijzigd (License.txt) opnemen bij elke distributie, elk deel van de broncode of de binaire bestanden van [PRODUCTNAME].
+- U moet deze licentie ongewijzigd (License.nl.txt) opnemen bij elke distributie, elk deel van de broncode of de binaire bestanden van [PRODUCTNAME].
 
 (1): GabSoftware staat bedrijven met minder dan 10 personen toe de binaire bestanden van [PRODUCTNAME] gratis en zonder tijdslimiet te gebruiken en te verspreiden, zolang het bedrijf minder dan 10 personen blijft tellen en er geen geld mee verdient. Bedrijven met meer dan 10 personen die de binaire bestanden van [PRODUCTNAME] willen gebruiken, verspreiden of opnemen in een productsuite, moeten contact met ons opnemen via [CONTACTEMAIL] om de prijs te bespreken.
 (2): Als u de broncode van [PRODUCTNAME] geheel of gedeeltelijk wilt gebruiken in producten van uw bedrijf, stuur dan uw verzoek naar [CONTACTEMAIL] om de prijs te bespreken.

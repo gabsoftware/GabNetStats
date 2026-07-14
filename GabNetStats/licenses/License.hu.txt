@@ -8,7 +8,7 @@ A termék bármely részének (binárisok vagy forráskód) terjesztésével, ha
 - A [PRODUCTNAME] binárisai személyes használatra szabadon terjeszthetők és használhatók. Céges használathoz lásd (1).
 - A [PRODUCTNAME] forráskódja személyes használatra szabadon terjeszthető, használható és újrafelhasználható. Céges használathoz lásd (2).
 - A "[PRODUCTNAME]" név nem lehet része semmilyen származtatott termék nevének.
-- A [PRODUCTNAME] forráskódjának vagy binárisainak bármilyen terjesztésekor mellékelni kell ezt a változatlan licencet (License.txt).
+- A [PRODUCTNAME] forráskódjának vagy binárisainak bármilyen terjesztésekor mellékelni kell ezt a változatlan licencet (License.hu.txt).
 
 (1): A GabSoftware engedélyezi a 10 főnél kisebb cégeknek a [PRODUCTNAME] binárisainak ingyenes és időkorlát nélküli használatát és terjesztését, amíg a cég 10 főnél kisebb marad, és nem keres pénzt vele. A 10 főnél nagyobb cégeknek, amelyek használni, terjeszteni vagy bármely termékcsomagba beépíteni kívánják a [PRODUCTNAME] binárisait, ármegegyezés céljából kapcsolatba kell lépniük velünk a [CONTACTEMAIL] címen.
 (2): Ha a [PRODUCTNAME] forráskódjának egészét vagy részeit céges termékeiben szeretné használni, küldje el kérését a [CONTACTEMAIL] címre az ármegegyezéshez.

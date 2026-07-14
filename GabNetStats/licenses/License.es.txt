@@ -8,7 +8,7 @@ Al distribuir, usar o reutilizar cualquier parte de este producto (binarios o c�
 - Los binarios de [PRODUCTNAME] se pueden distribuir y usar libremente para uso personal. Para uso corporativo, consulte (1).
 - El código fuente de [PRODUCTNAME] se puede distribuir, usar y reutilizar libremente para uso personal. Para uso corporativo, consulte (2).
 - El nombre "[PRODUCTNAME]" no debe formar parte del nombre de ningún producto derivado.
-- Debe incluir esta licencia sin modificar (License.txt) con cualquier distribución, parte del código fuente o binarios de [PRODUCTNAME].
+- Debe incluir esta licencia sin modificar (License.es.txt) con cualquier distribución, parte del código fuente o binarios de [PRODUCTNAME].
 
 (1): GabSoftware permite a empresas de menos de 10 personas usar y distribuir los binarios de [PRODUCTNAME] de forma gratuita y sin límite de tiempo, siempre que la empresa siga teniendo menos de 10 personas y no gane dinero con ello. Las empresas de más de 10 personas que deseen usar, distribuir o incluir los binarios de [PRODUCTNAME] en cualquier paquete de productos deben ponerse en contacto con nosotros en [CONTACTEMAIL] para negociar el precio.
 (2): Si desea usar todo o parte del código fuente de [PRODUCTNAME] en los productos de su empresa, envíenos su solicitud a [CONTACTEMAIL] para negociar el precio.
