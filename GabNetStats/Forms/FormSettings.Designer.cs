@@ -65,6 +65,7 @@ namespace GabNetStats
             groupBox3 = new System.Windows.Forms.GroupBox();
             lblLanguage = new System.Windows.Forms.Label();
             cbLanguage = new System.Windows.Forms.ComboBox();
+            chkShowHiddenInterfaces = new System.Windows.Forms.CheckBox();
             chkShowDisconnectedInterfaces = new System.Windows.Forms.CheckBox();
             groupBox1.SuspendLayout();
             grpBandwidthPreferences.SuspendLayout();
@@ -296,6 +297,7 @@ namespace GabNetStats
             resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Controls.Add(lblLanguage);
             groupBox3.Controls.Add(cbLanguage);
+            groupBox3.Controls.Add(chkShowHiddenInterfaces);
             groupBox3.Controls.Add(chkShowDisconnectedInterfaces);
             groupBox3.Name = "groupBox3";
             groupBox3.TabStop = false;
@@ -312,6 +314,13 @@ namespace GabNetStats
             cbLanguage.FormattingEnabled = true;
             cbLanguage.Name = "cbLanguage";
             cbLanguage.SelectedIndexChanged += cbLanguage_SelectedIndexChanged;
+            // 
+            // chkShowHiddenInterfaces
+            // 
+            resources.ApplyResources(chkShowHiddenInterfaces, "chkShowHiddenInterfaces");
+            chkShowHiddenInterfaces.Name = "chkShowHiddenInterfaces";
+            chkShowHiddenInterfaces.UseVisualStyleBackColor = true;
+            chkShowHiddenInterfaces.CheckedChanged += chkShowHiddenInterfaces_CheckedChanged;
             // 
             // chkShowDisconnectedInterfaces
             // 
@@ -394,5 +403,6 @@ namespace GabNetStats
         private System.Windows.Forms.Button btnRefreshIconSets;
         private System.Windows.Forms.ComboBox cbLanguage;
         private System.Windows.Forms.Label lblLanguage;
+        private System.Windows.Forms.CheckBox chkShowHiddenInterfaces;
     }
 }

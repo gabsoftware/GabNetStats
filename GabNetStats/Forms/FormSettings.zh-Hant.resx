@@ -69,6 +69,9 @@
   <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
     <value>顯示斷線介面</value>
   </data>
+  <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
+    <value>顯示隱藏/虛擬介面</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>其他</value>
   </data>

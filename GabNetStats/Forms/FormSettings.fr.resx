@@ -217,9 +217,6 @@
   <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
     <value>Activer auto-ping de cet hôte :</value>
   </data>
-  <data name="checkBoxStartup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 613</value>
-  </data>
   <data name="checkBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 19</value>
   </data>
@@ -234,6 +231,9 @@
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Langue :</value>
+  </data>
+  <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
+    <value>Montrer les interfaces cachées/virtuelles</value>
   </data>
   <data name="chkShowDisconnectedInterfaces.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 19</value>

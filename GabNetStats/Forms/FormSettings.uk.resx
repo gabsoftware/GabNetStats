@@ -184,4 +184,7 @@
   <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
     <value>Показувати відключені інтерфейси</value>
   </data>
+  <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
+    <value>Показувати приховані/віртуальні інтерфейси</value>
+  </data>
 </root>

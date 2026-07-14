@@ -69,6 +69,9 @@
   <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
     <value>Tampilkan terputus</value>
   </data>
+  <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
+    <value>Tampilkan tersembunyi/virtual</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Lain-lain</value>
   </data>

@@ -197,6 +197,7 @@ namespace GabNetStats
 
             grpBandwidthPreferences.Enabled = radioCustomSpeed.Checked;
             chkShowDisconnectedInterfaces.Checked = Settings.Default.ShowDisconnectedInterfaces;
+            chkShowHiddenInterfaces.Checked = Settings.Default.ShowHiddenInterfaces;
             checkBoxStartup.Checked = Settings.Default.LoadOnStartup;
             btnRefreshIconSets.Height = cboIconSet.Height + 2;
             PopulateIconSetsCombo();
@@ -422,6 +423,21 @@ namespace GabNetStats
             }
 
             Settings.Default.ShowDisconnectedInterfaces = chkShowDisconnectedInterfaces.Checked;
+            FormMain main = (FormMain)Application.OpenForms["FormMain"];
+            if (main != null)
+            {
+                main.PopulateNICs(main.NetworkAdaptersToolStripMenuItem);
+            }
+        }
+
+        private void chkShowHiddenInterfaces_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!settingsInitialized)
+            {
+                return;
+            }
+
+            Settings.Default.ShowHiddenInterfaces = chkShowHiddenInterfaces.Checked;
             FormMain main = (FormMain)Application.OpenForms["FormMain"];
             if (main != null)
             {

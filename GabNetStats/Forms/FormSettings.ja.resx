@@ -177,6 +177,9 @@
   <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
     <value>切断されたインターフェースを表示する</value>
   </data>
+  <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
+    <value>非表示/仮想インターフェースを表示</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>その他</value>
   </data>

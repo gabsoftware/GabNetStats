@@ -69,6 +69,9 @@
   <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
     <value>끊긴 인터페이스 표시</value>
   </data>
+  <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
+    <value>숨김/가상 인터페이스 표시</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>기타</value>
   </data>

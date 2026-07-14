@@ -171,6 +171,9 @@
   <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
     <value>Mostrar interfaces desconectadas</value>
   </data>
+  <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
+    <value>Mostrar interfaces ocultas/virtuales</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Varios</value>
   </data>

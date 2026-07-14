@@ -172,6 +172,9 @@
   <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
     <value>Niet-verbonden interfaces weergeven</value>
   </data>
+  <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
+    <value>Verborgen/virtuele interfaces weergeven</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Instellingen</value>
   </data>

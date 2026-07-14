@@ -169,6 +169,9 @@
   <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
     <value>Mostra le interfacce disconnesse</value>
   </data>
+  <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
+    <value>Mostra interfacce nascoste/virtuali</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Opzioni</value>
   </data>

@@ -277,6 +277,18 @@ namespace GabNetStats.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowHiddenInterfaces {
+            get {
+                return ((bool)(this["ShowHiddenInterfaces"]));
+            }
+            set {
+                this["ShowHiddenInterfaces"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string AdvancedSelectedInterfaceMac {
             get {

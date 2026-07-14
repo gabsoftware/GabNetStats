@@ -151,14 +151,17 @@ namespace GabNetStats
                     return false;
             }
 
-            string description = netInterface.Description ?? String.Empty;
-            string name = netInterface.Name ?? String.Empty;
-            foreach (string keyword in hiddenInterfaceKeywords)
+            if (!Settings.Default.ShowHiddenInterfaces)
             {
-                if (description.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    name.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                string description = netInterface.Description ?? String.Empty;
+                string name = netInterface.Name ?? String.Empty;
+                foreach (string keyword in hiddenInterfaceKeywords)
                 {
-                    return false;
+                    if (description.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                        name.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+                        return false;
+                    }
                 }
             }
 
