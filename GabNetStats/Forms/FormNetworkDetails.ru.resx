@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -118,56 +118,83 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabPageGlobal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 44</value>
+  </data>
   <data name="tabPageGlobal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1050, 511</value>
+    <value>1050, 489</value>
   </data>
   <data name="tabPageGlobal.Text" xml:space="preserve">
     <value>Общая статистика</value>
   </data>
+  <data name="tabPageNetworkInterfaces.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 44</value>
+  </data>
   <data name="tabPageNetworkInterfaces.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1050, 511</value>
+    <value>1050, 489</value>
   </data>
   <data name="tabPageNetworkInterfaces.Text" xml:space="preserve">
     <value>Статистика сетевого интерфейса</value>
   </data>
+  <data name="tabPageTCP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 44</value>
+  </data>
   <data name="tabPageTCP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1050, 511</value>
+    <value>1050, 489</value>
   </data>
   <data name="tabPageTCP.Text" xml:space="preserve">
     <value>Статистика TCP</value>
   </data>
+  <data name="tabPageTCPConnections.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 44</value>
+  </data>
   <data name="tabPageTCPConnections.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1050, 511</value>
+    <value>1050, 489</value>
   </data>
   <data name="tabPageTCPConnections.Text" xml:space="preserve">
     <value>Соединения TCP</value>
   </data>
+  <data name="tabPageTCPListeners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 44</value>
+  </data>
   <data name="tabPageTCPListeners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1050, 511</value>
+    <value>1050, 489</value>
   </data>
   <data name="tabPageTCPListeners.Text" xml:space="preserve">
     <value>Прослушивание TCP</value>
   </data>
+  <data name="tabPageUDP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 44</value>
+  </data>
   <data name="tabPageUDP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1050, 511</value>
+    <value>1050, 489</value>
   </data>
   <data name="tabPageUDP.Text" xml:space="preserve">
     <value>Статистика UDP</value>
   </data>
+  <data name="tabPageUDPListeners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 44</value>
+  </data>
   <data name="tabPageUDPListeners.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1050, 511</value>
+    <value>1050, 489</value>
   </data>
   <data name="tabPageUDPListeners.Text" xml:space="preserve">
     <value>Прослушивание UDP</value>
   </data>
+  <data name="tabPageICMPv4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 44</value>
+  </data>
   <data name="tabPageICMPv4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1050, 511</value>
+    <value>1050, 489</value>
   </data>
   <data name="tabPageICMPv4.Text" xml:space="preserve">
     <value>Статистика ICMPv4</value>
   </data>
+  <data name="tabPageICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 44</value>
+  </data>
   <data name="tabPageICMPv6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1050, 511</value>
+    <value>1050, 489</value>
   </data>
   <data name="tabPageICMPv6.Text" xml:space="preserve">
     <value>Статистика ICMPv6</value>
@@ -179,25 +206,25 @@
     <value>Исходящие пакеты</value>
   </data>
   <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 13</value>
+    <value>165, 15</value>
   </data>
   <data name="label21.Text" xml:space="preserve">
     <value>Запросы исходящих пакетов</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 13</value>
+    <value>129, 15</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>Пакеты без маршрута</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 13</value>
+    <value>181, 15</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
     <value>Маршрутизация отбрасываний</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 13</value>
+    <value>183, 15</value>
   </data>
   <data name="label19.Text" xml:space="preserve">
     <value>Отклонено переданных пакетов</value>
@@ -206,43 +233,43 @@
     <value>Входящие пакеты</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 13</value>
+    <value>205, 15</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>Пакеты с неизвестным протоколом</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 13</value>
+    <value>178, 15</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Пакеты с ошибками заголовка</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 13</value>
+    <value>160, 15</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Пакеты с ошибками адреса</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 13</value>
+    <value>114, 15</value>
   </data>
   <data name="label14.Text" xml:space="preserve">
     <value>Переслано пакетов</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 13</value>
+    <value>114, 15</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Отклонено пакетов</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 13</value>
+    <value>118, 15</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>Доставлено пакетов</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 13</value>
+    <value>109, 15</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>Получено пакетов</value>
@@ -251,37 +278,37 @@
     <value>Фрагментация пакета</value>
   </data>
   <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 13</value>
+    <value>139, 15</value>
   </data>
   <data name="label22.Text" xml:space="preserve">
     <value>Пересобранные пакеты</value>
   </data>
   <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 13</value>
+    <value>154, 15</value>
   </data>
   <data name="label23.Text" xml:space="preserve">
     <value>Фрагментировано пакетов</value>
   </data>
   <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 13</value>
+    <value>159, 15</value>
   </data>
   <data name="label24.Text" xml:space="preserve">
     <value>Таймаут повторной сборки</value>
   </data>
   <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 13</value>
+    <value>142, 15</value>
   </data>
   <data name="label25.Text" xml:space="preserve">
     <value>Сбой повторной сборки</value>
   </data>
   <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 13</value>
+    <value>166, 15</value>
   </data>
   <data name="label26.Text" xml:space="preserve">
     <value>Требуется повторная сборка</value>
   </data>
   <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 13</value>
+    <value>184, 15</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
     <value>Ошибки фрагментации пакетов</value>
@@ -290,61 +317,61 @@
     <value>Разное</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 13</value>
+    <value>55, 15</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Тип узла</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 13</value>
+    <value>133, 15</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Является WINS-прокси</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 13</value>
+    <value>63, 15</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Имя хоста</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 13</value>
+    <value>89, 15</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Доменное имя</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 13</value>
+    <value>114, 15</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Имя области DHCP</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
+    <value>139, 15</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Количество маршрутов</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 13</value>
+    <value>134, 15</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Количество IP-адресов</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 13</value>
+    <value>148, 15</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Количество интерфейсов</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 13</value>
+    <value>150, 15</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Переадресация включена</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 13</value>
+    <value>113, 15</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>TTL по умолчанию</value>
@@ -359,7 +386,7 @@
     <value>232, 133</value>
   </data>
   <data name="label144.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 13</value>
+    <value>70, 15</value>
   </data>
   <data name="label144.Text" xml:space="preserve">
     <value>MAC-адрес</value>
@@ -368,7 +395,7 @@
     <value>232, 263</value>
   </data>
   <data name="label64.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 13</value>
+    <value>216, 15</value>
   </data>
   <data name="label64.Text" xml:space="preserve">
     <value>Поддержка многоадресной рассылки</value>
@@ -377,16 +404,13 @@
     <value>232, 81</value>
   </data>
   <data name="label65.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
+    <value>59, 15</value>
   </data>
   <data name="label65.Text" xml:space="preserve">
     <value>Скорость</value>
   </data>
   <data name="txtOperationalStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 211</value>
-  </data>
-  <data name="label61.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 13</value>
   </data>
   <data name="label61.Text" xml:space="preserve">
     <value>Только прием</value>
@@ -397,6 +421,9 @@
   <data name="txtId.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 159</value>
   </data>
+  <data name="label66.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 15</value>
+  </data>
   <data name="label66.Text" xml:space="preserve">
     <value>Статус операции</value>
   </data>
@@ -404,7 +431,7 @@
     <value>232, 107</value>
   </data>
   <data name="label58.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 13</value>
+    <value>148, 15</value>
   </data>
   <data name="label58.Text" xml:space="preserve">
     <value>Тип сетевого интерфейса</value>
@@ -413,7 +440,7 @@
     <value>232, 55</value>
   </data>
   <data name="label59.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 13</value>
+    <value>31, 15</value>
   </data>
   <data name="label59.Text" xml:space="preserve">
     <value>Имя</value>
@@ -422,7 +449,7 @@
     <value>232, 237</value>
   </data>
   <data name="label60.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 13</value>
+    <value>175, 15</value>
   </data>
   <data name="label60.Text" xml:space="preserve">
     <value>Индекс петлевого интерфейса</value>
@@ -431,7 +458,7 @@
     <value>232, 29</value>
   </data>
   <data name="label63.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
+    <value>62, 15</value>
   </data>
   <data name="label63.Text" xml:space="preserve">
     <value>Описание</value>
@@ -440,61 +467,61 @@
     <value>Конфигурация IP</value>
   </data>
   <data name="label57.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 13</value>
+    <value>127, 15</value>
   </data>
   <data name="label57.Text" xml:space="preserve">
     <value>Адреса WINS-сервера</value>
   </data>
   <data name="label55.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 13</value>
+    <value>185, 15</value>
   </data>
   <data name="label55.Text" xml:space="preserve">
     <value>Адреса одноадресной рассылки</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 13</value>
+    <value>193, 15</value>
   </data>
   <data name="label56.Text" xml:space="preserve">
     <value>Адреса многоадресной рассылки</value>
   </data>
   <data name="label47.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 13</value>
+    <value>168, 15</value>
   </data>
   <data name="label47.Text" xml:space="preserve">
     <value>Динамический DNS включен</value>
   </data>
   <data name="label48.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
+    <value>82, 15</value>
   </data>
   <data name="label48.Text" xml:space="preserve">
     <value>DNS включен</value>
   </data>
   <data name="label49.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
+    <value>88, 15</value>
   </data>
   <data name="label49.Text" xml:space="preserve">
     <value>Адреса шлюза</value>
   </data>
   <data name="label50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
+    <value>84, 15</value>
   </data>
   <data name="label50.Text" xml:space="preserve">
     <value>DNS-суффикс</value>
   </data>
   <data name="label52.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 13</value>
+    <value>72, 15</value>
   </data>
   <data name="label52.Text" xml:space="preserve">
     <value>Адреса DNS</value>
   </data>
   <data name="label53.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 13</value>
+    <value>130, 15</value>
   </data>
   <data name="label53.Text" xml:space="preserve">
     <value>Адреса DHCP-сервера</value>
   </data>
   <data name="label54.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 13</value>
+    <value>186, 15</value>
   </data>
   <data name="label54.Text" xml:space="preserve">
     <value>Адреса произвольной рассылки</value>
@@ -512,7 +539,7 @@
     <value>216, 172</value>
   </data>
   <data name="label42.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 13</value>
+    <value>115, 15</value>
   </data>
   <data name="label42.Text" xml:space="preserve">
     <value>Используется WINS</value>
@@ -524,7 +551,7 @@
     <value>216, 120</value>
   </data>
   <data name="label30.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 13</value>
+    <value>196, 15</value>
   </data>
   <data name="label30.Text" xml:space="preserve">
     <value>Переадресация пакетов включена</value>
@@ -533,16 +560,13 @@
     <value>216, 94</value>
   </data>
   <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 13</value>
+    <value>91, 15</value>
   </data>
   <data name="label31.Text" xml:space="preserve">
     <value>DHCP включен</value>
   </data>
   <data name="txtIsAutomaticPrivateAddressingEnabled.Location" type="System.Drawing.Point, System.Drawing">
     <value>216, 68</value>
-  </data>
-  <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 13</value>
   </data>
   <data name="label32.Text" xml:space="preserve">
     <value>Адрес APIPA включен</value>
@@ -551,7 +575,7 @@
     <value>216, 42</value>
   </data>
   <data name="label37.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 13</value>
+    <value>123, 15</value>
   </data>
   <data name="label37.Text" xml:space="preserve">
     <value>Имеется адрес APIPA</value>
@@ -560,7 +584,7 @@
     <value>216, 16</value>
   </data>
   <data name="label39.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
+    <value>47, 15</value>
   </data>
   <data name="label39.Text" xml:space="preserve">
     <value>Индекс</value>
@@ -575,7 +599,7 @@
     <value>203, 81</value>
   </data>
   <data name="label41.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 13</value>
+    <value>166, 15</value>
   </data>
   <data name="label41.Text" xml:space="preserve">
     <value>Отпр. одноадресных пакетов</value>
@@ -584,7 +608,7 @@
     <value>203, 159</value>
   </data>
   <data name="label43.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
+    <value>134, 15</value>
   </data>
   <data name="label43.Text" xml:space="preserve">
     <value>Длина очереди вывода</value>
@@ -593,7 +617,7 @@
     <value>203, 133</value>
   </data>
   <data name="label44.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 13</value>
+    <value>144, 15</value>
   </data>
   <data name="label44.Text" xml:space="preserve">
     <value>Исх. пакеты с ошибками</value>
@@ -602,7 +626,7 @@
     <value>203, 107</value>
   </data>
   <data name="label45.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 13</value>
+    <value>138, 15</value>
   </data>
   <data name="label45.Text" xml:space="preserve">
     <value>Отклонено исх. пакетов</value>
@@ -611,7 +635,7 @@
     <value>203, 55</value>
   </data>
   <data name="label46.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 13</value>
+    <value>172, 15</value>
   </data>
   <data name="label46.Text" xml:space="preserve">
     <value>Отп. неодноадресных пакетов</value>
@@ -620,7 +644,7 @@
     <value>203, 29</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 13</value>
+    <value>102, 15</value>
   </data>
   <data name="label51.Text" xml:space="preserve">
     <value>Отправлено байт</value>
@@ -629,37 +653,37 @@
     <value>Получено</value>
   </data>
   <data name="label40.Size" type="System.Drawing.Size, System.Drawing">
-    <value>175, 13</value>
+    <value>191, 15</value>
   </data>
   <data name="label40.Text" xml:space="preserve">
     <value>Получено одноадресных пакетов</value>
   </data>
   <data name="label33.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 13</value>
+    <value>207, 15</value>
   </data>
   <data name="label33.Text" xml:space="preserve">
     <value>Получено не одноадресных пакетов</value>
   </data>
   <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 13</value>
+    <value>221, 15</value>
   </data>
   <data name="label34.Text" xml:space="preserve">
     <value>Вх. пакеты с неизвестным протоколом</value>
   </data>
   <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 13</value>
+    <value>176, 15</value>
   </data>
   <data name="label35.Text" xml:space="preserve">
     <value>Входящие пакеты с ошибками</value>
   </data>
   <data name="label36.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 13</value>
+    <value>170, 15</value>
   </data>
   <data name="label36.Text" xml:space="preserve">
     <value>Отклонено входящих пакетов</value>
   </data>
   <data name="label38.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 13</value>
+    <value>91, 15</value>
   </data>
   <data name="label38.Text" xml:space="preserve">
     <value>Получено байт</value>
@@ -671,7 +695,7 @@
     <value>276, 22</value>
   </data>
   <data name="label81.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 13</value>
+    <value>135, 15</value>
   </data>
   <data name="label81.Text" xml:space="preserve">
     <value>Получено ошибок TCP</value>
@@ -686,7 +710,7 @@
     <value>300, 128</value>
   </data>
   <data name="label82.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 13</value>
+    <value>147, 15</value>
   </data>
   <data name="label82.Text" xml:space="preserve">
     <value>Получено сегментов TCP</value>
@@ -695,7 +719,7 @@
     <value>300, 102</value>
   </data>
   <data name="label83.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 13</value>
+    <value>195, 15</value>
   </data>
   <data name="label83.Text" xml:space="preserve">
     <value>Отправлено TCP сброс (RST флаг)</value>
@@ -704,7 +728,7 @@
     <value>300, 76</value>
   </data>
   <data name="label84.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 13</value>
+    <value>214, 15</value>
   </data>
   <data name="label84.Text" xml:space="preserve">
     <value>Повторно отправлено сегментов TCP</value>
@@ -713,7 +737,7 @@
     <value>300, 154</value>
   </data>
   <data name="label85.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 13</value>
+    <value>158, 15</value>
   </data>
   <data name="label85.Text" xml:space="preserve">
     <value>Отправлено сегментов TCP</value>
@@ -722,7 +746,7 @@
     <value>300, 50</value>
   </data>
   <data name="label86.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 13</value>
+    <value>276, 15</value>
   </data>
   <data name="label86.Text" xml:space="preserve">
     <value>Минимальный таймаут передачи сегментов TCP</value>
@@ -731,7 +755,7 @@
     <value>300, 24</value>
   </data>
   <data name="label93.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 13</value>
+    <value>280, 15</value>
   </data>
   <data name="label93.Text" xml:space="preserve">
     <value>Максимальный таймаут передачи сегментов TCP</value>
@@ -743,7 +767,7 @@
     <value>276, 81</value>
   </data>
   <data name="label68.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 13</value>
+    <value>173, 15</value>
   </data>
   <data name="label68.Text" xml:space="preserve">
     <value>Установлено TCP-соединений</value>
@@ -752,7 +776,7 @@
     <value>276, 185</value>
   </data>
   <data name="label69.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 13</value>
+    <value>268, 15</value>
   </data>
   <data name="label69.Text" xml:space="preserve">
     <value>Макс. число поддерживаемых соединений TCP</value>
@@ -761,7 +785,7 @@
     <value>276, 159</value>
   </data>
   <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 13</value>
+    <value>212, 15</value>
   </data>
   <data name="label70.Text" xml:space="preserve">
     <value>Неудачные попытки соединения TCP</value>
@@ -770,7 +794,7 @@
     <value>276, 133</value>
   </data>
   <data name="label71.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
+    <value>135, 15</value>
   </data>
   <data name="label71.Text" xml:space="preserve">
     <value>Сброс соединений TCP</value>
@@ -779,7 +803,7 @@
     <value>276, 107</value>
   </data>
   <data name="label72.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 13</value>
+    <value>148, 15</value>
   </data>
   <data name="label72.Text" xml:space="preserve">
     <value>Текущие соединения TCP</value>
@@ -788,7 +812,7 @@
     <value>276, 55</value>
   </data>
   <data name="label73.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 13</value>
+    <value>255, 15</value>
   </data>
   <data name="label73.Text" xml:space="preserve">
     <value>Инициировано запросов на TCP-соединения</value>
@@ -797,7 +821,7 @@
     <value>276, 29</value>
   </data>
   <data name="label75.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 13</value>
+    <value>217, 15</value>
   </data>
   <data name="label75.Text" xml:space="preserve">
     <value>Принято запросов на соединение TCP</value>
@@ -839,31 +863,31 @@
     <value>Статистика соединений UDP</value>
   </data>
   <data name="label74.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 13</value>
+    <value>125, 15</value>
   </data>
   <data name="label74.Text" xml:space="preserve">
     <value>Прослушивание UDP</value>
   </data>
   <data name="label67.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 13</value>
+    <value>186, 15</value>
   </data>
   <data name="label67.Text" xml:space="preserve">
     <value>Отклонено входящих датаграмм</value>
   </data>
   <data name="label78.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 13</value>
+    <value>205, 15</value>
   </data>
   <data name="label78.Text" xml:space="preserve">
     <value>Входящие датаграммы с ошибками</value>
   </data>
   <data name="label79.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 13</value>
+    <value>136, 15</value>
   </data>
   <data name="label79.Text" xml:space="preserve">
     <value>Отправлено датаграмм</value>
   </data>
   <data name="label80.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 13</value>
+    <value>125, 15</value>
   </data>
   <data name="label80.Text" xml:space="preserve">
     <value>Получено датаграмм</value>
@@ -884,73 +908,79 @@
     <value>Отправленные сообщения ICMPv4</value>
   </data>
   <data name="label99.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 13</value>
+    <value>143, 15</value>
   </data>
   <data name="label99.Text" xml:space="preserve">
     <value>Запросы метки времени</value>
   </data>
   <data name="label100.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 13</value>
+    <value>134, 15</value>
   </data>
   <data name="label100.Text" xml:space="preserve">
     <value>Ответы метки времени</value>
   </data>
   <data name="label101.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 13</value>
+    <value>132, 15</value>
   </data>
   <data name="label101.Text" xml:space="preserve">
     <value>Превышение времени</value>
   </data>
+  <data name="label102.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 15</value>
+  </data>
+  <data name="label102.Text" xml:space="preserve">
+    <value>Подавления источника</value>
+  </data>
   <data name="label103.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 13</value>
+    <value>107, 15</value>
   </data>
   <data name="label103.Text" xml:space="preserve">
     <value>Перенаправления</value>
   </data>
   <data name="label104.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
+    <value>137, 15</value>
   </data>
   <data name="label104.Text" xml:space="preserve">
     <value>Проблемы параметров</value>
   </data>
   <data name="label105.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+    <value>73, 15</value>
   </data>
   <data name="label105.Text" xml:space="preserve">
     <value>Сообщения</value>
   </data>
   <data name="label106.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
+    <value>54, 15</value>
   </data>
   <data name="label106.Text" xml:space="preserve">
     <value>Ошибки</value>
   </data>
   <data name="label107.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
+    <value>78, 15</value>
   </data>
   <data name="label107.Text" xml:space="preserve">
     <value>Эхо-запросы</value>
   </data>
   <data name="label108.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
+    <value>69, 15</value>
   </data>
   <data name="label108.Text" xml:space="preserve">
     <value>Эхо-ответы</value>
   </data>
   <data name="label109.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 13</value>
+    <value>117, 15</value>
   </data>
   <data name="label109.Text" xml:space="preserve">
     <value>Адресат недоступен</value>
   </data>
   <data name="label110.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 13</value>
+    <value>133, 15</value>
   </data>
   <data name="label110.Text" xml:space="preserve">
     <value>Запросы маски адреса</value>
   </data>
   <data name="label111.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 13</value>
+    <value>124, 15</value>
   </data>
   <data name="label111.Text" xml:space="preserve">
     <value>Ответы маски адреса</value>
@@ -959,175 +989,178 @@
     <value>Полученные сообщения ICMPv4</value>
   </data>
   <data name="label96.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 13</value>
+    <value>143, 15</value>
   </data>
   <data name="label96.Text" xml:space="preserve">
     <value>Запросы метки времени</value>
   </data>
   <data name="label97.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 13</value>
+    <value>134, 15</value>
   </data>
   <data name="label97.Text" xml:space="preserve">
     <value>Ответы метки времени</value>
   </data>
   <data name="label98.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 13</value>
+    <value>132, 15</value>
   </data>
   <data name="label98.Text" xml:space="preserve">
     <value>Превышение времени</value>
   </data>
   <data name="label76.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 13</value>
+    <value>135, 15</value>
   </data>
   <data name="label76.Text" xml:space="preserve">
     <value>Подавление источника</value>
   </data>
   <data name="label77.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 13</value>
+    <value>107, 15</value>
   </data>
   <data name="label77.Text" xml:space="preserve">
     <value>Перенаправления</value>
   </data>
   <data name="label87.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
+    <value>137, 15</value>
   </data>
   <data name="label87.Text" xml:space="preserve">
     <value>Проблемы параметров</value>
   </data>
   <data name="label88.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+    <value>73, 15</value>
   </data>
   <data name="label88.Text" xml:space="preserve">
     <value>Сообщения</value>
   </data>
   <data name="label89.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
+    <value>54, 15</value>
   </data>
   <data name="label89.Text" xml:space="preserve">
     <value>Ошибки</value>
   </data>
   <data name="label90.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
+    <value>78, 15</value>
   </data>
   <data name="label90.Text" xml:space="preserve">
     <value>Эхо-запросы</value>
   </data>
   <data name="label91.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
+    <value>69, 15</value>
   </data>
   <data name="label91.Text" xml:space="preserve">
     <value>Эхо-ответы</value>
   </data>
   <data name="label92.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 13</value>
+    <value>117, 15</value>
   </data>
   <data name="label92.Text" xml:space="preserve">
     <value>Адресат недоступен</value>
   </data>
   <data name="label94.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 13</value>
+    <value>133, 15</value>
   </data>
   <data name="label94.Text" xml:space="preserve">
     <value>Запросы маски адреса</value>
   </data>
   <data name="label95.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 13</value>
+    <value>124, 15</value>
   </data>
   <data name="label95.Text" xml:space="preserve">
     <value>Ответы маски адреса</value>
   </data>
+  <data name="groupBox13.Text" xml:space="preserve">
+    <value>Отправленные сообщения ICMPv6</value>
+  </data>
   <data name="label112.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 13</value>
+    <value>132, 15</value>
   </data>
   <data name="label112.Text" xml:space="preserve">
     <value>Превышение времени</value>
   </data>
   <data name="label113.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 13</value>
+    <value>153, 15</value>
   </data>
   <data name="label113.Text" xml:space="preserve">
     <value>Запросы маршрутизатора</value>
   </data>
   <data name="label114.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
+    <value>135, 15</value>
   </data>
   <data name="label114.Text" xml:space="preserve">
     <value>Ответ маршрутизатора</value>
   </data>
   <data name="label115.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 13</value>
+    <value>107, 15</value>
   </data>
   <data name="label115.Text" xml:space="preserve">
     <value>Перенаправления</value>
   </data>
   <data name="label116.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
+    <value>137, 15</value>
   </data>
   <data name="label116.Text" xml:space="preserve">
     <value>Проблемы параметров</value>
   </data>
   <data name="label117.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 13</value>
+    <value>150, 15</value>
   </data>
   <data name="label117.Text" xml:space="preserve">
     <value>Слишком большой пакет</value>
   </data>
   <data name="label118.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 13</value>
+    <value>155, 15</value>
   </data>
   <data name="label118.Text" xml:space="preserve">
     <value>Запрос доступных соседей</value>
   </data>
   <data name="label119.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
+    <value>78, 15</value>
   </data>
   <data name="label119.Text" xml:space="preserve">
     <value>Ответ соседа</value>
   </data>
   <data name="label120.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+    <value>73, 15</value>
   </data>
   <data name="label120.Text" xml:space="preserve">
     <value>Сообщения</value>
   </data>
   <data name="label121.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 13</value>
+    <value>152, 15</value>
   </data>
   <data name="label121.Text" xml:space="preserve">
     <value>Отчеты о членстве в IGMP</value>
   </data>
   <data name="label122.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 13</value>
+    <value>172, 15</value>
   </data>
   <data name="label122.Text" xml:space="preserve">
     <value>Сокращение членства в IGMP</value>
   </data>
   <data name="label123.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 13</value>
+    <value>156, 15</value>
   </data>
   <data name="label123.Text" xml:space="preserve">
     <value>IGMP запросы на членство</value>
   </data>
   <data name="label124.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
+    <value>54, 15</value>
   </data>
   <data name="label124.Text" xml:space="preserve">
     <value>Ошибки</value>
   </data>
   <data name="label141.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
+    <value>78, 15</value>
   </data>
   <data name="label141.Text" xml:space="preserve">
     <value>Эхо-запросы</value>
   </data>
   <data name="label142.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
+    <value>69, 15</value>
   </data>
   <data name="label142.Text" xml:space="preserve">
     <value>Эхо-ответы</value>
   </data>
   <data name="label143.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 13</value>
+    <value>117, 15</value>
   </data>
   <data name="label143.Text" xml:space="preserve">
     <value>Адресат недоступен</value>
@@ -1136,97 +1169,97 @@
     <value>Полученные сообщения ICMPv6</value>
   </data>
   <data name="label138.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 13</value>
+    <value>132, 15</value>
   </data>
   <data name="label138.Text" xml:space="preserve">
     <value>Превышение времени</value>
   </data>
   <data name="label139.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 13</value>
+    <value>153, 15</value>
   </data>
   <data name="label139.Text" xml:space="preserve">
     <value>Запросы маршрутизатора</value>
   </data>
   <data name="label140.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
+    <value>135, 15</value>
   </data>
   <data name="label140.Text" xml:space="preserve">
     <value>Ответ маршрутизатора</value>
   </data>
   <data name="label125.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 13</value>
+    <value>107, 15</value>
   </data>
   <data name="label125.Text" xml:space="preserve">
     <value>Перенаправления</value>
   </data>
   <data name="label126.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
+    <value>137, 15</value>
   </data>
   <data name="label126.Text" xml:space="preserve">
     <value>Проблемы параметров</value>
   </data>
   <data name="label127.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 13</value>
+    <value>150, 15</value>
   </data>
   <data name="label127.Text" xml:space="preserve">
     <value>Слишком большой пакет</value>
   </data>
   <data name="label128.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 13</value>
+    <value>155, 15</value>
   </data>
   <data name="label128.Text" xml:space="preserve">
     <value>Запрос доступных соседей</value>
   </data>
   <data name="label129.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 13</value>
+    <value>78, 15</value>
   </data>
   <data name="label129.Text" xml:space="preserve">
     <value>Ответ соседа</value>
   </data>
   <data name="label130.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 13</value>
+    <value>73, 15</value>
   </data>
   <data name="label130.Text" xml:space="preserve">
     <value>Сообщения</value>
   </data>
   <data name="label131.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 13</value>
+    <value>152, 15</value>
   </data>
   <data name="label131.Text" xml:space="preserve">
     <value>Отчеты о членстве в IGMP</value>
   </data>
   <data name="label132.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 13</value>
+    <value>172, 15</value>
   </data>
   <data name="label132.Text" xml:space="preserve">
     <value>Сокращение членства в IGMP</value>
   </data>
   <data name="label133.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 13</value>
+    <value>156, 15</value>
   </data>
   <data name="label133.Text" xml:space="preserve">
     <value>IGMP запросы на членство</value>
   </data>
   <data name="label134.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
+    <value>54, 15</value>
   </data>
   <data name="label134.Text" xml:space="preserve">
     <value>Ошибки</value>
   </data>
   <data name="label135.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
+    <value>78, 15</value>
   </data>
   <data name="label135.Text" xml:space="preserve">
     <value>Эхо-запросы</value>
   </data>
   <data name="label136.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
+    <value>69, 15</value>
   </data>
   <data name="label136.Text" xml:space="preserve">
     <value>Эхо-ответы</value>
   </data>
   <data name="label137.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 13</value>
+    <value>117, 15</value>
   </data>
   <data name="label137.Text" xml:space="preserve">
     <value>Адресат недоступен</value>
@@ -1238,13 +1271,13 @@
     <value>164, 18</value>
   </data>
   <data name="comboInterfaces.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 21</value>
+    <value>556, 23</value>
   </data>
   <data name="label28.Location" type="System.Drawing.Point, System.Drawing">
     <value>29, 23</value>
   </data>
   <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 13</value>
+    <value>128, 15</value>
   </data>
   <data name="label28.Text" xml:space="preserve">
     <value>Активный интерфейс:</value>
@@ -2770,14 +2803,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>GabNetStats - Расширенная статистика</value>
-  </data>
-  <data name="groupBox13.Text" xml:space="preserve">
-    <value>Отправленные сообщения ICMPv6</value>
-  </data>
-  <data name="label102.Text" xml:space="preserve">
-    <value>Подавления источника</value>
-  </data>
-  <data name="label62.Text" xml:space="preserve">
-    <value>ID</value>
   </data>
 </root>

@@ -125,13 +125,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 20</value>
+    <value>149, 15</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Частота обновления (мс):</value>
   </data>
   <data name="radioCustomSpeed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>447, 24</value>
+    <value>354, 19</value>
   </data>
   <data name="radioCustomSpeed.Text" xml:space="preserve">
     <value>Указание пропускной способности (многоцветный значок)</value>
@@ -146,13 +146,13 @@
     <value>286, 58</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 20</value>
+    <value>227, 15</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>(должна быть папка в подпапке "icons")</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 20</value>
+    <value>89, 15</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Набор иконок:</value>
@@ -164,46 +164,49 @@
     <value>Настройки пропускной способности</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 20</value>
+    <value>106, 15</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Метод измерений</value>
   </data>
   <data name="lblUpload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 20</value>
+    <value>18, 15</value>
   </data>
   <data name="lblUpload.Text" xml:space="preserve">
     <value>/с</value>
   </data>
   <data name="lblDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 20</value>
+    <value>18, 15</value>
   </data>
   <data name="lblDownload.Text" xml:space="preserve">
     <value>/с</value>
   </data>
   <data name="rbBytes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 24</value>
+    <value>61, 19</value>
   </data>
   <data name="rbBytes.Text" xml:space="preserve">
     <value>байт/с</value>
   </data>
   <data name="rbBits.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 24</value>
+    <value>55, 19</value>
   </data>
   <data name="rbBits.Text" xml:space="preserve">
     <value>бит/с</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 20</value>
+    <value>55, 15</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Загрузка</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 15</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Отдача</value>
   </data>
   <data name="radioDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 24</value>
+    <value>196, 19</value>
   </data>
   <data name="radioDefault.Text" xml:space="preserve">
     <value>Синий значок (по умолчанию)</value>
@@ -215,7 +218,7 @@
     <value>Автоматический пинг</value>
   </data>
   <data name="chkSettingsAutoPingNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 24</value>
+    <value>167, 19</value>
   </data>
   <data name="chkSettingsAutoPingNotification.Text" xml:space="preserve">
     <value>Показывать уведомления</value>
@@ -224,19 +227,19 @@
     <value>270, 86</value>
   </data>
   <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 27</value>
+    <value>77, 23</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
     <value>410, 91</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 20</value>
+    <value>22, 15</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>мс</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 20</value>
+    <value>80, 15</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Пинг каждые</value>
@@ -245,30 +248,39 @@
     <value>270, 46</value>
   </data>
   <data name="txtSettingsAutoPingHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 27</value>
+    <value>180, 23</value>
   </data>
   <data name="chkSettingsAutoPingEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 24</value>
+    <value>199, 19</value>
   </data>
   <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
     <value>Включить авто-пинг по адресу:</value>
   </data>
+  <data name="checkBoxStartup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 613</value>
+  </data>
   <data name="checkBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 24</value>
+    <value>195, 19</value>
   </data>
   <data name="checkBoxStartup.Text" xml:space="preserve">
     <value>Запускать при старте Windows</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Настройки</value>
-  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Разное</value>
+  </data>
+  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 15</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Язык:</value>
   </data>
+  <data name="chkShowDisconnectedInterfaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 19</value>
+  </data>
   <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
     <value>Показывать отключённые интерфейсы</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Настройки</value>
   </data>
 </root>

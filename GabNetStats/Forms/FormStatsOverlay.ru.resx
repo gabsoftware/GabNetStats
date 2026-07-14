@@ -119,13 +119,13 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblStatisticsData.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 20</value>
+    <value>141, 15</value>
   </data>
   <data name="lblStatisticsData.Text" xml:space="preserve">
     <value>Получение статистики...</value>
   </data>
   <data name="lblSeconds.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
+    <value>44, 15</value>
   </data>
   <data name="lblSeconds.Text" xml:space="preserve">
     <value>секунд</value>
@@ -134,7 +134,7 @@
     <value>3, 3</value>
   </data>
   <data name="lblStatisticsTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 31</value>
+    <value>164, 26</value>
   </data>
   <data name="lblStatisticsTitle.Text" xml:space="preserve">
     <value>:: Статистика ::</value>
@@ -147,6 +147,12 @@
   </data>
   <data name="btnAdvanced.Text" xml:space="preserve">
     <value>Расширенная...</value>
+  </data>
+  <data name="chkAutoClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 373</value>
+  </data>
+  <data name="chkAutoClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 19</value>
   </data>
   <data name="chkAutoClose.Text" xml:space="preserve">
     <value>Закрыть через:</value>

@@ -112,6 +112,7 @@ namespace GabNetStats
             // 
             // groupBox1
             // 
+            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Controls.Add(btnRefreshIconSets);
             groupBox1.Controls.Add(label6);
             groupBox1.Controls.Add(label5);
@@ -119,7 +120,6 @@ namespace GabNetStats
             groupBox1.Controls.Add(grpBandwidthPreferences);
             groupBox1.Controls.Add(radioDefault);
             groupBox1.Controls.Add(radioCustomSpeed);
-            resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
             // 
@@ -143,15 +143,16 @@ namespace GabNetStats
             // 
             // cboIconSet
             // 
+            resources.ApplyResources(cboIconSet, "cboIconSet");
             cboIconSet.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             cboIconSet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboIconSet.FormattingEnabled = true;
-            resources.ApplyResources(cboIconSet, "cboIconSet");
             cboIconSet.Name = "cboIconSet";
             cboIconSet.DrawItem += cboIconSet_DrawItem;
             // 
             // grpBandwidthPreferences
             // 
+            resources.ApplyResources(grpBandwidthPreferences, "grpBandwidthPreferences");
             grpBandwidthPreferences.Controls.Add(cbUpload);
             grpBandwidthPreferences.Controls.Add(label4);
             grpBandwidthPreferences.Controls.Add(cbDownload);
@@ -163,15 +164,14 @@ namespace GabNetStats
             grpBandwidthPreferences.Controls.Add(txtDownload);
             grpBandwidthPreferences.Controls.Add(txtUpload);
             grpBandwidthPreferences.Controls.Add(label3);
-            resources.ApplyResources(grpBandwidthPreferences, "grpBandwidthPreferences");
             grpBandwidthPreferences.Name = "grpBandwidthPreferences";
             grpBandwidthPreferences.TabStop = false;
             // 
             // cbUpload
             // 
+            resources.ApplyResources(cbUpload, "cbUpload");
             cbUpload.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbUpload.FormattingEnabled = true;
-            resources.ApplyResources(cbUpload, "cbUpload");
             cbUpload.Name = "cbUpload";
             cbUpload.SelectedIndexChanged += cbUpload_SelectedIndexChanged;
             // 
@@ -182,9 +182,9 @@ namespace GabNetStats
             // 
             // cbDownload
             // 
+            resources.ApplyResources(cbDownload, "cbDownload");
             cbDownload.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbDownload.FormattingEnabled = true;
-            resources.ApplyResources(cbDownload, "cbDownload");
             cbDownload.Name = "cbDownload";
             cbDownload.SelectedIndexChanged += cbDownload_SelectedIndexChanged;
             // 
@@ -239,13 +239,13 @@ namespace GabNetStats
             // 
             // groupBox2
             // 
+            resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Controls.Add(chkSettingsAutoPingNotification);
             groupBox2.Controls.Add(numericUpDown1);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(txtSettingsAutoPingHost);
             groupBox2.Controls.Add(chkSettingsAutoPingEnabled);
-            resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Name = "groupBox2";
             groupBox2.TabStop = false;
             // 
@@ -257,8 +257,8 @@ namespace GabNetStats
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Increment = new decimal(new int[] { 500, 0, 0, 0 });
             resources.ApplyResources(numericUpDown1, "numericUpDown1");
+            numericUpDown1.Increment = new decimal(new int[] { 500, 0, 0, 0 });
             numericUpDown1.Maximum = new decimal(new int[] { 60000, 0, 0, 0 });
             numericUpDown1.Minimum = new decimal(new int[] { 500, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
@@ -293,10 +293,10 @@ namespace GabNetStats
             // 
             // groupBox3
             // 
+            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Controls.Add(lblLanguage);
             groupBox3.Controls.Add(cbLanguage);
             groupBox3.Controls.Add(chkShowDisconnectedInterfaces);
-            resources.ApplyResources(groupBox3, "groupBox3");
             groupBox3.Name = "groupBox3";
             groupBox3.TabStop = false;
             // 
@@ -307,9 +307,9 @@ namespace GabNetStats
             // 
             // cbLanguage
             // 
+            resources.ApplyResources(cbLanguage, "cbLanguage");
             cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbLanguage.FormattingEnabled = true;
-            resources.ApplyResources(cbLanguage, "cbLanguage");
             cbLanguage.Name = "cbLanguage";
             cbLanguage.SelectedIndexChanged += cbLanguage_SelectedIndexChanged;
             // 

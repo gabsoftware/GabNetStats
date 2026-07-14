@@ -118,518 +118,1764 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 20</value>
+  <data name="tabPageGlobal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
   </data>
-  <data name="label21.Text" xml:space="preserve">
-    <value>Solicitudes de paquetes salientes</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tabPageGlobal.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 20</value>
+  <data name="tabPageGlobal.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label18.Text" xml:space="preserve">
-    <value>Paquetes sin ruta</value>
-  </data>
-  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 20</value>
-  </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>Descartes de ruta</value>
-  </data>
-  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>245, 20</value>
-  </data>
-  <data name="label19.Text" xml:space="preserve">
-    <value>Descartes de paquetes transmitidos</value>
-  </data>
-  <data name="groupBoxGlobalOutbound.Text" xml:space="preserve">
-    <value>Paquetes salientes</value>
-  </data>
-  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 20</value>
-  </data>
-  <data name="label11.Text" xml:space="preserve">
-    <value>Paquetes de protocolo desconocido</value>
-  </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 20</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Paquetes con errores de encabezado</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 20</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>Paquetes con errores de dirección</value>
-  </data>
-  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 20</value>
-  </data>
-  <data name="label14.Text" xml:space="preserve">
-    <value>Paquetes reenviados</value>
-  </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
-  </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>Paquetes descartados</value>
-  </data>
-  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>Paquetes entregados</value>
-  </data>
-  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 20</value>
-  </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>Paquetes recibidos</value>
-  </data>
-  <data name="groupBoxGlobalInbound.Text" xml:space="preserve">
-    <value>Paquetes entrantes</value>
-  </data>
-  <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 20</value>
-  </data>
-  <data name="label22.Text" xml:space="preserve">
-    <value>Paquetes reensamblados</value>
-  </data>
-  <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 20</value>
-  </data>
-  <data name="label23.Text" xml:space="preserve">
-    <value>Paquetes fragmentados</value>
-  </data>
-  <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 20</value>
-  </data>
-  <data name="label24.Text" xml:space="preserve">
-    <value>Timeout de reensamblado</value>
-  </data>
-  <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 20</value>
-  </data>
-  <data name="label25.Text" xml:space="preserve">
-    <value>Fallos de reensamblado</value>
-  </data>
-  <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 20</value>
-  </data>
-  <data name="label26.Text" xml:space="preserve">
-    <value>Reensamblados requeridos</value>
-  </data>
-  <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>254, 20</value>
-  </data>
-  <data name="label27.Text" xml:space="preserve">
-    <value>Fallos de fragmentación de paquetes</value>
-  </data>
-  <data name="groupBoxGlobalFragmentation.Text" xml:space="preserve">
-    <value>Fragmentación de paquetes</value>
-  </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 20</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Tipo de nodo</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Es un proxy WINS</value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 20</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Nombre de host</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 20</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Nombre de dominio</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 20</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Nombre del ámbito DHCP</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 20</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Número de rutas</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 20</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Número de direcciones IP</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Número de interfaces</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 20</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Reenvío habilitado</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 20</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>TTL predeterminado</value>
-  </data>
-  <data name="groupBoxGlobalMisc.Text" xml:space="preserve">
-    <value>Varios</value>
+  <data name="tabPageGlobal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1112, 592</value>
   </data>
   <data name="tabPageGlobal.Text" xml:space="preserve">
     <value>Estadísticas globales</value>
   </data>
-  <data name="label144.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 20</value>
+  <data name="tabPageNetworkInterfaces.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
   </data>
-  <data name="label144.Text" xml:space="preserve">
-    <value>Dirección MAC</value>
+  <data name="tabPageNetworkInterfaces.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label64.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 20</value>
+  <data name="tabPageNetworkInterfaces.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label64.Text" xml:space="preserve">
-    <value>Admite multidifusión</value>
-  </data>
-  <data name="label65.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="label65.Text" xml:space="preserve">
-    <value>Velocidad</value>
-  </data>
-  <data name="label61.Text" xml:space="preserve">
-    <value>Solo recepción</value>
-  </data>
-  <data name="label66.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 20</value>
-  </data>
-  <data name="label66.Text" xml:space="preserve">
-    <value>Estado operativo</value>
-  </data>
-  <data name="label58.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 20</value>
-  </data>
-  <data name="label58.Text" xml:space="preserve">
-    <value>Tipo de interfaz de red</value>
-  </data>
-  <data name="label59.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
-  </data>
-  <data name="label59.Text" xml:space="preserve">
-    <value>Nombre</value>
-  </data>
-  <data name="label60.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 20</value>
-  </data>
-  <data name="label60.Text" xml:space="preserve">
-    <value>Índice loopback</value>
-  </data>
-  <data name="label63.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 20</value>
-  </data>
-  <data name="label63.Text" xml:space="preserve">
-    <value>Descripción</value>
-  </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Propiedades (2)</value>
-  </data>
-  <data name="label57.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 20</value>
-  </data>
-  <data name="label57.Text" xml:space="preserve">
-    <value>Servidores WINS</value>
-  </data>
-  <data name="label55.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 20</value>
-  </data>
-  <data name="label55.Text" xml:space="preserve">
-    <value>Direcciones unicast</value>
-  </data>
-  <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 20</value>
-  </data>
-  <data name="label56.Text" xml:space="preserve">
-    <value>Direcciones multicast</value>
-  </data>
-  <data name="label47.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 20</value>
-  </data>
-  <data name="label47.Text" xml:space="preserve">
-    <value>DNS dinámico habilitado</value>
-  </data>
-  <data name="label48.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 20</value>
-  </data>
-  <data name="label48.Text" xml:space="preserve">
-    <value>DNS habilitado</value>
-  </data>
-  <data name="label49.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
-  </data>
-  <data name="label49.Text" xml:space="preserve">
-    <value>Puertas de enlace</value>
-  </data>
-  <data name="label50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 20</value>
-  </data>
-  <data name="label50.Text" xml:space="preserve">
-    <value>Sufijo DNS</value>
-  </data>
-  <data name="label52.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 20</value>
-  </data>
-  <data name="label52.Text" xml:space="preserve">
-    <value>Direcciones DNS</value>
-  </data>
-  <data name="label53.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 20</value>
-  </data>
-  <data name="label53.Text" xml:space="preserve">
-    <value>Servidores DHCP</value>
-  </data>
-  <data name="label54.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 20</value>
-  </data>
-  <data name="label54.Text" xml:space="preserve">
-    <value>Direcciones anycast</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Configuración IP</value>
-  </data>
-  <data name="label42.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 20</value>
-  </data>
-  <data name="label42.Text" xml:space="preserve">
-    <value>Usa WINS</value>
-  </data>
-  <data name="label30.Size" type="System.Drawing.Size, System.Drawing">
-    <value>220, 20</value>
-  </data>
-  <data name="label30.Text" xml:space="preserve">
-    <value>Reenvío de paquetes habilitado</value>
-  </data>
-  <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 20</value>
-  </data>
-  <data name="label31.Text" xml:space="preserve">
-    <value>DHCP habilitado</value>
-  </data>
-  <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 20</value>
-  </data>
-  <data name="label32.Text" xml:space="preserve">
-    <value>Dirección APIPA habilitada</value>
-  </data>
-  <data name="label37.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 20</value>
-  </data>
-  <data name="label37.Text" xml:space="preserve">
-    <value>Tiene dirección APIPA</value>
-  </data>
-  <data name="label39.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 20</value>
-  </data>
-  <data name="label39.Text" xml:space="preserve">
-    <value>Índice</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>Propiedades (1)</value>
-  </data>
-  <data name="label41.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 20</value>
-  </data>
-  <data name="label41.Text" xml:space="preserve">
-    <value>Paquetes unicast enviados</value>
-  </data>
-  <data name="label43.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 20</value>
-  </data>
-  <data name="label43.Text" xml:space="preserve">
-    <value>Cola de salida</value>
-  </data>
-  <data name="label44.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 20</value>
-  </data>
-  <data name="label44.Text" xml:space="preserve">
-    <value>Paquetes salientes con errores</value>
-  </data>
-  <data name="label45.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 20</value>
-  </data>
-  <data name="label45.Text" xml:space="preserve">
-    <value>Paquetes salientes descartados</value>
-  </data>
-  <data name="label46.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 20</value>
-  </data>
-  <data name="label46.Text" xml:space="preserve">
-    <value>Paquetes no unicast enviados</value>
-  </data>
-  <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 20</value>
-  </data>
-  <data name="label51.Text" xml:space="preserve">
-    <value>Bytes enviados</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Salientes</value>
-  </data>
-  <data name="label40.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 20</value>
-  </data>
-  <data name="label40.Text" xml:space="preserve">
-    <value>Paquetes unicast recibidos</value>
-  </data>
-  <data name="label33.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 20</value>
-  </data>
-  <data name="label33.Text" xml:space="preserve">
-    <value>Paquetes no unicast recibidos</value>
-  </data>
-  <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
-    <value>302, 20</value>
-  </data>
-  <data name="label34.Text" xml:space="preserve">
-    <value>Protocolo desconocido</value>
-  </data>
-  <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 20</value>
-  </data>
-  <data name="label35.Text" xml:space="preserve">
-    <value>Paquetes entrantes con errores</value>
-  </data>
-  <data name="label36.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 20</value>
-  </data>
-  <data name="label36.Text" xml:space="preserve">
-    <value>Paquetes entrantes descartados</value>
-  </data>
-  <data name="label38.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 20</value>
-  </data>
-  <data name="label38.Text" xml:space="preserve">
-    <value>Bytes recibidos</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Entrantes</value>
+  <data name="tabPageNetworkInterfaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1112, 592</value>
   </data>
   <data name="tabPageNetworkInterfaces.Text" xml:space="preserve">
     <value>Estadísticas de la interfaz de red</value>
   </data>
-  <data name="label81.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 20</value>
+  <data name="tabPageTCP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
   </data>
-  <data name="label81.Text" xml:space="preserve">
-    <value>Errores TCP recibidos</value>
+  <data name="tabPageTCP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="groupBox9.Text" xml:space="preserve">
-    <value>Estadísticas de errores TCP</value>
-  </data>
-  <data name="label82.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 20</value>
-  </data>
-  <data name="label82.Text" xml:space="preserve">
-    <value>Segmentos TCP recibidos</value>
-  </data>
-  <data name="label83.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 20</value>
-  </data>
-  <data name="label83.Text" xml:space="preserve">
-    <value>Reinicios TCP (RST)</value>
-  </data>
-  <data name="label84.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 20</value>
-  </data>
-  <data name="label84.Text" xml:space="preserve">
-    <value>Segmentos TCP reenviados</value>
-  </data>
-  <data name="label85.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 20</value>
-  </data>
-  <data name="label85.Text" xml:space="preserve">
-    <value>Segmentos TCP enviados</value>
-  </data>
-  <data name="label86.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 20</value>
-  </data>
-  <data name="label86.Text" xml:space="preserve">
-    <value>Timeout mín. TCP</value>
-  </data>
-  <data name="label93.Size" type="System.Drawing.Size, System.Drawing">
-    <value>127, 20</value>
-  </data>
-  <data name="label93.Text" xml:space="preserve">
-    <value>Timeout máx. TCP</value>
-  </data>
-  <data name="groupBox8.Text" xml:space="preserve">
-    <value>Estadísticas de segmentos TCP</value>
-  </data>
-  <data name="label68.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 20</value>
-  </data>
-  <data name="label68.Text" xml:space="preserve">
-    <value>Conexiones TCP establecidas</value>
-  </data>
-  <data name="label69.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 20</value>
-  </data>
-  <data name="label69.Text" xml:space="preserve">
-    <value>Máximo de conexiones TCP admitidas</value>
-  </data>
-  <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 20</value>
-  </data>
-  <data name="label70.Text" xml:space="preserve">
-    <value>Intentos de conexión TCP fallidos</value>
-  </data>
-  <data name="label71.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 20</value>
-  </data>
-  <data name="label71.Text" xml:space="preserve">
-    <value>Conexiones TCP reiniciadas</value>
-  </data>
-  <data name="label72.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 20</value>
-  </data>
-  <data name="label72.Text" xml:space="preserve">
-    <value>Conexiones TCP actuales</value>
-  </data>
-  <data name="label73.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 20</value>
-  </data>
-  <data name="label73.Text" xml:space="preserve">
-    <value>Solicitudes de conexión TCP iniciadas</value>
-  </data>
-  <data name="label75.Size" type="System.Drawing.Size, System.Drawing">
-    <value>266, 20</value>
-  </data>
-  <data name="label75.Text" xml:space="preserve">
-    <value>Solicitudes de conexión TCP aceptadas</value>
-  </data>
-  <data name="groupBox7.Text" xml:space="preserve">
-    <value>Estadísticas de conexiones TCP</value>
+  <data name="tabPageTCP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1112, 592</value>
   </data>
   <data name="tabPageTCP.Text" xml:space="preserve">
     <value>Estadísticas TCP</value>
   </data>
+  <data name="tabPageTCPConnections.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPageTCPConnections.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tabPageTCPConnections.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1112, 592</value>
+  </data>
+  <data name="tabPageTCPConnections.Text" xml:space="preserve">
+    <value>Conexiones TCP</value>
+  </data>
+  <data name="tabPageTCPListeners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPageTCPListeners.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tabPageTCPListeners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1112, 592</value>
+  </data>
+  <data name="tabPageTCPListeners.Text" xml:space="preserve">
+    <value>Escuchas TCP</value>
+  </data>
+  <data name="tabPageUDP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPageUDP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tabPageUDP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1112, 592</value>
+  </data>
+  <data name="tabPageUDP.Text" xml:space="preserve">
+    <value>Estadísticas UDP</value>
+  </data>
+  <data name="tabPageUDPListeners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPageUDPListeners.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tabPageUDPListeners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1112, 592</value>
+  </data>
+  <data name="tabPageUDPListeners.Text" xml:space="preserve">
+    <value>Escuchas UDP</value>
+  </data>
+  <data name="tabPageICMPv4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPageICMPv4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tabPageICMPv4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1112, 592</value>
+  </data>
+  <data name="tabPageICMPv4.Text" xml:space="preserve">
+    <value>Estadísticas ICMPv4</value>
+  </data>
+  <data name="tabPageICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 24</value>
+  </data>
+  <data name="tabPageICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tabPageICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1112, 592</value>
+  </data>
+  <data name="tabPageICMPv6.Text" xml:space="preserve">
+    <value>Estadísticas ICMPv6</value>
+  </data>
+  <data name="tabStats.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 84</value>
+  </data>
+  <data name="tabStats.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="tabStats.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1120, 620</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 374</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 173</value>
+  </data>
+  <data name="groupBoxGlobalOutbound.Text" xml:space="preserve">
+    <value>Paquetes salientes</value>
+  </data>
+  <data name="txtOutputPacketsWithNoRoute.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 124</value>
+  </data>
+  <data name="txtOutputPacketsWithNoRoute.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtOutputPacketsWithNoRoute.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 36</value>
+  </data>
+  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 15</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Solicitudes de paquetes salientes</value>
+  </data>
+  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 126</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 15</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Paquetes sin ruta</value>
+  </data>
+  <data name="txtOutputPacketRequests.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 34</value>
+  </data>
+  <data name="txtOutputPacketRequests.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtOutputPacketRequests.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="txtOutputPacketsDiscarded.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 94</value>
+  </data>
+  <data name="txtOutputPacketsDiscarded.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtOutputPacketsDiscarded.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 66</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 15</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>Descartes de ruta</value>
+  </data>
+  <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 96</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 15</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Descartes de paquetes transmitidos</value>
+  </data>
+  <data name="txtOutputPacketRoutingDiscards.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 64</value>
+  </data>
+  <data name="txtOutputPacketRoutingDiscards.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtOutputPacketRoutingDiscards.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Location" type="System.Drawing.Point, System.Drawing">
+    <value>501, 286</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 261</value>
+  </data>
+  <data name="groupBoxGlobalInbound.Text" xml:space="preserve">
+    <value>Paquetes entrantes</value>
+  </data>
+  <data name="txtReceivedPacketsWithUnknownProtocol.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 214</value>
+  </data>
+  <data name="txtReceivedPacketsWithUnknownProtocol.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtReceivedPacketsWithUnknownProtocol.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 216</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 15</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Paquetes de protocolo desconocido</value>
+  </data>
+  <data name="txtReceivedPacketsWithHeadersErrors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 184</value>
+  </data>
+  <data name="txtReceivedPacketsWithHeadersErrors.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtReceivedPacketsWithHeadersErrors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 186</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>199, 15</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Paquetes con errores de encabezado</value>
+  </data>
+  <data name="txtReceivedPacketsWithAddressErrors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 154</value>
+  </data>
+  <data name="txtReceivedPacketsWithAddressErrors.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtReceivedPacketsWithAddressErrors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 154</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 15</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Paquetes con errores de dirección</value>
+  </data>
+  <data name="txtReceivedPacketsForwarded.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 124</value>
+  </data>
+  <data name="txtReceivedPacketsForwarded.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtReceivedPacketsForwarded.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 126</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 15</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Paquetes reenviados</value>
+  </data>
+  <data name="txtReceivedPacketsDiscarded.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 94</value>
+  </data>
+  <data name="txtReceivedPacketsDiscarded.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtReceivedPacketsDiscarded.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 96</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 15</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Paquetes descartados</value>
+  </data>
+  <data name="txtReceivedPacketsDelivered.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 64</value>
+  </data>
+  <data name="txtReceivedPacketsDelivered.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtReceivedPacketsDelivered.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 66</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 15</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Paquetes entregados</value>
+  </data>
+  <data name="txtReceivedPackets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 34</value>
+  </data>
+  <data name="txtReceivedPackets.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtReceivedPackets.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 36</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 15</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Paquetes recibidos</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>501, 21</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 231</value>
+  </data>
+  <data name="groupBoxGlobalFragmentation.Text" xml:space="preserve">
+    <value>Fragmentación de paquetes</value>
+  </data>
+  <data name="txtPacketsReassembled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 184</value>
+  </data>
+  <data name="txtPacketsReassembled.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtPacketsReassembled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label22.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 186</value>
+  </data>
+  <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 15</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Paquetes reensamblados</value>
+  </data>
+  <data name="txtPacketsFragmented.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 154</value>
+  </data>
+  <data name="txtPacketsFragmented.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtPacketsFragmented.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label23.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 156</value>
+  </data>
+  <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 15</value>
+  </data>
+  <data name="label23.Text" xml:space="preserve">
+    <value>Paquetes fragmentados</value>
+  </data>
+  <data name="txtPacketReassemblyTimeout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 124</value>
+  </data>
+  <data name="txtPacketReassemblyTimeout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtPacketReassemblyTimeout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label24.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 126</value>
+  </data>
+  <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 15</value>
+  </data>
+  <data name="label24.Text" xml:space="preserve">
+    <value>Timeout de reensamblado</value>
+  </data>
+  <data name="txtPacketReassemblyFailures.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 94</value>
+  </data>
+  <data name="txtPacketReassemblyFailures.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtPacketReassemblyFailures.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label25.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 96</value>
+  </data>
+  <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 15</value>
+  </data>
+  <data name="label25.Text" xml:space="preserve">
+    <value>Fallos de reensamblado</value>
+  </data>
+  <data name="txtPacketReassembliesRequired.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 64</value>
+  </data>
+  <data name="txtPacketReassembliesRequired.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtPacketReassembliesRequired.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 66</value>
+  </data>
+  <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 15</value>
+  </data>
+  <data name="label26.Text" xml:space="preserve">
+    <value>Reensamblados requeridos</value>
+  </data>
+  <data name="txtPacketFragmentFailures.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 34</value>
+  </data>
+  <data name="txtPacketFragmentFailures.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtPacketFragmentFailures.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label27.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 36</value>
+  </data>
+  <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 15</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Fallos de fragmentación de paquetes</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 21</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 346</value>
+  </data>
+  <data name="groupBoxGlobalMisc.Text" xml:space="preserve">
+    <value>Varios</value>
+  </data>
+  <data name="txtNodeType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 304</value>
+  </data>
+  <data name="txtNodeType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtNodeType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 306</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 15</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Tipo de nodo</value>
+  </data>
+  <data name="txtIsWinsProxy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 274</value>
+  </data>
+  <data name="txtIsWinsProxy.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIsWinsProxy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 276</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 15</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Es un proxy WINS</value>
+  </data>
+  <data name="txtHostName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 244</value>
+  </data>
+  <data name="txtHostName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtHostName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 246</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 15</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Nombre de host</value>
+  </data>
+  <data name="txtDomainName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 214</value>
+  </data>
+  <data name="txtDomainName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDomainName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 216</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 15</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Nombre de dominio</value>
+  </data>
+  <data name="txtDhcpScopeName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 184</value>
+  </data>
+  <data name="txtDhcpScopeName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDhcpScopeName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 186</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 15</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Nombre del ámbito DHCP</value>
+  </data>
+  <data name="txtNumberOfRoutes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 154</value>
+  </data>
+  <data name="txtNumberOfRoutes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtNumberOfRoutes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 156</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 15</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Número de rutas</value>
+  </data>
+  <data name="txtNumberOfIPAddresses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 124</value>
+  </data>
+  <data name="txtNumberOfIPAddresses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtNumberOfIPAddresses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 126</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 15</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Número de direcciones IP</value>
+  </data>
+  <data name="txtNumberOfInterfaces.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 94</value>
+  </data>
+  <data name="txtNumberOfInterfaces.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtNumberOfInterfaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 96</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 15</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Número de interfaces</value>
+  </data>
+  <data name="txtForwardingEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 64</value>
+  </data>
+  <data name="txtForwardingEnabled.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtForwardingEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 66</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 15</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Reenvío habilitado</value>
+  </data>
+  <data name="txtDefaultTTL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 34</value>
+  </data>
+  <data name="txtDefaultTTL.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDefaultTTL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 36</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>115, 15</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>TTL predeterminado</value>
+  </data>
+  <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>640, 244</value>
+  </data>
+  <data name="groupBox6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 338</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Propiedades (2)</value>
+  </data>
+  <data name="txtMACaddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 154</value>
+  </data>
+  <data name="txtMACaddress.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMACaddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 23</value>
+  </data>
+  <data name="label144.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 156</value>
+  </data>
+  <data name="label144.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 15</value>
+  </data>
+  <data name="label144.Text" xml:space="preserve">
+    <value>Dirección MAC</value>
+  </data>
+  <data name="txtSupportsMulticast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 304</value>
+  </data>
+  <data name="txtSupportsMulticast.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtSupportsMulticast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 23</value>
+  </data>
+  <data name="label64.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 306</value>
+  </data>
+  <data name="label64.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 15</value>
+  </data>
+  <data name="label64.Text" xml:space="preserve">
+    <value>Admite multidifusión</value>
+  </data>
+  <data name="txtSpeed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 94</value>
+  </data>
+  <data name="txtSpeed.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtSpeed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 23</value>
+  </data>
+  <data name="label65.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 96</value>
+  </data>
+  <data name="label65.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 15</value>
+  </data>
+  <data name="label65.Text" xml:space="preserve">
+    <value>Velocidad</value>
+  </data>
+  <data name="txtOperationalStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 244</value>
+  </data>
+  <data name="txtOperationalStatus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtOperationalStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 23</value>
+  </data>
+  <data name="label61.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 216</value>
+  </data>
+  <data name="label61.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 15</value>
+  </data>
+  <data name="label61.Text" xml:space="preserve">
+    <value>Solo recepción</value>
+  </data>
+  <data name="txtIsReceiveOnly.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 214</value>
+  </data>
+  <data name="txtIsReceiveOnly.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIsReceiveOnly.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 23</value>
+  </data>
+  <data name="label62.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 186</value>
+  </data>
+  <data name="label62.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 15</value>
+  </data>
+  <data name="txtId.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 184</value>
+  </data>
+  <data name="txtId.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtId.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 23</value>
+  </data>
+  <data name="label66.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 246</value>
+  </data>
+  <data name="label66.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 15</value>
+  </data>
+  <data name="label66.Text" xml:space="preserve">
+    <value>Estado operativo</value>
+  </data>
+  <data name="txtNetworkInterfaceType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 124</value>
+  </data>
+  <data name="txtNetworkInterfaceType.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtNetworkInterfaceType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 23</value>
+  </data>
+  <data name="label58.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 126</value>
+  </data>
+  <data name="label58.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 15</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>Tipo de interfaz de red</value>
+  </data>
+  <data name="txtName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 64</value>
+  </data>
+  <data name="txtName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 23</value>
+  </data>
+  <data name="label59.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 66</value>
+  </data>
+  <data name="label59.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 15</value>
+  </data>
+  <data name="label59.Text" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="txtLoopbackInterfaceIndex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 274</value>
+  </data>
+  <data name="txtLoopbackInterfaceIndex.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtLoopbackInterfaceIndex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 23</value>
+  </data>
+  <data name="label60.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 276</value>
+  </data>
+  <data name="label60.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 15</value>
+  </data>
+  <data name="label60.Text" xml:space="preserve">
+    <value>Índice loopback</value>
+  </data>
+  <data name="txtDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>178, 34</value>
+  </data>
+  <data name="txtDescription.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>269, 23</value>
+  </data>
+  <data name="label63.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 36</value>
+  </data>
+  <data name="label63.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 15</value>
+  </data>
+  <data name="label63.Text" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 244</value>
+  </data>
+  <data name="groupBox5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>626, 338</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Configuración IP</value>
+  </data>
+  <data name="txtWinsServersAddresses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 304</value>
+  </data>
+  <data name="txtWinsServersAddresses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtWinsServersAddresses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 23</value>
+  </data>
+  <data name="label57.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 306</value>
+  </data>
+  <data name="label57.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 15</value>
+  </data>
+  <data name="label57.Text" xml:space="preserve">
+    <value>Servidores WINS</value>
+  </data>
+  <data name="txtUnicastAddresses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 274</value>
+  </data>
+  <data name="txtUnicastAddresses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtUnicastAddresses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 23</value>
+  </data>
+  <data name="label55.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 276</value>
+  </data>
+  <data name="label55.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 15</value>
+  </data>
+  <data name="label55.Text" xml:space="preserve">
+    <value>Direcciones unicast</value>
+  </data>
+  <data name="txtMulticastAddresses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 244</value>
+  </data>
+  <data name="txtMulticastAddresses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMulticastAddresses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 23</value>
+  </data>
+  <data name="label56.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 246</value>
+  </data>
+  <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 15</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>Direcciones multicast</value>
+  </data>
+  <data name="txtIsDynamicDnsEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 214</value>
+  </data>
+  <data name="txtIsDynamicDnsEnabled.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIsDynamicDnsEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 23</value>
+  </data>
+  <data name="label47.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 216</value>
+  </data>
+  <data name="label47.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 15</value>
+  </data>
+  <data name="label47.Text" xml:space="preserve">
+    <value>DNS dinámico habilitado</value>
+  </data>
+  <data name="txtIsDnsEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 184</value>
+  </data>
+  <data name="txtIsDnsEnabled.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIsDnsEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 23</value>
+  </data>
+  <data name="label48.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 186</value>
+  </data>
+  <data name="label48.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 15</value>
+  </data>
+  <data name="label48.Text" xml:space="preserve">
+    <value>DNS habilitado</value>
+  </data>
+  <data name="txtGatewayAddresses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 154</value>
+  </data>
+  <data name="txtGatewayAddresses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtGatewayAddresses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 23</value>
+  </data>
+  <data name="label49.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 156</value>
+  </data>
+  <data name="label49.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 15</value>
+  </data>
+  <data name="label49.Text" xml:space="preserve">
+    <value>Puertas de enlace</value>
+  </data>
+  <data name="txtDnsSuffix.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 124</value>
+  </data>
+  <data name="txtDnsSuffix.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDnsSuffix.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 23</value>
+  </data>
+  <data name="label50.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 126</value>
+  </data>
+  <data name="label50.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 15</value>
+  </data>
+  <data name="label50.Text" xml:space="preserve">
+    <value>Sufijo DNS</value>
+  </data>
+  <data name="txtDnsAddresses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 94</value>
+  </data>
+  <data name="txtDnsAddresses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDnsAddresses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 23</value>
+  </data>
+  <data name="label52.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 96</value>
+  </data>
+  <data name="label52.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 15</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>Direcciones DNS</value>
+  </data>
+  <data name="txtDhcpServerAddresses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 64</value>
+  </data>
+  <data name="txtDhcpServerAddresses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDhcpServerAddresses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 23</value>
+  </data>
+  <data name="label53.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 66</value>
+  </data>
+  <data name="label53.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 15</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>Servidores DHCP</value>
+  </data>
+  <data name="txtAnycastAddresses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 34</value>
+  </data>
+  <data name="txtAnycastAddresses.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtAnycastAddresses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 23</value>
+  </data>
+  <data name="label54.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 36</value>
+  </data>
+  <data name="label54.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 15</value>
+  </data>
+  <data name="label54.Text" xml:space="preserve">
+    <value>Direcciones anycast</value>
+  </data>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>745, 7</value>
+  </data>
+  <data name="groupBox4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox4.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>350, 231</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>Propiedades (1)</value>
+  </data>
+  <data name="txtUsesWins.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 199</value>
+  </data>
+  <data name="txtUsesWins.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtUsesWins.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 23</value>
+  </data>
+  <data name="label42.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 199</value>
+  </data>
+  <data name="label42.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 15</value>
+  </data>
+  <data name="label42.Text" xml:space="preserve">
+    <value>Usa WINS</value>
+  </data>
+  <data name="txtMtu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 169</value>
+  </data>
+  <data name="txtMtu.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMtu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 23</value>
+  </data>
+  <data name="label29.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 169</value>
+  </data>
+  <data name="label29.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 15</value>
+  </data>
+  <data name="txtIsForwardingEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 139</value>
+  </data>
+  <data name="txtIsForwardingEnabled.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIsForwardingEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 23</value>
+  </data>
+  <data name="label30.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 139</value>
+  </data>
+  <data name="label30.Size" type="System.Drawing.Size, System.Drawing">
+    <value>172, 15</value>
+  </data>
+  <data name="label30.Text" xml:space="preserve">
+    <value>Reenvío de paquetes habilitado</value>
+  </data>
+  <data name="txtIsDhcpEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 109</value>
+  </data>
+  <data name="txtIsDhcpEnabled.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIsDhcpEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 23</value>
+  </data>
+  <data name="label31.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 109</value>
+  </data>
+  <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 15</value>
+  </data>
+  <data name="label31.Text" xml:space="preserve">
+    <value>DHCP habilitado</value>
+  </data>
+  <data name="txtIsAutomaticPrivateAddressingEnabled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 79</value>
+  </data>
+  <data name="txtIsAutomaticPrivateAddressingEnabled.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIsAutomaticPrivateAddressingEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 23</value>
+  </data>
+  <data name="label32.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 79</value>
+  </data>
+  <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 15</value>
+  </data>
+  <data name="label32.Text" xml:space="preserve">
+    <value>Dirección APIPA habilitada</value>
+  </data>
+  <data name="txtIsAutomaticPrivateAddressingActive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 49</value>
+  </data>
+  <data name="txtIsAutomaticPrivateAddressingActive.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIsAutomaticPrivateAddressingActive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 23</value>
+  </data>
+  <data name="label37.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 49</value>
+  </data>
+  <data name="label37.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 15</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>Tiene dirección APIPA</value>
+  </data>
+  <data name="txtIndex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>192, 19</value>
+  </data>
+  <data name="txtIndex.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIndex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 23</value>
+  </data>
+  <data name="label39.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 19</value>
+  </data>
+  <data name="label39.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 15</value>
+  </data>
+  <data name="label39.Text" xml:space="preserve">
+    <value>Índice</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>410, 7</value>
+  </data>
+  <data name="groupBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 231</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Salientes</value>
+  </data>
+  <data name="txtUnicastPacketsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 94</value>
+  </data>
+  <data name="txtUnicastPacketsSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtUnicastPacketsSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="label41.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 96</value>
+  </data>
+  <data name="label41.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 15</value>
+  </data>
+  <data name="label41.Text" xml:space="preserve">
+    <value>Paquetes unicast enviados</value>
+  </data>
+  <data name="txtOutputQueueLength.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 184</value>
+  </data>
+  <data name="txtOutputQueueLength.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtOutputQueueLength.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="label43.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 186</value>
+  </data>
+  <data name="label43.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 15</value>
+  </data>
+  <data name="label43.Text" xml:space="preserve">
+    <value>Cola de salida</value>
+  </data>
+  <data name="txtOutgoingPacketsWithErrors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 154</value>
+  </data>
+  <data name="txtOutgoingPacketsWithErrors.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtOutgoingPacketsWithErrors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="label44.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 156</value>
+  </data>
+  <data name="label44.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 15</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>Paquetes salientes con errores</value>
+  </data>
+  <data name="txtOutgoingPacketsDiscarded.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 124</value>
+  </data>
+  <data name="txtOutgoingPacketsDiscarded.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtOutgoingPacketsDiscarded.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="label45.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 126</value>
+  </data>
+  <data name="label45.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 15</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>Paquetes salientes descartados</value>
+  </data>
+  <data name="txtNonUnicastPacketsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 64</value>
+  </data>
+  <data name="txtNonUnicastPacketsSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtNonUnicastPacketsSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="label46.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 66</value>
+  </data>
+  <data name="label46.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 15</value>
+  </data>
+  <data name="label46.Text" xml:space="preserve">
+    <value>Paquetes no unicast enviados</value>
+  </data>
+  <data name="txtBytesSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>196, 34</value>
+  </data>
+  <data name="txtBytesSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtBytesSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="label51.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 36</value>
+  </data>
+  <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 15</value>
+  </data>
+  <data name="label51.Text" xml:space="preserve">
+    <value>Bytes enviados</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 7</value>
+  </data>
+  <data name="groupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>395, 231</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Entrantes</value>
+  </data>
+  <data name="txtUnicastPacketsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 184</value>
+  </data>
+  <data name="txtUnicastPacketsReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtUnicastPacketsReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="label40.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 186</value>
+  </data>
+  <data name="label40.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 15</value>
+  </data>
+  <data name="label40.Text" xml:space="preserve">
+    <value>Paquetes unicast recibidos</value>
+  </data>
+  <data name="txtNonUnicastPacketsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 154</value>
+  </data>
+  <data name="txtNonUnicastPacketsReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtNonUnicastPacketsReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="label33.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 156</value>
+  </data>
+  <data name="label33.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 15</value>
+  </data>
+  <data name="label33.Text" xml:space="preserve">
+    <value>Paquetes no unicast recibidos</value>
+  </data>
+  <data name="txtIncomingUnknownProtocolPackets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 124</value>
+  </data>
+  <data name="txtIncomingUnknownProtocolPackets.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIncomingUnknownProtocolPackets.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="label34.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 126</value>
+  </data>
+  <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 15</value>
+  </data>
+  <data name="label34.Text" xml:space="preserve">
+    <value>Protocolo desconocido</value>
+  </data>
+  <data name="txtIncomingPacketsWithErrors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 94</value>
+  </data>
+  <data name="txtIncomingPacketsWithErrors.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIncomingPacketsWithErrors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="label35.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 96</value>
+  </data>
+  <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 15</value>
+  </data>
+  <data name="label35.Text" xml:space="preserve">
+    <value>Paquetes entrantes con errores</value>
+  </data>
+  <data name="txtIncomingPacketsDiscarded.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 64</value>
+  </data>
+  <data name="txtIncomingPacketsDiscarded.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIncomingPacketsDiscarded.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="label36.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 66</value>
+  </data>
+  <data name="label36.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 15</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>Paquetes entrantes descartados</value>
+  </data>
+  <data name="txtBytesReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 34</value>
+  </data>
+  <data name="txtBytesReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtBytesReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="label38.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 36</value>
+  </data>
+  <data name="label38.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 15</value>
+  </data>
+  <data name="label38.Text" xml:space="preserve">
+    <value>Bytes recibidos</value>
+  </data>
+  <data name="groupBox9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 304</value>
+  </data>
+  <data name="groupBox9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox9.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>508, 75</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>Estadísticas de errores TCP</value>
+  </data>
+  <data name="txtErrorsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 26</value>
+  </data>
+  <data name="txtErrorsReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtErrorsReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label81.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 28</value>
+  </data>
+  <data name="label81.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 15</value>
+  </data>
+  <data name="label81.Text" xml:space="preserve">
+    <value>Errores TCP recibidos</value>
+  </data>
+  <data name="groupBox8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>563, 21</value>
+  </data>
+  <data name="groupBox8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox8.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>496, 266</value>
+  </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>Estadísticas de segmentos TCP</value>
+  </data>
+  <data name="txtSegmentsResent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>283, 154</value>
+  </data>
+  <data name="txtSegmentsResent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtSegmentsResent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label82.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 126</value>
+  </data>
+  <data name="label82.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 15</value>
+  </data>
+  <data name="label82.Text" xml:space="preserve">
+    <value>Segmentos TCP recibidos</value>
+  </data>
+  <data name="txtSegmentsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>283, 124</value>
+  </data>
+  <data name="txtSegmentsReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtSegmentsReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label83.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 96</value>
+  </data>
+  <data name="label83.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 15</value>
+  </data>
+  <data name="label83.Text" xml:space="preserve">
+    <value>Reinicios TCP (RST)</value>
+  </data>
+  <data name="txtResetsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>283, 94</value>
+  </data>
+  <data name="txtResetsSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtResetsSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label84.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 156</value>
+  </data>
+  <data name="label84.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 15</value>
+  </data>
+  <data name="label84.Text" xml:space="preserve">
+    <value>Segmentos TCP reenviados</value>
+  </data>
+  <data name="txtSegmentsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>283, 184</value>
+  </data>
+  <data name="txtSegmentsSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtSegmentsSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label85.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 186</value>
+  </data>
+  <data name="label85.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 15</value>
+  </data>
+  <data name="label85.Text" xml:space="preserve">
+    <value>Segmentos TCP enviados</value>
+  </data>
+  <data name="txtMinimumTransmissionTimeout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>283, 64</value>
+  </data>
+  <data name="txtMinimumTransmissionTimeout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMinimumTransmissionTimeout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label86.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 66</value>
+  </data>
+  <data name="label86.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 15</value>
+  </data>
+  <data name="label86.Text" xml:space="preserve">
+    <value>Timeout mín. TCP</value>
+  </data>
+  <data name="txtMaximumTransmissionTimeout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>283, 34</value>
+  </data>
+  <data name="txtMaximumTransmissionTimeout.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMaximumTransmissionTimeout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label93.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 36</value>
+  </data>
+  <data name="label93.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 15</value>
+  </data>
+  <data name="label93.Text" xml:space="preserve">
+    <value>Timeout máx. TCP</value>
+  </data>
+  <data name="groupBox7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 21</value>
+  </data>
+  <data name="groupBox7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox7.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>508, 266</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>Estadísticas de conexiones TCP</value>
+  </data>
+  <data name="txtCumulativeConnections.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 94</value>
+  </data>
+  <data name="txtCumulativeConnections.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtCumulativeConnections.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label68.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 96</value>
+  </data>
+  <data name="label68.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 15</value>
+  </data>
+  <data name="label68.Text" xml:space="preserve">
+    <value>Conexiones TCP establecidas</value>
+  </data>
+  <data name="txtResetConnections.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 214</value>
+  </data>
+  <data name="txtResetConnections.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtResetConnections.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label69.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 186</value>
+  </data>
+  <data name="label69.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 15</value>
+  </data>
+  <data name="label69.Text" xml:space="preserve">
+    <value>Máximo de conexiones TCP admitidas</value>
+  </data>
+  <data name="txtMaximumConnections.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 184</value>
+  </data>
+  <data name="txtMaximumConnections.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMaximumConnections.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label70.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 156</value>
+  </data>
+  <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 15</value>
+  </data>
+  <data name="label70.Text" xml:space="preserve">
+    <value>Intentos de conexión TCP fallidos</value>
+  </data>
+  <data name="txtFailedConnectionAttempts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 154</value>
+  </data>
+  <data name="txtFailedConnectionAttempts.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtFailedConnectionAttempts.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label71.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 216</value>
+  </data>
+  <data name="label71.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 15</value>
+  </data>
+  <data name="label71.Text" xml:space="preserve">
+    <value>Conexiones TCP reiniciadas</value>
+  </data>
+  <data name="txtCurrentConnections.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 124</value>
+  </data>
+  <data name="txtCurrentConnections.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtCurrentConnections.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label72.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 126</value>
+  </data>
+  <data name="label72.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 15</value>
+  </data>
+  <data name="label72.Text" xml:space="preserve">
+    <value>Conexiones TCP actuales</value>
+  </data>
+  <data name="txtConnectionsInitiated.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 64</value>
+  </data>
+  <data name="txtConnectionsInitiated.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtConnectionsInitiated.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label73.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 66</value>
+  </data>
+  <data name="label73.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 15</value>
+  </data>
+  <data name="label73.Text" xml:space="preserve">
+    <value>Solicitudes de conexión TCP iniciadas</value>
+  </data>
+  <data name="txtConnectionsAccepted.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 34</value>
+  </data>
+  <data name="txtConnectionsAccepted.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtConnectionsAccepted.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label75.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 36</value>
+  </data>
+  <data name="label75.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 15</value>
+  </data>
+  <data name="label75.Text" xml:space="preserve">
+    <value>Solicitudes de conexión TCP aceptadas</value>
+  </data>
+  <data name="btnSelectAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>732, 22</value>
+  </data>
+  <data name="btnSelectAll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 50</value>
+  </data>
   <data name="btnSelectAll.Text" xml:space="preserve">
     <value>Todo</value>
+  </data>
+  <data name="btnCopySelection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>732, 79</value>
+  </data>
+  <data name="btnCopySelection.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnCopySelection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 53</value>
   </data>
   <data name="btnCopySelection.Text" xml:space="preserve">
     <value>Copiar selección</value>
@@ -649,11 +1895,35 @@
   <data name="colState.HeaderText" xml:space="preserve">
     <value>Estado</value>
   </data>
-  <data name="tabPageTCPConnections.Text" xml:space="preserve">
-    <value>Conexiones TCP</value>
+  <data name="dataGridViewTCPConnections.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 22</value>
+  </data>
+  <data name="dataGridViewTCPConnections.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="dataGridViewTCPConnections.Size" type="System.Drawing.Size, System.Drawing">
+    <value>683, 548</value>
+  </data>
+  <data name="btnTCPLSelectAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 21</value>
+  </data>
+  <data name="btnTCPLSelectAll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnTCPLSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 50</value>
   </data>
   <data name="btnTCPLSelectAll.Text" xml:space="preserve">
     <value>Todo</value>
+  </data>
+  <data name="btnTCPLCopySelected.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 77</value>
+  </data>
+  <data name="btnTCPLCopySelected.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnTCPLCopySelected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 53</value>
   </data>
   <data name="btnTCPLCopySelected.Text" xml:space="preserve">
     <value>Copiar selección</value>
@@ -664,47 +1934,140 @@
   <data name="colPort.HeaderText" xml:space="preserve">
     <value>Puerto</value>
   </data>
-  <data name="tabPageTCPListeners.Text" xml:space="preserve">
-    <value>Escuchas TCP</value>
+  <data name="dataGridViewTCPListeners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 21</value>
   </data>
-  <data name="label74.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 20</value>
+  <data name="dataGridViewTCPListeners.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label74.Text" xml:space="preserve">
-    <value>Escuchas UDP</value>
+  <data name="dataGridViewTCPListeners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>518, 548</value>
   </data>
-  <data name="label67.Size" type="System.Drawing.Size, System.Drawing">
-    <value>239, 20</value>
+  <data name="groupBox10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 28</value>
   </data>
-  <data name="label67.Text" xml:space="preserve">
-    <value>Datagramas entrantes descartados</value>
+  <data name="groupBox10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label78.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 20</value>
+  <data name="groupBox10.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label78.Text" xml:space="preserve">
-    <value>Datagramas entrantes con errores</value>
-  </data>
-  <data name="label79.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 20</value>
-  </data>
-  <data name="label79.Text" xml:space="preserve">
-    <value>Datagramas enviados</value>
-  </data>
-  <data name="label80.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 20</value>
-  </data>
-  <data name="label80.Text" xml:space="preserve">
-    <value>Datagramas recibidos</value>
+  <data name="groupBox10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>508, 214</value>
   </data>
   <data name="groupBox10.Text" xml:space="preserve">
     <value>Estadísticas de conexiones UDP</value>
   </data>
-  <data name="tabPageUDP.Text" xml:space="preserve">
-    <value>Estadísticas UDP</value>
+  <data name="txtUdpListeners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 154</value>
+  </data>
+  <data name="txtUdpListeners.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtUdpListeners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label74.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 156</value>
+  </data>
+  <data name="label74.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 15</value>
+  </data>
+  <data name="label74.Text" xml:space="preserve">
+    <value>Escuchas UDP</value>
+  </data>
+  <data name="txtIncomingDatagramsDiscarded.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 94</value>
+  </data>
+  <data name="txtIncomingDatagramsDiscarded.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIncomingDatagramsDiscarded.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label67.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 96</value>
+  </data>
+  <data name="label67.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 15</value>
+  </data>
+  <data name="label67.Text" xml:space="preserve">
+    <value>Datagramas entrantes descartados</value>
+  </data>
+  <data name="txtIncomingDatagramsWithErrors.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 124</value>
+  </data>
+  <data name="txtIncomingDatagramsWithErrors.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtIncomingDatagramsWithErrors.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label78.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 126</value>
+  </data>
+  <data name="label78.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 15</value>
+  </data>
+  <data name="label78.Text" xml:space="preserve">
+    <value>Datagramas entrantes con errores</value>
+  </data>
+  <data name="txtDatagramsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 64</value>
+  </data>
+  <data name="txtDatagramsSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDatagramsSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label79.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 66</value>
+  </data>
+  <data name="label79.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 15</value>
+  </data>
+  <data name="label79.Text" xml:space="preserve">
+    <value>Datagramas enviados</value>
+  </data>
+  <data name="txtDatagramsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>284, 34</value>
+  </data>
+  <data name="txtDatagramsReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDatagramsReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 23</value>
+  </data>
+  <data name="label80.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 36</value>
+  </data>
+  <data name="label80.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 15</value>
+  </data>
+  <data name="label80.Text" xml:space="preserve">
+    <value>Datagramas recibidos</value>
+  </data>
+  <data name="btnUDPLSelectAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 21</value>
+  </data>
+  <data name="btnUDPLSelectAll.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnUDPLSelectAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 50</value>
   </data>
   <data name="btnUDPLSelectAll.Text" xml:space="preserve">
     <value>Todo</value>
+  </data>
+  <data name="btnUDPLCopySelected.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 77</value>
+  </data>
+  <data name="btnUDPLCopySelected.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnUDPLCopySelected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 53</value>
   </data>
   <data name="btnUDPLCopySelected.Text" xml:space="preserve">
     <value>Copiar selección</value>
@@ -715,389 +2078,1203 @@
   <data name="colUDPLPort.HeaderText" xml:space="preserve">
     <value>Puerto</value>
   </data>
-  <data name="tabPageUDPListeners.Text" xml:space="preserve">
-    <value>Escuchas UDP</value>
+  <data name="dataGridViewUDPListeners.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 21</value>
   </data>
-  <data name="label99.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 20</value>
+  <data name="dataGridViewUDPListeners.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label99.Text" xml:space="preserve">
-    <value>Sol. marca tiempo</value>
+  <data name="dataGridViewUDPListeners.Size" type="System.Drawing.Size, System.Drawing">
+    <value>518, 548</value>
   </data>
-  <data name="label100.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 20</value>
+  <data name="groupBox12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>514, 28</value>
   </data>
-  <data name="label100.Text" xml:space="preserve">
-    <value>Resp. marca tiempo</value>
+  <data name="groupBox12.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label101.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
+  <data name="groupBox12.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label101.Text" xml:space="preserve">
-    <value>Tiempo excedido</value>
-  </data>
-  <data name="label102.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 20</value>
-  </data>
-  <data name="label102.Text" xml:space="preserve">
-    <value>Supresiones de origen</value>
-  </data>
-  <data name="label103.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 20</value>
-  </data>
-  <data name="label103.Text" xml:space="preserve">
-    <value>Redirecciones</value>
-  </data>
-  <data name="label104.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 20</value>
-  </data>
-  <data name="label104.Text" xml:space="preserve">
-    <value>Problemas de parámetros</value>
-  </data>
-  <data name="label105.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 20</value>
-  </data>
-  <data name="label105.Text" xml:space="preserve">
-    <value>Mensajes</value>
-  </data>
-  <data name="label106.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
-  </data>
-  <data name="label106.Text" xml:space="preserve">
-    <value>Errores</value>
-  </data>
-  <data name="label107.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 20</value>
-  </data>
-  <data name="label107.Text" xml:space="preserve">
-    <value>Solicitudes de eco</value>
-  </data>
-  <data name="label108.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 20</value>
-  </data>
-  <data name="label108.Text" xml:space="preserve">
-    <value>Respuestas de eco</value>
-  </data>
-  <data name="label109.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 20</value>
-  </data>
-  <data name="label109.Text" xml:space="preserve">
-    <value>Destino inaccesible</value>
-  </data>
-  <data name="label110.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 20</value>
-  </data>
-  <data name="label110.Text" xml:space="preserve">
-    <value>Solicitudes de máscara</value>
-  </data>
-  <data name="label111.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 20</value>
-  </data>
-  <data name="label111.Text" xml:space="preserve">
-    <value>Respuestas de máscara</value>
+  <data name="groupBox12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 435</value>
   </data>
   <data name="groupBox12.Text" xml:space="preserve">
     <value>Mensajes ICMPv4 enviados</value>
   </data>
-  <data name="label96.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 20</value>
+  <data name="txtTimestampRequestsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 394</value>
   </data>
-  <data name="label96.Text" xml:space="preserve">
+  <data name="txtTimestampRequestsSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtTimestampRequestsSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label99.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 396</value>
+  </data>
+  <data name="label99.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 15</value>
+  </data>
+  <data name="label99.Text" xml:space="preserve">
     <value>Sol. marca tiempo</value>
   </data>
-  <data name="label97.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 20</value>
+  <data name="txtTimestampRepliesSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 364</value>
   </data>
-  <data name="label97.Text" xml:space="preserve">
+  <data name="txtTimestampRepliesSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtTimestampRepliesSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label100.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 366</value>
+  </data>
+  <data name="label100.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 15</value>
+  </data>
+  <data name="label100.Text" xml:space="preserve">
     <value>Resp. marca tiempo</value>
   </data>
-  <data name="label98.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
+  <data name="txtTimeExceededMessagesSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 334</value>
   </data>
-  <data name="label98.Text" xml:space="preserve">
+  <data name="txtTimeExceededMessagesSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtTimeExceededMessagesSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label101.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 336</value>
+  </data>
+  <data name="label101.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 15</value>
+  </data>
+  <data name="label101.Text" xml:space="preserve">
     <value>Tiempo excedido</value>
   </data>
-  <data name="label76.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 20</value>
+  <data name="txtSourceQuenchesSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 304</value>
   </data>
-  <data name="label76.Text" xml:space="preserve">
+  <data name="txtSourceQuenchesSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtSourceQuenchesSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label102.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 306</value>
+  </data>
+  <data name="label102.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 15</value>
+  </data>
+  <data name="label102.Text" xml:space="preserve">
     <value>Supresiones de origen</value>
   </data>
-  <data name="label77.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 20</value>
+  <data name="txtRedirectsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 274</value>
   </data>
-  <data name="label77.Text" xml:space="preserve">
+  <data name="txtRedirectsSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtRedirectsSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label103.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 276</value>
+  </data>
+  <data name="label103.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 15</value>
+  </data>
+  <data name="label103.Text" xml:space="preserve">
     <value>Redirecciones</value>
   </data>
-  <data name="label87.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 20</value>
+  <data name="txtParameterProblemsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 244</value>
   </data>
-  <data name="label87.Text" xml:space="preserve">
+  <data name="txtParameterProblemsSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtParameterProblemsSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label104.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 246</value>
+  </data>
+  <data name="label104.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 15</value>
+  </data>
+  <data name="label104.Text" xml:space="preserve">
     <value>Problemas de parámetros</value>
   </data>
-  <data name="label88.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 20</value>
+  <data name="txtMessagesSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 214</value>
   </data>
-  <data name="label88.Text" xml:space="preserve">
+  <data name="txtMessagesSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMessagesSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label105.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 216</value>
+  </data>
+  <data name="label105.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 15</value>
+  </data>
+  <data name="label105.Text" xml:space="preserve">
     <value>Mensajes</value>
   </data>
-  <data name="label89.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
+  <data name="txtErrorsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 184</value>
   </data>
-  <data name="label89.Text" xml:space="preserve">
+  <data name="txtErrorsSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtErrorsSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label106.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 186</value>
+  </data>
+  <data name="label106.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 15</value>
+  </data>
+  <data name="label106.Text" xml:space="preserve">
     <value>Errores</value>
   </data>
-  <data name="label90.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 20</value>
+  <data name="txtEchoRequestsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 154</value>
   </data>
-  <data name="label90.Text" xml:space="preserve">
+  <data name="txtEchoRequestsSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtEchoRequestsSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label107.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 156</value>
+  </data>
+  <data name="label107.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 15</value>
+  </data>
+  <data name="label107.Text" xml:space="preserve">
     <value>Solicitudes de eco</value>
   </data>
-  <data name="label91.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 20</value>
+  <data name="txtEchoRepliesSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 124</value>
   </data>
-  <data name="label91.Text" xml:space="preserve">
+  <data name="txtEchoRepliesSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtEchoRepliesSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label108.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 126</value>
+  </data>
+  <data name="label108.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 15</value>
+  </data>
+  <data name="label108.Text" xml:space="preserve">
     <value>Respuestas de eco</value>
   </data>
-  <data name="label92.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 20</value>
+  <data name="txtDestinationUnreachableMessagesSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 94</value>
   </data>
-  <data name="label92.Text" xml:space="preserve">
+  <data name="txtDestinationUnreachableMessagesSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDestinationUnreachableMessagesSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label109.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 96</value>
+  </data>
+  <data name="label109.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 15</value>
+  </data>
+  <data name="label109.Text" xml:space="preserve">
     <value>Destino inaccesible</value>
   </data>
-  <data name="label94.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 20</value>
+  <data name="txtAddressMaskRequestsSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 64</value>
   </data>
-  <data name="label94.Text" xml:space="preserve">
+  <data name="txtAddressMaskRequestsSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtAddressMaskRequestsSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label110.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 66</value>
+  </data>
+  <data name="label110.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 15</value>
+  </data>
+  <data name="label110.Text" xml:space="preserve">
     <value>Solicitudes de máscara</value>
   </data>
-  <data name="label95.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 20</value>
+  <data name="txtAddressMaskRepliesSent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 34</value>
   </data>
-  <data name="label95.Text" xml:space="preserve">
+  <data name="txtAddressMaskRepliesSent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtAddressMaskRepliesSent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label111.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 36</value>
+  </data>
+  <data name="label111.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 15</value>
+  </data>
+  <data name="label111.Text" xml:space="preserve">
     <value>Respuestas de máscara</value>
+  </data>
+  <data name="groupBox11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 28</value>
+  </data>
+  <data name="groupBox11.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox11.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 435</value>
   </data>
   <data name="groupBox11.Text" xml:space="preserve">
     <value>Mensajes ICMPv4 recibidos</value>
   </data>
-  <data name="tabPageICMPv4.Text" xml:space="preserve">
-    <value>Estadísticas ICMPv4</value>
+  <data name="txtTimestampRequestsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 394</value>
   </data>
-  <data name="label112.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
+  <data name="txtTimestampRequestsReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label112.Text" xml:space="preserve">
+  <data name="txtTimestampRequestsReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label96.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 396</value>
+  </data>
+  <data name="label96.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 15</value>
+  </data>
+  <data name="label96.Text" xml:space="preserve">
+    <value>Sol. marca tiempo</value>
+  </data>
+  <data name="txtTimestampRepliesReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 364</value>
+  </data>
+  <data name="txtTimestampRepliesReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtTimestampRepliesReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label97.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 366</value>
+  </data>
+  <data name="label97.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 15</value>
+  </data>
+  <data name="label97.Text" xml:space="preserve">
+    <value>Resp. marca tiempo</value>
+  </data>
+  <data name="txtTimeExceededMessagesReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 334</value>
+  </data>
+  <data name="txtTimeExceededMessagesReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtTimeExceededMessagesReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label98.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 336</value>
+  </data>
+  <data name="label98.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 15</value>
+  </data>
+  <data name="label98.Text" xml:space="preserve">
     <value>Tiempo excedido</value>
   </data>
-  <data name="label113.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
+  <data name="txtSourceQuenchesReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 304</value>
   </data>
-  <data name="label113.Text" xml:space="preserve">
-    <value>Solicitudes router</value>
+  <data name="txtSourceQuenchesReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label114.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 20</value>
+  <data name="txtSourceQuenchesReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
   </data>
-  <data name="label114.Text" xml:space="preserve">
-    <value>Anuncios del enrutador</value>
+  <data name="label76.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 306</value>
   </data>
-  <data name="label115.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 20</value>
+  <data name="label76.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 15</value>
   </data>
-  <data name="label115.Text" xml:space="preserve">
+  <data name="label76.Text" xml:space="preserve">
+    <value>Supresiones de origen</value>
+  </data>
+  <data name="txtRedirectsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 274</value>
+  </data>
+  <data name="txtRedirectsReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtRedirectsReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label77.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 276</value>
+  </data>
+  <data name="label77.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 15</value>
+  </data>
+  <data name="label77.Text" xml:space="preserve">
     <value>Redirecciones</value>
   </data>
-  <data name="label116.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 20</value>
+  <data name="txtParameterProblemsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 244</value>
   </data>
-  <data name="label116.Text" xml:space="preserve">
+  <data name="txtParameterProblemsReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtParameterProblemsReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label87.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 246</value>
+  </data>
+  <data name="label87.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 15</value>
+  </data>
+  <data name="label87.Text" xml:space="preserve">
     <value>Problemas de parámetros</value>
   </data>
-  <data name="label117.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 20</value>
+  <data name="txtMessagesReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 214</value>
   </data>
-  <data name="label117.Text" xml:space="preserve">
-    <value>Paquete grande</value>
+  <data name="txtMessagesReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label118.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 20</value>
+  <data name="txtMessagesReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
   </data>
-  <data name="label118.Text" xml:space="preserve">
-    <value>Solicitud de vecino</value>
+  <data name="label88.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 216</value>
   </data>
-  <data name="label119.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 20</value>
+  <data name="label88.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 15</value>
   </data>
-  <data name="label119.Text" xml:space="preserve">
-    <value>Anuncio de vecino</value>
-  </data>
-  <data name="label120.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 20</value>
-  </data>
-  <data name="label120.Text" xml:space="preserve">
+  <data name="label88.Text" xml:space="preserve">
     <value>Mensajes</value>
   </data>
-  <data name="label121.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 20</value>
+  <data name="txtErrorsReceivedICMPv4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 184</value>
   </data>
-  <data name="label121.Text" xml:space="preserve">
-    <value>Informes de membresía IGMP</value>
+  <data name="txtErrorsReceivedICMPv4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="label122.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 20</value>
+  <data name="txtErrorsReceivedICMPv4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
   </data>
-  <data name="label122.Text" xml:space="preserve">
-    <value>Reducciones de membresía IGMP</value>
+  <data name="label89.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 186</value>
   </data>
-  <data name="label123.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 20</value>
+  <data name="label89.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 15</value>
   </data>
-  <data name="label123.Text" xml:space="preserve">
-    <value>Consultas de membresía IGMP</value>
-  </data>
-  <data name="label124.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
-  </data>
-  <data name="label124.Text" xml:space="preserve">
+  <data name="label89.Text" xml:space="preserve">
     <value>Errores</value>
   </data>
-  <data name="label141.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 20</value>
+  <data name="txtEchoRequestsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 154</value>
   </data>
-  <data name="label141.Text" xml:space="preserve">
+  <data name="txtEchoRequestsReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtEchoRequestsReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label90.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 156</value>
+  </data>
+  <data name="label90.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 15</value>
+  </data>
+  <data name="label90.Text" xml:space="preserve">
     <value>Solicitudes de eco</value>
   </data>
-  <data name="label142.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 20</value>
+  <data name="txtEchoRepliesReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 124</value>
   </data>
-  <data name="label142.Text" xml:space="preserve">
+  <data name="txtEchoRepliesReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtEchoRepliesReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label91.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 126</value>
+  </data>
+  <data name="label91.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 15</value>
+  </data>
+  <data name="label91.Text" xml:space="preserve">
     <value>Respuestas de eco</value>
   </data>
-  <data name="label143.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 20</value>
+  <data name="txtDestinationUnreachableMessagesReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 94</value>
   </data>
-  <data name="label143.Text" xml:space="preserve">
+  <data name="txtDestinationUnreachableMessagesReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDestinationUnreachableMessagesReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label92.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 96</value>
+  </data>
+  <data name="label92.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 15</value>
+  </data>
+  <data name="label92.Text" xml:space="preserve">
     <value>Destino inaccesible</value>
+  </data>
+  <data name="txtAddressMaskRequestsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 64</value>
+  </data>
+  <data name="txtAddressMaskRequestsReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtAddressMaskRequestsReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label94.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 66</value>
+  </data>
+  <data name="label94.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 15</value>
+  </data>
+  <data name="label94.Text" xml:space="preserve">
+    <value>Solicitudes de máscara</value>
+  </data>
+  <data name="txtAddressMaskRepliesReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 34</value>
+  </data>
+  <data name="txtAddressMaskRepliesReceived.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtAddressMaskRepliesReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label95.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 36</value>
+  </data>
+  <data name="label95.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 15</value>
+  </data>
+  <data name="label95.Text" xml:space="preserve">
+    <value>Respuestas de máscara</value>
+  </data>
+  <data name="groupBox13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>517, 21</value>
+  </data>
+  <data name="groupBox13.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox13.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 550</value>
   </data>
   <data name="groupBox13.Text" xml:space="preserve">
     <value>Mensajes ICMPv6 enviados</value>
   </data>
-  <data name="label138.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
+  <data name="txtTimeExceededMessagesSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 484</value>
   </data>
-  <data name="label138.Text" xml:space="preserve">
+  <data name="txtTimeExceededMessagesSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtTimeExceededMessagesSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label112.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 486</value>
+  </data>
+  <data name="label112.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 15</value>
+  </data>
+  <data name="label112.Text" xml:space="preserve">
     <value>Tiempo excedido</value>
   </data>
-  <data name="label139.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
+  <data name="txtRouterSolicitsSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 454</value>
   </data>
-  <data name="label139.Text" xml:space="preserve">
+  <data name="txtRouterSolicitsSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtRouterSolicitsSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label113.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 456</value>
+  </data>
+  <data name="label113.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 15</value>
+  </data>
+  <data name="label113.Text" xml:space="preserve">
     <value>Solicitudes router</value>
   </data>
-  <data name="label140.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 20</value>
+  <data name="txtRouterAdvertisementsSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 424</value>
   </data>
-  <data name="label140.Text" xml:space="preserve">
+  <data name="txtRouterAdvertisementsSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtRouterAdvertisementsSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label114.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 426</value>
+  </data>
+  <data name="label114.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 15</value>
+  </data>
+  <data name="label114.Text" xml:space="preserve">
     <value>Anuncios del enrutador</value>
   </data>
-  <data name="label125.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 20</value>
+  <data name="txtRedirectsSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 394</value>
   </data>
-  <data name="label125.Text" xml:space="preserve">
+  <data name="txtRedirectsSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtRedirectsSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label115.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 396</value>
+  </data>
+  <data name="label115.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 15</value>
+  </data>
+  <data name="label115.Text" xml:space="preserve">
     <value>Redirecciones</value>
   </data>
-  <data name="label126.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 20</value>
+  <data name="txtParameterProblemsSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 364</value>
   </data>
-  <data name="label126.Text" xml:space="preserve">
+  <data name="txtParameterProblemsSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtParameterProblemsSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label116.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 366</value>
+  </data>
+  <data name="label116.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 15</value>
+  </data>
+  <data name="label116.Text" xml:space="preserve">
     <value>Problemas de parámetros</value>
   </data>
-  <data name="label127.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 20</value>
+  <data name="txtPacketTooBigMessagesSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 334</value>
   </data>
-  <data name="label127.Text" xml:space="preserve">
+  <data name="txtPacketTooBigMessagesSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtPacketTooBigMessagesSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label117.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 336</value>
+  </data>
+  <data name="label117.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 15</value>
+  </data>
+  <data name="label117.Text" xml:space="preserve">
     <value>Paquete grande</value>
   </data>
-  <data name="label128.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 20</value>
+  <data name="txtNeighborSolicitsSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 304</value>
   </data>
-  <data name="label128.Text" xml:space="preserve">
+  <data name="txtNeighborSolicitsSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtNeighborSolicitsSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label118.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 306</value>
+  </data>
+  <data name="label118.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 15</value>
+  </data>
+  <data name="label118.Text" xml:space="preserve">
     <value>Solicitud de vecino</value>
   </data>
-  <data name="label129.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 20</value>
+  <data name="txtNeighborAdvertisementsSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 274</value>
   </data>
-  <data name="label129.Text" xml:space="preserve">
+  <data name="txtNeighborAdvertisementsSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtNeighborAdvertisementsSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label119.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 276</value>
+  </data>
+  <data name="label119.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 15</value>
+  </data>
+  <data name="label119.Text" xml:space="preserve">
     <value>Anuncio de vecino</value>
   </data>
-  <data name="label130.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 20</value>
+  <data name="txtMessagesSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 244</value>
   </data>
-  <data name="label130.Text" xml:space="preserve">
+  <data name="txtMessagesSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMessagesSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label120.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 246</value>
+  </data>
+  <data name="label120.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 15</value>
+  </data>
+  <data name="label120.Text" xml:space="preserve">
     <value>Mensajes</value>
   </data>
-  <data name="label131.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 20</value>
+  <data name="txtMembershipReportsSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 214</value>
   </data>
-  <data name="label131.Text" xml:space="preserve">
+  <data name="txtMembershipReportsSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMembershipReportsSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label121.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 216</value>
+  </data>
+  <data name="label121.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 15</value>
+  </data>
+  <data name="label121.Text" xml:space="preserve">
     <value>Informes de membresía IGMP</value>
   </data>
-  <data name="label132.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 20</value>
+  <data name="txtMembershipReductionsSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 184</value>
   </data>
-  <data name="label132.Text" xml:space="preserve">
+  <data name="txtMembershipReductionsSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMembershipReductionsSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label122.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 186</value>
+  </data>
+  <data name="label122.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 15</value>
+  </data>
+  <data name="label122.Text" xml:space="preserve">
     <value>Reducciones de membresía IGMP</value>
   </data>
-  <data name="label133.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 20</value>
+  <data name="txtMembershipQueriesSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 154</value>
   </data>
-  <data name="label133.Text" xml:space="preserve">
+  <data name="txtMembershipQueriesSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMembershipQueriesSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label123.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 156</value>
+  </data>
+  <data name="label123.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 15</value>
+  </data>
+  <data name="label123.Text" xml:space="preserve">
     <value>Consultas de membresía IGMP</value>
   </data>
-  <data name="label134.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
+  <data name="txtErrorsSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 124</value>
   </data>
-  <data name="label134.Text" xml:space="preserve">
+  <data name="txtErrorsSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtErrorsSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label124.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 126</value>
+  </data>
+  <data name="label124.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 15</value>
+  </data>
+  <data name="label124.Text" xml:space="preserve">
     <value>Errores</value>
   </data>
-  <data name="label135.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 20</value>
+  <data name="txtEchoRequestsSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 94</value>
   </data>
-  <data name="label135.Text" xml:space="preserve">
+  <data name="txtEchoRequestsSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtEchoRequestsSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label141.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 96</value>
+  </data>
+  <data name="label141.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 15</value>
+  </data>
+  <data name="label141.Text" xml:space="preserve">
     <value>Solicitudes de eco</value>
   </data>
-  <data name="label136.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 20</value>
+  <data name="txtEchoRepliesSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 64</value>
   </data>
-  <data name="label136.Text" xml:space="preserve">
+  <data name="txtEchoRepliesSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtEchoRepliesSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label142.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 66</value>
+  </data>
+  <data name="label142.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 15</value>
+  </data>
+  <data name="label142.Text" xml:space="preserve">
     <value>Respuestas de eco</value>
   </data>
-  <data name="label137.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 20</value>
+  <data name="txtDestinationUnreachableMessagesSentICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 34</value>
   </data>
-  <data name="label137.Text" xml:space="preserve">
+  <data name="txtDestinationUnreachableMessagesSentICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDestinationUnreachableMessagesSentICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label143.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 36</value>
+  </data>
+  <data name="label143.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 15</value>
+  </data>
+  <data name="label143.Text" xml:space="preserve">
     <value>Destino inaccesible</value>
+  </data>
+  <data name="groupBox14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 21</value>
+  </data>
+  <data name="groupBox14.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox14.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 550</value>
   </data>
   <data name="groupBox14.Text" xml:space="preserve">
     <value>Mensajes ICMPv6 recibidos</value>
   </data>
-  <data name="tabPageICMPv6.Text" xml:space="preserve">
-    <value>Estadísticas ICMPv6</value>
+  <data name="txtTimeExceededMessagesReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 484</value>
+  </data>
+  <data name="txtTimeExceededMessagesReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtTimeExceededMessagesReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label138.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 486</value>
+  </data>
+  <data name="label138.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 15</value>
+  </data>
+  <data name="label138.Text" xml:space="preserve">
+    <value>Tiempo excedido</value>
+  </data>
+  <data name="txtRouterSolicitsReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 454</value>
+  </data>
+  <data name="txtRouterSolicitsReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtRouterSolicitsReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label139.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 456</value>
+  </data>
+  <data name="label139.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 15</value>
+  </data>
+  <data name="label139.Text" xml:space="preserve">
+    <value>Solicitudes router</value>
+  </data>
+  <data name="txtRouterAdvertisementsReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 424</value>
+  </data>
+  <data name="txtRouterAdvertisementsReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtRouterAdvertisementsReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label140.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 426</value>
+  </data>
+  <data name="label140.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 15</value>
+  </data>
+  <data name="label140.Text" xml:space="preserve">
+    <value>Anuncios del enrutador</value>
+  </data>
+  <data name="txtRedirectsReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 394</value>
+  </data>
+  <data name="txtRedirectsReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtRedirectsReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label125.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 396</value>
+  </data>
+  <data name="label125.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 15</value>
+  </data>
+  <data name="label125.Text" xml:space="preserve">
+    <value>Redirecciones</value>
+  </data>
+  <data name="txtParameterProblemsReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 364</value>
+  </data>
+  <data name="txtParameterProblemsReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtParameterProblemsReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label126.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 366</value>
+  </data>
+  <data name="label126.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 15</value>
+  </data>
+  <data name="label126.Text" xml:space="preserve">
+    <value>Problemas de parámetros</value>
+  </data>
+  <data name="txtPacketTooBigMessagesReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 334</value>
+  </data>
+  <data name="txtPacketTooBigMessagesReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtPacketTooBigMessagesReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label127.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 336</value>
+  </data>
+  <data name="label127.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 15</value>
+  </data>
+  <data name="label127.Text" xml:space="preserve">
+    <value>Paquete grande</value>
+  </data>
+  <data name="txtNeighborSolicitsReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 304</value>
+  </data>
+  <data name="txtNeighborSolicitsReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtNeighborSolicitsReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label128.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 306</value>
+  </data>
+  <data name="label128.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 15</value>
+  </data>
+  <data name="label128.Text" xml:space="preserve">
+    <value>Solicitud de vecino</value>
+  </data>
+  <data name="txtNeighborAdvertisementsReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 274</value>
+  </data>
+  <data name="txtNeighborAdvertisementsReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtNeighborAdvertisementsReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label129.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 276</value>
+  </data>
+  <data name="label129.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 15</value>
+  </data>
+  <data name="label129.Text" xml:space="preserve">
+    <value>Anuncio de vecino</value>
+  </data>
+  <data name="txtMessagesReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 244</value>
+  </data>
+  <data name="txtMessagesReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMessagesReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label130.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 246</value>
+  </data>
+  <data name="label130.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 15</value>
+  </data>
+  <data name="label130.Text" xml:space="preserve">
+    <value>Mensajes</value>
+  </data>
+  <data name="txtMembershipReportsReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 214</value>
+  </data>
+  <data name="txtMembershipReportsReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMembershipReportsReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label131.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 216</value>
+  </data>
+  <data name="label131.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 15</value>
+  </data>
+  <data name="label131.Text" xml:space="preserve">
+    <value>Informes de membresía IGMP</value>
+  </data>
+  <data name="txtMembershipReductionsReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 184</value>
+  </data>
+  <data name="txtMembershipReductionsReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMembershipReductionsReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label132.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 186</value>
+  </data>
+  <data name="label132.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 15</value>
+  </data>
+  <data name="label132.Text" xml:space="preserve">
+    <value>Reducciones de membresía IGMP</value>
+  </data>
+  <data name="txtMembershipQueriesReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 154</value>
+  </data>
+  <data name="txtMembershipQueriesReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtMembershipQueriesReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label133.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 156</value>
+  </data>
+  <data name="label133.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 15</value>
+  </data>
+  <data name="label133.Text" xml:space="preserve">
+    <value>Consultas de membresía IGMP</value>
+  </data>
+  <data name="txtErrorsReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 124</value>
+  </data>
+  <data name="txtErrorsReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtErrorsReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label134.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 126</value>
+  </data>
+  <data name="label134.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 15</value>
+  </data>
+  <data name="label134.Text" xml:space="preserve">
+    <value>Errores</value>
+  </data>
+  <data name="txtEchoRequestsReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 94</value>
+  </data>
+  <data name="txtEchoRequestsReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtEchoRequestsReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label135.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 96</value>
+  </data>
+  <data name="label135.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 15</value>
+  </data>
+  <data name="label135.Text" xml:space="preserve">
+    <value>Solicitudes de eco</value>
+  </data>
+  <data name="txtEchoRepliesReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 64</value>
+  </data>
+  <data name="txtEchoRepliesReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtEchoRepliesReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label136.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 66</value>
+  </data>
+  <data name="label136.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 15</value>
+  </data>
+  <data name="label136.Text" xml:space="preserve">
+    <value>Respuestas de eco</value>
+  </data>
+  <data name="txtDestinationUnreachableMessagesReceivedICMPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>259, 34</value>
+  </data>
+  <data name="txtDestinationUnreachableMessagesReceivedICMPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtDestinationUnreachableMessagesReceivedICMPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 23</value>
+  </data>
+  <data name="label137.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 36</value>
+  </data>
+  <data name="label137.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 15</value>
+  </data>
+  <data name="label137.Text" xml:space="preserve">
+    <value>Destino inaccesible</value>
+  </data>
+  <data name="radioButtonIPv4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>24, 22</value>
+  </data>
+  <data name="radioButtonIPv4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="radioButtonIPv4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 19</value>
+  </data>
+  <data name="groupBoxGlobalVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 14</value>
+  </data>
+  <data name="groupBoxGlobalVersion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxGlobalVersion.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBoxGlobalVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 58</value>
   </data>
   <data name="groupBoxGlobalVersion.Text" xml:space="preserve">
     <value>Versión del protocolo</value>
   </data>
+  <data name="radioButtonIPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>130, 22</value>
+  </data>
+  <data name="radioButtonIPv6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="radioButtonIPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 19</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="comboInterfaces.ItemHeight" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="comboInterfaces.Location" type="System.Drawing.Point, System.Drawing">
+    <value>137, 21</value>
+  </data>
+  <data name="comboInterfaces.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="comboInterfaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>454, 23</value>
+  </data>
+  <data name="label28.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 24</value>
+  </data>
   <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 20</value>
+    <value>83, 15</value>
   </data>
   <data name="label28.Text" xml:space="preserve">
     <value>Interfaz activa:</value>
   </data>
-  <data name="chkIncludeSelectedInterface.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 17</value>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 14</value>
+  </data>
+  <data name="groupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>839, 58</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Interfaz de red</value>
+  </data>
+  <data name="chkIncludeSelectedInterface.Location" type="System.Drawing.Point, System.Drawing">
+    <value>598, 24</value>
+  </data>
+  <data name="chkIncludeSelectedInterface.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="chkIncludeSelectedInterface.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1151, 718</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2605,6 +4782,9 @@
         AADgfwAAAA8AAAADAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+AEAAPwD
         AAD/jwAA
 </value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>GabNetStats - Estadísticas avanzadas</value>

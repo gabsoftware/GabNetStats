@@ -122,13 +122,13 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 20</value>
+    <value>163, 15</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Raffraichissement icône (ms):</value>
   </data>
   <data name="radioCustomSpeed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>451, 24</value>
+    <value>356, 19</value>
   </data>
   <data name="radioCustomSpeed.Text" xml:space="preserve">
     <value>Spécifier les capacités de la bande passante (icône multicolore)</value>
@@ -137,13 +137,13 @@
     <value>Effets visuels pour la bande passante</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>307, 20</value>
+    <value>242, 15</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>(doit être un répertoire du répertoire "icons")</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 20</value>
+    <value>71, 15</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Jeu d'icônes</value>
@@ -152,31 +152,31 @@
     <value>Préférences de la bande passante</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 20</value>
+    <value>81, 15</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Unité préférée</value>
   </data>
   <data name="rbBytes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 24</value>
+    <value>67, 19</value>
   </data>
   <data name="rbBytes.Text" xml:space="preserve">
     <value>octets/s</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 20</value>
+    <value>60, 15</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Réception</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 20</value>
+    <value>36, 15</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Envoi</value>
   </data>
   <data name="radioDefault.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 24</value>
+    <value>132, 19</value>
   </data>
   <data name="radioDefault.Text" xml:space="preserve">
     <value>Défaut (icône bleue)</value>
@@ -184,8 +184,11 @@
   <data name="textBoxDuration.Location" type="System.Drawing.Point, System.Drawing">
     <value>228, 26</value>
   </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Ping automatique</value>
+  </data>
   <data name="chkSettingsAutoPingNotification.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 24</value>
+    <value>138, 19</value>
   </data>
   <data name="chkSettingsAutoPingNotification.Text" xml:space="preserve">
     <value>Montrer notifications</value>
@@ -197,7 +200,7 @@
     <value>391, 91</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 20</value>
+    <value>119, 15</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Envoyer ping tous les</value>
@@ -206,16 +209,19 @@
     <value>250, 45</value>
   </data>
   <data name="txtSettingsAutoPingHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 27</value>
+    <value>185, 23</value>
   </data>
   <data name="chkSettingsAutoPingEnabled.Size" type="System.Drawing.Size, System.Drawing">
-    <value>233, 24</value>
+    <value>187, 19</value>
   </data>
   <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
     <value>Activer auto-ping de cet hôte :</value>
   </data>
+  <data name="checkBoxStartup.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 613</value>
+  </data>
   <data name="checkBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 24</value>
+    <value>137, 19</value>
   </data>
   <data name="checkBoxStartup.Text" xml:space="preserve">
     <value>Lancer au démarrage</value>
@@ -224,21 +230,18 @@
     <value>Divers</value>
   </data>
   <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 20</value>
+    <value>52, 15</value>
   </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Langue :</value>
   </data>
   <data name="chkShowDisconnectedInterfaces.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 24</value>
+    <value>216, 19</value>
   </data>
   <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
     <value>Montrer les interfaces déconnectées</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Options</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Ping automatique</value>
   </data>
 </root>

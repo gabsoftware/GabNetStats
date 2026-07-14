@@ -28,220 +28,198 @@ namespace GabNetStats
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.contextMenuTray = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.advancedStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.manageWirelessNetworksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.homeGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.networkMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.networkdomainworkgroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.networkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FirewallSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FirewallAllowedAppsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NetworkSharingCenterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NetworkAndInternetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NetworkConnectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NetworkConnectionsAlternateViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.NetworkAdaptersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.notifyIconActivity = new System.Windows.Forms.NotifyIcon(this.components);
-            this.notifyIconPing = new System.Windows.Forms.NotifyIcon(this.components);
-            this.contextMenuTray.SuspendLayout();
-            this.SuspendLayout();
+            contextMenuTray = new System.Windows.Forms.ContextMenuStrip(components);
+            aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            advancedStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            manageWirelessNetworksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            homeGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            networkMapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            networkdomainworkgroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            networkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            FirewallSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            FirewallAllowedAppsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            NetworkSharingCenterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            NetworkAndInternetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            NetworkConnectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            NetworkConnectionsAlternateViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            NetworkAdaptersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            notifyIconActivity = new System.Windows.Forms.NotifyIcon(components);
+            notifyIconPing = new System.Windows.Forms.NotifyIcon(components);
+            contextMenuTray.SuspendLayout();
+            SuspendLayout();
             // 
             // contextMenuTray
             // 
-            resources.ApplyResources(this.contextMenuTray, "contextMenuTray");
-            this.contextMenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.settingsToolStripMenuItem,
-            this.toolStripSeparator3,
-            this.advancedStatisticsToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.manageWirelessNetworksToolStripMenuItem,
-            this.homeGroupToolStripMenuItem,
-            this.networkMapToolStripMenuItem,
-            this.networkdomainworkgroupToolStripMenuItem,
-            this.networkToolStripMenuItem,
-            this.FirewallSettingsToolStripMenuItem,
-            this.FirewallAllowedAppsToolStripMenuItem,
-            this.NetworkSharingCenterToolStripMenuItem,
-            this.NetworkAndInternetToolStripMenuItem,
-            this.NetworkConnectionsToolStripMenuItem,
-            this.NetworkConnectionsAlternateViewToolStripMenuItem,
-            this.NetworkAdaptersToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.exitToolStripMenuItem});
-            this.contextMenuTray.Name = "contextMenuTray";
+            resources.ApplyResources(contextMenuTray, "contextMenuTray");
+            contextMenuTray.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { aboutToolStripMenuItem, toolStripSeparator4, settingsToolStripMenuItem, toolStripSeparator3, advancedStatisticsToolStripMenuItem, toolStripSeparator2, manageWirelessNetworksToolStripMenuItem, homeGroupToolStripMenuItem, networkMapToolStripMenuItem, networkdomainworkgroupToolStripMenuItem, networkToolStripMenuItem, FirewallSettingsToolStripMenuItem, FirewallAllowedAppsToolStripMenuItem, NetworkSharingCenterToolStripMenuItem, NetworkAndInternetToolStripMenuItem, NetworkConnectionsToolStripMenuItem, NetworkConnectionsAlternateViewToolStripMenuItem, NetworkAdaptersToolStripMenuItem, toolStripSeparator1, exitToolStripMenuItem });
+            contextMenuTray.Name = "contextMenuTray";
             // 
             // aboutToolStripMenuItem
             // 
-            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAbout);
+            resources.ApplyResources(aboutToolStripMenuItem, "aboutToolStripMenuItem");
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Click += OnAbout;
             // 
             // toolStripSeparator4
             // 
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(toolStripSeparator4, "toolStripSeparator4");
+            toolStripSeparator4.Name = "toolStripSeparator4";
             // 
             // settingsToolStripMenuItem
             // 
-            resources.ApplyResources(this.settingsToolStripMenuItem, "settingsToolStripMenuItem");
-            this.settingsToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.settings_icon_16x16;
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.OnSettings);
+            resources.ApplyResources(settingsToolStripMenuItem, "settingsToolStripMenuItem");
+            settingsToolStripMenuItem.Image = Properties.Resources.settings_icon_16x16;
+            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            settingsToolStripMenuItem.Click += OnSettings;
             // 
             // toolStripSeparator3
             // 
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(toolStripSeparator3, "toolStripSeparator3");
+            toolStripSeparator3.Name = "toolStripSeparator3";
             // 
             // advancedStatisticsToolStripMenuItem
             // 
-            resources.ApplyResources(this.advancedStatisticsToolStripMenuItem, "advancedStatisticsToolStripMenuItem");
-            this.advancedStatisticsToolStripMenuItem.Name = "advancedStatisticsToolStripMenuItem";
-            this.advancedStatisticsToolStripMenuItem.Click += new System.EventHandler(this.advancedStatisticsToolStripMenuItem_Click);
+            resources.ApplyResources(advancedStatisticsToolStripMenuItem, "advancedStatisticsToolStripMenuItem");
+            advancedStatisticsToolStripMenuItem.Name = "advancedStatisticsToolStripMenuItem";
+            advancedStatisticsToolStripMenuItem.Click += advancedStatisticsToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(toolStripSeparator2, "toolStripSeparator2");
+            toolStripSeparator2.Name = "toolStripSeparator2";
             // 
             // manageWirelessNetworksToolStripMenuItem
             // 
-            resources.ApplyResources(this.manageWirelessNetworksToolStripMenuItem, "manageWirelessNetworksToolStripMenuItem");
-            this.manageWirelessNetworksToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.wlanpref_101;
-            this.manageWirelessNetworksToolStripMenuItem.Name = "manageWirelessNetworksToolStripMenuItem";
-            this.manageWirelessNetworksToolStripMenuItem.Click += new System.EventHandler(this.manageWirelessNetworksToolStripMenuItem_Click);
+            resources.ApplyResources(manageWirelessNetworksToolStripMenuItem, "manageWirelessNetworksToolStripMenuItem");
+            manageWirelessNetworksToolStripMenuItem.Image = Properties.Resources.wlanpref_101;
+            manageWirelessNetworksToolStripMenuItem.Name = "manageWirelessNetworksToolStripMenuItem";
+            manageWirelessNetworksToolStripMenuItem.Click += manageWirelessNetworksToolStripMenuItem_Click;
             // 
             // homeGroupToolStripMenuItem
             // 
-            resources.ApplyResources(this.homeGroupToolStripMenuItem, "homeGroupToolStripMenuItem");
-            this.homeGroupToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.imageres_1013;
-            this.homeGroupToolStripMenuItem.Name = "homeGroupToolStripMenuItem";
-            this.homeGroupToolStripMenuItem.Click += new System.EventHandler(this.homeGroupToolStripMenuItem_Click);
-            this.homeGroupToolStripMenuItem.Visible = false;
-            //
+            resources.ApplyResources(homeGroupToolStripMenuItem, "homeGroupToolStripMenuItem");
+            homeGroupToolStripMenuItem.Image = Properties.Resources.imageres_1013;
+            homeGroupToolStripMenuItem.Name = "homeGroupToolStripMenuItem";
+            homeGroupToolStripMenuItem.Click += homeGroupToolStripMenuItem_Click;
+            // 
             // networkMapToolStripMenuItem
-            //
-            resources.ApplyResources(this.networkMapToolStripMenuItem, "networkMapToolStripMenuItem");
-            this.networkMapToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.networkmap_1;
-            this.networkMapToolStripMenuItem.Name = "networkMapToolStripMenuItem";
-            this.networkMapToolStripMenuItem.Click += new System.EventHandler(this.networkMapToolStripMenuItem_Click);
-            this.networkMapToolStripMenuItem.Visible = false;
+            // 
+            resources.ApplyResources(networkMapToolStripMenuItem, "networkMapToolStripMenuItem");
+            networkMapToolStripMenuItem.Image = Properties.Resources.networkmap_1;
+            networkMapToolStripMenuItem.Name = "networkMapToolStripMenuItem";
+            networkMapToolStripMenuItem.Click += networkMapToolStripMenuItem_Click;
             // 
             // networkdomainworkgroupToolStripMenuItem
             // 
-            resources.ApplyResources(this.networkdomainworkgroupToolStripMenuItem, "networkdomainworkgroupToolStripMenuItem");
-            this.networkdomainworkgroupToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.shell32_18;
-            this.networkdomainworkgroupToolStripMenuItem.Name = "networkdomainworkgroupToolStripMenuItem";
-            this.networkdomainworkgroupToolStripMenuItem.Click += new System.EventHandler(this.networkdomainworkgroupToolStripMenuItem_Click);
+            resources.ApplyResources(networkdomainworkgroupToolStripMenuItem, "networkdomainworkgroupToolStripMenuItem");
+            networkdomainworkgroupToolStripMenuItem.Image = Properties.Resources.shell32_18;
+            networkdomainworkgroupToolStripMenuItem.Name = "networkdomainworkgroupToolStripMenuItem";
+            networkdomainworkgroupToolStripMenuItem.Click += networkdomainworkgroupToolStripMenuItem_Click;
             // 
             // networkToolStripMenuItem
             // 
-            resources.ApplyResources(this.networkToolStripMenuItem, "networkToolStripMenuItem");
-            this.networkToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.shell32_18;
-            this.networkToolStripMenuItem.Name = "networkToolStripMenuItem";
-            this.networkToolStripMenuItem.Click += new System.EventHandler(this.networkToolStripMenuItem_Click);
+            resources.ApplyResources(networkToolStripMenuItem, "networkToolStripMenuItem");
+            networkToolStripMenuItem.Image = Properties.Resources.shell32_18;
+            networkToolStripMenuItem.Name = "networkToolStripMenuItem";
+            networkToolStripMenuItem.Click += networkToolStripMenuItem_Click;
             // 
             // FirewallSettingsToolStripMenuItem
             // 
-            resources.ApplyResources(this.FirewallSettingsToolStripMenuItem, "FirewallSettingsToolStripMenuItem");
-            this.FirewallSettingsToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.FireWallControlPanel_16x16;
-            this.FirewallSettingsToolStripMenuItem.Name = "FirewallSettingsToolStripMenuItem";
-            this.FirewallSettingsToolStripMenuItem.Click += new System.EventHandler(this.FirewallSettingsToolStripMenuItem_Click);
-            //
+            resources.ApplyResources(FirewallSettingsToolStripMenuItem, "FirewallSettingsToolStripMenuItem");
+            FirewallSettingsToolStripMenuItem.Image = Properties.Resources.FireWallControlPanel_16x16;
+            FirewallSettingsToolStripMenuItem.Name = "FirewallSettingsToolStripMenuItem";
+            FirewallSettingsToolStripMenuItem.Click += FirewallSettingsToolStripMenuItem_Click;
+            // 
             // FirewallAllowedAppsToolStripMenuItem
-            //
-            resources.ApplyResources(this.FirewallAllowedAppsToolStripMenuItem, "FirewallAllowedAppsToolStripMenuItem");
-            this.FirewallAllowedAppsToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.FireWallControlPanel_16x16;
-            this.FirewallAllowedAppsToolStripMenuItem.Name = "FirewallAllowedAppsToolStripMenuItem";
-            this.FirewallAllowedAppsToolStripMenuItem.Click += new System.EventHandler(this.FirewallAllowedAppsToolStripMenuItem_Click);
-            //
+            // 
+            resources.ApplyResources(FirewallAllowedAppsToolStripMenuItem, "FirewallAllowedAppsToolStripMenuItem");
+            FirewallAllowedAppsToolStripMenuItem.Image = Properties.Resources.FireWallControlPanel_16x16;
+            FirewallAllowedAppsToolStripMenuItem.Name = "FirewallAllowedAppsToolStripMenuItem";
+            FirewallAllowedAppsToolStripMenuItem.Click += FirewallAllowedAppsToolStripMenuItem_Click;
+            // 
             // NetworkSharingCenterToolStripMenuItem
             // 
-            resources.ApplyResources(this.NetworkSharingCenterToolStripMenuItem, "NetworkSharingCenterToolStripMenuItem");
-            this.NetworkSharingCenterToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.netcenter_16x16;
-            this.NetworkSharingCenterToolStripMenuItem.Name = "NetworkSharingCenterToolStripMenuItem";
-            this.NetworkSharingCenterToolStripMenuItem.Click += new System.EventHandler(this.NetworkSharingCenterToolStripMenuItem_Click);
-            //
+            resources.ApplyResources(NetworkSharingCenterToolStripMenuItem, "NetworkSharingCenterToolStripMenuItem");
+            NetworkSharingCenterToolStripMenuItem.Image = Properties.Resources.netcenter_16x16;
+            NetworkSharingCenterToolStripMenuItem.Name = "NetworkSharingCenterToolStripMenuItem";
+            NetworkSharingCenterToolStripMenuItem.Click += NetworkSharingCenterToolStripMenuItem_Click;
+            // 
             // NetworkAndInternetToolStripMenuItem
-            //
-            resources.ApplyResources(this.NetworkAndInternetToolStripMenuItem, "NetworkAndInternetToolStripMenuItem");
-            this.NetworkAndInternetToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.shell32_18;
-            this.NetworkAndInternetToolStripMenuItem.Name = "NetworkAndInternetToolStripMenuItem";
-            this.NetworkAndInternetToolStripMenuItem.Click += new System.EventHandler(this.NetworkAndInternetToolStripMenuItem_Click);
-            //
+            // 
+            resources.ApplyResources(NetworkAndInternetToolStripMenuItem, "NetworkAndInternetToolStripMenuItem");
+            NetworkAndInternetToolStripMenuItem.Image = Properties.Resources.shell32_18;
+            NetworkAndInternetToolStripMenuItem.Name = "NetworkAndInternetToolStripMenuItem";
+            NetworkAndInternetToolStripMenuItem.Click += NetworkAndInternetToolStripMenuItem_Click;
+            // 
             // NetworkConnectionsToolStripMenuItem
             // 
-            resources.ApplyResources(this.NetworkConnectionsToolStripMenuItem, "NetworkConnectionsToolStripMenuItem");
-            this.NetworkConnectionsToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.netshell_16x16;
-            this.NetworkConnectionsToolStripMenuItem.Name = "NetworkConnectionsToolStripMenuItem";
-            this.NetworkConnectionsToolStripMenuItem.Click += new System.EventHandler(this.NetworkConnectionsToolStripMenuItem_Click);
+            resources.ApplyResources(NetworkConnectionsToolStripMenuItem, "NetworkConnectionsToolStripMenuItem");
+            NetworkConnectionsToolStripMenuItem.Image = Properties.Resources.netshell_16x16;
+            NetworkConnectionsToolStripMenuItem.Name = "NetworkConnectionsToolStripMenuItem";
+            NetworkConnectionsToolStripMenuItem.Click += NetworkConnectionsToolStripMenuItem_Click;
             // 
             // NetworkConnectionsAlternateViewToolStripMenuItem
             // 
-            resources.ApplyResources(this.NetworkConnectionsAlternateViewToolStripMenuItem, "NetworkConnectionsAlternateViewToolStripMenuItem");
-            this.NetworkConnectionsAlternateViewToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.netshell_16x16;
-            this.NetworkConnectionsAlternateViewToolStripMenuItem.Name = "NetworkConnectionsAlternateViewToolStripMenuItem";
-            this.NetworkConnectionsAlternateViewToolStripMenuItem.Click += new System.EventHandler(this.NetworkConnectionsAlternateViewToolStripMenuItem_Click);
+            resources.ApplyResources(NetworkConnectionsAlternateViewToolStripMenuItem, "NetworkConnectionsAlternateViewToolStripMenuItem");
+            NetworkConnectionsAlternateViewToolStripMenuItem.Image = Properties.Resources.netshell_16x16;
+            NetworkConnectionsAlternateViewToolStripMenuItem.Name = "NetworkConnectionsAlternateViewToolStripMenuItem";
+            NetworkConnectionsAlternateViewToolStripMenuItem.Click += NetworkConnectionsAlternateViewToolStripMenuItem_Click;
             // 
             // NetworkAdaptersToolStripMenuItem
             // 
-            resources.ApplyResources(this.NetworkAdaptersToolStripMenuItem, "NetworkAdaptersToolStripMenuItem");
-            this.NetworkAdaptersToolStripMenuItem.Image = global::GabNetStats.Properties.Resources.pnidui_2407_16x16;
-            this.NetworkAdaptersToolStripMenuItem.Name = "NetworkAdaptersToolStripMenuItem";
+            resources.ApplyResources(NetworkAdaptersToolStripMenuItem, "NetworkAdaptersToolStripMenuItem");
+            NetworkAdaptersToolStripMenuItem.Image = Properties.Resources.pnidui_2407_16x16;
+            NetworkAdaptersToolStripMenuItem.Name = "NetworkAdaptersToolStripMenuItem";
             // 
             // toolStripSeparator1
             // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(toolStripSeparator1, "toolStripSeparator1");
+            toolStripSeparator1.Name = "toolStripSeparator1";
             // 
             // exitToolStripMenuItem
             // 
-            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.OnExit);
+            resources.ApplyResources(exitToolStripMenuItem, "exitToolStripMenuItem");
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Click += OnExit;
             // 
             // notifyIconActivity
             // 
-            this.notifyIconActivity.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            resources.ApplyResources(this.notifyIconActivity, "notifyIconActivity");
-            this.notifyIconActivity.ContextMenuStrip = this.contextMenuTray;
-            this.notifyIconActivity.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconActivity_MouseClick);
+            notifyIconActivity.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            resources.ApplyResources(notifyIconActivity, "notifyIconActivity");
+            notifyIconActivity.ContextMenuStrip = contextMenuTray;
+            notifyIconActivity.MouseClick += notifyIconActivity_MouseClick;
             // 
             // notifyIconPing
             // 
-            this.notifyIconPing.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            resources.ApplyResources(this.notifyIconPing, "notifyIconPing");
-            this.notifyIconPing.ContextMenuStrip = this.contextMenuTray;
-            this.notifyIconPing.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIconPing_MouseClick);
+            notifyIconPing.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            resources.ApplyResources(notifyIconPing, "notifyIconPing");
+            notifyIconPing.ContextMenuStrip = contextMenuTray;
+            notifyIconPing.MouseClick += notifyIconPing_MouseClick;
             // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.Name = "FormMain";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.Tag = "";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.OnLoad);
-            this.contextMenuTray.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            DoubleBuffered = true;
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "FormMain";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            Tag = "";
+            WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            FormClosing += MainForm_FormClosing;
+            Load += OnLoad;
+            contextMenuTray.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 

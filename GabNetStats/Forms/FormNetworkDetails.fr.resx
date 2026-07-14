@@ -149,22 +149,25 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 20</value>
+    <value>161, 15</value>
   </data>
   <data name="label21.Text" xml:space="preserve">
     <value>Requêtes de paquets sortants</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 20</value>
+    <value>106, 15</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>Paquets sans route</value>
+  </data>
+  <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 15</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
     <value>Routages rejetés</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 20</value>
+    <value>147, 15</value>
   </data>
   <data name="label19.Text" xml:space="preserve">
     <value>Rejets de paquets transmis</value>
@@ -173,43 +176,43 @@
     <value>Paquets entrants</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 20</value>
+    <value>166, 15</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
     <value>Paquets de protocole inconnu</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 20</value>
+    <value>159, 15</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Paquets avec entêtes erronés</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 20</value>
+    <value>171, 15</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Paquets avec adresses erronées</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
+    <value>103, 15</value>
   </data>
   <data name="label14.Text" xml:space="preserve">
     <value>Paquets transférés</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 20</value>
+    <value>86, 15</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Paquets rejetés</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 20</value>
+    <value>79, 15</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>Paquets livrés</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 20</value>
+    <value>80, 15</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>Paquets reçus</value>
@@ -218,37 +221,37 @@
     <value>Fragmentation des paquets</value>
   </data>
   <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 20</value>
+    <value>116, 15</value>
   </data>
   <data name="label22.Text" xml:space="preserve">
     <value>Paquets réassemblés</value>
   </data>
   <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 20</value>
+    <value>112, 15</value>
   </data>
   <data name="label23.Text" xml:space="preserve">
     <value>Paquets fragmentés</value>
   </data>
   <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 20</value>
+    <value>178, 15</value>
   </data>
   <data name="label24.Text" xml:space="preserve">
     <value>Temps limite pour réassemblage</value>
   </data>
   <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 20</value>
+    <value>134, 15</value>
   </data>
   <data name="label25.Text" xml:space="preserve">
     <value>Réassemblages échoués</value>
   </data>
   <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 20</value>
+    <value>122, 15</value>
   </data>
   <data name="label26.Text" xml:space="preserve">
     <value>Réassemblages requis</value>
   </data>
   <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 20</value>
+    <value>193, 15</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
     <value>Fragmentation de paquets échoués</value>
@@ -257,61 +260,61 @@
     <value>Divers</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 20</value>
+    <value>85, 15</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Type de noeud</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 20</value>
+    <value>103, 15</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Est un proxy WINS</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 20</value>
+    <value>71, 15</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Nom d'hôte</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 20</value>
+    <value>100, 15</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Nom de domaine</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 20</value>
+    <value>137, 15</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Nom de l'étendue DHCP</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 20</value>
+    <value>103, 15</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Nombre de routes</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>121, 15</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Nombre d'adresses IP</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 20</value>
+    <value>115, 15</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Nombre d'interfaces</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 20</value>
+    <value>87, 15</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Transfert activé</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 20</value>
+    <value>84, 15</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>TTL par défaut</value>
@@ -320,49 +323,49 @@
     <value>Propriétés (2)</value>
   </data>
   <data name="label144.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 20</value>
+    <value>78, 15</value>
   </data>
   <data name="label144.Text" xml:space="preserve">
     <value>Adresse MAC</value>
   </data>
   <data name="label64.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 20</value>
+    <value>117, 15</value>
   </data>
   <data name="label64.Text" xml:space="preserve">
     <value>Support de multicast</value>
   </data>
   <data name="label65.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 20</value>
+    <value>43, 15</value>
   </data>
   <data name="label65.Text" xml:space="preserve">
     <value>Vitesse</value>
   </data>
   <data name="label61.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 20</value>
+    <value>118, 15</value>
   </data>
   <data name="label61.Text" xml:space="preserve">
     <value>Réception seulement</value>
   </data>
   <data name="label66.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 20</value>
+    <value>27, 15</value>
   </data>
   <data name="label66.Text" xml:space="preserve">
     <value>Etat</value>
   </data>
   <data name="label58.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 20</value>
+    <value>140, 15</value>
   </data>
   <data name="label58.Text" xml:space="preserve">
     <value>Type de l'interface réseau</value>
   </data>
   <data name="label59.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 20</value>
+    <value>34, 15</value>
   </data>
   <data name="label59.Text" xml:space="preserve">
     <value>Nom</value>
   </data>
   <data name="label60.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 20</value>
+    <value>145, 15</value>
   </data>
   <data name="label60.Text" xml:space="preserve">
     <value>Index de l'int. de loopback</value>
@@ -371,61 +374,61 @@
     <value>Configuration IP</value>
   </data>
   <data name="label57.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 20</value>
+    <value>152, 15</value>
   </data>
   <data name="label57.Text" xml:space="preserve">
     <value>Adresses des serveurs WINS</value>
   </data>
   <data name="label55.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 20</value>
+    <value>94, 15</value>
   </data>
   <data name="label55.Text" xml:space="preserve">
     <value>Adresses unicast</value>
   </data>
   <data name="label56.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 20</value>
+    <value>105, 15</value>
   </data>
   <data name="label56.Text" xml:space="preserve">
     <value>Adresses multicast</value>
   </data>
   <data name="label47.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 20</value>
+    <value>137, 15</value>
   </data>
   <data name="label47.Text" xml:space="preserve">
     <value>DNS dynamiques activés</value>
   </data>
   <data name="label48.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 20</value>
+    <value>64, 15</value>
   </data>
   <data name="label48.Text" xml:space="preserve">
     <value>DNS activé</value>
   </data>
   <data name="label49.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 20</value>
+    <value>133, 15</value>
   </data>
   <data name="label49.Text" xml:space="preserve">
     <value>Adresses des passerelles</value>
   </data>
   <data name="label50.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 20</value>
+    <value>68, 15</value>
   </data>
   <data name="label50.Text" xml:space="preserve">
     <value>Suffixe DNS</value>
   </data>
   <data name="label52.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 20</value>
+    <value>146, 15</value>
   </data>
   <data name="label52.Text" xml:space="preserve">
     <value>Adresses des serveurs DNS</value>
   </data>
   <data name="label53.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 20</value>
+    <value>155, 15</value>
   </data>
   <data name="label53.Text" xml:space="preserve">
     <value>Adresses des serveurs DHCP</value>
   </data>
   <data name="label54.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 20</value>
+    <value>98, 15</value>
   </data>
   <data name="label54.Text" xml:space="preserve">
     <value>Adresses Anycast</value>
@@ -434,31 +437,31 @@
     <value>Propriétés (1)</value>
   </data>
   <data name="label42.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
+    <value>71, 15</value>
   </data>
   <data name="label42.Text" xml:space="preserve">
     <value>Utilise WINS</value>
   </data>
   <data name="label30.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 20</value>
+    <value>143, 15</value>
   </data>
   <data name="label30.Text" xml:space="preserve">
     <value>Transfert de paquet activé</value>
   </data>
   <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
+    <value>73, 15</value>
   </data>
   <data name="label31.Text" xml:space="preserve">
     <value>DHCP activé</value>
   </data>
   <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 20</value>
+    <value>123, 15</value>
   </data>
   <data name="label32.Text" xml:space="preserve">
     <value>Adresse APIPA activée</value>
   </data>
   <data name="label37.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 20</value>
+    <value>115, 15</value>
   </data>
   <data name="label37.Text" xml:space="preserve">
     <value>A une adresse APIPA</value>
@@ -467,37 +470,37 @@
     <value>Envoi</value>
   </data>
   <data name="label41.Size" type="System.Drawing.Size, System.Drawing">
-    <value>167, 20</value>
+    <value>136, 15</value>
   </data>
   <data name="label41.Text" xml:space="preserve">
     <value>Paquets unicast envoyés</value>
   </data>
   <data name="label43.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 20</value>
+    <value>158, 15</value>
   </data>
   <data name="label43.Text" xml:space="preserve">
     <value>Longueur de queue de sortie</value>
   </data>
   <data name="label44.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 20</value>
+    <value>136, 15</value>
   </data>
   <data name="label44.Text" xml:space="preserve">
     <value>Paquets sortants erronés</value>
   </data>
   <data name="label45.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 20</value>
+    <value>131, 15</value>
   </data>
   <data name="label45.Text" xml:space="preserve">
     <value>Paquets sortants rejetés</value>
   </data>
   <data name="label46.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 20</value>
+    <value>162, 15</value>
   </data>
   <data name="label46.Text" xml:space="preserve">
     <value>Paquets non-unicast envoyés</value>
   </data>
   <data name="label51.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 20</value>
+    <value>87, 15</value>
   </data>
   <data name="label51.Text" xml:space="preserve">
     <value>Octets envoyés</value>
@@ -506,37 +509,37 @@
     <value>Réception</value>
   </data>
   <data name="label40.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 20</value>
+    <value>121, 15</value>
   </data>
   <data name="label40.Text" xml:space="preserve">
     <value>Paquets unicast reçus</value>
   </data>
   <data name="label33.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 20</value>
+    <value>147, 15</value>
   </data>
   <data name="label33.Text" xml:space="preserve">
     <value>Paquets non-unicast reçus</value>
   </data>
   <data name="label34.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 20</value>
+    <value>212, 15</value>
   </data>
   <data name="label34.Text" xml:space="preserve">
     <value>Paquets entrants de protocole inconnu</value>
   </data>
   <data name="label35.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 20</value>
+    <value>137, 15</value>
   </data>
   <data name="label35.Text" xml:space="preserve">
     <value>Paquets entrants erronés</value>
   </data>
   <data name="label36.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 20</value>
+    <value>132, 15</value>
   </data>
   <data name="label36.Text" xml:space="preserve">
     <value>Paquets entrants rejetés</value>
   </data>
   <data name="label38.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 20</value>
+    <value>72, 15</value>
   </data>
   <data name="label38.Text" xml:space="preserve">
     <value>Octets reçus</value>
@@ -545,7 +548,7 @@
     <value>Statistiques des erreurs TCP</value>
   </data>
   <data name="label81.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 20</value>
+    <value>104, 15</value>
   </data>
   <data name="label81.Text" xml:space="preserve">
     <value>Erreurs TCP reçues</value>
@@ -554,37 +557,37 @@
     <value>Statistiques des segments TCP</value>
   </data>
   <data name="label82.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 20</value>
+    <value>114, 15</value>
   </data>
   <data name="label82.Text" xml:space="preserve">
     <value>Segments TCP reçus</value>
   </data>
   <data name="label83.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 20</value>
+    <value>242, 15</value>
   </data>
   <data name="label83.Text" xml:space="preserve">
     <value>Réinitialisations TCP envoyées (drapeau RST)</value>
   </data>
   <data name="label84.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 20</value>
+    <value>139, 15</value>
   </data>
   <data name="label84.Text" xml:space="preserve">
     <value>Segments TCP réenvoyés</value>
   </data>
   <data name="label85.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 20</value>
+    <value>129, 15</value>
   </data>
   <data name="label85.Text" xml:space="preserve">
     <value>Segments TCP envoyés</value>
   </data>
   <data name="label86.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 20</value>
+    <value>333, 15</value>
   </data>
   <data name="label86.Text" xml:space="preserve">
     <value>Limite de temps minimum de transmission des segments TCP</value>
   </data>
   <data name="label93.Size" type="System.Drawing.Size, System.Drawing">
-    <value>415, 20</value>
+    <value>334, 15</value>
   </data>
   <data name="label93.Text" xml:space="preserve">
     <value>Limite de temps maximum de transmission des segments TCP</value>
@@ -593,43 +596,43 @@
     <value>Statistiques des connexions TCP</value>
   </data>
   <data name="label68.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 20</value>
+    <value>136, 15</value>
   </data>
   <data name="label68.Text" xml:space="preserve">
     <value>Connexions TCP établies</value>
   </data>
   <data name="label69.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 20</value>
+    <value>225, 15</value>
   </data>
   <data name="label69.Text" xml:space="preserve">
     <value>Maximum de connexions TCP supportées</value>
   </data>
   <data name="label70.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 20</value>
+    <value>211, 15</value>
   </data>
   <data name="label70.Text" xml:space="preserve">
     <value>Tentatives de connexion TCP échouées</value>
   </data>
   <data name="label71.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 20</value>
+    <value>165, 15</value>
   </data>
   <data name="label71.Text" xml:space="preserve">
     <value>Connections TCP réinitialisées</value>
   </data>
   <data name="label72.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 20</value>
+    <value>148, 15</value>
   </data>
   <data name="label72.Text" xml:space="preserve">
     <value>Connexions TCP courantes</value>
   </data>
   <data name="label73.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 20</value>
+    <value>193, 15</value>
   </data>
   <data name="label73.Text" xml:space="preserve">
     <value>Requêtes de connexion TCP initiées</value>
   </data>
   <data name="label75.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 20</value>
+    <value>208, 15</value>
   </data>
   <data name="label75.Text" xml:space="preserve">
     <value>Requêtes de connexion TCP acceptées</value>
@@ -668,31 +671,31 @@
     <value>Statistiques des connexions UDP</value>
   </data>
   <data name="label74.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 20</value>
+    <value>85, 15</value>
   </data>
   <data name="label74.Text" xml:space="preserve">
     <value>UDP en écoute</value>
   </data>
   <data name="label67.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 20</value>
+    <value>164, 15</value>
   </data>
   <data name="label67.Text" xml:space="preserve">
     <value>Datagrammes entrants rejetés</value>
   </data>
   <data name="label78.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 20</value>
+    <value>169, 15</value>
   </data>
   <data name="label78.Text" xml:space="preserve">
     <value>Datagrammes entrants erronés</value>
   </data>
   <data name="label79.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 20</value>
+    <value>127, 15</value>
   </data>
   <data name="label79.Text" xml:space="preserve">
     <value>Datagrammes envoyés</value>
   </data>
   <data name="label80.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 20</value>
+    <value>112, 15</value>
   </data>
   <data name="label80.Text" xml:space="preserve">
     <value>Datagrammes reçus</value>
@@ -710,73 +713,73 @@
     <value>Messages ICMPv4 envoyés</value>
   </data>
   <data name="label99.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 20</value>
+    <value>129, 15</value>
   </data>
   <data name="label99.Text" xml:space="preserve">
     <value>Requêtes d'horodatage</value>
   </data>
   <data name="label100.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 20</value>
+    <value>131, 15</value>
   </data>
   <data name="label100.Text" xml:space="preserve">
     <value>Réponses d'horodatage</value>
   </data>
   <data name="label101.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 20</value>
+    <value>113, 15</value>
   </data>
   <data name="label101.Text" xml:space="preserve">
     <value>Temps limite écoulé</value>
   </data>
   <data name="label102.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 20</value>
+    <value>100, 15</value>
   </data>
   <data name="label102.Text" xml:space="preserve">
     <value>Sources étouffées</value>
   </data>
   <data name="label103.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
+    <value>72, 15</value>
   </data>
   <data name="label103.Text" xml:space="preserve">
     <value>Redirections</value>
   </data>
   <data name="label104.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 20</value>
+    <value>141, 15</value>
   </data>
   <data name="label104.Text" xml:space="preserve">
     <value>Problèmes de paramètres</value>
   </data>
   <data name="label106.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>43, 15</value>
   </data>
   <data name="label106.Text" xml:space="preserve">
     <value>Erreurs</value>
   </data>
   <data name="label107.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 20</value>
+    <value>84, 15</value>
   </data>
   <data name="label107.Text" xml:space="preserve">
     <value>Requêtes Echo</value>
   </data>
   <data name="label108.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 20</value>
+    <value>86, 15</value>
   </data>
   <data name="label108.Text" xml:space="preserve">
     <value>Réponses Echo</value>
   </data>
   <data name="label109.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 20</value>
+    <value>133, 15</value>
   </data>
   <data name="label109.Text" xml:space="preserve">
     <value>Destination inaccessible</value>
   </data>
   <data name="label110.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 20</value>
+    <value>168, 15</value>
   </data>
   <data name="label110.Text" xml:space="preserve">
     <value>Requêtes de masque d'adresse</value>
   </data>
   <data name="label111.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 20</value>
+    <value>175, 15</value>
   </data>
   <data name="label111.Text" xml:space="preserve">
     <value>Réponses de masques d'adresse</value>
@@ -785,73 +788,73 @@
     <value>Messages ICMPv4 reçus</value>
   </data>
   <data name="label96.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 20</value>
+    <value>129, 15</value>
   </data>
   <data name="label96.Text" xml:space="preserve">
     <value>Requêtes d'horodatage</value>
   </data>
   <data name="label97.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 20</value>
+    <value>131, 15</value>
   </data>
   <data name="label97.Text" xml:space="preserve">
     <value>Réponses d'horodatage</value>
   </data>
   <data name="label98.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 20</value>
+    <value>113, 15</value>
   </data>
   <data name="label98.Text" xml:space="preserve">
     <value>Temps limite écoulé</value>
   </data>
   <data name="label76.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 20</value>
+    <value>100, 15</value>
   </data>
   <data name="label76.Text" xml:space="preserve">
     <value>Sources étouffées</value>
   </data>
   <data name="label77.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
+    <value>72, 15</value>
   </data>
   <data name="label77.Text" xml:space="preserve">
     <value>Redirections</value>
   </data>
   <data name="label87.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 20</value>
+    <value>141, 15</value>
   </data>
   <data name="label87.Text" xml:space="preserve">
     <value>Problèmes de paramètres</value>
   </data>
   <data name="label89.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>43, 15</value>
   </data>
   <data name="label89.Text" xml:space="preserve">
     <value>Erreurs</value>
   </data>
   <data name="label90.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 20</value>
+    <value>84, 15</value>
   </data>
   <data name="label90.Text" xml:space="preserve">
     <value>Requêtes Echo</value>
   </data>
   <data name="label91.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 20</value>
+    <value>86, 15</value>
   </data>
   <data name="label91.Text" xml:space="preserve">
     <value>Réponses Echo</value>
   </data>
   <data name="label92.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 20</value>
+    <value>133, 15</value>
   </data>
   <data name="label92.Text" xml:space="preserve">
     <value>Destination inaccessible</value>
   </data>
   <data name="label94.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 20</value>
+    <value>168, 15</value>
   </data>
   <data name="label94.Text" xml:space="preserve">
     <value>Requêtes de masque d'adresse</value>
   </data>
   <data name="label95.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 20</value>
+    <value>175, 15</value>
   </data>
   <data name="label95.Text" xml:space="preserve">
     <value>Réponses de masques d'adresse</value>
@@ -860,91 +863,91 @@
     <value>Messages ICMPv6 envoyés</value>
   </data>
   <data name="label112.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>120, 15</value>
   </data>
   <data name="label112.Text" xml:space="preserve">
     <value>Temps limite dépassé</value>
   </data>
   <data name="label113.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 20</value>
+    <value>130, 15</value>
   </data>
   <data name="label113.Text" xml:space="preserve">
     <value>Solicitations du routeur</value>
   </data>
   <data name="label114.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 20</value>
+    <value>118, 15</value>
   </data>
   <data name="label114.Text" xml:space="preserve">
     <value>Annonces au routeur</value>
   </data>
   <data name="label115.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
+    <value>72, 15</value>
   </data>
   <data name="label115.Text" xml:space="preserve">
     <value>Redirections</value>
   </data>
   <data name="label116.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 20</value>
+    <value>141, 15</value>
   </data>
   <data name="label116.Text" xml:space="preserve">
     <value>Problèmes de paramètres</value>
   </data>
   <data name="label117.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
+    <value>100, 15</value>
   </data>
   <data name="label117.Text" xml:space="preserve">
     <value>Paquets trop gros</value>
   </data>
   <data name="label118.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 20</value>
+    <value>141, 15</value>
   </data>
   <data name="label118.Text" xml:space="preserve">
     <value>Solicitations du voisinage</value>
   </data>
   <data name="label119.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 20</value>
+    <value>129, 15</value>
   </data>
   <data name="label119.Text" xml:space="preserve">
     <value>Annonces au voisinage</value>
   </data>
   <data name="label121.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 20</value>
+    <value>147, 15</value>
   </data>
   <data name="label121.Text" xml:space="preserve">
     <value>Rapports d'adhésion IGMP</value>
   </data>
   <data name="label122.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 20</value>
+    <value>159, 15</value>
   </data>
   <data name="label122.Text" xml:space="preserve">
     <value>Réductions d'adhésion IGMP</value>
   </data>
   <data name="label123.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 20</value>
+    <value>148, 15</value>
   </data>
   <data name="label123.Text" xml:space="preserve">
     <value>Requêtes d'adhésion IGMP</value>
   </data>
   <data name="label124.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>43, 15</value>
   </data>
   <data name="label124.Text" xml:space="preserve">
     <value>Erreurs</value>
   </data>
   <data name="label141.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 20</value>
+    <value>84, 15</value>
   </data>
   <data name="label141.Text" xml:space="preserve">
     <value>Requêtes Echo</value>
   </data>
   <data name="label142.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 20</value>
+    <value>86, 15</value>
   </data>
   <data name="label142.Text" xml:space="preserve">
     <value>Réponses Echo</value>
   </data>
   <data name="label143.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 20</value>
+    <value>133, 15</value>
   </data>
   <data name="label143.Text" xml:space="preserve">
     <value>Destination inaccessible</value>
@@ -953,91 +956,91 @@
     <value>Messages ICMPv6 reçus</value>
   </data>
   <data name="label138.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 20</value>
+    <value>120, 15</value>
   </data>
   <data name="label138.Text" xml:space="preserve">
     <value>Temps limite dépassé</value>
   </data>
   <data name="label139.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 20</value>
+    <value>130, 15</value>
   </data>
   <data name="label139.Text" xml:space="preserve">
     <value>Solicitations du routeur</value>
   </data>
   <data name="label140.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 20</value>
+    <value>118, 15</value>
   </data>
   <data name="label140.Text" xml:space="preserve">
     <value>Annonces au routeur</value>
   </data>
   <data name="label125.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 20</value>
+    <value>72, 15</value>
   </data>
   <data name="label125.Text" xml:space="preserve">
     <value>Redirections</value>
   </data>
   <data name="label126.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 20</value>
+    <value>141, 15</value>
   </data>
   <data name="label126.Text" xml:space="preserve">
     <value>Problèmes de paramètres</value>
   </data>
   <data name="label127.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 20</value>
+    <value>100, 15</value>
   </data>
   <data name="label127.Text" xml:space="preserve">
     <value>Paquets trop gros</value>
   </data>
   <data name="label128.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 20</value>
+    <value>141, 15</value>
   </data>
   <data name="label128.Text" xml:space="preserve">
     <value>Solicitations du voisinage</value>
   </data>
   <data name="label129.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 20</value>
+    <value>129, 15</value>
   </data>
   <data name="label129.Text" xml:space="preserve">
     <value>Annonces au voisinage</value>
   </data>
   <data name="label131.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 20</value>
+    <value>147, 15</value>
   </data>
   <data name="label131.Text" xml:space="preserve">
     <value>Rapports d'adhésion IGMP</value>
   </data>
   <data name="label132.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 20</value>
+    <value>159, 15</value>
   </data>
   <data name="label132.Text" xml:space="preserve">
     <value>Réductions d'adhésion IGMP</value>
   </data>
   <data name="label133.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 20</value>
+    <value>148, 15</value>
   </data>
   <data name="label133.Text" xml:space="preserve">
     <value>Requêtes d'adhésion IGMP</value>
   </data>
   <data name="label134.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 20</value>
+    <value>43, 15</value>
   </data>
   <data name="label134.Text" xml:space="preserve">
     <value>Erreurs</value>
   </data>
   <data name="label135.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 20</value>
+    <value>84, 15</value>
   </data>
   <data name="label135.Text" xml:space="preserve">
     <value>Requêtes Echo</value>
   </data>
   <data name="label136.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 20</value>
+    <value>86, 15</value>
   </data>
   <data name="label136.Text" xml:space="preserve">
     <value>Réponses Echo</value>
   </data>
   <data name="label137.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 20</value>
+    <value>133, 15</value>
   </data>
   <data name="label137.Text" xml:space="preserve">
     <value>Destination inaccessible</value>
@@ -1046,7 +1049,7 @@
     <value>Version du protocole IP</value>
   </data>
   <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 20</value>
+    <value>96, 15</value>
   </data>
   <data name="label28.Text" xml:space="preserve">
     <value>Interface  active :</value>
@@ -1055,7 +1058,7 @@
     <value>Interface réseau</value>
   </data>
   <data name="chkIncludeSelectedInterface.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 24</value>
+    <value>169, 19</value>
   </data>
   <data name="chkIncludeSelectedInterface.Text" xml:space="preserve">
     <value>Inclure dans les statistiques</value>
