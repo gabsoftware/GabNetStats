@@ -410,7 +410,6 @@ namespace GabNetStats
             CancellationToken cancellationToken = state is CancellationToken token ? token : CancellationToken.None;
             byte[] buffer = { 1 };
             PingReply reply = null;
-            string pingHost = Settings.Default.AutoPingHost;
             int pingTimeout = PING_TIMEOUT_MS;
 
             try
@@ -418,6 +417,9 @@ namespace GabNetStats
                 while (true)
                 {
                     cancellationToken.ThrowIfCancellationRequested();
+
+                    string pingHost = Settings.Default.AutoPingHost;
+                    int pingRate = (int)Settings.Default.AutoPingRate;
 
                     using (Ping ping = new Ping())
                     {
@@ -439,7 +441,7 @@ namespace GabNetStats
 
                     try
                     {
-                        WaitWithCancellation(cancellationToken, (int)Settings.Default.AutoPingRate);
+                        WaitWithCancellation(cancellationToken, pingRate);
                     }
                     catch (ArgumentOutOfRangeException) { }
                 }
@@ -528,6 +530,10 @@ namespace GabNetStats
             long lAvgSpeedEmission  = 0;
             long rawSpeedReception  = 0;
             long rawSpeedEmission   = 0;
+            int enabledInterfaceCount = 0;
+            int enabledInterfaceHash = 0;
+            int previousEnabledInterfaceCount = -1;
+            int previousEnabledInterfaceHash = 0;
 
             IPInterfaceStatistics ipstats = null;
             Stopwatch sampleStopwatch = Stopwatch.StartNew();
@@ -564,12 +570,20 @@ namespace GabNetStats
 
                     lock (_nicManager.selectedInterfaces)
                     {
+                        enabledInterfaceCount = 0;
+                        // Seed and multiplier are conventional small primes for a simple rolling hash.
+                        enabledInterfaceHash = 17;
+
                         foreach (NetworkInterfaceManager.TrackedInterface tracked in _nicManager.selectedInterfaces)
                         {
                             if (!NetworkInterfaceManager.IsInterfaceEnabled(tracked.MacAddress))
                             {
                                 continue;
                             }
+
+                            enabledInterfaceCount++;
+                            // Fold each enabled MAC into an order-sensitive fingerprint for baseline reset detection.
+                            enabledInterfaceHash = enabledInterfaceHash * 31 + StringComparer.OrdinalIgnoreCase.GetHashCode(tracked.MacAddress ?? String.Empty);
 
                             try
                             {
@@ -584,15 +598,41 @@ namespace GabNetStats
                         }
                     }
 
+                    bool enabledInterfacesChanged =
+                        enabledInterfaceCount != previousEnabledInterfaceCount ||
+                        enabledInterfaceHash != previousEnabledInterfaceHash;
+
+                    if (enabledInterfacesChanged)
+                    {
+                        previousEnabledInterfaceCount = enabledInterfaceCount;
+                        previousEnabledInterfaceHash = enabledInterfaceHash;
+                        oldbytesReceived = bytesReceived;
+                        oldbytesSent = bytesSent;
+                    }
 
                     long deltaReceived = bytesReceived - oldbytesReceived;
                     long deltaSent = bytesSent - oldbytesSent;
-                    bool hasDownload = deltaReceived != 0;
-                    bool hasUpload = deltaSent != 0;
+                    bool receivedCounterReset = deltaReceived < 0;
+                    bool sentCounterReset = deltaSent < 0;
+
+                    if (receivedCounterReset)
+                    {
+                        oldbytesReceived = bytesReceived;
+                        deltaReceived = 0;
+                    }
+
+                    if (sentCounterReset)
+                    {
+                        oldbytesSent = bytesSent;
+                        deltaSent = 0;
+                    }
+
+                    bool hasDownload = deltaReceived > 0;
+                    bool hasUpload = deltaSent > 0;
 
                     if (hasDownload)
                     {
-                        rawSpeedReception = (long)Math.Abs(deltaReceived * 1000.0 / elapsedMs);
+                        rawSpeedReception = (long)(deltaReceived * 1000.0 / elapsedMs);
                         oldbytesReceived = bytesReceived;
                     }
                     else
@@ -602,7 +642,7 @@ namespace GabNetStats
 
                     if (hasUpload)
                     {
-                        rawSpeedEmission = (long)Math.Abs(deltaSent * 1000.0 / elapsedMs);
+                        rawSpeedEmission = (long)(deltaSent * 1000.0 / elapsedMs);
                         oldbytesSent = bytesSent;
                     }
                     else
