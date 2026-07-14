@@ -11,9 +11,9 @@ namespace GabNetStats
         private const long MBIT_THRESHOLD  = 1000000L;
         private const long GBIT_THRESHOLD  = 1000000000L;
 
-        internal enum eBandwithUnit : int
+        internal enum BandwidthUnit : int
         {
-            bit  = 8,
+            Bit  = 8,
             Byte = 1
         }
         internal enum eBandwidthMultiplier : long
@@ -43,12 +43,12 @@ namespace GabNetStats
         }
 
 
-        internal static double computeSpeed(long rawSpeed, ref string speedUnit)
+        internal static double ComputeSpeed(long rawSpeed, ref string speedUnit)
         {
-            return computeSpeed(rawSpeed, ref speedUnit, 1);
+            return ComputeSpeed(rawSpeed, ref speedUnit, 1);
         }
 
-        internal static double computeSpeed(long rawSpeed, ref string speedUnit, int typeunit)
+        internal static double ComputeSpeed(long rawSpeed, ref string speedUnit, int typeunit)
         {
             double res = 0;
             switch (typeunit)

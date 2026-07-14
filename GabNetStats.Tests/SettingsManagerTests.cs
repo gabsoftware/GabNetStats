@@ -30,7 +30,7 @@ public sealed class SettingsManagerTests
             Assert.AreEqual(NetworkStatsWorker.BlinkDurationMinimum, Settings.Default.BlinkDuration);
             Assert.AreEqual((long)SpeedUtils.eBandwidthMultiplier.un, Settings.Default.BandwidthDownloadMultiplier);
             Assert.AreEqual((long)SpeedUtils.eBandwidthMultiplier.un, Settings.Default.BandwidthUploadMultiplier);
-            Assert.AreEqual((int)SpeedUtils.eBandwithUnit.Byte, Settings.Default.BandwidthUnit);
+            Assert.AreEqual((int)SpeedUtils.BandwidthUnit.Byte, Settings.Default.BandwidthUnit);
             Assert.AreEqual(SettingsManager.DEFAULT_BANDWIDTH_BPS, Settings.Default.BandwidthDownload);
             Assert.AreEqual(SettingsManager.DEFAULT_BANDWIDTH_BPS, Settings.Default.BandwidthUpload);
         }

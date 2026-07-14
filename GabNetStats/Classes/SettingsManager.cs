@@ -61,10 +61,10 @@ namespace GabNetStats
                 Settings.Default.BandwidthUploadMultiplier = (long)SpeedUtils.eBandwidthMultiplier.un;
             }
 
-            if (Settings.Default.BandwidthUnit != (int)SpeedUtils.eBandwithUnit.bit
-             && Settings.Default.BandwidthUnit != (int)SpeedUtils.eBandwithUnit.Byte)
+            if (Settings.Default.BandwidthUnit != (int)SpeedUtils.BandwidthUnit.Bit
+             && Settings.Default.BandwidthUnit != (int)SpeedUtils.BandwidthUnit.Byte)
             {
-                Settings.Default.BandwidthUnit = (int)SpeedUtils.eBandwithUnit.Byte;
+                Settings.Default.BandwidthUnit = (int)SpeedUtils.BandwidthUnit.Byte;
             }
 
             if (Settings.Default.BandwidthDownload <= 0)

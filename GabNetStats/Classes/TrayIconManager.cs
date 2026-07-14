@@ -74,7 +74,7 @@ namespace GabNetStats
             _uiThreadControl    = uiThreadControl;
         }
 
-        internal void applyIconSet()
+        internal void ApplyIconSet()
         {
             string desiredSet = Settings.Default.IconSet;
             if (String.IsNullOrEmpty(desiredSet))

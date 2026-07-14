@@ -27,7 +27,7 @@ namespace GabNetStats
         //
         //  Thread handles
         //
-        private Thread hNetStatThread2   = null;
+        private Thread netStatThread   = null;
         private Thread hNICRefreshThread = null;
         private Thread hAutoPingThread   = null;
 
@@ -79,10 +79,10 @@ namespace GabNetStats
         {
             try
             {
-                hNetStatThread2 = new Thread(new ParameterizedThreadStart(this.NetStatThread));
-                hNetStatThread2.IsBackground = true;
-                hNetStatThread2.Name = "hNetStatThread2";
-                hNetStatThread2.Start(workerCancellationTokenSource.Token);
+                netStatThread = new Thread(new ParameterizedThreadStart(this.NetStatThread));
+                netStatThread.IsBackground = true;
+                netStatThread.Name = "netStatThread";
+                netStatThread.Start(workerCancellationTokenSource.Token);
             }
             catch (ArgumentNullException) { }
             catch (ThreadStateException) { }
@@ -118,7 +118,7 @@ namespace GabNetStats
 
             StopAutoPingThread();
 
-            TryJoinThread(hNetStatThread2);
+            TryJoinThread(netStatThread);
             TryJoinThread(hNICRefreshThread);
 
             workerCancellationTokenSource.Dispose();
@@ -215,7 +215,7 @@ namespace GabNetStats
                 StartAutoPingThread();
             }
 
-            _trayIconManager.applyIconSet();
+            _trayIconManager.ApplyIconSet();
         }
 
         internal void InitializeSpeedSamples()

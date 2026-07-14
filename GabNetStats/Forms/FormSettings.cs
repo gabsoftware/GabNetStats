@@ -181,7 +181,7 @@ namespace GabNetStats
             txtDownload.Text = Settings.Default.BandwidthDownload.ToString(CultureInfo.InvariantCulture);
             txtUpload.Text = Settings.Default.BandwidthUpload.ToString(CultureInfo.InvariantCulture);
 
-            rbBits.Checked = Settings.Default.BandwidthUnit == (int)SpeedUtils.eBandwithUnit.bit;
+            rbBits.Checked = Settings.Default.BandwidthUnit == (int)SpeedUtils.BandwidthUnit.Bit;
 
             updateCombos();
 
@@ -396,11 +396,11 @@ namespace GabNetStats
         {
             if (rbBits.Checked)
             {
-                Settings.Default.BandwidthUnit = (int)SpeedUtils.eBandwithUnit.bit;
+                Settings.Default.BandwidthUnit = (int)SpeedUtils.BandwidthUnit.Bit;
             }
             else
             {
-                Settings.Default.BandwidthUnit = (int)SpeedUtils.eBandwithUnit.Byte;
+                Settings.Default.BandwidthUnit = (int)SpeedUtils.BandwidthUnit.Byte;
             }
             updateCombos();
         }

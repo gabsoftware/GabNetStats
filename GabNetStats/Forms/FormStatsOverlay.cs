@@ -53,7 +53,7 @@ namespace GabNetStats
             ApplyHistoryToTracker();
         }
 
-        private void BallonTimer_Tick(object sender, EventArgs e)
+        private void BalloonTimer_Tick(object sender, EventArgs e)
         {
             string sSpeedReception = String.Empty;
             string sSpeedEmission = String.Empty;
@@ -76,14 +76,14 @@ namespace GabNetStats
             gabTracker1.Feeds[0].Value = Math.Round(NetworkStatsWorker.lAvgSpeedReception / BYTES_PER_KIBIBYTE, 2);
             gabTracker1.Feeds[1].Value = Math.Round(NetworkStatsWorker.lAvgSpeedEmission / BYTES_PER_KIBIBYTE, 2);
 
-            fSpeedReception = SpeedUtils.computeSpeed(NetworkStatsWorker.rawSpeedReception, ref sSpeedReception, 1);
-            fSpeedEmission  = SpeedUtils.computeSpeed(NetworkStatsWorker.rawSpeedEmission , ref sSpeedEmission , 1);
+            fSpeedReception = SpeedUtils.ComputeSpeed(NetworkStatsWorker.rawSpeedReception, ref sSpeedReception, 1);
+            fSpeedEmission  = SpeedUtils.ComputeSpeed(NetworkStatsWorker.rawSpeedEmission , ref sSpeedEmission , 1);
 
-            fAvgSpeedReception = SpeedUtils.computeSpeed(NetworkStatsWorker.lAvgSpeedReception, ref sAvgSpeedReception, 1);
-            fAvgSpeedEmission  = SpeedUtils.computeSpeed(NetworkStatsWorker.lAvgSpeedEmission , ref sAvgSpeedEmission , 1);
+            fAvgSpeedReception = SpeedUtils.ComputeSpeed(NetworkStatsWorker.lAvgSpeedReception, ref sAvgSpeedReception, 1);
+            fAvgSpeedEmission  = SpeedUtils.ComputeSpeed(NetworkStatsWorker.lAvgSpeedEmission , ref sAvgSpeedEmission , 1);
 
-            fReceived = SpeedUtils.computeSpeed(NetworkStatsWorker.bytesReceived, ref sReceived, 1);
-            fSent     = SpeedUtils.computeSpeed(NetworkStatsWorker.bytesSent    , ref sSent    , 1);
+            fReceived = SpeedUtils.ComputeSpeed(NetworkStatsWorker.bytesReceived, ref sReceived, 1);
+            fSent     = SpeedUtils.ComputeSpeed(NetworkStatsWorker.bytesSent    , ref sSent    , 1);
 
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawReceptionSpeed, fSpeedReception.ToString(Math.Floor(fSpeedReception) != fSpeedReception ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedReception);
             builder.AppendFormat("{0} : \t{1} {2}/s\n", str_RawEmissionSpeed, fSpeedEmission.ToString(Math.Floor(fSpeedEmission) != fSpeedEmission ? CultureInfo.CurrentCulture.NumberFormat : nfi), sSpeedEmission);
@@ -98,7 +98,7 @@ namespace GabNetStats
 
             if (Settings.Default.AutoCloseBalloon)
             {
-                counter += BallonTimer.Interval;
+                counter += BalloonTimer.Interval;
                 if (counter >= Settings.Default.AutoCloseBalloonAfter * 1000)
                 {
                     counter = 0;
@@ -182,13 +182,13 @@ namespace GabNetStats
             if (this.Visible)
             {
                 counter = 0;
-                BallonTimer.Interval = Settings.Default.BlinkDuration;
-                BallonTimer.Start();
+                BalloonTimer.Interval = Settings.Default.BlinkDuration;
+                BalloonTimer.Start();
             }
             else
             {
                 counter = 0;
-                BallonTimer.Stop();
+                BalloonTimer.Stop();
             }
         }
 

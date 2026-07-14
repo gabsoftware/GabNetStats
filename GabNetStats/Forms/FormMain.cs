@@ -170,7 +170,7 @@ namespace GabNetStats
             FormStatsOverlay fb = (FormStatsOverlay)Application.OpenForms["FormStatsOverlay"];
             if (fb != null)
             {
-                fb.BallonTimer.Interval = statsWorker.nDuration;
+                fb.BalloonTimer.Interval = statsWorker.nDuration;
             }
 
             this.notifyIconPing.Visible = Settings.Default.AutoPingEnabled;
@@ -407,7 +407,7 @@ namespace GabNetStats
             foreach (NetworkInterfaceManager.NicDisplayInfo info in nics)
             {
                 string unit  = string.Empty;
-                double speed = SpeedUtils.computeSpeed(info.Interface.Speed, ref unit, 2);
+                double speed = SpeedUtils.ComputeSpeed(info.Interface.Speed, ref unit, 2);
 
                 //we generate the item related to the network interface
                 ToolStripMenuItem itm = new ToolStripMenuItem(

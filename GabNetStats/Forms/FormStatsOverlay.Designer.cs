@@ -33,7 +33,7 @@
             Properties.Settings settings2 = new Properties.Settings();
             GabTracker.GabTrackerFeed gabTrackerFeed3 = new GabTracker.GabTrackerFeed();
             GabTracker.GabTrackerFeed gabTrackerFeed4 = new GabTracker.GabTrackerFeed();
-            BallonTimer = new System.Windows.Forms.Timer(components);
+            BalloonTimer = new System.Windows.Forms.Timer(components);
             lblStatisticsData = new System.Windows.Forms.Label();
             lblSeconds = new System.Windows.Forms.Label();
             lblStatisticsTitle = new System.Windows.Forms.Label();
@@ -49,10 +49,10 @@
             ((System.ComponentModel.ISupportInitialize)nudAutoClose).BeginInit();
             SuspendLayout();
             // 
-            // BallonTimer
+            // BalloonTimer
             // 
-            BallonTimer.Interval = 1000;
-            BallonTimer.Tick += BallonTimer_Tick;
+            BalloonTimer.Interval = 1000;
+            BalloonTimer.Tick += BalloonTimer_Tick;
             // 
             // lblStatisticsData
             // 
@@ -231,6 +231,6 @@
         private System.Windows.Forms.Button btnAdvanced;
         private GabTracker.GabTracker gabTracker1;
         private System.Windows.Forms.Button btn_settings;
-        internal System.Windows.Forms.Timer BallonTimer;
+        internal System.Windows.Forms.Timer BalloonTimer;
     }
 }

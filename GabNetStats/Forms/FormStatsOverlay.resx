@@ -343,8 +343,8 @@
   <data name="tbTrans.RightToLeftLayout" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;BallonTimer.Name" xml:space="preserve">
-    <value>BallonTimer</value>
+  <data name="&gt;&gt;BalloonTimer.Name" xml:space="preserve">
+    <value>BalloonTimer</value>
   </data>
   <data name="&gt;&gt;tbTrans.Name" xml:space="preserve">
     <value>tbTrans</value>
@@ -361,7 +361,7 @@
   <data name="nudAutoClose.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="&gt;&gt;BallonTimer.Type" xml:space="preserve">
+  <data name="&gt;&gt;BalloonTimer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chkAutoClose.Type" xml:space="preserve">
@@ -478,7 +478,7 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
-  <metadata name="BallonTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="BalloonTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
