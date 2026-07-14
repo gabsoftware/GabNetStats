@@ -117,10 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="radioAutoBandwidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>292, 19</value>
+  </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Bande passante automatique (icônes multicolores)</value>
+  </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 15</value>
   </data>
@@ -182,7 +188,7 @@
     <value>Défaut (icône bleue)</value>
   </data>
   <data name="textBoxDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>228, 26</value>
+    <value>189, 19</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Ping automatique</value>
@@ -194,10 +200,10 @@
     <value>Montrer notifications</value>
   </data>
   <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>251, 86</value>
+    <value>251, 65</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>391, 91</value>
+    <value>375, 68</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 15</value>
@@ -206,10 +212,7 @@
     <value>Envoyer ping tous les</value>
   </data>
   <data name="txtSettingsAutoPingHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 45</value>
-  </data>
-  <data name="txtSettingsAutoPingHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 23</value>
+    <value>251, 34</value>
   </data>
   <data name="chkSettingsAutoPingEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>187, 19</value>
@@ -246,11 +249,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Options</value>
-  </data>
-  <data name="radioAutoBandwidth.Text" xml:space="preserve">
-    <value>Bande passante automatique (icônes multicolores)</value>
-  </data>
-  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
-    <value>Utilise l’interface réseau activée la plus rapide pour estimer les niveaux de bande passante des icônes multicolores de la zone de notification.</value>
   </data>
 </root>

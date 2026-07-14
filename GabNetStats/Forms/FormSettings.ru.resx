@@ -117,13 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="radioAutoBandwidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>390, 19</value>
+  </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Автоматическая пропускная способность (многоцветные значки)</value>
+  </data>
   <data name="buttonOK.Text" xml:space="preserve">
     <value>ОК</value>
   </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Отмена</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 15</value>
   </data>
@@ -212,7 +218,7 @@
     <value>Синий значок (по умолчанию)</value>
   </data>
   <data name="textBoxDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 26</value>
+    <value>177, 20</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Автоматический пинг</value>
@@ -224,13 +230,10 @@
     <value>Показывать уведомления</value>
   </data>
   <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 86</value>
-  </data>
-  <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 23</value>
+    <value>228, 66</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>410, 91</value>
+    <value>354, 68</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 15</value>
@@ -245,10 +248,7 @@
     <value>Пинг каждые</value>
   </data>
   <data name="txtSettingsAutoPingHost.Location" type="System.Drawing.Point, System.Drawing">
-    <value>270, 46</value>
-  </data>
-  <data name="txtSettingsAutoPingHost.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 23</value>
+    <value>228, 36</value>
   </data>
   <data name="chkSettingsAutoPingEnabled.Size" type="System.Drawing.Size, System.Drawing">
     <value>199, 19</value>
@@ -285,11 +285,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Настройки</value>
-  </data>
-  <data name="radioAutoBandwidth.Text" xml:space="preserve">
-    <value>Автоматическая пропускная способность (многоцветные значки)</value>
-  </data>
-  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
-    <value>Использует самый быстрый включенный сетевой интерфейс для оценки уровней пропускной способности многоцветных значков в области уведомлений.</value>
   </data>
 </root>

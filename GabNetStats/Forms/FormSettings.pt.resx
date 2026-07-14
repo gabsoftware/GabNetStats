@@ -17,7 +17,16 @@
     <resheader name="version">2.0</resheader>
     <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
     <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-        
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
     There are any number of "resheader" rows that contain simple
     name/value pairs.
 
@@ -108,12 +117,24 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="radioAutoBandwidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>283, 19</value>
+  </data>
+  <data name="radioAutoBandwidth.Text" xml:space="preserve">
+    <value>Largura de banda automática (ícones multicolor)</value>
+  </data>
   <data name="buttonCancel.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 15</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Atualização (ms):</value>
+  </data>
+  <data name="radioCustomSpeed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 19</value>
   </data>
   <data name="radioCustomSpeed.Text" xml:space="preserve">
     <value>Largura de banda manual</value>
@@ -121,8 +142,14 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Efeitos visuais do ícone de rede</value>
   </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>261, 15</value>
+  </data>
   <data name="label6.Text" xml:space="preserve">
     <value>(deve ser uma pasta dentro da subpasta "icons")</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 15</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Ícones:</value>
@@ -130,32 +157,50 @@
   <data name="grpBandwidthPreferences.Text" xml:space="preserve">
     <value>Largura de banda</value>
   </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 15</value>
+  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Unidade preferida</value>
   </data>
-  <data name="rbBytes.Text" xml:space="preserve">
-    <value>Bytes/s</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 15</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Transferência</value>
   </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 15</value>
+  </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Envio</value>
+  </data>
+  <data name="radioDefault.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 19</value>
   </data>
   <data name="radioDefault.Text" xml:space="preserve">
     <value>Predefinido (ícone azul)</value>
   </data>
-  <data name="textBoxDuration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 26</value>
+  <data name="chkSettingsAutoPingNotification.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 19</value>
   </data>
   <data name="chkSettingsAutoPingNotification.Text" xml:space="preserve">
     <value>Mostrar notificações</value>
   </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 15</value>
+  </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Enviar um ping a cada</value>
   </data>
+  <data name="chkSettingsAutoPingEnabled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 19</value>
+  </data>
   <data name="chkSettingsAutoPingEnabled.Text" xml:space="preserve">
     <value>Auto-ping:</value>
+  </data>
+  <data name="checkBoxStartup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 19</value>
   </data>
   <data name="checkBoxStartup.Text" xml:space="preserve">
     <value>Iniciar com o Windows</value>
@@ -163,25 +208,25 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Diversos</value>
   </data>
+  <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 15</value>
+  </data>
   <data name="lblLanguage.Text" xml:space="preserve">
     <value>Idioma:</value>
   </data>
-  <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
-    <value>Mostrar interfaces desligadas</value>
+  <data name="chkShowHiddenInterfaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>205, 19</value>
   </data>
   <data name="chkShowHiddenInterfaces.Text" xml:space="preserve">
     <value>Mostrar interfaces ocultas/virtuais</value>
   </data>
+  <data name="chkShowDisconnectedInterfaces.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 19</value>
+  </data>
+  <data name="chkShowDisconnectedInterfaces.Text" xml:space="preserve">
+    <value>Mostrar interfaces desligadas</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Definições</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Auto-ping</value>
-  </data>
-  <data name="radioAutoBandwidth.Text" xml:space="preserve">
-    <value>Largura de banda automática (ícones multicolor)</value>
-  </data>
-  <data name="radioAutoBandwidth.ToolTipText" xml:space="preserve">
-    <value>Usa a interface de rede ativada mais rápida para estimar os níveis de largura de banda dos ícones multicolor da bandeja.</value>
   </data>
 </root>
