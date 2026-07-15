@@ -337,6 +337,30 @@ namespace GabNetStats.Properties {
 
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int BalloonWidth {
+            get {
+                return ((int)(this["BalloonWidth"]));
+            }
+            set {
+                this["BalloonWidth"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1")]
+        public int BalloonHeight {
+            get {
+                return ((int)(this["BalloonHeight"]));
+            }
+            set {
+                this["BalloonHeight"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool SettingsUpgraded {
             get {

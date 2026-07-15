@@ -28,6 +28,7 @@ namespace GabNetStats
 
         private int counter;
         private bool suppressLocationPersistence;
+        private bool suppressSizePersistence;
         private bool suppressSettingsPersistence;
 
         static FormStatsOverlay()
@@ -46,6 +47,7 @@ namespace GabNetStats
                 nudAutoClose.Value = Settings.Default.AutoCloseBalloonAfter;
                 tbTrans.Value = LoadOpacitySliderValue();
                 ApplyOpacityFromSlider();
+                ApplySizeWithoutPersistence(LoadPreferredSize(this.Size));
             }
             finally
             {
@@ -139,6 +141,18 @@ namespace GabNetStats
             return GetDefaultLocation(formSize);
         }
 
+        private static Size LoadPreferredSize(Size defaultSize)
+        {
+            int savedWidth = Settings.Default.BalloonWidth;
+            int savedHeight = Settings.Default.BalloonHeight;
+            if (savedWidth > 0 && savedHeight > 0)
+            {
+                return new Size(savedWidth, savedHeight);
+            }
+
+            return defaultSize;
+        }
+
         private static Point GetDefaultLocation(Size formSize)
         {
             Rectangle workingArea = Screen.PrimaryScreen.WorkingArea;
@@ -172,6 +186,19 @@ namespace GabNetStats
             finally
             {
                 suppressLocationPersistence = false;
+            }
+        }
+
+        private void ApplySizeWithoutPersistence(Size size)
+        {
+            suppressSizePersistence = true;
+            try
+            {
+                this.Size = size;
+            }
+            finally
+            {
+                suppressSizePersistence = false;
             }
         }
 
@@ -288,6 +315,15 @@ namespace GabNetStats
         {
             UpdateTrackerCapacity();
             ApplyHistoryToTracker();
+
+            if (suppressSizePersistence)
+            {
+                return;
+            }
+
+            Settings.Default.BalloonWidth = this.Width;
+            Settings.Default.BalloonHeight = this.Height;
+            SettingsManager.ScheduleSave();
         }
 
         private void btn_settings_Click(object sender, EventArgs e)
