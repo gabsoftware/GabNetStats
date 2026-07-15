@@ -133,6 +133,7 @@
             gabTrackerFeed3.Coefficient = 1D;
             gabTrackerFeed3.FillAlpha = 100;
             gabTrackerFeed3.FillThickness = 10F;
+            gabTrackerFeed3.FillSuperpose = true;
             gabTrackerFeed3.FillUnder = true;
             gabTrackerFeed3.Legend = "Download";
             gabTrackerFeed3.LineColor = System.Drawing.Color.DodgerBlue;
@@ -142,6 +143,7 @@
             gabTrackerFeed4.Coefficient = 1D;
             gabTrackerFeed4.FillAlpha = 100;
             gabTrackerFeed4.FillThickness = 10F;
+            gabTrackerFeed4.FillSuperpose = true;
             gabTrackerFeed4.FillUnder = true;
             gabTrackerFeed4.Legend = "Upload";
             gabTrackerFeed4.LineColor = System.Drawing.Color.Red;
