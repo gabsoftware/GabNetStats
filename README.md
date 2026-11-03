@@ -38,6 +38,13 @@ Alternatively, you can build GabNetStats from the command line:
     cd C:\mydir\GabNetStats
     dotnet build -c Release .\GabNetStats.sln
 
+## License
+Copyright (C) GabSoftware
+
+GabNetStats is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. See [LICENSE](LICENSE) (LGPL-3.0) and [COPYING](COPYING) (GPL-3.0, which the LGPL builds on).
+
+GabTracker is distributed under the same license.
+
 ## Many thanks to :
 - Igor Tolmachev (www.itsamples.com) for the original idea
 - Valerij Romanovskij (alias ext5 on GitHub) for the Russian translation

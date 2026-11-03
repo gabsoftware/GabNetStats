@@ -1,19 +1,15 @@
-------= Licență GabSoftware v1.0.1 =------
+[PRODUCTNAME]
+[PRODUCTHOMEPAGE]
+Copyright (C) GabSoftware
 
-Produs vizat: [PRODUCTNAME]
-Pagina [PRODUCTNAME]: [PRODUCTHOMEPAGE]
+[PRODUCTNAME] este software liber: îl puteți redistribui și/sau modifica în conformitate cu termenii Licenței Publice Generale Reduse GNU (GNU LGPL), așa cum a fost publicată de Free Software Foundation, fie versiunea 3 a licenței, fie (la alegerea dumneavoastră) orice versiune ulterioară.
 
-Prin distribuirea, utilizarea sau reutilizarea oricărei părți a acestui produs (binare sau cod sursă), sunteți de acord cu următorii termeni:
+[PRODUCTNAME] este distribuit în speranța că va fi util, dar FĂRĂ NICIO GARANȚIE; fără nici măcar garanția implicită de VANDABILITATE sau de ADECVARE PENTRU UN ANUMIT SCOP. Consultați Licența Publică Generală Redusă GNU pentru mai multe detalii.
 
-- Binarele [PRODUCTNAME] pot fi distribuite și utilizate gratuit pentru uz personal. Pentru uz corporativ, vezi (1).
-- Codul sursă [PRODUCTNAME] poate fi distribuit, utilizat și reutilizat gratuit pentru uz personal. Pentru uz corporativ, vezi (2).
-- Numele "[PRODUCTNAME]" nu trebuie să facă parte din numele niciunui produs derivat.
-- Trebuie să includeți prezenta licență nemodificată (License.ro.txt) cu orice distribuție, parte de cod sursă sau binare ale [PRODUCTNAME].
+[PRODUCTNAME] include GabTracker (https://github.com/gabsoftware/GabTracker), distribuit sub aceeași licență.
 
-(1): GabSoftware permite companiilor cu mai puțin de 10 persoane să utilizeze și să distribuie binarele [PRODUCTNAME] gratuit și fără limită de timp, atât timp cât compania rămâne sub 10 persoane și nu câștigă bani din aceasta. Companiile cu peste 10 persoane care doresc să utilizeze, să distribuie sau să includă binarele [PRODUCTNAME] în orice suită de produse trebuie să ne contacteze la [CONTACTEMAIL] pentru a negocia prețul.
-(2): Dacă doriți să utilizați tot sau părți din codul sursă [PRODUCTNAME] în produsele companiei, trimiteți-ne cererea la [CONTACTEMAIL] pentru a negocia prețul.
+Textele complete ale licențelor se află în fișierele LGPL-3.0.txt și GPL-3.0.txt din acest dosar. Codul sursă este disponibil la https://github.com/gabsoftware/GabNetStats.
 
-Vă mulțumim că folosiți produsele noastre!
+Aceasta este o traducere neoficială, oferită doar în scop informativ. Doar textele originale în limba engleză (License.en.txt, LGPL-3.0.txt și GPL-3.0.txt) au valoare juridică.
 
-GabSoftware
-http://www.gabsoftware.com
+Contact: [CONTACTEMAIL]

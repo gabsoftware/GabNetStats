@@ -1,19 +1,15 @@
-------= GabSoftware 许可证 v1.0.1 =------
+[PRODUCTNAME]
+[PRODUCTHOMEPAGE]
+Copyright (C) GabSoftware
 
-相关产品：[PRODUCTNAME]
-[PRODUCTNAME] 主页：[PRODUCTHOMEPAGE]
+[PRODUCTNAME] 是自由软件：您可以根据自由软件基金会发布的 GNU 宽通用公共许可证 (GNU LGPL) 第 3 版或 (由您选择) 任何更高版本的条款，重新分发和/或修改它。
 
-通过分发、使用或复用本产品的任何部分（二进制文件或源代码），即表示您同意以下条款：
+分发 [PRODUCTNAME] 是希望它能有所用处，但不提供任何担保；甚至不提供适销性或特定用途适用性的默示担保。详情请参阅 GNU 宽通用公共许可证。
 
-- [PRODUCTNAME] 二进制文件可免费分发并用于个人用途。企业用途见 (1)。
-- [PRODUCTNAME] 源代码可免费分发、使用和复用于个人用途。企业用途见 (2)。
-- 名称 "[PRODUCTNAME]" 不得作为任何衍生产品名称的一部分。
-- 分发 [PRODUCTNAME] 的任何源代码或二进制文件时，必须随附本未修改的许可证 (License.zh-Hans.txt)。
+[PRODUCTNAME] 包含以相同许可证分发的 GabTracker (https://github.com/gabsoftware/GabTracker)。
 
-(1)：GabSoftware 允许少于 10 人的公司免费且不限时使用和分发 [PRODUCTNAME] 二进制文件，前提是公司人数保持少于 10 人且不通过它获利。超过 10 人的公司如需使用、分发或将 [PRODUCTNAME] 二进制文件包含在任何产品套件中，必须通过 [CONTACTEMAIL] 联系我们协商价格。
-(2)：如果您希望在公司产品中使用全部或部分 [PRODUCTNAME] 源代码，请通过 [CONTACTEMAIL] 向我们发送请求以协商价格。
+许可证全文位于此文件夹中的 LGPL-3.0.txt 和 GPL-3.0.txt 文件。源代码可在 https://github.com/gabsoftware/GabNetStats 获取。
 
-感谢使用我们的产品！
+本译文为非官方翻译，仅供参考。只有英文原文 (License.en.txt、LGPL-3.0.txt 和 GPL-3.0.txt) 具有法律效力。
 
-GabSoftware
-http://www.gabsoftware.com
+联系方式：[CONTACTEMAIL]

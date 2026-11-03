@@ -1,19 +1,15 @@
-------= Licencia de GabSoftware v1.0.1 =------
+[PRODUCTNAME]
+[PRODUCTHOMEPAGE]
+Copyright (C) GabSoftware
 
-Producto afectado: [PRODUCTNAME]
-Página de [PRODUCTNAME]: [PRODUCTHOMEPAGE]
+[PRODUCTNAME] es software libre: puede redistribuirlo y/o modificarlo bajo los términos de la Licencia Pública General Reducida de GNU (GNU LGPL) publicada por la Free Software Foundation, ya sea la versión 3 de la licencia o (a su elección) cualquier versión posterior.
 
-Al distribuir, usar o reutilizar cualquier parte de este producto (binarios o código fuente), acepta las condiciones siguientes:
+[PRODUCTNAME] se distribuye con la esperanza de que sea útil, pero SIN NINGUNA GARANTÍA; ni siquiera la garantía implícita de COMERCIABILIDAD o IDONEIDAD PARA UN PROPÓSITO PARTICULAR. Consulte la Licencia Pública General Reducida de GNU para más detalles.
 
-- Los binarios de [PRODUCTNAME] se pueden distribuir y usar libremente para uso personal. Para uso corporativo, consulte (1).
-- El código fuente de [PRODUCTNAME] se puede distribuir, usar y reutilizar libremente para uso personal. Para uso corporativo, consulte (2).
-- El nombre "[PRODUCTNAME]" no debe formar parte del nombre de ningún producto derivado.
-- Debe incluir esta licencia sin modificar (License.es.txt) con cualquier distribución, parte del código fuente o binarios de [PRODUCTNAME].
+[PRODUCTNAME] incluye GabTracker (https://github.com/gabsoftware/GabTracker), que se distribuye bajo la misma licencia.
 
-(1): GabSoftware permite a empresas de menos de 10 personas usar y distribuir los binarios de [PRODUCTNAME] de forma gratuita y sin límite de tiempo, siempre que la empresa siga teniendo menos de 10 personas y no gane dinero con ello. Las empresas de más de 10 personas que deseen usar, distribuir o incluir los binarios de [PRODUCTNAME] en cualquier paquete de productos deben ponerse en contacto con nosotros en [CONTACTEMAIL] para negociar el precio.
-(2): Si desea usar todo o parte del código fuente de [PRODUCTNAME] en los productos de su empresa, envíenos su solicitud a [CONTACTEMAIL] para negociar el precio.
+Los textos completos de las licencias se encuentran en los archivos LGPL-3.0.txt y GPL-3.0.txt de esta carpeta. El código fuente está disponible en https://github.com/gabsoftware/GabNetStats.
 
-Gracias por usar nuestros productos.
+Esta es una traducción no oficial, proporcionada solo a título informativo. Solo los textos originales en inglés (License.en.txt, LGPL-3.0.txt y GPL-3.0.txt) tienen validez legal.
 
-GabSoftware
-http://www.gabsoftware.com
+Contacto: [CONTACTEMAIL]

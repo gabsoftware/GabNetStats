@@ -58,13 +58,16 @@ Check these manually in every new locale. Prefer short labels immediately:
 
 ## License file
 
-1. Add `licenses/License.<culture>.txt` encoded as UTF-8.
-2. Translate the license text, but keep these tokens verbatim:
+GabNetStats is licensed under the GNU LGPL v3 or later. `licenses/License.<culture>.txt` is a short notice, not the license itself. The full official English texts (`LGPL-3.0.txt` and `GPL-3.0.txt`) are copied from the repository's `LICENSE` and `COPYING` at build time. Never translate those: only the English texts are legally binding.
+
+1. Add `licenses/License.<culture>.txt` encoded as UTF-8, translated from `License.en.txt`.
+2. Keep the paragraph saying the translation is unofficial and that only the English texts are legally binding (it is absent from `License.en.txt` itself; copy it from another culture, e.g. `License.fr.txt`).
+3. Keep these tokens verbatim:
    - `[PRODUCTNAME]`
    - `[PRODUCTHOMEPAGE]`
    - `[CONTACTEMAIL]`
-   - `License.txt`
-3. No project-file edit is needed for the license file; the build picks up `licenses/License.*.txt` automatically.
+   - `License.en.txt`, `LGPL-3.0.txt`, `GPL-3.0.txt`
+4. No project-file edit is needed for the license file; the build picks up `licenses/License.*.txt` automatically.
 
 ## Checks
 
@@ -79,7 +82,7 @@ Then confirm:
 
 1. `bin\Release\...\<culture>\GabNetStats.resources.dll` exists.
 2. `bin\Release\...\licenses\License.<culture>.txt` exists.
-3. No license placeholders remain in the generated file.
+3. No license placeholders remain in the generated file, and `licenses\LGPL-3.0.txt` and `licenses\GPL-3.0.txt` exist.
 4. Resource XML parses.
 5. Key diff only shows intentional fallbacks.
 6. Long-label scan finds no large expansions compared to English.

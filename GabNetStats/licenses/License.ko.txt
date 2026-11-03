@@ -1,19 +1,15 @@
-------= GabSoftware 라이선스 v1.0.1 =------
+[PRODUCTNAME]
+[PRODUCTHOMEPAGE]
+Copyright (C) GabSoftware
 
-대상 제품: [PRODUCTNAME]
-[PRODUCTNAME] 홈페이지: [PRODUCTHOMEPAGE]
+[PRODUCTNAME]은(는) 자유 소프트웨어입니다. Free Software Foundation이 발표한 GNU 약소 일반 공중 사용 허가서(GNU LGPL) 버전 3 또는 (선택에 따라) 그 이후 버전의 조건에 따라 재배포 및/또는 수정할 수 있습니다.
 
-이 제품의 일부(바이너리 또는 소스 코드)를 배포, 사용 또는 재사용하면 다음 조건에 동의한 것으로 간주됩니다.
+[PRODUCTNAME]은(는) 유용하게 사용되기를 바라며 배포되지만, 어떠한 보증도 제공하지 않습니다. 상품성이나 특정 목적에 대한 적합성에 대한 묵시적 보증도 제공하지 않습니다. 자세한 내용은 GNU 약소 일반 공중 사용 허가서를 참조하십시오.
 
-- [PRODUCTNAME] 바이너리는 개인 용도로 무료 배포 및 사용이 가능합니다. 기업 사용은 (1)을 참조하십시오.
-- [PRODUCTNAME] 소스 코드는 개인 용도로 무료 배포, 사용 및 재사용이 가능합니다. 기업 사용은 (2)를 참조하십시오.
-- "[PRODUCTNAME]" 이름은 파생 제품 이름의 일부가 될 수 없습니다.
-- [PRODUCTNAME]의 소스 코드 또는 바이너리 전체나 일부를 배포할 때는 이 수정되지 않은 라이선스(License.ko.txt)를 포함해야 합니다.
+[PRODUCTNAME]에는 동일한 라이선스로 배포되는 GabTracker (https://github.com/gabsoftware/GabTracker)가 포함되어 있습니다.
 
-(1): GabSoftware는 직원 10명 미만의 회사가 회사 규모가 10명 미만으로 유지되고 이를 통해 수익을 내지 않는 한 [PRODUCTNAME] 바이너리를 무료로, 기간 제한 없이 사용 및 배포하도록 허용합니다. 직원 10명 이상의 회사가 [PRODUCTNAME] 바이너리를 사용, 배포 또는 제품군에 포함하려면 가격 협의를 위해 [CONTACTEMAIL]로 문의해야 합니다.
-(2): 회사 제품에서 [PRODUCTNAME] 소스 코드의 전부 또는 일부를 사용하려면 가격 협의를 위해 [CONTACTEMAIL]로 요청을 보내십시오.
+라이선스 전문은 이 폴더의 LGPL-3.0.txt 및 GPL-3.0.txt 파일에 있습니다. 소스 코드는 https://github.com/gabsoftware/GabNetStats 에서 받을 수 있습니다.
 
-저희 제품을 사용해 주셔서 감사합니다!
+이 번역은 참고용으로 제공되는 비공식 번역입니다. 법적 효력은 영어 원문(License.en.txt, LGPL-3.0.txt, GPL-3.0.txt)에만 있습니다.
 
-GabSoftware
-http://www.gabsoftware.com
+연락처: [CONTACTEMAIL]

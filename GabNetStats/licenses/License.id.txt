@@ -1,19 +1,15 @@
-------= Lisensi GabSoftware v1.0.1 =------
+[PRODUCTNAME]
+[PRODUCTHOMEPAGE]
+Copyright (C) GabSoftware
 
-Produk terkait: [PRODUCTNAME]
-Beranda [PRODUCTNAME]: [PRODUCTHOMEPAGE]
+[PRODUCTNAME] adalah perangkat lunak bebas: Anda dapat mendistribusikan ulang dan/atau memodifikasinya berdasarkan ketentuan GNU Lesser General Public License yang diterbitkan oleh Free Software Foundation, baik versi 3 dari lisensi tersebut maupun (sesuai pilihan Anda) versi yang lebih baru.
 
-Dengan mendistribusikan, menggunakan, atau menggunakan kembali bagian mana pun dari produk ini (biner atau kode sumber), Anda menyetujui ketentuan berikut:
+[PRODUCTNAME] didistribusikan dengan harapan dapat bermanfaat, tetapi TANPA JAMINAN APA PUN; bahkan tanpa jaminan tersirat atas KELAYAKAN UNTUK DIPERDAGANGKAN atau KESESUAIAN UNTUK TUJUAN TERTENTU. Lihat GNU Lesser General Public License untuk detail lebih lanjut.
 
-- Biner [PRODUCTNAME] dapat didistribusikan dan digunakan secara gratis untuk penggunaan pribadi. Untuk penggunaan perusahaan, lihat (1).
-- Kode sumber [PRODUCTNAME] dapat didistribusikan, digunakan, dan digunakan kembali secara gratis untuk penggunaan pribadi. Untuk penggunaan perusahaan, lihat (2).
-- Nama "[PRODUCTNAME]" tidak boleh menjadi bagian dari nama produk turunan apa pun.
-- Anda harus menyertakan lisensi ini tanpa perubahan (License.id.txt) dengan distribusi apa pun, bagian kode sumber, atau biner [PRODUCTNAME].
+[PRODUCTNAME] menyertakan GabTracker (https://github.com/gabsoftware/GabTracker), yang didistribusikan dengan lisensi yang sama.
 
-(1): GabSoftware mengizinkan perusahaan dengan kurang dari 10 orang untuk menggunakan dan mendistribusikan biner [PRODUCTNAME] secara gratis dan tanpa batas waktu, selama perusahaan tetap kurang dari 10 orang dan tidak menghasilkan uang darinya. Perusahaan dengan lebih dari 10 orang yang ingin menggunakan, mendistribusikan, atau menyertakan biner [PRODUCTNAME] dalam paket produk apa pun harus menghubungi kami di [CONTACTEMAIL] untuk menegosiasikan harga.
-(2): Jika Anda ingin menggunakan semua atau sebagian kode sumber [PRODUCTNAME] dalam produk perusahaan Anda, kirimkan permintaan ke [CONTACTEMAIL] untuk menegosiasikan harga.
+Teks lengkap lisensi terdapat dalam berkas LGPL-3.0.txt dan GPL-3.0.txt di folder ini. Kode sumber tersedia di https://github.com/gabsoftware/GabNetStats.
 
-Terima kasih telah menggunakan produk kami!
+Ini adalah terjemahan tidak resmi yang disediakan hanya sebagai informasi. Hanya teks asli berbahasa Inggris (License.en.txt, LGPL-3.0.txt, dan GPL-3.0.txt) yang mengikat secara hukum.
 
-GabSoftware
-http://www.gabsoftware.com
+Kontak: [CONTACTEMAIL]

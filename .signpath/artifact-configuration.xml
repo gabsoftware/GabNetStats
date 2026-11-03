@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SignPath artifact configuration for GabNetStats.
+
+  This file is a versioned copy only: SignPath does not read it from the repository.
+  Paste it into SignPath > Project > Artifact Configurations whenever it changes.
+
+  The GitHub artifact uploaded by the release workflow is a zip of the build output
+  (bin\Release\net10.0-windows10.0.26100.0). Only our own binaries are signed;
+  Microsoft.Bcl.HashCode.dll, Microsoft.Windows.SDK.NET.dll and WinRT.Runtime.dll
+  are already signed by Microsoft and are passed through unchanged.
+-->
+<artifact-configuration xmlns="http://signpath.io/artifact-configuration/v1">
+  <zip-file>
+    <pe-file-set>
+      <include path="GabNetStats.exe" />
+      <include path="GabNetStats.dll" />
+      <include path="GabTracker.dll" />
+      <!-- Satellite resource assemblies, one per culture folder (cs, de, fr, zh-Hans, ...) -->
+      <include path="*/GabNetStats.resources.dll" min-matches="1" max-matches="unbounded" />
+      <for-each>
+        <authenticode-sign />
+      </for-each>
+    </pe-file-set>
+  </zip-file>
+</artifact-configuration>

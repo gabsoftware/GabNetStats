@@ -1,19 +1,15 @@
-------= Licence GabSoftware v1.0.1 =------
+[PRODUCTNAME]
+[PRODUCTHOMEPAGE]
+Copyright (C) GabSoftware
 
-Dotčený produkt: [PRODUCTNAME]
-Domovská stránka [PRODUCTNAME]: [PRODUCTHOMEPAGE]
+[PRODUCTNAME] je svobodný software: můžete jej šířit a/nebo upravovat podle podmínek GNU Lesser General Public License, jak ji zveřejnila Free Software Foundation, a to buď podle verze 3 této licence, nebo (podle vaší volby) podle kterékoli pozdější verze.
 
-Distribucí, používáním nebo opětovným použitím jakékoli části tohoto produktu (binárních souborů nebo zdrojového kódu) souhlasíte s následujícími podmínkami:
+[PRODUCTNAME] je šířen v naději, že bude užitečný, avšak BEZ JAKÉKOLI ZÁRUKY, a to i bez předpokládané záruky PRODEJNOSTI nebo VHODNOSTI PRO URČITÝ ÚČEL. Další podrobnosti naleznete v GNU Lesser General Public License.
 
-- Binární soubory [PRODUCTNAME] lze volně distribuovat a používat pro osobní použití. Firemní použití viz (1).
-- Zdrojový kód [PRODUCTNAME] lze volně distribuovat, používat a znovu používat pro osobní použití. Firemní použití viz (2).
-- Název "[PRODUCTNAME]" nesmí být součástí názvu žádného odvozeného produktu.
-- Ke každé distribuci zdrojového kódu nebo binárních souborů [PRODUCTNAME] musíte přiložit tuto nezměněnou licenci (License.cs.txt).
+[PRODUCTNAME] obsahuje GabTracker (https://github.com/gabsoftware/GabTracker), který je šířen pod stejnou licencí.
 
-(1): GabSoftware umožňuje společnostem s méně než 10 lidmi používat a distribuovat binární soubory [PRODUCTNAME] zdarma a bez časového omezení, pokud má společnost méně než 10 lidí a nevydělává na tom peníze. Společnosti s více než 10 lidmi, které chtějí používat, distribuovat nebo zahrnout binární soubory [PRODUCTNAME] do jakékoli sady produktů, nás musí kontaktovat na [CONTACTEMAIL] kvůli jednání o ceně.
-(2): Pokud chcete použít celý zdrojový kód [PRODUCTNAME] nebo jeho části ve firemních produktech, pošlete nám požadavek na [CONTACTEMAIL] kvůli jednání o ceně.
+Úplná znění licencí naleznete v souborech LGPL-3.0.txt a GPL-3.0.txt v této složce. Zdrojový kód je k dispozici na https://github.com/gabsoftware/GabNetStats.
 
-Děkujeme, že používáte naše produkty!
+Toto je neoficiální překlad poskytnutý pouze pro informaci. Právně závazné jsou pouze původní anglické texty (License.en.txt, LGPL-3.0.txt a GPL-3.0.txt).
 
-GabSoftware
-http://www.gabsoftware.com
+Kontakt: [CONTACTEMAIL]

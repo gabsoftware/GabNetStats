@@ -1,19 +1,15 @@
-------= Giấy phép GabSoftware v1.0.1 =------
+[PRODUCTNAME]
+[PRODUCTHOMEPAGE]
+Copyright (C) GabSoftware
 
-Sản phẩm liên quan: [PRODUCTNAME]
-Trang chủ [PRODUCTNAME]: [PRODUCTHOMEPAGE]
+[PRODUCTNAME] là phần mềm tự do: bạn có thể phân phối lại và/hoặc sửa đổi nó theo các điều khoản của Giấy phép Công cộng GNU Hạn chế (GNU LGPL) do Free Software Foundation công bố, phiên bản 3 của giấy phép hoặc (tùy bạn chọn) bất kỳ phiên bản nào mới hơn.
 
-Bằng việc phân phối, sử dụng hoặc tái sử dụng bất kỳ phần nào của sản phẩm này (tệp nhị phân hoặc mã nguồn), bạn đồng ý với các điều khoản sau:
+[PRODUCTNAME] được phân phối với hy vọng sẽ hữu ích, nhưng KHÔNG CÓ BẤT KỲ BẢO ĐẢM NÀO; thậm chí không có bảo đảm ngụ ý về KHẢ NĂNG THƯƠNG MẠI hay SỰ PHÙ HỢP CHO MỘT MỤC ĐÍCH CỤ THỂ. Xem Giấy phép Công cộng GNU Hạn chế để biết thêm chi tiết.
 
-- Các tệp nhị phân [PRODUCTNAME] có thể được phân phối và sử dụng miễn phí cho mục đích cá nhân. Đối với mục đích công ty, xem (1).
-- Mã nguồn [PRODUCTNAME] có thể được phân phối, sử dụng và tái sử dụng miễn phí cho mục đích cá nhân. Đối với mục đích công ty, xem (2).
-- Tên "[PRODUCTNAME]" không được là một phần trong tên của bất kỳ sản phẩm phái sinh nào.
-- Bạn phải kèm theo giấy phép hiện tại không sửa đổi (License.vi.txt) trong mọi bản phân phối, phần mã nguồn hoặc tệp nhị phân của [PRODUCTNAME].
+[PRODUCTNAME] bao gồm GabTracker (https://github.com/gabsoftware/GabTracker), được phân phối theo cùng giấy phép.
 
-(1): GabSoftware cho phép các công ty dưới 10 người sử dụng và phân phối tệp nhị phân [PRODUCTNAME] miễn phí và không giới hạn thời gian, miễn là công ty vẫn dưới 10 người và không kiếm tiền từ đó. Các công ty trên 10 người muốn sử dụng, phân phối hoặc đưa tệp nhị phân [PRODUCTNAME] vào bất kỳ bộ sản phẩm nào phải liên hệ với chúng tôi tại [CONTACTEMAIL] để thương lượng giá.
-(2): Nếu bạn muốn dùng toàn bộ hoặc một phần mã nguồn [PRODUCTNAME] trong sản phẩm của công ty, vui lòng gửi yêu cầu đến [CONTACTEMAIL] để thương lượng giá.
+Toàn văn các giấy phép nằm trong các tệp LGPL-3.0.txt và GPL-3.0.txt trong thư mục này. Mã nguồn có tại https://github.com/gabsoftware/GabNetStats.
 
-Cảm ơn bạn đã sử dụng sản phẩm của chúng tôi!
+Đây là bản dịch không chính thức, chỉ nhằm mục đích tham khảo. Chỉ các văn bản gốc tiếng Anh (License.en.txt, LGPL-3.0.txt và GPL-3.0.txt) mới có giá trị pháp lý.
 
-GabSoftware
-http://www.gabsoftware.com
+Liên hệ: [CONTACTEMAIL]

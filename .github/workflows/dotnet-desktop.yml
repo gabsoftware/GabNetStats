@@ -49,6 +49,11 @@ on:
 permissions:
   contents: read
 
+env:
+  # GabTracker release tag that GabNetStats is built against. Bump it when you
+  # want GabNetStats to pick up a new GabTracker version.
+  GABTRACKER_REF: v1.0.0.8
+
 jobs:
 
   build:
@@ -73,7 +78,7 @@ jobs:
       with:
         repository: gabsoftware/GabTracker
         path: GabTracker
-        ref: master
+        ref: ${{ env.GABTRACKER_REF }}
 
     # Install the .NET Core workload
     - name: Install .NET Core
@@ -114,6 +119,7 @@ jobs:
     runs-on: windows-latest
     permissions:
       contents: write
+      actions: read   # lets SignPath download the unsigned build artifact
 
     steps:
     - name: Checkout GabNetStats
@@ -128,7 +134,7 @@ jobs:
       with:
         repository: gabsoftware/GabTracker
         path: GabTracker
-        ref: master
+        ref: ${{ env.GABTRACKER_REF }}
 
     - name: Install .NET Core
       uses: actions/setup-dotnet@v5
@@ -155,11 +161,48 @@ jobs:
     - name: Test the release
       run: dotnet test -c Release GabNetStatsRepo\GabNetStats.sln --no-build
 
+    #
+    #  Code signing (SignPath)
+    #
+    - name: Upload unsigned build for signing
+      id: upload-unsigned
+      uses: actions/upload-artifact@v6
+      with:
+        name: GabNetStats-unsigned-${{ github.event.release.tag_name }}
+        path: GabNetStatsRepo\GabNetStats\bin\Release\net10.0-windows10.0.26100.0
+        if-no-files-found: error
+
+    - name: Sign with SignPath
+      uses: signpath/github-action-submit-signing-request@v1
+      with:
+        api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+        organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+        project-slug: ${{ vars.SIGNPATH_PROJECT_SLUG }}
+        signing-policy-slug: ${{ vars.SIGNPATH_SIGNING_POLICY_SLUG }}
+        artifact-configuration-slug: ${{ vars.SIGNPATH_ARTIFACT_CONFIGURATION_SLUG }}
+        github-artifact-id: ${{ steps.upload-unsigned.outputs.artifact-id }}
+        wait-for-completion: true
+        wait-for-completion-timeout-in-seconds: 3600   # leaves time for manual approval
+        output-artifact-directory: signed
+
+    - name: Verify signatures
+      shell: pwsh
+      run: |
+        $own = Get-ChildItem signed -Recurse -Include GabNetStats.exe, GabNetStats.dll, GabTracker.dll, GabNetStats.resources.dll
+        if ($own.Count -lt 4) { throw "Expected signed files not found in 'signed' (found $($own.Count))." }
+
+        $bad = foreach ($file in Get-ChildItem signed -Recurse -Include *.exe, *.dll) {
+          $sig = Get-AuthenticodeSignature $file.FullName
+          "{0,-50} {1,-10} {2}" -f $file.FullName.Substring((Resolve-Path signed).Path.Length + 1), $sig.Status, $sig.SignerCertificate.Subject | Write-Host
+          if ($sig.Status -ne 'Valid') { $file.FullName }
+        }
+        if ($bad) { throw "Unsigned or invalid files:`n$($bad -join "`n")" }
+
     - name: Package release asset
       shell: pwsh
       run: |
         $tag = "${{ github.event.release.tag_name }}"
-        $source = "GabNetStatsRepo\GabNetStats\bin\Release\net10.0-windows10.0.26100.0"
+        $source = "signed"
         $zip = "GabNetStats-$tag.zip"
 
         New-Item -ItemType Directory -Force artifacts | Out-Null
@@ -173,7 +216,7 @@ jobs:
           "GabNetStats release build provenance"
           "Tag: $tag"
           "GabNetStats commit: $(git -C GabNetStatsRepo rev-parse HEAD)"
-          "GabTracker commit: $(git -C GabTracker rev-parse HEAD)"
+          "GabTracker: $env:GABTRACKER_REF ($(git -C GabTracker rev-parse HEAD))"
           "Workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
         ) | Set-Content "artifacts\GabNetStats-$tag.provenance.txt"
 

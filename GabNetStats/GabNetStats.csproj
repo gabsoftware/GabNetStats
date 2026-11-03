@@ -127,5 +127,8 @@
       ProductName="GabNetstats"
       ProductHomepage="https://www.gabsoftware.com/products/applications/gabnetstats/"
       ContactEmail="gabriel@gabsoftware.com" />
+    <!-- Full license texts (official English versions, referenced by the notices above) -->
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\..\LICENSE" DestinationFiles="$(OutDir)\licenses\LGPL-3.0.txt" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\..\COPYING" DestinationFiles="$(OutDir)\licenses\GPL-3.0.txt" />
   </Target>
 </Project>

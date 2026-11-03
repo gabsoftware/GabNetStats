@@ -1,19 +1,13 @@
-------= GabSoftware license v1.0.1 =------
+[PRODUCTNAME]
+[PRODUCTHOMEPAGE]
+Copyright (C) GabSoftware
 
-Concerned product : [PRODUCTNAME]
-[PRODUCTNAME] homepage : [PRODUCTHOMEPAGE]
+[PRODUCTNAME] is free software: you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-By distributing, using or reusing any part of this product (binaries or source code), you agree with the following terms :
+[PRODUCTNAME] is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.
 
-- The [PRODUCTNAME] binaries can be freely distributed and used for personal use. For corporate use, see (1).
-- The [PRODUCTNAME] source code can be freely distributed, used and reused for personal use. For corporate use, see (2).
-- The name "[PRODUCTNAME]" must not be part of the name of any derived product.
-- You must include the present license unmodified (License.en.txt) with any distribution, part of source code or binaries of [PRODUCTNAME].
+[PRODUCTNAME] includes GabTracker (https://github.com/gabsoftware/GabTracker), which is distributed under the same license.
 
-(1) : GabSoftware allows companies of less than 10 people to use and distribute the [PRODUCTNAME] binaries for free and without any time limit, as long as the company remains to less than 10 people and that the company makes no money of it. Companies of more than 10 people who desire to use, distribute or include the [PRODUCTNAME] binaries in any suite of products must contact us at [CONTACTEMAIL] to negociate about pricing.
-(2) : If you want to use all or some parts of the [PRODUCTNAME] source code in your company products, please send us your request at [CONTACTEMAIL] to negociate about pricing.
+The full license texts are in the files LGPL-3.0.txt and GPL-3.0.txt in this folder. The source code is available at https://github.com/gabsoftware/GabNetStats.
 
-Thank you for using our products !
-
-GabSoftware
-http://www.gabsoftware.com
+Contact: [CONTACTEMAIL]

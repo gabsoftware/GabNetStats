@@ -190,6 +190,12 @@ foreach ($culture in ($resourceCultures.Keys | Sort-Object)) {
 $outputLicenseDir = Join-Path $projectPath "bin\$Configuration\$TargetFramework\licenses"
 
 if (Test-Path -LiteralPath $outputLicenseDir) {
+    foreach ($fullText in @('LGPL-3.0.txt', 'GPL-3.0.txt')) {
+        if (-not (Test-Path -LiteralPath (Join-Path $outputLicenseDir $fullText))) {
+            $errors.Add("Generated license directory is missing $fullText`: $outputLicenseDir")
+        }
+    }
+
     foreach ($file in (Get-ChildItem -LiteralPath $outputLicenseDir -Filter 'License.*.txt')) {
         $text = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
 

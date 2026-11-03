@@ -1,19 +1,15 @@
-------= GabSoftware lisansı v1.0.1 =------
+[PRODUCTNAME]
+[PRODUCTHOMEPAGE]
+Copyright (C) GabSoftware
 
-İlgili ürün: [PRODUCTNAME]
-[PRODUCTNAME] ana sayfası: [PRODUCTHOMEPAGE]
+[PRODUCTNAME] özgür bir yazılımdır: Free Software Foundation tarafından yayımlanan GNU Lesser General Public License'ın 3. sürümü ya da (tercihinize bağlı olarak) daha sonraki herhangi bir sürümünün koşulları altında yeniden dağıtabilir ve/veya değiştirebilirsiniz.
 
-Bu ürünün herhangi bir bölümünü (ikili dosyalar veya kaynak kodu) dağıtarak, kullanarak veya yeniden kullanarak aşağıdaki şartları kabul etmiş olursunuz:
+[PRODUCTNAME] faydalı olacağı umuduyla dağıtılmaktadır, ancak HİÇBİR GARANTİ VERİLMEMEKTEDİR; SATILABİLİRLİK veya BELİRLİ BİR AMACA UYGUNLUK konusunda zımni bir garanti dahi verilmemektedir. Ayrıntılar için GNU Lesser General Public License'a bakın.
 
-- [PRODUCTNAME] ikili dosyaları kişisel kullanım için serbestçe dağıtılabilir ve kullanılabilir. Kurumsal kullanım için bkz. (1).
-- [PRODUCTNAME] kaynak kodu kişisel kullanım için serbestçe dağıtılabilir, kullanılabilir ve yeniden kullanılabilir. Kurumsal kullanım için bkz. (2).
-- "[PRODUCTNAME]" adı türetilmiş hiçbir ürün adının parçası olamaz.
-- [PRODUCTNAME] kaynak kodunun veya ikili dosyalarının herhangi bir dağıtımında bu değiştirilmemiş lisansı (License.tr.txt) eklemelisiniz.
+[PRODUCTNAME], aynı lisans altında dağıtılan GabTracker'ı (https://github.com/gabsoftware/GabTracker) içerir.
 
-(1): GabSoftware, 10 kişiden az şirketlerin [PRODUCTNAME] ikili dosyalarını, şirket 10 kişiden az kaldığı ve bundan para kazanmadığı sürece ücretsiz ve süre sınırı olmadan kullanmasına ve dağıtmasına izin verir. [PRODUCTNAME] ikili dosyalarını kullanmak, dağıtmak veya herhangi bir ürün paketine dahil etmek isteyen 10 kişiden büyük şirketler fiyatlandırma görüşmesi için [CONTACTEMAIL] adresinden bizimle iletişime geçmelidir.
-(2): [PRODUCTNAME] kaynak kodunun tamamını veya bir kısmını şirket ürünlerinizde kullanmak istiyorsanız, fiyatlandırma görüşmesi için isteğinizi [CONTACTEMAIL] adresine gönderin.
+Lisansların tam metinleri bu klasördeki LGPL-3.0.txt ve GPL-3.0.txt dosyalarında yer almaktadır. Kaynak kodu https://github.com/gabsoftware/GabNetStats adresinde mevcuttur.
 
-Ürünlerimizi kullandığınız için teşekkür ederiz!
+Bu, yalnızca bilgilendirme amacıyla sağlanan resmî olmayan bir çeviridir. Yalnızca orijinal İngilizce metinler (License.en.txt, LGPL-3.0.txt ve GPL-3.0.txt) hukuken bağlayıcıdır.
 
-GabSoftware
-http://www.gabsoftware.com
+İletişim: [CONTACTEMAIL]
