@@ -53,6 +53,8 @@ env:
   # GabTracker release tag that GabNetStats is built against. Bump it when you
   # want GabNetStats to pick up a new GabTracker version.
   GABTRACKER_REF: v1.0.0.8
+  # Windows architectures to ship, one zip each (folder and zip suffix = name).
+  ARCHITECTURES: x64 x86 arm64
 
 jobs:
 
@@ -96,15 +98,18 @@ jobs:
       env:
         Configuration: ${{ matrix.configuration }}
     
-    - name: Create dist directory
-      run: mkdir dist
-
-    - name: Copy to dist directory
-      run: Copy-item -Force -Recurse -Verbose GabNetStatsRepo\GabNetStats\bin\$env:Configuration\net10.0-windows10.0.26100.0\* -Destination dist\
+    # One output folder per architecture: the managed code is identical, only the
+    # GabNetStats.exe launcher is native to each architecture.
+    - name: Build each architecture
+      shell: pwsh
+      run: |
+        foreach ($arch in $env:ARCHITECTURES -split ' ') {
+          dotnet build -c $env:Configuration -r "win-$arch" --self-contained false -o "dist\$arch" GabNetStatsRepo\GabNetStats\GabNetStats.csproj
+          if ($LASTEXITCODE -ne 0) { throw "Build for win-$arch failed." }
+        }
       env:
         Configuration: ${{ matrix.configuration }}
-    
-    # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v6
       with:
@@ -161,15 +166,25 @@ jobs:
     - name: Test the release
       run: dotnet test -c Release GabNetStatsRepo\GabNetStats.sln --no-build
 
+    # One output folder per architecture (dist\x64, dist\x86, dist\arm64): the managed
+    # code is identical, only the GabNetStats.exe launcher is native to each architecture.
+    - name: Build each architecture
+      shell: pwsh
+      run: |
+        foreach ($arch in $env:ARCHITECTURES -split ' ') {
+          dotnet build -c Release -r "win-$arch" --self-contained false -o "dist\$arch" GabNetStatsRepo\GabNetStats\GabNetStats.csproj
+          if ($LASTEXITCODE -ne 0) { throw "Build for win-$arch failed." }
+        }
+
     #
-    #  Code signing (SignPath)
+    #  Code signing (SignPath): all architectures in one signing request
     #
     - name: Upload unsigned build for signing
       id: upload-unsigned
       uses: actions/upload-artifact@v6
       with:
         name: GabNetStats-unsigned-${{ github.event.release.tag_name }}
-        path: GabNetStatsRepo\GabNetStats\bin\Release\net10.0-windows10.0.26100.0
+        path: dist
         if-no-files-found: error
 
     - name: Sign with SignPath
@@ -188,8 +203,11 @@ jobs:
     - name: Verify signatures
       shell: pwsh
       run: |
-        $own = Get-ChildItem signed -Recurse -Include GabNetStats.exe, GabNetStats.dll, GabTracker.dll, GabNetStats.resources.dll
-        if ($own.Count -lt 4) { throw "Expected signed files not found in 'signed' (found $($own.Count))." }
+        foreach ($arch in $env:ARCHITECTURES -split ' ') {
+          foreach ($name in 'GabNetStats.exe', 'GabNetStats.dll', 'GabTracker.dll') {
+            if (-not (Test-Path "signed\$arch\$name")) { throw "Missing signed\$arch\$name." }
+          }
+        }
 
         # The SignPath test certificate is self-signed, so the runner doesn't trust its
         # root and reports UnknownError. Accept that only with the test-signing policy.
@@ -207,15 +225,16 @@ jobs:
       shell: pwsh
       run: |
         $tag = "${{ github.event.release.tag_name }}"
-        $source = "signed"
-        $zip = "GabNetStats-$tag.zip"
-
         New-Item -ItemType Directory -Force artifacts | Out-Null
-        Compress-Archive -Path "$source\*" -DestinationPath "artifacts\$zip" -Force
 
-        Get-FileHash "artifacts\$zip" -Algorithm SHA256 |
-          ForEach-Object { "$($_.Hash)  $zip" } |
-          Set-Content "artifacts\$zip.sha256"
+        foreach ($arch in $env:ARCHITECTURES -split ' ') {
+          $zip = "GabNetStats-$tag-$arch.zip"
+          Compress-Archive -Path "signed\$arch\*" -DestinationPath "artifacts\$zip" -Force
+
+          Get-FileHash "artifacts\$zip" -Algorithm SHA256 |
+            ForEach-Object { "$($_.Hash)  $zip" } |
+            Set-Content "artifacts\$zip.sha256"
+        }
 
         @(
           "GabNetStats release build provenance"
