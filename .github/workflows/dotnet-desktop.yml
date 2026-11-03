@@ -191,10 +191,15 @@ jobs:
         $own = Get-ChildItem signed -Recurse -Include GabNetStats.exe, GabNetStats.dll, GabTracker.dll, GabNetStats.resources.dll
         if ($own.Count -lt 4) { throw "Expected signed files not found in 'signed' (found $($own.Count))." }
 
+        # The SignPath test certificate is self-signed, so the runner doesn't trust its
+        # root and reports UnknownError. Accept that only with the test-signing policy.
+        $testSigning = '${{ vars.SIGNPATH_SIGNING_POLICY_SLUG }}' -eq 'test-signing'
+
         $bad = foreach ($file in Get-ChildItem signed -Recurse -Include *.exe, *.dll) {
           $sig = Get-AuthenticodeSignature $file.FullName
           "{0,-50} {1,-10} {2}" -f $file.FullName.Substring((Resolve-Path signed).Path.Length + 1), $sig.Status, $sig.SignerCertificate.Subject | Write-Host
-          if ($sig.Status -ne 'Valid') { $file.FullName }
+          $untrustedTestCert = $testSigning -and $sig.Status -eq 'UnknownError' -and $sig.SignerCertificate.Subject -like 'CN=Test certificate*'
+          if ($sig.Status -ne 'Valid' -and -not $untrustedTestCert) { $file.FullName }
         }
         if ($bad) { throw "Unsigned or invalid files:`n$($bad -join "`n")" }
 
