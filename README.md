@@ -45,6 +45,20 @@ GabNetStats is free software: you can redistribute it and/or modify it under the
 
 GabTracker is distributed under the same license.
 
+## Code signing policy
+Free code signing provided by [SignPath.io](https://about.signpath.io/), certificate by [SignPath Foundation](https://signpath.org/).
+
+Release binaries are built from this repository by [GitHub Actions](.github/workflows/dotnet-desktop.yml) and signed through SignPath. Only binaries built from the source code of GabNetStats and [GabTracker](https://github.com/gabsoftware/GabTracker) are signed; third-party dependencies keep their original signatures.
+
+Team roles:
+- Committers and reviewers: [Gabriel Hautclocq](https://github.com/gabsoftware)
+- Approvers: [Gabriel Hautclocq](https://github.com/gabsoftware)
+
+## Privacy policy
+This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it.
+
+GabNetStats has no telemetry, analytics or automatic update check. Its only network activity is the optional auto-ping feature, which is disabled by default; when enabled in the settings, it periodically pings a host that the user chooses. Links in the About dialog open in your web browser only when clicked.
+
 ## Many thanks to :
 - Igor Tolmachev (www.itsamples.com) for the original idea
 - Valerij Romanovskij (alias ext5 on GitHub) for the Russian translation
