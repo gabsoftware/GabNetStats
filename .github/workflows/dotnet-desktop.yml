@@ -50,9 +50,12 @@ permissions:
   contents: read
 
 env:
-  # GabTracker release tag that GabNetStats is built against. Bump it when you
-  # want GabNetStats to pick up a new GabTracker version.
+  # GabTracker release that GabNetStats is built against. Bump both when you want
+  # GabNetStats to pick up a new GabTracker version. Checkouts use the commit, not
+  # the tag, because tags can be moved and the resulting GabTracker.dll gets signed.
+  # Get the commit with: git ls-remote https://github.com/gabsoftware/GabTracker.git refs/tags/<tag>
   GABTRACKER_REF: v1.0.0.8
+  GABTRACKER_COMMIT: a8fc5c5285f54932a0106ee9ef2cea786420f9ca
   # Windows architectures to ship, one zip each (folder and zip suffix = name).
   ARCHITECTURES: x64 x86 arm64
 
@@ -80,7 +83,7 @@ jobs:
       with:
         repository: gabsoftware/GabTracker
         path: GabTracker
-        ref: ${{ env.GABTRACKER_REF }}
+        ref: ${{ env.GABTRACKER_COMMIT }}
 
     # Install the .NET Core workload
     - name: Install .NET Core
@@ -139,7 +142,7 @@ jobs:
       with:
         repository: gabsoftware/GabTracker
         path: GabTracker
-        ref: ${{ env.GABTRACKER_REF }}
+        ref: ${{ env.GABTRACKER_COMMIT }}
 
     - name: Install .NET Core
       uses: actions/setup-dotnet@v5
@@ -158,6 +161,16 @@ jobs:
 
         if ("${{ github.event.release.tag_name }}" -ne $expectedTag) {
           throw "Release tag '${{ github.event.release.tag_name }}' does not match project version '$version' ($expectedTag)."
+        }
+
+    # Release builds run from a tag rather than a branch, and a tag can point at any
+    # commit, so only sign code that has reached master.
+    - name: Verify release commit is on master
+      shell: pwsh
+      run: |
+        git -C GabNetStatsRepo merge-base --is-ancestor HEAD origin/master
+        if ($LASTEXITCODE -ne 0) {
+          throw "Release tag '${{ github.event.release.tag_name }}' points at a commit that is not on master."
         }
 
     - name: Build the release
@@ -188,7 +201,7 @@ jobs:
         if-no-files-found: error
 
     - name: Sign with SignPath
-      uses: signpath/github-action-submit-signing-request@v1
+      uses: signpath/github-action-submit-signing-request@v3
       with:
         api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
         organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
